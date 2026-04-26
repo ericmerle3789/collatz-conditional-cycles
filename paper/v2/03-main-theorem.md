@@ -60,8 +60,8 @@ continued-fraction infrastructure actually produces.
    $(982^7 + 982)/3 < 2^{71}$.
 5. Hence $m < 2^{71}$. Combined with $m > 0$ (from `IsOddCycle`),
    Barina gives `reaches_one m`.
-6. `cycle_prevents_reaching_one` (Phase50, proved) yields a
-   contradiction.
+6. `cycle_prevents_reaching_one` (`Phase50Bridge.lean`, line 130,
+   proved) yields a contradiction.
 
 ## Axiom profile
 
@@ -86,4 +86,17 @@ theorem itself.
 (kernel-3) + `Lean.ofReduceBool`, `Lean.trustCompiler` (from
 `native_decide` on `k982_bound`). All documented in
 `expected_axioms.md`.
+
+**Note on the Phase63 skeleton.** The file
+`ProjetCollatz/Phase63DerivedLargeKBoundTheorem.lean` contains a
+forward-looking module docstring describing a hypothetical future
+integration ("M3") that *would* introduce `Lean.ofReduceBool` and
+`Lean.trustCompiler` into the central chain. This integration is
+**not part of the current formalization state**: Sections 2-11 of
+the file are explicitly marked "not implemented", no `theorem` or
+`lemma` is declared in the file, and Phase63 does not participate
+in the proof of `no_nontrivial_cycle_final` or any of its aliases
+(see §8.5 for details). The axiom profile reported by `#print
+axioms` for the seven central theorems is therefore kernel-3 at
+the present commit, as machine-verified by `reproduce.sh`.
 

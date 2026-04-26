@@ -207,24 +207,31 @@ For ease of reference, the principal symbols introduced in this
 section and used recurrently throughout the paper are collected
 here.
 
-| Symbol | Meaning | First occurrence |
-|--------|---------|------------------|
-| $T$ | Collatz map $T: \mathbb{N}_{\geq 1} \to \mathbb{N}_{\geq 1}$ | §1.1 |
-| $T_{\mathrm{odd}}$ | Odd iterate (compresses halvings) | §1.1 |
-| `nSeq` | Lean encoding of $T_{\mathrm{odd}}^k$ | §2.1 |
-| `IsOddCycle` | Lean predicate $(n, k) \mapsto \text{cycle}$ | §2.1, Definition 2.1 |
-| $n, k$ | Cycle starting point and length | §2.1 |
-| $m$ | Cycle minimum integer | §2.3.3, §3.2 |
-| $s, s_i$ | Halving exponents and parity vector | §2.2 |
-| $C_{n, k, s}$ | Steiner corrective sum | §2.2 |
-| $\log_2 3$ | Real number, irrationality measure $\leq 5.125$ | §2.5 |
-| $p_n / q_n$ | Continued-fraction convergents of $\log_2 3$ | §2.5 |
-| $W_n$ | Continued-fraction window $[q_n, q_{n+1})$ | §2.5 |
-| `BakerSeparation` | First structural hypothesis (Baker 1966) | §2.3.1, §4.1 |
-| `BarinaVerification` | Second structural hypothesis (Barina 2025) | §2.3.2, §4.2 |
-| `ProductBoundThreshold` | Third structural hypothesis (project-derived) | §2.3.3, §4.3 |
-| `DerivedLargeKBound` | CF-side equivalent of `ProductBoundThreshold` | §8.1, Appendix D |
-| $\delta 7, \delta 8, \delta 8', \delta 9$ | Paper contributions (informal codes) | §1.3 |
-| $6\alpha$ | Paper contribution: formal-verification artifact | §1.3 |
-| $\Phi_s, \Psi_s, \psi_s$ | Structural-excess functions (supplementary) | §8.5, §9.7, Appendix A |
+```{=latex}
+{\small
+\begin{tabular}{@{}p{0.27\linewidth}p{0.55\linewidth}p{0.14\linewidth}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{First occurrence} \\
+\midrule
+$T$ & Collatz map $T: \mathbb{N}_{\geq 1} \to \mathbb{N}_{\geq 1}$ & §1.1 \\
+$T_{\mathrm{odd}}$ & Odd iterate (compresses halvings) & §1.1 \\
+\texttt{nSeq} & Lean encoding of $T_{\mathrm{odd}}^k$ & §2.1 \\
+\texttt{IsOddCycle} & Lean predicate $(n, k) \mapsto \text{cycle}$ & §2.1, Def.~2.1 \\
+$n, k$ & Cycle starting point and length & §2.1 \\
+$m$ & Cycle minimum integer & §2.3.3, §3.2 \\
+$s, s_i$ & Halving exponents and parity vector & §2.2 \\
+$C_{n, k, s}$ & Steiner corrective sum & §2.2 \\
+$\log_2 3$ & Real number, irrationality measure $\leq 5.125$ & §2.5 \\
+$p_n / q_n$ & Continued-fraction convergents of $\log_2 3$ & §2.5 \\
+$W_n$ & Continued-fraction window $[q_n, q_{n+1})$ & §2.5 \\
+\texttt{BakerSeparation} & First structural hypothesis (Baker 1966) & §2.3.1, §4.1 \\
+\texttt{BarinaVerification} & Second structural hypothesis (Barina 2025) & §2.3.2, §4.2 \\
+\texttt{ProductBoundThreshold} & Third structural hypothesis (project-derived) & §2.3.3, §4.3 \\
+\texttt{DerivedLargeKBound} & CF-side equivalent of \texttt{ProductBoundThreshold} & §8.1, App.~D \\
+$\delta 7, \delta 8, \delta 8', \delta 9$ & Paper contributions (informal codes) & §1.3 \\
+$6\alpha$ & Paper contribution: formal-verification artifact & §1.3 \\
+$\Phi_s, \Psi_s, \psi_s$ & Structural-excess functions (supplementary) & §8.5, §9.7, App.~A \\
+\bottomrule
+\end{tabular}}
+```
 

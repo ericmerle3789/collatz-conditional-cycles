@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue!60!black,
+  citecolor=black
+}
+
+\begin{document}
+
+\noindent
+Eric Merle\\
+Independent researcher\\
+Chartres, France\\
+\href{mailto:eric.merle@ac-versailles.fr}{eric.merle@ac-versailles.fr}\\
+ORCID: \href{https://orcid.org/0009-0008-7940-402X}{0009-0008-7940-402X}
+
+\bigskip
+\noindent
+April 26, 2026
+
+\bigskip
+\noindent
+Professor Jasmin Blanchette\\
+Editor-in-Chief, \emph{Journal of Automated Reasoning}\\
+Springer Nature
+
+\bigskip
+\noindent
+Dear Professor Blanchette,
+
+\bigskip
+
+I am pleased to submit for the consideration of \emph{Journal of Automated Reasoning} the manuscript
+
+\begin{quote}
+\textbf{``On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions''}
+\end{quote}
+
+The paper presents a Lean~4 formalization (Mathlib v4.27.0) of a conditional non-existence theorem for non-trivial Collatz cycles. Three structural hypotheses are exposed parametrically as Lean \texttt{structure} arguments of the central theorem ---  \texttt{BakerSeparation}, \texttt{BarinaVerification}, and a project-derived \texttt{ProductBoundThreshold} --- so that the proof's conditionality is carried in the type system rather than absorbed into user axioms. The central theorem chain (seven theorems plus the bridge lemma \texttt{sdw\_from\_cf}) is machine-verified under the kernel-3 axiom profile \texttt{[propext, Classical.choice, Quot.sound]}, with no user-declared axioms and no \texttt{sorry}. Reproducibility is anchored by an \texttt{expected\_axioms.md} baseline and a single-command verification script (\texttt{reproduce.sh}) targeting Lean 4 v4.27.0 against a pinned Mathlib commit.
+
+I believe the manuscript is a good fit for \emph{Journal of Automated Reasoning} for three reasons. First, the central contribution is a machine-verified theorem in Lean~4 / Mathlib together with an explicit, audit-ready axiom-profile contract --- the format of contribution most natural to the journal. Second, the paper deliberately exposes its conditionality through the Lean type system rather than through globally declared axioms, an idiomatic distinction that benefits from the journal's expert readership. Third, two impossibility lemmas ($\delta 8$ and $\delta 8'$) and a 1977--2026 literature mapping ($\delta 9$) document why the third hypothesis cannot be eliminated within the standard Diophantine framework, situating the formalization against a precise structural obstruction --- a presentation that aligns with the journal's interest in rigorously documented limits of automated and interactive proof.
+
+\textbf{Originality and exclusivity.} The manuscript has not been published elsewhere and is not under consideration by any other journal. A pre-print version of the manuscript and the accompanying Lean formalization are publicly archived on Zenodo (DOI \href{https://doi.org/10.5281/zenodo.19790406}{10.5281/zenodo.19790406}, deposited 26 April 2026); the development repository is \url{https://github.com/ericmerle3789/collatz-conditional-cycles}.
+
+\textbf{Use of large language models.} As disclosed in the manuscript's Declarations section, I used Claude Opus~4.7 (Anthropic) during manuscript preparation for drafting, revision, and literature retrieval. The mathematical content and the scientific responsibility for the manuscript rest entirely with me. The formal verification --- the load-bearing claim of the paper --- is performed by Lean~4, not by any language model, and is mechanically reproducible at the kernel-3 axiom profile. No LLM is in the verification chain.
+
+\textbf{Suggested reviewers.} I respectfully suggest the following potential reviewers, who combine expertise in interactive theorem proving, Diophantine approximation, and the Collatz cycle literature:
+
+\begin{itemize}
+  \item Dr.\ Jonas Bayer, University of Cambridge (Department of Pure Mathematics and Mathematical Statistics) --- \texttt{jcb234@cam.ac.uk}. Co-author of \emph{A Formal Proof of Complexity Bounds on Diophantine Equations} (ITP 2025, LIPIcs 352, Article 3), the closest methodological precedent for the present formalization scope.
+  \item Dr.\ Christian Hercher, Europa-Universität Flensburg --- author of \emph{There are no Collatz m-Cycles with m $\leq$ 91} (J.\ Integer Sequences 26, 2023, Article 23.3.5), whose lower bound is a direct corollary of the central theorem chain (§8.3).
+  \item Dr.\ Olivier Rozier, Institut de Physique du Globe de Paris (IPGP), Université Paris Cité --- co-author of \emph{Paradoxical behavior in Collatz sequences} (Discrete Mathematics 349, 2026, Article 115167), and of recent investigations on the Collatz / abc / Diophantine link.
+\end{itemize}
+
+\textbf{Author contributions.} Single author, no funding to declare, no competing interests.
+
+I look forward to the journal's evaluation and remain available for any clarification or additional material the editorial team may require.
+
+\bigskip
+\noindent
+Sincerely,
+
+\bigskip
+\noindent
+Eric Merle\\
+Independent researcher, Chartres, France
+
+\end{document}

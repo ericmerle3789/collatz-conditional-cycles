@@ -45,6 +45,18 @@ required by any non-constructive theorem using classical reasoning
 and quotient types. No `axiom` declaration appears anywhere in
 `ProjetCollatz/`.
 
+**Phase63 skeleton — clarification.** The file
+`Phase63DerivedLargeKBoundTheorem.lean` contains a forward-looking
+docstring describing a hypothetical M3 integration that would
+extend the central-chain axiom profile with `Lean.ofReduceBool`
+and `Lean.trustCompiler`. That integration is *not* realized at
+the present commit: Sections 2-11 of the file are explicitly
+marked "not implemented", no theorem is declared, and Phase63 does
+not appear in the import closure of any of the seven central
+theorems above. The kernel-3 baseline of this appendix is
+therefore unaffected by the Phase63 docstring; see §8.5 for the
+expanded discussion.
+
 ## Auxiliary `native_decide` lemmas (sampled)
 
 Three sampled members of a broader family of arithmetic-gap lemmas

@@ -1,0 +1,199 @@
+%% Springer Nature LaTeX template (sn-jnl.cls v3.1, December 2024)
+%% Math and Physical Sciences, Numbered reference style.
+%% Companion paper "On the non-existence of non-trivial Collatz cycles..."
+%% by Eric Merle, prepared for submission to Journal of Automated Reasoning.
+
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+
+%%%% Standard packages
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage[title]{appendix}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{manyfoot}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc} % for tabularnewline width arithmetic Pandoc emits
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric}
+\usepackage{hyperref}
+
+%%%% Pandoc-emitted commands the body relies on
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\citeproc}[2]{[#1]} % no-op when natbib is in use
+
+% Pandoc emits "\def\LTcaptype{none}" for caption-less longtables; the
+% caption package would then look up a counter named "none" that does
+% not exist. Define a stub counter so caption-less longtables compile.
+\newcounter{none}
+
+%%%% Theorem-like environments — numbered SECTION-WISE so that the
+%%%% in-text references "Theorem 3.1", "Theorem 7.1", "Lemma 5.1" used
+%%%% throughout the body match the rendered numbering. This is the
+%%%% convention inherited from the Pandoc/amsart draft and from the
+%%%% Markdown sources.
+\theoremstyle{thmstyleone}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{thmstyletwo}
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem*{note}{Note}
+
+\theoremstyle{thmstylethree}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{reformulation}[theorem]{Reformulation}
+
+%%%% Unicode glyph fallback (the Markdown source uses Unicode arrows/relations).
+\usepackage{newunicodechar}
+% Arrows
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{←}{\ensuremath{\leftarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{⇐}{\ensuremath{\Leftarrow}}
+\newunicodechar{⇔}{\ensuremath{\Leftrightarrow}}
+% Order / equality relations
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{≡}{\ensuremath{\equiv}}
+\newunicodechar{∼}{\ensuremath{\sim}}
+% Set / logic
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∉}{\ensuremath{\notin}}
+\newunicodechar{∪}{\ensuremath{\cup}}
+\newunicodechar{∩}{\ensuremath{\cap}}
+\newunicodechar{∧}{\ensuremath{\wedge}}
+\newunicodechar{∨}{\ensuremath{\vee}}
+\newunicodechar{¬}{\ensuremath{\neg}}
+\newunicodechar{∀}{\ensuremath{\forall}}
+\newunicodechar{∃}{\ensuremath{\exists}}
+\newunicodechar{∅}{\ensuremath{\emptyset}}
+\newunicodechar{ℕ}{\ensuremath{\mathbb{N}}}
+\newunicodechar{ℤ}{\ensuremath{\mathbb{Z}}}
+\newunicodechar{ℚ}{\ensuremath{\mathbb{Q}}}
+\newunicodechar{ℝ}{\ensuremath{\mathbb{R}}}
+\newunicodechar{ℂ}{\ensuremath{\mathbb{C}}}
+% Greek lowercase used in body
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{ζ}{\ensuremath{\zeta}}
+\newunicodechar{η}{\ensuremath{\eta}}
+\newunicodechar{θ}{\ensuremath{\theta}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{ν}{\ensuremath{\nu}}
+\newunicodechar{π}{\ensuremath{\pi}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{φ}{\ensuremath{\varphi}}
+\newunicodechar{χ}{\ensuremath{\chi}}
+\newunicodechar{ψ}{\ensuremath{\psi}}
+\newunicodechar{ω}{\ensuremath{\omega}}
+% Greek uppercase
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{Λ}{\ensuremath{\Lambda}}
+\newunicodechar{Π}{\ensuremath{\Pi}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{Φ}{\ensuremath{\Phi}}
+\newunicodechar{Ψ}{\ensuremath{\Psi}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+% Misc
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{·}{\ensuremath{\cdot}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{÷}{\ensuremath{\div}}
+\newunicodechar{±}{\ensuremath{\pm}}
+\newunicodechar{∓}{\ensuremath{\mp}}
+\newunicodechar{√}{\ensuremath{\sqrt{}}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{ₖ}{\ensuremath{_{k}}}
+\newunicodechar{ₛ}{\ensuremath{_{s}}}
+\newunicodechar{ₙ}{\ensuremath{_{n}}}
+\newunicodechar{₈}{\ensuremath{_{8}}}
+\newunicodechar{₉}{\ensuremath{_{9}}}
+\newunicodechar{ⁿ}{\ensuremath{^{n}}}
+\newunicodechar{ᵢ}{\ensuremath{_{i}}}
+\newunicodechar{ᵤ}{\ensuremath{_{u}}}
+\newunicodechar{ᵥ}{\ensuremath{_{v}}}
+\newunicodechar{ⱼ}{\ensuremath{_{j}}}
+\newunicodechar{ₘ}{\ensuremath{_{m}}}
+% Calculus operators
+\newunicodechar{∫}{\ensuremath{\int}}
+\newunicodechar{∂}{\ensuremath{\partial}}
+\newunicodechar{∇}{\ensuremath{\nabla}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{∏}{\ensuremath{\prod}}
+% Section sign: keep as text
+\newunicodechar{§}{\S}
+% Quotation marks
+\newunicodechar{«}{\guillemotleft}
+\newunicodechar{»}{\guillemotright}
+
+\raggedbottom
+
+\begin{document}
+
+\title[Conditional non-existence of Collatz cycles in Lean 4]{On the non-existence of non-trivial Collatz cycles:\\
+a conditional formal proof in Lean 4 with documented structural obstructions}
+
+\author*[1]{\fnm{Eric} \sur{Merle}}\email{eric.merle@ac-versailles.fr}
+\equalcont{ORCID: \href{https://orcid.org/0009-0008-7940-402X}{0009-0008-7940-402X}}
+
+\affil*[1]{\orgname{Independent researcher},
+  \orgaddress{\city{Chartres}, \country{France}}}
+
+\abstract{We address the no-non-trivial-cycle disjunct of the Collatz conjecture. The central result, formalized in Lean~4 with Mathlib v4.27.0, is a conditional non-existence theorem declared parametrically with three structural hypotheses: \texttt{BakerSeparation} (after Baker 1966), \texttt{BarinaVerification} (after the 2025 computational verification that every positive integer below $2^{71}$ reaches~$1$), and \texttt{ProductBoundThreshold}, a project-derived cycle-complexity bound made fully explicit in §4.3. The Lean formalization is machine-verified with kernel-3 axiom profile, no user axioms and no \texttt{sorry}, and is reproducible via \texttt{reproduce.sh} against an explicit \texttt{expected\_axioms.md} baseline.
+
+We complement the theorem with two impossibility lemmas ($\delta 8$, $\delta 8'$) showing that no uniform algebraic refinement of the Product Bound derivation can eliminate the third hypothesis within the Baker + continued-fraction framework; a literature mapping ($\delta 9$) documenting the absence of any peer-reviewed deterministic upper bound on cycle length in the 1977--2026 results we surveyed; and an alternative disjunctive framing ($\delta 7$) that connects the conditional theorem to Hercher's 2023 lower bound. The paper is intended as a stable substrate for future contributions resolving the structural conditionality.}
+
+\keywords{Collatz conjecture, 3x+1 problem, Collatz cycles,
+linear forms in logarithms, Baker's theorem, continued fractions,
+irrationality measure, formal verification, Lean 4, Mathlib}
+
+\pacs[MSC Classification]{11B83, 11J81, 11J86, 11Y55, 37P99, 68V15}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Body content (auto-generated from Markdown sources via Pandoc)  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{body.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% References. The .bib file is the same as the one used by the   %%
+%% Pandoc draft build (paper/v2/references.bib). \nocite{*} forces %%
+%% inclusion of every entry until the body is converted to use     %%
+%% explicit \cite{} commands.                                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\nocite{*}
+\bibliography{references}
+
+\end{document}

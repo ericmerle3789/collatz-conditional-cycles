@@ -128,6 +128,38 @@ making the two formulations interderivable.}
 \end{figure}
 ```
 
+## Derived consequences in the central chain
+
+Beyond the seven central theorems, the central chain proves three
+named consequences worth documenting because they recover or
+strengthen published results:
+
+- **`hercher_from_baker_barina`** (`Phase58PorteDeuxFinal.lean`,
+  line 161): from `BakerSeparation` and `BarinaVerification` alone,
+  derives Hercher's (2023) lower bound $k \geq 92$ for any
+  hypothetical cycle. This formalizes the recovery of Hercher's
+  theorem as a corollary of the Baker + Barina pair, independent of
+  Hercher's original combinatorial argument.
+- **`hercher_derived`** (`Phase58PorteDeuxFinal.lean`, line 375):
+  the same conclusion in the alternative `ExternalCycleHypotheses`
+  packaging — that is, taking a single `ExternalCycleHypotheses`
+  record (with fields `baker_separation`, `hercher_no_small_cycle`,
+  `barina_convergence`) instead of two separate `BakerSeparation`
+  and `BarinaVerification` parameters. Both forms are kept for
+  modularity: `hercher_from_baker_barina` is the standalone
+  statement, `hercher_derived` is the alias used by the
+  `ExternalCycleHypothesesDerived` chain (Appendix D).
+- **`bk_1322_derived`** (`Phase58PorteDeuxFinal.lean`, line 385):
+  derives the strictly stronger lower bound $k > 1322$ from
+  `BakerSeparation` and `BarinaVerification` alone; this is the
+  Baker-only sub-result that justifies the case partition
+  $k \leq 1322 \;\vee\; k > 1322$ used by the canonical theorem
+  and by §7.1.
+
+All three carry the kernel-3 axiom profile and are listed in
+`probes/check_central_axioms.lean` alongside the seven central
+theorems of Appendix B.
+
 ## Infrastructure lemmas (continued-fraction side)
 
 Three dedicated modules formalize the classical continued-fraction theory
@@ -201,6 +233,17 @@ original design; it **does not participate** in the central chain of
 `no_nontrivial_cycle_final` or any of its aliases. The axiom profile of
 the file (as a whole) is vacuous — no theorem is declared.
 
+**Reading the Phase63 docstring.** The file's docstring (a forward-looking
+"M3 integration" memo retained from the project's planning phase) describes
+a hypothetical future state in which Phase63 would be promoted into the
+central chain, in which case `Lean.ofReduceBool` and `Lean.trustCompiler`
+would appear in the axiom profile of the central theorems. This memo
+documents the *trade-off that was deliberately not taken*: the obstruction
+of §5 blocks that integration, and Section 1 of the file is the only part
+that compiles. Readers running `#print axioms` at the current commit will
+therefore observe kernel-3 for the seven central theorems (Appendix B), in
+agreement with `expected_axioms.md` and `reproduce.sh`.
+
 ## Structural-excess framework (extension, separate branch)
 
 Alongside the main formalization described above, a parallel Lean 4
@@ -265,8 +308,10 @@ bash reproduce.sh
 
 The five steps of the script are (i) toolchain check, (ii) Mathlib
 cache fetch, (iii) `lake build ProjetCollatz`, (iv) axiom probe on
-**25 theorems** (7 central + 3 auxiliary + 15 M3 foundational), and
-(v) sorry probe. On a fresh clone with cache available, the total
+**10 theorems** baseline (7 central in `expected_axioms.md` §1 +
+3 sampled `native_decide` auxiliary in §2; further `cf_gap_*` /
+`cf_nbound_*` variants are content-similar and excluded from the
+baseline per `expected_axioms.md` §3bis), and (v) sorry probe. On a fresh clone with cache available, the total
 runtime is of the order of 3-5 minutes (incremental: 10 seconds);
 on a from-source build without cache, of the order of 90 minutes.
 The Continuous-Integration workflow at `.github/workflows/verify.yml`

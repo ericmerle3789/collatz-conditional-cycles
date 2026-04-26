@@ -16,10 +16,10 @@ This paper does not address the divergence half of Collatz. The techniques (Bake
 ## Speculative tracks pointer
 Ongoing speculative investigations on transcendence-theoretic approaches (Santana 2026 rigor-closure, Knight 2026 extension, transcendence-gap sharpenings). Results, if any, would feed a future paper revision.
 
-## Probabilistic techniques (Tao)
+## Probabilistic techniques (Tao, Sinai school)
 
 
-Tao's probabilistic approach (2019, *Forum of Mathematics, Pi*) proves that almost all Collatz orbits attain almost bounded values under logarithmic density. This result is **probabilistic** and does not extend to deterministic statements about hypothetical cycles (which have density zero). Tao's broader toolkit (entropy compression à la Moser-Tardos [blog 2009], higher-order Fourier analysis à la Green-Tao-Ziegler) has not been successfully applied to deterministic Collatz cycle bounds; such applications would require substantial new theoretical work. We therefore do not integrate probabilistic techniques into our proof of Theorem 3.1 (which remains conditional on the structural hypotheses §4).
+Tao's probabilistic approach (2019, *Forum of Mathematics, Pi*) proves that almost all Collatz orbits attain almost bounded values under logarithmic density. This result is **probabilistic** and does not extend to deterministic statements about hypothetical cycles (which have density zero). The closely-related Sinai-school stochastic models for the $3x+1$ map — Sinai's *Statistical $(3x+1)$ Problem* (2003, arXiv:math/0201102), Kontorovich--Sinai's *Structure Theorem for $(d,g,h)$-Maps* (2002, arXiv:math/0601622), Lagarias--Soundararajan's Benford-law analysis (2006, arXiv:math/0509175), and Kontorovich--Lagarias's *Stochastic Models for the $3x+1$ and $5x+1$ Problems* (2009, arXiv:0910.1944) — establish drift, decorrelation, and Wiener-measure limits for *typical* orbits or *random initial conditions*, but do not extend to individual hypothetical cycles, which form a measure-zero set under any of these models. Tao's broader toolkit (entropy compression à la Moser-Tardos [blog 2009], higher-order Fourier analysis à la Green-Tao-Ziegler) has likewise not been applied to deterministic Collatz cycle bounds; such applications would require substantial new theoretical work. We therefore do not integrate probabilistic techniques into our proof of Theorem 3.1 (which remains conditional on the structural hypotheses §4).
 
 ## Structural-excess framework Ψ_s
 
@@ -67,16 +67,17 @@ of this frame are exploited or reduced to redundancy in the
 present paper, except for $W_2$ (Steiner rigidity), which is the
 remaining open input. We refer to this informally as the *Wall
 DNA* arrangement and to its conjectural closure as the
-*META-ROADMAP* statement; both labels are descriptive
-shorthand, not theorems. A 200-line exploratory Lean 4 prototype
-attaches a `sorry` placeholder to the META-ROADMAP statement
-under five hypotheses (`hSteinerRigidity`, `hCycle`, `hPsiLarge`,
-`hKolBounded`, `hHercher`); the only machine-verified part of
-the prototype is the trivial-cycle evaluation $\psi_2 = 32/81$,
-reusing the structural-excess framework of §8.5. **None of this
-prototype lies in the central chain of `no_nontrivial_cycle_final`,
-none of its hypotheses is proven, and the present paper does not
-claim that any such closure is achievable.**
+*META-ROADMAP* statement; both labels are descriptive shorthand,
+not theorems. The five-hypothesis arrangement
+(`hSteinerRigidity`, `hCycle`, `hPsiLarge`, `hKolBounded`,
+`hHercher`) is sketched only at the design level — there is no
+corresponding Lean file in the released repository, and we make
+no claim of partial formalization beyond the trivial-cycle
+evaluation $\psi_2 = 32/81$ that already lives in the
+`PhaseVIII/StructuralExcess.lean` module of §8.5. **None of the
+five hypotheses is proven, none of the resulting closure is
+machine-verified, and the present paper does not claim that any
+such closure is achievable.**
 
 A boundary scan over classical mechanisms (Schmidt subspace
 theorems for transcendental $\alpha$, Tao 2019/2022 entropy

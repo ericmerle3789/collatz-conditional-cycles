@@ -15,6 +15,10 @@ structure BakerSeparation where
     (2^s - 3^k) * k^6 ≥ 3^k
 ```
 
+The precondition $k \geq 2$ is not restrictive for the application:
+the Lean theorem `cycle_k_ge_two` (`Phase50CycleEquation.lean`,
+line 153) proves that any `IsOddCycle n k` satisfies $k \geq 2$.
+
 **Source.** Baker, A. (1966), *Linear forms in the logarithms of
 algebraic numbers I*, *Mathematika* 13, pp. 204-216. Refined by Rhin
 (1987) and Matveev (2000). Fields Medal 1970.
@@ -79,7 +83,7 @@ $n < 2^{71}$ used in the formalization is slightly conservative.
 
 **Reproducibility.** Barina's code is open-source; the computational
 verification relies on modular sieving and is reproducible (though it
-requires ~months of CPU time).
+requires approximately months of CPU time).
 
 ## ProductBoundThreshold (project-derived, documented)
 

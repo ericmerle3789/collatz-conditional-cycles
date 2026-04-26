@@ -18,9 +18,9 @@
 14. I. Krasikov and J. C. Lagarias, *Bounds for the 3x+1 problem using difference inequalities*, Acta Arithmetica 109 (2003), 237-258. DOI: 10.4064/aa109-3-4.
 15. J. C. Lagarias, editor, *The Ultimate Challenge: The 3x+1 Problem*, AMS, 2010. ISBN 978-0-8218-4940-8.
 16. T. Tao, *Almost all orbits of the Collatz map attain almost bounded values*, Forum of Mathematics, Pi 10 (2022), e12, arXiv:1909.03562 (2019). DOI: 10.1017/fmp.2022.8.
-17. D. Barina, *Improved verification limit for the convergence of the Collatz conjecture*, J. Supercomp. 81 (2025), no. 7, 810. DOI: 10.1007/s11227-025-07337-0.
+17. D. Barina, *Improved verification limit for the convergence of the Collatz conjecture*, The Journal of Supercomputing 81 (2025), no. 7, 810. DOI: 10.1007/s11227-025-07337-0.
 18. C. Hercher, *There are no Collatz m-Cycles with m ≤ 91*, J. Integer Seq. 26 (2023), Article 23.3.5. <https://cs.uwaterloo.ca/journals/JIS/VOL26/Hercher/hercher5.html>.
-19. K. Knight, *Collatz high cycles do not exist*, Discrete Mathematics 349 (2026), no. 3, 114812. DOI: 10.1016/j.disc.2025.114812. *(Cited indirectly: full PDF access was not available at the time of writing; we rely on the published abstract and on cumulative-literature attribution. See §6.2.)*
+19. K. Knight, *Collatz high cycles do not exist*, Discrete Mathematics 349 (2026), no. 3, 114812. DOI: 10.1016/j.disc.2025.114812. *(Bibliographic record Crossref-verified; full text is behind an Elsevier paywall. The present paper cites Knight at the level of the published title and bibliographic record, and does not invoke any specific definition or numerical bound from the article. See §6.2.)*
 
 ## Preprints (cited with disclosure) {.unnumbered}
 

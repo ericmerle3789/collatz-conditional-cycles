@@ -121,13 +121,14 @@ conditional theorem.
   discharge our third hypothesis, although it is complementary (§6.4).
 
 - **Knight (2026, *Discrete Math.* 349(3), 114812)** proves that
-  Collatz "high cycles" do not exist. This
-  is a restricted-class elimination in the tradition of Steiner's
-  (1977) circuits result; it does not extend, without substantial
-  further work, to general parity patterns (§6.2). Access to the
-  full text was blocked at the time of writing; we therefore rely
-  on the abstract-level formulation validated by our upstream survey
-  and flag the claim as such.
+  Collatz "high cycles" do not exist. This is a restricted-class
+  elimination in the tradition of Steiner's (1977) circuits
+  result; it does not extend, without substantial further work, to
+  general parity patterns (§6.2). The bibliographic record is
+  Crossref-verified; the full article is behind an Elsevier
+  paywall, so the present paper invokes Knight only at the level
+  of the published title and does not depend on any specific
+  technical definition or numerical bound from the article.
 
 - **Dhiman-Pandey (2026, arXiv:2601.12772)** prove, by a 2-adic
   "ghost-cycle" construction, that cycle equations cannot be characterized

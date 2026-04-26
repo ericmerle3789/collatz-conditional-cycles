@@ -46,10 +46,11 @@ $K = k > 1.375 \cdot 10^{11}$ directly.
 - **Steiner** (1977): circuits (cycles with one positive-to-maximum
   segment + one maximum-to-minimum descent) → only trivial cycle.
 - **Knight** (2026, *Discrete Mathematics* 349(3), 114812):
-  Collatz "high cycles" → do not exist *(cited indirectly: see
-  §1.4 and reference [19] for the access-disclosure note; the
-  precise definition of "high cycle" used by Knight has not been
-  verified by the present author against the published article)*.
+  Collatz "high cycles" → do not exist *(bibliographic record
+  Crossref-verified; full article behind Elsevier paywall;
+  Knight's specific definition of "high cycle" is not invoked
+  by the present paper, and the citation is at the level of the
+  published title only — see reference [19] note)*.
 
 Neither result extends to general $m$-cycles with $m \geq 2$ in
 the published form. Iterating restricted-class eliminations to

@@ -114,21 +114,54 @@ future work: the conditional theorem, the three hypothesis
 structures, and the axiom profile are all parametric, so additive
 contributions need not re-formalize the existing argument.
 
-## Data and code availability {.unnumbered}
+## Declarations {.unnumbered}
+
+### Funding {.unnumbered}
+
+The author received no funding for this research.
+
+### Competing interests {.unnumbered}
+
+The author declares no competing interests.
+
+### Ethics approval and consent to participate {.unnumbered}
+
+Not applicable (the research involves neither human nor animal
+subjects).
+
+### Data and code availability {.unnumbered}
 
 All paper sources, the Lean 4 formalization, the verification
 probes, and the reproduction script are publicly available at
 <https://github.com/ericmerle3789/collatz-conditional-cycles>
-(branch `main`; the release commit hash will be recorded in the
-Zenodo metadata upon deposit). Reproduction requires the Lean
-toolchain `leanprover/lean4:v4.27.0` against Mathlib commit
-`a3a10db0e9d66acbebf76c5e6a135066525ac900` (pinned in the
+(branch `main`) and permanently archived on Zenodo at
+<https://doi.org/10.5281/zenodo.19790406>. Reproduction requires
+the Lean toolchain `leanprover/lean4:v4.27.0` against Mathlib
+commit `a3a10db0e9d66acbebf76c5e6a135066525ac900` (pinned in the
 project's `lake-manifest.json`). With the Mathlib cache fetched,
 full reproduction completes in approximately 5 minutes on a Mac
 M1 Pro with 16 GB RAM, exiting with kernel-3 axiom profile and
 zero `sorry`. The exit-code semantics of `reproduce.sh`
 (0 = success, 1 = toolchain mismatch, 2 = build failure,
 3 = axiom drift, 4 = `sorryAx` detected) are documented in §8.7.
+
+### Author contributions {.unnumbered}
+
+Sole author. Eric Merle: conceptualization, mathematical
+development, Lean 4 formalization, manuscript preparation, and
+verification.
+
+### Use of large language models {.unnumbered}
+
+The author used Claude Opus 4.7 (Anthropic) during manuscript
+preparation for drafting, revision, and literature retrieval. The
+mathematical content and the scientific responsibility for the
+manuscript rest entirely with the author. The formal verification
+is performed by Lean 4 (the proof assistant) — not by any
+language model — under the standard kernel-3 axiom profile
+(`propext`, `Classical.choice`, `Quot.sound`), as documented in
+§8.6 and Appendix B; it is therefore mechanically reproducible
+and independent of any language-model assistance described above.
 
 ## Acknowledgements {.unnumbered}
 
@@ -140,14 +173,4 @@ for the 2025 computational verification underpinning hypothesis
 (ii). The state-of-the-art mapping in §6 is indebted to the
 cumulative work of the Collatz literature 1977-2026 surveyed
 therein.
-
-The author used Claude Opus 4.7 (Anthropic) during manuscript
-preparation for drafting, revision, and literature retrieval, and
-Lean 4 (the proof assistant) for the machine-verification of the
-central theorem chain. The mathematical content and the
-scientific responsibility for the manuscript rest with the
-author; the formal verification is mechanically checked under the
-standard kernel-3 axiom profile (`propext`, `Classical.choice`,
-`Quot.sound`), as documented in §8.6 and Appendix B, and is
-therefore independent of the assistance described above.
 

@@ -32,16 +32,22 @@ hypotheses are bundled and which sub-branch they discharge.
 
 `ProjetCollatz.no_nontrivial_cycle_derived`
 :   `Phase56Bloc18Complete.lean`, line 355. Variant taking
-    `ExternalCycleHypothesesDerived` (a structure that bundles the
-    three hypotheses into a single record). Equivalent to the
+    `ExternalCycleHypothesesDerived` (a structure that bundles
+    the three core hypotheses inherited from
+    `ExternalCycleHypotheses` — `baker_separation`,
+    `hercher_no_small_cycle`, `barina_convergence` — together
+    with one additional field `cycle_k_upper_bound` ($k \leq 982$
+    for any cycle), four fields total). Equivalent to the
     canonical form via record projection.
 
 `ProjetCollatz.no_nontrivial_cycle_full`
 :   `Phase52SteinerEquation.lean`, line 202. Foundation form
-    taking `ExternalCycleHypothesesFull` (which augments the three
-    fields with an explicit cycle-element bound below $2^{71}$).
-    Used as the constructive seed of the alias chain; the
-    cycle-element bound of `ExternalCycleHypothesesFull` is
+    taking `ExternalCycleHypothesesFull` (which extends
+    `ExternalCycleHypotheses` — three fields: `baker_separation`,
+    `hercher_no_small_cycle`, `barina_convergence` — with one
+    additional field `cycle_element_bound` ($n < 2^{71}$ for any
+    cycle element), four fields total). Used as the constructive
+    seed of the alias chain; the cycle-element bound is
     discharged by Barina's verification.
 
 ## Sub-branch theorems
@@ -61,11 +67,13 @@ hypotheses are bundled and which sub-branch they discharge.
 ## Conditional bridge lemma
 
 `ProjetCollatz.sdw_from_cf`
-:   `Phase59ContinuedFractions.lean`, line 197. The conditional
-    derivation `BakerSeparation + BarinaVerification +
-    DerivedLargeKBound → ProductBoundThreshold`. Witnesses the
-    interchangeability of the two strong-hypothesis structures and
-    is the key step in proving `no_nontrivial_cycle_phase59`.
+:   `Phase59ContinuedFractions.lean`, line 197. Theorem deriving
+    the cycle-length bound $k \leq 982$ from `BakerSeparation +
+    BarinaVerification + DerivedLargeKBound`. The accompanying
+    definition `sdwFromCF` (`Phase59ContinuedFractions.lean`, line
+    209) wraps this theorem into a `ProductBoundThreshold` instance,
+    exhibiting the interchangeability of the two strong-hypothesis
+    structures used by `no_nontrivial_cycle_phase59`.
 
 ## Logical relationships
 
