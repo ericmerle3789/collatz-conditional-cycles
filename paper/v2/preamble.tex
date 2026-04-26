@@ -1,0 +1,61 @@
+% paper/v2/preamble.tex
+% LaTeX preamble loaded by Pandoc via --include-in-header.
+% Target: academic article typography (amsart class) with full theorem-
+% environment support and unicode glyph fallback for STIX Two Text.
+
+% --- Mathematical typography ---------------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+% --- Diagrams (TikZ for §8 dependency graph) -----------------------------
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes.geometric}
+
+% --- Tables (booktabs for proper rules) ----------------------------------
+\usepackage{booktabs}
+\usepackage{array}
+
+% --- Running heads ------------------------------------------------------
+% Academic-paper convention: bare folio at page bottom, no top header.
+% This avoids the amsart-default behaviour of stuffing title + full
+% author block into the running header and the resulting overprinting.
+\pagestyle{plain}
+
+% --- Theorem-like environments (numbered within sections) ----------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{reformulation}[theorem]{Reformulation}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+
+% --- Unicode glyph fallback for STIX Two Text gaps -----------------------
+% Some Italic / Bold-Italic shapes of STIX Two Text lack arrows and a few
+% relations; route them through math mode (which uses STIX Two Math).
+\usepackage{newunicodechar}
+
+% Arrows
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{←}{\ensuremath{\leftarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{⇐}{\ensuremath{\Leftarrow}}
+\newunicodechar{⇔}{\ensuremath{\Leftrightarrow}}
+
+% Order / equality relations
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{≡}{\ensuremath{\equiv}}
+\newunicodechar{∼}{\ensuremath{\sim}}
