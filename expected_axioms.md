@@ -1,6 +1,6 @@
 # expected_axioms.md
 
-**Baseline for `probes/check_central_axioms.lean`** — snapshot of axiom dependencies for all central and auxiliary theorems of `collatz-conditional-cycles`. The exact repository commit captured by this snapshot is the one cited in `paper/v2/lean-source-README.md` and in `paper/v2/§8`.
+**Baseline for `probes/check_central_axioms.lean`** — snapshot of axiom dependencies for all central and auxiliary theorems of `collatz-conditional-cycles`. The exact repository commit captured by this snapshot is recorded in the Zenodo metadata associated with the release; reproduction details are in §8 of the paper and in `reproduce.sh`.
 
 Any commit that alters these expectations MUST update this file AND pass `reproduce.sh` EXIT 0.
 

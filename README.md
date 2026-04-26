@@ -1,6 +1,9 @@
 # Collatz cycles: conditional non-existence in Lean 4
 
-Companion repository for the paper *On the non-existence of non-trivial Collatz cycles: a conditional formal proof with documented structural obstructions*, by Eric Merle.
+Companion repository for the paper *On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions*, by Eric Merle.
+
+**Repository**: <https://github.com/ericmerle3789/collatz-conditional-cycles> (branch `main`).
+**Paper PDF (28 pages)**: [`paper/v2/collatz-conditional-proof.pdf`](paper/v2/collatz-conditional-proof.pdf), also available as a [GitHub Release v1.0 download](https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v1.0).
 
 ## Status
 
@@ -16,7 +19,7 @@ Contact: `eric.merle@ac-versailles.fr`.
 
 | Path | Description |
 |---|---|
-| `paper/v2/` | Paper sources (Markdown), bibliography (`references.bib`), build configuration (`Makefile`); the compiled PDF is a build target, not a committed artifact. |
+| `paper/v2/` | Paper sources (Markdown), bibliography (`references.bib`), build configuration (`Makefile`), and the compiled `collatz-conditional-proof.pdf` (28 pages) plus its Pandoc-generated `.tex` source. |
 | `ProjetCollatz/` | Lean 4 formalization (40 files, Mathlib v4.27.0). |
 | `probes/` | Axiom-profile probes used by the verification script. |
 | `expected_axioms.md` | Reference axiom profile for the central theorem chain. |
@@ -91,11 +94,11 @@ Creative Commons Attribution 4.0 International (CC-BY 4.0), for both the paper s
 @misc{merle2026collatzcycles,
   author    = {Merle, Eric},
   title     = {On the non-existence of non-trivial {Collatz} cycles:
-               a conditional formal proof with documented structural obstructions},
+               a conditional formal proof in {Lean 4} with documented structural obstructions},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {[to be added upon publication]},
-  url       = {[Zenodo URL to be added upon publication]}
+  doi       = {[to be added upon Zenodo deposit]},
+  url       = {https://github.com/ericmerle3789/collatz-conditional-cycles}
 }
 ```
 
