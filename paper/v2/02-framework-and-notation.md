@@ -174,7 +174,7 @@ verbatim in §2.3.
 
 ```{=latex}
 {\small
-\begin{tabular}{@{}p{0.21\linewidth}p{0.20\linewidth}p{0.18\linewidth}p{0.32\linewidth}@{}}
+\begin{tabular}{@{}p{0.27\linewidth}p{0.20\linewidth}p{0.18\linewidth}p{0.26\linewidth}@{}}
 \toprule
 \textbf{Symbol} & \textbf{Origin} & \textbf{Status} & \textbf{Mathematical content} \\
 \midrule
