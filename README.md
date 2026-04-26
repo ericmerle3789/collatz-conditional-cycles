@@ -4,6 +4,8 @@ Companion repository for the paper *On the non-existence of non-trivial Collatz 
 
 **Repository**: <https://github.com/ericmerle3789/collatz-conditional-cycles> (branch `main`).
 **Paper PDF (28 pages)**: [`paper/v2/collatz-conditional-proof.pdf`](paper/v2/collatz-conditional-proof.pdf), also available as a [GitHub Release v1.0 download](https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v1.0).
+**Zenodo DOI**: [10.5281/zenodo.19790406](https://doi.org/10.5281/zenodo.19790406)
+**Author ORCID**: [0009-0008-7940-402X](https://orcid.org/0009-0008-7940-402X)
 
 ## Status
 
@@ -97,8 +99,9 @@ Creative Commons Attribution 4.0 International (CC-BY 4.0), for both the paper s
                a conditional formal proof in {Lean 4} with documented structural obstructions},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {[to be added upon Zenodo deposit]},
-  url       = {https://github.com/ericmerle3789/collatz-conditional-cycles}
+  version   = {v1.0},
+  doi       = {10.5281/zenodo.19790406},
+  url       = {https://doi.org/10.5281/zenodo.19790406}
 }
 ```
 
