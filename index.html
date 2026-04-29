@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cycles Conditionnels de Collatz — Cartographie</title>
+<meta name="description" content="Cartographie scientifique des pistes pour la non-existence de cycles non-triviaux dans la conjecture de Collatz, formalisée en Lean 4.">
+<meta name="author" content="Eric Merle">
+<meta property="og:title" content="Cycles Conditionnels de Collatz">
+<meta property="og:description" content="Cartographie scientifique de la non-trivialité Collatz, en Lean 4.">
+<meta property="og:type" content="website">
+
+<!-- Polices Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- KaTeX pour formules -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+
+<!-- Mermaid pour diagrammes -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<!-- Prism.js pour Lean -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+<!-- CSS principal -->
+<link rel="stylesheet" href="assets/css/main.css">
+
+<!-- Analytics GoatCounter (privacy-friendly, GDPR compliant) -->
+<!-- Remplacer YOUR_USERNAME par votre identifiant GoatCounter après inscription gratuite -->
+<script data-goatcounter="https://YOUR_USERNAME.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<!-- ========================================================================
+     TOPBAR / NAVIGATION
+     ======================================================================== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">Λ</span>
+      <span>Cycles Conditionnels de Collatz</span>
+    </a>
+    <nav class="nav">
+      <a href="#hero" data-i18n="navAccueil">Accueil</a>
+      <a href="#pistes" data-i18n="navPistes">Pistes</a>
+      <a href="#hypotheses" data-i18n="navHypotheses">Hypothèses</a>
+      <a href="#tests" data-i18n="navTests">Tests</a>
+      <a href="#meaculpa" data-i18n="navMeaCulpa">Mea culpa</a>
+      <a href="#community" data-i18n="navCommunaute">Communauté</a>
+      <a href="#team" data-i18n="navEquipe">Équipe</a>
+    </nav>
+    <div class="toolbar-actions">
+      <button class="btn-icon" id="langBtn" aria-label="Switch language">EN</button>
+      <button class="btn-icon" id="printBtn" data-i18n="print">Imprimer</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ========================================================================
+     HERO
+     ======================================================================== -->
+<section class="hero" id="hero">
+  <div class="hero-eyebrow" data-i18n="heroEyebrow">Cartographie scientifique · Pré-publication</div>
+  <h1 data-i18n="heroTitle">Une enquête sur les <em>cycles non triviaux</em> conjecturés de la suite de Collatz, formalisée en Lean 4.</h1>
+  <p class="hero-lede" data-i18n="heroLede">
+    Trente-cinq pistes mathématiques, trois axiomes piliers, une famille d'hypothèses ouvertes — organisées autour d'une obstruction diophantienne unique : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.
+  </p>
+
+  <div class="key-stats">
+    <div class="key-stat">
+      <div class="value">2,4·10<sup>−9</sup></div>
+      <div class="label" data-i18n="keyStat1Label">Borne inf. |Λ|</div>
+      <div class="desc" data-i18n="keyStat1Desc">Salikhov 2007 inconditionnel</div>
+    </div>
+    <div class="key-stat">
+      <div class="value">k ≥ 2·10<sup>20</sup></div>
+      <div class="label" data-i18n="keyStat2Label">Requis pour cycle</div>
+      <div class="desc" data-i18n="keyStat2Desc">Hercher 2023 conditional Baker</div>
+    </div>
+    <div class="key-stat">
+      <div class="value">δ<sub>8</sub> = 8</div>
+      <div class="label" data-i18n="keyStat3Label">Lemme du verrou</div>
+      <div class="desc" data-i18n="keyStat3Desc">Product-Bound Impossibility</div>
+    </div>
+    <div class="key-stat">
+      <div class="value">35+</div>
+      <div class="label" data-i18n="keyStat4Label">Pistes étudiées</div>
+      <div class="desc" data-i18n="keyStat4Desc">Région I + II + III</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     LE VERROU Λ
+     ======================================================================== -->
+<section id="verrou">
+  <div class="section-eyebrow">Λ_{S,k}</div>
+  <h2 data-i18n="lockTitle">Le verrou Λ_{S,k}</h2>
+  <p data-i18n="lockText">Quatorze des quinze paradigmes mathématiques investigués retombent sur la même obstruction diophantienne :</p>
+
+  <div class="lockbox">
+    <span class="formula">$$\Lambda_{S,k} = S \log 2 - k \log 3$$</span>
+    <p data-i18n="lockFooter" class="footer">
+      Théorème implicite (Cobham 1969 + δ8 lemma) : les bases 2 et 3 sont multiplicativement indépendantes ; toute formalisation de "cycle Collatz" qui évite la transcendance log_2 3 tombe dans une logique trop pauvre, ou bien retombe sur la pleine arithmétique indécidable.
+    </p>
+  </div>
+
+  <div class="mermaid-container">
+    <pre class="mermaid">
+graph LR
+    P1["Tao 2019 ergodique"] -->|"Haar 0 ≠ ∅"| LAMBDA
+    P2["Kolmogorov-Chaitin"] -->|"K=O(log k)"| LAMBDA
+    P3["Fourier Sturmien"] -->|"slope log_2 3"| LAMBDA
+    P4["Padé / Wu / Salikhov"] -->|"plafond μ ≥ 5.117"| LAMBDA
+    P5["Marcovecchio 2025"] -->|"μ_2 algébriques"| LAMBDA
+    P6["Tropical (oracle)"] -->|"décroissance fine"| LAMBDA
+    P7["Schémas + Faltings"] -->|"hauteurs ⇔ ABC"| LAMBDA
+    P8["Néron-Tate"] -->|"ABC effective"| LAMBDA
+    P9["Tresses / Nœuds"] -->|"insensible 2/3-adique"| LAMBDA
+    P10["Logique modèle"] -->|"Cobham 2 bases"| LAMBDA
+    P11["Skolem-Mahler-Lech"] -->|"non-LRS"| LAMBDA
+    P12["Anashin 2-adique"] -->|"ergodicité ℤ_2"| LAMBDA
+    P13["Krasikov-Lagarias"] -->|"densité aveugle"| LAMBDA
+    P14["Holomorphic LSW"] -->|"log|ρ| = -Λ"| LAMBDA
+    P15["Inv. statistiques"] -->|"autocorr. Christoffel"| LAMBDA
+
+    LAMBDA["Λ_{S,k}<br/>VERROU"]
+    BAKER["Baker LMN95<br/>borne effective"]
+
+    LAMBDA -->|"Baker requis"| BAKER
+
+    style LAMBDA fill:#c8a86a,color:#0e0f13,stroke:#fff,stroke-width:2px
+    style BAKER fill:#6a9b7a,color:#0e0f13
+    </pre>
+  </div>
+</section>
+
+<!-- ========================================================================
+     LES 28 PISTES
+     ======================================================================== -->
+<section id="pistes">
+  <div class="section-eyebrow">§ I</div>
+  <h2 data-i18n="pistesTitle">Vingt-huit voies d'attaque</h2>
+  <p data-i18n="pistesIntro">Catalogue exhaustif des approches mathématiques pour la non-existence des cycles non triviaux Collatz. Cliquez sur une ligne pour voir les détails.</p>
+
+  <div class="filter-bar">
+    <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Rechercher une piste, une référence, un auteur…">
+    <button class="filter-btn active" data-status="all" data-i18n="filterAll">Toutes</button>
+    <button class="filter-btn" data-status="cds" data-i18n="filterCds">Culs-de-sac</button>
+    <button class="filter-btn" data-status="partiel" data-i18n="filterPartiel">Partielles</button>
+    <button class="filter-btn" data-status="inconnu" data-i18n="filterInconnu">Inconnues</button>
+    <button class="filter-btn" data-status="prometteur" data-i18n="filterPrometteur">Prometteuses</button>
+    <button class="filter-btn" data-status="axiome" data-i18n="filterAxiome">Axiomes</button>
+  </div>
+
+  <div class="table-wrap">
+    <table id="pistesTable">
+      <thead>
+        <tr>
+          <th data-i18n="colId">ID</th>
+          <th data-i18n="colName">Nom</th>
+          <th data-i18n="colRegion">Région</th>
+          <th data-i18n="colStatus">Statut</th>
+          <th data-i18n="colTest4">4-test</th>
+          <th data-i18n="colLean">Lean</th>
+          <th data-i18n="colSource">Source</th>
+        </tr>
+      </thead>
+      <tbody><!-- généré par main.js --></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========================================================================
+     HYPOTHÈSES
+     ======================================================================== -->
+<section id="hypotheses">
+  <div class="section-eyebrow">§ III</div>
+  <h2 data-i18n="hypothesesTitle">Trois hypothèses sur la sortie</h2>
+  <p data-i18n="hypothesesIntro">Évolution des probabilités estimées au fil des cycles d'investigation (Cycle 0 → Cycle 2). La hausse de C reflète la convergence cumulative des paradigmes vers Λ_{S,k}.</p>
+
+  <div class="chart-container">
+    <canvas id="hypothesesChart"></canvas>
+  </div>
+
+  <div class="card-grid" style="margin-top: 2rem;">
+    <div class="card">
+      <div class="card-eyebrow">A</div>
+      <h3>Combinaison Baker+CF+Khinchin</h3>
+      <p>Probabilité finale : <strong>&lt;5%</strong> — bloquée par le δ8 lemma (paper §5 obstruction-I).</p>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow">A'</div>
+      <h3>Combinaison HORS-δ8 (holonomy)</h3>
+      <p>Probabilité finale : <strong>8-12%</strong> — voie Calegari-Dimitrov-Tang 2025, hors cadre Baker+CF.</p>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow">B</div>
+      <h3>Téléportation hors domaine</h3>
+      <p>Probabilité finale : <strong>5-10%</strong> — 9 sur 11 culs-de-sac dans la Région II.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--accent);">
+      <div class="card-eyebrow">C</div>
+      <h3>Riemann-class (sortie inaccessible 2026)</h3>
+      <p>Probabilité finale : <strong>75-80%</strong> — dominante après convergence δ8 + Cobham + 14 paradigmes.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 3rem;">Le δ8 lemma — impossibilité structurelle</h3>
+  <div class="highlight warning">
+    <p>
+      <strong>Lemma δ8 (Product-Bound Impossibility)</strong> — Soit $\xi \in \mathbb{R} \setminus \mathbb{Q}$ avec mesure d'irrationalité effective $\mu(\xi) \leq c$. Supposons un cycle Collatz $(n,k)$ avec borne Product-Bound $m \leq (k^{c+1}+k)/3$. Alors aucune borne uniforme algébrique $F(k) < 2^{71}$ ne peut être obtenue via cette dérivation pour tout $k \in \mathbb{N}$.
+    </p>
+  </div>
+
+  <h3>Lemme R72 (Lean 4)</h3>
+  <p>Identité Steiner factorisée — pierre angulaire de l'arsenal.</p>
+<pre><span class="lean-badge">Lean · compiled</span><code class="language-lean">/-- R72 NEW — identité Steiner factorisée :
+    n · (2^S - 3^k) = corrSum n k.
+    Universel : pour tout cycle `IsOddCycle n k`. -/
+theorem cycle_n_mul_D_s_eq_corrSum
+    (n k : ℕ) (hcyc : IsOddCycle n k) :
+    n * ((2 : ℕ) ^ (aSumSeq n k) - 3 ^ k) = corrSum n k := by
+  have h_steiner_nat : n * 2 ^ (aSumSeq n k) = 3 ^ k * n + corrSum n k :=
+    steiner_cycle_eq n k hcyc
+  have h_pow_gt : 2 ^ (aSumSeq n k) > 3 ^ k :=
+    cycle_pow2_gt_pow3_universal n k hcyc
+  have h_n_D_distrib : n * ((2 : ℕ) ^ (aSumSeq n k) - 3 ^ k) =
+                       n * 2 ^ (aSumSeq n k) - n * 3 ^ k := by
+    rw [Nat.mul_sub_left_distrib]
+  rw [h_n_D_distrib, h_steiner_nat]
+  have h_comm : 3 ^ k * n = n * 3 ^ k := by ring
+  omega</code></pre>
+
+  <h3>Lemme R92 (Lean 4)</h3>
+  <p>Premier certificat fini case-by-case dérivé de l'arsenal lacunaire.</p>
+<pre><span class="lean-badge">Lean · compiled</span><code class="language-lean">/-- R92 NEW — Showcase : pour cycle k=2 avec aSeq[0] ≡ 1 mod 3
+    et aSeq[1] ≡ 1 mod 3, on a 7 ∤ D_s. -/
+theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
+    (n : ℕ) (hcyc : IsOddCycle n 2)
+    (h_s_0 : aSeq n 0 % 3 = 1)
+    (h_s_1 : aSeq n 1 % 3 = 1) :
+    ¬ (7 : ℕ) ∣ ((2 : ℕ) ^ (aSumSeq n 2) - 3 ^ 2) := by
+  apply cycle_lacunary_nonzero_implies_p_nmid_D_s n 2 7 hcyc
+  rw [orderOf_2_ZMod_7, orderOf_3_ZMod_7]
+  have h_aS_0 : aSumSeq n 0 = 0 := by unfold aSumSeq aSum; simp
+  have h_aS_1 : aSumSeq n 1 = aSeq n 0 := aSumSeq_one_eq n
+  rw [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_zero]
+  simp only [zero_add]
+  rw [h_aS_0, h_aS_1]
+  decide</code></pre>
+</section>
+
+<!-- ========================================================================
+     TESTS REQ-MATH
+     ======================================================================== -->
+<section id="tests">
+  <div class="section-eyebrow">§ IV</div>
+  <h2 data-i18n="testsTitle">Tests REQ-MATH-NNN exécutés</h2>
+  <p data-i18n="testsIntro">Chaque assertion mathématique est validée par script dans le sandbox <code>tests_math/</code>, conformément au PROTOCOLE ARES (Règle 1 : zéro calcul mental).</p>
+
+  <div class="card-grid" id="testsGrid">
+    <!-- généré par main.js -->
+  </div>
+</section>
+
+<!-- ========================================================================
+     MEA CULPA
+     ======================================================================== -->
+<section id="meaculpa">
+  <div class="section-eyebrow">§ V</div>
+  <h2 data-i18n="meaCulpaTitle">Vingt-trois mea culpa publics</h2>
+  <p data-i18n="meaCulpaIntro">La discipline antifragile demande que chaque erreur détectée soit documentée publiquement avec sévérité 0-10 et règle extraite. Sans cela, le pattern multi-cerveau humain-IA répète indéfiniment les mêmes hallucinations.</p>
+
+  <div class="mea-culpa-grid" id="meaCulpaGrid">
+    <!-- généré par main.js -->
+  </div>
+</section>
+
+<!-- ========================================================================
+     COMMUNAUTÉ
+     ======================================================================== -->
+<section id="community">
+  <div class="section-eyebrow">§ VI</div>
+  <h2 data-i18n="communityTitle">Communauté Collatz</h2>
+  <p data-i18n="communityIntro">Ressources et collaborations existantes autour de la conjecture de Collatz (vérifiées 2026-04-29).</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-eyebrow">ccchallenge.org</div>
+      <h3>The Collatz Conjecture Challenge</h3>
+      <p>Formalisation de la littérature Collatz, paper par paper. 358 papers à formaliser, forum GitHub Discussions + Discord communautaire.</p>
+      <a href="https://ccchallenge.org/" target="_blank" rel="noopener">→ ccchallenge.org</a>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow">Terry Tao</div>
+      <h3>What's new — blog</h3>
+      <p>Blog WordPress de Terence Tao. Post 2019 fondateur : « Almost all Collatz orbits attain almost bounded values ».</p>
+      <a href="https://terrytao.wordpress.com/2019/09/10/almost-all-collatz-orbits-attain-almost-bounded-values/" target="_blank" rel="noopener">→ terrytao.wordpress.com</a>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow">Lagarias</div>
+      <h3>The Ultimate Challenge — AMS 2010</h3>
+      <p>Bibliographie annotée 1963-2009 par Jeffrey C. Lagarias (Univ. Michigan), curateur informel de la littérature Collatz.</p>
+      <a href="https://www.ams.org/bookstore/pspdf/mbk-78-prev.pdf" target="_blank" rel="noopener">→ AMS Lagarias 3x+1 overview</a>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow">tcosmo</div>
+      <h3>coreli — Collatz Research Library</h3>
+      <p>Bibliothèque Python (Jupyter) pour expérimentation et test d'hypothèses sur le processus de Collatz.</p>
+      <a href="https://github.com/tcosmo/coreli" target="_blank" rel="noopener">→ github.com/tcosmo/coreli</a>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow">Quanta</div>
+      <h3>Mathematician Proves Huge Result</h3>
+      <p>Article de vulgarisation sur les avancées Tao 2019. Décembre 2019, Erica Klarreich.</p>
+      <a href="https://www.quantamagazine.org/mathematician-proves-huge-result-on-dangerous-problem-20191211/" target="_blank" rel="noopener">→ Quanta Magazine</a>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow">Wikipedia</div>
+      <h3>Collatz conjecture</h3>
+      <p>Article complet, bibliographie, historique. Disponible en français et anglais.</p>
+      <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target="_blank" rel="noopener">→ Wikipedia</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     ÉQUIPE
+     ======================================================================== -->
+<section id="team">
+  <div class="section-eyebrow">§ VII</div>
+  <h2 data-i18n="teamTitle">Équipe</h2>
+  <p data-i18n="teamIntro">Ce projet est conduit par un chercheur indépendant en collaboration avec des systèmes d'IA, sous protocole de vérification rigoureux (PROTOCOLE ARES v2).</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-eyebrow">Principal Investigator</div>
+      <h3>Eric Merle</h3>
+      <p>Chercheur indépendant. Direction scientifique du projet : exploration de la non-trivialité Collatz, formalisation Lean 4, conception du PROTOCOLE ARES v2 (méthodologie de vérification anti-hallucination pour la recherche mathématique assistée par IA).</p>
+      <ul>
+        <li>Décisions stratégiques et arbitrages</li>
+        <li>Architecte du PROTOCOLE ARES v2</li>
+        <li>Auteur des allégories structurelles guidant la cartographie</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow">AI Research Agents</div>
+      <h3>Claude Opus (Anthropic)</h3>
+      <p>Architecture multi-cerveau asynchrone. Quatre sous-agents (NEW, NEW2, OLD, Red Team) communiquant via mailbox horodaté. Discipline antifragile : chaque erreur détectée est documentée publiquement pour produire des règles opérationnelles applicables.</p>
+      <ul>
+        <li>NEW — direction de recherche</li>
+        <li>NEW2 — spécialiste Lean</li>
+        <li>OLD — intuition mathématique</li>
+        <li>Red Team — audit adversarial</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow">Strategic Oracle</div>
+      <h3>ChatGPT 5.5 (OpenAI)</h3>
+      <p>Validation indépendante. Consultations structurées sur les questions stratégiques : méta-prompts à rôles multiples, recherche de contre-exemples, auto-vérification falsifiable. Application de la Two-Key Rule — aucun résultat n'est validé par l'instance qui l'a généré.</p>
+      <ul>
+        <li>Validation croisée des paradigmes</li>
+        <li>Bibliographie tagée [VÉRIFIÉ]/[INCERTAIN]</li>
+        <li>Document de synthèse régénéré</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top: 2rem;">
+    <h3>Méthodologie</h3>
+    <p>Cette cartographie résulte d'un protocole de recherche humain-IA encadré par le PROTOCOLE ARES v2 (Audit, Rigueur, Évaluation, Sécurité). Toutes les affirmations mathématiques sont vérifiées par script (sandbox <code>tests_math/</code>), toutes les références sont vérifiées contre <code>references.bib</code> avant citation, et chaque erreur détectée est documentée publiquement.</p>
+    <p class="text-muted small" style="margin-top: 1rem;">Inspirations méthodologiques : Polymath Project (Tao, Gowers), Lean community (Mathlib), formalisation collaborative (ccchallenge.org).</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ========================================================================
+     MODAL DÉTAILS PISTE
+     ======================================================================== -->
+<div class="modal-overlay" id="pisteModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+    <h3 id="modalTitle"></h3>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- ========================================================================
+     FOOTER
+     ======================================================================== -->
+<footer>
+  <div class="footer-meta">
+    Cartographie · v0.4.2 · 2026-04-29
+  </div>
+  <p data-i18n="footerText">Site produit avec PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
+  <p data-i18n="footerLicense">Contenu CC-BY-SA 4.0 · Code Lean MIT · Document vivant</p>
+  <p style="margin-top: 1.5rem;">
+    Eric Merle · <a href="mailto:ericmerle3789@gmail.com">contact</a> · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a>
+  </p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
