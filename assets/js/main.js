@@ -9,9 +9,12 @@
   'use strict';
 
   // ========== ÉTAT GLOBAL ==========
+  // Stratégie EN-canonique : anglais par défaut pour tout navigateur
+  // sauf détection explicite d'une locale francophone (fr, fr-FR, fr-CA…).
+  // localStorage écrase toujours la détection (persistance du choix utilisateur).
   const STATE = {
     lang: localStorage.getItem('collatz-lang') ||
-          (navigator.language.startsWith('en') ? 'en' : 'fr'),
+          (navigator.language && navigator.language.toLowerCase().startsWith('fr') ? 'fr' : 'en'),
     data: null,
     statusFilter: 'all'
   };
@@ -20,6 +23,9 @@
     fr: {
       navAccueil: "Accueil",
       navPistes: "Pistes",
+      navLemmes: "Lemmes",
+      navPreuve: "Preuve",
+      navPapers: "Papers",
       navHypotheses: "Hypothèses",
       navTests: "Tests",
       navMeaCulpa: "Mea culpa",
@@ -88,6 +94,9 @@
     en: {
       navAccueil: "Home",
       navPistes: "Approaches",
+      navLemmes: "Lemmas",
+      navPreuve: "Proof",
+      navPapers: "Papers",
       navHypotheses: "Hypotheses",
       navTests: "Tests",
       navMeaCulpa: "Mea culpa",
@@ -198,13 +207,22 @@
   function applyLang() {
     const dict = t[STATE.lang];
     document.documentElement.lang = STATE.lang;
+    document.documentElement.dataset.lang = STATE.lang;
 
-    // Toutes les chaînes data-i18n
+    // Pattern A — clés data-i18n résolues via dictionnaire (utilisé sur index.html)
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dict[key]) {
         el.innerHTML = dict[key];
       }
+    });
+
+    // Pattern B — contenu dual inline lang="fr"/lang="en" (utilisé sur sous-pages)
+    // Masque tous les éléments dont la langue ne correspond pas à STATE.lang
+    document.querySelectorAll('[lang="fr"], [lang="en"]').forEach(el => {
+      // Ne pas affecter <html> lui-même ni les enfants des autres scripts (KaTeX etc.)
+      if (el === document.documentElement) return;
+      el.hidden = (el.getAttribute('lang') !== STATE.lang);
     });
 
     // Placeholders
@@ -213,16 +231,16 @@
       if (dict[key]) el.setAttribute('placeholder', dict[key]);
     });
 
-    // Bouton lang
+    // Bouton lang : affiche la langue ALTERNATIVE (cliquer pour basculer)
     const langBtn = document.getElementById('langBtn');
     if (langBtn) langBtn.textContent = dict.langBtn;
 
-    // Re-render dynamique (tableau, etc.)
+    // Re-render dynamique (tableau, tests, mea culpa) — gracieux si pas sur index.html
     if (STATE.data) {
-      renderTable();
-      renderTests();
-      renderMeaCulpa();
-      renderHypothesesChart();
+      if (typeof renderTable === 'function' && document.querySelector('#pistesTable')) renderTable();
+      if (typeof renderTests === 'function' && document.querySelector('#testsGrid')) renderTests();
+      if (typeof renderMeaCulpa === 'function' && document.querySelector('#meaCulpaGrid')) renderMeaCulpa();
+      if (typeof renderHypothesesChart === 'function' && document.querySelector('#hypothesesChart')) renderHypothesesChart();
     }
 
     // Re-render KaTeX si chargé
@@ -470,13 +488,27 @@
   }
 
   // ========== INIT ==========
+  // Calcule un chemin absolu vers /assets/ depuis l'URL du script lui-même.
+  // Permet à main.js de fonctionner depuis /, /preuve/, /papers/, /lemmes/, etc.
+  function assetsBaseURL() {
+    const scripts = document.querySelectorAll('script[src]');
+    for (const s of scripts) {
+      const m = s.src.match(/^(.*\/assets\/)js\/main\.js(\?.*)?$/);
+      if (m) return m[1];
+    }
+    // Fallback : chemin relatif (fonctionne sur index.html racine)
+    return 'assets/';
+  }
+
   async function init() {
-    // Charger données
+    // Charger données — uniquement si présent (sur index.html, pas sur sous-pages)
+    // mais on charge quand même pour permettre i18n cohérent partout
     try {
-      const resp = await fetch('assets/data/pistes.json');
-      STATE.data = await resp.json();
+      const base = assetsBaseURL();
+      const resp = await fetch(base + 'data/pistes.json');
+      if (resp.ok) STATE.data = await resp.json();
     } catch (e) {
-      console.error('Erreur chargement données :', e);
+      console.warn('Données pistes.json non chargées (page secondaire ?) :', e.message);
     }
 
     // Mermaid

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catalogue Lean — Cycles Conditionnels de Collatz</title>
-<meta name="description" content="Catalogue des théorèmes Lean 4 prouvés pour la non-existence de cycles non-triviaux Collatz.">
+<title>Lean catalog — Collatz Conditional Cycles</title>
+<meta name="description" content="Catalog of Lean 4 theorems proven for the non-existence of non-trivial Collatz cycles.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,19 +27,20 @@
   <div class="topbar-inner">
     <a href="../" class="brand">
       <span class="brand-mark">Λ</span>
-      <span>Cycles Conditionnels de Collatz</span>
+      <span>Collatz Conditional Cycles</span>
     </a>
     <nav class="nav">
-      <a href="../">Accueil</a>
-      <a href="../#pistes">Pistes</a>
-      <a href="../lemmes/" class="active">Lemmes</a>
-      <a href="../preuve/">Preuve</a>
-      <a href="../papers/">Papers</a>
-      <a href="../#hypotheses">Hypothèses</a>
-      <a href="../#team">Équipe</a>
+      <a href="../" data-i18n="navAccueil">Home</a>
+      <a href="../#pistes" data-i18n="navPistes">Approaches</a>
+      <a href="../lemmes/" class="active" data-i18n="navLemmes">Lemmas</a>
+      <a href="../preuve/" data-i18n="navPreuve">Proof</a>
+      <a href="../papers/" data-i18n="navPapers">Papers</a>
+      <a href="../#hypotheses" data-i18n="navHypotheses">Hypotheses</a>
+      <a href="../#team" data-i18n="navEquipe">Team</a>
     </nav>
     <div class="toolbar-actions">
-      <button class="btn-icon" onclick="window.print()">Imprimer</button>
+      <button class="btn-icon" id="langBtn" aria-label="Switch language">FR</button>
+      <button class="btn-icon" id="printBtn" data-i18n="print">Print</button>
     </div>
   </div>
 </header>
@@ -48,21 +49,29 @@
 
 <section class="hero" style="padding: 4rem 2rem 3rem;">
   <div class="hero-eyebrow">Catalogue Lean 4 · Mathlib v4.27.0</div>
-  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);">Théorèmes formellement vérifiés</h1>
-  <p class="hero-lede" style="font-size: 1.05rem;">
+  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="fr">Théorèmes formellement vérifiés</h1>
+  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="en">Formally verified theorems</h1>
+  <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">
     Sept théorèmes centraux constituent la chaîne de preuve de <code>no_nontrivial_cycle_phase59</code>, plus l'arsenal R34-R96 (PostJAR) qui étend le transport modulaire et la décomposition par blocs. Tous sont kernel-checked et passent <code>reproduce.sh</code> EXIT 0.
+  </p>
+  <p class="hero-lede" style="font-size: 1.05rem;" lang="en">
+    Seven central theorems form the proof chain of <code>no_nontrivial_cycle_phase59</code>, plus the R34-R96 arsenal (PostJAR) that extends modular transport and block decomposition. All are kernel-checked and pass <code>reproduce.sh</code> EXIT 0.
   </p>
 </section>
 
 <section>
   <div class="section-eyebrow">§ I</div>
-  <h2>Profil d'axiomes</h2>
-  <p>Les théorèmes centraux dépendent uniquement des trois axiomes fondamentaux du noyau Lean. Aucun <code>sorryAx</code> dans la chaîne critique.</p>
+  <h2 lang="fr">Profil d'axiomes</h2>
+  <h2 lang="en">Axiom profile</h2>
+  <p lang="fr">Les théorèmes centraux dépendent uniquement des trois axiomes fondamentaux du noyau Lean. Aucun <code>sorryAx</code> dans la chaîne critique.</p>
+  <p lang="en">The central theorems rely only on the three fundamental axioms of the Lean kernel. No <code>sorryAx</code> in the critical chain.</p>
 
   <div class="card-grid">
     <div class="card">
-      <div class="card-eyebrow">Axiomes (S) — Kernel Lean standard</div>
-      <h3>3 axiomes universels</h3>
+      <div class="card-eyebrow" lang="fr">Axiomes (S) — Kernel Lean standard</div>
+      <div class="card-eyebrow" lang="en">Axioms (S) — Standard Lean kernel</div>
+      <h3 lang="fr">3 axiomes universels</h3>
+      <h3 lang="en">3 universal axioms</h3>
       <ul>
         <li><code>propext</code></li>
         <li><code>Classical.choice</code></li>
@@ -70,17 +79,21 @@
       </ul>
     </div>
     <div class="card">
-      <div class="card-eyebrow">Axiomes (N) — native_decide</div>
-      <h3>2 axiomes computationnels</h3>
+      <div class="card-eyebrow">Axioms (N) — native_decide</div>
+      <h3 lang="fr">2 axiomes computationnels</h3>
+      <h3 lang="en">2 computational axioms</h3>
       <ul>
         <li><code>Lean.ofReduceBool</code></li>
         <li><code>Lean.trustCompiler</code></li>
       </ul>
-      <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);">Utilisés par les <code>cf_gap_*</code> arithmétiques.</p>
+      <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);" lang="fr">Utilisés par les <code>cf_gap_*</code> arithmétiques.</p>
+      <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);" lang="en">Used by the arithmetic <code>cf_gap_*</code>.</p>
     </div>
     <div class="card">
-      <div class="card-eyebrow">Hypothèses externes</div>
-      <h3>3 axiomes documentés</h3>
+      <div class="card-eyebrow" lang="fr">Hypothèses externes</div>
+      <div class="card-eyebrow" lang="en">External hypotheses</div>
+      <h3 lang="fr">3 axiomes documentés</h3>
+      <h3 lang="en">3 documented axioms</h3>
       <ul>
         <li><code>BakerSeparation</code> (LMN95)</li>
         <li><code>BarinaVerification</code> (n &lt; 2^71)</li>
@@ -91,8 +104,10 @@
 </section>
 
 <section>
-  <div class="section-eyebrow">§ II — Théorèmes centraux</div>
-  <h2>Chaîne de preuve principale</h2>
+  <div class="section-eyebrow" lang="fr">§ II — Théorèmes centraux</div>
+  <div class="section-eyebrow" lang="en">§ II — Central theorems</div>
+  <h2 lang="fr">Chaîne de preuve principale</h2>
+  <h2 lang="en">Main proof chain</h2>
 
   <div id="centralList"></div>
 </section>
@@ -100,11 +115,13 @@
 <section>
   <div class="section-eyebrow">§ III — CF Windows</div>
   <h2>Continued fractions arithmetic gaps</h2>
-  <p>Les théorèmes <code>cf_gap_8</code> à <code>cf_gap_13</code> calculent les inégalités arithmétiques aux convergents de $\log_2 3$, validées par <code>native_decide</code>.</p>
+  <p lang="fr">Les théorèmes <code>cf_gap_8</code> à <code>cf_gap_13</code> calculent les inégalités arithmétiques aux convergents de $\log_2 3$, validées par <code>native_decide</code>.</p>
+  <p lang="en">Theorems <code>cf_gap_8</code> to <code>cf_gap_13</code> compute arithmetic inequalities at the convergents of $\log_2 3$, validated by <code>native_decide</code>.</p>
   <div class="table-wrap">
     <table>
       <thead>
-        <tr><th>Window</th><th>Convergent (p, q)</th><th>Théorème</th><th>Tactique</th></tr>
+        <tr lang="fr"><th>Window</th><th>Convergent (p, q)</th><th>Théorème</th><th>Tactique</th></tr>
+        <tr lang="en"><th>Window</th><th>Convergent (p, q)</th><th>Theorem</th><th>Tactic</th></tr>
       </thead>
       <tbody id="cfGapsList"></tbody>
     </table>
@@ -112,37 +129,55 @@
 </section>
 
 <section>
-  <div class="section-eyebrow">§ IV — Auxiliaires</div>
-  <h2>Lemmes de l'arsenal</h2>
-  <p>Théorèmes auxiliaires qui constituent les briques de la preuve principale : identité de Steiner, positivité de $D_s$, transport modulaire, périodisation lacunaire.</p>
+  <div class="section-eyebrow" lang="fr">§ IV — Auxiliaires</div>
+  <div class="section-eyebrow" lang="en">§ IV — Auxiliaries</div>
+  <h2 lang="fr">Lemmes de l'arsenal</h2>
+  <h2 lang="en">Arsenal lemmas</h2>
+  <p lang="fr">Théorèmes auxiliaires qui constituent les briques de la preuve principale : identité de Steiner, positivité de $D_s$, transport modulaire, périodisation lacunaire.</p>
+  <p lang="en">Auxiliary theorems that form the building blocks of the main proof: Steiner identity, positivity of $D_s$, modular transport, lacunary periodization.</p>
   <div id="auxList"></div>
 </section>
 
 <section>
   <div class="section-eyebrow">§ V — PostJAR</div>
   <h2>Arsenal R34-R96 (PostJAR)</h2>
-  <p>Extensions développées après la soumission JAR. Trois familles principales :</p>
+  <p lang="fr">Extensions développées après la soumission JAR. Trois familles principales :</p>
+  <p lang="en">Extensions developed after the JAR submission. Three main families:</p>
   <div class="card-grid" id="postJarFiles"></div>
 </section>
 
 <section>
-  <div class="section-eyebrow">§ VI — Reproductibilité</div>
-  <h2>Vérifier la preuve localement</h2>
-  <p>Tout est reproductible depuis un clone propre via <code>reproduce.sh</code>. Le script vérifie : compilation propre, profil d'axiomes attendu, absence de <code>sorryAx</code>.</p>
+  <div class="section-eyebrow" lang="fr">§ VI — Reproductibilité</div>
+  <div class="section-eyebrow" lang="en">§ VI — Reproducibility</div>
+  <h2 lang="fr">Vérifier la preuve localement</h2>
+  <h2 lang="en">Verify the proof locally</h2>
+  <p lang="fr">Tout est reproductible depuis un clone propre via <code>reproduce.sh</code>. Le script vérifie : compilation propre, profil d'axiomes attendu, absence de <code>sorryAx</code>.</p>
+  <p lang="en">Everything is reproducible from a clean clone via <code>reproduce.sh</code>. The script checks: clean compilation, expected axiom profile, no <code>sorryAx</code>.</p>
 
   <div class="highlight">
-    <h3 style="margin-top: 0;">Procédure</h3>
-<pre><code class="language-bash">git clone https://github.com/ericmerle3789/collatz-conditional-cycles.git
+    <h3 style="margin-top: 0;" lang="fr">Procédure</h3>
+    <h3 style="margin-top: 0;" lang="en">Procedure</h3>
+<pre lang="fr"><code class="language-bash">git clone https://github.com/ericmerle3789/collatz-conditional-cycles.git
 cd collatz-conditional-cycles
 ./reproduce.sh
 
 # EXIT 0 = build green + axioms match + 0 sorry detected
 # Runtime Mac M1 Pro 16 GB : ~3-5 min avec cache, ~10s incrémental</code></pre>
+<pre lang="en"><code class="language-bash">git clone https://github.com/ericmerle3789/collatz-conditional-cycles.git
+cd collatz-conditional-cycles
+./reproduce.sh
+
+# EXIT 0 = build green + axioms match + 0 sorry detected
+# Runtime Mac M1 Pro 16 GB: ~3-5 min cached, ~10s incremental</code></pre>
   </div>
 
-  <p>
+  <p lang="fr">
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/reproduce.sh" target="_blank" rel="noopener" style="color: var(--accent);">→ Voir reproduce.sh sur GitHub</a><br>
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/expected_axioms.md" target="_blank" rel="noopener" style="color: var(--accent);">→ Voir expected_axioms.md (matrice d'axiomes attendus)</a>
+  </p>
+  <p lang="en">
+    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/reproduce.sh" target="_blank" rel="noopener" style="color: var(--accent);">→ View reproduce.sh on GitHub</a><br>
+    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/expected_axioms.md" target="_blank" rel="noopener" style="color: var(--accent);">→ View expected_axioms.md (expected axiom matrix)</a>
   </p>
 </section>
 
@@ -150,9 +185,13 @@ cd collatz-conditional-cycles
 
 <footer>
   <div class="footer-meta">Cartographie · v0.5.0 · 2026-04-29</div>
-  <p>Site produit avec PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
+  <p lang="fr">Site produit avec PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
+  <p lang="en">Site produced with PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
   <p>Eric Merle · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a></p>
 </footer>
+
+<!-- main.js : i18n, langBtn, navigator.language detection -->
+<script src="../assets/js/main.js"></script>
 
 <script>
 // Routing : main (JAR) vs arsenal-postjar (extensions R34-R96)
@@ -165,25 +204,44 @@ function ghURL(filePath) {
   return GH_REPO + 'main/' + filePath;
 }
 
-fetch('../assets/data/lemmes.json').then(r => r.json()).then(data => {
+// i18n labels for the dynamic catalog renderer
+const LEMMES_LABELS = {
+  fr: { fileLabel: 'Fichier', dependsLabel: 'Dépend de', axiomsLabel: 'Axiomes', theoremsLabel: 'théorèmes', viewGithub: '→ Voir sur GitHub' },
+  en: { fileLabel: 'File', dependsLabel: 'Depends on', axiomsLabel: 'Axioms', theoremsLabel: 'theorems', viewGithub: '→ View on GitHub' }
+};
+
+let LEMMES_DATA = null;
+
+function getCurrentLang() {
+  // Read from localStorage (set by main.js) or fallback to <html lang> attribute
+  return localStorage.getItem('collatz-lang') ||
+         (document.documentElement.lang || 'en');
+}
+
+function renderLemmes(lang) {
+  if (!LEMMES_DATA) return;
+  const data = LEMMES_DATA;
+  const L = LEMMES_LABELS[lang] || LEMMES_LABELS.en;
+  const langKey = (lang === 'fr') ? 'fr' : 'en';
+
   // Théorèmes centraux
   const centralList = document.getElementById('centralList');
   centralList.innerHTML = '<div class="card-grid">' + data.centralTheorems.map((t, i) => `
     <div class="card" style="border-left: 3px solid var(--accent);">
-      <div class="card-eyebrow">${t.fr.role}</div>
+      <div class="card-eyebrow">${(t[langKey] || t.fr).role}</div>
       <h3 style="font-family: var(--mono); font-size: 1rem; word-break: break-all;">${t.name}</h3>
-      <p style="font-size: 0.9rem;">${t.fr.desc}</p>
+      <p style="font-size: 0.9rem;">${(t[langKey] || t.fr).desc}</p>
       <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem;">
-        Fichier : <a href="${ghURL(t.file)}" target="_blank" rel="noopener" style="color: var(--accent);">${t.file.split('/').pop()}</a>
+        ${L.fileLabel} : <a href="${ghURL(t.file)}" target="_blank" rel="noopener" style="color: var(--accent);">${t.file.split('/').pop()}</a>
       </p>
-      ${t.depends ? '<p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">Dépend de : ' + t.depends.map(d => '<code>'+d+'</code>').join(', ') + '</p>' : ''}
+      ${t.depends ? '<p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">' + L.dependsLabel + ' : ' + t.depends.map(d => '<code>'+d+'</code>').join(', ') + '</p>' : ''}
       <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">
-        Axiomes : ${t.axioms.map(a => '<code>'+a+'</code>').join(' · ')}
+        ${L.axiomsLabel} : ${t.axioms.map(a => '<code>'+a+'</code>').join(' · ')}
       </p>
     </div>
   `).join('') + '</div>';
 
-  // CF gaps
+  // CF gaps (purement numérique, pas de traduction nécessaire)
   const cfList = document.getElementById('cfGapsList');
   cfList.innerHTML = data.cfGaps.map(g => `
     <tr>
@@ -198,9 +256,9 @@ fetch('../assets/data/lemmes.json').then(r => r.json()).then(data => {
   const auxList = document.getElementById('auxList');
   auxList.innerHTML = '<div class="card-grid">' + data.auxiliaryTheorems.map(t => `
     <div class="card">
-      <div class="card-eyebrow">${t.fr.role}</div>
+      <div class="card-eyebrow">${(t[langKey] || t.fr).role}</div>
       <h3 style="font-family: var(--mono); font-size: 0.95rem; word-break: break-all;">${t.name}</h3>
-      <p style="font-size: 0.88rem;">${t.fr.desc}</p>
+      <p style="font-size: 0.88rem;">${(t[langKey] || t.fr).desc}</p>
       <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem;">
         <a href="${ghURL(t.file)}" target="_blank" rel="noopener" style="color: var(--accent);">${t.file.split('/').pop()}</a>
       </p>
@@ -211,15 +269,34 @@ fetch('../assets/data/lemmes.json').then(r => r.json()).then(data => {
   const pjList = document.getElementById('postJarFiles');
   pjList.innerHTML = data.postJarArsenal.files.map(f => `
     <div class="card">
-      <div class="card-eyebrow">${f.theoremCount} théorèmes</div>
+      <div class="card-eyebrow">${f.theoremCount} ${L.theoremsLabel}</div>
       <h3 style="font-family: var(--mono); font-size: 0.95rem;">${f.name}</h3>
-      <p style="font-size: 0.88rem;">${f.fr}</p>
+      <p style="font-size: 0.88rem;">${f[langKey] || f.fr}</p>
       <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem;">
-        <a href="${ghURL('ProjetCollatz/PostJAR/' + f.name)}" target="_blank" rel="noopener" style="color: var(--accent);">→ Voir sur GitHub</a>
+        <a href="${ghURL('ProjetCollatz/PostJAR/' + f.name)}" target="_blank" rel="noopener" style="color: var(--accent);">${L.viewGithub}</a>
       </p>
     </div>
   `).join('');
+
+  // Re-trigger KaTeX si chargé (descriptions peuvent contenir $...$)
+  if (window.renderMathInElement) {
+    window.renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]
+    });
+  }
+}
+
+// Initial load
+fetch('../assets/data/lemmes.json').then(r => r.json()).then(data => {
+  LEMMES_DATA = data;
+  renderLemmes(getCurrentLang());
 });
+
+// Re-render quand l'utilisateur clique sur le bouton de langue (géré par main.js).
+// On observe le changement de l'attribut data-lang sur <html> que main.js met à jour.
+new MutationObserver(() => {
+  renderLemmes(getCurrentLang());
+}).observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang', 'lang'] });
 </script>
 
 </body>
