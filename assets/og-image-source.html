@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>OG Image Source</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1200px; height: 630px; overflow: hidden; }
+body {
+  background: linear-gradient(135deg, #0e0f13 0%, #16181f 60%, #1f2229 100%);
+  font-family: 'Inter', sans-serif;
+  color: #e8e6e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 70px 80px;
+  position: relative;
+}
+/* Décor : équation Lambda en grand, transparente */
+.lambda-watermark {
+  position: absolute;
+  top: 50%;
+  right: 60px;
+  transform: translateY(-50%);
+  font-family: 'Crimson Pro', serif;
+  font-size: 480px;
+  font-weight: 600;
+  color: #c8a86a;
+  opacity: 0.15;
+  line-height: 1;
+  pointer-events: none;
+}
+/* Header : brand + DOI badge */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.brand-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  border: 2px solid #c8a86a;
+  background: #16181f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: #c8a86a;
+}
+.doi-badge {
+  background: rgba(106, 155, 122, 0.15);
+  border: 1px solid rgba(106, 155, 122, 0.5);
+  color: #94c3a4;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+/* Titre principal */
+.main-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.1;
+  z-index: 2;
+  max-width: 900px;
+  color: #f3d99c;
+}
+.main-title em {
+  font-style: italic;
+  color: #c8a86a;
+}
+/* Sous-titre */
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  color: #b8b5ad;
+  line-height: 1.4;
+  margin-top: 24px;
+  max-width: 900px;
+  z-index: 2;
+}
+/* Footer : 3 axiomes */
+.axioms {
+  display: flex;
+  gap: 18px;
+  z-index: 2;
+}
+.axiom-pill {
+  background: rgba(212, 160, 69, 0.12);
+  border: 1px solid rgba(212, 160, 69, 0.4);
+  color: #e0b87c;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+/* Auteur en bas à droite */
+.author {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #8b887f;
+  text-align: right;
+  z-index: 2;
+}
+.author strong {
+  color: #c8a86a;
+  font-weight: 600;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
+}
+</style>
+</head>
+<body>
+  <div class="lambda-watermark">Λ</div>
+
+  <div class="header">
+    <div class="brand">
+      <div class="brand-mark">Λ</div>
+      <span>Collatz Conditional Cycles</span>
+    </div>
+    <div class="doi-badge">DOI · 10.5281/zenodo.19790406</div>
+  </div>
+
+  <div>
+    <div class="main-title">No non-trivial Collatz cycle — <em>modulo three explicit conditions</em></div>
+    <div class="subtitle"><code style="font-family:'JetBrains Mono'; color:#c8a86a;">no_nontrivial_cycle_phase59</code> · kernel-checked Lean 4 · Mathlib v4.27</div>
+  </div>
+
+  <div class="bottom">
+    <div class="axioms">
+      <div class="axiom-pill">BakerSeparation</div>
+      <div class="axiom-pill">BarinaVerification</div>
+      <div class="axiom-pill">DerivedLargeKBound</div>
+    </div>
+    <div class="author">
+      <strong>Eric Merle</strong> · 2026 · <span style="color:#94c3a4;">JAR submission</span>
+    </div>
+  </div>
+</body>
+</html>
