@@ -6,22 +6,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html {
-  width: 1200px;
-  height: 630px;
-  background: #0e0f13;
-}
+html { background: #0e0f13; }
 body {
   width: 1200px;
-  height: 630px;
-  min-height: 630px;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
   background: linear-gradient(135deg, #0e0f13 0%, #16181f 60%, #1f2229 100%);
   font-family: 'Inter', sans-serif;
   color: #e8e6e0;
   position: relative;
+  /* Padding contrôle la hauteur de tous les blocs ; total ~630 */
+  padding: 55px 70px 50px;
+  overflow: hidden;
 }
 .lambda-watermark {
   position: absolute;
@@ -34,16 +28,16 @@ body {
   color: #c8a86a;
   opacity: 0.10;
   line-height: 1;
+  pointer-events: none;
+  z-index: 1;
 }
 .header {
-  position: absolute;
-  top: 50px;
-  left: 70px;
-  right: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   z-index: 2;
+  margin-bottom: 70px;
 }
 .brand {
   display: flex;
@@ -76,21 +70,18 @@ body {
   letter-spacing: 0.04em;
 }
 .center {
-  position: absolute;
-  top: 50%;
-  left: 70px;
-  right: 70px;
-  transform: translateY(-50%);
+  position: relative;
   z-index: 2;
+  margin-bottom: 65px;
 }
 .main-title {
   font-family: 'Crimson Pro', serif;
-  font-size: 56px;
+  font-size: 58px;
   font-weight: 700;
   line-height: 1.1;
   max-width: 880px;
   color: #f3d99c;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 .main-title em {
   font-style: italic;
@@ -109,13 +100,10 @@ body {
   font-size: 21px;
 }
 .bottom {
-  position: absolute;
-  bottom: 50px;
-  left: 70px;
-  right: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   z-index: 2;
 }
 .axioms {
