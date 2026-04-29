@@ -502,11 +502,12 @@ html[data-theme="light"] .hero-banner-overlay {
 }
 .hero-banner-lambda {
   position: absolute;
-  right: -2vw;
+  /* Reserve space for TOC starting at viewport - 220px (TOC width + buffer) */
+  right: max(1rem, calc((100vw - 1180px) / 2 + 220px));
   top: 50%;
   transform: translateY(-50%);
   font-family: var(--serif);
-  font-size: clamp(280px, 50vw, 540px);
+  font-size: clamp(220px, 38vw, 440px);
   font-weight: 600;
   color: var(--accent);
   opacity: 0.10;
@@ -515,6 +516,13 @@ html[data-theme="light"] .hero-banner-overlay {
   z-index: -1;
   user-select: none;
   animation: lambda-drift 18s ease-in-out infinite alternate;
+}
+/* Sur écrans < 1280px (pas de TOC), Λ peut s'étendre à droite normalement */
+@media (max-width: 1280px) {
+  .hero-banner-lambda {
+    right: -2vw;
+    font-size: clamp(280px, 50vw, 540px);
+  }
 }
 @keyframes lambda-drift {
   from { transform: translate(0, -50%) rotate(0deg); }
@@ -610,8 +618,17 @@ html[data-theme="light"] .hero-banner-title {
   font-family: var(--sans);
   font-size: 0.78rem;
   border-left: 2px solid var(--border);
-  padding: 0.6rem 0 0.6rem 0.8rem;
+  padding: 0.8rem 0.6rem 0.8rem 1rem;
   pointer-events: auto;
+  /* Clearing visuel : fond semi-transparent + flou pour que la TOC soit
+     lisible quand elle passe au-dessus du Λ watermark du hero-banner */
+  background: color-mix(in srgb, var(--bg-primary) 88%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+}
+@supports not (backdrop-filter: blur(8px)) {
+  .toc { background: var(--bg-primary); }
 }
 .toc-list { list-style: none; padding: 0; margin: 0; }
 .toc-item { margin: 0; padding: 0; }

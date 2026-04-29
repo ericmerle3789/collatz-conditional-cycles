@@ -274,6 +274,11 @@
       if (typeof renderHypothesesChart === 'function' && document.querySelector('#hypothesesChart')) renderHypothesesChart();
     }
 
+    // Re-générer la TOC dans la nouvelle langue (delay pour laisser le DOM se mettre à jour)
+    if (typeof initTableOfContents === 'function') {
+      setTimeout(initTableOfContents, 100);
+    }
+
     // Re-render KaTeX si chargé
     if (window.renderMathInElement) {
       window.renderMathInElement(document.body, {
