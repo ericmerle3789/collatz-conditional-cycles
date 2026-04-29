@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cycles Conditionnels de Collatz — Cartographie</title>
-<meta name="description" content="Cartographie scientifique des pistes pour la non-existence de cycles non-triviaux dans la conjecture de Collatz, formalisée en Lean 4.">
+<title>Collatz Conditional Cycles — Cartography</title>
+<meta name="description" content="Scientific cartography of approaches to the non-existence of non-trivial cycles in the Collatz conjecture, formalized in Lean 4.">
 <meta name="author" content="Eric Merle">
-<meta property="og:title" content="Cycles Conditionnels de Collatz">
-<meta property="og:description" content="Cartographie scientifique de la non-trivialité Collatz, en Lean 4.">
+<meta property="og:title" content="Collatz Conditional Cycles">
+<meta property="og:description" content="Scientific cartography of Collatz non-triviality, in Lean 4.">
 <meta property="og:type" content="website">
 
 <!-- Polices Google Fonts -->
@@ -49,21 +49,22 @@
   <div class="topbar-inner">
     <a href="#top" class="brand">
       <span class="brand-mark">Λ</span>
-      <span>Cycles Conditionnels de Collatz</span>
+      <span lang="fr">Cycles Conditionnels de Collatz</span>
+      <span lang="en">Collatz Conditional Cycles</span>
     </a>
     <nav class="nav">
-      <a href="#hero" data-i18n="navAccueil">Accueil</a>
-      <a href="#pistes" data-i18n="navPistes">Pistes</a>
-      <a href="lemmes/" data-i18n="navLemmes">Lemmes</a>
-      <a href="preuve/" data-i18n="navPreuve">Preuve</a>
+      <a href="#hero" data-i18n="navAccueil">Home</a>
+      <a href="#pistes" data-i18n="navPistes">Approaches</a>
+      <a href="lemmes/" data-i18n="navLemmes">Lemmas</a>
+      <a href="preuve/" data-i18n="navPreuve">Proof</a>
       <a href="papers/" data-i18n="navPapers">Papers</a>
-      <a href="#hypotheses" data-i18n="navHypotheses">Hypothèses</a>
+      <a href="#hypotheses" data-i18n="navHypotheses">Hypotheses</a>
       <a href="#meaculpa" data-i18n="navMeaCulpa">Mea culpa</a>
-      <a href="#team" data-i18n="navEquipe">Équipe</a>
+      <a href="#team" data-i18n="navEquipe">Team</a>
     </nav>
     <div class="toolbar-actions">
-      <button class="btn-icon" id="langBtn" aria-label="Switch language">EN</button>
-      <button class="btn-icon" id="printBtn" data-i18n="print">Imprimer</button>
+      <button class="btn-icon" id="langBtn" aria-label="Switch language">FR</button>
+      <button class="btn-icon" id="printBtn" data-i18n="print">Print</button>
     </div>
   </div>
 </header>
@@ -232,35 +233,49 @@ graph LR
   <div class="card-grid" style="margin-top: 2rem;">
     <div class="card">
       <div class="card-eyebrow">A</div>
-      <h3>Combinaison Baker+CF+Khinchin</h3>
-      <p>Probabilité finale : <strong>&lt;5%</strong> — bloquée par le δ8 lemma (paper §5 obstruction-I).</p>
+      <h3 lang="fr">Combinaison Baker+CF+Khinchin</h3>
+      <h3 lang="en">Baker+CF+Khinchin combination</h3>
+      <p lang="fr">Probabilité finale : <strong>&lt;5%</strong> — bloquée par le δ8 lemma (paper §5 obstruction-I).</p>
+      <p lang="en">Final probability: <strong>&lt;5%</strong> — blocked by the δ8 lemma (paper §5 obstruction-I).</p>
     </div>
     <div class="card">
       <div class="card-eyebrow">A'</div>
-      <h3>Combinaison HORS-δ8 (holonomy)</h3>
-      <p>Probabilité finale : <strong>8-12%</strong> — voie Calegari-Dimitrov-Tang 2025, hors cadre Baker+CF.</p>
+      <h3 lang="fr">Combinaison HORS-δ8 (holonomy)</h3>
+      <h3 lang="en">δ8-FREE combination (holonomy)</h3>
+      <p lang="fr">Probabilité finale : <strong>8-12%</strong> — voie Calegari-Dimitrov-Tang 2025, hors cadre Baker+CF.</p>
+      <p lang="en">Final probability: <strong>8-12%</strong> — Calegari-Dimitrov-Tang 2025 route, outside the Baker+CF framework.</p>
     </div>
     <div class="card">
       <div class="card-eyebrow">B</div>
-      <h3>Téléportation hors domaine</h3>
-      <p>Probabilité finale : <strong>5-10%</strong> — 9 sur 11 culs-de-sac dans la Région II.</p>
+      <h3 lang="fr">Téléportation hors domaine</h3>
+      <h3 lang="en">Out-of-domain teleportation</h3>
+      <p lang="fr">Probabilité finale : <strong>5-10%</strong> — 9 sur 11 culs-de-sac dans la Région II.</p>
+      <p lang="en">Final probability: <strong>5-10%</strong> — 9 of 11 dead-ends in Region II.</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--accent);">
       <div class="card-eyebrow">C</div>
-      <h3>Riemann-class (sortie inaccessible 2026)</h3>
-      <p>Probabilité finale : <strong>75-80%</strong> — dominante après convergence δ8 + Cobham + 14 paradigmes.</p>
+      <h3 lang="fr">Riemann-class (sortie inaccessible 2026)</h3>
+      <h3 lang="en">Riemann-class (exit unreachable in 2026)</h3>
+      <p lang="fr">Probabilité finale : <strong>75-80%</strong> — dominante après convergence δ8 + Cobham + 14 paradigmes.</p>
+      <p lang="en">Final probability: <strong>75-80%</strong> — dominant after δ8 + Cobham + 14 paradigms convergence.</p>
     </div>
   </div>
 
-  <h3 style="margin-top: 3rem;">Le δ8 lemma — impossibilité structurelle</h3>
+  <h3 style="margin-top: 3rem;" lang="fr">Le δ8 lemma — impossibilité structurelle</h3>
+  <h3 style="margin-top: 3rem;" lang="en">The δ8 lemma — structural impossibility</h3>
   <div class="highlight warning">
-    <p>
+    <p lang="fr">
       <strong>Lemma δ8 (Product-Bound Impossibility)</strong> — Soit $\xi \in \mathbb{R} \setminus \mathbb{Q}$ avec mesure d'irrationalité effective $\mu(\xi) \leq c$. Supposons un cycle Collatz $(n,k)$ avec borne Product-Bound $m \leq (k^{c+1}+k)/3$. Alors aucune borne uniforme algébrique $F(k) < 2^{71}$ ne peut être obtenue via cette dérivation pour tout $k \in \mathbb{N}$.
+    </p>
+    <p lang="en">
+      <strong>Lemma δ8 (Product-Bound Impossibility)</strong> — Let $\xi \in \mathbb{R} \setminus \mathbb{Q}$ have effective irrationality measure $\mu(\xi) \leq c$. Suppose a Collatz cycle $(n,k)$ with Product-Bound $m \leq (k^{c+1}+k)/3$. Then no uniform algebraic bound $F(k) < 2^{71}$ can be obtained via this derivation for every $k \in \mathbb{N}$.
     </p>
   </div>
 
-  <h3>Lemme R72 (Lean 4)</h3>
-  <p>Identité Steiner factorisée — pierre angulaire de l'arsenal.</p>
+  <h3 lang="fr">Lemme R72 (Lean 4)</h3>
+  <h3 lang="en">Lemma R72 (Lean 4)</h3>
+  <p lang="fr">Identité Steiner factorisée — pierre angulaire de l'arsenal.</p>
+  <p lang="en">Factored Steiner identity — cornerstone of the arsenal.</p>
 <pre><span class="lean-badge">Lean · compiled</span><code class="language-lean">/-- R72 NEW — identité Steiner factorisée :
     n · (2^S - 3^k) = corrSum n k.
     Universel : pour tout cycle `IsOddCycle n k`. -/
@@ -278,8 +293,10 @@ theorem cycle_n_mul_D_s_eq_corrSum
   have h_comm : 3 ^ k * n = n * 3 ^ k := by ring
   omega</code></pre>
 
-  <h3>Lemme R92 (Lean 4)</h3>
-  <p>Premier certificat fini case-by-case dérivé de l'arsenal lacunaire.</p>
+  <h3 lang="fr">Lemme R92 (Lean 4)</h3>
+  <h3 lang="en">Lemma R92 (Lean 4)</h3>
+  <p lang="fr">Premier certificat fini case-by-case dérivé de l'arsenal lacunaire.</p>
+  <p lang="en">First finite case-by-case certificate derived from the lacunary arsenal.</p>
 <pre><span class="lean-badge">Lean · compiled</span><code class="language-lean">/-- R92 NEW — Showcase : pour cycle k=2 avec aSeq[0] ≡ 1 mod 3
     et aSeq[1] ≡ 1 mod 3, on a 7 ∤ D_s. -/
 theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
@@ -335,37 +352,43 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     <div class="card">
       <div class="card-eyebrow">ccchallenge.org</div>
       <h3>The Collatz Conjecture Challenge</h3>
-      <p>Formalisation de la littérature Collatz, paper par paper. 358 papers à formaliser, forum GitHub Discussions + Discord communautaire.</p>
+      <p lang="fr">Formalisation de la littérature Collatz, paper par paper. 358 papers à formaliser, forum GitHub Discussions + Discord communautaire.</p>
+      <p lang="en">Formalization of the Collatz literature, paper by paper. 358 papers to formalize, GitHub Discussions forum + community Discord.</p>
       <a href="https://ccchallenge.org/" target="_blank" rel="noopener">→ ccchallenge.org</a>
     </div>
     <div class="card">
       <div class="card-eyebrow">Terry Tao</div>
       <h3>What's new — blog</h3>
-      <p>Blog WordPress de Terence Tao. Post 2019 fondateur : « Almost all Collatz orbits attain almost bounded values ».</p>
+      <p lang="fr">Blog WordPress de Terence Tao. Post 2019 fondateur : « Almost all Collatz orbits attain almost bounded values ».</p>
+      <p lang="en">Terence Tao's WordPress blog. Foundational 2019 post: "Almost all Collatz orbits attain almost bounded values".</p>
       <a href="https://terrytao.wordpress.com/2019/09/10/almost-all-collatz-orbits-attain-almost-bounded-values/" target="_blank" rel="noopener">→ terrytao.wordpress.com</a>
     </div>
     <div class="card">
       <div class="card-eyebrow">Lagarias</div>
       <h3>The Ultimate Challenge — AMS 2010</h3>
-      <p>Bibliographie annotée 1963-2009 par Jeffrey C. Lagarias (Univ. Michigan), curateur informel de la littérature Collatz.</p>
+      <p lang="fr">Bibliographie annotée 1963-2009 par Jeffrey C. Lagarias (Univ. Michigan), curateur informel de la littérature Collatz.</p>
+      <p lang="en">Annotated 1963-2009 bibliography by Jeffrey C. Lagarias (Univ. Michigan), informal curator of the Collatz literature.</p>
       <a href="https://www.ams.org/bookstore/pspdf/mbk-78-prev.pdf" target="_blank" rel="noopener">→ AMS Lagarias 3x+1 overview</a>
     </div>
     <div class="card">
       <div class="card-eyebrow">tcosmo</div>
       <h3>coreli — Collatz Research Library</h3>
-      <p>Bibliothèque Python (Jupyter) pour expérimentation et test d'hypothèses sur le processus de Collatz.</p>
+      <p lang="fr">Bibliothèque Python (Jupyter) pour expérimentation et test d'hypothèses sur le processus de Collatz.</p>
+      <p lang="en">Python (Jupyter) library for experimentation and hypothesis testing on the Collatz process.</p>
       <a href="https://github.com/tcosmo/coreli" target="_blank" rel="noopener">→ github.com/tcosmo/coreli</a>
     </div>
     <div class="card">
       <div class="card-eyebrow">Quanta</div>
       <h3>Mathematician Proves Huge Result</h3>
-      <p>Article de vulgarisation sur les avancées Tao 2019. Décembre 2019, Erica Klarreich.</p>
+      <p lang="fr">Article de vulgarisation sur les avancées Tao 2019. Décembre 2019, Erica Klarreich.</p>
+      <p lang="en">Popular-science article on the Tao 2019 advances. December 2019, Erica Klarreich.</p>
       <a href="https://www.quantamagazine.org/mathematician-proves-huge-result-on-dangerous-problem-20191211/" target="_blank" rel="noopener">→ Quanta Magazine</a>
     </div>
     <div class="card">
       <div class="card-eyebrow">Wikipedia</div>
       <h3>Collatz conjecture</h3>
-      <p>Article complet, bibliographie, historique. Disponible en français et anglais.</p>
+      <p lang="fr">Article complet, bibliographie, historique. Disponible en français et anglais.</p>
+      <p lang="en">Complete article, bibliography, history. Available in French and English.</p>
       <a href="https://en.wikipedia.org/wiki/Collatz_conjecture" target="_blank" rel="noopener">→ Wikipedia</a>
     </div>
   </div>
@@ -383,40 +406,62 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     <div class="card">
       <div class="card-eyebrow">Principal Investigator</div>
       <h3>Eric Merle</h3>
-      <p>Chercheur indépendant. Direction scientifique du projet : exploration de la non-trivialité Collatz, formalisation Lean 4, conception du PROTOCOLE ARES v2 (méthodologie de vérification anti-hallucination pour la recherche mathématique assistée par IA).</p>
-      <ul>
+      <p lang="fr">Chercheur indépendant. Direction scientifique du projet : exploration de la non-trivialité Collatz, formalisation Lean 4, conception du PROTOCOLE ARES v2 (méthodologie de vérification anti-hallucination pour la recherche mathématique assistée par IA).</p>
+      <p lang="en">Independent researcher. Scientific direction of the project: exploration of Collatz non-triviality, Lean 4 formalization, design of PROTOCOLE ARES v2 (anti-hallucination verification methodology for AI-assisted mathematical research).</p>
+      <ul lang="fr">
         <li>Décisions stratégiques et arbitrages</li>
         <li>Architecte du PROTOCOLE ARES v2</li>
         <li>Auteur des allégories structurelles guidant la cartographie</li>
+      </ul>
+      <ul lang="en">
+        <li>Strategic decisions and arbitration</li>
+        <li>Architect of PROTOCOLE ARES v2</li>
+        <li>Author of the structural allegories guiding the cartography</li>
       </ul>
     </div>
     <div class="card">
       <div class="card-eyebrow">AI Research Agents</div>
       <h3>Claude Opus (Anthropic)</h3>
-      <p>Architecture multi-cerveau asynchrone. Quatre sous-agents (NEW, NEW2, OLD, Red Team) communiquant via mailbox horodaté. Discipline antifragile : chaque erreur détectée est documentée publiquement pour produire des règles opérationnelles applicables.</p>
-      <ul>
+      <p lang="fr">Architecture multi-cerveau asynchrone. Quatre sous-agents (NEW, NEW2, OLD, Red Team) communiquant via mailbox horodaté. Discipline antifragile : chaque erreur détectée est documentée publiquement pour produire des règles opérationnelles applicables.</p>
+      <p lang="en">Asynchronous multi-brain architecture. Four sub-agents (NEW, NEW2, OLD, Red Team) communicating via timestamped mailbox. Antifragile discipline: every detected error is documented publicly to produce applicable operational rules.</p>
+      <ul lang="fr">
         <li>NEW — direction de recherche</li>
         <li>NEW2 — spécialiste Lean</li>
         <li>OLD — intuition mathématique</li>
         <li>Red Team — audit adversarial</li>
       </ul>
+      <ul lang="en">
+        <li>NEW — research direction</li>
+        <li>NEW2 — Lean specialist</li>
+        <li>OLD — mathematical intuition</li>
+        <li>Red Team — adversarial audit</li>
+      </ul>
     </div>
     <div class="card">
       <div class="card-eyebrow">Strategic Oracle</div>
       <h3>ChatGPT 5.5 (OpenAI)</h3>
-      <p>Validation indépendante. Consultations structurées sur les questions stratégiques : méta-prompts à rôles multiples, recherche de contre-exemples, auto-vérification falsifiable. Application de la Two-Key Rule — aucun résultat n'est validé par l'instance qui l'a généré.</p>
-      <ul>
+      <p lang="fr">Validation indépendante. Consultations structurées sur les questions stratégiques : méta-prompts à rôles multiples, recherche de contre-exemples, auto-vérification falsifiable. Application de la Two-Key Rule — aucun résultat n'est validé par l'instance qui l'a généré.</p>
+      <p lang="en">Independent validation. Structured consultations on strategic questions: multi-role meta-prompts, counter-example search, falsifiable self-verification. Two-Key Rule applied — no result is validated by the instance that produced it.</p>
+      <ul lang="fr">
         <li>Validation croisée des paradigmes</li>
         <li>Bibliographie tagée [VÉRIFIÉ]/[INCERTAIN]</li>
         <li>Document de synthèse régénéré</li>
+      </ul>
+      <ul lang="en">
+        <li>Cross-validation of paradigms</li>
+        <li>Bibliography tagged [VERIFIED]/[UNCERTAIN]</li>
+        <li>Regenerated synthesis document</li>
       </ul>
     </div>
   </div>
 
   <div class="highlight" style="margin-top: 2rem;">
-    <h3>Méthodologie</h3>
-    <p>Cette cartographie résulte d'un protocole de recherche humain-IA encadré par le PROTOCOLE ARES v2 (Audit, Rigueur, Évaluation, Sécurité). Toutes les affirmations mathématiques sont vérifiées par script (sandbox <code>tests_math/</code>), toutes les références sont vérifiées contre <code>references.bib</code> avant citation, et chaque erreur détectée est documentée publiquement.</p>
-    <p class="text-muted small" style="margin-top: 1rem;">Inspirations méthodologiques : Polymath Project (Tao, Gowers), Lean community (Mathlib), formalisation collaborative (ccchallenge.org).</p>
+    <h3 lang="fr">Méthodologie</h3>
+    <h3 lang="en">Methodology</h3>
+    <p lang="fr">Cette cartographie résulte d'un protocole de recherche humain-IA encadré par le PROTOCOLE ARES v2 (Audit, Rigueur, Évaluation, Sécurité). Toutes les affirmations mathématiques sont vérifiées par script (sandbox <code>tests_math/</code>), toutes les références sont vérifiées contre <code>references.bib</code> avant citation, et chaque erreur détectée est documentée publiquement.</p>
+    <p lang="en">This cartography results from a human-AI research protocol governed by PROTOCOLE ARES v2 (Audit, Rigor, Evaluation, Security). Every mathematical claim is verified by script (sandbox <code>tests_math/</code>), every reference is verified against <code>references.bib</code> before citation, and every detected error is documented publicly.</p>
+    <p class="text-muted small" style="margin-top: 1rem;" lang="fr">Inspirations méthodologiques : Polymath Project (Tao, Gowers), Lean community (Mathlib), formalisation collaborative (ccchallenge.org).</p>
+    <p class="text-muted small" style="margin-top: 1rem;" lang="en">Methodological inspirations: Polymath Project (Tao, Gowers), Lean community (Mathlib), collaborative formalization (ccchallenge.org).</p>
   </div>
 </section>
 
