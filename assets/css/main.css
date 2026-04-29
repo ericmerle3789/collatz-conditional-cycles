@@ -743,6 +743,151 @@ html[data-theme="light"] .hero-banner-title {
   border-radius: 0;
 }
 
+/* ==========================================================================
+   FOOTER BADGES (Open Science + ORCID + Verify)
+   ========================================================================== */
+.footer-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  align-items: center;
+  font-size: 0.75rem;
+}
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.3rem 0.65rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-family: var(--mono);
+  transition: all 0.15s;
+}
+.footer-badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+.footer-badge.badge-orcid {
+  background: rgba(166, 206, 57, 0.08);
+  border-color: rgba(166, 206, 57, 0.4);
+  color: #a6ce39;
+}
+.footer-badge.badge-orcid::before {
+  content: '◯';
+  color: #a6ce39;
+  font-weight: bold;
+}
+.footer-badge.badge-doi {
+  background: rgba(106, 147, 184, 0.08);
+  border-color: rgba(106, 147, 184, 0.4);
+  color: var(--accent-blue);
+}
+.footer-badge.badge-doi::before { content: '🔗'; font-size: 0.85em; filter: grayscale(0.5); }
+.footer-badge.badge-license::before { content: '⚖'; }
+.footer-badge.badge-verify {
+  background: rgba(106, 155, 122, 0.08);
+  border-color: rgba(106, 155, 122, 0.4);
+  color: var(--accent-green);
+}
+.footer-badge.badge-verify::before { content: '⏱'; }
+.footer-badge.badge-open {
+  background: rgba(212, 160, 69, 0.08);
+  border-color: rgba(212, 160, 69, 0.4);
+  color: var(--accent-amber);
+}
+.footer-badge.badge-open::before { content: '◇'; }
+
+/* ==========================================================================
+   PRINT STYLESHEET — académique propre, monochrome, pas de chrome UI
+   ========================================================================== */
+@media print {
+  * { background: white !important; color: black !important; box-shadow: none !important; }
+  body { font-family: 'Crimson Pro', Georgia, serif; font-size: 11pt; line-height: 1.45; }
+  .topbar, .scroll-progress, .toc, .footer-status, .footer-badges,
+  .modal-overlay, .search-palette, #themeBtn, #langBtn, #citeBtn, #printBtn,
+  .filter-bar, .toolbar-actions { display: none !important; }
+  .hero-banner { height: auto; padding: 1rem 0; border: 1px solid #ccc; }
+  .hero-banner-bg, .hero-banner-overlay, .hero-banner-lambda { display: none !important; }
+  a { color: black !important; text-decoration: underline; }
+  a[href^="http"]::after { content: " ↗ " attr(href); font-size: 9pt; color: #555 !important; }
+  pre { background: #f5f5f5 !important; color: #333 !important; border: 1px solid #ccc; }
+  pre code { color: #333 !important; }
+  h1, h2, h3 { page-break-after: avoid; }
+  section { page-break-inside: avoid; }
+  table { border-collapse: collapse; }
+  table, th, td { border: 1px solid #888 !important; }
+  .badge { border: 1px solid #666 !important; color: black !important; background: #eee !important; }
+  /* Inclure URL canonique en footer print */
+  body::after {
+    content: "Source: collatz-lab.org · DOI 10.5281/zenodo.19790406 · Eric Merle 2026";
+    display: block;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #888;
+    font-size: 9pt;
+    color: #555 !important;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   SIDE-BY-SIDE LEAN ↔ MATH (sur /preuve/)
+   ========================================================================== */
+.lean-math-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 2rem 0;
+  align-items: stretch;
+}
+.lean-math-pair > div {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.2rem;
+}
+.lean-math-pair .lmp-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.lean-math-pair pre {
+  margin: 0 !important;
+  font-size: 0.78rem !important;
+}
+.lean-math-pair .lmp-math {
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+@media (max-width: 800px) {
+  .lean-math-pair { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   COMMENTS / GISCUS section
+   ========================================================================== */
+.comments-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.comments-section h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
 body {
   font-family: var(--sans);
   background: var(--bg-primary);

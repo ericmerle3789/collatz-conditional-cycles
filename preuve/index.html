@@ -256,8 +256,63 @@ flowchart TB
 </section>
 
 <section>
-  <div class="section-eyebrow" lang="fr">§ V — Verrou structurel</div>
-  <div class="section-eyebrow" lang="en">§ V — Structural lock</div>
+  <div class="section-eyebrow" lang="fr">§ V — Lean ↔ Mathématiques</div>
+  <div class="section-eyebrow" lang="en">§ V — Lean ↔ Mathematics</div>
+  <h2 lang="fr">Vue côte-à-côte : code Lean et énoncé informel</h2>
+  <h2 lang="en">Side-by-side view: Lean code and informal statement</h2>
+  <p lang="fr">Pour chaque théorème pivot, le code Lean (vérifié par le noyau) à gauche, l'énoncé mathématique informel (lisible) à droite.</p>
+  <p lang="en">For each pivotal theorem, the Lean code (kernel-verified) on the left, the informal mathematical statement (readable) on the right.</p>
+
+  <h3 style="margin-top: 2rem;">steiner_cycle_eq <span class="text-muted small">— Phase52 universal identity</span></h3>
+  <div class="lean-math-pair">
+    <div>
+      <span class="lmp-label">Lean 4</span>
+<pre><code class="language-lean">theorem steiner_cycle_eq
+    (n k : ℕ) (hcyc : IsOddCycle n k) :
+    n * 2 ^ (aSumSeq n k) = 3 ^ k * n + corrSum n k := by
+  -- preuve par récurrence sur la longueur k du cycle
+  -- Mathlib v4.27, kernel-checked, 0 sorry</code></pre>
+    </div>
+    <div class="lmp-math">
+      <span class="lmp-label" lang="fr">Énoncé mathématique</span>
+      <span class="lmp-label" lang="en">Mathematical statement</span>
+      <p lang="fr"><strong>Identité de Steiner.</strong> Soit un cycle Collatz $(n, k)$ hypothétique de longueur $k$, avec $n$ minimum. Alors :</p>
+      <p lang="en"><strong>Steiner identity.</strong> Let $(n, k)$ be a hypothetical Collatz cycle of length $k$, with $n$ minimum. Then:</p>
+      <p>$$n \cdot 2^S = 3^k \cdot n + \mathrm{corrSum}(n, k)$$</p>
+      <p lang="fr">où $S = \sum_{i} a_i$ est la somme des valuations 2-adiques le long du cycle.</p>
+      <p lang="en">where $S = \sum_{i} a_i$ is the sum of 2-adic valuations along the cycle.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 2.5rem;">no_nontrivial_cycle_phase59 <span class="text-muted small">— ★ Main JAR theorem</span></h3>
+  <div class="lean-math-pair">
+    <div>
+      <span class="lmp-label">Lean 4</span>
+<pre><code class="language-lean">theorem no_nontrivial_cycle_phase59 :
+    ∀ (n k : ℕ), n > 1 → ¬ IsOddCycle n k := by
+  intro n k hn
+  by_contra hcyc
+  -- (1) k ≤ 1322 → no_cycle_k_le_1322 (Barina + Product-Bound)
+  -- (2) k > 1322 → no_cycle_k_gt_1322 (continued fractions + Baker)
+  rcases Nat.lt_or_ge k 1323 with hk | hk
+  · exact no_cycle_k_le_1322 hcyc hk
+  · exact no_cycle_k_gt_1322 hcyc hk</code></pre>
+    </div>
+    <div class="lmp-math">
+      <span class="lmp-label" lang="fr">Énoncé mathématique</span>
+      <span class="lmp-label" lang="en">Mathematical statement</span>
+      <p lang="fr"><strong>Théorème principal (Merle 2026).</strong> Sous les trois hypothèses externes <em>BakerSeparation</em>, <em>BarinaVerification</em>, et <em>DerivedLargeKBound</em> :</p>
+      <p lang="en"><strong>Main theorem (Merle 2026).</strong> Under the three external hypotheses <em>BakerSeparation</em>, <em>BarinaVerification</em>, and <em>DerivedLargeKBound</em>:</p>
+      <p>$$\forall\, n &gt; 1,\ \forall\, k \in \mathbb{N},\ \neg\, \mathrm{IsOddCycle}(n, k)$$</p>
+      <p lang="fr">i.e. il n'existe aucun cycle Collatz non-trivial. La preuve se décompose en deux sous-branches selon que $k \leq 1322$ (Barina) ou $k > 1322$ (continued fractions de $\log_2 3$).</p>
+      <p lang="en">i.e. there exists no non-trivial Collatz cycle. The proof splits in two sub-branches depending on whether $k \leq 1322$ (Barina) or $k > 1322$ (continued fractions of $\log_2 3$).</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-eyebrow" lang="fr">§ VI — Verrou structurel</div>
+  <div class="section-eyebrow" lang="en">§ VI — Structural lock</div>
   <h2 lang="fr">Pourquoi les 3 axiomes sont nécessaires</h2>
   <h2 lang="en">Why the 3 axioms are necessary</h2>
   <p lang="fr">
@@ -285,8 +340,8 @@ flowchart TB
 </section>
 
 <section>
-  <div class="section-eyebrow" lang="fr">§ VI — Reproductibilité</div>
-  <div class="section-eyebrow" lang="en">§ VI — Reproducibility</div>
+  <div class="section-eyebrow" lang="fr">§ VII — Reproductibilité</div>
+  <div class="section-eyebrow" lang="en">§ VII — Reproducibility</div>
   <h2 lang="fr">Vérifier la chaîne complète</h2>
   <h2 lang="en">Verify the complete chain</h2>
 
@@ -350,6 +405,9 @@ mermaid.initialize({
   }
 });
 </script>
+
+<!-- Hypothes.is annotations layer (sélectionnez du texte pour annoter) -->
+<script src="https://hypothes.is/embed.js" async></script>
 
 </body>
 </html>
