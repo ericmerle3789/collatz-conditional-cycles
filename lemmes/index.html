@@ -76,6 +76,9 @@
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
+<!-- D3 v7 pour le dependency graph -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
+
 <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
@@ -177,6 +180,22 @@
 </section>
 
 <section>
+  <div class="section-eyebrow" lang="fr">§ II.bis — Graphe de dépendances</div>
+  <div class="section-eyebrow" lang="en">§ II.bis — Dependency graph</div>
+  <h2 lang="fr">Architecture interactive (D3 force-directed)</h2>
+  <h2 lang="en">Interactive architecture (D3 force-directed)</h2>
+  <p lang="fr">Graphe interactif de l'architecture de la preuve. <strong>Drag</strong> pour déplacer les nœuds, <strong>scroll</strong> pour zoomer. <em>Étoile dorée</em> = résultat principal JAR. <span style="color: var(--accent-violet);">●</span> Axiomes externes (Baker, Barina, Hercher) · <span style="color: var(--accent-green);">●</span> Axiomes Lean kernel · <span style="color: var(--accent-blue);">●</span> Lemmes auxiliaires · <span style="color: var(--accent-amber);">●</span> Théorèmes centraux. Lignes pleines = dépendances logiques, pointillés courts = axiomes kernel, pointillés longs dorés = alias.</p>
+  <p lang="en">Interactive graph of the proof architecture. <strong>Drag</strong> to reposition nodes, <strong>scroll</strong> to zoom. <em>Golden star</em> = JAR main result. <span style="color: var(--accent-violet);">●</span> External axioms (Baker, Barina, Hercher) · <span style="color: var(--accent-green);">●</span> Lean kernel axioms · <span style="color: var(--accent-blue);">●</span> Auxiliary lemmas · <span style="color: var(--accent-amber);">●</span> Central theorems. Solid lines = logical dependencies, short dashes = kernel axioms, long golden dashes = aliases.</p>
+
+  <div id="dependency-graph" style="width: 100%; min-height: 600px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 4px; margin: 1.5rem 0; position: relative;"></div>
+
+  <div id="graph-tooltip" style="display: none; padding: 1rem 1.2rem; background: var(--bg-tertiary); border-left: 3px solid var(--accent); border-radius: 4px; font-family: var(--mono); font-size: 0.85rem;">
+    <div lang="fr" class="text-muted small">Cliquez sur un nœud pour voir les détails ici.</div>
+    <div lang="en" class="text-muted small">Click a node to see details here.</div>
+  </div>
+</section>
+
+<section>
   <div class="section-eyebrow">§ III — CF Windows</div>
   <h2>Continued fractions arithmetic gaps</h2>
   <p lang="fr">Les théorèmes <code>cf_gap_8</code> à <code>cf_gap_13</code> calculent les inégalités arithmétiques aux convergents de $\log_2 3$, validées par <code>native_decide</code>.</p>
@@ -256,6 +275,23 @@ cd collatz-conditional-cycles
 
 <!-- main.js : i18n, langBtn, navigator.language detection -->
 <script src="../assets/js/main.js"></script>
+<!-- dependency-graph.js : D3 force-directed visualization -->
+<script src="../assets/js/dependency-graph.js"></script>
+<script>
+  // Init du graphe quand D3 est disponible
+  function initDepGraph() {
+    if (window.CollatzDependencyGraph && window.d3) {
+      window.CollatzDependencyGraph.init('dependency-graph');
+    } else {
+      setTimeout(initDepGraph, 200);
+    }
+  }
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initDepGraph();
+  } else {
+    document.addEventListener('DOMContentLoaded', initDepGraph);
+  }
+</script>
 
 <script>
 // Routing : main (JAR) vs arsenal-postjar (extensions R34-R96)

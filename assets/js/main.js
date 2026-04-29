@@ -104,7 +104,10 @@
       searchEmpty: "Aucun résultat",
       searchNav: "naviguer",
       searchOpen: "ouvrir",
-      searchClose: "fermer"
+      searchClose: "fermer",
+      buildPassing: "build : passing",
+      lastCommit: "dernier commit",
+      changelogLink: "changelog"
     },
     en: {
       navAccueil: "Home",
@@ -185,7 +188,10 @@
       searchEmpty: "No results",
       searchNav: "navigate",
       searchOpen: "open",
-      searchClose: "close"
+      searchClose: "close",
+      buildPassing: "build: passing",
+      lastCommit: "last commit",
+      changelogLink: "changelog"
     }
   };
 
@@ -961,6 +967,35 @@ ER  - `;
     });
   }
 
+  // ========== LAST COMMIT (footer) ==========
+  async function fetchLastCommit() {
+    const el = document.getElementById('lastCommitDate');
+    if (!el) return;
+    try {
+      const cached = sessionStorage.getItem('collatz-lastcommit');
+      if (cached) {
+        const obj = JSON.parse(cached);
+        if (obj.ts && Date.now() - obj.ts < 5 * 60 * 1000) { // 5 min cache
+          el.textContent = obj.text;
+          return;
+        }
+      }
+      const r = await fetch('https://api.github.com/repos/ericmerle3789/collatz-conditional-cycles/commits/gh-pages', {
+        headers: { 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (r.ok) {
+        const j = await r.json();
+        const date = new Date(j.commit?.author?.date || j.commit?.committer?.date);
+        const sha7 = (j.sha || '').substring(0, 7);
+        const text = `${date.toISOString().substring(0, 10)} · ${sha7}`;
+        el.textContent = text;
+        sessionStorage.setItem('collatz-lastcommit', JSON.stringify({ ts: Date.now(), text }));
+      }
+    } catch (e) {
+      el.textContent = '—';
+    }
+  }
+
   // ========== INIT ==========
   // Calcule un chemin absolu vers /assets/ depuis l'URL du script lui-même.
   // Permet à main.js de fonctionner depuis /, /preuve/, /papers/, /lemmes/, etc.
@@ -1057,6 +1092,9 @@ ER  - `;
     // Theme + Scroll progress
     applyTheme();
     initScrollProgress();
+
+    // Last commit info (footer)
+    fetchLastCommit();
 
     // Smooth scroll nav
     document.querySelectorAll('.nav a').forEach(link => {

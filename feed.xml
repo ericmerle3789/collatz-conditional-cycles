@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Collatz Conditional Cycles — Updates</title>
+  <subtitle>Updates on the conditional formal proof of no non-trivial Collatz cycles in Lean 4.</subtitle>
+  <link href="https://ericmerle3789.github.io/collatz-conditional-cycles/" rel="alternate" type="text/html"/>
+  <link href="https://ericmerle3789.github.io/collatz-conditional-cycles/feed.xml" rel="self" type="application/atom+xml"/>
+  <id>urn:doi:10.5281/zenodo.19790406</id>
+  <updated>2026-04-29T00:00:00Z</updated>
+
+  <author>
+    <name>Eric Merle</name>
+    <uri>https://orcid.org/0009-0008-7940-402X</uri>
+  </author>
+
+  <rights>CC-BY-SA 4.0</rights>
+  <icon>https://ericmerle3789.github.io/collatz-conditional-cycles/assets/favicon-32.png</icon>
+  <logo>https://ericmerle3789.github.io/collatz-conditional-cycles/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.5.1 — Bilingual EN-canonical website + interactive dependency graph + Cmd+K search</title>
+    <link href="https://ericmerle3789.github.io/collatz-conditional-cycles/"/>
+    <id>urn:collatz-cycles:v0.5.1</id>
+    <updated>2026-04-29T14:00:00Z</updated>
+    <published>2026-04-29T14:00:00Z</published>
+    <category term="release"/>
+    <summary type="html">
+      <![CDATA[
+      <p>Major UX upgrade to the public site:</p>
+      <ul>
+        <li>EN-canonical localization with browser locale detection (FR fallback only for fr-* locales)</li>
+        <li>Interactive D3 force-directed dependency graph on /lemmes/ — drag, zoom, click nodes</li>
+        <li>Cmd+K / Ctrl+K / "/" search palette — full-text across pistes, theorems, lemmas, cf_gaps, PostJAR</li>
+        <li>Citation widget with 5 formats (BibTeX, APA 7, Chicago 17, RIS, plain)</li>
+        <li>Light / dark theme toggle with prefers-color-scheme auto-detect</li>
+        <li>Scroll progress bar + sticky TOC</li>
+        <li>Complete SEO infrastructure: sitemap.xml, robots.txt, JSON-LD ScholarlyArticle, hreflang FR/EN, Open Graph 1200×630, Twitter Cards, favicons</li>
+      </ul>
+      ]]>
+    </summary>
+  </entry>
+
+  <entry>
+    <title>v0.5.0 — JAR submission v1.1 + main result featured on homepage</title>
+    <link href="https://ericmerle3789.github.io/collatz-conditional-cycles/"/>
+    <id>urn:collatz-cycles:v0.5.0</id>
+    <updated>2026-04-29T13:00:00Z</updated>
+    <published>2026-04-29T13:00:00Z</published>
+    <category term="release"/>
+    <summary type="html">
+      <![CDATA[
+      <p>JAR submission v1.1 reflected on the website:</p>
+      <ul>
+        <li>"Main result" highlight box on homepage</li>
+        <li>★ JAR pinned row at top of pistes table</li>
+        <li>Mermaid diagram with main theorem node + 3 external conditions</li>
+        <li>Axiom profile table on /papers/ page</li>
+        <li>Broken Lean file links fixed via ghURL() routing function</li>
+      </ul>
+      ]]>
+    </summary>
+  </entry>
+
+  <entry>
+    <title>v0.4.0 — Cycle 4 ChatGPT Lemmas patched + Cycle 5 Knight 2026 verified</title>
+    <link href="https://ericmerle3789.github.io/collatz-conditional-cycles/"/>
+    <id>urn:collatz-cycles:v0.4.0</id>
+    <updated>2026-04-29T10:00:00Z</updated>
+    <published>2026-04-29T10:00:00Z</published>
+    <category term="research"/>
+    <summary type="html">
+      <![CDATA[
+      <p>Research cycles 4 and 5:</p>
+      <ul>
+        <li>Cycle 4 (CGS-7): 6 ChatGPT lemmas diagnosed and patched for Mathlib v4.27</li>
+        <li>Cycle 5 (Knight 2026): Section 5 (high cycles) verified UNCONDITIONAL via 2-adic argument; Section 3 (circuits) Baker-dependent</li>
+        <li>Mea culpa #24 (Salikhov 2007 not 2008) and #25 (Bost-Charles 2022 invented) documented</li>
+      </ul>
+      ]]>
+    </summary>
+  </entry>
+
+  <entry>
+    <title>v0.3.0 — JAR paper submitted to Journal of Automated Reasoning</title>
+    <link href="https://doi.org/10.5281/zenodo.19790406"/>
+    <id>urn:doi:10.5281/zenodo.19790406</id>
+    <updated>2026-04-27T00:00:00Z</updated>
+    <published>2026-04-27T00:00:00Z</published>
+    <category term="paper"/>
+    <summary type="html">
+      <![CDATA[
+      <p>Paper submitted to JAR Springer:</p>
+      <p><em>On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions</em></p>
+      <p>28 pages, kernel-checked Lean 4, 3 axiom profile (propext, Classical.choice, Quot.sound) + 3 documented external hypotheses (BakerSeparation, BarinaVerification, DerivedLargeKBound).</p>
+      <p>DOI: <a href="https://doi.org/10.5281/zenodo.19790406">10.5281/zenodo.19790406</a></p>
+      ]]>
+    </summary>
+  </entry>
+
+</feed>

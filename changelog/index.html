@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog — Collatz Conditional Cycles</title>
+<meta name="description" content="Versioned changelog of the Collatz Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa and Red Team cycles.">
+<meta name="author" content="Eric Merle">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://ericmerle3789.github.io/collatz-conditional-cycles/changelog/">
+<link rel="alternate" hreflang="en" href="https://ericmerle3789.github.io/collatz-conditional-cycles/changelog/">
+<link rel="alternate" hreflang="fr" href="https://ericmerle3789.github.io/collatz-conditional-cycles/changelog/?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://ericmerle3789.github.io/collatz-conditional-cycles/changelog/">
+<link rel="alternate" type="application/atom+xml" title="Atom feed" href="../feed.xml">
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#0e0f13">
+
+<meta property="og:title" content="Changelog — Collatz Conditional Cycles">
+<meta property="og:description" content="Versioned history of paper, Lean arsenal, and website updates.">
+<meta property="og:image" content="https://ericmerle3789.github.io/collatz-conditional-cycles/assets/og-image.png">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../" class="brand">
+      <span class="brand-mark">Λ</span>
+      <span lang="fr">Cycles Conditionnels de Collatz</span>
+      <span lang="en">Collatz Conditional Cycles</span>
+    </a>
+    <nav class="nav">
+      <a href="../" data-i18n="navAccueil">Home</a>
+      <a href="../#pistes" data-i18n="navPistes">Approaches</a>
+      <a href="../lemmes/" data-i18n="navLemmes">Lemmas</a>
+      <a href="../preuve/" data-i18n="navPreuve">Proof</a>
+      <a href="../papers/" data-i18n="navPapers">Papers</a>
+      <a href="../#hypotheses" data-i18n="navHypotheses">Hypotheses</a>
+      <a href="../#team" data-i18n="navEquipe">Team</a>
+    </nav>
+    <div class="toolbar-actions">
+      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
+        <span class="moon-icon" aria-hidden="true">☾</span>
+        <span class="sun-icon" aria-hidden="true">☀</span>
+      </button>
+      <button class="btn-icon" id="langBtn" aria-label="Switch language">FR</button>
+      <button class="btn-icon" id="printBtn" data-i18n="print">Print</button>
+    </div>
+  </div>
+</header>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<main>
+
+<section class="hero" style="padding: 4rem 2rem 3rem;">
+  <div class="hero-eyebrow" lang="fr">Historique versionné</div>
+  <div class="hero-eyebrow" lang="en">Versioned history</div>
+  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="fr">Changelog</h1>
+  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="en">Changelog</h1>
+  <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">
+    Historique transparent de toutes les évolutions du projet : paper, arsenal Lean, site web, cycles Red Team, et mea culpa publics. Versioning sémantique. <a href="../feed.xml" style="color: var(--accent);">→ Atom feed</a>
+  </p>
+  <p class="hero-lede" style="font-size: 1.05rem;" lang="en">
+    Transparent history of all project evolutions: paper, Lean arsenal, website, Red Team cycles, and public mea culpa. Semantic versioning. <a href="../feed.xml" style="color: var(--accent);">→ Atom feed</a>
+  </p>
+</section>
+
+<section>
+  <article class="changelog-entry">
+    <header>
+      <h2><span class="version-tag">v0.5.1</span> <span lang="fr">Site web haut de gamme</span><span lang="en">High-end website</span></h2>
+      <time datetime="2026-04-29">2026-04-29 (afternoon)</time>
+    </header>
+    <ul lang="fr">
+      <li>Localisation EN-canonique : anglais par défaut (sauf navigator fr-*), bouton FR/EN sur 4 pages</li>
+      <li>Graphe de dépendances D3 force-directed interactif sur /lemmes/</li>
+      <li>Palette de recherche universelle (⌘K / Ctrl+K / /) sur pistes, théorèmes, lemmes, cf_gaps</li>
+      <li>Widget de citation 5 formats (BibTeX, APA 7, Chicago 17, RIS, plain) avec copy-to-clipboard</li>
+      <li>Mode clair/sombre avec prefers-color-scheme + toggle persisté localStorage</li>
+      <li>Scroll progress bar dorée en haut de chaque page</li>
+      <li>SEO complet : sitemap.xml, robots.txt, JSON-LD ScholarlyArticle, hreflang, Open Graph 1200×630, Twitter Cards, favicons SVG/PNG</li>
+      <li>Atom feed pour les updates : <code>/feed.xml</code></li>
+      <li>Page changelog (cette page)</li>
+    </ul>
+    <ul lang="en">
+      <li>EN-canonical localization: English by default (except navigator fr-*), FR/EN button on all 4 pages</li>
+      <li>Interactive D3 force-directed dependency graph on /lemmes/</li>
+      <li>Universal search palette (⌘K / Ctrl+K / /) across approaches, theorems, lemmas, cf_gaps</li>
+      <li>5-format citation widget (BibTeX, APA 7, Chicago 17, RIS, plain) with copy-to-clipboard</li>
+      <li>Light/dark theme toggle with prefers-color-scheme auto-detect, persisted in localStorage</li>
+      <li>Golden scroll progress bar at the top of every page</li>
+      <li>Complete SEO: sitemap.xml, robots.txt, JSON-LD ScholarlyArticle, hreflang, Open Graph 1200×630, Twitter Cards, favicons</li>
+      <li>Atom feed for updates: <code>/feed.xml</code></li>
+      <li>Changelog page (this page)</li>
+    </ul>
+  </article>
+
+  <article class="changelog-entry">
+    <header>
+      <h2><span class="version-tag">v0.5.0</span> <span lang="fr">Mise en valeur résultat principal JAR</span><span lang="en">JAR main result featured</span></h2>
+      <time datetime="2026-04-29">2026-04-29 (morning)</time>
+    </header>
+    <ul lang="fr">
+      <li>Encart "Résultat principal" sur la page d'accueil avec PDF, DOI, lien Lean</li>
+      <li>Ligne ★ JAR épinglée en tête du tableau des pistes (toujours visible)</li>
+      <li>Diagramme Mermaid Λ enrichi avec le nœud central JAR + 3 conditions externes</li>
+      <li>Tableau profil d'axiomes sur /papers/ (3 kernel + 3 externes)</li>
+      <li>Routing ghURL() : main vs arsenal-postjar pour fichiers Lean</li>
+      <li>15/15 URLs dynamiques HTTP 200 OK</li>
+    </ul>
+    <ul lang="en">
+      <li>"Main result" highlight box on homepage with PDF, DOI, Lean link</li>
+      <li>★ JAR pinned row at the top of the approaches table (always visible)</li>
+      <li>Λ Mermaid diagram enriched with central JAR node + 3 external conditions</li>
+      <li>Axiom profile table on /papers/ (3 kernel + 3 external)</li>
+      <li>ghURL() routing: main vs arsenal-postjar for Lean files</li>
+      <li>15/15 dynamic URLs HTTP 200 OK</li>
+    </ul>
+  </article>
+
+  <article class="changelog-entry">
+    <header>
+      <h2><span class="version-tag">v0.4.0</span> <span lang="fr">Cycles 4 et 5 - patches Mathlib v4.27 + Knight 2026</span><span lang="en">Cycles 4 and 5 - Mathlib v4.27 patches + Knight 2026</span></h2>
+      <time datetime="2026-04-29">2026-04-29 (early)</time>
+    </header>
+    <ul lang="fr">
+      <li>Cycle 4 (CGS-7) : 6 lemmes ChatGPT diagnostiqués et patchés pour Mathlib v4.27</li>
+      <li>Cycle 5 (Knight 2026) : Section 5 inconditionnelle (preuve 2-adique 5 lignes), Section 3 Baker-dépendant</li>
+      <li>Mea culpa #24 (Salikhov 2007 ≠ 2008) + #25 (Bost-Charles 2022 inventé) documentés</li>
+      <li>Filtre 4-test consolidé (R72 / Steiner-Eliahou / Lagarias / anti-Λ)</li>
+    </ul>
+    <ul lang="en">
+      <li>Cycle 4 (CGS-7): 6 ChatGPT lemmas diagnosed and patched for Mathlib v4.27</li>
+      <li>Cycle 5 (Knight 2026): Section 5 unconditional (5-line 2-adic proof), Section 3 Baker-dependent</li>
+      <li>Mea culpa #24 (Salikhov 2007 not 2008) + #25 (Bost-Charles 2022 fabricated) documented</li>
+      <li>4-test filter consolidated (R72 / Steiner-Eliahou / Lagarias / anti-Λ)</li>
+    </ul>
+  </article>
+
+  <article class="changelog-entry">
+    <header>
+      <h2><span class="version-tag">v0.3.0</span> <span lang="fr">Soumission JAR Springer v1.1</span><span lang="en">JAR Springer submission v1.1</span></h2>
+      <time datetime="2026-04-27">2026-04-27</time>
+    </header>
+    <ul lang="fr">
+      <li>Paper de 28 pages soumis au Journal of Automated Reasoning</li>
+      <li>Théorème <code>no_nontrivial_cycle_phase59</code> kernel-checked Lean 4 + Mathlib v4.27</li>
+      <li>Profil minimal : 3 axiomes kernel + 3 hypothèses externes documentées</li>
+      <li>DOI Zenodo 10.5281/zenodo.19790406</li>
+      <li><code>reproduce.sh</code> EXIT 0 sur clone propre, runtime ~3-5 min Mac M1 Pro</li>
+    </ul>
+    <ul lang="en">
+      <li>28-page paper submitted to Journal of Automated Reasoning</li>
+      <li>Theorem <code>no_nontrivial_cycle_phase59</code> kernel-checked in Lean 4 + Mathlib v4.27</li>
+      <li>Minimal profile: 3 kernel axioms + 3 documented external hypotheses</li>
+      <li>Zenodo DOI 10.5281/zenodo.19790406</li>
+      <li><code>reproduce.sh</code> EXIT 0 on clean clone, runtime ~3-5 min on Mac M1 Pro</li>
+    </ul>
+  </article>
+
+  <article class="changelog-entry">
+    <header>
+      <h2><span class="version-tag">v0.2.0</span> <span lang="fr">Arsenal R34-R96 PostJAR</span><span lang="en">PostJAR R34-R96 arsenal</span></h2>
+      <time datetime="2026-04-15">2026-04-15</time>
+    </header>
+    <ul lang="fr">
+      <li>72 théorèmes auxiliaires développés post-JAR</li>
+      <li>5 clusters : Steiner foundations, corrSum divisibility, modular universal, lacunary periodization, block decomposition</li>
+      <li>Branche dédiée <code>arsenal-postjar</code> sur GitHub</li>
+    </ul>
+    <ul lang="en">
+      <li>72 auxiliary theorems developed post-JAR</li>
+      <li>5 clusters: Steiner foundations, corrSum divisibility, modular universal, lacunary periodization, block decomposition</li>
+      <li>Dedicated branch <code>arsenal-postjar</code> on GitHub</li>
+    </ul>
+  </article>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-meta">Cartographie · v0.5.1 · 2026-04-29</div>
+  <p lang="fr">Site produit avec PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
+  <p lang="en">Site produced with PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
+  <p>Eric Merle · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a> · <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener">ORCID</a> · <a href="../feed.xml">Atom</a></p>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

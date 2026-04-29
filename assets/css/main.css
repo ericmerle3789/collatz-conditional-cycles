@@ -312,6 +312,152 @@ html[data-theme="light"] #themeBtn .moon-icon { display: none; }
   color: var(--text-secondary);
 }
 
+/* ==========================================================================
+   DEPENDENCY GRAPH (D3) — styling tooltip + nodes
+   ========================================================================== */
+#dependency-graph svg {
+  display: block;
+  cursor: grab;
+}
+#dependency-graph svg:active {
+  cursor: grabbing;
+}
+#graph-tooltip {
+  margin-top: 1rem;
+  transition: all 0.2s;
+}
+.graph-tooltip-type {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.graph-tooltip-name {
+  font-family: var(--mono);
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.graph-tooltip-sub {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   CHANGELOG entries
+   ========================================================================== */
+.changelog-entry {
+  border-left: 3px solid var(--border);
+  padding: 0 0 1rem 1.5rem;
+  margin: 1.8rem 0;
+  position: relative;
+}
+.changelog-entry::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 8px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-primary);
+}
+.changelog-entry header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+.changelog-entry h2 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 600;
+}
+.changelog-entry time {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.version-tag {
+  display: inline-block;
+  background: rgba(200, 168, 106, 0.15);
+  color: var(--accent);
+  border: 1px solid rgba(200, 168, 106, 0.4);
+  padding: 0.15rem 0.6rem;
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.changelog-entry ul {
+  list-style: none;
+  padding-left: 0;
+}
+.changelog-entry li {
+  padding-left: 1.2rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.changelog-entry li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   FOOTER status badge
+   ========================================================================== */
+.footer-status {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(106, 155, 122, 0.1);
+  border: 1px solid rgba(106, 155, 122, 0.4);
+  border-radius: 3px;
+  padding: 0.2rem 0.55rem;
+  color: var(--accent-green);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-decoration: none;
+}
+.status-badge:hover {
+  background: rgba(106, 155, 122, 0.18);
+}
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 4px rgba(106, 155, 122, 0.6);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.status-sep {
+  color: var(--border);
+}
+
 body {
   font-family: var(--sans);
   background: var(--bg-primary);
