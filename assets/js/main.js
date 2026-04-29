@@ -82,7 +82,8 @@
       mainResultDesc: "Le théorème principal <code>no_nontrivial_cycle_phase59</code> est <strong>kernel-checked</strong> en Lean 4 (Mathlib v4.27), avec un profil d'axiomes minimal (3 axiomes Lean kernel : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) et trois hypothèses externes documentées : <strong>BakerSeparation</strong> (LMN95), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>), <strong>DerivedLargeKBound</strong> (Hercher 2023, m ≤ 91).",
       mainResultContrib: "<strong>Contribution scientifique</strong> : pas la non-existence inconditionnelle (cf. δ8 lemma, irréalisable avec les outils 2026), mais la <em>cartographie rigoureuse des obstructions structurelles</em> qui rend la conditionnalité <strong>nécessaire</strong>, pas <em>arbitraire</em>. Sept théorèmes centraux, ~30 fichiers Lean, paper 28 pages, reproductible via <code>reproduce.sh</code> EXIT 0.",
       readPaper: "Lire le paper (PDF, 28 p.)",
-      readProof: "Architecture de la preuve"
+      readProof: "Architecture de la preuve",
+      diagramCaption: "→ Le théorème JAR <code>no_nontrivial_cycle_phase59</code> est l'unique nœud de fermeture conditionnelle. Les 14 paradigmes convergent vers le verrou Λ ; seules les 3 hypothèses externes (Baker, Barina, Hercher) — et non les paradigmes — alimentent le théorème final."
     },
     en: {
       navAccueil: "Home",
@@ -149,12 +150,14 @@
       mainResultDesc: "The main theorem <code>no_nontrivial_cycle_phase59</code> is <strong>kernel-checked</strong> in Lean 4 (Mathlib v4.27), with a minimal axiom profile (3 Lean kernel axioms: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) and three documented external hypotheses: <strong>BakerSeparation</strong> (LMN95), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>), <strong>DerivedLargeKBound</strong> (Hercher 2023, m ≤ 91).",
       mainResultContrib: "<strong>Scientific contribution</strong>: not unconditional non-existence (cf. δ8 lemma, unattainable with 2026 tools), but a <em>rigorous mapping of structural obstructions</em> that makes the conditionality <strong>necessary</strong>, not <em>arbitrary</em>. Seven central theorems, ~30 Lean files, 28-page paper, reproducible via <code>reproduce.sh</code> EXIT 0.",
       readPaper: "Read the paper (PDF, 28 pp.)",
-      readProof: "Proof architecture"
+      readProof: "Proof architecture",
+      diagramCaption: "→ The JAR theorem <code>no_nontrivial_cycle_phase59</code> is the unique conditional closure node. The 14 paradigms converge onto the Λ lock ; only the 3 external hypotheses (Baker, Barina, Hercher) — not the paradigms — feed the final theorem."
     }
   };
 
   const STATUS_LABELS = {
     fr: {
+      jar: "★ Résultat JAR",
       cds: "Cul-de-sac",
       partiel: "Partielle",
       inconnu: "Inconnue",
@@ -163,6 +166,7 @@
       axiome: "Axiome"
     },
     en: {
+      jar: "★ JAR result",
       cds: "Dead end",
       partiel: "Partial",
       inconnu: "Unexplored",
@@ -257,7 +261,10 @@
       const matchSearch = !search || text.includes(search);
       const matchStatus = STATE.statusFilter === 'all' || p.status === STATE.statusFilter;
 
-      if (!matchSearch || !matchStatus) return;
+      // JAR result is always pinned at top (ignores status filter, respects search)
+      const isJar = p.status === 'jar';
+      if (!matchSearch) return;
+      if (!isJar && !matchStatus) return;
       visibleCount++;
 
       const tr = document.createElement('tr');

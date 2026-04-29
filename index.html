@@ -159,13 +159,26 @@ graph LR
 
     LAMBDA["Λ_{S,k}<br/>VERROU"]
     BAKER["Baker LMN95<br/>borne effective"]
+    BARINA["Barina 2025<br/>n &lt; 2^71"]
+    HERCHER["Hercher 2023<br/>m ≤ 91"]
+    JAR["★ JAR<br/>no_nontrivial_cycle_phase59<br/>kernel-checked Lean 4"]
 
-    LAMBDA -->|"Baker requis"| BAKER
+    LAMBDA -->|"axiome 1"| BAKER
+    BAKER -->|"BakerSeparation"| JAR
+    BARINA -->|"BarinaVerification"| JAR
+    HERCHER -->|"DerivedLargeKBound"| JAR
 
     style LAMBDA fill:#c8a86a,color:#0e0f13,stroke:#fff,stroke-width:2px
     style BAKER fill:#6a9b7a,color:#0e0f13
+    style BARINA fill:#6a9b7a,color:#0e0f13
+    style HERCHER fill:#6a9b7a,color:#0e0f13
+    style JAR fill:#f3d99c,color:#0e0f13,stroke:#c8a86a,stroke-width:3px
     </pre>
   </div>
+
+  <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 1rem; font-style: italic;" data-i18n="diagramCaption">
+    → Le théorème JAR <code>no_nontrivial_cycle_phase59</code> est l'unique nœud de fermeture conditionnelle. Les 14 paradigmes convergent vers le verrou Λ ; seules les 3 hypothèses externes (Baker, Barina, Hercher) — et non les paradigmes — alimentent le théorème final.
+  </p>
 </section>
 
 <!-- ========================================================================
