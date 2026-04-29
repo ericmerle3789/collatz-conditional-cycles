@@ -64,11 +64,72 @@
     </p>
     <p style="margin-top: 1rem;">
       <strong>Statut</strong> : <span class="badge prouve">SOUMIS</span> — JAR submission v1.1, 2026-04-27<br>
+      <strong>Théorème Lean</strong> : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/ProjetCollatz/Phase59ContinuedFractions.lean#L236" target="_blank" rel="noopener" style="color: var(--accent);"><code>no_nontrivial_cycle_phase59</code></a> (Phase59ContinuedFractions.lean:236)<br>
       <strong>DOI</strong> : <a href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener" style="color: var(--accent);">10.5281/zenodo.19790406</a><br>
       <strong>PDF</strong> : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/collatz-conditional-proof.pdf" target="_blank" rel="noopener" style="color: var(--accent);">collatz-conditional-proof.pdf</a><br>
       <strong>Sources</strong> : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/paper/v2" target="_blank" rel="noopener" style="color: var(--accent);">paper/v2/</a>
     </p>
   </div>
+
+  <!-- Tableau récapitulatif des 3 conditions -->
+  <h3 style="margin-top: 2.5rem; font-family: var(--serif);">Profil d'axiomes du résultat principal</h3>
+  <p>Le théorème <code>no_nontrivial_cycle_phase59</code> repose sur un profil d'axiomes minimal et explicite. Aucun <code>sorryAx</code> dans la chaîne critique.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Catégorie</th><th>Identifiant Lean</th><th>Énoncé</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr style="background: rgba(106, 155, 122, 0.08);">
+          <td colspan="4"><strong>Axiomes Lean kernel (universels — toutes preuves Mathlib)</strong></td>
+        </tr>
+        <tr>
+          <td><span class="badge axiome">Kernel</span></td>
+          <td><code>propext</code></td>
+          <td>Extensionnalité propositionnelle</td>
+          <td>Lean core</td>
+        </tr>
+        <tr>
+          <td><span class="badge axiome">Kernel</span></td>
+          <td><code>Classical.choice</code></td>
+          <td>Axiome du choix</td>
+          <td>Lean core</td>
+        </tr>
+        <tr>
+          <td><span class="badge axiome">Kernel</span></td>
+          <td><code>Quot.sound</code></td>
+          <td>Soundness des quotients</td>
+          <td>Lean core</td>
+        </tr>
+        <tr style="background: rgba(212, 160, 69, 0.08);">
+          <td colspan="4"><strong>Hypothèses externes documentées (les 3 conditions)</strong></td>
+        </tr>
+        <tr>
+          <td><span class="badge partiel">Externe 1</span></td>
+          <td><code>BakerSeparation</code></td>
+          <td>$|S \log 2 - k \log 3| > C/k^7$ effective</td>
+          <td>Laurent-Mignotte-Nesterenko 1995, JNT 55</td>
+        </tr>
+        <tr>
+          <td><span class="badge partiel">Externe 2</span></td>
+          <td><code>BarinaVerification</code></td>
+          <td>Tous $n &lt; 2^{71}$ atteignent 1</td>
+          <td>Barina 2025, J. Supercomp. 81, 810</td>
+        </tr>
+        <tr>
+          <td><span class="badge partiel">Externe 3</span></td>
+          <td><code>DerivedLargeKBound</code></td>
+          <td>Cycles ont $m \leq 91$ minima locaux</td>
+          <td>Hercher 2023, J. Integer Seq. 26.3.5</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="font-size: 0.92rem; color: var(--text-secondary); margin-top: 1.2rem;">
+    <strong>Lecture</strong> : si les trois conditions externes sont admises (deux hypothèses Diophantiennes + une vérification computationnelle Barina), alors la non-existence des cycles non-triviaux Collatz est <em>prouvée formellement</em> dans Lean 4, kernel-checked. Les axiomes kernel sont ceux que toute preuve Mathlib utilise — ils ne sont pas spécifiques à ce projet.
+  </p>
 </section>
 
 <section>
