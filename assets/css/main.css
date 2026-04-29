@@ -502,12 +502,13 @@ html[data-theme="light"] .hero-banner-overlay {
 }
 .hero-banner-lambda {
   position: absolute;
-  /* Reserve space for TOC starting at viewport - 220px (TOC width + buffer) */
-  right: max(1rem, calc((100vw - 1180px) / 2 + 220px));
+  /* TOC est désormais collapsée par défaut (36px), donc Λ peut s'étendre librement.
+     Buffer minimal de 50px pour ne pas mordre la barre TOC repliée. */
+  right: max(50px, 4vw);
   top: 50%;
   transform: translateY(-50%);
   font-family: var(--serif);
-  font-size: clamp(220px, 38vw, 440px);
+  font-size: clamp(260px, 44vw, 480px);
   font-weight: 600;
   color: var(--accent);
   opacity: 0.10;
@@ -516,13 +517,6 @@ html[data-theme="light"] .hero-banner-overlay {
   z-index: -1;
   user-select: none;
   animation: lambda-drift 18s ease-in-out infinite alternate;
-}
-/* Sur écrans < 1280px (pas de TOC), Λ peut s'étendre à droite normalement */
-@media (max-width: 1280px) {
-  .hero-banner-lambda {
-    right: -2vw;
-    font-size: clamp(280px, 50vw, 540px);
-  }
 }
 @keyframes lambda-drift {
   from { transform: translate(0, -50%) rotate(0deg); }
@@ -606,30 +600,91 @@ html[data-theme="light"] .hero-banner-title {
    STICKY TABLE OF CONTENTS — sidebar latérale qui suit le scroll
    Auto-générée à partir des h2/h3 visibles, highlight section courante
    ========================================================================== */
+/* TOC : drawer collapsé sur le bord droit, expand au hover/focus
+   - État collapsé : 36px de large, juste un handle "≡" + indicateur dot
+     de la section courante
+   - État expand : 220px avec liste complète des sections
+   - Transition douce 0.25s */
 .toc {
   position: fixed;
   top: 50%;
-  right: max(1rem, calc((100vw - 1180px) / 2));
+  right: 0;
   transform: translateY(-50%);
-  width: 200px;
+  width: 36px;
   max-height: 70vh;
-  overflow-y: auto;
+  overflow: hidden;
   z-index: 50;
   font-family: var(--sans);
   font-size: 0.78rem;
-  border-left: 2px solid var(--border);
-  padding: 0.8rem 0.6rem 0.8rem 1rem;
-  pointer-events: auto;
-  /* Clearing visuel : fond semi-transparent + flou pour que la TOC soit
-     lisible quand elle passe au-dessus du Λ watermark du hero-banner */
-  background: color-mix(in srgb, var(--bg-primary) 88%, transparent);
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  border-radius: 4px;
+  border: 1px solid var(--border);
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  padding: 0.5rem;
+  transition: width 0.25s ease, padding 0.25s ease;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.toc:hover, .toc:focus-within {
+  width: 240px;
+  overflow-y: auto;
+  padding: 0.9rem 0.6rem 0.9rem 1rem;
+  cursor: default;
 }
 @supports not (backdrop-filter: blur(8px)) {
-  .toc { background: var(--bg-primary); }
+  .toc { background: var(--bg-secondary); }
 }
+
+/* Handle visible en mode collapsé (icône ≡ verticale) */
+.toc::before {
+  content: '☰';
+  display: block;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--accent);
+  padding: 0.4rem 0;
+  pointer-events: none;
+  line-height: 1;
+  letter-spacing: 0;
+  transition: opacity 0.2s;
+}
+.toc:hover::before, .toc:focus-within::before { opacity: 0; height: 0; padding: 0; }
+
+/* En mode collapsé, ne montre que le handle ; cache le contenu interne */
+.toc .toc-title, .toc .toc-list {
+  opacity: 0;
+  transition: opacity 0.2s 0s;
+  pointer-events: none;
+}
+.toc:hover .toc-title, .toc:focus-within .toc-title,
+.toc:hover .toc-list, .toc:focus-within .toc-list {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.2s 0.1s;
+}
+
+/* Indicateur dot vertical sur la barre repliée (montre la position dans la page) */
+.toc::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 60%;
+  background: linear-gradient(to bottom,
+    var(--border) 0%, var(--border) calc(var(--toc-progress, 0) * 100%),
+    var(--accent) calc(var(--toc-progress, 0) * 100%),
+    var(--accent) calc(var(--toc-progress, 0) * 100% + 8px),
+    var(--border) calc(var(--toc-progress, 0) * 100% + 8px), var(--border) 100%);
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.toc:hover::after, .toc:focus-within::after { opacity: 0; }
 .toc-list { list-style: none; padding: 0; margin: 0; }
 .toc-item { margin: 0; padding: 0; }
 .toc-link {
@@ -1697,17 +1752,121 @@ footer a:hover { border-bottom-color: var(--accent); }
 .highlight p:last-child { margin-bottom: 0; }
 
 /* --- Responsive --- */
+/* ==========================================================================
+   RESPONSIVE — tablette (≤ 1024px) et mobile (≤ 768px / ≤ 480px)
+   ========================================================================== */
+
+/* Tablette / petit laptop ≤ 1024px */
+@media (max-width: 1024px) {
+  .nav { gap: 1rem; font-size: 0.85rem; }
+  .nav a { padding: 0.4rem 0.5rem; }
+  .hero-banner-title { font-size: clamp(1.4rem, 5vw, 2.4rem); }
+  .hero-banner-lambda { font-size: clamp(220px, 38vw, 380px); right: 30px; }
+  .card-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .footer-badges { gap: 0.4rem; font-size: 0.7rem; }
+}
+
+/* Mobile ≤ 768px */
 @media (max-width: 768px) {
-  .topbar-inner { padding: 0.7rem 1rem; flex-wrap: wrap; gap: 1rem; }
-  .nav { gap: 0.8rem; font-size: 0.78rem; }
-  .toolbar-actions { margin-left: 0; padding-left: 0; border-left: none; }
+  .topbar-inner {
+    padding: 0.7rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .brand { font-size: 0.95rem; }
+  .brand-mark { width: 32px; height: 32px; font-size: 1.2rem; }
+  .nav {
+    order: 3;
+    flex-basis: 100%;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.3rem;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { white-space: nowrap; padding: 0.3rem 0.4rem; }
+  .toolbar-actions {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .toolbar-actions .btn-icon { padding: 0.35rem 0.6rem; font-size: 0.78rem; }
+  /* Hero banner mobile : compact, lambda discrète */
+  .hero-banner {
+    height: auto;
+    min-height: 280px;
+    padding: 2rem 0;
+  }
+  .hero-banner-content { padding: 0 1.5rem; }
+  .hero-banner-title { font-size: 1.4rem; line-height: 1.2; }
+  .hero-banner-subtitle { font-size: 0.92rem; }
+  .hero-banner-subtitle code { font-size: 0.85rem; }
+  .hero-banner-pills { flex-wrap: wrap; gap: 0.4rem; }
+  .banner-pill { font-size: 0.7rem; padding: 0.3rem 0.7rem; }
+  .hero-banner-lambda {
+    font-size: clamp(180px, 60vw, 300px);
+    right: -20px;
+    opacity: 0.06;
+  }
+  /* Hero text */
   .hero { padding: 3rem 1.5rem 2.5rem; }
+  .hero h1 { font-size: clamp(1.4rem, 5vw, 2rem); }
   section { padding: 3rem 1.5rem; }
   .key-stats { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .key-stat .value { font-size: 1.8rem; }
   .modal { padding: 1.5rem; }
-  table { font-size: 0.78rem; }
+  /* Tables : scroll horizontal forcé */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { font-size: 0.78rem; min-width: 100%; }
   th, td { padding: 0.5rem 0.6rem; }
+  /* Search palette mobile : full screen */
+  .search-palette { max-width: 95vw; }
+  /* Modal cite : full screen */
+  .cite-tabs { font-size: 0.75rem; }
+  .cite-tab { padding: 0.5rem 0.7rem; }
+  /* Lambda explorer (page /lambda/) */
+  #lambdaCanvas { aspect-ratio: 8/5; }
+  /* Mermaid diagrams scroll horizontal */
+  .mermaid-container { overflow-x: auto; }
+  /* Footer badges wrap proprement */
+  .footer-badges { gap: 0.3rem; }
+  .footer-badge { padding: 0.25rem 0.5rem; font-size: 0.7rem; }
+  /* Lean ↔ Math : 1 col en mobile */
+  .lean-math-pair { grid-template-columns: 1fr; }
+  /* TOC : déjà cachée < 1280px */
+}
+
+/* Mobile petit ≤ 480px */
+@media (max-width: 480px) {
+  .topbar-inner { padding: 0.5rem 0.7rem; }
+  .brand span:not(.brand-mark) { display: none; } /* juste le Λ visible */
+  .brand-mark { width: 36px; height: 36px; }
+  .toolbar-actions .btn-icon { padding: 0.3rem 0.5rem; font-size: 0.72rem; }
+  .hero-banner-eyebrow { font-size: 0.65rem; padding: 0.3rem 0.6rem; }
+  .hero-banner-title { font-size: 1.2rem; }
+  section { padding: 2rem 1rem; }
+  .hero { padding: 2.5rem 1rem 2rem; }
+  .key-stats { grid-template-columns: 1fr; }
+  /* Card 1 col */
+  .card-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .card { padding: 1.2rem; }
+  .card h3 { font-size: 1rem; }
+  /* Table : encore plus compact */
+  table { font-size: 0.72rem; }
+  th, td { padding: 0.4rem 0.45rem; }
+  /* Mermaid diagrams */
+  .mermaid { font-size: 0.7rem; }
+}
+
+/* Touch screens : agrandir les zones cliquables */
+@media (hover: none) and (pointer: coarse) {
+  .toc { display: none !important; } /* Pas de hover sur tactile */
+  .btn-icon { min-height: 36px; min-width: 36px; }
+  .nav a { min-height: 36px; display: inline-flex; align-items: center; }
 }
 
 /* --- Print --- */

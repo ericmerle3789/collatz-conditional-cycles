@@ -1034,12 +1034,20 @@ ER  - `;
       });
     });
 
-    // IntersectionObserver pour highlight
+    // IntersectionObserver pour highlight + maj progress dot sur barre collapsée
     const links = new Map();
     toc.querySelectorAll('a').forEach(a => {
       const id = a.getAttribute('href').substring(1);
       links.set(id, a);
     });
+    const headingOrder = headings.map(h => h.id);
+    function updateProgressDot(activeId) {
+      const idx = headingOrder.indexOf(activeId);
+      if (idx >= 0) {
+        const ratio = idx / Math.max(headingOrder.length - 1, 1);
+        toc.style.setProperty('--toc-progress', ratio);
+      }
+    }
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         const link = links.get(e.target.id);
@@ -1047,6 +1055,7 @@ ER  - `;
         if (e.isIntersecting) {
           links.forEach(l => l.classList.remove('active'));
           link.classList.add('active');
+          updateProgressDot(e.target.id);
         }
       });
     }, { rootMargin: '-15% 0px -70% 0px' });
