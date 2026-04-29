@@ -275,9 +275,14 @@
     }
 
     // Re-générer la TOC dans la nouvelle langue (delay pour laisser le DOM se mettre à jour)
-    if (typeof initTableOfContents === 'function') {
-      setTimeout(initTableOfContents, 100);
-    }
+    // Use Promise.resolve().then to ensure microtask ordering after DOM updates
+    Promise.resolve().then(() => {
+      try {
+        initTableOfContents();
+      } catch (e) {
+        console.warn('TOC regeneration failed:', e);
+      }
+    });
 
     // Re-render KaTeX si chargé
     if (window.renderMathInElement) {
