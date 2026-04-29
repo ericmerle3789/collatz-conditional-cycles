@@ -15,9 +15,14 @@
   const STATE = {
     lang: localStorage.getItem('collatz-lang') ||
           (navigator.language && navigator.language.toLowerCase().startsWith('fr') ? 'fr' : 'en'),
+    theme: localStorage.getItem('collatz-theme') ||
+           (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'),
     data: null,
     statusFilter: 'all'
   };
+
+  // Application immédiate du thème (avant DOMContentLoaded pour éviter FOUC)
+  document.documentElement.dataset.theme = STATE.theme;
 
   const t = {
     fr: {
@@ -258,6 +263,55 @@
     STATE.lang = STATE.lang === 'fr' ? 'en' : 'fr';
     localStorage.setItem('collatz-lang', STATE.lang);
     applyLang();
+  }
+
+  // ========== THEME (clair / sombre) ==========
+  function applyTheme() {
+    document.documentElement.dataset.theme = STATE.theme;
+    // Met à jour aussi <meta name="theme-color"> pour la barre de statut mobile
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) metaTheme.content = (STATE.theme === 'light') ? '#fbfaf6' : '#0e0f13';
+    // Re-render Mermaid avec le bon thème (sombre / par défaut)
+    if (window.mermaid && document.querySelector('.mermaid')) {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: (STATE.theme === 'light') ? 'default' : 'dark',
+        themeVariables: STATE.theme === 'light'
+          ? { primaryColor: '#ffffff', primaryTextColor: '#1a1a1a', primaryBorderColor: '#8b6f30', lineColor: '#6b6760', secondaryColor: '#f5f2ea', tertiaryColor: '#ece8dc', fontFamily: "'Inter', sans-serif" }
+          : { primaryColor: '#16181f', primaryTextColor: '#e8e6e0', primaryBorderColor: '#c8a86a', lineColor: '#8b887f', secondaryColor: '#0e0f13', tertiaryColor: '#1f2229', fontFamily: "'Inter', sans-serif" }
+      });
+      // Re-render les diagrammes en re-parsant
+      document.querySelectorAll('.mermaid').forEach((el, i) => {
+        if (el.dataset.original) { el.innerHTML = el.dataset.original; el.removeAttribute('data-processed'); }
+        else { el.dataset.original = el.innerHTML; }
+      });
+      mermaid.run();
+    }
+    // Re-render Chart.js avec couleurs adaptées
+    if (typeof renderHypothesesChart === 'function' && document.querySelector('#hypothesesChart')) {
+      renderHypothesesChart();
+    }
+  }
+
+  function toggleTheme() {
+    STATE.theme = STATE.theme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('collatz-theme', STATE.theme);
+    applyTheme();
+  }
+
+  // ========== SCROLL PROGRESS BAR ==========
+  // Fallback JS pour navigateurs qui ne supportent pas scroll-driven animations
+  function initScrollProgress() {
+    if (CSS.supports && CSS.supports('animation-timeline: scroll()')) return; // CSS natif suffit
+    const updateProgress = () => {
+      const scrolled = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? Math.min(scrolled / max, 1) : 0;
+      document.documentElement.style.setProperty('--scroll-progress', ratio);
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress, { passive: true });
+    updateProgress();
   }
 
   // ========== TABLE PISTES ==========
@@ -549,10 +603,15 @@
 
     // Toolbar
     document.getElementById('langBtn')?.addEventListener('click', toggleLang);
+    document.getElementById('themeBtn')?.addEventListener('click', toggleTheme);
     document.getElementById('printBtn')?.addEventListener('click', () => window.print());
     document.getElementById('topBtn')?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Theme + Scroll progress
+    applyTheme();
+    initScrollProgress();
 
     // Smooth scroll nav
     document.querySelectorAll('.nav a').forEach(link => {

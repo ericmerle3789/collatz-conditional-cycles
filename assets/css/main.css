@@ -4,8 +4,8 @@
    - Interactivité dark theme (Mermaid, Chart.js, modal)
    ========================================================================== */
 
-/* --- Variables --- */
-:root {
+/* --- Variables : thème sombre (canonique) --- */
+:root, html[data-theme="dark"] {
   --bg-primary: #0e0f13;
   --bg-secondary: #16181f;
   --bg-tertiary: #1f2229;
@@ -21,9 +21,57 @@
   --accent-green: #6a9b7a;
   --accent-violet: #9080a8;
   --border: #2d3038;
+  --shadow-elevated: 0 10px 40px rgba(0, 0, 0, 0.5);
   --serif: 'Crimson Pro', 'Source Serif Pro', 'Iowan Old Style', Georgia, serif;
   --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+}
+
+/* --- Thème clair (mode lecture académique, inspiration AMS Notices) --- */
+html[data-theme="light"] {
+  --bg-primary: #fbfaf6;          /* parchemin légèrement crème */
+  --bg-secondary: #f5f2ea;
+  --bg-tertiary: #ece8dc;
+  --bg-elevated: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #3d3a35;
+  --text-muted: #6b6760;
+  --accent: #8b6f30;              /* doré plus profond, lisible sur clair */
+  --accent-soft: #a08850;
+  --accent-red: #a83d3a;
+  --accent-amber: #b07e22;
+  --accent-blue: #3d6890;
+  --accent-green: #4d7958;
+  --accent-violet: #6b5683;
+  --border: #d8d3c4;
+  --shadow-elevated: 0 6px 24px rgba(60, 50, 30, 0.12);
+}
+
+/* Auto-detect prefers-color-scheme: light si l'utilisateur n'a rien choisi */
+@media (prefers-color-scheme: light) {
+  html:not([data-theme]) {
+    --bg-primary: #fbfaf6;
+    --bg-secondary: #f5f2ea;
+    --bg-tertiary: #ece8dc;
+    --bg-elevated: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #3d3a35;
+    --text-muted: #6b6760;
+    --accent: #8b6f30;
+    --accent-soft: #a08850;
+    --accent-red: #a83d3a;
+    --accent-amber: #b07e22;
+    --accent-blue: #3d6890;
+    --accent-green: #4d7958;
+    --accent-violet: #6b5683;
+    --border: #d8d3c4;
+    --shadow-elevated: 0 6px 24px rgba(60, 50, 30, 0.12);
+  }
+}
+
+/* Transitions douces lors du switch de thème */
+html, body, .topbar, .card, .highlight, table, button, .modal {
+  transition: background-color 0.25s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,6 +86,53 @@ html:not([data-lang]):not([lang="fr"]) [lang="fr"]:not(html) { display: none; }
 html:not([data-lang])[lang="fr"] [lang="en"]:not(html) { display: none; }
 
 html { scroll-behavior: smooth; }
+
+/* ==========================================================================
+   SCROLL PROGRESS BAR — fine ligne dorée en haut de page
+   Utilise une CSS Animation moderne (scroll-driven animations) si disponible,
+   sinon fallback JS dans main.js qui met à jour --scroll-progress.
+   ========================================================================== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-amber) 100%);
+  transform-origin: left center;
+  transform: scaleX(var(--scroll-progress, 0));
+  z-index: 100;
+  pointer-events: none;
+  box-shadow: 0 0 8px rgba(200, 168, 106, 0.4);
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: scroll-progress-anim auto linear;
+    animation-timeline: scroll(root);
+    transform: none;
+  }
+  @keyframes scroll-progress-anim {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+}
+
+/* ==========================================================================
+   THEME TOGGLE BUTTON — icône sun/moon
+   ========================================================================== */
+#themeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font-size: 1rem;
+}
+#themeBtn .sun-icon { display: none; }
+#themeBtn .moon-icon { display: inline; }
+html[data-theme="light"] #themeBtn .sun-icon { display: inline; }
+html[data-theme="light"] #themeBtn .moon-icon { display: none; }
 
 body {
   font-family: var(--sans);
@@ -570,9 +665,9 @@ td code {
   font-weight: 600;
 }
 
-/* --- Code Lean --- */
+/* --- Code Lean : sombre par défaut, clair en theme="light" --- */
 pre {
-  background: #0a0c10 !important;
+  background: #0a0c10;
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 1.2rem !important;
@@ -584,8 +679,18 @@ pre {
   position: relative;
 }
 
-pre[class*="language-"] {
-  background: #0a0c10 !important;
+pre[class*="language-"] { background: #0a0c10; }
+
+/* En thème clair : conserver code dark (lisibilité Lean syntax highlighting)
+   mais avec une bordure plus marquée pour le contraste visuel */
+html[data-theme="light"] pre,
+html[data-theme="light"] pre[class*="language-"] {
+  background: #1f2229;
+  border: 1px solid #d0c8b4;
+  box-shadow: var(--shadow-elevated);
+}
+html[data-theme="light"] pre code {
+  color: #e8e6e0;
 }
 
 pre .lean-badge {
