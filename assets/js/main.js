@@ -1091,6 +1091,195 @@ ER  - `;
     }
   }
 
+  // ========== READING TIME + WORD COUNT ==========
+  // Calcule la durée de lecture en min (220 wpm anglais, 200 wpm français)
+  function injectReadingMeta() {
+    const main = document.querySelector('main');
+    if (!main || document.querySelector('.reading-meta')) return;
+    const text = main.textContent || '';
+    const words = text.trim().split(/\s+/).filter(Boolean).length;
+    const wpm = STATE.lang === 'fr' ? 200 : 220;
+    const minutes = Math.max(1, Math.round(words / wpm));
+
+    // Insère après le premier .hero-eyebrow ou en haut de main
+    const hero = main.querySelector('.hero, .hero-banner');
+    if (!hero) return;
+
+    const dict = { fr: { read: 'min de lecture', words: 'mots', verified: 'build vérifié' },
+                   en: { read: 'min read', words: 'words', verified: 'build verified' } };
+    const d = dict[STATE.lang] || dict.en;
+    const meta = document.createElement('div');
+    meta.className = 'reading-meta';
+    meta.innerHTML = `
+      <span class="reading-meta-item">⏱ ${minutes} ${d.read}</span>
+      <span class="reading-meta-item">${words.toLocaleString()} ${d.words}</span>
+      <span class="reading-meta-item" id="lastVerifiedMeta">⚡ ${d.verified} <span id="lastVerifiedDate">…</span></span>
+    `;
+    // Insère dans le hero
+    const heroContent = hero.querySelector('.hero-eyebrow, .hero-banner-eyebrow');
+    if (heroContent && heroContent.parentNode) {
+      heroContent.parentNode.insertBefore(meta, heroContent.nextSibling);
+    } else {
+      hero.insertAdjacentElement('afterend', meta);
+    }
+  }
+
+  // ========== THEOREM PERMALINKS (hover ¶, click to copy) ==========
+  // Ajoute une icône ¶ sur les <code>theorem_name</code> pour copier le permalien
+  function injectPermalinks() {
+    // Cibler les codes inline qui ressemblent à des noms de théorèmes (snake_case >= 8 chars)
+    const codes = document.querySelectorAll('main code');
+    codes.forEach(code => {
+      const txt = code.textContent.trim();
+      if (txt.length < 8 || code.classList.contains('language-bash') || code.classList.contains('language-lean')) return;
+      if (!/^[a-z][a-z0-9_]*[a-z0-9]$/.test(txt)) return; // snake_case identifier
+      if (code.parentElement?.classList.contains('has-permalink')) return; // déjà fait
+
+      const wrap = document.createElement('span');
+      wrap.className = 'has-permalink';
+      const link = document.createElement('a');
+      link.href = '#' + txt;
+      link.className = 'permalink-icon';
+      link.textContent = '¶';
+      link.title = 'Copy permalink';
+      link.setAttribute('aria-label', 'Copy permalink to ' + txt);
+      link.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const url = location.origin + location.pathname + '#' + txt;
+        try {
+          await navigator.clipboard.writeText(url);
+          showPermalinkToast(STATE.lang === 'fr' ? 'Permalien copié ✓' : 'Permalink copied ✓');
+          history.replaceState(null, '', '#' + txt);
+        } catch (err) {
+          location.hash = '#' + txt;
+        }
+      });
+      code.parentNode.insertBefore(wrap, code);
+      wrap.appendChild(code);
+      wrap.appendChild(link);
+      // Ajoute id sur le code pour deep linking
+      if (!code.id) code.id = txt;
+    });
+  }
+
+  function showPermalinkToast(msg) {
+    const old = document.querySelector('.permalink-copied');
+    if (old) old.remove();
+    const toast = document.createElement('div');
+    toast.className = 'permalink-copied';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2000);
+  }
+
+  // ========== READING FOCUS MODE (touche F) ==========
+  function setupFocusMode() {
+    let active = null;
+    function findActiveSection() {
+      const sections = Array.from(document.querySelectorAll('main section, main article'));
+      let best = null, bestRatio = 0;
+      const vh = window.innerHeight;
+      for (const s of sections) {
+        const r = s.getBoundingClientRect();
+        const visible = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+        const ratio = Math.max(0, visible / Math.min(r.height, vh));
+        if (ratio > bestRatio) { bestRatio = ratio; best = s; }
+      }
+      return best;
+    }
+    function toggleFocus() {
+      const html = document.documentElement;
+      if (html.dataset.focusMode === 'on') {
+        html.removeAttribute('data-focus-mode');
+        document.querySelectorAll('.focus-active').forEach(e => e.classList.remove('focus-active'));
+        showPermalinkToast(STATE.lang === 'fr' ? 'Mode focus désactivé' : 'Focus mode off');
+      } else {
+        html.dataset.focusMode = 'on';
+        const active = findActiveSection();
+        if (active) active.classList.add('focus-active');
+        showPermalinkToast(STATE.lang === 'fr' ? 'Mode focus activé · F pour quitter' : 'Focus mode on · F to exit');
+      }
+    }
+    function updateActive() {
+      if (document.documentElement.dataset.focusMode !== 'on') return;
+      document.querySelectorAll('.focus-active').forEach(e => e.classList.remove('focus-active'));
+      const a = findActiveSection();
+      if (a) a.classList.add('focus-active');
+    }
+    document.addEventListener('keydown', e => {
+      const tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+      if (e.key === 'f' || e.key === 'F') {
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+        e.preventDefault();
+        toggleFocus();
+      }
+    });
+    window.addEventListener('scroll', updateActive, { passive: true });
+  }
+
+  // ========== THEME CYCLE (dark → light → sepia → dark) ==========
+  // Override le toggleTheme pour cycler 3 thèmes
+  const THEME_CYCLE = ['dark', 'light', 'sepia'];
+  function toggleThemeCycle() {
+    const current = STATE.theme || 'dark';
+    const idx = THEME_CYCLE.indexOf(current);
+    STATE.theme = THEME_CYCLE[(idx + 1) % THEME_CYCLE.length];
+    localStorage.setItem('collatz-theme', STATE.theme);
+    applyTheme();
+    const dict = { fr: { dark: 'Sombre', light: 'Clair', sepia: 'Sépia' },
+                   en: { dark: 'Dark', light: 'Light', sepia: 'Sepia' } };
+    showPermalinkToast((dict[STATE.lang] || dict.en)[STATE.theme]);
+  }
+
+  // ========== GITHUB STARS COUNTER (cache 1h via localStorage) ==========
+  async function fetchGitHubStars() {
+    const el = document.getElementById('githubStars');
+    if (!el) return;
+    try {
+      const cached = localStorage.getItem('gh-stars-cache');
+      if (cached) {
+        const obj = JSON.parse(cached);
+        if (Date.now() - obj.ts < 60 * 60 * 1000) {
+          el.textContent = obj.stars;
+          return;
+        }
+      }
+      const r = await fetch('https://api.github.com/repos/ericmerle3789/collatz-conditional-cycles');
+      if (r.ok) {
+        const j = await r.json();
+        const stars = j.stargazers_count || 0;
+        el.textContent = stars;
+        localStorage.setItem('gh-stars-cache', JSON.stringify({ ts: Date.now(), stars }));
+      }
+    } catch (e) { el.textContent = '—'; }
+  }
+
+  // ========== LAST VERIFIED (date du dernier commit main) ==========
+  async function fetchLastVerified() {
+    const el = document.getElementById('lastVerifiedDate');
+    if (!el) return;
+    try {
+      const cached = sessionStorage.getItem('gh-mainsha-cache');
+      if (cached) {
+        const obj = JSON.parse(cached);
+        if (Date.now() - obj.ts < 30 * 60 * 1000) {
+          el.textContent = obj.date;
+          return;
+        }
+      }
+      const r = await fetch('https://api.github.com/repos/ericmerle3789/collatz-conditional-cycles/commits/main');
+      if (r.ok) {
+        const j = await r.json();
+        const date = (j.commit?.committer?.date || j.commit?.author?.date || '').substring(0, 10);
+        const sha = (j.sha || '').substring(0, 7);
+        const text = `${date} · ${sha}`;
+        el.textContent = text;
+        sessionStorage.setItem('gh-mainsha-cache', JSON.stringify({ ts: Date.now(), date: text }));
+      }
+    } catch (e) { el.textContent = '—'; }
+  }
+
   // ========== INIT ==========
   // Calcule un chemin absolu vers /assets/ depuis l'URL du script lui-même.
   // Permet à main.js de fonctionner depuis /, /preuve/, /papers/, /lemmes/, etc.
@@ -1153,7 +1342,7 @@ ER  - `;
 
     // Toolbar
     document.getElementById('langBtn')?.addEventListener('click', toggleLang);
-    document.getElementById('themeBtn')?.addEventListener('click', toggleTheme);
+    document.getElementById('themeBtn')?.addEventListener('click', toggleThemeCycle);
     document.getElementById('citeBtn')?.addEventListener('click', openCiteModal);
     document.getElementById('printBtn')?.addEventListener('click', () => window.print());
 
@@ -1193,6 +1382,13 @@ ER  - `;
 
     // TOC sticky : init après applyLang pour avoir les bons headings
     setTimeout(initTableOfContents, 200);
+
+    // Reading meta + permalinks + focus mode + GitHub stars + last verified
+    setTimeout(injectReadingMeta, 250);
+    setTimeout(injectPermalinks, 300);
+    setupFocusMode();
+    fetchGitHubStars();
+    fetchLastVerified();
 
     // Smooth scroll nav
     document.querySelectorAll('.nav a').forEach(link => {
