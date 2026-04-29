@@ -28,6 +28,15 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* ==========================================================================
+   I18N — FOUC prevention pour le pattern dual-lang inline
+   Ces règles s'appliquent UNIQUEMENT avant que main.js ait fini d'initialiser
+   (avant que data-lang soit posé sur <html>). Empêche l'affichage simultané
+   FR+EN au premier paint. Une fois main.js actif, [hidden] prend le relais.
+   ========================================================================== */
+html:not([data-lang]):not([lang="fr"]) [lang="fr"]:not(html) { display: none; }
+html:not([data-lang])[lang="fr"] [lang="en"]:not(html) { display: none; }
+
 html { scroll-behavior: smooth; }
 
 body {
