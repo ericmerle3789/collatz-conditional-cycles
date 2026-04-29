@@ -99,7 +99,12 @@
       citeTitle: "Comment citer ce travail",
       citePlain: "Texte simple",
       citeCopy: "Copier",
-      citeDoiLabel: "DOI"
+      citeDoiLabel: "DOI",
+      searchPalettePlaceholder: "Rechercher théorèmes, pistes, pages…",
+      searchEmpty: "Aucun résultat",
+      searchNav: "naviguer",
+      searchOpen: "ouvrir",
+      searchClose: "fermer"
     },
     en: {
       navAccueil: "Home",
@@ -175,7 +180,12 @@
       citeTitle: "How to cite this work",
       citePlain: "Plain text",
       citeCopy: "Copy to clipboard",
-      citeDoiLabel: "DOI"
+      citeDoiLabel: "DOI",
+      searchPalettePlaceholder: "Search theorems, approaches, pages…",
+      searchEmpty: "No results",
+      searchNav: "navigate",
+      searchOpen: "open",
+      searchClose: "close"
     }
   };
 
@@ -455,6 +465,258 @@ ER  - `;
   function openCiteModal() {
     injectCitationModal();
     document.getElementById('citeModal').classList.add('active');
+  }
+
+  // ========== COMMAND PALETTE / THEOREM SEARCH (Cmd+K / Ctrl+K) ==========
+  // Recherche universelle sur pistes + théorèmes Lean (centralTheorems,
+  // auxiliaryTheorems, cfGaps, postJarArsenal). Fonctionne sur toutes les
+  // pages : navigation cross-page si match dans une page distincte.
+  let SEARCH_INDEX = null;
+  let SEARCH_LEMMES = null;
+
+  async function ensureSearchIndex() {
+    // pistes : déjà chargé via STATE.data
+    // lemmes : à fetcher si pas déjà
+    if (SEARCH_INDEX) return SEARCH_INDEX;
+    const base = assetsBaseURL();
+    if (!SEARCH_LEMMES) {
+      try {
+        const r = await fetch(base + 'data/lemmes.json');
+        if (r.ok) SEARCH_LEMMES = await r.json();
+      } catch (e) { /* sous-page sans accès */ }
+    }
+    SEARCH_INDEX = [];
+    // Pistes
+    if (STATE.data && STATE.data.pistes) {
+      STATE.data.pistes.forEach(p => {
+        SEARCH_INDEX.push({
+          type: 'piste',
+          id: p.id,
+          title: p.en?.name || p.fr?.name || p.id,
+          titleFr: p.fr?.name || '',
+          subtitle: 'Approach · Region ' + p.region + ' · ' + p.status,
+          desc: (p.en?.why || p.fr?.why || '').substring(0, 140),
+          url: 'index.html#pistes',
+          keywords: [p.id, p.lean, p.ref, p.fr?.name, p.en?.name, p.fr?.why, p.en?.why, p.region, p.status].filter(Boolean).join(' ').toLowerCase()
+        });
+      });
+    }
+    // Théorèmes Lean centraux
+    if (SEARCH_LEMMES && SEARCH_LEMMES.centralTheorems) {
+      SEARCH_LEMMES.centralTheorems.forEach(t => {
+        SEARCH_INDEX.push({
+          type: 'theorem',
+          id: t.name,
+          title: t.name,
+          subtitle: 'Central theorem · ' + (t.en?.role || t.fr?.role || ''),
+          desc: (t.en?.desc || t.fr?.desc || '').substring(0, 140),
+          url: 'lemmes/',
+          file: t.file,
+          keywords: [t.name, t.file, t.en?.desc, t.fr?.desc, ...(t.depends || []), ...(t.axioms || [])].filter(Boolean).join(' ').toLowerCase()
+        });
+      });
+    }
+    if (SEARCH_LEMMES && SEARCH_LEMMES.auxiliaryTheorems) {
+      SEARCH_LEMMES.auxiliaryTheorems.forEach(t => {
+        SEARCH_INDEX.push({
+          type: 'lemma',
+          id: t.name,
+          title: t.name,
+          subtitle: 'Auxiliary lemma · ' + (t.en?.role || t.fr?.role || ''),
+          desc: (t.en?.desc || t.fr?.desc || '').substring(0, 140),
+          url: 'lemmes/',
+          file: t.file,
+          keywords: [t.name, t.file, t.en?.desc, t.fr?.desc].filter(Boolean).join(' ').toLowerCase()
+        });
+      });
+    }
+    if (SEARCH_LEMMES && SEARCH_LEMMES.cfGaps) {
+      SEARCH_LEMMES.cfGaps.forEach(g => {
+        SEARCH_INDEX.push({
+          type: 'cfgap',
+          id: g.name,
+          title: g.name,
+          subtitle: 'CF gap · Window W' + g.window + ' · convergent ' + g.convergent,
+          desc: 'Arithmetic inequality at convergent (' + g.convergent + ') of log_2 3, validated by native_decide.',
+          url: 'lemmes/',
+          keywords: ['cf_gap', 'cf gap', g.name, 'W' + g.window, g.convergent, 'native_decide', 'continued fraction'].join(' ').toLowerCase()
+        });
+      });
+    }
+    if (SEARCH_LEMMES && SEARCH_LEMMES.postJarArsenal && SEARCH_LEMMES.postJarArsenal.files) {
+      SEARCH_LEMMES.postJarArsenal.files.forEach(f => {
+        SEARCH_INDEX.push({
+          type: 'postjar',
+          id: f.name,
+          title: f.name,
+          subtitle: 'PostJAR file · ' + f.theoremCount + ' theorems',
+          desc: (f.en || f.fr || '').substring(0, 140),
+          url: 'lemmes/',
+          keywords: [f.name, f.en, f.fr, 'PostJAR', 'R34-R96', 'arsenal'].filter(Boolean).join(' ').toLowerCase()
+        });
+      });
+    }
+    // Pages
+    SEARCH_INDEX.push(
+      { type: 'page', id: '/', title: 'Home — Cartography', subtitle: 'Page · Main entry', desc: '35 approaches, 3 axiom pillars, the lock Λ_{S,k}', url: 'index.html', keywords: 'home cartography main lambda lock baker barina hercher' },
+      { type: 'page', id: '/preuve/', title: 'Proof chain', subtitle: 'Page · Lean 4 architecture', desc: 'Phase52 → Phase58 → Phase59 → Phase63', url: 'preuve/', keywords: 'proof chain phase52 phase58 phase59 phase63 steiner barina continued fractions' },
+      { type: 'page', id: '/papers/', title: 'Papers pipeline', subtitle: 'Page · 1 submitted + 5 drafts + 2 meta', desc: 'JAR + AITP + Math. Intelligencer + ITP + JFR + JNT', url: 'papers/', keywords: 'papers pipeline jar aitp math intelligencer itp jfr jnt drafts' },
+      { type: 'page', id: '/lemmes/', title: 'Lean catalog', subtitle: 'Page · 7 central + auxiliaries + cf_gaps + PostJAR', desc: 'Catalog of all Lean 4 theorems', url: 'lemmes/', keywords: 'lean catalog theorems central auxiliary cf_gap postjar arsenal' }
+    );
+    return SEARCH_INDEX;
+  }
+
+  function searchScore(query, item) {
+    const q = query.toLowerCase().trim();
+    if (!q) return 0;
+    const tokens = q.split(/\s+/).filter(Boolean);
+    let score = 0;
+    for (const tok of tokens) {
+      if (item.id.toLowerCase().includes(tok)) score += 50;
+      if (item.title.toLowerCase().includes(tok)) score += 30;
+      if (item.subtitle.toLowerCase().includes(tok)) score += 10;
+      if ((item.desc || '').toLowerCase().includes(tok)) score += 5;
+      if (item.keywords.includes(tok)) score += 8;
+      // Match exact ID = bonus
+      if (item.id.toLowerCase() === tok) score += 100;
+    }
+    return score;
+  }
+
+  function getBaseHref() {
+    // Calcule la base relative pour les liens internes selon la page courante
+    const path = location.pathname;
+    if (path.endsWith('/preuve/') || path.endsWith('/papers/') || path.endsWith('/lemmes/')) return '../';
+    return '';
+  }
+
+  async function openSearchPalette() {
+    await ensureSearchIndex();
+    if (document.getElementById('searchPalette')) {
+      document.getElementById('searchPalette').classList.add('active');
+      document.getElementById('searchInputPalette')?.focus();
+      return;
+    }
+    const dict = t[STATE.lang];
+    const html = `
+      <div class="modal-overlay" id="searchPalette" role="dialog" aria-modal="true">
+        <div class="search-palette">
+          <div class="search-input-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="searchInputPalette" type="search" autocomplete="off" spellcheck="false"
+                   placeholder="${dict.searchPalettePlaceholder || 'Search theorems, approaches, pages…'}"
+                   aria-label="${dict.searchPalettePlaceholder || 'Search'}">
+            <kbd class="search-esc">ESC</kbd>
+          </div>
+          <div id="searchResults" class="search-results" role="listbox"></div>
+          <div class="search-footer">
+            <span><kbd>↑</kbd><kbd>↓</kbd> ${dict.searchNav || 'navigate'}</span>
+            <span><kbd>↵</kbd> ${dict.searchOpen || 'open'}</span>
+            <span><kbd>ESC</kbd> ${dict.searchClose || 'close'}</span>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', html);
+    const overlay = document.getElementById('searchPalette');
+    const input = document.getElementById('searchInputPalette');
+    const results = document.getElementById('searchResults');
+    let activeIdx = 0;
+
+    function renderResults(items) {
+      activeIdx = 0;
+      if (!items.length) {
+        results.innerHTML = `<div class="search-empty">${dict.searchEmpty || 'No results'}</div>`;
+        return;
+      }
+      results.innerHTML = items.map((it, i) => `
+        <div class="search-result ${i === 0 ? 'active' : ''}" role="option" data-idx="${i}">
+          <div class="search-result-type">${it.type}</div>
+          <div class="search-result-body">
+            <div class="search-result-title">${escapeHtml(it.title)}</div>
+            <div class="search-result-subtitle">${escapeHtml(it.subtitle)}</div>
+            ${it.desc ? `<div class="search-result-desc">${escapeHtml(it.desc)}</div>` : ''}
+          </div>
+        </div>
+      `).join('');
+      results.querySelectorAll('.search-result').forEach(el => {
+        el.addEventListener('click', () => {
+          activeIdx = parseInt(el.dataset.idx, 10);
+          openResult(items[activeIdx]);
+        });
+        el.addEventListener('mouseenter', () => {
+          results.querySelectorAll('.search-result').forEach(r => r.classList.remove('active'));
+          el.classList.add('active');
+          activeIdx = parseInt(el.dataset.idx, 10);
+        });
+      });
+    }
+
+    function openResult(item) {
+      overlay.classList.remove('active');
+      const base = getBaseHref();
+      let href = base + item.url;
+      // Pour les pistes : naviguer vers la home + ouvrir la modale
+      if (item.type === 'piste' && STATE.data) {
+        const piste = STATE.data.pistes.find(p => p.id === item.id);
+        if (piste && location.pathname.match(/\/(index\.html)?$/)) {
+          // Sur la home : ouvrir directement le modal piste
+          if (typeof openPisteModal === 'function') openPisteModal(piste);
+          return;
+        }
+      }
+      location.href = href;
+    }
+
+    function doSearch(query) {
+      const q = (query || '').trim();
+      if (!q) {
+        renderResults(SEARCH_INDEX.filter(it => it.type === 'page'));
+        return;
+      }
+      const scored = SEARCH_INDEX
+        .map(it => ({ ...it, _s: searchScore(q, it) }))
+        .filter(it => it._s > 0)
+        .sort((a, b) => b._s - a._s)
+        .slice(0, 12);
+      renderResults(scored);
+    }
+
+    input.addEventListener('input', () => doSearch(input.value));
+
+    input.addEventListener('keydown', (e) => {
+      const items = results.querySelectorAll('.search-result');
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        activeIdx = Math.min(activeIdx + 1, items.length - 1);
+        items.forEach((el, i) => el.classList.toggle('active', i === activeIdx));
+        items[activeIdx]?.scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        activeIdx = Math.max(activeIdx - 1, 0);
+        items.forEach((el, i) => el.classList.toggle('active', i === activeIdx));
+        items[activeIdx]?.scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        const item = items[activeIdx];
+        if (item) item.click();
+      } else if (e.key === 'Escape') {
+        overlay.classList.remove('active');
+      }
+    });
+
+    overlay.addEventListener('click', e => {
+      if (e.target.id === 'searchPalette') overlay.classList.remove('active');
+    });
+
+    // Initial : montre les 4 pages
+    doSearch('');
+    overlay.classList.add('active');
+    setTimeout(() => input.focus(), 50);
+  }
+
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
   // ========== SCROLL PROGRESS BAR ==========
@@ -767,9 +1029,23 @@ ER  - `;
 
     // Raccourci clavier : 'C' ouvre la modale citation (sauf en input)
     document.addEventListener('keydown', e => {
+      const tag = (e.target.tagName || '').toLowerCase();
+      const inInput = tag === 'input' || tag === 'textarea' || e.target.isContentEditable;
+      // Cmd+K / Ctrl+K → palette de recherche
+      if ((e.key === 'k' || e.key === 'K') && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        openSearchPalette();
+        return;
+      }
+      // '/' (slash) → palette de recherche (style GitHub)
+      if (e.key === '/' && !inInput && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        e.preventDefault();
+        openSearchPalette();
+        return;
+      }
+      // 'C' → citation
       if ((e.key === 'c' || e.key === 'C') && !e.metaKey && !e.ctrlKey && !e.altKey) {
-        const tag = (e.target.tagName || '').toLowerCase();
-        if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+        if (inInput) return;
         e.preventDefault();
         openCiteModal();
       }
