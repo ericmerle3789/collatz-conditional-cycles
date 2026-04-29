@@ -6,33 +6,40 @@
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { width: 1200px; height: 630px; overflow: hidden; }
+html {
+  width: 1200px;
+  height: 630px;
+  background: #0e0f13;
+}
 body {
+  width: 1200px;
+  height: 630px;
+  min-height: 630px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   background: linear-gradient(135deg, #0e0f13 0%, #16181f 60%, #1f2229 100%);
   font-family: 'Inter', sans-serif;
   color: #e8e6e0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 70px 80px;
   position: relative;
 }
-/* Décor : équation Lambda en grand, transparente */
 .lambda-watermark {
   position: absolute;
   top: 50%;
-  right: 60px;
+  right: 30px;
   transform: translateY(-50%);
   font-family: 'Crimson Pro', serif;
-  font-size: 480px;
+  font-size: 380px;
   font-weight: 600;
   color: #c8a86a;
-  opacity: 0.15;
+  opacity: 0.10;
   line-height: 1;
-  pointer-events: none;
 }
-/* Header : brand + DOI badge */
 .header {
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  right: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,22 +48,21 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
   font-family: 'Crimson Pro', serif;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 600;
-  letter-spacing: 0.02em;
 }
 .brand-mark {
-  width: 56px;
-  height: 56px;
-  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 9px;
   border: 2px solid #c8a86a;
   background: #16181f;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 36px;
+  font-size: 32px;
   color: #c8a86a;
 }
 .doi-badge {
@@ -64,67 +70,79 @@ body {
   border: 1px solid rgba(106, 155, 122, 0.5);
   color: #94c3a4;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
-  padding: 6px 14px;
+  font-size: 13px;
+  padding: 6px 12px;
   border-radius: 4px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
-/* Titre principal */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 70px;
+  right: 70px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
 .main-title {
   font-family: 'Crimson Pro', serif;
-  font-size: 60px;
+  font-size: 56px;
   font-weight: 700;
   line-height: 1.1;
-  z-index: 2;
-  max-width: 900px;
+  max-width: 880px;
   color: #f3d99c;
+  margin-bottom: 22px;
 }
 .main-title em {
   font-style: italic;
   color: #c8a86a;
 }
-/* Sous-titre */
 .subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: 26px;
+  font-size: 22px;
   color: #b8b5ad;
   line-height: 1.4;
-  margin-top: 24px;
-  max-width: 900px;
+  max-width: 880px;
+}
+.subtitle code {
+  font-family: 'JetBrains Mono', monospace;
+  color: #c8a86a;
+  font-size: 21px;
+}
+.bottom {
+  position: absolute;
+  bottom: 50px;
+  left: 70px;
+  right: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   z-index: 2;
 }
-/* Footer : 3 axiomes */
 .axioms {
   display: flex;
-  gap: 18px;
-  z-index: 2;
+  gap: 12px;
 }
 .axiom-pill {
   background: rgba(212, 160, 69, 0.12);
   border: 1px solid rgba(212, 160, 69, 0.4);
   color: #e0b87c;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 16px;
-  padding: 8px 16px;
+  font-size: 14px;
+  padding: 7px 14px;
   border-radius: 4px;
 }
-/* Auteur en bas à droite */
 .author {
   font-family: 'Inter', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #8b887f;
   text-align: right;
-  z-index: 2;
 }
 .author strong {
   color: #c8a86a;
   font-weight: 600;
 }
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  z-index: 2;
+.author .pub {
+  color: #94c3a4;
 }
 </style>
 </head>
@@ -139,9 +157,9 @@ body {
     <div class="doi-badge">DOI · 10.5281/zenodo.19790406</div>
   </div>
 
-  <div>
+  <div class="center">
     <div class="main-title">No non-trivial Collatz cycle — <em>modulo three explicit conditions</em></div>
-    <div class="subtitle"><code style="font-family:'JetBrains Mono'; color:#c8a86a;">no_nontrivial_cycle_phase59</code> · kernel-checked Lean 4 · Mathlib v4.27</div>
+    <div class="subtitle"><code>no_nontrivial_cycle_phase59</code> · kernel-checked Lean 4 · Mathlib v4.27</div>
   </div>
 
   <div class="bottom">
@@ -151,7 +169,7 @@ body {
       <div class="axiom-pill">DerivedLargeKBound</div>
     </div>
     <div class="author">
-      <strong>Eric Merle</strong> · 2026 · <span style="color:#94c3a4;">JAR submission</span>
+      <strong>Eric Merle</strong> · 2026 · <span class="pub">JAR submission</span>
     </div>
   </div>
 </body>
