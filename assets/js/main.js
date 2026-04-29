@@ -76,7 +76,13 @@
       modalLean: "Lemme Lean",
       modalRef: "Référence",
       modalWhy: "Pourquoi cette piste est-elle dans cet état ?",
-      noResult: "Aucune piste ne correspond à la recherche."
+      noResult: "Aucune piste ne correspond à la recherche.",
+      mainResultEyebrow: "Résultat principal — paper soumis JAR Springer",
+      mainResultTitle: "Aucun cycle Collatz non-trivial — modulo trois conditions explicites",
+      mainResultDesc: "Le théorème principal <code>no_nontrivial_cycle_phase59</code> est <strong>kernel-checked</strong> en Lean 4 (Mathlib v4.27), avec un profil d'axiomes minimal (3 axiomes Lean kernel : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) et trois hypothèses externes documentées : <strong>BakerSeparation</strong> (LMN95), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>), <strong>DerivedLargeKBound</strong> (Hercher 2023, m ≤ 91).",
+      mainResultContrib: "<strong>Contribution scientifique</strong> : pas la non-existence inconditionnelle (cf. δ8 lemma, irréalisable avec les outils 2026), mais la <em>cartographie rigoureuse des obstructions structurelles</em> qui rend la conditionnalité <strong>nécessaire</strong>, pas <em>arbitraire</em>. Sept théorèmes centraux, ~30 fichiers Lean, paper 28 pages, reproductible via <code>reproduce.sh</code> EXIT 0.",
+      readPaper: "Lire le paper (PDF, 28 p.)",
+      readProof: "Architecture de la preuve"
     },
     en: {
       navAccueil: "Home",
@@ -137,7 +143,13 @@
       modalLean: "Lean lemma",
       modalRef: "Reference",
       modalWhy: "Why is this approach in that state?",
-      noResult: "No approach matches the search."
+      noResult: "No approach matches the search.",
+      mainResultEyebrow: "Main result — paper submitted to JAR Springer",
+      mainResultTitle: "No non-trivial Collatz cycle — modulo three explicit conditions",
+      mainResultDesc: "The main theorem <code>no_nontrivial_cycle_phase59</code> is <strong>kernel-checked</strong> in Lean 4 (Mathlib v4.27), with a minimal axiom profile (3 Lean kernel axioms: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) and three documented external hypotheses: <strong>BakerSeparation</strong> (LMN95), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>), <strong>DerivedLargeKBound</strong> (Hercher 2023, m ≤ 91).",
+      mainResultContrib: "<strong>Scientific contribution</strong>: not unconditional non-existence (cf. δ8 lemma, unattainable with 2026 tools), but a <em>rigorous mapping of structural obstructions</em> that makes the conditionality <strong>necessary</strong>, not <em>arbitrary</em>. Seven central theorems, ~30 Lean files, 28-page paper, reproducible via <code>reproduce.sh</code> EXIT 0.",
+      readPaper: "Read the paper (PDF, 28 pp.)",
+      readProof: "Proof architecture"
     }
   };
 

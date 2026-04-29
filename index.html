@@ -80,6 +80,25 @@
     Trente-cinq pistes mathématiques, trois axiomes piliers, une famille d'hypothèses ouvertes — organisées autour d'une obstruction diophantienne unique : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.
   </p>
 
+  <!-- Result box : mise en avant du résultat principal JAR -->
+  <div class="highlight" style="margin-top: 2.5rem; border-left-color: var(--accent);">
+    <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem;" data-i18n="mainResultEyebrow">Résultat principal — paper soumis JAR Springer</div>
+    <h3 style="font-family: var(--serif); font-size: 1.4rem; line-height: 1.35; margin: 0 0 0.8rem 0; color: var(--text-primary);" data-i18n="mainResultTitle">
+      Aucun cycle Collatz non-trivial — modulo trois conditions explicites
+    </h3>
+    <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); margin: 0 0 1rem 0;" data-i18n="mainResultDesc">
+      Le théorème principal <code>no_nontrivial_cycle_phase59</code> est <strong>kernel-checked</strong> en Lean 4 (Mathlib v4.27), avec un profil d'axiomes minimal (3 axiomes Lean kernel : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) et trois hypothèses externes documentées : <strong>BakerSeparation</strong> (LMN95), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>), <strong>DerivedLargeKBound</strong> (Hercher 2023, m ≤ 91).
+    </p>
+    <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary); margin: 0 0 1rem 0;" data-i18n="mainResultContrib">
+      <strong>Contribution scientifique</strong> : pas la non-existence inconditionnelle (cf. δ8 lemma, irréalisable avec les outils 2026), mais la <em>cartographie rigoureuse des obstructions structurelles</em> qui rend la conditionnalité <strong>nécessaire</strong>, pas <em>arbitraire</em>. Sept théorèmes centraux, ~30 fichiers Lean, paper 28 pages, reproductible via <code>reproduce.sh</code> EXIT 0.
+    </p>
+    <p style="font-size: 0.9rem; margin-top: 1.2rem;">
+      <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/collatz-conditional-proof.pdf" target="_blank" rel="noopener" style="color: var(--accent); margin-right: 1.5rem;">→ <span data-i18n="readPaper">Lire le paper (PDF, 28 p.)</span></a>
+      <a href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener" style="color: var(--accent); margin-right: 1.5rem;">→ DOI Zenodo</a>
+      <a href="preuve/" style="color: var(--accent);">→ <span data-i18n="readProof">Architecture de la preuve</span></a>
+    </p>
+  </div>
+
   <div class="key-stats">
     <div class="key-stat">
       <div class="value">2,4·10<sup>−9</sup></div>
