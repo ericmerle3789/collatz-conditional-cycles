@@ -10,10 +10,10 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <!-- Canonical + hreflang -->
-<link rel="canonical" href="https://ericmerle3789.github.io/collatz-conditional-cycles/lemmes/">
-<link rel="alternate" hreflang="en" href="https://ericmerle3789.github.io/collatz-conditional-cycles/lemmes/">
-<link rel="alternate" hreflang="fr" href="https://ericmerle3789.github.io/collatz-conditional-cycles/lemmes/?lang=fr">
-<link rel="alternate" hreflang="x-default" href="https://ericmerle3789.github.io/collatz-conditional-cycles/lemmes/">
+<link rel="canonical" href="https://collatz-lab.org/lemmes/">
+<link rel="alternate" hreflang="en" href="https://collatz-lab.org/lemmes/">
+<link rel="alternate" hreflang="fr" href="https://collatz-lab.org/lemmes/?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://collatz-lab.org/lemmes/">
 
 <!-- Favicons -->
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -24,8 +24,8 @@
 <meta property="og:title" content="Lean catalog — Collatz Conditional Cycles">
 <meta property="og:description" content="7 central kernel-checked theorems + auxiliaries + 6 cf_gap arithmetic windows + R34-R96 PostJAR arsenal. Mathlib v4.27.0, reproduce.sh EXIT 0.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://ericmerle3789.github.io/collatz-conditional-cycles/lemmes/">
-<meta property="og:image" content="https://ericmerle3789.github.io/collatz-conditional-cycles/assets/og-image.png">
+<meta property="og:url" content="https://collatz-lab.org/lemmes/">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lean catalog — Collatz Conditional Cycles">
 <meta name="twitter:description" content="7 central kernel-checked theorems + auxiliaries + 6 cf_gap windows + R34-R96 arsenal.">
-<meta name="twitter:image" content="https://ericmerle3789.github.io/collatz-conditional-cycles/assets/og-image.png">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
 
 <!-- JSON-LD : Dataset (catalog of theorems) -->
 <script type="application/ld+json">
@@ -45,7 +45,7 @@
   "@type": "Dataset",
   "name": "Collatz Conditional Cycles — Lean theorem catalog",
   "description": "Comprehensive catalog of Lean 4 theorems for the non-existence of non-trivial Collatz cycles, including 7 central theorems (no_nontrivial_cycle_phase59 chain), auxiliary lemmas, and the R34-R96 PostJAR arsenal.",
-  "url": "https://ericmerle3789.github.io/collatz-conditional-cycles/lemmes/",
+  "url": "https://collatz-lab.org/lemmes/",
   "keywords": "Lean 4, Mathlib, Collatz, formal verification, theorems",
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true,
@@ -57,9 +57,9 @@
   "distribution": {
     "@type": "DataDownload",
     "encodingFormat": "application/json",
-    "contentUrl": "https://ericmerle3789.github.io/collatz-conditional-cycles/assets/data/lemmes.json"
+    "contentUrl": "https://collatz-lab.org/assets/data/lemmes.json"
   },
-  "isPartOf": {"@id": "https://ericmerle3789.github.io/collatz-conditional-cycles/"}
+  "isPartOf": {"@id": "https://collatz-lab.org/"}
 }
 </script>
 
@@ -180,8 +180,8 @@
 </section>
 
 <section>
-  <div class="section-eyebrow" lang="fr">§ II.bis — Graphe de dépendances</div>
-  <div class="section-eyebrow" lang="en">§ II.bis — Dependency graph</div>
+  <div class="section-eyebrow" lang="fr">§ III — Graphe de dépendances</div>
+  <div class="section-eyebrow" lang="en">§ III — Dependency graph</div>
   <h2 lang="fr">Architecture interactive (D3 force-directed)</h2>
   <h2 lang="en">Interactive architecture (D3 force-directed)</h2>
   <p lang="fr">Graphe interactif de l'architecture de la preuve. <strong>Drag</strong> pour déplacer les nœuds, <strong>scroll</strong> pour zoomer. <em>Étoile dorée</em> = résultat principal JAR. <span style="color: var(--accent-violet);">●</span> Axiomes externes (Baker, Barina, Hercher) · <span style="color: var(--accent-green);">●</span> Axiomes Lean kernel · <span style="color: var(--accent-blue);">●</span> Lemmes auxiliaires · <span style="color: var(--accent-amber);">●</span> Théorèmes centraux. Lignes pleines = dépendances logiques, pointillés courts = axiomes kernel, pointillés longs dorés = alias.</p>
@@ -196,7 +196,7 @@
 </section>
 
 <section>
-  <div class="section-eyebrow">§ III — CF Windows</div>
+  <div class="section-eyebrow">§ IV — CF Windows</div>
   <h2>Continued fractions arithmetic gaps</h2>
   <p lang="fr">Les théorèmes <code>cf_gap_8</code> à <code>cf_gap_13</code> calculent les inégalités arithmétiques aux convergents de $\log_2 3$, validées par <code>native_decide</code>.</p>
   <p lang="en">Theorems <code>cf_gap_8</code> to <code>cf_gap_13</code> compute arithmetic inequalities at the convergents of $\log_2 3$, validated by <code>native_decide</code>.</p>
@@ -212,8 +212,8 @@
 </section>
 
 <section>
-  <div class="section-eyebrow" lang="fr">§ IV — Auxiliaires</div>
-  <div class="section-eyebrow" lang="en">§ IV — Auxiliaries</div>
+  <div class="section-eyebrow" lang="fr">§ V — Auxiliaires</div>
+  <div class="section-eyebrow" lang="en">§ V — Auxiliaries</div>
   <h2 lang="fr">Lemmes de l'arsenal</h2>
   <h2 lang="en">Arsenal lemmas</h2>
   <p lang="fr">Théorèmes auxiliaires qui constituent les briques de la preuve principale : identité de Steiner, positivité de $D_s$, transport modulaire, périodisation lacunaire.</p>
@@ -222,7 +222,7 @@
 </section>
 
 <section>
-  <div class="section-eyebrow">§ V — PostJAR</div>
+  <div class="section-eyebrow">§ VI — PostJAR</div>
   <h2>Arsenal R34-R96 (PostJAR)</h2>
   <p lang="fr">Extensions développées après la soumission JAR. Trois familles principales :</p>
   <p lang="en">Extensions developed after the JAR submission. Three main families:</p>
@@ -230,8 +230,8 @@
 </section>
 
 <section>
-  <div class="section-eyebrow" lang="fr">§ VI — Reproductibilité</div>
-  <div class="section-eyebrow" lang="en">§ VI — Reproducibility</div>
+  <div class="section-eyebrow" lang="fr">§ VII — Reproductibilité</div>
+  <div class="section-eyebrow" lang="en">§ VII — Reproducibility</div>
   <h2 lang="fr">Vérifier la preuve localement</h2>
   <h2 lang="en">Verify the proof locally</h2>
   <p lang="fr">Tout est reproductible depuis un clone propre via <code>reproduce.sh</code>. Le script vérifie : compilation propre, profil d'axiomes attendu, absence de <code>sorryAx</code>.</p>

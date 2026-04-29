@@ -967,6 +967,82 @@ ER  - `;
     });
   }
 
+  // ========== STICKY TABLE OF CONTENTS ==========
+  // Génère une TOC latérale auto à partir des h2 visibles dans <main>,
+  // highlight la section courante via IntersectionObserver.
+  function initTableOfContents() {
+    const main = document.querySelector('main');
+    if (!main) return;
+    // Récupère les h2/h3 visibles (pas hidden, pas wrapped dans hidden parent)
+    const headings = Array.from(main.querySelectorAll('h2, h3')).filter(h => {
+      // Skip headings dans hero, hero-banner ou cachés par lang
+      if (h.closest('.hero, .hero-banner, .modal, .search-palette')) return false;
+      if (h.hidden) return false;
+      // Skip si parent en lang fr et current state en
+      const langParent = h.closest('[lang]');
+      if (langParent && langParent !== document.documentElement) {
+        if (langParent.getAttribute('lang') !== STATE.lang) return false;
+      }
+      return true;
+    });
+    if (headings.length < 3) return; // pas assez pour une TOC
+
+    // Remove précédente
+    document.querySelector('.toc')?.remove();
+
+    // Donne un id si manquant
+    headings.forEach((h, i) => {
+      if (!h.id) {
+        const slug = (h.textContent || '').toLowerCase()
+          .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').substring(0, 40);
+        h.id = slug || ('section-' + i);
+      }
+    });
+
+    const tocLabel = STATE.lang === 'fr' ? 'Sommaire' : 'On this page';
+    const toc = document.createElement('nav');
+    toc.className = 'toc';
+    toc.setAttribute('aria-label', tocLabel);
+    toc.innerHTML = `
+      <div class="toc-title">${tocLabel}</div>
+      <ul class="toc-list">
+        ${headings.map(h => `
+          <li class="toc-item">
+            <a href="#${h.id}" class="toc-link toc-${h.tagName.toLowerCase()}">${h.textContent.replace(/^§\s*[IVX]+(\.\w+)?\s*[—-]\s*/, '')}</a>
+          </li>
+        `).join('')}
+      </ul>
+    `;
+    document.body.appendChild(toc);
+
+    // Smooth scroll on click
+    toc.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // IntersectionObserver pour highlight
+    const links = new Map();
+    toc.querySelectorAll('a').forEach(a => {
+      const id = a.getAttribute('href').substring(1);
+      links.set(id, a);
+    });
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        const link = links.get(e.target.id);
+        if (!link) return;
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-15% 0px -70% 0px' });
+    headings.forEach(h => obs.observe(h));
+  }
+
   // ========== LAST COMMIT (footer) ==========
   async function fetchLastCommit() {
     const el = document.getElementById('lastCommitDate');
@@ -1095,6 +1171,9 @@ ER  - `;
 
     // Last commit info (footer)
     fetchLastCommit();
+
+    // TOC sticky : init après applyLang pour avoir les bons headings
+    setTimeout(initTableOfContents, 200);
 
     // Smooth scroll nav
     document.querySelectorAll('.nav a').forEach(link => {

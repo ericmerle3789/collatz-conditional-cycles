@@ -10,10 +10,10 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <!-- Canonical + hreflang alternates -->
-<link rel="canonical" href="https://ericmerle3789.github.io/collatz-conditional-cycles/">
-<link rel="alternate" hreflang="en" href="https://ericmerle3789.github.io/collatz-conditional-cycles/">
-<link rel="alternate" hreflang="fr" href="https://ericmerle3789.github.io/collatz-conditional-cycles/?lang=fr">
-<link rel="alternate" hreflang="x-default" href="https://ericmerle3789.github.io/collatz-conditional-cycles/">
+<link rel="canonical" href="https://collatz-lab.org/">
+<link rel="alternate" hreflang="en" href="https://collatz-lab.org/">
+<link rel="alternate" hreflang="fr" href="https://collatz-lab.org/?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://collatz-lab.org/">
 
 <!-- Favicons -->
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -29,8 +29,8 @@
 <meta property="og:title" content="Collatz Conditional Cycles — Lean 4 formal proof">
 <meta property="og:description" content="Conditional formal proof in Lean 4 of no non-trivial Collatz cycles, modulo three explicit axioms (Baker LMN95, Barina, Hercher). Kernel-checked, 28-page paper submitted JAR.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ericmerle3789.github.io/collatz-conditional-cycles/">
-<meta property="og:image" content="https://ericmerle3789.github.io/collatz-conditional-cycles/assets/og-image.png">
+<meta property="og:url" content="https://collatz-lab.org/">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Λ_{S,k} = S log 2 - k log 3 — Collatz Conditional Cycles">
@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Collatz Conditional Cycles — Lean 4 formal proof">
 <meta name="twitter:description" content="Conditional formal proof in Lean 4 of no non-trivial Collatz cycles, modulo three explicit axioms. Kernel-checked, 28-page paper.">
-<meta name="twitter:image" content="https://ericmerle3789.github.io/collatz-conditional-cycles/assets/og-image.png">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
 <script type="application/ld+json">
@@ -56,7 +56,7 @@
       "name": "On the non-existence of non-trivial Collatz cycles",
       "abstract": "We present a Lean 4 formalization of the non-existence of non-trivial Collatz cycles, conditional on three documented external hypotheses: BakerSeparation (Laurent-Mignotte-Nesterenko 1995), BarinaVerification (n < 2^71, Barina 2025), and DerivedLargeKBound (Hercher 2023, m ≤ 91). The main theorem no_nontrivial_cycle_phase59 is kernel-checked with a minimal axiom profile (propext, Classical.choice, Quot.sound). We document the δ8 lemma (Product-Bound Impossibility) which structurally proves that this conditionality is necessary, not arbitrary.",
       "description": "Conditional formal proof in Lean 4 of no non-trivial Collatz cycles, modulo three explicit external hypotheses. Kernel-checked, reproducible.",
-      "url": "https://ericmerle3789.github.io/collatz-conditional-cycles/",
+      "url": "https://collatz-lab.org/",
       "sameAs": [
         "https://doi.org/10.5281/zenodo.19790406",
         "https://github.com/ericmerle3789/collatz-conditional-cycles"
@@ -119,10 +119,10 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://ericmerle3789.github.io/collatz-conditional-cycles/",
+      "@id": "https://collatz-lab.org/",
       "name": "Collatz Conditional Cycles",
       "alternateName": "Cycles Conditionnels de Collatz",
-      "url": "https://ericmerle3789.github.io/collatz-conditional-cycles/",
+      "url": "https://collatz-lab.org/",
       "inLanguage": ["en", "fr"],
       "author": {"@id": "https://orcid.org/0009-0008-7940-402X"},
       "publisher": {"@id": "https://orcid.org/0009-0008-7940-402X"}
@@ -179,6 +179,7 @@
       <a href="lemmes/" data-i18n="navLemmes">Lemmas</a>
       <a href="preuve/" data-i18n="navPreuve">Proof</a>
       <a href="papers/" data-i18n="navPapers">Papers</a>
+      <a href="lambda/" data-i18n="navLambda">Λ</a>
       <a href="#hypotheses" data-i18n="navHypotheses">Hypotheses</a>
       <a href="#meaculpa" data-i18n="navMeaCulpa">Mea culpa</a>
       <a href="#team" data-i18n="navEquipe">Team</a>
@@ -199,6 +200,31 @@
 <div class="scroll-progress" aria-hidden="true"></div>
 
 <main id="top">
+
+<!-- ========================================================================
+     HERO BANNER — OG image + Λ watermark + parallax subtil
+     ======================================================================== -->
+<section class="hero-banner" id="banner" aria-hidden="true">
+  <div class="hero-banner-bg"></div>
+  <div class="hero-banner-overlay"></div>
+  <div class="hero-banner-lambda">Λ</div>
+  <div class="hero-banner-content">
+    <div class="hero-banner-eyebrow">DOI · 10.5281/zenodo.19790406 · JAR submission</div>
+    <h2 class="hero-banner-title">
+      <span lang="en">No non-trivial Collatz cycle</span>
+      <span lang="fr">Aucun cycle Collatz non-trivial</span>
+      <em><span lang="en"> — modulo three explicit conditions</span><span lang="fr"> — modulo trois conditions explicites</span></em>
+    </h2>
+    <div class="hero-banner-subtitle">
+      <code>no_nontrivial_cycle_phase59</code> · kernel-checked Lean 4 · Mathlib v4.27
+    </div>
+    <div class="hero-banner-pills">
+      <span class="banner-pill">BakerSeparation</span>
+      <span class="banner-pill">BarinaVerification</span>
+      <span class="banner-pill">DerivedLargeKBound</span>
+    </div>
+  </div>
+</section>
 
 <!-- ========================================================================
      HERO

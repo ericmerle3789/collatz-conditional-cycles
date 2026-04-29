@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Collatz Conditional Cycles — Updates</title>
   <subtitle>Updates on the conditional formal proof of no non-trivial Collatz cycles in Lean 4.</subtitle>
-  <link href="https://ericmerle3789.github.io/collatz-conditional-cycles/" rel="alternate" type="text/html"/>
-  <link href="https://ericmerle3789.github.io/collatz-conditional-cycles/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
+  <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
   <updated>2026-04-29T00:00:00Z</updated>
 
@@ -13,12 +13,12 @@
   </author>
 
   <rights>CC-BY-SA 4.0</rights>
-  <icon>https://ericmerle3789.github.io/collatz-conditional-cycles/assets/favicon-32.png</icon>
-  <logo>https://ericmerle3789.github.io/collatz-conditional-cycles/assets/og-image.png</logo>
+  <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
+  <logo>https://collatz-lab.org/assets/og-image.png</logo>
 
   <entry>
     <title>v0.5.1 — Bilingual EN-canonical website + interactive dependency graph + Cmd+K search</title>
-    <link href="https://ericmerle3789.github.io/collatz-conditional-cycles/"/>
+    <link href="https://collatz-lab.org/"/>
     <id>urn:collatz-cycles:v0.5.1</id>
     <updated>2026-04-29T14:00:00Z</updated>
     <published>2026-04-29T14:00:00Z</published>
@@ -41,7 +41,7 @@
 
   <entry>
     <title>v0.5.0 — JAR submission v1.1 + main result featured on homepage</title>
-    <link href="https://ericmerle3789.github.io/collatz-conditional-cycles/"/>
+    <link href="https://collatz-lab.org/"/>
     <id>urn:collatz-cycles:v0.5.0</id>
     <updated>2026-04-29T13:00:00Z</updated>
     <published>2026-04-29T13:00:00Z</published>
@@ -62,7 +62,7 @@
 
   <entry>
     <title>v0.4.0 — Cycle 4 ChatGPT Lemmas patched + Cycle 5 Knight 2026 verified</title>
-    <link href="https://ericmerle3789.github.io/collatz-conditional-cycles/"/>
+    <link href="https://collatz-lab.org/"/>
     <id>urn:collatz-cycles:v0.4.0</id>
     <updated>2026-04-29T10:00:00Z</updated>
     <published>2026-04-29T10:00:00Z</published>
