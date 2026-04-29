@@ -165,6 +165,19 @@
     en: { I: "I — Arithmetic", II: "II — Out-of-domain", III: "III — Meta" }
   };
 
+  // ========== GITHUB URL ROUTING ==========
+  // main = JAR paper (Phase12-63, paper/, reproduce.sh, expected_axioms.md)
+  // arsenal-postjar = extensions R34-R96 (PostJAR/, tests_math/)
+  const GH_REPO = 'https://github.com/ericmerle3789/collatz-conditional-cycles/blob/';
+
+  function ghURL(filePath) {
+    if (!filePath) return null;
+    if (filePath.startsWith('ProjetCollatz/PostJAR/') || filePath.startsWith('tests_math/')) {
+      return GH_REPO + 'arsenal-postjar/' + filePath;
+    }
+    return GH_REPO + 'main/' + filePath;
+  }
+
   // ========== I18N ==========
   function applyLang() {
     const dict = t[STATE.lang];
@@ -244,7 +257,7 @@
         <td><span class="badge ${p.status}">${statusDict[p.status] || p.status}</span></td>
         <td class="mono small">${p.test4 || '—'}</td>
         <td>${p.lean ? '<code>' + p.lean + '</code>' : '<span class="text-muted">—</span>'}</td>
-        <td>${p.leanFile ? `<a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/${p.leanFile}" target="_blank" rel="noopener" class="small">.lean ↗</a>` : (p.ref ? '<span class="text-muted small">' + p.ref.substring(0, 40) + (p.ref.length > 40 ? '…' : '') + '</span>' : '<span class="text-muted">—</span>')}</td>
+        <td>${p.leanFile ? `<a href="${ghURL(p.leanFile)}" target="_blank" rel="noopener" class="small">.lean ↗</a>` : (p.ref ? '<span class="text-muted small">' + p.ref.substring(0, 40) + (p.ref.length > 40 ? '…' : '') + '</span>' : '<span class="text-muted">—</span>')}</td>
       `;
       tr.addEventListener('click', () => openPisteModal(p));
       tbody.appendChild(tr);
@@ -284,7 +297,7 @@
     content += `<p style="color: var(--text-secondary);">${localized?.why || ''}</p>`;
 
     if (piste.leanFile) {
-      content += `<p style="margin-top: 1.5rem;"><a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/${piste.leanFile}" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">↗ ${piste.leanFile}</a></p>`;
+      content += `<p style="margin-top: 1.5rem;"><a href="${ghURL(piste.leanFile)}" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">↗ ${piste.leanFile}</a></p>`;
     }
 
     document.getElementById('modalContent').innerHTML = content;

@@ -155,7 +155,15 @@ cd collatz-conditional-cycles
 </footer>
 
 <script>
-const GH_BASE = 'https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/';
+// Routing : main (JAR) vs arsenal-postjar (extensions R34-R96)
+const GH_REPO = 'https://github.com/ericmerle3789/collatz-conditional-cycles/blob/';
+function ghURL(filePath) {
+  if (!filePath) return null;
+  if (filePath.startsWith('ProjetCollatz/PostJAR/') || filePath.startsWith('tests_math/')) {
+    return GH_REPO + 'arsenal-postjar/' + filePath;
+  }
+  return GH_REPO + 'main/' + filePath;
+}
 
 fetch('../assets/data/lemmes.json').then(r => r.json()).then(data => {
   // Théorèmes centraux
@@ -166,7 +174,7 @@ fetch('../assets/data/lemmes.json').then(r => r.json()).then(data => {
       <h3 style="font-family: var(--mono); font-size: 1rem; word-break: break-all;">${t.name}</h3>
       <p style="font-size: 0.9rem;">${t.fr.desc}</p>
       <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem;">
-        Fichier : <a href="${GH_BASE}${t.file}" target="_blank" rel="noopener" style="color: var(--accent);">${t.file.split('/').pop()}</a>
+        Fichier : <a href="${ghURL(t.file)}" target="_blank" rel="noopener" style="color: var(--accent);">${t.file.split('/').pop()}</a>
       </p>
       ${t.depends ? '<p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">Dépend de : ' + t.depends.map(d => '<code>'+d+'</code>').join(', ') + '</p>' : ''}
       <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.3rem;">
@@ -194,7 +202,7 @@ fetch('../assets/data/lemmes.json').then(r => r.json()).then(data => {
       <h3 style="font-family: var(--mono); font-size: 0.95rem; word-break: break-all;">${t.name}</h3>
       <p style="font-size: 0.88rem;">${t.fr.desc}</p>
       <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem;">
-        <a href="${GH_BASE}${t.file}" target="_blank" rel="noopener" style="color: var(--accent);">${t.file.split('/').pop()}</a>
+        <a href="${ghURL(t.file)}" target="_blank" rel="noopener" style="color: var(--accent);">${t.file.split('/').pop()}</a>
       </p>
     </div>
   `).join('') + '</div>';
@@ -207,7 +215,7 @@ fetch('../assets/data/lemmes.json').then(r => r.json()).then(data => {
       <h3 style="font-family: var(--mono); font-size: 0.95rem;">${f.name}</h3>
       <p style="font-size: 0.88rem;">${f.fr}</p>
       <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem;">
-        <a href="${GH_BASE}ProjetCollatz/PostJAR/${f.name}" target="_blank" rel="noopener" style="color: var(--accent);">→ Voir sur GitHub</a>
+        <a href="${ghURL('ProjetCollatz/PostJAR/' + f.name)}" target="_blank" rel="noopener" style="color: var(--accent);">→ Voir sur GitHub</a>
       </p>
     </div>
   `).join('');
