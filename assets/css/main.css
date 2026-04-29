@@ -819,18 +819,21 @@ html[data-theme="light"] .hero-banner-title {
 /* ==========================================================================
    TEAM CARD avec PORTRAIT — humanise la section Équipe
    ========================================================================== */
+/* Layout vertical : photo centrée en haut, bio pleine largeur en dessous.
+   Évite que la bio s'écrase en colonne étroite quand la card-grid est en
+   3 colonnes (~329px par card). */
 .team-card {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.5rem;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
 }
 .team-card-pi {
   border-left: 3px solid var(--accent);
 }
 .team-portrait {
-  width: 120px;
-  height: 120px;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -838,6 +841,7 @@ html[data-theme="light"] .hero-banner-title {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  margin: 0 0 0.4rem 0;
 }
 .team-portrait::after {
   content: '';
