@@ -1,0 +1,122 @@
+{
+  "version": "0.5.0",
+  "lastUpdate": "2026-04-29",
+  "source": "expected_axioms.md (commit main)",
+  "kernelAxioms": ["propext", "Classical.choice", "Quot.sound"],
+  "nativeAxioms": ["Lean.ofReduceBool", "Lean.trustCompiler"],
+  "centralTheorems": [
+    {
+      "name": "no_nontrivial_cycle_phase59",
+      "fr": {"role": "Théorème principal", "desc": "Aucun cycle non-trivial Collatz, modulo 3 axiomes externes."},
+      "en": {"role": "Principal theorem", "desc": "No non-trivial Collatz cycle, modulo 3 external axioms."},
+      "file": "ProjetCollatz/Phase59ContinuedFractions.lean",
+      "axioms": ["propext", "Classical.choice", "Quot.sound"],
+      "depends": ["no_cycle_k_le_1322", "no_cycle_k_gt_1322", "sdw_from_cf"]
+    },
+    {
+      "name": "no_nontrivial_cycle_final",
+      "fr": {"role": "Variante principale", "desc": "Forme finale du théorème principal."},
+      "en": {"role": "Principal variant", "desc": "Final form of the main theorem."},
+      "file": "ProjetCollatz/Phase58PorteDeuxFinal.lean",
+      "axioms": ["propext", "Classical.choice", "Quot.sound"]
+    },
+    {
+      "name": "no_nontrivial_cycle_derived",
+      "fr": {"role": "Variante dérivée", "desc": "Alias de cleanup."},
+      "en": {"role": "Derived variant", "desc": "Cleanup alias."},
+      "file": "ProjetCollatz/Phase58PorteDeuxFinal.lean",
+      "axioms": ["propext", "Classical.choice", "Quot.sound"]
+    },
+    {
+      "name": "no_nontrivial_cycle_full",
+      "fr": {"role": "Variante complète", "desc": "Forme étendue assemblant Steiner + descente."},
+      "en": {"role": "Full variant", "desc": "Extended form assembling Steiner + descent."},
+      "file": "ProjetCollatz/Phase52SteinerEquation.lean",
+      "axioms": ["propext", "Classical.choice", "Quot.sound"]
+    },
+    {
+      "name": "no_cycle_k_le_1322",
+      "fr": {"role": "Sous-branche k ≤ 1322", "desc": "Pas de cycle pour k petit, via Barina ≤ 2^71 + Product-Bound."},
+      "en": {"role": "Sub-branch k ≤ 1322", "desc": "No cycle for small k, via Barina ≤ 2^71 + Product-Bound."},
+      "file": "ProjetCollatz/Phase58PorteDeuxFinal.lean",
+      "axioms": ["propext", "Classical.choice", "Quot.sound"]
+    },
+    {
+      "name": "no_cycle_k_gt_1322",
+      "fr": {"role": "Sous-branche k > 1322", "desc": "Pas de cycle pour k grand, via Continued Fractions Phase59."},
+      "en": {"role": "Sub-branch k > 1322", "desc": "No cycle for large k, via Continued Fractions Phase59."},
+      "file": "ProjetCollatz/Phase59ContinuedFractions.lean",
+      "axioms": ["propext", "Classical.choice", "Quot.sound"]
+    },
+    {
+      "name": "sdw_from_cf",
+      "fr": {"role": "Lemme conditionnel clé", "desc": "Simons-de Weger borne dérivée des continued fractions."},
+      "en": {"role": "Key conditional lemma", "desc": "Simons-de Weger bound derived from continued fractions."},
+      "file": "ProjetCollatz/Phase59ContinuedFractions.lean",
+      "axioms": ["propext", "Classical.choice", "Quot.sound"]
+    }
+  ],
+  "auxiliaryTheorems": [
+    {
+      "name": "steiner_cycle_eq",
+      "fr": {"role": "Identité Steiner", "desc": "n · 2^S = 3^k · n + corrSum n k pour tout cycle."},
+      "en": {"role": "Steiner identity", "desc": "n · 2^S = 3^k · n + corrSum n k for any cycle."},
+      "file": "ProjetCollatz/Phase52SteinerEquation.lean"
+    },
+    {
+      "name": "cycle_pow2_gt_pow3_universal",
+      "fr": {"role": "D_s positif", "desc": "Pour tout cycle, 2^S > 3^k (donc D_s = 2^S - 3^k > 0)."},
+      "en": {"role": "D_s positive", "desc": "For any cycle, 2^S > 3^k (hence D_s = 2^S - 3^k > 0)."},
+      "file": "ProjetCollatz/Phase52SteinerEquation.lean"
+    },
+    {
+      "name": "cycle_n_mul_D_s_eq_corrSum",
+      "fr": {"role": "R72 — Steiner factorisée", "desc": "n · (2^S - 3^k) = corrSum n k. Pierre angulaire de l'arsenal modulaire."},
+      "en": {"role": "R72 — factored Steiner", "desc": "n · (2^S - 3^k) = corrSum n k. Cornerstone of modular arsenal."},
+      "file": "ProjetCollatz/PostJAR/CongruenceTransport.lean"
+    },
+    {
+      "name": "cycle_corrSum_mod_p_double_periodic",
+      "fr": {"role": "R89 — périodisation lacunaire", "desc": "corrSum mod p = somme lacunaire avec exposants modulo orderOf(2) et orderOf(3)."},
+      "en": {"role": "R89 — lacunary periodization", "desc": "corrSum mod p = lacunary sum with exponents modulo orderOf(2) and orderOf(3)."},
+      "file": "ProjetCollatz/PostJAR/CongruenceTransport.lean"
+    },
+    {
+      "name": "cycle_p_dvd_D_s_implies_lacunary_zero",
+      "fr": {"role": "R90 — pont contradiction", "desc": "Si p | D_s alors la somme lacunaire est 0 mod p (universal)."},
+      "en": {"role": "R90 — contradiction bridge", "desc": "If p | D_s then the lacunary sum is 0 mod p (universal)."},
+      "file": "ProjetCollatz/PostJAR/CongruenceTransport.lean"
+    },
+    {
+      "name": "cycle_k_2_parity_1_1_p_7_no_dvd_D_s",
+      "fr": {"role": "R92 — premier certificat fini", "desc": "Pour cycle k=2 avec parityVector (1,1), p=7 ne divise pas D_s. native_decide."},
+      "en": {"role": "R92 — first finite certificate", "desc": "For cycle k=2 with parityVector (1,1), p=7 does not divide D_s. native_decide."},
+      "file": "ProjetCollatz/PostJAR/CongruenceTransport.lean"
+    }
+  ],
+  "cfGaps": [
+    {"window": 8, "name": "cf_gap_8", "convergent": "(1054, 665)"},
+    {"window": 9, "name": "cf_gap_9", "convergent": "(24727, 15601)"},
+    {"window": 10, "name": "cf_gap_10", "convergent": "(50508, 31867)"},
+    {"window": 11, "name": "cf_gap_11", "convergent": "(125743, 79335)"},
+    {"window": 12, "name": "cf_gap_12", "convergent": "(176251, 111202)"},
+    {"window": 13, "name": "cf_gap_13", "convergent": "(301994, 190537)"}
+  ],
+  "postJarArsenal": {
+    "fr": {
+      "title": "Arsenal R34-R96 (Post-JAR)",
+      "desc": "Extensions développées après soumission JAR : transport modulaire, décomposition par blocs, amplification."
+    },
+    "en": {
+      "title": "R34-R96 Arsenal (Post-JAR)",
+      "desc": "Extensions developed after JAR submission: modular transport, block decomposition, amplification."
+    },
+    "files": [
+      {"name": "CongruenceTransport.lean", "theoremCount": 47, "fr": "Transport de congruences modulo p (R63-R96)", "en": "Modular congruence transport (R63-R96)"},
+      {"name": "BlockDecomposition.lean", "theoremCount": 11, "fr": "Décomposition en blocs minima/maxima locaux", "en": "Local minima/maxima block decomposition"},
+      {"name": "BlockAmplification.lean", "theoremCount": 14, "fr": "Amplification multiplicative (R73-R76b)", "en": "Multiplicative amplification (R73-R76b)"},
+      {"name": "CycleArithmetic.lean", "theoremCount": "?", "fr": "Arithmétique de base sur les cycles", "en": "Basic cycle arithmetic"},
+      {"name": "PadeBound.lean", "theoremCount": "?", "fr": "Bornes Padé (à compléter avec Salikhov/Wu)", "en": "Padé bounds (to extend with Salikhov/Wu)"}
+    ]
+  }
+}
