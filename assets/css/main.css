@@ -134,6 +134,52 @@ html { scroll-behavior: smooth; }
 html[data-theme="light"] #themeBtn .sun-icon { display: inline; }
 html[data-theme="light"] #themeBtn .moon-icon { display: none; }
 
+/* ==========================================================================
+   CITATION MODAL — onglets format + zone copy
+   ========================================================================== */
+.cite-tabs {
+  display: flex;
+  gap: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+.cite-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.6rem 1rem;
+  color: var(--text-secondary);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  margin-bottom: -1px;
+}
+.cite-tab:hover {
+  color: var(--text-primary);
+}
+.cite-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+#citeOutput {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+#copyCiteBtn:hover {
+  background: rgba(200, 168, 106, 0.1);
+}
+
 body {
   font-family: var(--sans);
   background: var(--bg-primary);

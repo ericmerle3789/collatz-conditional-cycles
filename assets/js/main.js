@@ -94,7 +94,12 @@
       mainResultContrib: "<strong>Contribution scientifique</strong> : pas la non-existence inconditionnelle (cf. δ8 lemma, irréalisable avec les outils 2026), mais la <em>cartographie rigoureuse des obstructions structurelles</em> qui rend la conditionnalité <strong>nécessaire</strong>, pas <em>arbitraire</em>. Sept théorèmes centraux, ~30 fichiers Lean, paper 28 pages, reproductible via <code>reproduce.sh</code> EXIT 0.",
       readPaper: "Lire le paper (PDF, 28 p.)",
       readProof: "Architecture de la preuve",
-      diagramCaption: "→ Le théorème JAR <code>no_nontrivial_cycle_phase59</code> est l'unique nœud de fermeture conditionnelle. Les 14 paradigmes convergent vers le verrou Λ ; seules les 3 hypothèses externes (Baker, Barina, Hercher) — et non les paradigmes — alimentent le théorème final."
+      diagramCaption: "→ Le théorème JAR <code>no_nontrivial_cycle_phase59</code> est l'unique nœud de fermeture conditionnelle. Les 14 paradigmes convergent vers le verrou Λ ; seules les 3 hypothèses externes (Baker, Barina, Hercher) — et non les paradigmes — alimentent le théorème final.",
+      citeBtn: "Citer",
+      citeTitle: "Comment citer ce travail",
+      citePlain: "Texte simple",
+      citeCopy: "Copier",
+      citeDoiLabel: "DOI"
     },
     en: {
       navAccueil: "Home",
@@ -165,7 +170,12 @@
       mainResultContrib: "<strong>Scientific contribution</strong>: not unconditional non-existence (cf. δ8 lemma, unattainable with 2026 tools), but a <em>rigorous mapping of structural obstructions</em> that makes the conditionality <strong>necessary</strong>, not <em>arbitrary</em>. Seven central theorems, ~30 Lean files, 28-page paper, reproducible via <code>reproduce.sh</code> EXIT 0.",
       readPaper: "Read the paper (PDF, 28 pp.)",
       readProof: "Proof architecture",
-      diagramCaption: "→ The JAR theorem <code>no_nontrivial_cycle_phase59</code> is the unique conditional closure node. The 14 paradigms converge onto the Λ lock ; only the 3 external hypotheses (Baker, Barina, Hercher) — not the paradigms — feed the final theorem."
+      diagramCaption: "→ The JAR theorem <code>no_nontrivial_cycle_phase59</code> is the unique conditional closure node. The 14 paradigms converge onto the Λ lock ; only the 3 external hypotheses (Baker, Barina, Hercher) — not the paradigms — feed the final theorem.",
+      citeBtn: "Cite",
+      citeTitle: "How to cite this work",
+      citePlain: "Plain text",
+      citeCopy: "Copy to clipboard",
+      citeDoiLabel: "DOI"
     }
   };
 
@@ -297,6 +307,154 @@
     STATE.theme = STATE.theme === 'dark' ? 'light' : 'dark';
     localStorage.setItem('collatz-theme', STATE.theme);
     applyTheme();
+  }
+
+  // ========== CITATION (BibTeX / APA / Chicago / RIS / plain) ==========
+  // Source unique de vérité pour les métadonnées de citation
+  const CITATION_DATA = {
+    title: "On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions",
+    author: "Eric Merle",
+    authorFamily: "Merle",
+    authorGiven: "Eric",
+    year: "2026",
+    month: "April",
+    day: "27",
+    doi: "10.5281/zenodo.19790406",
+    url: "https://doi.org/10.5281/zenodo.19790406",
+    repo: "https://github.com/ericmerle3789/collatz-conditional-cycles",
+    publisher: "Zenodo",
+    journal: "Journal of Automated Reasoning",
+    note: "Submitted to Journal of Automated Reasoning",
+    orcid: "0009-0008-7940-402X"
+  };
+
+  function citeBibTeX(c) {
+    return `@misc{merle${c.year}collatz,
+  author       = {${c.author}},
+  title        = {${c.title}},
+  year         = {${c.year}},
+  month        = ${c.month.toLowerCase()},
+  doi          = {${c.doi}},
+  url          = {${c.url}},
+  publisher    = {${c.publisher}},
+  note         = {${c.note}. Lean~4 source: \\url{${c.repo}}},
+  howpublished = {\\url{${c.url}}}
+}`;
+  }
+  function citeAPA(c) {
+    return `${c.authorFamily}, ${c.authorGiven.charAt(0)}. (${c.year}). ${c.title} [Manuscript submitted for publication]. ${c.publisher}. https://doi.org/${c.doi}`;
+  }
+  function citeChicago(c) {
+    return `${c.authorFamily}, ${c.authorGiven}. "${c.title}." Submitted to ${c.journal}. ${c.publisher}, ${c.month} ${c.day}, ${c.year}. https://doi.org/${c.doi}.`;
+  }
+  function citeRIS(c) {
+    return `TY  - GEN
+T1  - ${c.title}
+AU  - ${c.authorFamily}, ${c.authorGiven}
+PY  - ${c.year}
+DA  - ${c.year}/${('0'+(['','January','February','March','April','May','June','July','August','September','October','November','December'].indexOf(c.month))).slice(-2)}/${('0'+c.day).slice(-2)}
+DO  - ${c.doi}
+UR  - ${c.url}
+PB  - ${c.publisher}
+N1  - ${c.note}. Lean 4 source: ${c.repo}
+ER  - `;
+  }
+  function citePlain(c) {
+    return `${c.author} (${c.year}). ${c.title}. DOI: ${c.doi}. ${c.note}.`;
+  }
+
+  function renderCitation(format) {
+    const out = document.getElementById('citeOutput');
+    if (!out) return;
+    const c = CITATION_DATA;
+    let txt = '';
+    switch (format) {
+      case 'bibtex': txt = citeBibTeX(c); break;
+      case 'apa':    txt = citeAPA(c); break;
+      case 'chicago':txt = citeChicago(c); break;
+      case 'ris':    txt = citeRIS(c); break;
+      case 'plain':  txt = citePlain(c); break;
+    }
+    out.textContent = txt;
+    out.dataset.format = format;
+  }
+
+  function injectCitationModal() {
+    if (document.getElementById('citeModal')) return; // déjà présent
+    const dict = t[STATE.lang];
+    const html = `
+      <div class="modal-overlay" id="citeModal" role="dialog" aria-modal="true" aria-labelledby="citeModalTitle">
+        <div class="modal" style="max-width: 820px;">
+          <button class="modal-close" id="citeModalClose" aria-label="Close">×</button>
+          <h3 id="citeModalTitle"><span data-i18n="citeTitle">${dict.citeTitle || 'How to cite this work'}</span></h3>
+          <div class="cite-tabs" role="tablist">
+            <button class="cite-tab active" data-fmt="bibtex" role="tab" aria-selected="true">BibTeX</button>
+            <button class="cite-tab" data-fmt="apa" role="tab">APA 7</button>
+            <button class="cite-tab" data-fmt="chicago" role="tab">Chicago 17</button>
+            <button class="cite-tab" data-fmt="ris" role="tab">RIS</button>
+            <button class="cite-tab" data-fmt="plain" role="tab" data-i18n="citePlain">${dict.citePlain || 'Plain text'}</button>
+          </div>
+          <div class="cite-content">
+            <pre id="citeOutput" aria-live="polite" style="white-space: pre-wrap; word-break: break-word; max-height: 380px; overflow-y: auto;"></pre>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem; flex-wrap: wrap; gap: 0.6rem;">
+              <span class="text-muted small">
+                <span data-i18n="citeDoiLabel">${dict.citeDoiLabel || 'DOI'}</span> :
+                <a href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener" style="color: var(--accent);">10.5281/zenodo.19790406</a>
+                · <a href="https://orcid.org/${CITATION_DATA.orcid}" target="_blank" rel="noopener" style="color: var(--accent);">ORCID</a>
+              </span>
+              <button id="copyCiteBtn" class="btn-icon" style="border: 1px solid var(--accent); padding: 0.5rem 1.1rem; color: var(--accent); border-radius: 3px;">
+                <span data-i18n="citeCopy">${dict.citeCopy || 'Copy to clipboard'}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', html);
+
+    // Wire les events
+    document.getElementById('citeModalClose')?.addEventListener('click', () => {
+      document.getElementById('citeModal').classList.remove('active');
+    });
+    document.getElementById('citeModal')?.addEventListener('click', e => {
+      if (e.target.id === 'citeModal') {
+        document.getElementById('citeModal').classList.remove('active');
+      }
+    });
+    document.querySelectorAll('.cite-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cite-tab').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        renderCitation(btn.dataset.fmt);
+      });
+    });
+    document.getElementById('copyCiteBtn')?.addEventListener('click', async (e) => {
+      const txt = document.getElementById('citeOutput')?.textContent || '';
+      try {
+        await navigator.clipboard.writeText(txt);
+        const orig = e.currentTarget.querySelector('span').textContent;
+        e.currentTarget.querySelector('span').textContent = '✓ Copied';
+        setTimeout(() => { e.currentTarget.querySelector('span').textContent = orig; }, 1800);
+      } catch (err) {
+        // Fallback : sélectionner le texte
+        const range = document.createRange();
+        range.selectNode(document.getElementById('citeOutput'));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+      }
+    });
+
+    // Render initial format
+    renderCitation('bibtex');
+  }
+
+  function openCiteModal() {
+    injectCitationModal();
+    document.getElementById('citeModal').classList.add('active');
   }
 
   // ========== SCROLL PROGRESS BAR ==========
@@ -604,7 +762,18 @@
     // Toolbar
     document.getElementById('langBtn')?.addEventListener('click', toggleLang);
     document.getElementById('themeBtn')?.addEventListener('click', toggleTheme);
+    document.getElementById('citeBtn')?.addEventListener('click', openCiteModal);
     document.getElementById('printBtn')?.addEventListener('click', () => window.print());
+
+    // Raccourci clavier : 'C' ouvre la modale citation (sauf en input)
+    document.addEventListener('keydown', e => {
+      if ((e.key === 'c' || e.key === 'C') && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        const tag = (e.target.tagName || '').toLowerCase();
+        if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+        e.preventDefault();
+        openCiteModal();
+      }
+    });
     document.getElementById('topBtn')?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
