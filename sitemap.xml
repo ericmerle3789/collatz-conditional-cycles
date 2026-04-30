@@ -68,4 +68,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://collatz-lab.org/changelog/"/>
   </url>
 
+  <!-- Research Ledger — public versioned registry (Three-Key validated 2026-04-30) -->
+  <url>
+    <loc>https://collatz-lab.org/research-ledger/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/research-ledger/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://collatz-lab.org/research-ledger/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://collatz-lab.org/research-ledger/"/>
+  </url>
+
 </urlset>

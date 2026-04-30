@@ -4,7 +4,7 @@
    - droite y = k log_2 3 (cycle approximatif)
    - région Barina k ≤ 1322 (rouge)
    - région Hercher m ≤ 91 (amber)
-   - bande Baker LMN95 (bleu, autour de la droite)
+   - bande BakerSeparation effective (bleu, autour de la droite)
    - point courant (S, k) cliqué/sliders
    ========================================================================== */
 (function() {
@@ -228,8 +228,8 @@
       if (inHercher) {
         return {
           status: 'hercher-baker',
-          fr: '⊕ Région Hercher + Baker LMN95 : exclu via continued fractions',
-          en: '⊕ Hercher + Baker LMN95 region: excluded via continued fractions'
+          fr: '⊕ Région Hercher + BakerSeparation effective : exclu via continued fractions',
+          en: '⊕ Hercher + BakerSeparation effective region: excluded via continued fractions'
         };
       }
       return { status: 'unknown', fr: '?', en: '?' };

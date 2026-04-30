@@ -5,7 +5,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-04-30T10:00:00Z</updated>
+  <updated>2026-04-30T16:50:00Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -15,6 +15,31 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.6.0 — δ10 Barina-Replacement Impossibility (Phase 64) + Research Ledger + trilogy cross-links</title>
+    <link href="https://collatz-lab.org/research-ledger/"/>
+    <id>urn:collatz-cycles:v0.6.0</id>
+    <updated>2026-04-30T16:50:00Z</updated>
+    <published>2026-04-30T16:50:00Z</published>
+    <category term="release"/>
+    <category term="lean"/>
+    <category term="audit"/>
+    <summary type="html">
+      <![CDATA[
+      <p><strong>Three-Key + Two-Key validated tri-AI autonomous mission</strong> (OLD3 + NEW4 + ChatGPT 5.5 thinking extended):</p>
+      <ul>
+        <li><strong>FIND-016 audit closed</strong> — BakerSeparation k^6 stronger than published bounds: doc-comment radical transparency note added to <code>Phase58PorteDeuxFinal.lean</code>. Public mea culpa #28. Branch <code>audit/find-016-transparency-doc-comment</code>, tag <code>audit-find016-2026-04-30</code>, commit <code>62866cd</code>.</li>
+        <li><strong>δ10 Barina-Replacement Impossibility Lemma</strong> — new Lean 4 theorem, 296 lines, kernel-checked, 0 sorry, axiom profile <code>[propext]</code> only (kernel-1, most minimal in project). Cartographic finite catalogue: no published bound from {Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005} can replace BarinaVerification. Branch <code>study/delta10-barina-replacement-impossibility</code>, tag <code>study-delta10-2026-04-30</code>, commit <code>7efbf34</code>.</li>
+        <li><strong>Trilogy of impossibility complete</strong> — δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64). Each external hypothesis of the JAR paper is now backed by a formal Lean impossibility lemma in the Baker+CF+Khinchin paradigm. Strictly decreasing epistemic profile: kernel-3 → kernel-3 → kernel-1.</li>
+        <li><strong>Research Ledger</strong> — new public versioned registry at <a href="https://collatz-lab.org/research-ledger/">/research-ledger/</a>: 6 sections (status / milestones / audits / ongoing / full ledger / external refs), filterable, FR/EN bilingual, schema with claim_scope + verification_method + evidence_level + epistemic_status. Tag <code>site-research-ledger-2026-04-30</code>, commit <code>f5ff864</code>.</li>
+        <li><strong>Site cross-links</strong> — home page enriched with "§ VI Research status" snapshot (5 cards), Mermaid diagram extended with trilogy nodes, JSON-LD abstract mentions δ10 + trilogy, mea culpa #28 links to δ10 formal follow-up, /papers/ has δ10 "★ Validated Lean 4 kernel-checked" card. Commit <code>d0035c7</code>.</li>
+        <li><strong>Validation methodology</strong> — 7 Three-Key ChatGPT validations (Q5/Q9/Q11/Q12/Q13/Q14/Q15) via Chrome MCP TreeWalker chunks bypass, 2 cycles Two-Key OLD3↔NEW4 cross-check (FIND-016 4 phases + δ10 7 phases L1-L7), branch <code>main</code> INTACTE 7h+ throughout (red line preserved).</li>
+      </ul>
+      <p><em>Anti-promotional disclosure (Q15 critical for JAR reviewer): this release documents traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.</em></p>
+      ]]>
+    </summary>
+  </entry>
 
   <entry>
     <title>v0.5.1 — Bilingual EN-canonical website + interactive dependency graph + Cmd+K search</title>
