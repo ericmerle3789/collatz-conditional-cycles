@@ -395,7 +395,12 @@
       "summary": {
         "fr": "Registre public versionné documentant développements Lean, audits, corrections, lectures critiques. Three-Key Q14+Q15 convergent forte avec 3 raffinements + 3 garde-fous non négociables.",
         "en": "Public versioned registry documenting Lean developments, audits, corrections, literature studies. Three-Key Q14+Q15 strongly convergent with 3 refinements + 3 non-negotiable safeguards."
-      }
+      },
+      "artefacts": [
+        {"label": "GitHub commit (Research Ledger initial)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/f5ff864", "kind": "commit"},
+        {"label": "GitHub tag", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/site-research-ledger-2026-04-30", "kind": "tag"},
+        {"label": "Branch feat/site-research-ledger", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/tree/feat/site-research-ledger", "kind": "branch"}
+      ]
     }
 
   ],
@@ -406,7 +411,7 @@
     "by_milestone": {"true": 6, "false": 10},
     "by_claim_scope": {"formal_lean": 4, "documentation": 8, "submitted_paper": 1, "external_literature": 2, "implementation": 1},
     "by_epistemic_status": {"verified": 8, "partial": 5, "under_review": 1, "external_unverified": 2, "hypothesis": 0},
-    "note_fr": "Seed v2 priorité haute, 16 événements clés. À enrichir post-implementation : 24 mea culpa restants (#1-26 sauf #28), 13 commits gh-pages, 14 phases Lean (47-63), 35 pistes, 15 audit findings (FIND-001..015), Three-Key Q5+Q9. Total cible final ~80-100 events.",
-    "note_en": "Priority seed v2, 16 key events. To enrich post-implementation: 24 remaining mea culpa (#1-26 except #28), 13 gh-pages commits, 14 Lean phases (47-63), 35 paths, 15 audit findings (FIND-001..015), Three-Key Q5+Q9. Final target ~80-100 events."
+    "note_fr": "Seed v2 priorité haute, 16 événements clés. À enrichir post-implementation : 27 mea culpa publiés non encore détaillés ici (#1-27, le #28 est déjà dans le seed), 13 commits gh-pages secondaires, 14 phases Lean (47-63), 35 pistes cartographiées, 15 audit findings (FIND-001..015), Three-Key Q5+Q9 historiques. Total cible final ~80-100 events.",
+    "note_en": "Priority seed v2, 16 key events. To enrich post-implementation: 27 published mea culpa not yet detailed here (#1-27, #28 already in seed), 13 secondary gh-pages commits, 14 Lean phases (47-63), 35 cartographed paths, 15 audit findings (FIND-001..015), historical Three-Key Q5+Q9. Final target ~80-100 events."
   }
 }
