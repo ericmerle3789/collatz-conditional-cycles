@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Conjecture de Collatz / Syracuse — Questions fréquentes</title>
+<meta name="description" content="Foire aux questions sur la conjecture de Collatz / Syracuse / 3n+1 : qu'est-ce que c'est, est-elle prouvée, y a-t-il une récompense, pourquoi est-ce difficile, qu'est-ce que Lean 4, qu'apporte ce site. Réponses concises sourcées.">
+<meta name="keywords" content="FAQ Collatz, FAQ Syracuse, questions Collatz, est-ce que Collatz est prouve, recompense Collatz, Lean 4 explication, conjecture facile a comprendre, 3n+1 facile a prouver">
+<meta name="author" content="Eric Merle">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://collatz-lab.org/faq/">
+<link rel="alternate" hreflang="en" href="https://collatz-lab.org/faq/">
+<link rel="alternate" hreflang="fr" href="https://collatz-lab.org/faq/?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://collatz-lab.org/faq/">
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#0e0f13">
+
+<meta property="og:title" content="FAQ — Conjecture de Collatz / Syracuse — Questions fréquentes">
+<meta property="og:description" content="Réponses sourcées aux questions fréquentes sur Collatz/Syracuse/3n+1. Statut, récompense, difficulté, Lean 4, apports du projet.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://collatz-lab.org/faq/">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Collatz / Syracuse Conditional Cycles">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ — Conjecture de Collatz / Syracuse">
+<meta name="twitter:description" content="Réponses sourcées aux questions fréquentes Collatz/Syracuse/3n+1.">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+
+<link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://collatz-lab.org/faq/",
+      "name": "FAQ — Conjecture de Collatz / Syracuse",
+      "url": "https://collatz-lab.org/faq/",
+      "inLanguage": ["fr", "en"],
+      "datePublished": "2026-04-30",
+      "dateModified": "2026-04-30",
+      "author": {"@type": "Person", "@id": "https://orcid.org/0009-0008-7940-402X", "name": "Eric Merle"},
+      "isPartOf": {"@id": "https://collatz-lab.org/"},
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que la conjecture de Collatz / Syracuse ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "C'est un problème ouvert de théorie des nombres : pour tout entier n ≥ 1, on itère la fonction T(n) = n/2 si n est pair, T(n) = 3n+1 si n est impair. La conjecture affirme que cette suite atteint toujours 1. Aucun contre-exemple connu, aucune preuve générale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La conjecture de Collatz est-elle prouvée ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non, elle reste ouverte (état 2026). Le résultat majeur le plus récent est Tao 2019 : presque toutes les orbites atteignent presque des valeurs bornées (densité naturelle 1). Aucune preuve inconditionnelle n'existe. Vérification computationnelle : Barina 2025, n < 2^71."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Y a-t-il une récompense financière ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bryan Thwaites a offert £1000 en 1996 pour une preuve. Paul Erdős a dit que les mathématiques n'étaient pas prêtes pour ce problème et a offert $500. Ce n'est pas un Millennium Prize Problem (Clay Institute, $1M), mais c'est l'un des problèmes ouverts les plus connus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi est-ce difficile ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "L'opération 3n+1 mélange multiplication par 3 et division par 2. Aucun outil arithmétique standard (théorie des nombres analytique, dynamique ergodique, théorie diophantienne) ne capture pleinement ce mélange. Conway a montré que des généralisations naturelles sont indécidables (1972). Erdős : 'Mathematics is not yet ripe for such questions.'"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'apporte ce site (collatz-lab.org) ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Une preuve formelle conditionnelle en Lean 4, kernel-checked (Mathlib v4.27.0), modulo trois hypothèses externes explicites : BakerSeparation (séparation diophantienne effective), BarinaVerification (n < 2^71), DerivedLargeKBound (Hercher 2023). Plus une trilogie d'impossibilité (δ8, δ8', δ10) prouvant que cette conditionnalité est nécessaire dans le paradigme Baker+CF, pas arbitraire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que Lean 4 ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lean 4 est un assistant de preuve formelle (proof assistant) développé à Microsoft Research. Une preuve écrite en Lean 4 et acceptée par le noyau (kernel) est mathématiquement vérifiée à un niveau de rigueur supérieur à la révision par les pairs traditionnelle. Mathlib est sa bibliothèque mathématique standard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que veut dire 'kernel-checked' ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le noyau (kernel) Lean 4 est un petit programme qui vérifie chaque pas de preuve. Si le noyau accepte la preuve, elle est correcte modulo la confiance qu'on accorde à ce noyau et aux trois axiomes minimaux de Lean (propext, Classical.choice, Quot.sound). Notre théorème principal no_nontrivial_cycle_phase59 a été kernel-checked avec ces 3 axiomes seulement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi parle-t-on de preuve 'conditionnelle' ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notre théorème dépend de trois hypothèses externes documentées (BakerSeparation, BarinaVerification, DerivedLargeKBound). Ce n'est donc pas une preuve inconditionnelle de la conjecture de Collatz. Notre apport est de cartographier rigoureusement les obstructions structurelles qui rendent cette conditionnalité nécessaire, pas arbitraire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles sont les approches existantes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tao 2019 (densité presque-1), Krasikov-Lagarias (densité partielle), Eliahou-Steiner (cycle structure), Knight (sieve methods), Calegari-Dimitrov-Tang 2025 (arithmetic holonomy), Barina (vérification computationnelle), Hercher (m-bornes locales). Ce site documente les piliers conditionnels et leurs limites structurelles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment puis-je contribuer ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le code Lean 4 et le paper sont open-source sur GitHub (ericmerle3789/collatz-conditional-cycles, licence MIT pour le code, CC BY-SA 4.0 pour le site). Issues, pull requests, audits Red Team sont bienvenus. Le research-ledger documente publiquement audits, mea culpa, et corrections."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qui maintient ce site ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eric Merle (ORCID 0009-0008-7940-402X), avec un protocole Three-Key validation multi-IA (OLD3 + NEW4 + ChatGPT 5.5) pour les décisions structurantes, et Two-Key validation (OLD3 ↔ NEW4) pour les contributions courantes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "C'est quoi le protocole ARES ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ARES v2 est notre méthodologie anti-hallucination multi-IA : 6 règles strictes pour vérifier toute claim avant publication, incluant la nécessité d'une source primaire ou secondaire vérifiable, l'absence d'interpolation, et la documentation des incertitudes (epistemic_status: verified | partial | external_unverified). Chaque event du research-ledger porte ces métadonnées."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://collatz-lab.org/"},
+        {"@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://collatz-lab.org/faq/"}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+
+<link rel="stylesheet" href="../assets/css/main.css?v=20260430-2100">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../" class="brand">
+      <span class="brand-mark">Λ</span>
+      <span lang="fr">Cycles Conditionnels de Collatz/Syracuse</span>
+      <span lang="en">Collatz / Syracuse Conditional Cycles</span>
+    </a>
+    <nav class="nav">
+      <a href="../" data-i18n="navAccueil">Home</a>
+      <a href="../#pistes" data-i18n="navPistes">Approaches</a>
+      <a href="../lemmes/" data-i18n="navLemmes">Lemmas</a>
+      <a href="../preuve/" data-i18n="navPreuve">Proof</a>
+      <a href="../papers/" data-i18n="navPapers">Papers</a>
+      <a href="../#hypotheses" data-i18n="navHypotheses">Hypotheses</a>
+      <a href="../research-ledger/" data-i18n="navLedger">Ledger</a>
+      <a href="../#team" data-i18n="navEquipe">Team</a>
+    </nav>
+    <div class="toolbar-actions">
+      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
+        <span class="moon-icon" aria-hidden="true">☾</span>
+        <span class="sun-icon" aria-hidden="true">☀</span>
+      </button>
+      <button class="btn-icon" id="langBtn" aria-label="Switch language">FR</button>
+      <button class="btn-icon" id="printBtn" data-i18n="print">Print</button>
+    </div>
+  </div>
+</header>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<main>
+
+<section class="hero" style="padding: 4rem 2rem 3rem;">
+  <div class="hero-eyebrow" lang="fr">Foire aux questions</div>
+  <div class="hero-eyebrow" lang="en">Frequently asked questions</div>
+  <h1 lang="fr" style="font-size: clamp(1.8rem, 4vw, 2.8rem);">FAQ — Conjecture de Collatz / Syracuse</h1>
+  <h1 lang="en" style="font-size: clamp(1.8rem, 4vw, 2.8rem);">FAQ — Collatz / Syracuse Conjecture</h1>
+  <p class="hero-lede" style="font-size: 1.05rem;">
+    <span lang="fr">12 questions, 12 réponses concises. Sources primaires et secondaires citées. Méthodologie ARES.</span>
+    <span lang="en">12 questions, 12 concise answers. Primary and secondary sources cited. ARES methodology.</span>
+  </p>
+</section>
+
+<section>
+  <details class="faq-item" open>
+    <summary><strong><span lang="fr">1. Qu'est-ce que la conjecture de Collatz / Syracuse ?</span><span lang="en">1. What is the Collatz / Syracuse conjecture?</span></strong></summary>
+    <p>
+      <span lang="fr">C'est un problème ouvert de théorie des nombres. Pour tout entier <code>n ≥ 1</code>, on itère la fonction <code>T(n) = n/2</code> si <code>n</code> est pair, <code>T(n) = 3n+1</code> si <code>n</code> est impair. La conjecture affirme que cette suite atteint toujours <code>1</code>. Aucun contre-exemple connu, aucune preuve générale. <a href="../syracuse/">Voir la page Syracuse pour la définition complète et les alias internationaux</a>.</span>
+      <span lang="en">It's an open number-theory problem. For every integer <code>n ≥ 1</code>, iterate the function <code>T(n) = n/2</code> if <code>n</code> is even, <code>T(n) = 3n+1</code> if <code>n</code> is odd. The conjecture states that this sequence always reaches <code>1</code>. No counter-example known, no general proof. <a href="../syracuse/">See the Syracuse page for full definition and international aliases</a>.</span>
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary><strong><span lang="fr">2. La conjecture est-elle prouvée ?</span><span lang="en">2. Is the conjecture proved?</span></strong></summary>
+    <p>
+      <span lang="fr"><strong>Non</strong> (état 2026). Le résultat majeur récent est <strong>Tao 2019</strong> : presque toutes les orbites de Collatz atteignent presque des valeurs bornées (densité naturelle 1). Vérification computationnelle : <strong>Barina 2025</strong>, <code>n &lt; 2<sup>71</sup></code>. Aucune preuve inconditionnelle n'existe.</span>
+      <span lang="en"><strong>No</strong> (as of 2026). Major recent result: <strong>Tao 2019</strong> — almost all Collatz orbits attain almost bounded values (natural density 1). Computational verification: <strong>Barina 2025</strong>, <code>n &lt; 2<sup>71</sup></code>. No unconditional proof exists.</span>
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary><strong><span lang="fr">3. Y a-t-il une récompense financière ?</span><span lang="en">3. Is there a financial reward?</span></strong></summary>
+    <p>
+      <span lang="fr"><strong>Bryan Thwaites</strong> a offert £1000 en 1996 pour une preuve. <strong>Paul Erdős</strong> a dit "Les mathématiques ne sont pas prêtes pour ce problème" et a offert $500. Ce <strong>n'est pas</strong> un Millennium Prize Problem (Clay Institute, $1M réservés à 7 problèmes : Riemann, Yang-Mills, Navier-Stokes, etc.).</span>
+      <span lang="en"><strong>Bryan Thwaites</strong> offered £1000 in 1996 for a proof. <strong>Paul Erdős</strong> said "Mathematics is not yet ripe for such questions" and offered $500. It is <strong>not</strong> a Millennium Prize Problem (Clay Institute, $1M reserved for 7 specific problems: Riemann, Yang-Mills, Navier-Stokes, etc.).</span>
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary><strong><span lang="fr">4. Pourquoi est-ce si difficile ?</span><span lang="en">4. Why is it so hard?</span></strong></summary>
+    <p>
+      <span lang="fr">L'opération <code>3n+1</code> mélange multiplication par 3 et division par 2. Aucun outil arithmétique standard (théorie des nombres analytique, dynamique ergodique, théorie diophantienne) ne capture pleinement ce mélange. Conway 1972 a montré que des généralisations naturelles sont <strong>indécidables</strong>. Citation Erdős : "Mathematics is not yet ripe for such questions."</span>
+      <span lang="en">The <code>3n+1</code> operation mixes multiplication by 3 and division by 2. No standard arithmetic tool (analytic number theory, ergodic dynamics, Diophantine theory) fully captures this mix. Conway 1972 showed that natural generalizations are <strong>undecidable</strong>. Erdős quote: "Mathematics is not yet ripe for such questions."</span>
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary><strong><span lang="fr">5. Qu'apporte ce site (collatz-lab.org) ?</span><span lang="en">5. What does this site (collatz-lab.org) contribute?</span></strong></summary>
+    <p>
+      <span lang="fr">Une <strong>preuve formelle conditionnelle</strong> en Lean 4, kernel-checked (Mathlib v4.27.0), modulo trois hypothèses externes explicites :
+      <strong>BakerSeparation</strong> (séparation diophantienne effective sur <code>|S log 2 − k log 3|</code>),
+      <strong>BarinaVerification</strong> (<code>n &lt; 2<sup>71</sup></code>),
+      <strong>DerivedLargeKBound</strong> (Hercher 2023). Plus une <strong>trilogie d'impossibilité</strong> (δ8, δ8', δ10) prouvant que cette conditionnalité est <em>nécessaire</em> dans le paradigme Baker+CF, pas <em>arbitraire</em>.</span>
+      <span lang="en">A <strong>conditional formal proof</strong> in Lean 4, kernel-checked (Mathlib v4.27.0), modulo three explicit external hypotheses: <strong>BakerSeparation</strong>, <strong>BarinaVerification</strong>, <strong>DerivedLargeKBound</strong>. Plus an <strong>impossibility trilogy</strong> (δ8, δ8', δ10) proving that this conditionality is <em>necessary</em> in the Baker+CF paradigm, not <em>arbitrary</em>.</span>
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary><strong><span lang="fr">6. Qu'est-ce que Lean 4 ?</span><span lang="en">6. What is Lean 4?</span></strong></summary>
+    <p>
+      <span lang="fr">Lean 4 est un <strong>assistant de preuve formelle</strong> (proof assistant) développé à Microsoft Research. Une preuve écrite en Lean 4 et acceptée par le noyau (kernel) est mathématiquement vérifiée à un niveau de rigueur supérieur à la peer review traditionnelle. <strong>Mathlib</strong> est sa bibliothèque mathématique standard (<code>v4.27.0</code> utilisée ici).</span>
+      <span lang="en">Lean 4 is a <strong>formal proof assistant</strong> developed at Microsoft Research. A proof written in Lean 4 and accepted by the kernel is mathematically verified to a level of rigor exceeding traditional peer review. <strong>Mathlib</strong> is its standard mathematics library (<code>v4.27.0</code> used here).</span>
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary><strong><span lang="fr">7. Que veut dire "kernel-checked" ?</span><span lang="en">7. What does "kernel-checked" mean?</span></strong></summary>
+    <p>
+      <span lang="fr">Le <strong>noyau (kernel) Lean 4</strong> est un petit programme qui vérifie chaque pas de preuve. Si le noyau accepte, la preuve est correcte modulo la confiance qu'on accorde à ce noyau et aux <strong>3 axiomes minimaux Lean</strong> : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>. Notre théorème principal <code>no_nontrivial_cycle_phase59</code> a été kernel-checked avec ces 3 axiomes seulement.</span>
+      <span lang="en">The <strong>Lean 4 kernel</strong> is a small program that checks every proof step. If the kernel accepts, the proof is correct modulo trust in this kernel and Lean's <strong>3 minimal axioms</strong>: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>. Our main theorem <code>no_nontrivial_cycle_phase59</code> is kernel-checked with these 3 axioms only.</span>
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary><strong><span lang="fr">8. Pourquoi parle-t-on de preuve "conditionnelle" ?</span><span lang="en">8. Why "conditional" proof?</span></strong></summary>
+    <p>
+      <span lang="fr">Le théorème dépend de <strong>trois hypothèses externes documentées</strong> (BakerSeparation, BarinaVerification, DerivedLargeKBound). Ce n'est donc <strong>pas une preuve inconditionnelle</strong> de Collatz/Syracuse. L'apport est de cartographier rigoureusement les obstructions structurelles qui rendent cette conditionnalité <em>nécessaire</em>, pas <em>arbitraire</em>.</span>
+      <span lang="en">The theorem depends on <strong>three documented external hypotheses</strong> (BakerSeparation, BarinaVerification, DerivedLargeKBound). It is therefore <strong>not an unconditional proof</strong> of Collatz/Syracuse. The contribution is rigorously mapping the structural obstructions that make this conditionality <em>necessary</em>, not <em>arbitrary</em>.</span>
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary><strong><span lang="fr">9. Quelles sont les autres approches ?</span><span lang="en">9. What are the other approaches?</span></strong></summary>
+    <p>
+      <span lang="fr"><strong>Tao 2019</strong> (densité presque-1, méthodes analytiques),
+      <strong>Krasikov-Lagarias</strong> (densité partielle, sieve),
+      <strong>Eliahou-Steiner</strong> (structure des cycles, identité fondamentale),
+      <strong>Knight</strong> (méthodes de tamis),
+      <strong>Calegari-Dimitrov-Tang 2025</strong> (arithmetic holonomy — paradigme alternatif),
+      <strong>Barina 2025</strong> (vérification computationnelle),
+      <strong>Hercher 2023</strong> (bornes locales sur <code>m</code>). Notre site documente le paradigme <em>Baker+CF</em> et ses limites structurelles.</span>
+      <span lang="en"><strong>Tao 2019</strong> (near-1 density, analytic methods),
+      <strong>Krasikov-Lagarias</strong> (partial density, sieve),
+      <strong>Eliahou-Steiner</strong> (cycle structure, fundamental identity),
+      <strong>Knight</strong> (sieve methods),
+      <strong>Calegari-Dimitrov-Tang 2025</strong> (arithmetic holonomy — alternative paradigm),
+      <strong>Barina 2025</strong> (computational verification),
+      <strong>Hercher 2023</strong> (local bounds on <code>m</code>). Our site documents the <em>Baker+CF paradigm</em> and its structural limits.</span>
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary><strong><span lang="fr">10. Comment puis-je contribuer ?</span><span lang="en">10. How can I contribute?</span></strong></summary>
+    <p>
+      <span lang="fr">Code Lean 4 et paper sont open-source : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub repository</a> (MIT pour le code, CC BY-SA 4.0 pour le site). Issues, pull requests, audits Red Team bienvenus. Le <a href="../research-ledger/">Research Ledger</a> documente publiquement audits, mea culpa, corrections.</span>
+      <span lang="en">Lean 4 code and paper are open-source: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub repository</a> (MIT for code, CC BY-SA 4.0 for site). Issues, pull requests, Red Team audits welcome. The <a href="../research-ledger/">Research Ledger</a> publicly documents audits, mea culpa, corrections.</span>
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary><strong><span lang="fr">11. Qui maintient ce site ?</span><span lang="en">11. Who maintains this site?</span></strong></summary>
+    <p>
+      <span lang="fr">Eric Merle (<a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>), avec un protocole <strong>Three-Key validation</strong> multi-IA (OLD3 + NEW4 + ChatGPT 5.5) pour les décisions structurantes, et <strong>Two-Key validation</strong> (OLD3 ↔ NEW4) pour les contributions courantes.</span>
+      <span lang="en">Eric Merle (<a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>), with a <strong>Three-Key validation</strong> multi-AI protocol (OLD3 + NEW4 + ChatGPT 5.5) for structural decisions, and <strong>Two-Key validation</strong> (OLD3 ↔ NEW4) for routine contributions.</span>
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary><strong><span lang="fr">12. C'est quoi le protocole ARES ?</span><span lang="en">12. What is the ARES protocol?</span></strong></summary>
+    <p>
+      <span lang="fr"><strong>ARES v2</strong> est notre méthodologie anti-hallucination multi-IA : 6 règles strictes pour vérifier toute claim avant publication, incluant la nécessité d'une source primaire ou secondaire vérifiable, l'absence d'interpolation, et la documentation des incertitudes (<code>epistemic_status: verified | partial | external_unverified</code>). Chaque event du <a href="../research-ledger/">research-ledger</a> porte ces métadonnées.</span>
+      <span lang="en"><strong>ARES v2</strong> is our anti-hallucination multi-AI methodology: 6 strict rules to verify any claim before publication, including the need for a verifiable primary or secondary source, no interpolation, and documentation of uncertainty (<code>epistemic_status: verified | partial | external_unverified</code>). Every event in the <a href="../research-ledger/">research-ledger</a> carries these metadata.</span>
+    </p>
+  </details>
+</section>
+
+<section>
+  <h3 lang="fr">Sources primaires et secondaires</h3>
+  <h3 lang="en">Primary and secondary sources</h3>
+  <ol style="font-size: 0.92rem; line-height: 1.7;">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture (EN)</a> · <a href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">Conjecture de Syracuse (FR)</a></li>
+    <li>Tao, T. (2019). <em>Almost all Collatz orbits attain almost bounded values</em>. <a href="https://arxiv.org/abs/1909.03562">arXiv:1909.03562</a></li>
+    <li>Lagarias, J. C. (1985). <em>The 3x+1 Problem and its Generalizations</em>. American Mathematical Monthly, 92(1), 3-23. <a href="https://www.jstor.org/stable/2322189">JSTOR 2322189</a></li>
+    <li>Conway, J. H. (1972). <em>Unpredictable iterations</em>. Proceedings of the Number Theory Conference, 49-52. (Undecidability of generalizations.)</li>
+    <li>Barina, D. (2025). Convergence verification <code>n &lt; 2<sup>71</sup></code>. (Cited as <code>BarinaVerification</code> axiom in the Lean formalization.)</li>
+  </ol>
+</section>
+
+</main>
+
+<footer style="padding: 3rem 2rem 4rem; text-align: center; color: var(--text-secondary); font-size: 0.88rem; border-top: 1px solid var(--border); margin-top: 4rem;">
+  <p>
+    <span lang="fr">© Eric Merle 2026 · </span><span lang="en">© Eric Merle 2026 · </span>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    · <a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>
+    · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a>
+    · <a href="../changelog/">Changelog</a>
+    · <a href="../feed.xml">Atom feed</a>
+  </p>
+  <p style="margin-top: 0.5rem;">
+    <span lang="fr">FAQ mise à jour le 2026-04-30 · v0.6.0</span>
+    <span lang="en">FAQ last updated 2026-04-30 · v0.6.0</span>
+  </p>
+</footer>
+
+<style>
+  .faq-item {
+    margin: 1rem 0;
+    padding: 1rem 1.2rem;
+    background: var(--bg-elevated);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent, #c8a86a);
+  }
+  .faq-item summary {
+    cursor: pointer;
+    padding: 0.4rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .faq-item summary:hover { color: var(--accent, #c8a86a); }
+  .faq-item p {
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .faq-item[open] summary { color: var(--accent, #c8a86a); }
+</style>
+
+<script src="../assets/js/main.js?v=20260430-2100"></script>
+</body>
+</html>

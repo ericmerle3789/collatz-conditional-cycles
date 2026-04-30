@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conjecture de Syracuse / Collatz — Définition, équivalence, alias</title>
+<meta name="description" content="Conjecture de Syracuse (en France) = Conjecture de Collatz (anglo-saxon) = Problème 3n+1 = Problème de Kakutani = Problème de Hasse. Page de référence : définition, équivalence formelle, origine du nom, liens vers la preuve formelle Lean 4 conditionnelle.">
+<meta name="keywords" content="Conjecture de Syracuse, suite de Syracuse, algorithme de Syracuse, problème de Syracuse, Syracuse problem, Collatz conjecture, 3n+1, Kakutani, Hasse, Ulam, Thwaites, Hailstone numbers, Lothar Collatz, équivalence, définition, Lean 4">
+<meta name="author" content="Eric Merle">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<link rel="canonical" href="https://collatz-lab.org/syracuse/">
+<link rel="alternate" hreflang="en" href="https://collatz-lab.org/syracuse/">
+<link rel="alternate" hreflang="fr" href="https://collatz-lab.org/syracuse/?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://collatz-lab.org/syracuse/">
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#0e0f13">
+
+<meta property="og:title" content="Conjecture de Syracuse / Collatz — Définition, équivalence, alias">
+<meta property="og:description" content="Page de référence sur l'équivalence entre Conjecture de Syracuse (FR) et Conjecture de Collatz (EN) : définition unifiée, origine historique du nom, alias internationaux (Kakutani, Hasse, Ulam, Thwaites, 3n+1, Hailstone).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://collatz-lab.org/syracuse/">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Collatz / Syracuse Conditional Cycles">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Conjecture de Syracuse / Collatz — Définition, équivalence, alias">
+<meta name="twitter:description" content="Page de référence : Syracuse = Collatz = 3n+1. Définition, alias, origine du nom.">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+
+<link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://collatz-lab.org/syracuse/",
+      "headline": "Conjecture de Syracuse / Collatz — Définition, équivalence, alias internationaux",
+      "name": "Conjecture de Syracuse — page de référence",
+      "alternateName": [
+        "Syracuse Conjecture — Reference page",
+        "Collatz / Syracuse equivalence",
+        "3n+1 problem aliases"
+      ],
+      "description": "Page de référence documentant l'équivalence formelle entre la Conjecture de Syracuse (terme dominant en France) et la Conjecture de Collatz (terme dominant dans le monde anglo-saxon), incluant les autres noms historiques (Kakutani, Hasse, Ulam, Thwaites) et l'origine du nom 'Syracuse'.",
+      "url": "https://collatz-lab.org/syracuse/",
+      "inLanguage": ["fr", "en"],
+      "datePublished": "2026-04-30",
+      "dateModified": "2026-04-30",
+      "author": {
+        "@type": "Person",
+        "@id": "https://orcid.org/0009-0008-7940-402X",
+        "name": "Eric Merle"
+      },
+      "isPartOf": {"@id": "https://collatz-lab.org/"},
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "about": {
+        "@type": "Thing",
+        "name": "Collatz conjecture",
+        "alternateName": ["Conjecture de Syracuse", "Syracuse problem", "3n+1 problem", "Kakutani problem", "Hasse algorithm", "Ulam conjecture", "Thwaites conjecture", "Hailstone sequence"],
+        "sameAs": ["https://en.wikipedia.org/wiki/Collatz_conjecture", "https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse"]
+      },
+      "citation": [
+        {
+          "@type": "WebPage",
+          "name": "Conjecture de Syracuse — Wikipédia FR",
+          "url": "https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Collatz conjecture — Wikipedia EN",
+          "url": "https://en.wikipedia.org/wiki/Collatz_conjecture"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "The 3x+1 Problem and its Generalizations",
+          "author": "Jeffrey C. Lagarias",
+          "datePublished": "1985",
+          "url": "https://www.jstor.org/stable/2322189"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://collatz-lab.org/"},
+        {"@type": "ListItem", "position": 2, "name": "Conjecture de Syracuse", "item": "https://collatz-lab.org/syracuse/"}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+
+<link rel="stylesheet" href="../assets/css/main.css?v=20260430-2100">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../" class="brand">
+      <span class="brand-mark">Λ</span>
+      <span lang="fr">Cycles Conditionnels de Collatz/Syracuse</span>
+      <span lang="en">Collatz / Syracuse Conditional Cycles</span>
+    </a>
+    <nav class="nav">
+      <a href="../" data-i18n="navAccueil">Home</a>
+      <a href="../#pistes" data-i18n="navPistes">Approaches</a>
+      <a href="../lemmes/" data-i18n="navLemmes">Lemmas</a>
+      <a href="../preuve/" data-i18n="navPreuve">Proof</a>
+      <a href="../papers/" data-i18n="navPapers">Papers</a>
+      <a href="../#hypotheses" data-i18n="navHypotheses">Hypotheses</a>
+      <a href="../research-ledger/" data-i18n="navLedger">Ledger</a>
+      <a href="../#team" data-i18n="navEquipe">Team</a>
+    </nav>
+    <div class="toolbar-actions">
+      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
+        <span class="moon-icon" aria-hidden="true">☾</span>
+        <span class="sun-icon" aria-hidden="true">☀</span>
+      </button>
+      <button class="btn-icon" id="langBtn" aria-label="Switch language">FR</button>
+      <button class="btn-icon" id="printBtn" data-i18n="print">Print</button>
+    </div>
+  </div>
+</header>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<main>
+
+<section class="hero" style="padding: 4rem 2rem 3rem;">
+  <div class="hero-eyebrow" lang="fr">Page de référence</div>
+  <div class="hero-eyebrow" lang="en">Reference page</div>
+  <h1 lang="fr" style="font-size: clamp(1.8rem, 4vw, 2.8rem);">Conjecture de Syracuse</h1>
+  <h1 lang="en" style="font-size: clamp(1.8rem, 4vw, 2.8rem);">Syracuse Conjecture (a.k.a. Collatz)</h1>
+  <p class="hero-lede" style="font-size: 1.05rem;">
+    <span lang="fr">La <strong>Conjecture de Syracuse</strong> est le nom utilisé en France pour ce que le monde anglo-saxon appelle la <strong>Conjecture de Collatz</strong>. C'est <em>exactement le même problème</em>, et plusieurs autres noms historiques coexistent.</span>
+    <span lang="en">The <strong>Syracuse problem</strong> is the dominant French name for what English-speaking mathematicians call the <strong>Collatz conjecture</strong>. It is <em>exactly the same problem</em>, and several other historical names coexist.</span>
+  </p>
+</section>
+
+<section>
+  <div class="section-eyebrow" lang="fr">§ I — Définition unifiée</div>
+  <div class="section-eyebrow" lang="en">§ I — Unified definition</div>
+  <h2 lang="fr">Une seule fonction, plusieurs noms</h2>
+  <h2 lang="en">One function, many names</h2>
+  <p>
+    <span lang="fr">Toutes ces appellations désignent la même fonction <code>T : ℕ → ℕ</code> définie par :</span>
+    <span lang="en">All of these names denote the same function <code>T : ℕ → ℕ</code> defined as:</span>
+  </p>
+  <p style="text-align: center; font-size: 1.05rem; margin: 1.5rem 0;">
+    $$ T(n) = \begin{cases} n/2 & \text{si } n \text{ pair} \\ 3n+1 & \text{si } n \text{ impair} \end{cases} $$
+  </p>
+  <p>
+    <span lang="fr">La conjecture affirme que <strong>pour tout entier <code>n ≥ 1</code>, la suite des itérés <code>T(n), T(T(n)), …</code> atteint toujours <code>1</code></strong>. Aucun cycle non-trivial n'a jamais été découvert au-delà du cycle <code>1 → 4 → 2 → 1</code>, et aucune trajectoire divergente n'a été observée.</span>
+    <span lang="en">The conjecture states that <strong>for every integer <code>n ≥ 1</code>, the sequence of iterates <code>T(n), T(T(n)), …</code> eventually reaches <code>1</code></strong>. No non-trivial cycle has ever been discovered beyond <code>1 → 4 → 2 → 1</code>, and no divergent trajectory has been observed.</span>
+  </p>
+</section>
+
+<section>
+  <div class="section-eyebrow" lang="fr">§ II — Catalogue des noms</div>
+  <div class="section-eyebrow" lang="en">§ II — Names catalog</div>
+  <h2 lang="fr">Tous les noms du même problème</h2>
+  <h2 lang="en">All names of the same problem</h2>
+  <p>
+    <span lang="fr">Wikipedia EN<sup><a href="#ref-wiki-en">[1]</a></sup> et Wikipedia FR<sup><a href="#ref-wiki-fr">[2]</a></sup> recensent les appellations suivantes :</span>
+    <span lang="en">Wikipedia EN<sup><a href="#ref-wiki-en">[1]</a></sup> and Wikipedia FR<sup><a href="#ref-wiki-fr">[2]</a></sup> list the following names:</span>
+  </p>
+
+  <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem;">
+    <thead>
+      <tr style="border-bottom: 2px solid var(--border);">
+        <th style="text-align:left; padding:0.6rem 0.4rem;" lang="fr">Nom</th>
+        <th style="text-align:left; padding:0.6rem 0.4rem;" lang="en">Name</th>
+        <th style="text-align:left; padding:0.6rem 0.4rem;" lang="fr">Origine</th>
+        <th style="text-align:left; padding:0.6rem 0.4rem;" lang="en">Origin</th>
+        <th style="text-align:left; padding:0.6rem 0.4rem;" lang="fr">Usage actuel</th>
+        <th style="text-align:left; padding:0.6rem 0.4rem;" lang="en">Current usage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding:0.5rem 0.4rem;"><strong>Collatz conjecture</strong></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Lothar Collatz, mathématicien allemand, 1937 (deux ans après sa thèse)</span><span lang="en">Lothar Collatz, German mathematician, 1937 (two years after his PhD)</span></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Dominant dans le monde anglo-saxon et en publication scientifique</span><span lang="en">Dominant in English-speaking world and academic publishing</span></td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding:0.5rem 0.4rem;"><strong>Conjecture de Syracuse</strong> / <strong>Syracuse problem</strong></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Université de Syracuse (États-Unis), où Helmut Hasse a popularisé le problème dans les années 1950</span><span lang="en">Syracuse University (USA), where Helmut Hasse popularized the problem in the 1950s</span></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Dominant en France et dans la francophonie scolaire</span><span lang="en">Dominant in France and in French-speaking academic curriculum</span></td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding:0.5rem 0.4rem;"><strong>Problème 3n+1</strong> / <strong>3x+1 problem</strong></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Description littérale de l'opération sur les entiers impairs</span><span lang="en">Literal description of the operation on odd integers</span></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Universel, neutre, sans attribution historique. Lagarias 1985<sup><a href="#ref-lagarias">[3]</a></sup> l'a popularisé.</span><span lang="en">Universal, neutral, no historical attribution. Lagarias 1985<sup><a href="#ref-lagarias">[3]</a></sup> popularized it.</span></td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding:0.5rem 0.4rem;"><strong>Kakutani's problem</strong></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Shizuo Kakutani, mathématicien japonais, qui l'aurait répandu dans les universités américaines vers 1960</span><span lang="en">Shizuo Kakutani, Japanese mathematician, said to have spread it in US universities ca. 1960</span></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Rare, anglosaxonne, ancienne</span><span lang="en">Rare, English-speaking, dated</span></td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding:0.5rem 0.4rem;"><strong>Hasse's algorithm</strong></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Helmut Hasse, mathématicien allemand qui a étudié le problème indépendamment</span><span lang="en">Helmut Hasse, German mathematician who studied the problem independently</span></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Très rare</span><span lang="en">Very rare</span></td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding:0.5rem 0.4rem;"><strong>Ulam conjecture</strong></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Stanisław Ulam, mathématicien polono-américain qui a évoqué le problème</span><span lang="en">Stanisław Ulam, Polish-American mathematician who mentioned the problem</span></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Rare, anglosaxonne ; à ne pas confondre avec la conjecture d'Ulam (théorie des nombres) ou la spirale d'Ulam.</span><span lang="en">Rare, English-speaking; not to be confused with Ulam's conjecture (number theory) or the Ulam spiral.</span></td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding:0.5rem 0.4rem;"><strong>Thwaites conjecture</strong></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Bryan Thwaites, mathématicien britannique qui a redécouvert et popularisé le problème, offrant £1000 pour une preuve en 1996</span><span lang="en">Bryan Thwaites, British mathematician who rediscovered and popularized the problem, offering £1000 for a proof in 1996</span></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Très rare, britannique</span><span lang="en">Very rare, British</span></td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding:0.5rem 0.4rem;"><strong>Hailstone sequence / Hailstone numbers</strong></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Métaphore : les nombres montent et descendent comme des grêlons dans un nuage</span><span lang="en">Metaphor: the numbers go up and down like hailstones in a cloud</span></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Anglo-saxon, vulgarisation</span><span lang="en">English-speaking, popularization</span></td>
+      </tr>
+      <tr style="border-bottom: 1px solid var(--border);">
+        <td style="padding:0.5rem 0.4rem;"><strong>Wondrous numbers</strong></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Vulgarisation par Douglas Hofstadter dans <em>Gödel, Escher, Bach</em> (1979)</span><span lang="en">Popularization by Douglas Hofstadter in <em>Gödel, Escher, Bach</em> (1979)</span></td>
+        <td style="padding:0.5rem 0.4rem;"><span lang="fr">Rare, vulgarisation</span><span lang="en">Rare, popular science</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight" style="margin-top: 2rem;">
+    <p>
+      <span lang="fr"><strong>Quelle terminologie ce site utilise-t-il ?</strong> Le site et le paper Lean 4 utilisent <code>Collatz</code> (terminologie de publication scientifique). Le présent site est aussi indexé sur <code>Syracuse</code> pour faciliter la découverte par le public francophone.</span>
+      <span lang="en"><strong>Which terminology does this site use?</strong> The site and Lean 4 paper use <code>Collatz</code> (the academic publication standard). The site is also indexed on <code>Syracuse</code> to facilitate discovery by French-speaking visitors.</span>
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="section-eyebrow" lang="fr">§ III — Pourquoi "Syracuse" en France ?</div>
+  <div class="section-eyebrow" lang="en">§ III — Why "Syracuse" in France?</div>
+  <h2 lang="fr">Une histoire de transmission orale</h2>
+  <h2 lang="en">A story of oral transmission</h2>
+  <p>
+    <span lang="fr">L'origine du nom <em>Syracuse</em> en France est traditionnellement attribuée à l'Université de Syracuse (Syracuse University, dans l'État de New York aux États-Unis), où le problème aurait été présenté par Helmut Hasse lors d'une visite dans les années 1950, selon la note historique référencée par Wikipédia<sup><a href="#ref-wiki-fr">[2]</a></sup>. La diffusion s'est ensuite faite dans la communauté mathématique française par transmission orale, le nom collant au problème par contiguïté avec le lieu de la présentation, plutôt qu'avec un mathématicien.</span>
+    <span lang="en">The origin of the name <em>Syracuse</em> in France is traditionally attributed to Syracuse University (Syracuse, New York, USA), where the problem was reportedly presented by Helmut Hasse during a visit in the 1950s, according to the historical note referenced by Wikipedia<sup><a href="#ref-wiki-fr">[2]</a></sup>. It then propagated in the French mathematical community by oral transmission, the name attaching to the problem by association with the venue of the presentation, rather than with a specific mathematician.</span>
+  </p>
+  <p style="font-style: italic; color: var(--text-secondary);">
+    <span lang="fr">Note : cette attribution est traditionnelle mais pas formellement documentée par une source primaire archivable. Le statut épistémique est <code>partial</code> selon notre méthodologie ARES — nous indiquons la source secondaire (Wikipédia) comme référence, sans pouvoir pointer un courrier ou une publication originelle.</span>
+    <span lang="en">Note: this attribution is traditional but not formally documented by an archivable primary source. The epistemic status is <code>partial</code> per our ARES methodology — we cite the secondary source (Wikipedia) without being able to point to an original letter or publication.</span>
+  </p>
+</section>
+
+<section>
+  <div class="section-eyebrow" lang="fr">§ IV — Liens internes</div>
+  <div class="section-eyebrow" lang="en">§ IV — Internal links</div>
+  <h2 lang="fr">Approfondir sur ce site</h2>
+  <h2 lang="en">Dig deeper on this site</h2>
+  <ul style="list-style: none; padding: 0;">
+    <li style="margin-bottom: 0.7rem;">
+      → <a href="../"><strong>Accueil</strong></a> :
+      <span lang="fr">vue d'ensemble du projet, théorème principal kernel-checked.</span>
+      <span lang="en">project overview, main kernel-checked theorem.</span>
+    </li>
+    <li style="margin-bottom: 0.7rem;">
+      → <a href="../preuve/"><strong>Architecture de la preuve</strong></a> :
+      <span lang="fr">chaîne de preuve Lean 4, sous-branches k≤1322 et k>1322.</span>
+      <span lang="en">Lean 4 proof chain, sub-branches k≤1322 and k>1322.</span>
+    </li>
+    <li style="margin-bottom: 0.7rem;">
+      → <a href="../lemmes/"><strong>Catalogue Lean</strong></a> :
+      <span lang="fr">7 théorèmes centraux + auxiliaires + arsenal R34-R96.</span>
+      <span lang="en">7 central theorems + auxiliaries + R34-R96 arsenal.</span>
+    </li>
+    <li style="margin-bottom: 0.7rem;">
+      → <a href="../papers/"><strong>Papers</strong></a> :
+      <span lang="fr">paper soumis JAR Springer (28 pages).</span>
+      <span lang="en">paper submitted JAR Springer (28 pages).</span>
+    </li>
+    <li style="margin-bottom: 0.7rem;">
+      → <a href="../research-ledger/"><strong>Research Ledger</strong></a> :
+      <span lang="fr">registre transparent de tous les développements, audits, mea culpa.</span>
+      <span lang="en">transparent registry of all developments, audits, mea culpa.</span>
+    </li>
+    <li style="margin-bottom: 0.7rem;">
+      → <a href="../lambda/"><strong>Λ explorer interactif</strong></a> :
+      <span lang="fr">visualisation du verrou diophantien <code>Λ_{S,k} = S log 2 - k log 3</code>.</span>
+      <span lang="en">interactive visualization of the Diophantine lock <code>Λ_{S,k} = S log 2 - k log 3</code>.</span>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <div class="section-eyebrow" lang="fr">§ V — Sources et références</div>
+  <div class="section-eyebrow" lang="en">§ V — Sources and references</div>
+  <h2 lang="fr">Citations</h2>
+  <h2 lang="en">Citations</h2>
+  <ol style="font-size: 0.92rem; line-height: 1.7;">
+    <li id="ref-wiki-en">
+      <strong>Wikipedia EN — Collatz conjecture</strong> (consulted 2026-04-30).
+      Lead paragraph enumerates alternative names: 3n+1 problem, 3n+1 conjecture, Ulam conjecture, Kakutani's problem, Thwaites conjecture, Hasse's algorithm, Syracuse problem.
+      <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">https://en.wikipedia.org/wiki/Collatz_conjecture</a>
+    </li>
+    <li id="ref-wiki-fr">
+      <strong>Wikipédia FR — Conjecture de Syracuse</strong> (consultée 2026-04-30).
+      Section « Origine du nom » documente l'attribution à Helmut Hasse / Syracuse University.
+      <a href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse</a>
+    </li>
+    <li id="ref-lagarias">
+      <strong>Lagarias, Jeffrey C.</strong> (1985). "The 3x+1 Problem and its Generalizations". <em>The American Mathematical Monthly</em>, 92(1), 3-23. JSTOR <a href="https://www.jstor.org/stable/2322189">2322189</a>.
+      Reference survey establishing terminology "3x+1 problem".
+    </li>
+    <li>
+      <strong>Tao, Terence</strong> (2019). "Almost all Collatz orbits attain almost bounded values". <a href="https://arxiv.org/abs/1909.03562">arXiv:1909.03562</a>.
+      Recent major progress (almost-all density result).
+    </li>
+    <li>
+      <strong>Barina, David</strong> (2025). Convergence verification for n &lt; 2<sup>71</sup>.
+      Largest computational verification to date (referenced as <code>BarinaVerification</code> axiom in our Lean 4 formalization).
+    </li>
+  </ol>
+  <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 1.5rem; font-style: italic;">
+    <span lang="fr">Méthodologie ARES : tous les claims historiques de cette page reposent sur des sources secondaires (Wikipedia EN/FR) ou primaires (Lagarias, Tao). Statut épistémique des attributions Hasse → Syracuse University : <code>partial</code> (transmission orale traditionnelle, pas de source primaire archivée). Aucune autre claim n'est inventée.</span>
+    <span lang="en">ARES methodology: all historical claims on this page are based on secondary sources (Wikipedia EN/FR) or primary sources (Lagarias, Tao). Epistemic status of Hasse → Syracuse University attribution: <code>partial</code> (traditional oral transmission, no archived primary source). No other claim is fabricated.</span>
+  </p>
+</section>
+
+</main>
+
+<footer style="padding: 3rem 2rem 4rem; text-align: center; color: var(--text-secondary); font-size: 0.88rem; border-top: 1px solid var(--border); margin-top: 4rem;">
+  <p>
+    <span lang="fr">© Eric Merle 2026 · </span><span lang="en">© Eric Merle 2026 · </span>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    · <a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>
+    · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a>
+    · <a href="../changelog/" data-i18n="changelog">Changelog</a>
+    · <a href="../feed.xml">Atom feed</a>
+  </p>
+  <p style="margin-top: 0.5rem;">
+    <span lang="fr">Page mise à jour le 2026-04-30 · v0.6.0</span>
+    <span lang="en">Page last updated 2026-04-30 · v0.6.0</span>
+  </p>
+</footer>
+
+<script src="../assets/js/main.js?v=20260430-2100"></script>
+</body>
+</html>

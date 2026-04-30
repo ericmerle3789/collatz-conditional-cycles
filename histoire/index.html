@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histoire de la conjecture de Collatz / Syracuse — Timeline 1937-2026</title>
+<meta name="description" content="Histoire de la conjecture de Collatz / Syracuse / 3n+1 : de Lothar Collatz (1937) à Tao (2019), Barina (2025), et la formalisation Lean 4 (2026). Timeline référencée par sources primaires.">
+<meta name="keywords" content="histoire Collatz, histoire Syracuse, Lothar Collatz 1937, Hasse, Kakutani, Conway 1972, Lagarias 1985, Tao 2019, Barina 2025, conjecture 3n+1 timeline">
+<meta name="author" content="Eric Merle">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://collatz-lab.org/histoire/">
+<link rel="alternate" hreflang="en" href="https://collatz-lab.org/histoire/">
+<link rel="alternate" hreflang="fr" href="https://collatz-lab.org/histoire/?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://collatz-lab.org/histoire/">
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#0e0f13">
+
+<meta property="og:title" content="Histoire de la conjecture de Collatz / Syracuse — Timeline 1937-2026">
+<meta property="og:description" content="Timeline référencée : Lothar Collatz 1937, Hasse 1950s, Kakutani, Conway 1972 indécidabilité, Lagarias 1985 survey, Tao 2019, Barina 2025, formalisation Lean 4 2026.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://collatz-lab.org/histoire/">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Collatz / Syracuse Conditional Cycles">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Histoire de la conjecture de Collatz / Syracuse — Timeline 1937-2026">
+<meta name="twitter:description" content="Timeline référencée 1937-2026 : Collatz, Hasse, Kakutani, Conway, Lagarias, Tao, Barina, Lean 4.">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+
+<link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://collatz-lab.org/histoire/",
+      "headline": "Histoire de la conjecture de Collatz / Syracuse — Timeline 1937-2026",
+      "name": "Histoire de la conjecture",
+      "description": "Timeline historique référencée de la conjecture de Collatz / Syracuse / 3n+1, depuis Lothar Collatz 1937 jusqu'à la formalisation Lean 4 conditionnelle 2026.",
+      "url": "https://collatz-lab.org/histoire/",
+      "inLanguage": ["fr", "en"],
+      "datePublished": "2026-04-30",
+      "dateModified": "2026-04-30",
+      "author": {"@type": "Person", "@id": "https://orcid.org/0009-0008-7940-402X", "name": "Eric Merle"},
+      "isPartOf": {"@id": "https://collatz-lab.org/"},
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "about": {
+        "@type": "Thing",
+        "name": "Collatz conjecture (Syracuse problem, 3n+1)"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://collatz-lab.org/"},
+        {"@type": "ListItem", "position": 2, "name": "Histoire", "item": "https://collatz-lab.org/histoire/"}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+
+<link rel="stylesheet" href="../assets/css/main.css?v=20260430-2100">
+
+<style>
+  .timeline {
+    position: relative;
+    padding-left: 0;
+    margin: 2rem 0;
+  }
+  .timeline-track {
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent 0%, var(--border) 5%, var(--border) 95%, transparent 100%);
+  }
+  .timeline-event {
+    position: relative;
+    padding: 0.5rem 0 1.5rem 2.5rem;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: 4px;
+    top: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent, #c8a86a);
+    border: 3px solid var(--bg, #0e0f13);
+  }
+  .timeline-event.major .timeline-dot {
+    background: #f59e0b;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
+  }
+  .timeline-year {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--accent, #c8a86a);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .timeline-title {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    margin: 0.2rem 0 0.5rem;
+  }
+  .timeline-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+  .timeline-source {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 0.4rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../" class="brand">
+      <span class="brand-mark">Λ</span>
+      <span lang="fr">Cycles Conditionnels de Collatz/Syracuse</span>
+      <span lang="en">Collatz / Syracuse Conditional Cycles</span>
+    </a>
+    <nav class="nav">
+      <a href="../" data-i18n="navAccueil">Home</a>
+      <a href="../#pistes" data-i18n="navPistes">Approaches</a>
+      <a href="../lemmes/" data-i18n="navLemmes">Lemmas</a>
+      <a href="../preuve/" data-i18n="navPreuve">Proof</a>
+      <a href="../papers/" data-i18n="navPapers">Papers</a>
+      <a href="../#hypotheses" data-i18n="navHypotheses">Hypotheses</a>
+      <a href="../research-ledger/" data-i18n="navLedger">Ledger</a>
+      <a href="../#team" data-i18n="navEquipe">Team</a>
+    </nav>
+    <div class="toolbar-actions">
+      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
+        <span class="moon-icon" aria-hidden="true">☾</span>
+        <span class="sun-icon" aria-hidden="true">☀</span>
+      </button>
+      <button class="btn-icon" id="langBtn" aria-label="Switch language">FR</button>
+      <button class="btn-icon" id="printBtn" data-i18n="print">Print</button>
+    </div>
+  </div>
+</header>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<main>
+
+<section class="hero" style="padding: 4rem 2rem 3rem;">
+  <div class="hero-eyebrow" lang="fr">Timeline historique · 1937-2026</div>
+  <div class="hero-eyebrow" lang="en">Historical timeline · 1937-2026</div>
+  <h1 lang="fr" style="font-size: clamp(1.8rem, 4vw, 2.8rem);">Histoire de la conjecture</h1>
+  <h1 lang="en" style="font-size: clamp(1.8rem, 4vw, 2.8rem);">History of the conjecture</h1>
+  <p class="hero-lede" style="font-size: 1.05rem;">
+    <span lang="fr">90 ans d'une question simple à formuler, impossible à résoudre. Sources primaires citées en bas de page.</span>
+    <span lang="en">90 years of a question simple to state, impossible to solve. Primary sources cited at the bottom.</span>
+  </p>
+</section>
+
+<section>
+  <div class="timeline">
+    <div class="timeline-track" aria-hidden="true"></div>
+
+    <div class="timeline-event major">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1937</div>
+      <h3 class="timeline-title" lang="fr">Lothar Collatz introduit le problème</h3>
+      <h3 class="timeline-title" lang="en">Lothar Collatz introduces the problem</h3>
+      <p class="timeline-content">
+        <span lang="fr">Le mathématicien allemand <strong>Lothar Collatz</strong>, deux ans après son doctorat, décrit l'itération <code>n/2</code> ou <code>3n+1</code> dans des notes personnelles et lors de discussions à l'Université de Hambourg. Le problème ne sera publié qu'en 1985 par Lagarias.</span>
+        <span lang="en">German mathematician <strong>Lothar Collatz</strong>, two years after his PhD, describes the iteration <code>n/2</code> or <code>3n+1</code> in personal notes and discussions at the University of Hamburg. The problem won't be formally published until Lagarias in 1985.</span>
+      </p>
+      <div class="timeline-source"><span lang="fr">Source : Lagarias 1985 (rappel historique).</span><span lang="en">Source: Lagarias 1985 (historical recall).</span></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1950s</div>
+      <h3 class="timeline-title" lang="fr">Helmut Hasse popularise le problème</h3>
+      <h3 class="timeline-title" lang="en">Helmut Hasse popularizes the problem</h3>
+      <p class="timeline-content">
+        <span lang="fr"><strong>Helmut Hasse</strong>, mathématicien allemand, présente le problème lors de visites en Amérique du Nord, notamment à <strong>Syracuse University</strong> (NY, USA) — d'où le nom <em>Conjecture de Syracuse</em> qui s'imposera en France. Le problème circule par transmission orale, gagnant le surnom <em>Hasse's algorithm</em> chez certains auteurs.</span>
+        <span lang="en"><strong>Helmut Hasse</strong>, German mathematician, presents the problem during North American visits, notably at <strong>Syracuse University</strong> (NY, USA) — origin of the French name <em>Conjecture de Syracuse</em>. The problem spreads by oral transmission, gaining the nickname <em>Hasse's algorithm</em> in some sources.</span>
+      </p>
+      <div class="timeline-source"><span lang="fr">Source : Wikipédia FR (note historique). Statut épistémique : partial — transmission orale, pas de source primaire archivée.</span><span lang="en">Source: Wikipedia FR (historical note). Epistemic status: partial — oral transmission, no archived primary source.</span></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1960s</div>
+      <h3 class="timeline-title" lang="fr">Shizuo Kakutani diffuse aux États-Unis</h3>
+      <h3 class="timeline-title" lang="en">Shizuo Kakutani spreads it in the US</h3>
+      <p class="timeline-content">
+        <span lang="fr">Le mathématicien japonais <strong>Shizuo Kakutani</strong> aurait répandu le problème dans les universités américaines vers 1960, donnant le nom alternatif <em>Kakutani's problem</em>.</span>
+        <span lang="en">Japanese mathematician <strong>Shizuo Kakutani</strong> reportedly spreads the problem in American universities ca. 1960, yielding the alternative name <em>Kakutani's problem</em>.</span>
+      </p>
+      <div class="timeline-source"><span lang="fr">Source : Wikipedia EN (énumération des noms).</span><span lang="en">Source: Wikipedia EN (alternative names list).</span></div>
+    </div>
+
+    <div class="timeline-event major">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1972</div>
+      <h3 class="timeline-title" lang="fr">Conway prouve l'indécidabilité de la généralisation</h3>
+      <h3 class="timeline-title" lang="en">Conway proves undecidability of the generalization</h3>
+      <p class="timeline-content">
+        <span lang="fr"><strong>John H. Conway</strong> publie <em>Unpredictable iterations</em> et démontre que des généralisations naturelles du problème <code>3n+1</code> (fonctions <em>FRACTRAN</em>) sont <strong>Turing-complètes et donc indécidables</strong>. Ce résultat suggère que la conjecture de Collatz pourrait être intrinsèquement difficile.</span>
+        <span lang="en"><strong>John H. Conway</strong> publishes <em>Unpredictable iterations</em> and proves that natural generalizations of the <code>3n+1</code> problem (<em>FRACTRAN</em> functions) are <strong>Turing-complete and therefore undecidable</strong>. This result suggests Collatz could be intrinsically hard.</span>
+      </p>
+      <div class="timeline-source">Source: Conway, J. H. (1972). <em>Unpredictable iterations</em>. Proceedings of the Number Theory Conference (Boulder), 49-52.</div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1976</div>
+      <h3 class="timeline-title" lang="fr">Crandall publie la première étude approfondie</h3>
+      <h3 class="timeline-title" lang="en">Crandall publishes the first in-depth study</h3>
+      <p class="timeline-content">
+        <span lang="fr"><strong>Richard E. Crandall</strong> publie <em>On the "3x+1" problem</em>, première analyse systématique des trajectoires, statistiques de stopping time, et tentatives de bornes inférieures sur les contre-exemples potentiels.</span>
+        <span lang="en"><strong>Richard E. Crandall</strong> publishes <em>On the "3x+1" problem</em>, first systematic analysis of trajectories, stopping time statistics, and lower-bound attempts on potential counter-examples.</span>
+      </p>
+      <div class="timeline-source">Source: Crandall, R. E. (1978). <em>On the "3x+1" problem</em>. Mathematics of Computation, 32(144), 1281-1292.</div>
+    </div>
+
+    <div class="timeline-event major">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1985</div>
+      <h3 class="timeline-title" lang="fr">Lagarias publie le survey de référence</h3>
+      <h3 class="timeline-title" lang="en">Lagarias publishes the reference survey</h3>
+      <p class="timeline-content">
+        <span lang="fr"><strong>Jeffrey C. Lagarias</strong> publie <em>The 3x+1 Problem and its Generalizations</em>, l'article-survey qui établit la terminologie standard "3x+1 problem" et synthétise 50 ans de progrès. Reste la référence canonique 40 ans plus tard.</span>
+        <span lang="en"><strong>Jeffrey C. Lagarias</strong> publishes <em>The 3x+1 Problem and its Generalizations</em>, the survey article that establishes the standard "3x+1 problem" terminology and synthesizes 50 years of progress. Still the canonical reference 40 years later.</span>
+      </p>
+      <div class="timeline-source">Source: Lagarias, J. C. (1985). <em>The 3x+1 Problem and its Generalizations</em>. American Mathematical Monthly, 92(1), 3-23. JSTOR <a href="https://www.jstor.org/stable/2322189">2322189</a>.</div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1996</div>
+      <h3 class="timeline-title" lang="fr">Bryan Thwaites offre £1000</h3>
+      <h3 class="timeline-title" lang="en">Bryan Thwaites offers £1000</h3>
+      <p class="timeline-content">
+        <span lang="fr">Le mathématicien britannique <strong>Bryan Thwaites</strong>, qui a redécouvert le problème indépendamment, <strong>offre £1000</strong> pour une preuve. Le problème est aussi connu sous le nom <em>Thwaites conjecture</em> en Grande-Bretagne.</span>
+        <span lang="en">British mathematician <strong>Bryan Thwaites</strong>, who rediscovered the problem independently, <strong>offers £1000</strong> for a proof. Also known as the <em>Thwaites conjecture</em> in the UK.</span>
+      </p>
+      <div class="timeline-source"><span lang="fr">Source : Wikipedia EN (énumération des prix offerts).</span><span lang="en">Source: Wikipedia EN (offered prizes section).</span></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2000s</div>
+      <h3 class="timeline-title" lang="fr">Bornes diophantiennes effectives</h3>
+      <h3 class="timeline-title" lang="en">Effective Diophantine bounds</h3>
+      <p class="timeline-content">
+        <span lang="fr"><strong>Rhin (1987)</strong>, <strong>Wu (2003)</strong>, <strong>Simons-de Weger (2005)</strong>, <strong>Salikhov (2007)</strong> publient des bornes effectives sur les formes linéaires en logarithmes, type <code>|S log 2 − k log 3|</code> — outils techniques majeurs pour les approches Baker du problème de Collatz.</span>
+        <span lang="en"><strong>Rhin (1987)</strong>, <strong>Wu (2003)</strong>, <strong>Simons-de Weger (2005)</strong>, <strong>Salikhov (2007)</strong> publish effective bounds on linear forms in logarithms, of the form <code>|S log 2 − k log 3|</code> — major technical tools for Baker-type approaches to Collatz.</span>
+      </p>
+      <div class="timeline-source"><span lang="fr">Référencés dans le paper et le δ10 cartographic lemma de notre site.</span><span lang="en">Cited in our paper and δ10 cartographic lemma.</span></div>
+    </div>
+
+    <div class="timeline-event major">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2019</div>
+      <h3 class="timeline-title" lang="fr">Tao : presque toutes les orbites bornées</h3>
+      <h3 class="timeline-title" lang="en">Tao: almost all orbits bounded</h3>
+      <p class="timeline-content">
+        <span lang="fr"><strong>Terence Tao</strong> publie <em>Almost all Collatz orbits attain almost bounded values</em>, prouvant que pour <strong>presque tout</strong> (au sens de la densité naturelle 1) entier <code>n</code>, l'orbite atteint des valeurs presque bornées. Plus grand pas vers la conjecture en 30 ans.</span>
+        <span lang="en"><strong>Terence Tao</strong> publishes <em>Almost all Collatz orbits attain almost bounded values</em>, proving that for <strong>almost every</strong> (natural density 1) integer <code>n</code>, the orbit attains almost bounded values. Largest step toward the conjecture in 30 years.</span>
+      </p>
+      <div class="timeline-source">Source: Tao, T. (2019). <em>Almost all Collatz orbits attain almost bounded values</em>. <a href="https://arxiv.org/abs/1909.03562">arXiv:1909.03562</a>.</div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2023</div>
+      <h3 class="timeline-title" lang="fr">Hercher : bornes locales sur m</h3>
+      <h3 class="timeline-title" lang="en">Hercher: local bounds on m</h3>
+      <p class="timeline-content">
+        <span lang="fr"><strong>Christoph Hercher</strong> établit que pour tout cycle hypothétique non-trivial, <code>m ≤ 91</code> où <code>m</code> est le nombre de minima locaux dans la trajectoire impair-impair. Borne réutilisée comme axiome <code>DerivedLargeKBound</code> dans notre formalisation Lean 4.</span>
+        <span lang="en"><strong>Christoph Hercher</strong> establishes that for any hypothetical non-trivial cycle, <code>m ≤ 91</code> where <code>m</code> is the number of local minima in the odd-odd trajectory. Bound reused as <code>DerivedLargeKBound</code> axiom in our Lean 4 formalization.</span>
+      </p>
+      <div class="timeline-source"><span lang="fr">Référencé dans le paper §4 et l'arsenal Lean v4.27.0.</span><span lang="en">Cited in paper §4 and Lean v4.27.0 arsenal.</span></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2025</div>
+      <h3 class="timeline-title" lang="fr">Calegari-Dimitrov-Tang : holonomie arithmétique</h3>
+      <h3 class="timeline-title" lang="en">Calegari-Dimitrov-Tang: arithmetic holonomy</h3>
+      <p class="timeline-content">
+        <span lang="fr">Approche alternative au paradigme Baker+CF : <strong>holonomie arithmétique</strong>. Différents outils, scope différent. Tracée comme <em>Hypothesis A'</em> dans notre cartographie (hors scope δ8).</span>
+        <span lang="en">Alternative paradigm to Baker+CF: <strong>arithmetic holonomy</strong>. Different tools, different scope. Tracked as <em>Hypothesis A'</em> in our cartography (out of δ8 scope).</span>
+      </p>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2025</div>
+      <h3 class="timeline-title" lang="fr">Barina vérifie n &lt; 2^71</h3>
+      <h3 class="timeline-title" lang="en">Barina verifies n &lt; 2^71</h3>
+      <p class="timeline-content">
+        <span lang="fr"><strong>David Barina</strong> publie la <strong>plus grande vérification computationnelle</strong> à ce jour : tous les <code>n &lt; 2<sup>71</sup></code> convergent vers 1. Référencé comme <code>BarinaVerification</code> dans notre formalisation.</span>
+        <span lang="en"><strong>David Barina</strong> publishes the <strong>largest computational verification</strong> to date: all <code>n &lt; 2<sup>71</sup></code> converge to 1. Cited as <code>BarinaVerification</code> axiom in our formalization.</span>
+      </p>
+      <div class="timeline-source"><span lang="fr">Référencé dans le paper et la formalisation Lean.</span><span lang="en">Cited in paper and Lean formalization.</span></div>
+    </div>
+
+    <div class="timeline-event major">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">2026</div>
+      <h3 class="timeline-title" lang="fr">Lean 4 : preuve formelle conditionnelle</h3>
+      <h3 class="timeline-title" lang="en">Lean 4: conditional formal proof</h3>
+      <p class="timeline-content">
+        <span lang="fr"><strong>Eric Merle</strong> formalise en Lean 4 (Mathlib v4.27.0) la non-existence de cycles non-triviaux <strong>conditionnellement à 3 hypothèses externes documentées</strong> : BakerSeparation, BarinaVerification, DerivedLargeKBound. Théorème principal <code>no_nontrivial_cycle_phase59</code> kernel-checked. Trilogie d'impossibilité (δ8, δ8', δ10) prouve formellement que cette conditionnalité est <strong>structurelle, pas arbitraire</strong>. Paper soumis JAR Springer (28 pages, DOI 10.5281/zenodo.19790406).</span>
+        <span lang="en"><strong>Eric Merle</strong> formalizes in Lean 4 (Mathlib v4.27.0) the non-existence of non-trivial cycles <strong>conditional on 3 documented external hypotheses</strong>: BakerSeparation, BarinaVerification, DerivedLargeKBound. Main theorem <code>no_nontrivial_cycle_phase59</code> kernel-checked. Impossibility trilogy (δ8, δ8', δ10) formally proves this conditionality is <strong>structural, not arbitrary</strong>. Paper submitted JAR Springer (28 pages, DOI 10.5281/zenodo.19790406).</span>
+      </p>
+      <div class="timeline-source"><span lang="fr">Voir <a href="../">Accueil</a>, <a href="../preuve/">architecture de la preuve</a>, <a href="../research-ledger/">research ledger</a>.</span><span lang="en">See <a href="../">Home</a>, <a href="../preuve/">proof architecture</a>, <a href="../research-ledger/">research ledger</a>.</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3 lang="fr">Sources</h3>
+  <h3 lang="en">Sources</h3>
+  <ol style="font-size: 0.92rem; line-height: 1.7;">
+    <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture (EN)</a> · <a href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">Conjecture de Syracuse (FR)</a></li>
+    <li>Lagarias, J. C. (1985). <em>The 3x+1 Problem and its Generalizations</em>. American Math. Monthly 92(1), 3-23.</li>
+    <li>Lagarias, J. C. (ed.) (2010). <em>The Ultimate Challenge: The 3x+1 Problem</em>. American Mathematical Society.</li>
+    <li>Conway, J. H. (1972). <em>Unpredictable iterations</em>. Proc. Number Theory Conf., Boulder, 49-52.</li>
+    <li>Crandall, R. E. (1978). <em>On the "3x+1" problem</em>. Math. Comp. 32(144), 1281-1292.</li>
+    <li>Tao, T. (2019). <em>Almost all Collatz orbits attain almost bounded values</em>. <a href="https://arxiv.org/abs/1909.03562">arXiv:1909.03562</a>.</li>
+    <li>Hercher, C. (2023). Bounds on m for hypothetical non-trivial cycles. (Cited as <code>DerivedLargeKBound</code>.)</li>
+    <li>Barina, D. (2025). Convergence verification <code>n &lt; 2<sup>71</sup></code>. (Cited as <code>BarinaVerification</code>.)</li>
+    <li>Merle, E. (2026). <em>On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4</em>. JAR submission. <a href="https://doi.org/10.5281/zenodo.19790406">DOI 10.5281/zenodo.19790406</a>.</li>
+  </ol>
+  <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 1.5rem; font-style: italic;">
+    <span lang="fr">Méthodologie ARES : claims historiques 1937-1960s reposent sur des sources secondaires (Lagarias 1985, Wikipedia). Statut épistémique <code>partial</code> pour les attributions Hasse → Syracuse et Kakutani → US (transmissions orales). Tous les autres claims (1972+) sont liés à des publications académiques vérifiables.</span>
+    <span lang="en">ARES methodology: historical claims 1937-1960s rely on secondary sources (Lagarias 1985, Wikipedia). Epistemic status <code>partial</code> for Hasse → Syracuse and Kakutani → US attributions (oral transmissions). All other claims (1972+) are tied to verifiable academic publications.</span>
+  </p>
+</section>
+
+</main>
+
+<footer style="padding: 3rem 2rem 4rem; text-align: center; color: var(--text-secondary); font-size: 0.88rem; border-top: 1px solid var(--border); margin-top: 4rem;">
+  <p>
+    <span lang="fr">© Eric Merle 2026 · </span><span lang="en">© Eric Merle 2026 · </span>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    · <a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>
+    · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a>
+    · <a href="../changelog/">Changelog</a>
+    · <a href="../feed.xml">Atom feed</a>
+  </p>
+  <p style="margin-top: 0.5rem;">
+    <span lang="fr">Page mise à jour le 2026-04-30 · v0.6.0</span>
+    <span lang="en">Page last updated 2026-04-30 · v0.6.0</span>
+  </p>
+</footer>
+
+<script src="../assets/js/main.js?v=20260430-2100"></script>
+</body>
+</html>
