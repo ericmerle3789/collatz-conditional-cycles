@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collatz Conditional Cycles — Cartography</title>
-<meta name="description" content="Scientific cartography of approaches to the non-existence of non-trivial cycles in the Collatz conjecture, formalized in Lean 4. Main theorem no_nontrivial_cycle_phase59 kernel-checked, 3 axiom profile.">
-<meta name="keywords" content="Collatz conjecture, 3x+1 problem, Lean 4, Mathlib, formal verification, kernel-checked theorem, Baker's theorem, continued fractions, Diophantine approximation, non-trivial cycles, ARES protocol">
+<title>Collatz / Syracuse Conditional Cycles — Lean 4 Formal Proof</title>
+<meta name="description" content="Conjecture de Syracuse / Collatz : preuve formelle conditionnelle Lean 4 de la non-existence de cycles non-triviaux. Conditional formal proof of the Collatz (a.k.a. Syracuse) conjecture in Lean 4. Main theorem kernel-checked, 3 explicit axioms, δ8/δ8'/δ10 trilogy.">
+<meta name="keywords" content="Collatz conjecture, Syracuse conjecture, conjecture de Syracuse, suite de Syracuse, 3x+1 problem, 3n+1, Kakutani problem, Hasse problem, Lean 4, Mathlib, formal verification, kernel-checked theorem, Baker's theorem, continued fractions, Diophantine approximation, non-trivial cycles, ARES protocol">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow, max-image-preview:large">
 
@@ -26,8 +26,8 @@
 <link rel="alternate" type="application/atom+xml" title="Collatz Conditional Cycles updates" href="feed.xml">
 
 <!-- Open Graph (Facebook, LinkedIn, Mastodon, Slack, Discord) -->
-<meta property="og:title" content="Collatz Conditional Cycles — Lean 4 formal proof">
-<meta property="og:description" content="Conditional formal proof in Lean 4 of no non-trivial Collatz cycles, modulo three explicit axioms (BakerSeparation effective bound, Barina verification, Hercher local minima). Kernel-checked, 28-page paper submitted JAR.">
+<meta property="og:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formal proof">
+<meta property="og:description" content="Conjecture de Syracuse (a.k.a. Collatz). Conditional formal proof in Lean 4 of no non-trivial cycles, modulo three explicit axioms (BakerSeparation effective bound, Barina verification, Hercher local minima). Kernel-checked, 28-page paper submitted JAR.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
 <meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
@@ -40,8 +40,8 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Collatz Conditional Cycles — Lean 4 formal proof">
-<meta name="twitter:description" content="Conditional formal proof in Lean 4 of no non-trivial Collatz cycles, modulo three explicit axioms. Kernel-checked, 28-page paper.">
+<meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formal proof">
+<meta name="twitter:description" content="Conjecture de Syracuse / Collatz. Conditional formal proof in Lean 4 of no non-trivial cycles, modulo three explicit axioms. Kernel-checked, 28-page paper.">
 <meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
@@ -54,6 +54,12 @@
       "@id": "https://doi.org/10.5281/zenodo.19790406",
       "headline": "On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions",
       "name": "On the non-existence of non-trivial Collatz cycles",
+      "alternateName": [
+        "Sur la non-existence de cycles non-triviaux dans la conjecture de Syracuse",
+        "Conjecture de Collatz/Syracuse — preuve formelle Lean 4",
+        "3n+1 problem formal proof",
+        "Kakutani problem conditional proof"
+      ],
       "abstract": "We present a Lean 4 formalization of the non-existence of non-trivial Collatz cycles, conditional on three documented external hypotheses: BakerSeparation (an effective separation hypothesis on |S log 2 − k log 3|, motivated by Baker-type bounds in the Rhin 1987 / Simons-de Weger 2005 / Wu 2003 tradition; the specific exponent in our Lean axiom is stronger than currently published bounds and should be read as an explicit hypothesis, not derived from a published theorem — see paper §4 and audit findings #28; a formal cartographic complement, the δ10 lemma in Phase 64 [propext]-only kernel-checked, demonstrates that no published bound from the audited finite catalogue {Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005} can replace BarinaVerification, justifying the necessity of the chosen exponent strength), BarinaVerification (n < 2^71, Barina 2025), and DerivedLargeKBound (Hercher 2023, m ≤ 91). The main theorem no_nontrivial_cycle_phase59 is kernel-checked with a minimal axiom profile (propext, Classical.choice, Quot.sound). We document a trilogy of impossibility lemmas (δ8 Product-Bound, δ8' Baker+CF lower-not-upper, δ10 Barina-Replacement cartographic) which structurally proves that this conditionality is necessary within the Baker+CF paradigm used in this paper. Non-Khinchin paradigms (e.g., arithmetic holonomy Calegari-Dimitrov-Tang 2025) are explicitly out of δ8's scope and tracked separately as Hypothesis A' on the project website.",
       "description": "Conditional formal proof in Lean 4 of no non-trivial Collatz cycles, modulo three explicit external hypotheses. Kernel-checked, reproducible.",
       "url": "https://collatz-lab.org/",
@@ -80,7 +86,7 @@
       "datePublished": "2026-04-27",
       "dateModified": "2026-04-30",
       "inLanguage": ["en", "fr"],
-      "keywords": "Collatz conjecture, Lean 4, formal verification, Baker theorem, continued fractions, Diophantine approximation",
+      "keywords": "Collatz conjecture, Syracuse conjecture, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, Lean 4, formal verification, Baker theorem, continued fractions, Diophantine approximation",
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "isAccessibleForFree": true,
       "publication": "Journal of Automated Reasoning (submitted)",
@@ -89,7 +95,8 @@
         {
           "@type": "Thing",
           "name": "Collatz conjecture",
-          "sameAs": "https://en.wikipedia.org/wiki/Collatz_conjecture"
+          "alternateName": ["Syracuse conjecture", "Conjecture de Syracuse", "3n+1 problem", "Kakutani problem", "Hasse algorithm", "Ulam conjecture"],
+          "sameAs": ["https://en.wikipedia.org/wiki/Collatz_conjecture", "https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse"]
         },
         {
           "@type": "Thing",
@@ -121,11 +128,20 @@
       "@type": "WebSite",
       "@id": "https://collatz-lab.org/",
       "name": "Collatz Conditional Cycles",
-      "alternateName": "Cycles Conditionnels de Collatz",
+      "alternateName": [
+        "Cycles Conditionnels de Collatz/Syracuse",
+        "Collatz Lab — Conjecture de Syracuse formalisée",
+        "Syracuse Conjecture — Lean 4 Formal Proof"
+      ],
       "url": "https://collatz-lab.org/",
       "inLanguage": ["en", "fr"],
       "author": {"@id": "https://orcid.org/0009-0008-7940-402X"},
-      "publisher": {"@id": "https://orcid.org/0009-0008-7940-402X"}
+      "publisher": {"@id": "https://orcid.org/0009-0008-7940-402X"},
+      "about": {
+        "@type": "Thing",
+        "name": "Collatz conjecture (Syracuse problem, 3n+1)",
+        "alternateName": ["Conjecture de Syracuse", "Syracuse problem", "Kakutani problem", "Hasse problem", "Ulam conjecture"]
+      }
     }
   ]
 }
@@ -233,6 +249,10 @@
 <section class="hero" id="hero">
   <div class="hero-eyebrow" data-i18n="heroEyebrow">Cartographie scientifique · Pré-publication</div>
   <h1 data-i18n="heroTitle">Une enquête sur les <em>cycles non triviaux</em> conjecturés de la suite de Collatz, formalisée en Lean 4.</h1>
+  <p class="hero-alias" style="font-size: 0.92rem; color: var(--text-secondary); margin-top: -0.5rem; margin-bottom: 1.4rem; font-style: italic;">
+    <span lang="fr">Aussi connue en France sous le nom de <strong>Conjecture de Syracuse</strong> (« suite de Syracuse », « algorithme de Syracuse », « problème 3n+1 »).</span>
+    <span lang="en">Also known as the <strong>Syracuse problem</strong>, the <strong>3n+1 problem</strong>, the <strong>Kakutani problem</strong>, the <strong>Hasse algorithm</strong>, or the <strong>Ulam conjecture</strong>.</span>
+  </p>
   <p class="hero-lede" data-i18n="heroLede">
     Trente-cinq pistes mathématiques, trois axiomes piliers, une famille d'hypothèses ouvertes — organisées autour d'une obstruction diophantienne unique : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.
   </p>
