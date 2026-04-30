@@ -1,11 +1,11 @@
-# Cycles Conditionnels de Collatz — robots.txt
-# Site académique ouvert : indexation autorisée pour tous les crawlers
+# Collatz Conditional Cycles — robots.txt
+# Open academic site: indexing authorized for all crawlers
 
 User-agent: *
 Allow: /
 
-# Localisation du sitemap
-Sitemap: https://ericmerle3789.github.io/collatz-conditional-cycles/sitemap.xml
+# Sitemap location (canonical domain)
+Sitemap: https://collatz-lab.org/sitemap.xml
 
-# Crawl-delay raisonnable (politesse)
+# Reasonable crawl delay (politeness)
 Crawl-delay: 1
