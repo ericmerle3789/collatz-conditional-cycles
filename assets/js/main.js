@@ -73,8 +73,8 @@
       hypothesesIntro: "Évolution des probabilités estimées au fil des cycles d'investigation (Cycle 0 → Cycle 2). La hausse de C reflète la convergence cumulative des paradigmes vers Λ_{S,k}.",
       testsTitle: "Tests REQ-MATH-NNN exécutés",
       testsIntro: "Chaque assertion mathématique est validée par script dans le sandbox tests_math/, conformément au PROTOCOLE ARES (Règle 1 : zéro calcul mental).",
-      meaCulpaTitle: "Vingt-trois mea culpa publics",
-      meaCulpaIntro: "La discipline antifragile demande que chaque erreur détectée soit documentée publiquement avec sévérité 0-10 et règle extraite. Sans cela, le pattern multi-cerveau humain-IA répète indéfiniment les mêmes hallucinations.",
+      meaCulpaTitle: "Vingt-six mea culpa publics",
+      meaCulpaIntro: "La discipline antifragile demande que chaque erreur détectée soit documentée publiquement avec sévérité 0-10 et règle extraite. Sans cela, le pattern multi-cerveau humain-IA répète indéfiniment les mêmes hallucinations. <em>Aperçu de 10 mea culpa parmi les 26 documentés au total ; archive complète dans le repo GitHub <code>_handoff_mailbox/</code>.</em>",
       teamTitle: "Équipe",
       teamIntro: "Ce projet est conduit par un chercheur indépendant en collaboration avec des systèmes d'IA, sous protocole de vérification rigoureux (PROTOCOLE ARES v2).",
       communityTitle: "Communauté Collatz",
@@ -157,8 +157,8 @@
       hypothesesIntro: "Evolution of estimated probabilities across investigation cycles (Cycle 0 → Cycle 2). The rise of C reflects cumulative convergence of paradigms onto Λ_{S,k}.",
       testsTitle: "Executed REQ-MATH-NNN tests",
       testsIntro: "Every mathematical claim is validated by a script in the tests_math/ sandbox, in accordance with PROTOCOLE ARES (Rule 1: no mental arithmetic).",
-      meaCulpaTitle: "Twenty-three public mea culpa",
-      meaCulpaIntro: "Antifragile discipline requires every detected error be documented publicly with severity 0-10 and an extracted rule. Without this, the human-AI multi-brain pattern repeats the same hallucinations indefinitely.",
+      meaCulpaTitle: "Twenty-six public mea culpa",
+      meaCulpaIntro: "Antifragile discipline requires every detected error be documented publicly with severity 0-10 and an extracted rule. Without this, the human-AI multi-brain pattern repeats the same hallucinations indefinitely. <em>Sample of 10 mea culpa out of 26 total documented ; full archive in the GitHub repo <code>_handoff_mailbox/</code>.</em>",
       teamTitle: "Team",
       teamIntro: "This project is led by an independent researcher in collaboration with AI systems, under a rigorous verification protocol (PROTOCOLE ARES v2).",
       communityTitle: "Collatz community",
@@ -872,7 +872,8 @@ ER  - `;
       { id: '#19', sev: '8', title: 'Hiérarchie Wu vs Salikhov inversée', rule: 'Tester numériquement les bornes (script Python).' },
       { id: '#20', sev: '10', title: 'Formule log|ρ| nuancée', rule: 'Test SymPy obligatoire pour toute formule mathématique.' },
       { id: '#22', sev: '8', title: 'Sous-estimation δ8 lemma', rule: 'Tester toute combinaison Baker+CF+Khinchin contre δ8/δ8\'.' },
-      { id: '#23', sev: '9', title: '3 références inventées', rule: 'Vérifier toute référence par grep direct sur references.bib.' }
+      { id: '#23', sev: '9', title: '3 références inventées', rule: 'Vérifier toute référence par grep direct sur references.bib.' },
+      { id: '#26', sev: '6', title: 'Migration domaine : robots.txt + sitemap.xml obsolètes', rule: 'Migration de domaine ⇒ checklist post-migration : sitemap, robots, JSON-LD, OG image, hreflang, canonical, redirects 301.' }
     ] : [
       { id: '#3', sev: '9', title: 'R76b naming "at_min"', rule: 'Naming reflects the exact claim, not the intent.' },
       { id: '#11', sev: '10', title: 'BHV+lacunary conjecture', rule: 'Test R72 (Steiner identity) before any commit.' },
@@ -882,7 +883,8 @@ ER  - `;
       { id: '#19', sev: '8', title: 'Inverted Wu vs Salikhov hierarchy', rule: 'Numerically test all bounds (Python script).' },
       { id: '#20', sev: '10', title: 'log|ρ| formula nuanced', rule: 'Mandatory SymPy test for any mathematical formula.' },
       { id: '#22', sev: '8', title: 'Underestimating δ8 lemma', rule: "Test any Baker+CF+Khinchin combination against δ8/δ8'." },
-      { id: '#23', sev: '9', title: '3 fabricated references', rule: 'Verify every reference via direct grep on references.bib.' }
+      { id: '#23', sev: '9', title: '3 fabricated references', rule: 'Verify every reference via direct grep on references.bib.' },
+      { id: '#26', sev: '6', title: 'Domain migration: robots.txt + sitemap.xml stale', rule: 'Domain migration ⇒ post-migration checklist: sitemap, robots, JSON-LD, OG image, hreflang, canonical, 301 redirects.' }
     ];
 
     container.innerHTML = items.map(it => `
