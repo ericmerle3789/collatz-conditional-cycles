@@ -51,3 +51,11 @@ import ProjetCollatz.Phase61CFConvergents
 
 -- M3.3 — Best-Approximation Bridge (Phase62)
 import ProjetCollatz.Phase62BestApproxBridge
+
+-- δ10 — Barina-Replacement Impossibility (Phase64, Three-Key validated 2026-04-30)
+-- Cartographic finite audit: no published Diophantine bound from
+-- {Salikhov2007, Wu2003, Rhin1987, SimonsDeWeger2005} can replace
+-- BarinaVerification (n < 2^71) in no_nontrivial_cycle_phase59.
+-- Axiom profile : [propext] only (kernel-1, no Classical.choice needed).
+-- See chatgpt_queries/Q12+Q13 for Three-Key validation, mea culpa #28 for FIND-016.
+import ProjetCollatz.Phase64Delta10BarinaReplacement

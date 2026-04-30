@@ -59,6 +59,40 @@ The following theorems and structures exist in `ProjetCollatz/` but are **not** 
 
 Reason for exclusion: the current baseline establishes the core axiom profile for the **publicly claimed result** (`no_nontrivial_cycle_*` + its immediate dependencies).
 
+---
+
+## Section 3ter — δ10 Cartographic Audit (Phase64, 2026-04-30)
+
+The δ10 lemma is a **finite cartographic impossibility** documenting that no published Diophantine bound from the audited catalogue `{Salikhov2007, Wu2003, Rhin1987, SimonsDeWeger2005}` can replace `BarinaVerification` in the proof of Collatz cycle non-existence. It is parallel to δ8/δ8' (Phase58) but addresses the second hypothesis (Barina) rather than the third (Product-Bound).
+
+| Theorem | Expected axioms | Role |
+|---------|-----------------|------|
+| `ProjetCollatz.delta10_barina_replacement_impossibility` | `[propext]` | δ10 cartographic impossibility (kernel-1 only) |
+| `ProjetCollatz.delta10_no_audited_profile_can_replace` | `[propext]` | corollary on 4 concrete profiles |
+| `ProjetCollatz.Delta10Catalog_finite_cases` | `[]` (no axioms) | finite catalogue enumeration |
+
+**Notable**: δ10 uses **only `[propext]`**, not the full `[propext, Classical.choice, Quot.sound]` triplet. The proof is constructive (no classical choice needed), since the catalogue is finite and the case analysis is by `rcases` + `simp` on concrete boolean profiles.
+
+**Three-Key validation**: this lemma was scoped collaboratively by OLD3 + NEW4 + ChatGPT 5.5 thinking extended. ChatGPT's Q0 RED TEAM "FEU ORANGE SÉRIEUX" (Q13, 2026-04-30) prevented over-reach: a universal claim ("no method ever can replace Barina") would be infeasible. The cartographic claim is faisable, kernel-checkable, and defendable.
+
+**Dated catalogue**: `Delta10AuditDate := "2026-04-30"`. Sources published AFTER this date are not audited by this lemma; future work may extend the catalogue.
+
+**Numerical justification (REQ-MATH-012)**: for `K_max = 1322`:
+- Salikhov 2007 (μ-1 ≈ 4.125): `1322^4.125 ≈ 2^42.77 < 2^71` ✓ numerically, but bridge theorem μ(log 3) → μ(log_2 3) missing.
+- Wu 2003 (~7.6155): `1322^7.6155 ≈ 2^78.96 > 2^71` ✗ insufficient.
+- Simons-de Weger 2005 (~13.3): `1322^13.3 ≈ 2^137.90 >> 2^71` ✗ largely insufficient + uses X_0 computational.
+- Rhin 1987 (Padé chain): same bridge issue as Salikhov.
+
+→ Each of the 4 profiles fails at least one of the 3 conditions of `CanReplaceBarina`. δ10 closes the loop with FIND-016 transparency note (mea culpa #28): the strict k^6 axiom is necessary because no published bound suffices.
+
+**Probe status**: not yet in `reproduce.sh` (post-audit work). Verify manually:
+```bash
+lake env lean -c '#print axioms ProjetCollatz.delta10_barina_replacement_impossibility'
+# Expected: depends on axioms: [propext]
+```
+
+---
+
 ## Section 4 — Forbidden patterns
 
 Any appearance of the following in the `#print axioms` output of a Section 1 or Section 2 theorem is a **BLOCKER**, detected by `reproduce.sh` :
