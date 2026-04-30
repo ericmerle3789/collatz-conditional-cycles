@@ -378,23 +378,24 @@
 
     {
       "id": "site-research-ledger-launched",
-      "type": "study",
-      "subtype": "site-mission",
+      "type": "repository",
+      "subtype": "site-feature",
       "date": "2026-04-30",
       "datetime": "2026-04-30T16:15:00+02:00",
-      "status": "in-progress",
+      "status": "validated",
+      "milestone": true,
       "claim_scope": "documentation",
       "verification_method": "external_review",
       "evidence_level": "artefact_public",
-      "epistemic_status": "partial",
+      "epistemic_status": "verified",
       "last_verified_at": "2026-04-30",
       "title": {
-        "fr": "Research Ledger : registre public lancé (Three-Key validated)",
-        "en": "Research Ledger: public registry launched (Three-Key validated)"
+        "fr": "Conception du site collatz-lab.org finalisée — Research Ledger lancé (Three-Key validated)",
+        "en": "Website collatz-lab.org design finalized — Research Ledger launched (Three-Key validated)"
       },
       "summary": {
-        "fr": "Registre public versionné documentant développements Lean, audits, corrections, lectures critiques. Three-Key Q14+Q15 convergent forte avec 3 raffinements + 3 garde-fous non négociables.",
-        "en": "Public versioned registry documenting Lean developments, audits, corrections, literature studies. Three-Key Q14+Q15 strongly convergent with 3 refinements + 3 non-negotiable safeguards."
+        "fr": "Conception du site web terminée : 7 pages (Accueil, Pistes, Lemmes, Preuve, Papers, Hypothèses, Registre, Équipe), i18n FR/EN, registre public versionné avec timeline visuelle. Three-Key Q14+Q15 convergent forte (OLD3 + NEW4 + ChatGPT 5.5) avec 3 raffinements + 3 garde-fous non négociables. Le contenu du registre continue de s'enrichir, mais la conception elle-même est figée.",
+        "en": "Website design completed: 7 pages (Home, Pistes, Lemmes, Preuve, Papers, Hypotheses, Ledger, Team), FR/EN i18n, public versioned ledger with visual timeline. Three-Key Q14+Q15 strongly convergent (OLD3 + NEW4 + ChatGPT 5.5) with 3 refinements + 3 non-negotiable safeguards. Ledger content keeps growing but the design itself is frozen."
       },
       "artefacts": [
         {"label": "GitHub commit (Research Ledger initial)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/f5ff864", "kind": "commit"},
@@ -406,11 +407,11 @@
   ],
   "stats_v2": {
     "total_events": 16,
-    "by_type": {"lean": 2, "audit": 5, "mea-culpa": 1, "paper": 1, "study": 5, "repository": 2},
-    "by_status": {"validated": 9, "resolved": 1, "in-progress": 4, "to-explore": 1, "submitted": 1},
+    "by_type": {"lean": 2, "audit": 5, "mea-culpa": 1, "paper": 1, "study": 4, "repository": 3},
+    "by_status": {"validated": 10, "resolved": 1, "in-progress": 3, "to-explore": 1, "submitted": 1},
     "by_milestone": {"true": 6, "false": 10},
     "by_claim_scope": {"formal_lean": 4, "documentation": 8, "submitted_paper": 1, "external_literature": 2, "implementation": 1},
-    "by_epistemic_status": {"verified": 8, "partial": 5, "under_review": 1, "external_unverified": 2, "hypothesis": 0},
+    "by_epistemic_status": {"verified": 9, "partial": 4, "under_review": 1, "external_unverified": 2, "hypothesis": 1},
     "note_fr": "Seed v2 priorité haute, 16 événements clés. À enrichir post-implementation : 27 mea culpa publiés non encore détaillés ici (#1-27, le #28 est déjà dans le seed), 13 commits gh-pages secondaires, 14 phases Lean (47-63), 35 pistes cartographiées, 15 audit findings (FIND-001..015), Three-Key Q5+Q9 historiques. Total cible final ~80-100 events.",
     "note_en": "Priority seed v2, 16 key events. To enrich post-implementation: 27 published mea culpa not yet detailed here (#1-27, #28 already in seed), 13 secondary gh-pages commits, 14 Lean phases (47-63), 35 cartographed paths, 15 audit findings (FIND-001..015), historical Three-Key Q5+Q9. Final target ~80-100 events."
   }
