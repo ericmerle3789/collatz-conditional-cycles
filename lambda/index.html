@@ -20,7 +20,56 @@
 <meta property="og:title" content="Λ_{S,k} interactive — Collatz Conditional Cycles">
 <meta property="og:description" content="Interactive visualization of the Λ lock and the three forbidden regions (Baker, Barina, Hercher).">
 <meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="article">
+<meta property="og:url" content="https://collatz-lab.org/lambda/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:site_name" content="Collatz Conditional Cycles">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Λ_{S,k} interactive — Collatz Conditional Cycles">
+<meta name="twitter:description" content="Interactive visualization of the Λ_{S,k} = S log 2 - k log 3 Diophantine lock.">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+
+<!-- JSON-LD : TechArticle (interactive viz) + BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://collatz-lab.org/lambda/",
+      "headline": "Interactive visualization of the Λ_{S,k} Diophantine lock",
+      "name": "Λ_{S,k} interactive explorer",
+      "description": "Interactive (S, k) plane explorer showing the three forbidden regions of any hypothetical non-trivial Collatz cycle: Barina (n < 2^71), Hercher (m ≤ 91 local minima), and BakerSeparation (effective bound, stricter than published — see mea culpa #28 + δ10 cartographic lemma).",
+      "url": "https://collatz-lab.org/lambda/",
+      "inLanguage": ["en", "fr"],
+      "author": {
+        "@type": "Person",
+        "@id": "https://orcid.org/0009-0008-7940-402X",
+        "name": "Eric Merle"
+      },
+      "datePublished": "2026-04-29",
+      "dateModified": "2026-04-30",
+      "isPartOf": {"@id": "https://collatz-lab.org/"},
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "proficiencyLevel": "Expert",
+      "dependencies": "JavaScript, KaTeX",
+      "keywords": "Collatz conjecture, Diophantine approximation, linear forms in logarithms, Baker theorem, interactive visualization"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://collatz-lab.org/"},
+        {"@type": "ListItem", "position": 2, "name": "Λ explorer", "item": "https://collatz-lab.org/lambda/"}
+      ]
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
