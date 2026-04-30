@@ -1,0 +1,412 @@
+{
+  "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
+  "version": "1.0.0",
+  "generated": "2026-04-30T16:15:00Z",
+  "audit_status": "Three-Key validated 2026-04-30 (OLD3 + NEW4 + ChatGPT 5.5 Q14+Q15)",
+  "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
+  "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
+  "events": [
+
+    {
+      "id": "delta10-pushed",
+      "type": "lean",
+      "subtype": "impossibility-lemma",
+      "date": "2026-04-30",
+      "datetime": "2026-04-30T15:39:34+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "lean_check",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "δ10 — Barina-Replacement Impossibility Lemma (Phase 64) pushé",
+        "en": "δ10 — Barina-Replacement Impossibility Lemma (Phase 64) pushed"
+      },
+      "summary": {
+        "fr": "Lemme cartographique fini démontrant qu'aucune borne diophantienne publiée (Salikhov 2007 / Wu 2003 / Rhin 1987 / Simons-de Weger 2005) ne peut remplacer BarinaVerification (n < 2^71). 296 lignes Lean 4, 0 sorry, axiom profile [propext] only (kernel-1).",
+        "en": "Cartographic finite catalogue lemma proving no published Diophantine bound (Salikhov 2007 / Wu 2003 / Rhin 1987 / Simons-de Weger 2005) can replace BarinaVerification (n < 2^71). 296 lines Lean 4, 0 sorry, axiom profile [propext] only (kernel-1)."
+      },
+      "artefacts": [
+        {"label": "GitHub commit", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/7efbf34", "kind": "commit"},
+        {"label": "GitHub tag", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/study-delta10-2026-04-30", "kind": "tag"},
+        {"label": "Branch study/delta10", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/delta10-barina-replacement-impossibility", "kind": "branch"},
+        {"label": "REQ-MATH-012 sandbox", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/delta10-barina-replacement-impossibility/tests_math/test_REQ-MATH-012_delta10_barina_thresholds.py", "kind": "test-script"}
+      ],
+      "lean": {
+        "checked": true,
+        "files": ["ProjetCollatz/Phase64Delta10BarinaReplacement.lean"],
+        "axiom_profile": ["propext"]
+      },
+      "related": ["FIND-016", "trilogy-impossibility-complete", "three-key-q12-piste-departage", "three-key-q13-delta10-study"],
+      "provenance": {
+        "from_piste": "Piste 1 (brainstorming OLD3+NEW4)",
+        "promoted_at": "2026-04-30T14:28:00Z"
+      }
+    },
+
+    {
+      "id": "find016-closed",
+      "type": "audit",
+      "subtype": "transparency-resolution",
+      "date": "2026-04-30",
+      "datetime": "2026-04-30T13:54:00+02:00",
+      "status": "resolved",
+      "milestone": true,
+      "severity": 8,
+      "claim_scope": "documentation",
+      "verification_method": "lean_kernel",
+      "evidence_level": "lean_check",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "FIND-016 (BakerSeparation k^6) — transparency disclosure pushée",
+        "en": "FIND-016 (BakerSeparation k^6) — transparency disclosure pushed"
+      },
+      "summary": {
+        "fr": "AI-assisted audit Three-Key validated : axiome BakerSeparation k^6 plus strict que littérature publiée (Salikhov 2007 / Wu 2003 / Simons-de Weger 2005). Doc-comment Lean radical transparency note ajoutée. Mea culpa #28 publié.",
+        "en": "AI-assisted audit Three-Key validated: BakerSeparation k^6 axiom stricter than published literature. Lean radical transparency note added. Public mea culpa #28."
+      },
+      "artefacts": [
+        {"label": "GitHub commit", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/62866cd", "kind": "commit"},
+        {"label": "GitHub tag", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/audit-find016-2026-04-30", "kind": "tag"},
+        {"label": "Branch audit/find-016", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/tree/audit/find-016-transparency-doc-comment", "kind": "branch"}
+      ],
+      "lean": {
+        "checked": true,
+        "files": ["ProjetCollatz/Phase58PorteDeuxFinal.lean"]
+      },
+      "related": ["mea-culpa-28-published", "three-key-q11-find016-option-D"]
+    },
+
+    {
+      "id": "mea-culpa-28-published",
+      "type": "mea-culpa",
+      "date": "2026-04-30",
+      "datetime": "2026-04-30T12:35:00+02:00",
+      "status": "validated",
+      "severity": 8,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "Mea culpa #28 publié : BakerSeparation k^6 stronger than published bounds",
+        "en": "Mea culpa #28 published: BakerSeparation k^6 stronger than published bounds"
+      },
+      "summary": {
+        "fr": "Sévérité 8. Toute borne diophantienne effective utilisée comme axiome doit être validée contre la littérature ; si l'exposant est plus strict, le déclarer comme hypothèse de travail explicite.",
+        "en": "Severity 8. Any effective Diophantine bound used as axiom must be validated against published literature; if exponent is stricter, declare as explicit working hypothesis."
+      },
+      "artefacts": [
+        {"label": "GitHub commit gh-pages", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/4d86db5", "kind": "commit"},
+        {"label": "Public mea culpa section", "url": "/#meaculpa", "kind": "site-section"}
+      ],
+      "related": ["find016-closed"]
+    },
+
+    {
+      "id": "three-key-q13-delta10-study",
+      "type": "audit",
+      "subtype": "ai-assisted-audit",
+      "date": "2026-04-30",
+      "datetime": "2026-04-30T14:43:00+02:00",
+      "status": "validated",
+      "claim_scope": "documentation",
+      "verification_method": "external_review",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "partial",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "AI-assisted audit Three-Key Phase B : étude approfondie δ10 (Q13)",
+        "en": "AI-assisted audit Three-Key Phase B: deep study δ10 (Q13)"
+      },
+      "summary": {
+        "fr": "ChatGPT 5.5 Q0 RED TEAM 'FEU ORANGE SÉRIEUX' → pivot scope crucial : δ10 = catalogue audit fini (pas universel). Convergence 3/3 OLD3+NEW4+ChatGPT.",
+        "en": "ChatGPT 5.5 Q0 RED TEAM 'SERIOUS ORANGE FLAG' → crucial scope pivot: δ10 = finite audit catalogue (not universal). 3/3 convergence."
+      },
+      "related": ["delta10-pushed"]
+    },
+
+    {
+      "id": "three-key-q12-piste-departage",
+      "type": "audit",
+      "subtype": "ai-assisted-audit",
+      "date": "2026-04-30",
+      "datetime": "2026-04-30T14:28:00+02:00",
+      "status": "validated",
+      "claim_scope": "documentation",
+      "verification_method": "external_review",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "partial",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "AI-assisted audit Three-Key Phase A : départage piste δ10 (Q12)",
+        "en": "AI-assisted audit Three-Key Phase A: piste departage δ10 (Q12)"
+      },
+      "summary": {
+        "fr": "ChatGPT vote δ10 (Piste 1) à 86% confidence. Convergence 3/3 OLD3+NEW4+ChatGPT.",
+        "en": "ChatGPT votes δ10 (Path 1) at 86% confidence. 3/3 convergence."
+      },
+      "related": ["delta10-pushed"]
+    },
+
+    {
+      "id": "three-key-q11-find016-option-D",
+      "type": "audit",
+      "subtype": "ai-assisted-audit",
+      "date": "2026-04-30",
+      "datetime": "2026-04-30T12:54:00+02:00",
+      "status": "validated",
+      "claim_scope": "documentation",
+      "verification_method": "external_review",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "partial",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "AI-assisted audit Three-Key Q11 : Option A+ FIND-016 validée",
+        "en": "AI-assisted audit Three-Key Q11: Option A+ FIND-016 validated"
+      },
+      "summary": {
+        "fr": "ChatGPT verdict A+ (transparency note + alignement metadata).",
+        "en": "ChatGPT verdict A+ (transparency note + metadata alignment)."
+      },
+      "related": ["find016-closed"]
+    },
+
+    {
+      "id": "trilogy-impossibility-complete",
+      "type": "lean",
+      "subtype": "narrative-milestone",
+      "date": "2026-04-30",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "lean_check",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "Trilogie d'impossibilité Baker+CF+Khinchin complète",
+        "en": "Baker+CF+Khinchin impossibility trilogy complete"
+      },
+      "summary": {
+        "fr": "Les 3 hypothèses externes du paper JAR (BakerSeparation, BarinaVerification, DerivedLargeKBound) sont chacune adossées à une preuve d'impossibilité Lean 4 kernel-checked. δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64). Profil épistémique strictement décroissant : kernel-3 → kernel-3 → kernel-1 [propext].",
+        "en": "The 3 external hypotheses of JAR paper are each backed by a Lean 4 kernel-checked impossibility proof. δ8 + δ8' + δ10. Strictly decreasing epistemic profile: kernel-3 → kernel-3 → kernel-1 [propext]."
+      },
+      "related": ["delta10-pushed", "find016-closed"]
+    },
+
+    {
+      "id": "paper-jar-submitted",
+      "type": "paper",
+      "date": "2026-04-27",
+      "status": "submitted",
+      "milestone": true,
+      "claim_scope": "submitted_paper",
+      "verification_method": "github_tag",
+      "evidence_level": "soumission",
+      "epistemic_status": "under_review",
+      "last_verified_at": "2026-04-27",
+      "title": {
+        "fr": "Paper JAR soumis (28 pages, kernel-checked Lean 4)",
+        "en": "JAR paper submitted (28 pages, kernel-checked Lean 4)"
+      },
+      "summary": {
+        "fr": "Soumission au Journal of Automated Reasoning (Springer). 'On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions'. Sous review.",
+        "en": "Submitted to Journal of Automated Reasoning (Springer). 'On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions'. Under review."
+      },
+      "artefacts": [
+        {"label": "DOI Zenodo", "url": "https://doi.org/10.5281/zenodo.19790406", "kind": "doi"},
+        {"label": "GitHub commit main", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/c24633c", "kind": "commit"}
+      ]
+    },
+
+    {
+      "id": "study-eliahou-steiner-formalization",
+      "type": "study",
+      "date": "2026-04-30",
+      "status": "in-progress",
+      "claim_scope": "formal_lean",
+      "verification_method": "manual",
+      "evidence_level": "annonce",
+      "epistemic_status": "partial",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "Décomposition Eliahou-Steiner Lean 4",
+        "en": "Eliahou-Steiner decomposition Lean 4"
+      },
+      "summary": {
+        "fr": "Formalisation Lean 4 en cours de la décomposition d'Eliahou-Steiner pour cycles Collatz.",
+        "en": "Lean 4 formalization in progress of Eliahou-Steiner decomposition for Collatz cycles."
+      }
+    },
+
+    {
+      "id": "study-baker-desaxiomatisation",
+      "type": "study",
+      "date": "2026-04-30",
+      "status": "to-explore",
+      "claim_scope": "formal_lean",
+      "verification_method": "manual",
+      "evidence_level": "annonce",
+      "epistemic_status": "hypothesis",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "Désaxiomatisation Baker partielle (Salikhov/Wu)",
+        "en": "Partial Baker desaxiomatisation (Salikhov/Wu)"
+      },
+      "summary": {
+        "fr": "Étude exploratoire de la désaxiomatisation de BakerSeparation à partir de Salikhov 2007 / Wu 2003. Liée à FIND-016. À explorer post-δ10.",
+        "en": "Exploratory study of BakerSeparation desaxiomatisation from Salikhov 2007 / Wu 2003. Linked to FIND-016. To explore post-δ10."
+      },
+      "related": ["find016-closed", "delta10-pushed"]
+    },
+
+    {
+      "id": "reading-knight-2026",
+      "type": "study",
+      "subtype": "literature",
+      "date": "2026-04-30",
+      "status": "in-progress",
+      "claim_scope": "external_literature",
+      "verification_method": "manual",
+      "evidence_level": "annonce",
+      "epistemic_status": "external_unverified",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "Knight 2026 — Collatz high cycles do not exist (Discrete Mathematics)",
+        "en": "Knight 2026 — Collatz high cycles do not exist (Discrete Mathematics)"
+      },
+      "summary": {
+        "fr": "Lecture critique en cours. Si validé indépendamment, possible intégration comme hypothèse externe.",
+        "en": "Critical reading in progress. If validated independently, possible integration as external hypothesis."
+      }
+    },
+
+    {
+      "id": "reading-cdt-2025-holonomy",
+      "type": "study",
+      "subtype": "literature",
+      "date": "2026-04-30",
+      "status": "in-progress",
+      "claim_scope": "external_literature",
+      "verification_method": "manual",
+      "evidence_level": "annonce",
+      "epistemic_status": "external_unverified",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "Calegari-Dimitrov-Tang 2025 — arithmetic holonomy (out-of-scope δ8)",
+        "en": "Calegari-Dimitrov-Tang 2025 — arithmetic holonomy (δ8 out-of-scope)"
+      },
+      "summary": {
+        "fr": "Paradigme orthogonal Baker+CF. Lecture pour cartographie des paradigmes complémentaires.",
+        "en": "Orthogonal paradigm to Baker+CF. Reading for complementary paradigm cartography."
+      }
+    },
+
+    {
+      "id": "two-key-find016-phase4",
+      "type": "audit",
+      "subtype": "two-key-validation",
+      "date": "2026-04-30",
+      "datetime": "2026-04-30T13:54:00+02:00",
+      "status": "validated",
+      "claim_scope": "documentation",
+      "verification_method": "script",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "AI-assisted Two-Key FIND-016 Phase 4 — commit + push validés (5/5)",
+        "en": "AI-assisted Two-Key FIND-016 Phase 4 — commit + push validated (5/5)"
+      },
+      "summary": {
+        "fr": "Cross-check OLD3↔NEW4 sur 4 phases (baseline → édit → validation → commit). SHA-256 + reproduce.sh + axiom probe convergents.",
+        "en": "OLD3↔NEW4 cross-check on 4 phases (baseline → edit → validation → commit). SHA-256 + reproduce.sh + axiom probe convergent."
+      },
+      "related": ["find016-closed"]
+    },
+
+    {
+      "id": "ares-v2-protocol",
+      "type": "repository",
+      "subtype": "tooling-methodology",
+      "date": "2026-04-29",
+      "status": "validated",
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-04-29",
+      "title": {
+        "fr": "PROTOCOLE ARES v2 — méthodologie anti-hallucination multi-cerveau IA",
+        "en": "PROTOCOLE ARES v2 — multi-brain AI anti-hallucination methodology"
+      },
+      "summary": {
+        "fr": "6 règles ARES : zéro calcul mental, citation quarantine, Red Team, DO-178C trailers, sandbox tests_math/, Two-Key Rule.",
+        "en": "6 ARES rules: zero mental calc, citation quarantine, Red Team, DO-178C trailers, sandbox tests_math/, Two-Key Rule."
+      }
+    },
+
+    {
+      "id": "site-migration-domain",
+      "type": "repository",
+      "date": "2026-04-29",
+      "datetime": "2026-04-29T00:00:00+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "documentation",
+      "verification_method": "github_tag",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-04-29",
+      "title": {
+        "fr": "Migration domaine custom : collatz-lab.org",
+        "en": "Custom domain migration: collatz-lab.org"
+      },
+      "summary": {
+        "fr": "ericmerle3789.github.io/collatz-conditional-cycles → collatz-lab.org. CNAME + Cloudflare HTTPS.",
+        "en": "ericmerle3789.github.io/collatz-conditional-cycles → collatz-lab.org. CNAME + Cloudflare HTTPS."
+      },
+      "artefacts": [
+        {"label": "GitHub commit gh-pages", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/3d5dfa0", "kind": "commit"}
+      ]
+    },
+
+    {
+      "id": "site-research-ledger-launched",
+      "type": "study",
+      "subtype": "site-mission",
+      "date": "2026-04-30",
+      "datetime": "2026-04-30T16:15:00+02:00",
+      "status": "in-progress",
+      "claim_scope": "documentation",
+      "verification_method": "external_review",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "partial",
+      "last_verified_at": "2026-04-30",
+      "title": {
+        "fr": "Research Ledger : registre public lancé (Three-Key validated)",
+        "en": "Research Ledger: public registry launched (Three-Key validated)"
+      },
+      "summary": {
+        "fr": "Registre public versionné documentant développements Lean, audits, corrections, lectures critiques. Three-Key Q14+Q15 convergent forte avec 3 raffinements + 3 garde-fous non négociables.",
+        "en": "Public versioned registry documenting Lean developments, audits, corrections, literature studies. Three-Key Q14+Q15 strongly convergent with 3 refinements + 3 non-negotiable safeguards."
+      }
+    }
+
+  ],
+  "stats_v2": {
+    "total_events": 16,
+    "by_type": {"lean": 2, "audit": 5, "mea-culpa": 1, "paper": 1, "study": 5, "repository": 2},
+    "by_status": {"validated": 9, "resolved": 1, "in-progress": 4, "to-explore": 1, "submitted": 1},
+    "by_milestone": {"true": 6, "false": 10},
+    "by_claim_scope": {"formal_lean": 4, "documentation": 8, "submitted_paper": 1, "external_literature": 2, "implementation": 1},
+    "by_epistemic_status": {"verified": 8, "partial": 5, "under_review": 1, "external_unverified": 2, "hypothesis": 0},
+    "note_fr": "Seed v2 priorité haute, 16 événements clés. À enrichir post-implementation : 24 mea culpa restants (#1-26 sauf #28), 13 commits gh-pages, 14 phases Lean (47-63), 35 pistes, 15 audit findings (FIND-001..015), Three-Key Q5+Q9. Total cible final ~80-100 events.",
+    "note_en": "Priority seed v2, 16 key events. To enrich post-implementation: 24 remaining mea culpa (#1-26 except #28), 13 gh-pages commits, 14 Lean phases (47-63), 35 paths, 15 audit findings (FIND-001..015), Three-Key Q5+Q9. Final target ~80-100 events."
+  }
+}

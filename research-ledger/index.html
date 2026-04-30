@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Ledger — Collatz Conditional Cycles</title>
+<meta name="description" content="Public versioned research ledger documenting formal Lean developments, audit findings, corrections, literature studies, and ongoing investigations related to conditional Collatz cycles.">
+<meta name="keywords" content="Collatz, Lean 4, research ledger, audit trail, traceability, ARES protocol">
+<meta name="author" content="Eric Merle">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical + hreflang -->
+<link rel="canonical" href="https://collatz-lab.org/research-ledger/">
+<link rel="alternate" hreflang="en" href="https://collatz-lab.org/research-ledger/">
+<link rel="alternate" hreflang="fr" href="https://collatz-lab.org/research-ledger/?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://collatz-lab.org/research-ledger/">
+
+<!-- Favicons -->
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#0e0f13">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Research Ledger — Collatz Conditional Cycles">
+<meta property="og:description" content="Public versioned research ledger: formal Lean developments, audit findings, corrections, literature studies, ongoing investigations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://collatz-lab.org/research-ledger/">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+
+<style>
+  /* === RESEARCH LEDGER PAGE === */
+
+  .ledger-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border, #2a2b30);
+  }
+
+  .ledger-back-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .ledger-back-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Anti-promotional positioning bar — CRITICAL for JAR reviewer */
+  .ledger-positioning {
+    margin: 1rem 0 2rem 0;
+    padding: 1rem 1.25rem;
+    background: var(--bg-elevated, #181a20);
+    border-left: 3px solid var(--text-secondary, #6b7280);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--text-secondary, #94a3b8);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* Stats cards (compteurs résumés) */
+  .ledger-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+    margin: 2rem 0;
+  }
+
+  .stat-card {
+    padding: 0.75rem 1rem;
+    background: var(--bg-elevated, #181a20);
+    border-radius: 6px;
+    border-left: 3px solid var(--family-color);
+  }
+
+  .stat-card[data-family="lean"]      { --family-color: #6366f1; }
+  .stat-card[data-family="audit"]     { --family-color: #f97316; }
+  .stat-card[data-family="mea-culpa"] { --family-color: #be185d; }
+  .stat-card[data-family="paper"]     { --family-color: #3b82f6; }
+  .stat-card[data-family="repository"] { --family-color: #64748b; }
+  .stat-card[data-family="study"]     { --family-color: #14b8a6; }
+
+  .stat-num {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--mono, monospace);
+  }
+
+  .stat-label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-secondary, #94a3b8);
+    margin-top: 0.2rem;
+  }
+
+  /* Filters */
+  .ledger-filters {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: var(--bg-elevated, #181a20);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .filter-group label {
+    font-size: 0.78rem;
+    color: var(--text-secondary, #94a3b8);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .filter-group select {
+    background: var(--bg, #0e0f13);
+    color: var(--text, #f3f4f6);
+    border: 1px solid var(--border, #2a2b30);
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    font-family: inherit;
+  }
+
+  .filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .filter-toggle input[type="checkbox"] {
+    cursor: pointer;
+  }
+
+  .filter-summary {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: var(--text-secondary, #94a3b8);
+  }
+
+  /* Sections (ordre Q15 révisé) */
+  .ledger-section {
+    margin: 3rem 0;
+  }
+
+  .ledger-section-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border, #2a2b30);
+  }
+
+  .ledger-section-intro {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #94a3b8);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Event cards (timeline) */
+  .ledger-event {
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0;
+    background: var(--bg-elevated, #181a20);
+    border-radius: 6px;
+    border-left: 4px solid var(--family-color);
+    position: relative;
+  }
+
+  /* Family colors (6 families post-Q15 simplification) */
+  .ledger-event[data-family="lean"]       { --family-color: #6366f1; }  /* indigo — Formal proof / Lean */
+  .ledger-event[data-family="audit"]      { --family-color: #f97316; }  /* orange — Audit / validation / Three-Key / Two-Key */
+  .ledger-event[data-family="mea-culpa"]  { --family-color: #be185d; }  /* rose sombre — Correction / mea culpa */
+  .ledger-event[data-family="paper"]      { --family-color: #3b82f6; }  /* bleu académique — Publication / DOI */
+  .ledger-event[data-family="repository"] { --family-color: #64748b; }  /* gris ardoise — Repository / commit / tag / tooling */
+  .ledger-event[data-family="study"]      { --family-color: #14b8a6; }  /* turquoise — Studies / literature / investigation */
+
+  /* Milestone = FLAG visuel (étoile + bordure dorée fine), pas un type coloré */
+  .ledger-event[data-milestone="true"] {
+    border-top: 2px solid #fbbf24;
+    box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.15);
+  }
+
+  .ledger-event[data-milestone="true"]::before {
+    content: "★";
+    position: absolute;
+    top: 0.75rem;
+    right: 0.85rem;
+    color: #fbbf24;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .event-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+  }
+
+  .event-date {
+    font-family: var(--mono, monospace);
+    font-size: 0.8rem;
+    color: var(--text-secondary, #94a3b8);
+  }
+
+  .event-family-badge {
+    padding: 0.1rem 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background: var(--family-color);
+    color: white;
+  }
+
+  .event-status-badge {
+    padding: 0.1rem 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .event-status-badge[data-status="validated"]   { background: #064e3b; color: #6ee7b7; }
+  .event-status-badge[data-status="resolved"]    { background: #2e1065; color: #c4b5fd; }
+  .event-status-badge[data-status="in-progress"] { background: #1e3a8a; color: #93c5fd; }
+  .event-status-badge[data-status="submitted"]   { background: #7c2d12; color: #fdba74; }
+  .event-status-badge[data-status="to-explore"]  { background: #78350f; color: #fcd34d; }
+  .event-status-badge[data-status="deferred"]    { background: #1f2937; color: #9ca3af; }
+  .event-status-badge[data-status="hypothesis"]  { background: #422006; color: #fcd34d; }
+  .event-status-badge[data-status="archived"]    { background: #1e293b; color: #cbd5e1; }
+  .event-status-badge[data-status="failed"]      { background: #7f1d1d; color: #fca5a5; }
+
+  .event-claim-scope {
+    padding: 0.1rem 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 999px;
+    background: var(--bg, #0e0f13);
+    color: var(--text-secondary, #94a3b8);
+    border: 1px solid var(--border, #2a2b30);
+    font-family: var(--mono, monospace);
+  }
+
+  .event-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0.25rem 0 0.5rem 0;
+    line-height: 1.3;
+  }
+
+  .event-summary {
+    font-size: 0.88rem;
+    color: var(--text-secondary, #94a3b8);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  .event-artefacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .event-artefact-link {
+    font-size: 0.78rem;
+    padding: 0.15rem 0.5rem;
+    background: var(--bg, #0e0f13);
+    color: var(--family-color);
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid var(--family-color);
+  }
+
+  .event-artefact-link:hover {
+    background: var(--family-color);
+    color: white;
+  }
+
+  .event-meta-secondary {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary, #94a3b8);
+    font-family: var(--mono, monospace);
+  }
+
+  /* Lang switcher */
+  [lang="fr"] { display: none; }
+  html[lang="fr"] [lang="fr"] { display: revert; }
+  html[lang="fr"] [lang="en"] { display: none; }
+</style>
+</head>
+
+<body>
+
+<header class="ledger-header">
+  <a href="/" class="ledger-back-link">
+    <span lang="fr">← Retour à l'accueil</span>
+    <span lang="en">← Back to home</span>
+  </a>
+  <div class="lang-toggle">
+    <button onclick="document.documentElement.lang='fr'" data-lang="fr">FR</button>
+    <button onclick="document.documentElement.lang='en'" data-lang="en">EN</button>
+  </div>
+</header>
+
+<main class="ledger-page">
+
+  <!-- Title + positioning bar (CRITICAL anti-promotional ChatGPT Q14) -->
+  <h1>
+    <span lang="fr">Registre de recherche</span>
+    <span lang="en">Research Ledger</span>
+  </h1>
+
+  <p class="ledger-positioning">
+    <span lang="fr">Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale. Les revendications scientifiques restent limitées au paper et aux artefacts Lean formels.</span>
+    <span lang="en">The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.</span>
+  </p>
+
+  <!-- Stats -->
+  <section class="ledger-stats">
+    <div class="stat-card" data-family="paper">
+      <span class="stat-num" id="statPapers">1</span>
+      <span class="stat-label">
+        <span lang="fr">paper soumis</span>
+        <span lang="en">paper submitted</span>
+      </span>
+    </div>
+    <div class="stat-card" data-family="lean">
+      <span class="stat-num" id="statLean">14+</span>
+      <span class="stat-label">
+        <span lang="fr">phases Lean kernel-checked</span>
+        <span lang="en">kernel-checked Lean phases</span>
+      </span>
+    </div>
+    <div class="stat-card" data-family="audit">
+      <span class="stat-num" id="statAudits">16</span>
+      <span class="stat-label">
+        <span lang="fr">audit findings</span>
+        <span lang="en">audit findings</span>
+      </span>
+    </div>
+    <div class="stat-card" data-family="mea-culpa">
+      <span class="stat-num" id="statMeaCulpa">28</span>
+      <span class="stat-label">
+        <span lang="fr">mea culpa publics</span>
+        <span lang="en">public mea culpa</span>
+      </span>
+    </div>
+    <div class="stat-card" data-family="study">
+      <span class="stat-num" id="statStudies">5</span>
+      <span class="stat-label">
+        <span lang="fr">études en cours</span>
+        <span lang="en">ongoing studies</span>
+      </span>
+    </div>
+    <div class="stat-card" data-family="repository">
+      <span class="stat-num" id="statCommits">26+</span>
+      <span class="stat-label">
+        <span lang="fr">commits significatifs</span>
+        <span lang="en">significant commits</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="ledger-filters">
+    <div class="filter-group">
+      <label>
+        <span lang="fr">Famille</span>
+        <span lang="en">Family</span>
+      </label>
+      <select id="filterFamily">
+        <option value="all">— all —</option>
+        <option value="lean">Formal proof / Lean</option>
+        <option value="audit">Audit / validation</option>
+        <option value="mea-culpa">Correction / mea culpa</option>
+        <option value="paper">Publication / DOI</option>
+        <option value="repository">Repository / tooling</option>
+        <option value="study">Studies / literature</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>
+        <span lang="fr">Statut</span>
+        <span lang="en">Status</span>
+      </label>
+      <select id="filterStatus">
+        <option value="all">— all —</option>
+        <option value="validated">Validated</option>
+        <option value="resolved">Resolved</option>
+        <option value="in-progress">In progress</option>
+        <option value="submitted">Submitted</option>
+        <option value="to-explore">To explore</option>
+        <option value="deferred">Deferred</option>
+        <option value="hypothesis">Hypothesis</option>
+        <option value="archived">Archived</option>
+      </select>
+    </div>
+
+    <label class="filter-toggle">
+      <input type="checkbox" id="filterMilestonesOnly" checked>
+      <span lang="fr">⭐ Jalons majeurs uniquement (par défaut)</span>
+      <span lang="en">⭐ Milestones only (default)</span>
+    </label>
+
+    <span class="filter-summary">
+      <span id="filterCountVisible">0</span>
+      <span lang="fr">/ <span id="filterCountTotal">0</span> événements</span>
+      <span lang="en">/ <span id="filterCountTotalEN">0</span> events</span>
+    </span>
+  </section>
+
+  <!-- Section 1: Status snapshot (compact, comme accueil) -->
+  <section class="ledger-section" id="sectionStatusSnapshot">
+    <h2 class="ledger-section-title">
+      <span lang="fr">§ I — État instantané</span>
+      <span lang="en">§ I — Status snapshot</span>
+    </h2>
+    <p class="ledger-section-intro">
+      <span lang="fr">État courant du projet : dernier jalon, statut paper, dernière vérification Lean, dernier audit résolu, études en cours.</span>
+      <span lang="en">Current project state: last milestone, paper status, last Lean verification, last resolved audit, ongoing studies.</span>
+    </p>
+    <div id="statusSnapshotContainer"><!-- generated by ledger.js --></div>
+  </section>
+
+  <!-- Section 2: Milestone timeline -->
+  <section class="ledger-section" id="sectionMilestones">
+    <h2 class="ledger-section-title">
+      <span lang="fr">§ II — Jalons majeurs (Milestones)</span>
+      <span lang="en">§ II — Milestones</span>
+    </h2>
+    <p class="ledger-section-intro">
+      <span lang="fr">Événements au plus fort impact scientifique : changement de statut paper, validation Lean importante, audit majeur résolu, soumission, branche d'étude structurante.</span>
+      <span lang="en">Highest scientific-impact events: paper status changes, important Lean validations, major audits resolved, submissions, structuring study branches.</span>
+    </p>
+    <div id="milestoneTimelineContainer"><!-- generated by ledger.js --></div>
+  </section>
+
+  <!-- Section 3: Audit & Corrections (avant Ongoing per Q15) -->
+  <section class="ledger-section" id="sectionAudits">
+    <h2 class="ledger-section-title">
+      <span lang="fr">§ III — Audits &amp; Corrections</span>
+      <span lang="en">§ III — Audits &amp; Corrections</span>
+    </h2>
+    <p class="ledger-section-intro">
+      <span lang="fr">Findings d'audit (FIND-001..016), AI-assisted Three-Key/Two-Key validations, mea culpa publics avec sévérité et règle extraite. Pistes abandonnées proprement documentées préservées (renforce crédibilité).</span>
+      <span lang="en">Audit findings (FIND-001..016), AI-assisted Three-Key/Two-Key validations, public mea culpa with severity and extracted rule. Properly documented archived paths preserved (reinforces credibility).</span>
+    </p>
+    <div id="auditsContainer"><!-- generated by ledger.js --></div>
+  </section>
+
+  <!-- Section 4: Ongoing studies -->
+  <section class="ledger-section" id="sectionOngoing">
+    <h2 class="ledger-section-title">
+      <span lang="fr">§ IV — Études en cours</span>
+      <span lang="en">§ IV — Ongoing studies</span>
+    </h2>
+    <p class="ledger-section-intro">
+      <span lang="fr">Investigations actives, lectures critiques, formalisations Lean en cours, désaxiomatisations exploratoires.</span>
+      <span lang="en">Active investigations, critical readings, Lean formalizations in progress, exploratory desaxiomatizations.</span>
+    </p>
+    <div id="ongoingContainer"><!-- generated by ledger.js --></div>
+  </section>
+
+  <!-- Section 5: Full ledger (déplacé après narratives per Q15) -->
+  <section class="ledger-section" id="sectionFullLedger">
+    <h2 class="ledger-section-title">
+      <span lang="fr">§ V — Registre complet (filtrable)</span>
+      <span lang="en">§ V — Full ledger (filterable)</span>
+    </h2>
+    <p class="ledger-section-intro">
+      <span lang="fr">Liste complète de tous les événements traçables. Filtrer via les contrôles ci-dessus. Toggle "Milestones only" actif par défaut pour vue rapide.</span>
+      <span lang="en">Complete list of all traceable events. Filter via controls above. "Milestones only" toggle active by default for quick view.</span>
+    </p>
+    <div id="fullLedgerContainer"><!-- generated by ledger.js --></div>
+  </section>
+
+  <!-- Section 6: External references -->
+  <section class="ledger-section" id="sectionExternalRefs">
+    <h2 class="ledger-section-title">
+      <span lang="fr">§ VI — Références externes</span>
+      <span lang="en">§ VI — External references</span>
+    </h2>
+    <p class="ledger-section-intro">
+      <span lang="fr">DOI, GitHub repo, branches, tags, releases.</span>
+      <span lang="en">DOI, GitHub repo, branches, tags, releases.</span>
+    </p>
+    <ul>
+      <li><strong>GitHub repo</strong> : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">github.com/ericmerle3789/collatz-conditional-cycles</a></li>
+      <li><strong>DOI Zenodo</strong> : <a href="https://doi.org/10.5281/zenodo.19790406">10.5281/zenodo.19790406</a></li>
+      <li><strong>Branches actives</strong> :
+        <ul>
+          <li><code>main</code> — paper JAR submitted</li>
+          <li><code>audit/find-016-transparency-doc-comment</code> — FIND-016 transparency note</li>
+          <li><code>study/delta10-barina-replacement-impossibility</code> — δ10 cartographic lemma</li>
+          <li><code>gh-pages</code> — site public</li>
+        </ul>
+      </li>
+      <li><strong>Tags</strong> : <code>audit-find016-2026-04-30</code>, <code>study-delta10-2026-04-30</code></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="ledger-footer" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border, #2a2b30); font-size: 0.85rem; color: var(--text-secondary, #94a3b8);">
+  <p>
+    <span lang="fr">Registre généré depuis <code>assets/data/research-ledger.json</code>. Three-Key validated 2026-04-30 (OLD3 + NEW4 + ChatGPT 5.5). Code source : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">github.com/ericmerle3789/collatz-conditional-cycles</a></span>
+    <span lang="en">Ledger generated from <code>assets/data/research-ledger.json</code>. Three-Key validated 2026-04-30 (OLD3 + NEW4 + ChatGPT 5.5). Source code: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">github.com/ericmerle3789/collatz-conditional-cycles</a></span>
+  </p>
+</footer>
+
+<script src="../assets/js/research-ledger.js" defer></script>
+
+</body>
+</html>

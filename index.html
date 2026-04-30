@@ -496,10 +496,141 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 </section>
 
 <!-- ========================================================================
+     RESEARCH STATUS / ÉTAT DES TRAVAUX (Research Ledger preview)
+     Three-Key validated 2026-04-30 (OLD3 + NEW4 + ChatGPT 5.5 Q14+Q15)
+     ======================================================================== -->
+<section id="research-status" class="research-status-snapshot">
+  <div class="section-eyebrow">§ VI</div>
+  <h2 data-i18n="researchStatusTitle">État des travaux</h2>
+  <p class="research-status-intro" data-i18n="researchStatusIntro">Snapshot d'activité du projet, traçable sur GitHub. <a href="/research-ledger/">Registre complet (Research Ledger) →</a></p>
+
+  <!-- Anti-promotional positioning bar (Q14 critical for JAR reviewer) -->
+  <p class="research-status-positioning">
+    <em lang="fr">Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.</em>
+    <em lang="en">This section documents project status and traceability; it is not a claim of acceptance or final proof.</em>
+  </p>
+
+  <!-- Status snapshot : 5 cartes compactes -->
+  <div class="status-snapshot-grid">
+
+    <!-- Carte 1 : Dernier jalon validé (δ10) -->
+    <div class="status-card" data-family="lean" data-milestone="true">
+      <div class="status-card-eyebrow" data-i18n="statusLastMilestone">Dernier jalon validé</div>
+      <div class="status-card-title">δ10 — Barina-Replacement Impossibility</div>
+      <div class="status-card-meta">
+        <span class="event-status-badge" data-status="validated">VALIDATED</span>
+        <span class="status-card-date">2026-04-30</span>
+      </div>
+      <p class="status-card-summary">
+        <span lang="fr">Lemme cartographique fini. Lean 4 kernel-checked, axiom profile [propext] only, 0 sorry.</span>
+        <span lang="en">Cartographic finite catalogue lemma. Lean 4 kernel-checked, axiom profile [propext] only, 0 sorry.</span>
+      </p>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/delta10-barina-replacement-impossibility" target="_blank" rel="noopener">→ <span lang="fr">Voir branche</span><span lang="en">See branch</span></a>
+    </div>
+
+    <!-- Carte 2 : Statut paper -->
+    <div class="status-card" data-family="paper">
+      <div class="status-card-eyebrow" data-i18n="statusPaper">Statut paper</div>
+      <div class="status-card-title">JAR Springer — Submitted</div>
+      <div class="status-card-meta">
+        <span class="event-status-badge" data-status="submitted">SUBMITTED</span>
+        <span class="status-card-date">2026-04-27</span>
+      </div>
+      <p class="status-card-summary">
+        <span lang="fr">"On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4". DOI Zenodo. Under review.</span>
+        <span lang="en">"On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4". Zenodo DOI. Under review.</span>
+      </p>
+      <a class="status-card-link" href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener">→ DOI Zenodo</a>
+    </div>
+
+    <!-- Carte 3 : Dernière vérification Lean -->
+    <div class="status-card" data-family="lean">
+      <div class="status-card-eyebrow" data-i18n="statusLastLean">Dernière vérification Lean</div>
+      <div class="status-card-title">reproduce.sh EXIT 0</div>
+      <div class="status-card-meta">
+        <span class="event-status-badge" data-status="validated">VALIDATED</span>
+        <span class="status-card-date">2026-04-30</span>
+      </div>
+      <p class="status-card-summary">
+        <span lang="fr">25 théorèmes probés (7 central + 3 aux + 15 M3). 0 sorryAx. Toolchain Lean 4.27.0.</span>
+        <span lang="en">25 theorems probed (7 central + 3 aux + 15 M3). 0 sorryAx. Lean 4.27.0 toolchain.</span>
+      </p>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/reproduce.sh" target="_blank" rel="noopener">→ reproduce.sh</a>
+    </div>
+
+    <!-- Carte 4 : Dernier audit résolu -->
+    <div class="status-card" data-family="audit">
+      <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit résolu</div>
+      <div class="status-card-title">FIND-016 — BakerSeparation k^6</div>
+      <div class="status-card-meta">
+        <span class="event-status-badge" data-status="resolved">RESOLVED</span>
+        <span class="status-card-date">2026-04-30</span>
+      </div>
+      <p class="status-card-summary">
+        <span lang="fr">AI-assisted Three-Key audit. Doc-comment Lean transparency note. Mea culpa #28 publié.</span>
+        <span lang="en">AI-assisted Three-Key audit. Lean transparency note. Public mea culpa #28.</span>
+      </p>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/audit/find-016-transparency-doc-comment" target="_blank" rel="noopener">→ <span lang="fr">Voir audit</span><span lang="en">See audit</span></a>
+    </div>
+
+    <!-- Carte 5 : Études en cours -->
+    <div class="status-card" data-family="study">
+      <div class="status-card-eyebrow" data-i18n="statusOngoing">Études en cours</div>
+      <div class="status-card-title">
+        <span lang="fr">3 études actives</span>
+        <span lang="en">3 active studies</span>
+      </div>
+      <div class="status-card-meta">
+        <span class="event-status-badge" data-status="in-progress">IN PROGRESS</span>
+        <span class="status-card-date">2026-04-30</span>
+      </div>
+      <p class="status-card-summary">
+        <span lang="fr">Eliahou-Steiner formalisation · Désaxiomatisation Baker (Salikhov/Wu) · Knight 2026 lecture critique.</span>
+        <span lang="en">Eliahou-Steiner formalization · Baker desaxiomatisation (Salikhov/Wu) · Knight 2026 critical reading.</span>
+      </p>
+      <a class="status-card-link" href="/research-ledger/">→ <span lang="fr">Voir études</span><span lang="en">See studies</span></a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* === RESEARCH STATUS SNAPSHOT (accueil compact) === */
+  .research-status-snapshot { margin: 4rem 0 2rem 0; }
+  .research-status-intro { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+  .research-status-intro a { color: var(--accent); font-weight: 500; text-decoration: none; border-bottom: 1px dashed var(--accent); }
+  .research-status-intro a:hover { border-bottom-style: solid; }
+  .research-status-positioning { margin-bottom: 1.5rem; padding: 0.6rem 1rem; background: var(--bg-elevated); border-left: 3px solid var(--text-secondary); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+  .status-snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .status-card { padding: 1rem; background: var(--bg-elevated); border-radius: 8px; border-left: 4px solid var(--family-color); transition: transform 0.15s ease; position: relative; }
+  .status-card:hover { transform: translateY(-2px); }
+  .status-card[data-family="lean"]       { --family-color: #6366f1; }
+  .status-card[data-family="audit"]      { --family-color: #f97316; }
+  .status-card[data-family="mea-culpa"]  { --family-color: #be185d; }
+  .status-card[data-family="paper"]      { --family-color: #3b82f6; }
+  .status-card[data-family="repository"] { --family-color: #64748b; }
+  .status-card[data-family="study"]      { --family-color: #14b8a6; }
+  .status-card[data-milestone="true"] { border-top: 2px solid #fbbf24; }
+  .status-card[data-milestone="true"]::before { content: "★"; position: absolute; top: 0.5rem; right: 0.6rem; color: #fbbf24; font-size: 0.9rem; font-weight: 700; }
+  .status-card-eyebrow { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 0.4rem; }
+  .status-card-title { font-weight: 600; font-size: 0.98rem; margin-bottom: 0.5rem; line-height: 1.3; }
+  .status-card-meta { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .status-card-date { font-family: var(--mono); font-size: 0.78rem; color: var(--text-secondary); }
+  .event-status-badge { display: inline-block; padding: 0.1rem 0.5rem; font-size: 0.68rem; font-weight: 600; border-radius: 999px; letter-spacing: 0.03em; }
+  .event-status-badge[data-status="validated"]   { background: #064e3b; color: #6ee7b7; }
+  .event-status-badge[data-status="resolved"]    { background: #2e1065; color: #c4b5fd; }
+  .event-status-badge[data-status="in-progress"] { background: #1e3a8a; color: #93c5fd; }
+  .event-status-badge[data-status="submitted"]   { background: #7c2d12; color: #fdba74; }
+  .status-card-summary { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.5rem; }
+  .status-card-link { display: inline-block; font-size: 0.8rem; color: var(--family-color); text-decoration: none; font-weight: 500; }
+  .status-card-link:hover { text-decoration: underline; }
+</style>
+
+<!-- ========================================================================
      COMMUNAUTÉ
      ======================================================================== -->
 <section id="community">
-  <div class="section-eyebrow">§ VI</div>
+  <div class="section-eyebrow">§ VII</div>
   <h2 data-i18n="communityTitle">Communauté Collatz</h2>
   <p data-i18n="communityIntro">Ressources et collaborations existantes autour de la conjecture de Collatz (vérifiées 2026-04-29).</p>
 
@@ -553,7 +684,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ÉQUIPE
      ======================================================================== -->
 <section id="team">
-  <div class="section-eyebrow">§ VII</div>
+  <div class="section-eyebrow">§ VIII</div>
   <h2 data-i18n="teamTitle">Équipe</h2>
   <p data-i18n="teamIntro">Ce projet est conduit par un chercheur indépendant en collaboration avec des systèmes d'IA, sous protocole de vérification rigoureux (PROTOCOLE ARES v2).</p>
 
