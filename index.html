@@ -54,7 +54,7 @@
       "@id": "https://doi.org/10.5281/zenodo.19790406",
       "headline": "On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions",
       "name": "On the non-existence of non-trivial Collatz cycles",
-      "abstract": "We present a Lean 4 formalization of the non-existence of non-trivial Collatz cycles, conditional on three documented external hypotheses: BakerSeparation (an effective separation hypothesis on |S log 2 − k log 3|, motivated by Baker-type bounds in the Rhin 1987 / Simons-de Weger 2005 / Wu 2003 tradition; the specific exponent in our Lean axiom is stronger than currently published bounds and should be read as an explicit hypothesis, not derived from a published theorem — see paper §4 and audit findings #28), BarinaVerification (n < 2^71, Barina 2025), and DerivedLargeKBound (Hercher 2023, m ≤ 91). The main theorem no_nontrivial_cycle_phase59 is kernel-checked with a minimal axiom profile (propext, Classical.choice, Quot.sound). We document the δ8 lemma (Product-Bound Impossibility) which structurally proves that this conditionality is necessary within the Baker+CF paradigm used in this paper. Non-Khinchin paradigms (e.g., arithmetic holonomy Calegari-Dimitrov-Tang 2025) are explicitly out of δ8's scope and tracked separately as Hypothesis A' on the project website.",
+      "abstract": "We present a Lean 4 formalization of the non-existence of non-trivial Collatz cycles, conditional on three documented external hypotheses: BakerSeparation (an effective separation hypothesis on |S log 2 − k log 3|, motivated by Baker-type bounds in the Rhin 1987 / Simons-de Weger 2005 / Wu 2003 tradition; the specific exponent in our Lean axiom is stronger than currently published bounds and should be read as an explicit hypothesis, not derived from a published theorem — see paper §4 and audit findings #28; a formal cartographic complement, the δ10 lemma in Phase 64 [propext]-only kernel-checked, demonstrates that no published bound from the audited finite catalogue {Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005} can replace BarinaVerification, justifying the necessity of the chosen exponent strength), BarinaVerification (n < 2^71, Barina 2025), and DerivedLargeKBound (Hercher 2023, m ≤ 91). The main theorem no_nontrivial_cycle_phase59 is kernel-checked with a minimal axiom profile (propext, Classical.choice, Quot.sound). We document a trilogy of impossibility lemmas (δ8 Product-Bound, δ8' Baker+CF lower-not-upper, δ10 Barina-Replacement cartographic) which structurally proves that this conditionality is necessary within the Baker+CF paradigm used in this paper. Non-Khinchin paradigms (e.g., arithmetic holonomy Calegari-Dimitrov-Tang 2025) are explicitly out of δ8's scope and tracked separately as Hypothesis A' on the project website.",
       "description": "Conditional formal proof in Lean 4 of no non-trivial Collatz cycles, modulo three explicit external hypotheses. Kernel-checked, reproducible.",
       "url": "https://collatz-lab.org/",
       "sameAs": [
@@ -319,16 +319,27 @@ graph LR
     HERCHER["Hercher 2023<br/>m ≤ 91"]
     JAR["★ JAR<br/>no_nontrivial_cycle_phase59<br/>kernel-checked Lean 4"]
 
+    DELTA8["δ8 (Phase58)<br/>Product-Bound<br/>impossibility"]
+    DELTA8P["δ8' (Phase58 §5.2)<br/>Baker+CF lower<br/>not upper"]
+    DELTA10["δ10 (Phase64)<br/>Barina-Replacement<br/>impossibility · kernel-1"]
+
     LAMBDA -->|"axiome 1"| BAKER
     BAKER -->|"BakerSeparation"| JAR
     BARINA -->|"BarinaVerification"| JAR
     HERCHER -->|"DerivedLargeKBound"| JAR
+
+    DELTA8 -.->|"justifie"| HERCHER
+    DELTA8P -.->|"justifie"| HERCHER
+    DELTA10 -.->|"justifie"| BARINA
 
     style LAMBDA fill:#c8a86a,color:#0e0f13,stroke:#fff,stroke-width:2px
     style BAKER fill:#6a9b7a,color:#0e0f13
     style BARINA fill:#6a9b7a,color:#0e0f13
     style HERCHER fill:#6a9b7a,color:#0e0f13
     style JAR fill:#f3d99c,color:#0e0f13,stroke:#c8a86a,stroke-width:3px
+    style DELTA8 fill:#3a4a5a,color:#e0e6f0,stroke:#6366f1,stroke-width:1px
+    style DELTA8P fill:#3a4a5a,color:#e0e6f0,stroke:#6366f1,stroke-width:1px
+    style DELTA10 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px
     </pre>
   </div>
 
