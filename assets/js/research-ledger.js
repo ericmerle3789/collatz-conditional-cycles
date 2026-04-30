@@ -4,18 +4,18 @@
  * Renders the Research Ledger page from assets/data/research-ledger.json.
  * Three-Key validated 2026-04-30 (OLD3 + NEW4 + ChatGPT 5.5 Q14+Q15).
  *
- * Sections (Q15-revised order):
- *  1. Status snapshot (compact)
- *  2. Milestone timeline
- *  3. Audit & Corrections
- *  4. Ongoing studies
- *  5. Full ledger (filterable, deferred after narratives)
- *  6. External references (static HTML)
+ * INTEGRATION WITH main.js i18n:
+ *   - Generates Pattern B HTML: <span lang="fr">…</span><span lang="en">…</span>
+ *   - main.js applyLang() automatically toggles via el.hidden
+ *   - This script does NOT manage language state directly
  *
- * Q15 garde-fous:
- *  - No "prestige page" tone
- *  - Strict separation: AI audit / Lean / JAR / mathematical truth
- *  - Visual density limited by default (Milestones only toggle ON)
+ * Sections rendered:
+ *   §II  visualTimelineContainer  — vertical SVG-like timeline (dots + dates + titles)
+ *   §III auditsContainer          — detailed audit/correction event cards
+ *   §IV  ongoingContainer         — ongoing studies cards
+ *   §V   fullLedgerContainer      — full filterable ledger (Milestones only ON by default)
+ *
+ * Filters apply to §V only.
  */
 
 (function() {
@@ -23,59 +23,13 @@
 
   const STATE = {
     data: null,
-    lang: 'fr',
     filters: { family: 'all', status: 'all', milestonesOnly: true }
   };
 
-  const FAMILY_LABELS = {
-    fr: {
-      lean: 'Lean / Preuve formelle',
-      audit: 'Audit / Validation',
-      'mea-culpa': 'Correction / Mea culpa',
-      paper: 'Publication / DOI',
-      repository: 'Repository / Outillage',
-      study: 'Étude / Littérature'
-    },
-    en: {
-      lean: 'Lean / Formal proof',
-      audit: 'Audit / Validation',
-      'mea-culpa': 'Correction / Mea culpa',
-      paper: 'Publication / DOI',
-      repository: 'Repository / Tooling',
-      study: 'Study / Literature'
-    }
-  };
-
-  const STATUS_LABELS = {
-    fr: {
-      validated: 'Validé',
-      resolved: 'Résolu',
-      'in-progress': 'En cours',
-      submitted: 'Soumis',
-      'to-explore': 'À explorer',
-      deferred: 'Différé',
-      hypothesis: 'Hypothèse',
-      archived: 'Archivé',
-      failed: 'Rejeté'
-    },
-    en: {
-      validated: 'Validated',
-      resolved: 'Resolved',
-      'in-progress': 'In progress',
-      submitted: 'Submitted',
-      'to-explore': 'To explore',
-      deferred: 'Deferred',
-      hypothesis: 'Hypothesis',
-      archived: 'Archived',
-      failed: 'Failed'
-    }
-  };
-
-  // Map raw type → 6 simplified families (Q15 raffinement #1)
+  // 6 simplified families (Q15 raffinement #1)
   function familyOf(event) {
     const t = event.type || '';
     if (t === 'lean' || t === 'milestone') {
-      // Milestone is FLAG, look at subtype/claim_scope to infer family
       if (event.claim_scope === 'formal_lean') return 'lean';
       if (event.claim_scope === 'submitted_paper') return 'paper';
       if (event.claim_scope === 'documentation') return 'audit';
@@ -89,15 +43,89 @@
     return 'study';
   }
 
-  // Render single event card
-  function renderEvent(event) {
+  // Get bilingual strings from event.title and event.summary
+  function getBilingualHTML(field) {
+    if (!field) return '';
+    const fr = field.fr || field.en || '';
+    const en = field.en || field.fr || '';
+    return `<span lang="fr">${fr}</span><span lang="en">${en}</span>`;
+  }
+
+  // Family labels (Pattern B for badges)
+  function familyBadgeHTML(family) {
+    const labels = {
+      'lean':       { fr: 'Lean / Preuve formelle',     en: 'Lean / Formal proof' },
+      'audit':      { fr: 'Audit / Validation',          en: 'Audit / Validation' },
+      'mea-culpa':  { fr: 'Correction / Mea culpa',      en: 'Correction / Mea culpa' },
+      'paper':      { fr: 'Publication / DOI',           en: 'Publication / DOI' },
+      'repository': { fr: 'Repository / Outillage',      en: 'Repository / Tooling' },
+      'study':      { fr: 'Étude / Littérature',         en: 'Study / Literature' }
+    };
+    const l = labels[family] || { fr: family, en: family };
+    return `<span class="event-family-badge" data-family="${family}"><span lang="fr">${l.fr}</span><span lang="en">${l.en}</span></span>`;
+  }
+
+  // Status labels (Pattern B)
+  function statusBadgeHTML(status) {
+    const labels = {
+      'validated':   { fr: 'Validé',     en: 'Validated' },
+      'resolved':    { fr: 'Résolu',     en: 'Resolved' },
+      'in-progress': { fr: 'En cours',   en: 'In progress' },
+      'submitted':   { fr: 'Soumis',     en: 'Submitted' },
+      'to-explore':  { fr: 'À explorer', en: 'To explore' },
+      'deferred':    { fr: 'Différé',    en: 'Deferred' },
+      'hypothesis':  { fr: 'Hypothèse',  en: 'Hypothesis' },
+      'archived':    { fr: 'Archivé',    en: 'Archived' },
+      'failed':      { fr: 'Rejeté',     en: 'Failed' }
+    };
+    const l = labels[status] || { fr: status, en: status };
+    return `<span class="event-status-badge" data-status="${status}"><span lang="fr">${l.fr}</span><span lang="en">${l.en}</span></span>`;
+  }
+
+  // === VISUAL TIMELINE (§II) ===
+  // Vertical: date on left, dot in center, title on right
+  function renderVisualTimeline(events) {
+    const container = document.getElementById('visualTimelineContainer');
+    if (!container) return;
+
+    const sorted = events.slice().sort((a, b) =>
+      (b.datetime || b.date).localeCompare(a.datetime || a.date)
+    );
+
+    container.innerHTML = sorted.map(e => {
+      const family = familyOf(e);
+      const milestone = e.milestone === true;
+      return `
+        <div class="visual-event" data-family="${family}" data-milestone="${milestone}" data-id="${e.id}">
+          <div class="visual-event-date">${e.date}</div>
+          <div class="visual-event-marker"><div class="visual-event-dot" title="${(e.title?.en || e.id).replace(/"/g, '&quot;')}"></div></div>
+          <div class="visual-event-content">
+            <div class="visual-event-title">${familyBadgeHTML(family)} ${getBilingualHTML(e.title)}</div>
+            <div class="visual-event-subtitle">${statusBadgeHTML(e.status)}${e.claim_scope ? ` · <code>${e.claim_scope}</code>` : ''}</div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Trigger main.js applyLang to hide/show <span lang="..."> spans
+    if (typeof window.applyLang === 'function') {
+      try { window.applyLang(); } catch (e) { /* main.js wraps applyLang in IIFE; fallback below */ }
+    }
+    // Fallback: use document.documentElement.lang to hide spans
+    syncLangToCurrent(container);
+  }
+
+  // Detailed event card (sections III, IV, V)
+  function renderEventCard(event) {
     const family = familyOf(event);
-    const lang = STATE.lang;
-    const title = (event.title && event.title[lang]) || event.title?.en || event.title?.fr || event.id;
-    const summary = (event.summary && event.summary[lang]) || event.summary?.en || event.summary?.fr || '';
-    const familyLabel = FAMILY_LABELS[lang][family] || family;
-    const statusLabel = STATUS_LABELS[lang][event.status] || event.status;
     const milestone = event.milestone === true;
+    const titleHTML = getBilingualHTML(event.title);
+    const summaryHTML = getBilingualHTML(event.summary);
+
+    let claimScopeHTML = '';
+    if (event.claim_scope) {
+      claimScopeHTML = `<span class="event-claim-scope" title="claim_scope">${event.claim_scope}</span>`;
+    }
 
     let artefactsHTML = '';
     if (event.artefacts && event.artefacts.length > 0) {
@@ -107,11 +135,6 @@
           return `<a class="event-artefact-link" href="${a.url}" target="_blank" rel="noopener">→ ${label}</a>`;
         }).join('') +
         '</div>';
-    }
-
-    let claimScopeHTML = '';
-    if (event.claim_scope) {
-      claimScopeHTML = `<span class="event-claim-scope" title="claim_scope">${event.claim_scope}</span>`;
     }
 
     let metaSecondary = [];
@@ -128,19 +151,19 @@
       <article class="ledger-event" data-family="${family}" data-status="${event.status}" data-milestone="${milestone}" data-id="${event.id}">
         <div class="event-header">
           <span class="event-date">${event.date}</span>
-          <span class="event-family-badge">${familyLabel}</span>
-          <span class="event-status-badge" data-status="${event.status}">${statusLabel}</span>
+          ${familyBadgeHTML(family)}
+          ${statusBadgeHTML(event.status)}
           ${claimScopeHTML}
         </div>
-        <h3 class="event-title">${title}</h3>
-        <p class="event-summary">${summary}</p>
+        <h3 class="event-title">${titleHTML}</h3>
+        <div class="event-summary">${summaryHTML}</div>
         ${artefactsHTML}
         ${metaSecondaryHTML}
       </article>
     `;
   }
 
-  // Filter logic
+  // Filter logic for full ledger §V
   function applyFilters(events) {
     return events.filter(e => {
       if (STATE.filters.milestonesOnly && !e.milestone) return false;
@@ -150,105 +173,60 @@
     });
   }
 
-  // Render Section 1 — Status snapshot (5 cards)
-  function renderStatusSnapshot(events) {
-    const container = document.getElementById('statusSnapshotContainer');
-    if (!container) return;
-
-    // Pick 5 cards by category
-    const lastMilestone = events
-      .filter(e => e.milestone === true && e.status === 'validated')
-      .sort((a, b) => (b.datetime || b.date).localeCompare(a.datetime || a.date))[0];
-
-    const lastPaper = events
-      .filter(e => e.type === 'paper')
-      .sort((a, b) => b.date.localeCompare(a.date))[0];
-
-    const lastLean = events
-      .filter(e => (e.lean && e.lean.checked) || familyOf(e) === 'lean')
-      .filter(e => e.status === 'validated')
-      .sort((a, b) => (b.datetime || b.date).localeCompare(a.datetime || a.date))[0];
-
-    const lastAudit = events
-      .filter(e => familyOf(e) === 'audit' && (e.status === 'resolved' || e.status === 'validated'))
-      .sort((a, b) => (b.datetime || b.date).localeCompare(a.datetime || a.date))[0];
-
-    const ongoingStudies = events
-      .filter(e => e.status === 'in-progress' && (familyOf(e) === 'study' || familyOf(e) === 'lean'))
-      .length;
-
-    const lang = STATE.lang;
-    const cards = [];
-    if (lastMilestone) cards.push(renderEvent(lastMilestone));
-    if (lastPaper) cards.push(renderEvent(lastPaper));
-    if (lastLean && lastLean.id !== lastMilestone?.id) cards.push(renderEvent(lastLean));
-    if (lastAudit) cards.push(renderEvent(lastAudit));
-
-    container.innerHTML = cards.join('');
-  }
-
-  // Render Section 2 — Milestone timeline (chronological desc)
-  function renderMilestones(events) {
-    const container = document.getElementById('milestoneTimelineContainer');
-    if (!container) return;
-    const milestones = events
-      .filter(e => e.milestone === true)
-      .sort((a, b) => (b.datetime || b.date).localeCompare(a.datetime || a.date));
-    container.innerHTML = milestones.map(renderEvent).join('') ||
-      '<p style="color:var(--text-secondary);font-style:italic">—</p>';
-  }
-
-  // Render Section 3 — Audit & Corrections
   function renderAudits(events) {
     const container = document.getElementById('auditsContainer');
     if (!container) return;
     const audits = events
       .filter(e => familyOf(e) === 'audit' || familyOf(e) === 'mea-culpa')
       .sort((a, b) => (b.datetime || b.date).localeCompare(a.datetime || a.date));
-    container.innerHTML = audits.map(renderEvent).join('') ||
-      '<p style="color:var(--text-secondary);font-style:italic">—</p>';
+    container.innerHTML = audits.map(renderEventCard).join('') || '<p>—</p>';
+    syncLangToCurrent(container);
   }
 
-  // Render Section 4 — Ongoing studies
   function renderOngoing(events) {
     const container = document.getElementById('ongoingContainer');
     if (!container) return;
     const ongoing = events
       .filter(e => e.status === 'in-progress' || e.status === 'to-explore' || e.status === 'hypothesis')
       .sort((a, b) => (b.datetime || b.date).localeCompare(a.datetime || a.date));
-    container.innerHTML = ongoing.map(renderEvent).join('') ||
-      '<p style="color:var(--text-secondary);font-style:italic">—</p>';
+    container.innerHTML = ongoing.map(renderEventCard).join('') || '<p>—</p>';
+    syncLangToCurrent(container);
   }
 
-  // Render Section 5 — Full ledger (with filters)
   function renderFullLedger(events) {
     const container = document.getElementById('fullLedgerContainer');
     if (!container) return;
-    const filtered = applyFilters(events)
-      .sort((a, b) => (b.datetime || b.date).localeCompare(a.datetime || a.date));
-    container.innerHTML = filtered.map(renderEvent).join('') ||
-      '<p style="color:var(--text-secondary);font-style:italic">— no events match current filters —</p>';
+    const filtered = applyFilters(events).sort((a, b) =>
+      (b.datetime || b.date).localeCompare(a.datetime || a.date)
+    );
+    container.innerHTML = filtered.map(renderEventCard).join('') ||
+      '<p style="color:var(--text-secondary);font-style:italic"><span lang="fr">— aucun événement ne correspond aux filtres —</span><span lang="en">— no events match current filters —</span></p>';
 
-    // Update counters
     document.getElementById('filterCountVisible').textContent = filtered.length;
-    const totalEl = document.getElementById('filterCountTotal');
-    const totalElEN = document.getElementById('filterCountTotalEN');
-    if (totalEl) totalEl.textContent = events.length;
-    if (totalElEN) totalElEN.textContent = events.length;
+    document.getElementById('filterCountTotal').textContent = events.length;
+
+    syncLangToCurrent(container);
   }
 
-  // Render all sections
+  // Sync newly-rendered <span lang="fr"> / <span lang="en"> visibility to current document.documentElement.lang
+  function syncLangToCurrent(scope) {
+    const currentLang = document.documentElement.lang || 'en';
+    const root = scope || document;
+    root.querySelectorAll('[lang="fr"], [lang="en"]').forEach(el => {
+      if (el === document.documentElement) return;
+      el.hidden = (el.getAttribute('lang') !== currentLang);
+    });
+  }
+
   function renderAll() {
     if (!STATE.data) return;
     const events = STATE.data.events || [];
-    renderStatusSnapshot(events);
-    renderMilestones(events);
+    renderVisualTimeline(events);
     renderAudits(events);
     renderOngoing(events);
     renderFullLedger(events);
   }
 
-  // Initialize filters
   function initFilters() {
     const familyEl = document.getElementById('filterFamily');
     const statusEl = document.getElementById('filterStatus');
@@ -270,42 +248,33 @@
     });
   }
 
-  // Initialize lang switcher
-  function initLangSwitcher() {
-    document.querySelectorAll('.lang-toggle button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.dataset.lang;
-        STATE.lang = lang;
-        document.documentElement.lang = lang;
-        renderAll();
-      });
+  // Listen to language changes from main.js (langBtn click triggers MutationObserver-friendly attribute change)
+  function observeLangChange() {
+    const observer = new MutationObserver(mutations => {
+      for (const m of mutations) {
+        if (m.type === 'attributes' && m.attributeName === 'lang') {
+          // Re-sync visibility on all our generated content
+          syncLangToCurrent();
+          break;
+        }
+      }
     });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   }
 
-  // Load data + render
   async function init() {
     try {
       const resp = await fetch('../assets/data/research-ledger.json');
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       STATE.data = await resp.json();
 
-      // Detect lang from URL or html element
-      const urlLang = new URLSearchParams(window.location.search).get('lang');
-      if (urlLang === 'fr') {
-        STATE.lang = 'fr';
-        document.documentElement.lang = 'fr';
-      } else {
-        STATE.lang = document.documentElement.lang || 'en';
-      }
-
       initFilters();
-      initLangSwitcher();
+      observeLangChange();
       renderAll();
 
-      // Update stats (counts already in HTML; could refresh from data here if needed)
       console.log(`[research-ledger] loaded ${STATE.data.events.length} events`);
     } catch (err) {
-      console.error('[research-ledger] failed to load:', err);
+      console.error('[research-ledger] failed:', err);
       const fallback = document.querySelector('main');
       if (fallback) {
         fallback.insertAdjacentHTML('afterbegin',
