@@ -54,11 +54,35 @@ noncomputable section
 /-- **Hypothesis B1: Baker's bound for linear forms in logarithms.**
 
 Baker (1966), Mathematika 13. Effective version by Matveev (2000).
-Refinement by Rhin (1987): μ(log₂3) ≤ 5.125.
+Refinement by **Salikhov (2007)** [refining Rhin (1987)]: μ(log₂3) ≤ 5.125.
 
 For s ≥ 1, k ≥ 2 with 2^s > 3^k: (2^s - 3^k) · k^6 ≥ 3^k.
 Note: k ≥ 2 (not k ≥ 1) because (2²-3¹)·1⁶ = 1 < 3 is a counterexample.
 For cycles, k ≥ 2 is guaranteed by cycle_k_ge_two (Phase 50).
+
+**TRANSPARENCY NOTE (audit mea culpa #28, severity 8, Three-Key validated 2026-04-30):**
+
+> **This is NOT a theorem derived from Baker/Rhin/Salikhov/Wu/Simons-de Weger;
+>  it is a STRONGER WORKING HYPOTHESIS assumed by the formal development.**
+
+The exponent k^6 with implicit constant C=1 is STRONGER than any explicit
+bound currently extractable from the published Diophantine literature:
+- Salikhov 2007 (μ(log₂3) ≤ 5.125) → equivalent exponent ≈ 4.125 with
+  very small effective constants C(ε)
+- Wu 2003 → equivalent exponent ≈ 7.6155
+- Simons-de Weger 2005 → effective exponent ≈ 13.3 with explicit constants
+
+Numerical verification: the bound holds in practice (verified for k ∈
+{2, 3, 10, 100} and asymptotically by Baker-type arguments), but no
+single published theorem extracts this exact form `(2^s - 3^k) · k^6 ≥ 3^k`
+with constant 1.
+
+The cited references are MOTIVATIONAL (linear forms in logs are bounded
+below by Baker-type theorems) but do not furnish this exact form with
+constant 1 directly.
+
+See public mea culpa #28 at https://collatz-lab.org/#meaculpa
+and audit `_audit_mailbox_OLD3-NEW4/findings/2026-04-30-finding-016-bakerseparation-exponent-unjustified.md`.
 
 Formalizing Baker in Lean would require the complete transcendence
 theory (~10000 lines). It is the standard in the Collatz literature
