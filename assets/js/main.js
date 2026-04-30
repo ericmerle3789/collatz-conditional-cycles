@@ -73,8 +73,8 @@
       hypothesesIntro: "Évolution des probabilités estimées au fil des cycles d'investigation (Cycle 0 → Cycle 2). La hausse de C reflète la convergence cumulative des paradigmes vers Λ_{S,k}.",
       testsTitle: "Tests REQ-MATH-NNN exécutés",
       testsIntro: "Chaque assertion mathématique est validée par script dans le sandbox tests_math/, conformément au PROTOCOLE ARES (Règle 1 : zéro calcul mental).",
-      meaCulpaTitle: "Vingt-sept mea culpa publics",
-      meaCulpaIntro: "La discipline antifragile demande que chaque erreur détectée soit documentée publiquement avec sévérité 0-10 et règle extraite. Sans cela, le pattern multi-cerveau humain-IA répète indéfiniment les mêmes hallucinations. <em>Aperçu de 11 mea culpa parmi les 27 documentés au total ; archive complète dans le repo GitHub <code>_handoff_mailbox/</code>.</em>",
+      meaCulpaTitle: "Vingt-huit mea culpa publics",
+      meaCulpaIntro: "La discipline antifragile demande que chaque erreur détectée soit documentée publiquement avec sévérité 0-10 et règle extraite. Sans cela, le pattern multi-cerveau humain-IA répète indéfiniment les mêmes hallucinations. <em>Aperçu de 12 mea culpa parmi les 28 documentés au total ; archive complète dans le repo GitHub <code>_handoff_mailbox/</code>.</em>",
       teamTitle: "Équipe",
       teamIntro: "Ce projet est conduit par un chercheur indépendant en collaboration avec des systèmes d'IA, sous protocole de vérification rigoureux (PROTOCOLE ARES v2).",
       communityTitle: "Communauté Collatz",
@@ -157,8 +157,8 @@
       hypothesesIntro: "Evolution of estimated probabilities across investigation cycles (Cycle 0 → Cycle 2). The rise of C reflects cumulative convergence of paradigms onto Λ_{S,k}.",
       testsTitle: "Executed REQ-MATH-NNN tests",
       testsIntro: "Every mathematical claim is validated by a script in the tests_math/ sandbox, in accordance with PROTOCOLE ARES (Rule 1: no mental arithmetic).",
-      meaCulpaTitle: "Twenty-seven public mea culpa",
-      meaCulpaIntro: "Antifragile discipline requires every detected error be documented publicly with severity 0-10 and an extracted rule. Without this, the human-AI multi-brain pattern repeats the same hallucinations indefinitely. <em>Sample of 11 mea culpa out of 27 total documented ; full archive in the GitHub repo <code>_handoff_mailbox/</code>.</em>",
+      meaCulpaTitle: "Twenty-eight public mea culpa",
+      meaCulpaIntro: "Antifragile discipline requires every detected error be documented publicly with severity 0-10 and an extracted rule. Without this, the human-AI multi-brain pattern repeats the same hallucinations indefinitely. <em>Sample of 12 mea culpa out of 28 total documented ; full archive in the GitHub repo <code>_handoff_mailbox/</code>.</em>",
       teamTitle: "Team",
       teamIntro: "This project is led by an independent researcher in collaboration with AI systems, under a rigorous verification protocol (PROTOCOLE ARES v2).",
       communityTitle: "Collatz community",
@@ -874,7 +874,8 @@ ER  - `;
       { id: '#22', sev: '8', title: 'Sous-estimation δ8 lemma', rule: 'Tester toute combinaison Baker+CF+Khinchin contre δ8/δ8\'.' },
       { id: '#23', sev: '9', title: '3 références inventées', rule: 'Vérifier toute référence par grep direct sur references.bib.' },
       { id: '#26', sev: '6', title: 'Migration domaine : robots.txt + sitemap.xml obsolètes', rule: 'Migration de domaine ⇒ checklist post-migration : sitemap, robots, JSON-LD, OG image, hreflang, canonical, redirects 301.' },
-      { id: '#27', sev: '7', title: 'Annonces de conférences/cibles présomptueuses sur /papers/', rule: 'Humilité scientifique : ne jamais annoncer publiquement de conférence ou venue ciblée sans soumission ferme. On peut mentionner "en cours d\'écriture / de formalisation / à explorer", jamais "Cible : AITP 2026".' }
+      { id: '#27', sev: '7', title: 'Annonces de conférences/cibles présomptueuses sur /papers/', rule: 'Humilité scientifique : ne jamais annoncer publiquement de conférence ou venue ciblée sans soumission ferme. On peut mentionner "en cours d\'écriture / de formalisation / à explorer", jamais "Cible : AITP 2026".' },
+      { id: '#28', sev: '8', title: 'BakerSeparation k^6 plus strict que littérature publiée', rule: 'Toute borne diophantienne effective utilisée comme axiome doit être validée contre la littérature (Rhin 1987 exp 13.3, Wu 2003 μ=7.6155, Simons-de Weger 2005 exp 13.3). Si l\'exposant est plus strict, le déclarer explicitement comme hypothèse de travail dans le doc-comment Lean + abstract JSON-LD + paper §4. La borne (2^s − 3^k)·k^6 ≥ 3^k n\'est attestée par AUCUNE source publiée et doit être tracée comme hypothèse.' }
     ] : [
       { id: '#3', sev: '9', title: 'R76b naming "at_min"', rule: 'Naming reflects the exact claim, not the intent.' },
       { id: '#11', sev: '10', title: 'BHV+lacunary conjecture', rule: 'Test R72 (Steiner identity) before any commit.' },
@@ -886,7 +887,8 @@ ER  - `;
       { id: '#22', sev: '8', title: 'Underestimating δ8 lemma', rule: "Test any Baker+CF+Khinchin combination against δ8/δ8'." },
       { id: '#23', sev: '9', title: '3 fabricated references', rule: 'Verify every reference via direct grep on references.bib.' },
       { id: '#26', sev: '6', title: 'Domain migration: robots.txt + sitemap.xml stale', rule: 'Domain migration ⇒ post-migration checklist: sitemap, robots, JSON-LD, OG image, hreflang, canonical, 301 redirects.' },
-      { id: '#27', sev: '7', title: 'Presomptuous conference/venue announcements on /papers/', rule: 'Scientific humility: never publicly announce a conference or target venue without firm submission. Use "drafting / under formalization / to explore" instead, never "Target: AITP 2026".' }
+      { id: '#27', sev: '7', title: 'Presumptuous conference/venue announcements on /papers/', rule: 'Scientific humility: never publicly announce a conference or target venue without firm submission. Use "drafting / under formalization / to explore" instead, never "Target: AITP 2026".' },
+      { id: '#28', sev: '8', title: 'BakerSeparation k^6 stricter than published bounds', rule: 'Any effective Diophantine bound used as an axiom must be validated against published literature (Rhin 1987 exp 13.3, Wu 2003 μ=7.6155, Simons-de Weger 2005 exp 13.3). If the exponent is stricter, declare it explicitly as a working hypothesis in the Lean doc-comment + JSON-LD abstract + paper §4. The bound (2^s − 3^k)·k^6 ≥ 3^k is attested by NO published source and must be tracked as a hypothesis.' }
     ];
 
     container.innerHTML = items.map(it => `

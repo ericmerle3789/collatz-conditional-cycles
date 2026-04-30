@@ -27,7 +27,7 @@
 
 <!-- Open Graph (Facebook, LinkedIn, Mastodon, Slack, Discord) -->
 <meta property="og:title" content="Collatz Conditional Cycles — Lean 4 formal proof">
-<meta property="og:description" content="Conditional formal proof in Lean 4 of no non-trivial Collatz cycles, modulo three explicit axioms (Baker LMN95, Barina, Hercher). Kernel-checked, 28-page paper submitted JAR.">
+<meta property="og:description" content="Conditional formal proof in Lean 4 of no non-trivial Collatz cycles, modulo three explicit axioms (BakerSeparation effective bound, Barina verification, Hercher local minima). Kernel-checked, 28-page paper submitted JAR.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
 <meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
@@ -54,7 +54,7 @@
       "@id": "https://doi.org/10.5281/zenodo.19790406",
       "headline": "On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions",
       "name": "On the non-existence of non-trivial Collatz cycles",
-      "abstract": "We present a Lean 4 formalization of the non-existence of non-trivial Collatz cycles, conditional on three documented external hypotheses: BakerSeparation (Laurent-Mignotte-Nesterenko 1995), BarinaVerification (n < 2^71, Barina 2025), and DerivedLargeKBound (Hercher 2023, m ≤ 91). The main theorem no_nontrivial_cycle_phase59 is kernel-checked with a minimal axiom profile (propext, Classical.choice, Quot.sound). We document the δ8 lemma (Product-Bound Impossibility) which structurally proves that this conditionality is necessary within the Baker+CF paradigm used in this paper. Non-Khinchin paradigms (e.g., arithmetic holonomy Calegari-Dimitrov-Tang 2025) are explicitly out of δ8's scope and tracked separately as Hypothesis A' on the project website.",
+      "abstract": "We present a Lean 4 formalization of the non-existence of non-trivial Collatz cycles, conditional on three documented external hypotheses: BakerSeparation (an effective separation hypothesis on |S log 2 − k log 3|, motivated by Baker-type bounds in the Rhin 1987 / Simons-de Weger 2005 / Wu 2003 tradition; the specific exponent in our Lean axiom is stronger than currently published bounds and should be read as an explicit hypothesis, not derived from a published theorem — see paper §4 and audit findings #28), BarinaVerification (n < 2^71, Barina 2025), and DerivedLargeKBound (Hercher 2023, m ≤ 91). The main theorem no_nontrivial_cycle_phase59 is kernel-checked with a minimal axiom profile (propext, Classical.choice, Quot.sound). We document the δ8 lemma (Product-Bound Impossibility) which structurally proves that this conditionality is necessary within the Baker+CF paradigm used in this paper. Non-Khinchin paradigms (e.g., arithmetic holonomy Calegari-Dimitrov-Tang 2025) are explicitly out of δ8's scope and tracked separately as Hypothesis A' on the project website.",
       "description": "Conditional formal proof in Lean 4 of no non-trivial Collatz cycles, modulo three explicit external hypotheses. Kernel-checked, reproducible.",
       "url": "https://collatz-lab.org/",
       "sameAs": [
@@ -243,7 +243,7 @@
       Aucun cycle Collatz non-trivial — modulo trois conditions explicites
     </h3>
     <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); margin: 0 0 1rem 0;" data-i18n="mainResultDesc">
-      Le théorème principal <code>no_nontrivial_cycle_phase59</code> est <strong>kernel-checked</strong> en Lean 4 (Mathlib v4.27), avec un profil d'axiomes minimal (3 axiomes Lean kernel : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) et trois hypothèses externes documentées : <strong>BakerSeparation</strong> (LMN95), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>), <strong>DerivedLargeKBound</strong> (Hercher 2023, m ≤ 91).
+      Le théorème principal <code>no_nontrivial_cycle_phase59</code> est <strong>kernel-checked</strong> en Lean 4 (Mathlib v4.27), avec un profil d'axiomes minimal (3 axiomes Lean kernel : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) et trois hypothèses externes documentées : <strong>BakerSeparation</strong> (séparation effective sur |S log 2 − k log 3|, motivée par les bornes Baker-type Rhin 1987 / Simons-de Weger 2005 / Wu 2003 — l'exposant utilisé dans notre formalisation Lean est plus strict que les bornes publiées et constitue donc une <em>hypothèse explicite</em>, pas un théorème dérivé), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>), <strong>DerivedLargeKBound</strong> (Hercher 2023, m ≤ 91).
     </p>
     <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary); margin: 0 0 1rem 0;" data-i18n="mainResultContrib">
       <strong>Contribution scientifique</strong> : pas la non-existence inconditionnelle (cf. δ8 lemma, irréalisable avec les outils 2026), mais la <em>cartographie rigoureuse des obstructions structurelles</em> qui rend la conditionnalité <strong>nécessaire</strong>, pas <em>arbitraire</em>. Sept théorèmes centraux, ~30 fichiers Lean, paper 28 pages, reproductible via <code>reproduce.sh</code> EXIT 0.
@@ -314,7 +314,7 @@ graph LR
     P15["Inv. statistiques"] -->|"autocorr. Christoffel"| LAMBDA
 
     LAMBDA["Λ_{S,k}<br/>VERROU"]
-    BAKER["Baker LMN95<br/>borne effective"]
+    BAKER["BakerSeparation<br/>borne effective<br/>(plus stricte que publié)"]
     BARINA["Barina 2025<br/>n &lt; 2^71"]
     HERCHER["Hercher 2023<br/>m ≤ 91"]
     JAR["★ JAR<br/>no_nontrivial_cycle_phase59<br/>kernel-checked Lean 4"]
@@ -487,8 +487,8 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <section id="meaculpa">
   <div class="section-eyebrow">§ V</div>
-  <h2 data-i18n="meaCulpaTitle">Vingt-six mea culpa publics</h2>
-  <p data-i18n="meaCulpaIntro">La discipline antifragile demande que chaque erreur détectée soit documentée publiquement avec sévérité 0-10 et règle extraite. Sans cela, le pattern multi-cerveau humain-IA répète indéfiniment les mêmes hallucinations.</p>
+  <h2 data-i18n="meaCulpaTitle">Vingt-huit mea culpa publics</h2>
+  <p data-i18n="meaCulpaIntro">La discipline antifragile demande que chaque erreur détectée soit documentée publiquement avec sévérité 0-10 et règle extraite. Sans cela, le pattern multi-cerveau humain-IA répète indéfiniment les mêmes hallucinations. <em>Aperçu de 12 mea culpa parmi les 28 documentés au total ; archive complète dans le repo GitHub <code>_handoff_mailbox/</code>.</em></p>
 
   <div class="mea-culpa-grid" id="meaCulpaGrid">
     <!-- généré par main.js -->
@@ -577,12 +577,12 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
         <p lang="en">Project design and scientific coordination. Author of <strong>PROTOCOLE ARES v2</strong>, an anti-hallucination verification methodology for human-AI mathematical research. Works under a multi-agent architecture (Claude Opus + ChatGPT) with antifragile discipline: every detected error becomes a public operational rule.</p>
         <ul lang="fr">
           <li>Soumission JAR Springer (paper 28 p., DOI Zenodo)</li>
-          <li>Architecte du PROTOCOLE ARES v2 (27 mea culpa publics)</li>
+          <li>Architecte du PROTOCOLE ARES v2 (28 mea culpa publics)</li>
           <li>Direction multi-cerveau (NEW · NEW2 · OLD · Red Team)</li>
         </ul>
         <ul lang="en">
           <li>JAR Springer submission (28-page paper, Zenodo DOI)</li>
-          <li>Architect of PROTOCOLE ARES v2 (27 public mea culpa)</li>
+          <li>Architect of PROTOCOLE ARES v2 (28 public mea culpa)</li>
           <li>Multi-brain coordination (NEW · NEW2 · OLD · Red Team)</li>
         </ul>
         <p class="team-links">
