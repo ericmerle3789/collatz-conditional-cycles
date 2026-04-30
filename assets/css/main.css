@@ -742,6 +742,7 @@ html[data-theme="light"] .hero-banner-title {
 }
 .lambda-control-row {
   flex: 1 1 240px;
+  min-width: 0;          /* FIND-004 fix : permet le shrink sous 240px en mobile */
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
@@ -753,6 +754,8 @@ html[data-theme="light"] .hero-banner-title {
 }
 .lambda-control-row input[type="range"] {
   width: 100%;
+  max-width: 100%;       /* FIND-004 fix : empêche overflow mobile */
+  box-sizing: border-box;
   accent-color: var(--accent);
 }
 .lambda-formula {
