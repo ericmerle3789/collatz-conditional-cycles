@@ -113,7 +113,7 @@
       searchNav: "naviguer",
       searchOpen: "ouvrir",
       searchClose: "fermer",
-      buildPassing: "build : passing",
+      buildPassing: "site build : passing",
       lastCommit: "dernier commit",
       changelogLink: "changelog"
     },
@@ -205,7 +205,7 @@
       searchNav: "navigate",
       searchOpen: "open",
       searchClose: "close",
-      buildPassing: "build: passing",
+      buildPassing: "site build: passing",
       lastCommit: "last commit",
       changelogLink: "changelog"
     }
