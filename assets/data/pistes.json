@@ -1,5 +1,5 @@
 {
-  "version": "0.6.2",
+  "version": "0.6.3",
   "lastUpdate": "2026-05-01",
   "pistes": [
     {
@@ -678,6 +678,15 @@
     },
     {
       "id": "REQ-MATH-012",
+      "fr": {
+        "title": "Seuils numériques δ10 Barina-Replacement",
+        "result": "Aucune borne diophantienne publiée (Salikhov, Wu, Rhin, Simons-de Weger) ne donne n<2^71 uniformément sans Barina X_0 — confirme nécessité k^6 (FIND-016)"
+      },
+      "en": {
+        "title": "δ10 Barina-Replacement numerical thresholds",
+        "result": "No published Diophantine bound (Salikhov, Wu, Rhin, Simons-de Weger) yields n<2^71 uniformly without Barina X_0 — confirms necessity of k^6 (FIND-016)"
+      },
+      "exit": 0,
       "file": "tests_math/test_REQ-MATH-012_delta10_barina_thresholds.py"
     }
   ],
