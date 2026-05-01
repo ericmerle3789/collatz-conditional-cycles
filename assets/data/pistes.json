@@ -1,5 +1,5 @@
 {
-  "version": "0.6.1",
+  "version": "0.6.2",
   "lastUpdate": "2026-05-01",
   "pistes": [
     {
@@ -675,6 +675,10 @@
       },
       "exit": "warning",
       "file": "tests_math/lean/ChatGPTLemmas_test.lean"
+    },
+    {
+      "id": "REQ-MATH-012",
+      "file": "tests_math/test_REQ-MATH-012_delta10_barina_thresholds.py"
     }
   ],
   "hypotheses_evolution": {
