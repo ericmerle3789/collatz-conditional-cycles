@@ -288,11 +288,14 @@
     if (langBtn) langBtn.textContent = dict.langBtn;
 
     // Re-render dynamique (tableau, tests, mea culpa) — gracieux si pas sur index.html
+    // Each render is independently caught so a single failure can't interrupt
+    // applyLang() and starve later toolbar listeners from being attached.
     if (STATE.data) {
-      if (typeof renderTable === 'function' && document.querySelector('#pistesTable')) renderTable();
-      if (typeof renderTests === 'function' && document.querySelector('#testsGrid')) renderTests();
-      if (typeof renderMeaCulpa === 'function' && document.querySelector('#meaCulpaGrid')) renderMeaCulpa();
-      if (typeof renderHypothesesChart === 'function' && document.querySelector('#hypothesesChart')) renderHypothesesChart();
+      const safeRender = (name, fn) => { try { fn(); } catch (e) { console.warn(name + ' failed:', e); } };
+      if (typeof renderTable === 'function' && document.querySelector('#pistesTable')) safeRender('renderTable', renderTable);
+      if (typeof renderTests === 'function' && document.querySelector('#testsGrid')) safeRender('renderTests', renderTests);
+      if (typeof renderMeaCulpa === 'function' && document.querySelector('#meaCulpaGrid')) safeRender('renderMeaCulpa', renderMeaCulpa);
+      if (typeof renderHypothesesChart === 'function' && document.querySelector('#hypothesesChart')) safeRender('renderHypothesesChart', renderHypothesesChart);
     }
 
     // Re-générer la TOC dans la nouvelle langue (delay pour laisser le DOM se mettre à jour)
@@ -859,20 +862,20 @@ ER  - `;
   // ========== TESTS REQ-MATH ==========
   function renderTests() {
     const grid = document.getElementById('testsGrid');
-    if (!grid || !STATE.data) return;
+    if (!grid || !STATE.data || !Array.isArray(STATE.data.tests)) return;
     const dict = STATE.lang;
     grid.innerHTML = '';
 
     STATE.data.tests.forEach(test => {
-      const localized = test[dict];
+      const localized = test[dict] || test.fr || test.en || {};
       const isWarning = test.exit !== 0;
       const div = document.createElement('div');
       div.className = 'test-card' + (isWarning ? ' warning' : '');
       div.innerHTML = `
-        <div class="test-id">${test.id} ${isWarning ? '⚠' : '✓'}</div>
-        <div class="test-title">${localized.title}</div>
-        <div class="test-desc">${localized.result}</div>
-        <div class="test-file">${test.file}</div>
+        <div class="test-id">${test.id || '—'} ${isWarning ? '⚠' : '✓'}</div>
+        <div class="test-title">${localized.title || ''}</div>
+        <div class="test-desc">${localized.result || ''}</div>
+        <div class="test-file">${test.file || ''}</div>
       `;
       grid.appendChild(div);
     });
