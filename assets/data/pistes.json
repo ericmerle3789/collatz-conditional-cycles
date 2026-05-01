@@ -1,64 +1,718 @@
 {
-  "version": "0.6.0",
-  "lastUpdate": "2026-04-30",
+  "version": "0.6.1",
+  "lastUpdate": "2026-05-01",
   "pistes": [
-    {"id": "★ JAR", "fr": {"name": "no_nontrivial_cycle_phase59 — résultat principal JAR", "why": "Théorème principal du paper soumis Journal of Automated Reasoning (2026-04-27, v1.1) : aucun cycle Collatz non-trivial sous 3 conditions explicites. Kernel-checked Lean 4 (Mathlib v4.27). Profil d'axiomes minimal : 3 axiomes Lean kernel (propext, Classical.choice, Quot.sound) + 3 hypothèses externes documentées (BakerSeparation effective, BarinaVerification n<2^71, DerivedLargeKBound m≤91). 28 pages, ~30 fichiers Lean, reproductible via reproduce.sh EXIT 0. Contribution : pas la non-existence inconditionnelle (irréalisable cf. δ8 lemma) mais la cartographie rigoureuse des obstructions structurelles qui rend la conditionnalité nécessaire."}, "en": {"name": "no_nontrivial_cycle_phase59 — JAR main result", "why": "Main theorem of the paper submitted to Journal of Automated Reasoning (2026-04-27, v1.1): no non-trivial Collatz cycle under 3 explicit conditions. Kernel-checked Lean 4 (Mathlib v4.27). Minimal axiom profile: 3 Lean kernel axioms (propext, Classical.choice, Quot.sound) + 3 documented external hypotheses (BakerSeparation effective, BarinaVerification n<2^71, DerivedLargeKBound m≤91). 28 pages, ~30 Lean files, reproducible via reproduce.sh EXIT 0. Contribution: not unconditional non-existence (unattainable cf. δ8 lemma) but the rigorous mapping of structural obstructions that makes conditionality necessary."}, "region": "I", "status": "jar", "test4": "4/4 ✓", "lean": "no_nontrivial_cycle_phase59", "leanFile": "ProjetCollatz/Phase59ContinuedFractions.lean", "ref": "Merle 2026, JAR submission v1.1, DOI 10.5281/zenodo.19790406"},
-    {"id": "A", "fr": {"name": "BakerSeparation effective (k^6)", "why": "Pilier projet — borne effective sur |S log 2 − k log 3|. Forme axiome : (2^s − 3^k)·k^6 ≥ 3^k. Plus stricte que toute borne diophantienne publiée extractable directement (Salikhov 2007 μ ≤ 5.125, Wu 2003 μ ≈ 7.6155, Simons-de Weger 2005 exposant ≈ 13.3) — déclarée comme hypothèse de travail explicite (mea culpa #28). Le lemme cartographique δ10 (Phase 64, kernel-1 [propext]) démontre formellement pourquoi cette force est nécessaire : aucune source publiée ne peut remplacer Barina sans X_0 computationnel."}, "en": {"name": "BakerSeparation effective (k^6)", "why": "Project pillar — effective bound on |S log 2 − k log 3|. Axiom form: (2^s − 3^k)·k^6 ≥ 3^k. Stricter than any directly extractable published Diophantine bound (Salikhov 2007 μ ≤ 5.125, Wu 2003 μ ≈ 7.6155, Simons-de Weger 2005 exponent ≈ 13.3) — declared as explicit working hypothesis (mea culpa #28). The δ10 cartographic lemma (Phase 64, kernel-1 [propext]) formally proves why this strength is necessary: no published source can replace Barina without computational X_0."}, "region": "I", "status": "axiome", "test4": "—", "lean": "BakerSeparation", "leanFile": "ProjetCollatz/Phase58PorteDeuxFinal.lean", "ref": "Effective bound; literature: Salikhov 2007, Wu 2003, Simons-de Weger 2005, Rhin 1987 — see mea culpa #28 + δ10"},
-    {"id": "δ10", "fr": {"name": "δ10 — Barina-Replacement Impossibility (Phase 64)", "why": "PROUVÉ Lean 4 kernel-checked (2026-04-30, commit 7efbf34). Lemme cartographique fini démontrant qu'aucune borne diophantienne publiée du catalogue audité {Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005} ne peut remplacer BarinaVerification dans no_nontrivial_cycle_phase59. 296 lignes Lean, 0 sorry, axiom profile [propext] only (kernel-1, plus minimal de tout le projet, plus pur que les théorèmes centraux qui utilisent kernel-3). Three-Key validated (OLD3 + NEW4 + ChatGPT 5.5 Q12+Q13). Trilogie d'impossibilité Baker+CF+Khinchin maintenant complète : δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64). Branche dédiée, tag annoté. Justifie formellement la force k^6 de BakerSeparation (mea culpa #28)."}, "en": {"name": "δ10 — Barina-Replacement Impossibility (Phase 64)", "why": "PROVEN in Lean 4 kernel-checked (2026-04-30, commit 7efbf34). Cartographic finite catalogue lemma proving that no published Diophantine bound from the audited set {Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005} can replace BarinaVerification in no_nontrivial_cycle_phase59. 296 Lean lines, 0 sorry, axiom profile [propext] only (kernel-1, most minimal in project, purer than central theorems which use kernel-3). Three-Key validated (OLD3 + NEW4 + ChatGPT 5.5 Q12+Q13). Baker+CF+Khinchin impossibility trilogy now complete: δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64). Dedicated branch, annotated tag. Formally justifies the k^6 strength of BakerSeparation (mea culpa #28)."}, "region": "I", "status": "prouve", "test4": "4/4 ✓", "lean": "delta10_barina_replacement_impossibility", "leanFile": "ProjetCollatz/Phase64Delta10BarinaReplacement.lean", "ref": "Three-Key validated 2026-04-30, branch study/delta10-barina-replacement-impossibility, tag study-delta10-2026-04-30, commit 7efbf34"},
-    {"id": "B", "fr": {"name": "Tao 2019/2022 ergodique", "why": "Mesure Haar 0 ≠ ∅ — ergodicité aplatit l'information sur cycles entiers"}, "en": {"name": "Tao 2019/2022 ergodic", "why": "Haar measure 0 ≠ ∅ — ergodicity flattens info on integer cycles"}, "region": "I", "status": "cds", "test4": "0/4", "severity": "2/10", "ref": "Tao 2022, Forum Math. Pi 10:e12"},
-    {"id": "C", "fr": {"name": "Fourier discret / Sturmien", "why": "Sturmian word ↔ slope log_2 3 — retombe sur Baker"}, "en": {"name": "Discrete Fourier / Sturmian", "why": "Sturmian word ↔ slope log_2 3 — falls back to Baker"}, "region": "I", "status": "cds", "test4": "0/4", "severity": "2/10"},
-    {"id": "D", "fr": {"name": "Kolmogorov-Chaitin", "why": "K(p|n,k) = O(log k) via Christoffel — pas de gap exploitable"}, "en": {"name": "Kolmogorov-Chaitin", "why": "K(p|n,k) = O(log k) via Christoffel — no exploitable gap"}, "region": "I", "status": "cds", "test4": "0/4", "severity": "8.5/10", "ref": "Knight 2023, HAL hal-04261183"},
-    {"id": "E.1", "fr": {"name": "Salikhov 2007 (μ ≤ 5.125)", "why": "Ferme k ≤ 3693 inconditionnel ; plafond μ ≥ 2 (Bundschuh-Wallisser)"}, "en": {"name": "Salikhov 2007 (μ ≤ 5.125)", "why": "Closes k ≤ 3693 unconditionally ; plateau μ ≥ 2 (Bundschuh-Wallisser)"}, "region": "I", "status": "partiel", "test4": "3/4", "lean": "PadeBound (à prouver)", "leanFile": "ProjetCollatz/PostJAR/PadeBound.lean", "ref": "Salikhov, Doklady Math. 76(3)"},
-    {"id": "E.2", "fr": {"name": "Wu 2003 c = 5.117", "why": "Ferme k ≤ 3732 inconditionnel — meilleur que Salikhov"}, "en": {"name": "Wu 2003 c = 5.117", "why": "Closes k ≤ 3732 unconditionally — better than Salikhov"}, "region": "I", "status": "partiel", "test4": "3/4", "lean": "PadeBound (à prouver)", "leanFile": "ProjetCollatz/PostJAR/PadeBound.lean", "ref": "Wu, Math. Comp. 72(242), 901-911"},
-    {"id": "E.4", "fr": {"name": "Zudilin 2007", "why": "Bornes ‖(3/2)^k‖ — angle classique Padé"}, "en": {"name": "Zudilin 2007", "why": "Bounds ‖(3/2)^k‖ — classical Padé angle"}, "region": "I", "status": "partiel", "test4": "3/4"},
-    {"id": "F", "fr": {"name": "Marcovecchio 2025 (non-quadraticité)", "why": "μ_2 algébriques degré 2 — pas formes log"}, "en": {"name": "Marcovecchio 2025 (non-quadraticity)", "why": "μ_2 degree-2 algebraic — not log forms"}, "region": "I", "status": "cds", "test4": "0/4", "severity": "1/10"},
-    {"id": "G.1", "fr": {"name": "R88-R92 lacunary periodization", "why": "Case-by-case viable pour k ≤ 20 ; arsenal projet"}, "en": {"name": "R88-R92 lacunary periodization", "why": "Case-by-case viable for k ≤ 20 ; project arsenal"}, "region": "I", "status": "partiel", "test4": "4/4", "lean": "cycle_corrSum_mod_p_double_periodic", "leanFile": "ProjetCollatz/PostJAR/CongruenceTransport.lean"},
-    {"id": "G.1bis", "fr": {"name": "R92 showcase k=2 p=7", "why": "Premier certificat fini case-by-case prouvé Lean"}, "en": {"name": "R92 showcase k=2 p=7", "why": "First Lean-proven finite case-by-case certificate"}, "region": "I", "status": "prouve", "test4": "4/4", "lean": "cycle_k_2_parity_1_1_p_7_no_dvd_D_s", "leanFile": "ProjetCollatz/PostJAR/CongruenceTransport.lean"},
-    {"id": "J", "fr": {"name": "Tropical (ChatGPT 5.5)", "why": "Risque Baker via décroissance fine, §B.2 oracle"}, "en": {"name": "Tropical (ChatGPT 5.5)", "why": "Baker risk via fine decay, oracle §B.2"}, "region": "I", "status": "partiel", "test4": "2/4"},
-    {"id": "K", "fr": {"name": "Schémas arithmétiques + Faltings", "why": "Faltings ineffective + ABC conditionnel"}, "en": {"name": "Arithmetic schemes + Faltings", "why": "Faltings ineffective + conditional ABC"}, "region": "I", "status": "partiel", "test4": "1/4"},
-    {"id": "L", "fr": {"name": "Néron-Tate / Rozier-Terracol 2026", "why": "ABC ⟹ Λ effective, mais ABC non-démontrée"}, "en": {"name": "Néron-Tate / Rozier-Terracol 2026", "why": "ABC ⟹ effective Λ, but ABC not proven"}, "region": "I", "status": "cds", "test4": "0/4", "ref": "Rozier-Terracol, Discrete Math. 349(10), 115167"},
-    {"id": "M", "fr": {"name": "BHV (Bilu-Hanrot-Voutier)", "why": "Réouvert post-Red Team — applications spécifiques"}, "en": {"name": "BHV (Bilu-Hanrot-Voutier)", "why": "Reopened post-Red Team — specific applications"}, "region": "I", "status": "partiel", "test4": "3/4"},
-    {"id": "R", "fr": {"name": "Invariants statistiques (autocorrélations, moments)", "why": "Christoffel autocorrélations → retombe sur Λ"}, "en": {"name": "Statistical invariants (autocorrelations, moments)", "why": "Christoffel autocorrelations → falls back to Λ"}, "region": "I", "status": "cds", "test4": "0-2/4"},
-
-    {"id": "H", "fr": {"name": "Logique modèle-théorique", "why": "Cobham 1969 : 2 bases mult. indép. → indécidabilité naturelle"}, "en": {"name": "Model-theoretic logic", "why": "Cobham 1969: 2 multiplicatively independent bases → natural undecidability"}, "region": "II", "status": "cds", "test4": "0/4"},
-    {"id": "H.1", "fr": {"name": "MSO / Skolem-Bruyère", "why": "Non exploré — extension décidable possible"}, "en": {"name": "MSO / Skolem-Bruyère", "why": "Not explored — possible decidable extension"}, "region": "II", "status": "inconnu"},
-    {"id": "H.2", "fr": {"name": "Skolem-Mahler-Lech / Derksen", "why": "Syracuse non-LRS — coefficient 2^(-a_i) dépend de l'état"}, "en": {"name": "Skolem-Mahler-Lech / Derksen", "why": "Syracuse non-LRS — coefficient 2^(-a_i) depends on state"}, "region": "II", "status": "cds", "test4": "0/4"},
-    {"id": "I.1", "fr": {"name": "Tresses / Nœuds topologiques", "why": "Invariants topologiques insensibles aux valuations 2/3-adiques"}, "en": {"name": "Braids / Topological knots", "why": "Topological invariants insensitive to 2/3-adic valuations"}, "region": "II", "status": "cds", "test4": "0/4"},
-    {"id": "N", "fr": {"name": "Topos arithmétique (Mochizuki IUT)", "why": "Effort > 10 ans, controversé Scholze-Stix"}, "en": {"name": "Arithmetic topos (Mochizuki IUT)", "why": "Effort > 10 years, controversial Scholze-Stix"}, "region": "II", "status": "inconnu"},
-    {"id": "O", "fr": {"name": "Théorie de la complexité", "why": "Réduction Cook-Levin non explorée"}, "en": {"name": "Complexity theory", "why": "Cook-Levin reduction not explored"}, "region": "II", "status": "inconnu"},
-    {"id": "P", "fr": {"name": "Mécanique statistique (Sinai 2003)", "why": "Mesures Haar p-adiques — non exploré pour cycles"}, "en": {"name": "Statistical mechanics (Sinai 2003)", "why": "p-adic Haar measures — not explored for cycles"}, "region": "II", "status": "inconnu"},
-    {"id": "Q", "fr": {"name": "parityGraph forward", "why": "Graphe fonctionnel = spectre tautologique"}, "en": {"name": "Forward parityGraph", "why": "Functional graph = tautological spectrum"}, "region": "II", "status": "cds", "test4": "0/4"},
-    {"id": "Q.bis", "fr": {"name": "parityGraph backward (multi-prédécesseurs)", "why": "Réouvert Red Team Cycle 2 — non-tautologique"}, "en": {"name": "Backward parityGraph (multi-predecessors)", "why": "Reopened Red Team Cycle 2 — non-tautological"}, "region": "II", "status": "inconnu"},
-    {"id": "V", "fr": {"name": "FRACTRAN / Conway 1972", "why": "Indécidabilité ≠ borne effective sur cycles spécifiques"}, "en": {"name": "FRACTRAN / Conway 1972", "why": "Undecidability ≠ effective bound on specific cycles"}, "region": "II", "status": "cds", "test4": "1/4"},
-    {"id": "W", "fr": {"name": "Anashin 2-adique (automates)", "why": "ℤ mesure Haar nulle dans ℤ_2 — descriptif pas prescriptif"}, "en": {"name": "Anashin 2-adic (automata)", "why": "ℤ has zero Haar measure in ℤ_2 — descriptive not prescriptive"}, "region": "II", "status": "cds", "test4": "2/4"},
-    {"id": "X", "fr": {"name": "Tao 2022 (= Tao 2019)", "why": "Tao exclut explicitement cycles dans son paper"}, "en": {"name": "Tao 2022 (= Tao 2019)", "why": "Tao explicitly excludes cycles in his paper"}, "region": "II", "status": "cds", "test4": "1/4"},
-    {"id": "Y", "fr": {"name": "Krasikov-Lagarias 2003 (densité)", "why": "Densité asymptotique aveugle aux cycles isolés"}, "en": {"name": "Krasikov-Lagarias 2003 (density)", "why": "Asymptotic density blind to isolated cycles"}, "region": "II", "status": "cds", "test4": "2/4"},
-    {"id": "Z", "fr": {"name": "Holomorphic dynamics (LSW 1999)", "why": "log|ρ| = -Λ avec convention Lagarias — encode Baker"}, "en": {"name": "Holomorphic dynamics (LSW 1999)", "why": "log|ρ| = -Λ with Lagarias convention — encodes Baker"}, "region": "II", "status": "cds", "test4": "1/4"},
-    {"id": "P6", "fr": {"name": "Calegari-Dimitrov-Tang 2025 holonomy", "why": "Cycle 3 (2026-04-29) : CUL-DE-SAC 80%. Holonomy bounds CDT ciblent ζ(5)/1/π, pas log_2 3. Si applicable au ratio, retomberait sur μ(log_2 3) — même famille fonctionnelle que Baker. Probabilité fermeture gap : 3-7%. Coût Lean prohibitif (5+ années Mathlib)."}, "en": {"name": "Calegari-Dimitrov-Tang 2025 holonomy", "why": "Cycle 3 (2026-04-29): DEAD END 80%. CDT holonomy bounds target ζ(5)/1/π, not log_2 3. If applicable to ratio, would fall back to μ(log_2 3) — same functional family as Baker. Gap closure probability: 3-7%. Prohibitive Lean cost (5+ Mathlib years)."}, "region": "II", "status": "cds", "test4": "1/4", "ref": "arXiv:2510.04156"},
-    {"id": "P7", "fr": {"name": "Bayer-David 2025 (ITP)", "why": "Précédent méthodologique Lean Diophantine"}, "en": {"name": "Bayer-David 2025 (ITP)", "why": "Lean Diophantine methodological precedent"}, "region": "III", "status": "prometteur", "ref": "ITP 2025"},
-    {"id": "P8", "fr": {"name": "Banwait 2026 (Ramanujan-Nagell)", "why": "Précédent méthodologique Lean 4 Diophantine"}, "en": {"name": "Banwait 2026 (Ramanujan-Nagell)", "why": "Lean 4 Diophantine methodological precedent"}, "region": "III", "status": "prometteur", "ref": "arXiv:2604.09808"},
-    {"id": "P9", "fr": {"name": "Knight 2026 (high cycles)", "why": "Cycle 5 + Red Team (2026-04-29) : Section 5 (high cycles) INCONDITIONNELLE — preuve 2-adique 5 lignes : 2^(k-1)/(2^k - 3^x) ≠ entier (num. pair, dén. impair). Élimine UN seul cycle (Christoffel supérieur) par paire (k,x). Section 3 (circuits) dépend Baker via Ellison. PDF récupéré HAL hal-04261183 (preprint 26 oct 2023, publié Discrete Math. 349(3), 114812 mars 2026). Excellent lemme auxiliaire Lean, mais ne ferme PAS le gap résiduel."}, "en": {"name": "Knight 2026 (high cycles)", "why": "Cycle 5 + Red Team (2026-04-29): Section 5 (high cycles) UNCONDITIONAL — 5-line 2-adic proof: 2^(k-1)/(2^k - 3^x) ≠ integer (even num., odd denom.). Eliminates ONE cycle (upper Christoffel word) per (k,x) pair. Section 3 (circuits) depends on Baker via Ellison. PDF retrieved from HAL hal-04261183 (preprint 26 Oct 2023, published Discrete Math. 349(3), 114812 March 2026). Excellent auxiliary Lean lemma, but does NOT close the residual gap."}, "region": "II", "status": "partiel", "test4": "1/4", "ref": "Discrete Math. 349(3), 114812 + HAL hal-04261183"},
-    {"id": "CGS-7", "fr": {"name": "sum_s_ge_length_plus_num_nonincrease", "why": "Cycle 4 (2026-04-29) : 6 lemmes ChatGPT (sections 3.1-3.6) DIAGNOSTIQUÉS et PATCHÉS pour Mathlib v4.27 (5/6 corrections haute confiance). Esquisse complète CGS-7 fournie : décomposition s_t = 1 + (s_t - 1), filter_card pour pas non-décroissants, drop_forces_s_ge_two pour ces pas. Probabilité auto-compilation premier essai : 50-70%. Effort restant : 3-4h pour finalisation propre."}, "en": {"name": "sum_s_ge_length_plus_num_nonincrease", "why": "Cycle 4 (2026-04-29): 6 ChatGPT lemmas (sections 3.1-3.6) DIAGNOSED and PATCHED for Mathlib v4.27 (5/6 high-confidence corrections). Complete CGS-7 sketch provided: s_t = 1 + (s_t - 1) decomposition, filter_card for non-decreasing steps, drop_forces_s_ge_two for those steps. First-try auto-compilation probability: 50-70%. Remaining effort: 3-4h for clean finalization."}, "region": "I", "status": "partiel", "test4": "4/4 ✓", "lean": "(sorry → patché)", "leanFile": "tests_math/lean/ChatGPTLemmas_test.lean"}
+    {
+      "id": "★ JAR",
+      "fr": {
+        "name": "no_nontrivial_cycle_phase59 — résultat principal JAR",
+        "why": "Théorème principal du paper soumis Journal of Automated Reasoning (2026-04-27, v1.1) : aucun cycle Collatz non-trivial sous 3 conditions explicites. Kernel-checked Lean 4 (Mathlib v4.27). Profil d'axiomes minimal : 3 axiomes Lean kernel (propext, Classical.choice, Quot.sound) + 3 hypothèses externes documentées (BakerSeparation effective, BarinaVerification n<2^71, DerivedLargeKBound m≤91). 28 pages, ~30 fichiers Lean, reproductible via reproduce.sh EXIT 0. Contribution : pas la non-existence inconditionnelle (irréalisable cf. δ8 lemma) mais la cartographie rigoureuse des obstructions structurelles qui rend la conditionnalité nécessaire."
+      },
+      "en": {
+        "name": "no_nontrivial_cycle_phase59 — JAR main result",
+        "why": "Main theorem of the paper submitted to Journal of Automated Reasoning (2026-04-27, v1.1): no non-trivial Collatz cycle under 3 explicit conditions. Kernel-checked Lean 4 (Mathlib v4.27). Minimal axiom profile: 3 Lean kernel axioms (propext, Classical.choice, Quot.sound) + 3 documented external hypotheses (BakerSeparation effective, BarinaVerification n<2^71, DerivedLargeKBound m≤91). 28 pages, ~30 Lean files, reproducible via reproduce.sh EXIT 0. Contribution: not unconditional non-existence (unattainable cf. δ8 lemma) but the rigorous mapping of structural obstructions that makes conditionality necessary."
+      },
+      "region": "I",
+      "status": "jar",
+      "test4": "4/4 ✓",
+      "lean": "no_nontrivial_cycle_phase59",
+      "leanFile": "ProjetCollatz/Phase59ContinuedFractions.lean",
+      "ref": "Merle 2026, JAR submission v1.1, DOI 10.5281/zenodo.19790406"
+    },
+    {
+      "id": "A",
+      "fr": {
+        "name": "BakerSeparation effective (k^6)",
+        "why": "Pilier projet — borne effective sur |S log 2 − k log 3|. Forme axiome : (2^s − 3^k)·k^6 ≥ 3^k. Plus stricte que toute borne diophantienne publiée extractable directement (Salikhov 2007 μ ≤ 5.125, Wu 2003 μ ≈ 7.6155, Simons-de Weger 2005 exposant ≈ 13.3) — déclarée comme hypothèse de travail explicite (mea culpa #28). Le lemme cartographique δ10 (Phase 64, kernel-1 [propext]) démontre formellement pourquoi cette force est nécessaire : aucune source publiée ne peut remplacer Barina sans X_0 computationnel."
+      },
+      "en": {
+        "name": "BakerSeparation effective (k^6)",
+        "why": "Project pillar — effective bound on |S log 2 − k log 3|. Axiom form: (2^s − 3^k)·k^6 ≥ 3^k. Stricter than any directly extractable published Diophantine bound (Salikhov 2007 μ ≤ 5.125, Wu 2003 μ ≈ 7.6155, Simons-de Weger 2005 exponent ≈ 13.3) — declared as explicit working hypothesis (mea culpa #28). The δ10 cartographic lemma (Phase 64, kernel-1 [propext]) formally proves why this strength is necessary: no published source can replace Barina without computational X_0."
+      },
+      "region": "I",
+      "status": "axiome",
+      "test4": "—",
+      "lean": "BakerSeparation",
+      "leanFile": "ProjetCollatz/Phase58PorteDeuxFinal.lean",
+      "ref": "Effective bound; literature: Salikhov 2007, Wu 2003, Simons-de Weger 2005, Rhin 1987 — see mea culpa #28 + δ10"
+    },
+    {
+      "id": "δ10",
+      "fr": {
+        "name": "δ10 — Barina-Replacement Impossibility (Phase 64)",
+        "why": "PROUVÉ Lean 4 kernel-checked (2026-04-30, commit 7efbf34). Lemme cartographique fini démontrant qu'aucune borne diophantienne publiée du catalogue audité {Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005} ne peut remplacer BarinaVerification dans no_nontrivial_cycle_phase59. 296 lignes Lean, 0 sorry, axiom profile [propext] only (kernel-1, plus minimal de tout le projet, plus pur que les théorèmes centraux qui utilisent kernel-3). Three-Key validated (OLD3 + NEW4 + ChatGPT 5.5 Q12+Q13). Trilogie d'impossibilité Baker+CF+Khinchin maintenant complète : δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64). Branche dédiée, tag annoté. Justifie formellement la force k^6 de BakerSeparation (mea culpa #28)."
+      },
+      "en": {
+        "name": "δ10 — Barina-Replacement Impossibility (Phase 64)",
+        "why": "PROVEN in Lean 4 kernel-checked (2026-04-30, commit 7efbf34). Cartographic finite catalogue lemma proving that no published Diophantine bound from the audited set {Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005} can replace BarinaVerification in no_nontrivial_cycle_phase59. 296 Lean lines, 0 sorry, axiom profile [propext] only (kernel-1, most minimal in project, purer than central theorems which use kernel-3). Three-Key validated (OLD3 + NEW4 + ChatGPT 5.5 Q12+Q13). Baker+CF+Khinchin impossibility trilogy now complete: δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64). Dedicated branch, annotated tag. Formally justifies the k^6 strength of BakerSeparation (mea culpa #28)."
+      },
+      "region": "I",
+      "status": "prouve",
+      "test4": "4/4 ✓",
+      "lean": "delta10_barina_replacement_impossibility",
+      "leanFile": "ProjetCollatz/Phase64Delta10BarinaReplacement.lean",
+      "ref": "Three-Key validated 2026-04-30, branch study/delta10-barina-replacement-impossibility, tag study-delta10-2026-04-30, commit 7efbf34"
+    },
+    {
+      "id": "B",
+      "fr": {
+        "name": "Tao 2019/2022 ergodique",
+        "why": "Mesure Haar 0 ≠ ∅ — ergodicité aplatit l'information sur cycles entiers"
+      },
+      "en": {
+        "name": "Tao 2019/2022 ergodic",
+        "why": "Haar measure 0 ≠ ∅ — ergodicity flattens info on integer cycles"
+      },
+      "region": "I",
+      "status": "cds",
+      "test4": "0/4",
+      "severity": "2/10",
+      "ref": "Tao 2022, Forum Math. Pi 10:e12"
+    },
+    {
+      "id": "C",
+      "fr": {
+        "name": "Fourier discret / Sturmien",
+        "why": "Sturmian word ↔ slope log_2 3 — retombe sur Baker"
+      },
+      "en": {
+        "name": "Discrete Fourier / Sturmian",
+        "why": "Sturmian word ↔ slope log_2 3 — falls back to Baker"
+      },
+      "region": "I",
+      "status": "cds",
+      "test4": "0/4",
+      "severity": "2/10",
+      "status_meta": "stub"
+    },
+    {
+      "id": "D",
+      "fr": {
+        "name": "Kolmogorov-Chaitin",
+        "why": "K(p|n,k) = O(log k) via Christoffel — pas de gap exploitable"
+      },
+      "en": {
+        "name": "Kolmogorov-Chaitin",
+        "why": "K(p|n,k) = O(log k) via Christoffel — no exploitable gap"
+      },
+      "region": "I",
+      "status": "cds",
+      "test4": "0/4",
+      "severity": "8.5/10",
+      "ref": "Knight 2023, HAL hal-04261183"
+    },
+    {
+      "id": "E.1",
+      "fr": {
+        "name": "Salikhov 2007 (μ ≤ 5.125)",
+        "why": "Ferme k ≤ 3693 inconditionnel ; plafond μ ≥ 2 (Bundschuh-Wallisser)"
+      },
+      "en": {
+        "name": "Salikhov 2007 (μ ≤ 5.125)",
+        "why": "Closes k ≤ 3693 unconditionally ; plateau μ ≥ 2 (Bundschuh-Wallisser)"
+      },
+      "region": "I",
+      "status": "partiel",
+      "test4": "3/4",
+      "lean": "PadeBound (à prouver)",
+      "leanFile": "ProjetCollatz/PostJAR/PadeBound.lean",
+      "ref": "Salikhov, Doklady Math. 76(3)"
+    },
+    {
+      "id": "E.2",
+      "fr": {
+        "name": "Wu 2003 c = 5.117",
+        "why": "Ferme k ≤ 3732 inconditionnel — meilleur que Salikhov"
+      },
+      "en": {
+        "name": "Wu 2003 c = 5.117",
+        "why": "Closes k ≤ 3732 unconditionally — better than Salikhov"
+      },
+      "region": "I",
+      "status": "partiel",
+      "test4": "3/4",
+      "lean": "PadeBound (à prouver)",
+      "leanFile": "ProjetCollatz/PostJAR/PadeBound.lean",
+      "ref": "Wu, Math. Comp. 72(242), 901-911"
+    },
+    {
+      "id": "E.4",
+      "fr": {
+        "name": "Zudilin 2007",
+        "why": "Bornes ‖(3/2)^k‖ — angle classique Padé"
+      },
+      "en": {
+        "name": "Zudilin 2007",
+        "why": "Bounds ‖(3/2)^k‖ — classical Padé angle"
+      },
+      "region": "I",
+      "status": "partiel",
+      "test4": "3/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "F",
+      "fr": {
+        "name": "Marcovecchio 2025 (non-quadraticité)",
+        "why": "μ_2 algébriques degré 2 — pas formes log"
+      },
+      "en": {
+        "name": "Marcovecchio 2025 (non-quadraticity)",
+        "why": "μ_2 degree-2 algebraic — not log forms"
+      },
+      "region": "I",
+      "status": "cds",
+      "test4": "0/4",
+      "severity": "1/10",
+      "status_meta": "stub"
+    },
+    {
+      "id": "G.1",
+      "fr": {
+        "name": "R88-R92 lacunary periodization",
+        "why": "Case-by-case viable pour k ≤ 20 ; arsenal projet"
+      },
+      "en": {
+        "name": "R88-R92 lacunary periodization",
+        "why": "Case-by-case viable for k ≤ 20 ; project arsenal"
+      },
+      "region": "I",
+      "status": "partiel",
+      "test4": "4/4",
+      "lean": "cycle_corrSum_mod_p_double_periodic",
+      "leanFile": "ProjetCollatz/PostJAR/CongruenceTransport.lean"
+    },
+    {
+      "id": "G.1bis",
+      "fr": {
+        "name": "R92 showcase k=2 p=7",
+        "why": "Premier certificat fini case-by-case prouvé Lean"
+      },
+      "en": {
+        "name": "R92 showcase k=2 p=7",
+        "why": "First Lean-proven finite case-by-case certificate"
+      },
+      "region": "I",
+      "status": "prouve",
+      "test4": "4/4",
+      "lean": "cycle_k_2_parity_1_1_p_7_no_dvd_D_s",
+      "leanFile": "ProjetCollatz/PostJAR/CongruenceTransport.lean"
+    },
+    {
+      "id": "J",
+      "fr": {
+        "name": "Tropical (ChatGPT 5.5)",
+        "why": "Risque Baker via décroissance fine, §B.2 oracle"
+      },
+      "en": {
+        "name": "Tropical (ChatGPT 5.5)",
+        "why": "Baker risk via fine decay, oracle §B.2"
+      },
+      "region": "I",
+      "status": "partiel",
+      "test4": "2/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "K",
+      "fr": {
+        "name": "Schémas arithmétiques + Faltings",
+        "why": "Faltings ineffective + ABC conditionnel"
+      },
+      "en": {
+        "name": "Arithmetic schemes + Faltings",
+        "why": "Faltings ineffective + conditional ABC"
+      },
+      "region": "I",
+      "status": "partiel",
+      "test4": "1/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "L",
+      "fr": {
+        "name": "Néron-Tate / Rozier-Terracol 2026",
+        "why": "ABC ⟹ Λ effective, mais ABC non-démontrée"
+      },
+      "en": {
+        "name": "Néron-Tate / Rozier-Terracol 2026",
+        "why": "ABC ⟹ effective Λ, but ABC not proven"
+      },
+      "region": "I",
+      "status": "cds",
+      "test4": "0/4",
+      "ref": "Rozier-Terracol, Discrete Math. 349(10), 115167"
+    },
+    {
+      "id": "M",
+      "fr": {
+        "name": "BHV (Bilu-Hanrot-Voutier)",
+        "why": "Réouvert post-Red Team — applications spécifiques"
+      },
+      "en": {
+        "name": "BHV (Bilu-Hanrot-Voutier)",
+        "why": "Reopened post-Red Team — specific applications"
+      },
+      "region": "I",
+      "status": "partiel",
+      "test4": "3/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "R",
+      "fr": {
+        "name": "Invariants statistiques (autocorrélations, moments)",
+        "why": "Christoffel autocorrélations → retombe sur Λ"
+      },
+      "en": {
+        "name": "Statistical invariants (autocorrelations, moments)",
+        "why": "Christoffel autocorrelations → falls back to Λ"
+      },
+      "region": "I",
+      "status": "cds",
+      "test4": "0-2/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "H",
+      "fr": {
+        "name": "Logique modèle-théorique",
+        "why": "Cobham 1969 : 2 bases mult. indép. → indécidabilité naturelle"
+      },
+      "en": {
+        "name": "Model-theoretic logic",
+        "why": "Cobham 1969: 2 multiplicatively independent bases → natural undecidability"
+      },
+      "region": "II",
+      "status": "cds",
+      "test4": "0/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "H.1",
+      "fr": {
+        "name": "MSO / Skolem-Bruyère",
+        "why": "Non exploré — extension décidable possible"
+      },
+      "en": {
+        "name": "MSO / Skolem-Bruyère",
+        "why": "Not explored — possible decidable extension"
+      },
+      "region": "II",
+      "status": "inconnu",
+      "status_meta": "stub"
+    },
+    {
+      "id": "H.2",
+      "fr": {
+        "name": "Skolem-Mahler-Lech / Derksen",
+        "why": "Syracuse non-LRS — coefficient 2^(-a_i) dépend de l'état"
+      },
+      "en": {
+        "name": "Skolem-Mahler-Lech / Derksen",
+        "why": "Syracuse non-LRS — coefficient 2^(-a_i) depends on state"
+      },
+      "region": "II",
+      "status": "cds",
+      "test4": "0/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "I.1",
+      "fr": {
+        "name": "Tresses / Nœuds topologiques",
+        "why": "Invariants topologiques insensibles aux valuations 2/3-adiques"
+      },
+      "en": {
+        "name": "Braids / Topological knots",
+        "why": "Topological invariants insensitive to 2/3-adic valuations"
+      },
+      "region": "II",
+      "status": "cds",
+      "test4": "0/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "N",
+      "fr": {
+        "name": "Topos arithmétique (Mochizuki IUT)",
+        "why": "Effort > 10 ans, controversé Scholze-Stix"
+      },
+      "en": {
+        "name": "Arithmetic topos (Mochizuki IUT)",
+        "why": "Effort > 10 years, controversial Scholze-Stix"
+      },
+      "region": "II",
+      "status": "inconnu",
+      "status_meta": "stub"
+    },
+    {
+      "id": "O",
+      "fr": {
+        "name": "Théorie de la complexité",
+        "why": "Réduction Cook-Levin non explorée"
+      },
+      "en": {
+        "name": "Complexity theory",
+        "why": "Cook-Levin reduction not explored"
+      },
+      "region": "II",
+      "status": "inconnu",
+      "status_meta": "stub"
+    },
+    {
+      "id": "P",
+      "fr": {
+        "name": "Mécanique statistique (Sinai 2003)",
+        "why": "Mesures Haar p-adiques — non exploré pour cycles"
+      },
+      "en": {
+        "name": "Statistical mechanics (Sinai 2003)",
+        "why": "p-adic Haar measures — not explored for cycles"
+      },
+      "region": "II",
+      "status": "inconnu",
+      "status_meta": "stub"
+    },
+    {
+      "id": "Q",
+      "fr": {
+        "name": "parityGraph forward",
+        "why": "Graphe fonctionnel = spectre tautologique"
+      },
+      "en": {
+        "name": "Forward parityGraph",
+        "why": "Functional graph = tautological spectrum"
+      },
+      "region": "II",
+      "status": "cds",
+      "test4": "0/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "Q.bis",
+      "fr": {
+        "name": "parityGraph backward (multi-prédécesseurs)",
+        "why": "Réouvert Red Team Cycle 2 — non-tautologique"
+      },
+      "en": {
+        "name": "Backward parityGraph (multi-predecessors)",
+        "why": "Reopened Red Team Cycle 2 — non-tautological"
+      },
+      "region": "II",
+      "status": "inconnu",
+      "status_meta": "stub"
+    },
+    {
+      "id": "V",
+      "fr": {
+        "name": "FRACTRAN / Conway 1972",
+        "why": "Indécidabilité ≠ borne effective sur cycles spécifiques"
+      },
+      "en": {
+        "name": "FRACTRAN / Conway 1972",
+        "why": "Undecidability ≠ effective bound on specific cycles"
+      },
+      "region": "II",
+      "status": "cds",
+      "test4": "1/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "W",
+      "fr": {
+        "name": "Anashin 2-adique (automates)",
+        "why": "ℤ mesure Haar nulle dans ℤ_2 — descriptif pas prescriptif"
+      },
+      "en": {
+        "name": "Anashin 2-adic (automata)",
+        "why": "ℤ has zero Haar measure in ℤ_2 — descriptive not prescriptive"
+      },
+      "region": "II",
+      "status": "cds",
+      "test4": "2/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "X",
+      "fr": {
+        "name": "Tao 2022 (= Tao 2019)",
+        "why": "Tao exclut explicitement cycles dans son paper"
+      },
+      "en": {
+        "name": "Tao 2022 (= Tao 2019)",
+        "why": "Tao explicitly excludes cycles in his paper"
+      },
+      "region": "II",
+      "status": "cds",
+      "test4": "1/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "Y",
+      "fr": {
+        "name": "Krasikov-Lagarias 2003 (densité)",
+        "why": "Densité asymptotique aveugle aux cycles isolés"
+      },
+      "en": {
+        "name": "Krasikov-Lagarias 2003 (density)",
+        "why": "Asymptotic density blind to isolated cycles"
+      },
+      "region": "II",
+      "status": "cds",
+      "test4": "2/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "Z",
+      "fr": {
+        "name": "Holomorphic dynamics (LSW 1999)",
+        "why": "log|ρ| = -Λ avec convention Lagarias — encode Baker"
+      },
+      "en": {
+        "name": "Holomorphic dynamics (LSW 1999)",
+        "why": "log|ρ| = -Λ with Lagarias convention — encodes Baker"
+      },
+      "region": "II",
+      "status": "cds",
+      "test4": "1/4",
+      "status_meta": "stub"
+    },
+    {
+      "id": "P6",
+      "fr": {
+        "name": "Calegari-Dimitrov-Tang 2025 holonomy",
+        "why": "Cycle 3 (2026-04-29) : CUL-DE-SAC 80%. Holonomy bounds CDT ciblent ζ(5)/1/π, pas log_2 3. Si applicable au ratio, retomberait sur μ(log_2 3) — même famille fonctionnelle que Baker. Probabilité fermeture gap : 3-7%. Coût Lean prohibitif (5+ années Mathlib)."
+      },
+      "en": {
+        "name": "Calegari-Dimitrov-Tang 2025 holonomy",
+        "why": "Cycle 3 (2026-04-29): DEAD END 80%. CDT holonomy bounds target ζ(5)/1/π, not log_2 3. If applicable to ratio, would fall back to μ(log_2 3) — same functional family as Baker. Gap closure probability: 3-7%. Prohibitive Lean cost (5+ Mathlib years)."
+      },
+      "region": "II",
+      "status": "cds",
+      "test4": "1/4",
+      "ref": "arXiv:2510.04156"
+    },
+    {
+      "id": "P7",
+      "fr": {
+        "name": "Bayer-David 2025 (ITP)",
+        "why": "Précédent méthodologique Lean Diophantine"
+      },
+      "en": {
+        "name": "Bayer-David 2025 (ITP)",
+        "why": "Lean Diophantine methodological precedent"
+      },
+      "region": "III",
+      "status": "prometteur",
+      "ref": "ITP 2025"
+    },
+    {
+      "id": "P8",
+      "fr": {
+        "name": "Banwait 2026 (Ramanujan-Nagell)",
+        "why": "Précédent méthodologique Lean 4 Diophantine"
+      },
+      "en": {
+        "name": "Banwait 2026 (Ramanujan-Nagell)",
+        "why": "Lean 4 Diophantine methodological precedent"
+      },
+      "region": "III",
+      "status": "prometteur",
+      "ref": "arXiv:2604.09808"
+    },
+    {
+      "id": "P9",
+      "fr": {
+        "name": "Knight 2026 (high cycles)",
+        "why": "Cycle 5 + Red Team (2026-04-29) : Section 5 (high cycles) INCONDITIONNELLE — preuve 2-adique 5 lignes : 2^(k-1)/(2^k - 3^x) ≠ entier (num. pair, dén. impair). Élimine UN seul cycle (Christoffel supérieur) par paire (k,x). Section 3 (circuits) dépend Baker via Ellison. PDF récupéré HAL hal-04261183 (preprint 26 oct 2023, publié Discrete Math. 349(3), 114812 mars 2026). Excellent lemme auxiliaire Lean, mais ne ferme PAS le gap résiduel."
+      },
+      "en": {
+        "name": "Knight 2026 (high cycles)",
+        "why": "Cycle 5 + Red Team (2026-04-29): Section 5 (high cycles) UNCONDITIONAL — 5-line 2-adic proof: 2^(k-1)/(2^k - 3^x) ≠ integer (even num., odd denom.). Eliminates ONE cycle (upper Christoffel word) per (k,x) pair. Section 3 (circuits) depends on Baker via Ellison. PDF retrieved from HAL hal-04261183 (preprint 26 Oct 2023, published Discrete Math. 349(3), 114812 March 2026). Excellent auxiliary Lean lemma, but does NOT close the residual gap."
+      },
+      "region": "II",
+      "status": "partiel",
+      "test4": "1/4",
+      "ref": "Discrete Math. 349(3), 114812 + HAL hal-04261183"
+    },
+    {
+      "id": "CGS-7",
+      "fr": {
+        "name": "sum_s_ge_length_plus_num_nonincrease",
+        "why": "Cycle 4 (2026-04-29) : 6 lemmes ChatGPT (sections 3.1-3.6) DIAGNOSTIQUÉS et PATCHÉS pour Mathlib v4.27 (5/6 corrections haute confiance). Esquisse complète CGS-7 fournie : décomposition s_t = 1 + (s_t - 1), filter_card pour pas non-décroissants, drop_forces_s_ge_two pour ces pas. Probabilité auto-compilation premier essai : 50-70%. Effort restant : 3-4h pour finalisation propre."
+      },
+      "en": {
+        "name": "sum_s_ge_length_plus_num_nonincrease",
+        "why": "Cycle 4 (2026-04-29): 6 ChatGPT lemmas (sections 3.1-3.6) DIAGNOSED and PATCHED for Mathlib v4.27 (5/6 high-confidence corrections). Complete CGS-7 sketch provided: s_t = 1 + (s_t - 1) decomposition, filter_card for non-decreasing steps, drop_forces_s_ge_two for those steps. First-try auto-compilation probability: 50-70%. Remaining effort: 3-4h for clean finalization."
+      },
+      "region": "I",
+      "status": "partiel",
+      "test4": "4/4 ✓",
+      "lean": "(sorry → patché)",
+      "leanFile": "tests_math/lean/ChatGPTLemmas_test.lean"
+    }
   ],
   "axiomes": [
-    {"id": "A", "fr": {"name": "BakerSeparation", "desc": "(2^s − 3^k)·k^6 ≥ 3^k effective (plus stricte que publié)", "limit": "Désaxiomatisation bloquée par δ8 lemma + δ10 (Phase 64) prouve qu'aucune source publiée ne suffit"}, "en": {"name": "BakerSeparation", "desc": "(2^s − 3^k)·k^6 ≥ 3^k effective (stricter than published)", "limit": "Deaxiomatization blocked by δ8 lemma + δ10 (Phase 64) proves no published source suffices"}, "ref": "Effective bound — see mea culpa #28 + δ10 cartographic"},
-    {"id": "B", "fr": {"name": "BarinaVerification", "desc": "Tous n < 2^71 atteignent 1", "limit": "Computationnel reproductible — δ10 prouve qu'aucune borne publiée ne peut remplacer cette vérification"}, "en": {"name": "BarinaVerification", "desc": "All n < 2^71 reach 1", "limit": "Reproducibly computational — δ10 proves no published bound can replace this verification"}, "ref": "Barina 2025, J. Supercomp. 81, 810"},
-    {"id": "C", "fr": {"name": "DerivedLargeKBound", "desc": "Cycles ont m ≤ 91 minima locaux", "limit": "Conditional sur BakerSeparation effective"}, "en": {"name": "DerivedLargeKBound", "desc": "Cycles have m ≤ 91 local minima", "limit": "Conditional on BakerSeparation effective"}, "ref": "Hercher 2023, J. Integer Seq. 26.3.5"}
+    {
+      "id": "A",
+      "fr": {
+        "name": "BakerSeparation",
+        "desc": "(2^s − 3^k)·k^6 ≥ 3^k effective (plus stricte que publié)",
+        "limit": "Désaxiomatisation bloquée par δ8 lemma + δ10 (Phase 64) prouve qu'aucune source publiée ne suffit"
+      },
+      "en": {
+        "name": "BakerSeparation",
+        "desc": "(2^s − 3^k)·k^6 ≥ 3^k effective (stricter than published)",
+        "limit": "Deaxiomatization blocked by δ8 lemma + δ10 (Phase 64) proves no published source suffices"
+      },
+      "ref": "Effective bound — see mea culpa #28 + δ10 cartographic"
+    },
+    {
+      "id": "B",
+      "fr": {
+        "name": "BarinaVerification",
+        "desc": "Tous n < 2^71 atteignent 1",
+        "limit": "Computationnel reproductible — δ10 prouve qu'aucune borne publiée ne peut remplacer cette vérification"
+      },
+      "en": {
+        "name": "BarinaVerification",
+        "desc": "All n < 2^71 reach 1",
+        "limit": "Reproducibly computational — δ10 proves no published bound can replace this verification"
+      },
+      "ref": "Barina 2025, J. Supercomp. 81, 810"
+    },
+    {
+      "id": "C",
+      "fr": {
+        "name": "DerivedLargeKBound",
+        "desc": "Cycles ont m ≤ 91 minima locaux",
+        "limit": "Conditional sur BakerSeparation effective"
+      },
+      "en": {
+        "name": "DerivedLargeKBound",
+        "desc": "Cycles have m ≤ 91 local minima",
+        "limit": "Conditional on BakerSeparation effective"
+      },
+      "ref": "Hercher 2023, J. Integer Seq. 26.3.5"
+    }
   ],
   "tests": [
-    {"id": "REQ-MATH-001", "fr": {"title": "Convention cycle trivial (S, k)", "result": "Cycle trivial 1→4→2→1 a (S=2, k=1) = (p_1, q_1)"}, "en": {"title": "Trivial cycle convention (S, k)", "result": "Trivial cycle 1→4→2→1 has (S=2, k=1) = (p_1, q_1)"}, "exit": 0, "file": "tests_math/test_REQ-MATH-001_cycle_trivial_convention.py"},
-    {"id": "REQ-MATH-003", "fr": {"title": "Wu vs Salikhov k_max", "result": "Wu k_max=3732, Salikhov k_max=3693, Baker k_max=1322 vérifiés"}, "en": {"title": "Wu vs Salikhov k_max", "result": "Wu k_max=3732, Salikhov k_max=3693, Baker k_max=1322 verified"}, "exit": 0, "file": "tests_math/test_REQ-MATH-003_wu_salikhov_kmax.py"},
-    {"id": "REQ-MATH-004", "fr": {"title": "Gap résiduel exact", "result": "Gap = 7.566 ordres de grandeur (≈ 1.375 × 10^11 valeurs)"}, "en": {"title": "Exact residual gap", "result": "Gap = 7.566 orders of magnitude (≈ 1.375 × 10^11 values)"}, "exit": 0, "file": "tests_math/test_REQ-MATH-004_gap_residuel.py"},
-    {"id": "REQ-MATH-005", "fr": {"title": "Formule log|ρ| holomorphe", "result": "log|ρ| = -Λ avec convention Lagarias VRAI — mea culpa #20 nuancé"}, "en": {"title": "log|ρ| holomorphic formula", "result": "log|ρ| = -Λ with Lagarias convention TRUE — mea culpa #20 nuanced"}, "exit": 0, "file": "tests_math/test_REQ-MATH-005_formule_multiplicateur_holomorphe.py"},
-    {"id": "REQ-MATH-006", "fr": {"title": "Vérification refs vs references.bib", "result": "3 références inventées confirmées (Rozier 2023, Berstel-Mignotte 1976, Bell-Burris-Hanrot-Sands 2013)"}, "en": {"title": "Refs verification vs references.bib", "result": "3 invented references confirmed (Rozier 2023, Berstel-Mignotte 1976, Bell-Burris-Hanrot-Sands 2013)"}, "exit": 0, "file": "(grep bash inline)"},
-    {"id": "REQ-MATH-007", "fr": {"title": "Compilation Lean lemmes ChatGPT", "result": "Squelettes corrects, 6 erreurs API Mathlib v4.27 à ajuster"}, "en": {"title": "ChatGPT Lean lemmas compilation", "result": "Skeletons correct, 6 Mathlib v4.27 API errors to adjust"}, "exit": "warning", "file": "tests_math/lean/ChatGPTLemmas_test.lean"}
+    {
+      "id": "REQ-MATH-001",
+      "fr": {
+        "title": "Convention cycle trivial (S, k)",
+        "result": "Cycle trivial 1→4→2→1 a (S=2, k=1) = (p_1, q_1)"
+      },
+      "en": {
+        "title": "Trivial cycle convention (S, k)",
+        "result": "Trivial cycle 1→4→2→1 has (S=2, k=1) = (p_1, q_1)"
+      },
+      "exit": 0,
+      "file": "tests_math/test_REQ-MATH-001_cycle_trivial_convention.py"
+    },
+    {
+      "id": "REQ-MATH-003",
+      "fr": {
+        "title": "Wu vs Salikhov k_max",
+        "result": "Wu k_max=3732, Salikhov k_max=3693, Baker k_max=1322 vérifiés"
+      },
+      "en": {
+        "title": "Wu vs Salikhov k_max",
+        "result": "Wu k_max=3732, Salikhov k_max=3693, Baker k_max=1322 verified"
+      },
+      "exit": 0,
+      "file": "tests_math/test_REQ-MATH-003_wu_salikhov_kmax.py"
+    },
+    {
+      "id": "REQ-MATH-004",
+      "fr": {
+        "title": "Gap résiduel exact",
+        "result": "Gap = 7.566 ordres de grandeur (≈ 1.375 × 10^11 valeurs)"
+      },
+      "en": {
+        "title": "Exact residual gap",
+        "result": "Gap = 7.566 orders of magnitude (≈ 1.375 × 10^11 values)"
+      },
+      "exit": 0,
+      "file": "tests_math/test_REQ-MATH-004_gap_residuel.py"
+    },
+    {
+      "id": "REQ-MATH-005",
+      "fr": {
+        "title": "Formule log|ρ| holomorphe",
+        "result": "log|ρ| = -Λ avec convention Lagarias VRAI — mea culpa #20 nuancé"
+      },
+      "en": {
+        "title": "log|ρ| holomorphic formula",
+        "result": "log|ρ| = -Λ with Lagarias convention TRUE — mea culpa #20 nuanced"
+      },
+      "exit": 0,
+      "file": "tests_math/test_REQ-MATH-005_formule_multiplicateur_holomorphe.py"
+    },
+    {
+      "id": "REQ-MATH-006",
+      "fr": {
+        "title": "Vérification refs vs references.bib",
+        "result": "3 références inventées confirmées (Rozier 2023, Berstel-Mignotte 1976, Bell-Burris-Hanrot-Sands 2013)"
+      },
+      "en": {
+        "title": "Refs verification vs references.bib",
+        "result": "3 invented references confirmed (Rozier 2023, Berstel-Mignotte 1976, Bell-Burris-Hanrot-Sands 2013)"
+      },
+      "exit": 0,
+      "file": "(grep bash inline)"
+    },
+    {
+      "id": "REQ-MATH-007",
+      "fr": {
+        "title": "Compilation Lean lemmes ChatGPT",
+        "result": "Squelettes corrects, 6 erreurs API Mathlib v4.27 à ajuster"
+      },
+      "en": {
+        "title": "ChatGPT Lean lemmas compilation",
+        "result": "Skeletons correct, 6 Mathlib v4.27 API errors to adjust"
+      },
+      "exit": "warning",
+      "file": "tests_math/lean/ChatGPTLemmas_test.lean"
+    }
   ],
   "hypotheses_evolution": {
-    "labels_fr": ["Cycle 0 (initial)", "Cycle 1 (post-explorations)", "Cycle 2 (initial)", "Cycle 2 (post-Red Team)"],
-    "labels_en": ["Cycle 0 (initial)", "Cycle 1 (post-explorations)", "Cycle 2 (initial)", "Cycle 2 (post-Red Team)"],
-    "A": [45, 30, 22, 5],
-    "A_prime": [null, null, null, 10],
-    "B": [15, 20, 10, 8],
-    "C": [40, 50, 68, 78]
+    "labels_fr": [
+      "Cycle 0 (initial)",
+      "Cycle 1 (post-explorations)",
+      "Cycle 2 (initial)",
+      "Cycle 2 (post-Red Team)"
+    ],
+    "labels_en": [
+      "Cycle 0 (initial)",
+      "Cycle 1 (post-explorations)",
+      "Cycle 2 (initial)",
+      "Cycle 2 (post-Red Team)"
+    ],
+    "A": [
+      45,
+      30,
+      22,
+      5
+    ],
+    "A_prime": [
+      null,
+      null,
+      null,
+      10
+    ],
+    "B": [
+      15,
+      20,
+      10,
+      8
+    ],
+    "C": [
+      40,
+      50,
+      68,
+      78
+    ]
   }
 }
