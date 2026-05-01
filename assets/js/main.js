@@ -240,12 +240,16 @@
   // ========== GITHUB URL ROUTING ==========
   // main = JAR paper (Phase12-63, paper/, reproduce.sh, expected_axioms.md)
   // arsenal-postjar = extensions R34-R96 (PostJAR/, tests_math/)
+  // study/delta10-... = Phase64 cartographic impossibility (δ10 trilogy)
   const GH_REPO = 'https://github.com/ericmerle3789/collatz-conditional-cycles/blob/';
 
   function ghURL(filePath) {
     if (!filePath) return null;
     if (filePath.startsWith('ProjetCollatz/PostJAR/') || filePath.startsWith('tests_math/')) {
       return GH_REPO + 'arsenal-postjar/' + filePath;
+    }
+    if (filePath.startsWith('ProjetCollatz/Phase64')) {
+      return GH_REPO + 'study/delta10-barina-replacement-impossibility/' + filePath;
     }
     return GH_REPO + 'main/' + filePath;
   }

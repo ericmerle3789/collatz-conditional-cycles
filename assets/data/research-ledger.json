@@ -399,8 +399,7 @@
       },
       "artefacts": [
         {"label": "GitHub commit (Research Ledger initial)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/f5ff864", "kind": "commit"},
-        {"label": "GitHub tag", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/site-research-ledger-2026-04-30", "kind": "tag"},
-        {"label": "Branch feat/site-research-ledger", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/tree/feat/site-research-ledger", "kind": "branch"}
+        {"label": "GitHub tag", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/site-research-ledger-2026-04-30", "kind": "tag"}
       ]
     }
 
