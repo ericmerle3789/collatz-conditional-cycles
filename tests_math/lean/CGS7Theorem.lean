@@ -28,14 +28,17 @@ GARDE-FOUS APPLIQUÉS (Eric directives 021 A→B) :
 
 import Mathlib
 
--- Patch import Phase 7 (recommandation convergente ChatGPT v2 + Session B v1) :
--- `ProjetCollatz.PostJAR.ChatGPTLemmas` est défini dans `tests_math/lean/ChatGPTLemmas_test.lean`
--- (présent sur cette branche, héritée de `arsenal-postjar` commit 9c24a438).
--- Le namespace y contient `drop_forces_s_ge_two` (l. 139) et
--- `abstract_decomposition_totalVal_ge_totalLen_plus_blocks` (l. 234).
--- Ce fichier réside dans le même dossier `tests_math/lean/` donc Lake résout
--- le module `ChatGPTLemmas_test` directement par convention de path.
-import «ChatGPTLemmas_test»
+-- Patch import Phase 8 build :
+-- Au lieu d'importer le fichier `ChatGPTLemmas_test.lean` complet (qui contient
+-- 9 lemmes auxiliaires, dont plusieurs avec des API Mathlib v4.x renommées en
+-- v4.27), on importe `CGS7Dependencies` qui extrait UNIQUEMENT les 2 lemmes
+-- nécessaires (`one_step_strict_increase_if_s_eq_one` + `drop_forces_s_ge_two`)
+-- avec leurs preuves patchées pour Mathlib v4.27.
+--
+-- Cohérent avec le choix Option C-bis 4/4 IA : on n'utilise pas le lemme
+-- abstrait `abstract_decomposition_totalVal_ge_totalLen_plus_blocks` (l. 234),
+-- on fait une décomposition directe via `1 + indicatrice`.
+import CGS7Dependencies
 -- Pour la migration vers le repo conditional-cycles, ce fichier doit être placé
 -- dans `tests_math/lean/CGS7Theorem.lean` avec la même branche d'origine.
 
@@ -61,23 +64,27 @@ theorem cgs7_algebraic_pure
     rw [Finset.mem_range] at ht
     have h1 : 1 ≤ s t := hs t ht
     by_cases h2 : 2 ≤ s t
-    · simp [h2]; exact h2
-    · simp [h2]; exact h1
+    · -- Patch build P1bis : `simp [h2]` ferme déjà le but (h2 est l'hypothèse)
+      simp [h2]
+    · simp [h2]
+      exact h1
   have hsum := Finset.sum_le_sum hpoint
   -- Calcul : ∑ (1 + ind) = k + filter.card
-  -- Patch P1 (ChatGPT issue Mathlib API instable) : remplace
-  -- `Finset.sum_ite_eq_sum_filter, Finset.sum_const, Nat.smul_one_eq_cast`
-  -- par `Finset.sum_filter` (à l'envers) + `Finset.sum_const` qui sont stables.
+  -- Patch P1 + P5 (ChatGPT/Gemini convergent) : remplace `simp`-en-boucle par
+  -- `Finset.sum_filter` + `Finset.sum_const` ciblé sans set complet de simp.
   have hcalc :
       (∑ t ∈ Finset.range k, (1 + (if 2 ≤ s t then (1 : ℕ) else 0)))
         = k + ((Finset.range k).filter (fun t => 2 ≤ s t)).card := by
     rw [Finset.sum_add_distrib]
     congr 1
-    · simp [Finset.sum_const, Finset.card_range]
-    · -- ∑ t ∈ range k, (if 2≤s t then 1 else 0) = ((range k).filter (2≤s ·)).card
-      -- via Finset.sum_filter (lemme standard, stable Mathlib v4.27)
-      rw [← Finset.sum_filter]
-      simp [Finset.sum_const, Finset.card_eq_sum_ones]
+    · -- ∑ 1 = k via card_range
+      rw [Finset.sum_const, Finset.card_range]
+      simp
+    · -- ∑ t ∈ range k, (if 2≤s t then 1 else 0) = (filter (2≤s ·)).card
+      -- Patch P5 (ChatGPT) : éviter `simp [..., card_eq_sum_ones]` qui boucle
+      -- avec `sum_const`. Utilise rewrite ciblé et égalité directe.
+      rw [← Finset.sum_filter, Finset.sum_const]
+      simp
   linarith [hsum, hcalc.symm.le, hcalc.le]
 
 /-! ## Lemme intermédiaire 2 : transfert dynamique
@@ -94,7 +101,7 @@ theorem cgs7_dynamic_transfer
   intro t ht hdrop
   -- Application directe du lemme `drop_forces_s_ge_two`
   -- avec y = x_{t+1}, x = x_t (au sens du lemme).
-  exact ProjetCollatz.PostJAR.ChatGPTLemmas.drop_forces_s_ge_two
+  exact ProjetCollatz.PostJAR.CGS7Dependencies.drop_forces_s_ge_two
     (x t) (x ((t + 1) % k)) (s t)
     (hx t ht) (hs t ht) (hcycle t ht) hdrop
 
@@ -166,7 +173,7 @@ variable (hraise : x t ≤ x ((t + 1) % k))  -- polarité INVERSÉE (montée)
   `#check_failure` réussit ssi l'expression échoue à typecheck.
 -/
 #check_failure
-  ProjetCollatz.PostJAR.ChatGPTLemmas.drop_forces_s_ge_two
+  ProjetCollatz.PostJAR.CGS7Dependencies.drop_forces_s_ge_two
     (x t) (x ((t + 1) % k)) (s t)
     (hx t ht) (hs t ht) (hcycle t ht) hraise
 

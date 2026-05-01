@@ -5,6 +5,15 @@ defaultTargets = ["ProjetCollatz", "projetcollatz"]
 [[lean_lib]]
 name = "ProjetCollatz"
 
+# Phase 7 (CGS-7) : lib séparée pour les fichiers tests Lean dans `tests_math/lean/`.
+# Permet à Lake de résoudre les imports entre `ChatGPTLemmas_test` et `CGS7Theorem`
+# sans polluer la lib principale `ProjetCollatz` (paper JAR en review).
+# Source : findings/AUDIT_CHECKLISTS_CGS7.md A2 + ChatGPT v2 issue intégration.
+[[lean_lib]]
+name = "TestsMath"
+srcDir = "tests_math/lean"
+roots = ["TestsMath", "CGS7Dependencies", "CGS7Theorem"]
+
 [[lean_exe]]
 name = "projetcollatz"
 root = "Main"

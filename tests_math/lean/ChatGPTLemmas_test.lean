@@ -133,7 +133,10 @@ theorem one_step_strict_increase_if_s_eq_one
   have hnum : 2 * (x + 1) ≤ 3 * x + 1 := by
     nlinarith
   have hdiv : x + 1 ≤ (3 * x + 1) / 2 := by
-    exact (Nat.le_div_iff_mul_le (by norm_num : 0 < 2)).2 hnum
+    -- Patch Mathlib v4.27 : (Nat.le_div_iff_mul_le).2 attend `(x+1) * 2 ≤ ...`
+    -- alors que `hnum : 2 * (x+1) ≤ ...`. On commute via Nat.mul_comm.
+    have hnum' : (x + 1) * 2 ≤ 3 * x + 1 := by linarith
+    exact (Nat.le_div_iff_mul_le (by norm_num : 0 < 2)).2 hnum'
   omega
 
 theorem drop_forces_s_ge_two
@@ -196,7 +199,9 @@ theorem block_sum_s_ge_length_plus_one
     · exact ⟨t, ht_mem, hs2⟩
 
   have hcard : (Finset.Ico i j).card = j - i := by
-    simp [Finset.card_Ico]
+    -- Patch Mathlib v4.27 : `Finset.card_Ico` renommé en `Nat.card_Ico` ou
+    -- accessible directement via `simp` standard sans nom explicite.
+    simp [Nat.card_Ico]
 
   simpa [hcard] using hsum
 
