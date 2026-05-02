@@ -540,17 +540,18 @@
       "id": "CGS-7",
       "fr": {
         "name": "sum_s_ge_length_plus_num_nonincrease",
-        "why": "Cycle 4 (2026-04-29) : 6 lemmes ChatGPT (sections 3.1-3.6) DIAGNOSTIQUÉS et PATCHÉS pour Mathlib v4.27 (5/6 corrections haute confiance). Esquisse complète CGS-7 fournie : décomposition s_t = 1 + (s_t - 1), filter_card pour pas non-décroissants, drop_forces_s_ge_two pour ces pas. Probabilité auto-compilation premier essai : 50-70%. Effort restant : 3-4h pour finalisation propre."
+        "why": "Phase 3 (2026-05-02) : audit indépendant 4 IA (Session A + Session B + Gemini Pro 3.1 + ChatGPT) sur l'esquisse NEW3 (2026-04-29) → convergence forte sur faille (polarité inversée drop_forces_s_ge_two, ambiguïté D = #{s_t≥2} algébrique vs descentes dynamiques). Reformulation 4 IA convergente : N = #{t<k | x_{t+1}≤x_t}. Démonstration Lean 4 / Mathlib v4.27 en 2 lemmes (cgs7_algebraic_pure + cgs7_dynamic_transfer) sur branche dérivée study/cgs-7-instantiation, lake build PASS (7888 jobs, 0 sorry), profil axiomes [propext, Classical.choice, Quot.sound] (kernel-3 standard). Test négatif Red Team (#check_failure) opérationnel au build. Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 verifications post-build. Branche dédiée hors paper JAR."
       },
       "en": {
         "name": "sum_s_ge_length_plus_num_nonincrease",
-        "why": "Cycle 4 (2026-04-29): 6 ChatGPT lemmas (sections 3.1-3.6) DIAGNOSED and PATCHED for Mathlib v4.27 (5/6 high-confidence corrections). Complete CGS-7 sketch provided: s_t = 1 + (s_t - 1) decomposition, filter_card for non-decreasing steps, drop_forces_s_ge_two for those steps. First-try auto-compilation probability: 50-70%. Remaining effort: 3-4h for clean finalization."
+        "why": "Phase 3 (2026-05-02): independent 4-AI audit (Session A + Session B + Gemini Pro 3.1 + ChatGPT) on NEW3 sketch (2026-04-29) → strong convergence on flaw (inverted polarity in drop_forces_s_ge_two, ambiguity D = #{s_t≥2} algebraic vs dynamic descents). Convergent 4-AI reformulation: N = #{t<k | x_{t+1}≤x_t}. Lean 4 / Mathlib v4.27 demonstration in 2 lemmas (cgs7_algebraic_pure + cgs7_dynamic_transfer) on derived branch study/cgs-7-instantiation, lake build PASS (7888 jobs, 0 sorry), axiom profile [propext, Classical.choice, Quot.sound] (kernel-3 standard). Negative Red Team test (#check_failure) operational at build. Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 post-build verifications. Dedicated branch separate from JAR paper."
       },
       "region": "I",
-      "status": "partiel",
+      "status": "prouve",
       "test4": "4/4 ✓",
-      "lean": "(sorry → patché)",
-      "leanFile": "tests_math/lean/ChatGPTLemmas_test.lean"
+      "lean": "sum_s_ge_length_plus_num_nonincrease",
+      "leanFile": "tests_math/lean/CGS7Theorem.lean",
+      "branch": "study/cgs-7-instantiation"
     }
   ],
   "axiomes": [

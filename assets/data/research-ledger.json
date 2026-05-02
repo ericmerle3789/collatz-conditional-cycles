@@ -1,11 +1,51 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-04-30T16:15:00Z",
-  "audit_status": "Three-Key validated 2026-04-30 (OLD3 + NEW4 + ChatGPT 5.5 Q14+Q15)",
+  "generated": "2026-05-02T08:25:00Z",
+  "audit_status": "Four-AI validated 2026-05-02 (Session A + Session B + Gemini Pro 3.1 + ChatGPT, 4/4 effective on CGS-7 v3 post-build)",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "cgs7-instantiation-pushed",
+      "type": "lean",
+      "subtype": "instantiation-theorem",
+      "date": "2026-05-02",
+      "datetime": "2026-05-02T08:25:00+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "lean_check",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-05-02",
+      "title": {
+        "fr": "CGS-7 — sum_s_ge_length_plus_num_nonincrease (Phase 3 instanciation) buildé",
+        "en": "CGS-7 — sum_s_ge_length_plus_num_nonincrease (Phase 3 instantiation) built"
+      },
+      "summary": {
+        "fr": "Théorème CGS-7 (cycle Collatz hypothétique : S = ∑_{t<k} s_t ≥ k + N où N = #{t<k | x_{t+1} ≤ x_t}) démontré en Lean 4 / Mathlib v4.27. Décomposition en 2 lemmes : cgs7_algebraic_pure (algébrique pur) + cgs7_dynamic_transfer (transfert dynamique via drop_forces_s_ge_two). Audit indépendant 4 IA convergent sur faille esquisse NEW3 (polarité inversée) + reformulation. lake build TestsMath PASS (7888 jobs, 31s, 0 sorry, kernel-3 axioms : [propext, Classical.choice, Quot.sound]). Test négatif Red Team #check_failure opérationnel au build (bloque polarité inversée). Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 vérifications post-build.",
+        "en": "Theorem CGS-7 (hypothetical Collatz cycle: S = ∑_{t<k} s_t ≥ k + N where N = #{t<k | x_{t+1} ≤ x_t}) proved in Lean 4 / Mathlib v4.27. Decomposition into 2 lemmas: cgs7_algebraic_pure (pure algebraic) + cgs7_dynamic_transfer (dynamic transfer via drop_forces_s_ge_two). Independent 4-AI audit converged on NEW3 sketch flaw (inverted polarity) + reformulation. lake build TestsMath PASS (7888 jobs, 31s, 0 sorry, kernel-3 axioms: [propext, Classical.choice, Quot.sound]). Negative Red Team test #check_failure operational at build (blocks inverted polarity). Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 post-build verifications."
+      },
+      "artefacts": [
+        {"label": "GitHub commit (build PASS)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/2ea578c", "kind": "commit"},
+        {"label": "GitHub commit (anti-hallucination restoration)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/e655526", "kind": "commit"},
+        {"label": "Branch study/cgs-7-instantiation", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/cgs-7-instantiation", "kind": "branch"},
+        {"label": "CGS7Theorem.lean", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/cgs-7-instantiation/tests_math/lean/CGS7Theorem.lean", "kind": "lean-file"},
+        {"label": "CGS7Dependencies.lean", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/cgs-7-instantiation/tests_math/lean/CGS7Dependencies.lean", "kind": "lean-file"}
+      ],
+      "lean": {
+        "checked": true,
+        "files": ["tests_math/lean/CGS7Theorem.lean", "tests_math/lean/CGS7Dependencies.lean"],
+        "axiom_profile": ["propext", "Classical.choice", "Quot.sound"]
+      },
+      "related": ["CGS-7", "phase3-cgs7-finalisation", "four-ai-audit-2026-05-02"],
+      "provenance": {
+        "from_piste": "CGS-7 (pistes.json catalogue)",
+        "promoted_at": "2026-05-02T08:25:00Z"
+      }
+    },
 
     {
       "id": "delta10-pushed",

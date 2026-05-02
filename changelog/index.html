@@ -133,6 +133,31 @@
 <section>
   <article class="changelog-entry">
     <header>
+      <h2><span class="version-tag">v0.7.0</span> <span lang="fr">CGS-7 finalisé — audit indépendant 4 IA + lake build PASS</span><span lang="en">CGS-7 finalized — independent 4-AI audit + lake build PASS</span></h2>
+      <time datetime="2026-05-02">2026-05-02 (autonomous 4-AI session, ~10h cumulés sur 2 jours)</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>CGS-7 — sum_s_ge_length_plus_num_nonincrease</strong> : théorème Lean 4 / Mathlib v4.27 démontré formellement. <code>lake build TestsMath</code> PASS (7888 jobs, 31s sur Mac M1), 0 sorry, profil axiomes <code>[propext, Classical.choice, Quot.sound]</code> (kernel-3 standard). Branche <code>study/cgs-7-instantiation</code> dérivée d'<code>arsenal-postjar</code>, paper JAR (<code>main</code>) intouché.</li>
+      <li><strong>Énoncé final (reformulation 4 IA convergente)</strong> : pour cycle Collatz hypothétique avec x_t > 1, s_t ≥ 1, x_{t+1} = (3·x_t+1)/2^{s_t}, soit N = #{t < k | x_{t+1} ≤ x_t}. Alors S = ∑_{t<k} s_t ≥ k + N. Décomposition en 2 lemmes : <code>cgs7_algebraic_pure</code> (algébrique pur) + <code>cgs7_dynamic_transfer</code> (transfert dynamique via <code>drop_forces_s_ge_two</code>).</li>
+      <li><strong>Audit indépendant 4 IA convergent</strong> : Session A (Claude Opus 4.7) + Session B (Claude Opus 4.7 indépendante) + Gemini Pro 3.1 + ChatGPT (thinking étendu/Instant). Convergence 4/4 sur faille esquisse NEW3 originale (polarité inversée drop_forces_s_ge_two + ambiguïté sémantique D = #{s_t≥2} algébrique vs descentes dynamiques) → reformulation collective + démonstration validée.</li>
+      <li><strong>Test négatif Red Team exécutable</strong> : <code>#check_failure</code> dans section <code>RedTeamNegativeTest</code> bloque au build toute tentative de polarité inversée. Garde-fou anti-régression actif (Lean affiche "info: Application type mismatch" sur la version inversée).</li>
+      <li><strong>Audits 3 protocoles</strong> : RED TEAM 12/12 PASS, NASA 14/15 PASS + 1 note v4.28, ARES 8/10 PASS direct + 2 notes optimisation. Vérification anti-hallucination cross-vérifiée ligne à ligne (CGS7Dependencies = ChatGPTLemmas_test strict modulo patches Mathlib v4.27 documentés).</li>
+      <li><strong>Pivot Option C-bis</strong> : démonstration via instanciation locale (décomposition <code>1 + indicatrice</code> sur Finset) plutôt que via le lemme abstrait <code>abstract_decomposition_totalVal_ge_totalLen_plus_blocks</code> (l. 234) — choix validé 4/4 IA pour minimiser la surface de dépendance.</li>
+      <li><em>Disclosure : ce théorème est CONDITIONNEL — il vaut sous l'hypothèse qu'un cycle Collatz non trivial existe. C'est un lemme de la chaîne <code>no_nontrivial_cycle_phase59</code> du paper JAR, pas un résultat autonome.</em></li>
+    </ul>
+    <ul lang="en">
+      <li><strong>CGS-7 — sum_s_ge_length_plus_num_nonincrease</strong>: Lean 4 / Mathlib v4.27 theorem formally proved. <code>lake build TestsMath</code> PASS (7888 jobs, 31s on Mac M1), 0 sorry, axiom profile <code>[propext, Classical.choice, Quot.sound]</code> (kernel-3 standard). Branch <code>study/cgs-7-instantiation</code> derived from <code>arsenal-postjar</code>, JAR paper (<code>main</code>) untouched.</li>
+      <li><strong>Final statement (4-AI convergent reformulation)</strong>: for hypothetical Collatz cycle with x_t > 1, s_t ≥ 1, x_{t+1} = (3·x_t+1)/2^{s_t}, let N = #{t < k | x_{t+1} ≤ x_t}. Then S = ∑_{t<k} s_t ≥ k + N. Two-lemma decomposition: <code>cgs7_algebraic_pure</code> (pure algebraic) + <code>cgs7_dynamic_transfer</code> (dynamic transfer via <code>drop_forces_s_ge_two</code>).</li>
+      <li><strong>Independent 4-AI audit</strong>: Session A (Claude Opus 4.7) + Session B (Claude Opus 4.7 independent) + Gemini Pro 3.1 + ChatGPT (extended thinking/Instant). 4/4 convergence on original NEW3 sketch flaw (inverted polarity in drop_forces_s_ge_two + semantic ambiguity D = #{s_t≥2} algebraic vs dynamic descents) → collective reformulation + validated proof.</li>
+      <li><strong>Executable negative Red Team test</strong>: <code>#check_failure</code> in <code>RedTeamNegativeTest</code> section blocks at build any attempt at inverted polarity. Active anti-regression safeguard (Lean displays "info: Application type mismatch" on inverted version).</li>
+      <li><strong>3-protocol audits</strong>: RED TEAM 12/12 PASS, NASA 14/15 PASS + 1 v4.28 note, ARES 8/10 direct PASS + 2 optimization notes. Anti-hallucination cross-verified line-by-line (CGS7Dependencies = ChatGPTLemmas_test strict modulo documented Mathlib v4.27 patches).</li>
+      <li><strong>Option C-bis pivot</strong>: proof via local instantiation (<code>1 + indicator</code> Finset decomposition) rather than via the abstract lemma <code>abstract_decomposition_totalVal_ge_totalLen_plus_blocks</code> (l. 234) — choice validated 4/4 to minimize dependency surface.</li>
+      <li><em>Disclosure: this theorem is CONDITIONAL — it holds under the hypothesis that a non-trivial Collatz cycle exists. It is a lemma in the <code>no_nontrivial_cycle_phase59</code> chain of the JAR paper, not a standalone result.</em></li>
+    </ul>
+  </article>
+
+  <article class="changelog-entry">
+    <header>
       <h2><span class="version-tag">v0.6.0</span> <span lang="fr">δ10 cartographique + Research Ledger + trilogie d'impossibilité</span><span lang="en">δ10 cartographic + Research Ledger + impossibility trilogy</span></h2>
       <time datetime="2026-04-30">2026-04-30 (autonomous tri-AI session, ~6h)</time>
     </header>
