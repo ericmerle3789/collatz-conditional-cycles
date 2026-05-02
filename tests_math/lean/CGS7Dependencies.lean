@@ -38,9 +38,15 @@ theorem one_step_strict_increase_if_s_eq_one
     (heq : y = (3 * x + 1) / 2) :
     x < y := by
   subst y
-  have hnum : (x + 1) * 2 ≤ 3 * x + 1 := by linarith
-  have hdiv : x + 1 ≤ (3 * x + 1) / 2 :=
-    (Nat.le_div_iff_mul_le (by norm_num : 0 < 2)).2 hnum
+  -- Preuve identique à ChatGPTLemmas_test.one_step_strict_increase_if_s_eq_one
+  -- (audit Phase 1 + patch Mathlib v4.27 commutativité, sans simplification).
+  have hnum : 2 * (x + 1) ≤ 3 * x + 1 := by
+    nlinarith
+  have hdiv : x + 1 ≤ (3 * x + 1) / 2 := by
+    -- Patch Mathlib v4.27 : (Nat.le_div_iff_mul_le).2 attend `(x+1) * 2 ≤ ...`
+    -- alors que `hnum : 2 * (x+1) ≤ ...`. On commute via linarith.
+    have hnum' : (x + 1) * 2 ≤ 3 * x + 1 := by linarith
+    exact (Nat.le_div_iff_mul_le (by norm_num : 0 < 2)).2 hnum'
   omega
 
 /-! ## Lemme 2 : descente forcée → s ≥ 2
