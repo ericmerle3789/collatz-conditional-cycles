@@ -241,10 +241,15 @@
   // main = JAR paper (Phase12-63, paper/, reproduce.sh, expected_axioms.md)
   // arsenal-postjar = extensions R34-R96 (PostJAR/, tests_math/ general)
   // study/delta10-... = Phase64 cartographic impossibility + delta10-specific tests
+  // study/cgs-7-instantiation = CGS-7 theorem + CGS7Dependencies (Phase 3 finalisation)
   const GH_REPO = 'https://github.com/ericmerle3789/collatz-conditional-cycles/blob/';
 
   function ghURL(filePath) {
     if (!filePath) return null;
+    // CGS-7 instantiation files (Phase 3 finalisation, branch dérivée arsenal-postjar)
+    if (filePath.includes('CGS7Theorem') || filePath.includes('CGS7Dependencies')) {
+      return GH_REPO + 'study/cgs-7-instantiation/' + filePath;
+    }
     // delta10-specific files (Phase64 theorem + REQ-MATH-012 numerical test)
     if (filePath.includes('Phase64') || filePath.includes('delta10')) {
       return GH_REPO + 'study/delta10-barina-replacement-impossibility/' + filePath;
