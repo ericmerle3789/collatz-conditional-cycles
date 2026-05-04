@@ -1457,7 +1457,7 @@ ER  - `;
     const target = document.querySelector(window.location.hash);
     if (target?.tagName === 'DETAILS') {
       target.setAttribute('open', '');
-      target.scrollIntoView({behavior: 'smooth', block: 'start'});
+      target.scrollIntoView({behavior: 'instant', block: 'start'});
     }
   }
   window.addEventListener('hashchange', scrollToHashTarget);
