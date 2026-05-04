@@ -106,7 +106,7 @@
       },
       "summary": {
         "fr": "AI-assisted audit Three-Key validated : axiome BakerSeparation k^6 plus strict que littérature publiée (Salikhov 2007 / Wu 2003 / Simons-de Weger 2005). Doc-comment Lean radical transparency note ajoutée. Mea culpa #28 publié.",
-        "en": "AI-assisted audit Three-Key validated: BakerSeparation k^6 axiom stricter than published literature. Lean radical transparency note added. Public mea culpa #28."
+        "en": "AI-assisted audit Three-Key validated: BakerSeparation k^6 axiom — working conjecture, undemonstrated strengthening of published literature (Rhin/Wu/Salikhov). Lean radical transparency note added. Public mea culpa #28."
       },
       "artefacts": [
         {"label": "GitHub commit", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/62866cd", "kind": "commit"},
