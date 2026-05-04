@@ -46,7 +46,7 @@
       "@id": "https://collatz-lab.org/lambda/",
       "headline": "Interactive visualization of the Λ_{S,k} Diophantine lock",
       "name": "Λ_{S,k} interactive explorer",
-      "description": "Interactive (S, k) plane explorer showing the three forbidden regions of any hypothetical non-trivial Collatz cycle: Barina (n < 2^71), Hercher (m ≤ 91 local minima), and BakerSeparation (effective bound, stricter than published — see mea culpa #28 + δ10 cartographic lemma).",
+      "description": "Interactive (S, k) plane explorer showing the three forbidden regions of any hypothetical non-trivial Collatz cycle: BarinaVerification (n < 2^71, reproducible computational verification, Barina 2025), DerivedLargeKBound (m ≤ 91 local minima, published conditional theorem, Hercher 2023), and BakerSeparation (working conjecture, undemonstrated strengthening of published Rhin/Wu/Salikhov bounds — see mea culpa #28 + δ10 cartographic lemma).",
       "url": "https://collatz-lab.org/lambda/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -172,10 +172,10 @@
   <h2 lang="fr">Pourquoi $\Lambda_{S,k}$ est le verrou central</h2>
   <h2 lang="en">Why $\Lambda_{S,k}$ is the central lock</h2>
   <p lang="fr">
-    Pour qu'un cycle Collatz hypothétique de longueur $k$ existe, il faut que $S \cdot \log 2 \approx k \cdot \log 3$, c'est-à-dire $\Lambda_{S,k} \approx 0$. Mais $\log_2 3$ est <strong>irrationnel</strong>, donc cette égalité ne peut être qu'approchée. <em>De combien</em> ? C'est ce que mesure une <strong>borne effective de type Baker</strong>. Notre axiome <code>BakerSeparation</code> utilise la forme $(2^s - 3^k) \cdot k^6 \geq 3^k$ comme <em>hypothèse de travail explicite</em>, plus stricte que les bornes publiées (Salikhov 2007, Wu 2003, Simons-de Weger 2005) — voir <a href="/#meaculpa">mea culpa #28</a> et le lemme <strong>δ10</strong> (Phase 64) qui démontre formellement pourquoi cette force est nécessaire.
+    Pour qu'un cycle Collatz hypothétique de longueur $k$ existe, il faut que $S \cdot \log 2 \approx k \cdot \log 3$, c'est-à-dire $\Lambda_{S,k} \approx 0$. Mais $\log_2 3$ est <strong>irrationnel</strong>, donc cette égalité ne peut être qu'approchée. <em>De combien</em> ? C'est ce que mesure une <strong>borne effective de type Baker</strong>. Notre axiome <code>BakerSeparation</code> utilise la forme $(2^s - 3^k) \cdot k^6 \geq 3^k$ comme <strong>conjecture de travail</strong> : renforcement non démontré des bornes diophantiennes publiées (Rhin 1987, Salikhov 2007, Wu 2003, Simons-de Weger 2005), pas un théorème externe — voir <a href="/#meaculpa">mea culpa #28</a> et le lemme <strong>δ10</strong> (Phase 64) qui démontre formellement pourquoi aucune borne publiée ne suffit.
   </p>
   <p lang="en">
-    For a hypothetical Collatz cycle of length $k$ to exist, we need $S \cdot \log 2 \approx k \cdot \log 3$, i.e. $\Lambda_{S,k} \approx 0$. But $\log_2 3$ is <strong>irrational</strong>, so this equality can only be approximate. <em>By how much</em>? This is what an <strong>effective Baker-type bound</strong> measures. Our <code>BakerSeparation</code> axiom uses the form $(2^s - 3^k) \cdot k^6 \geq 3^k$ as an <em>explicit working hypothesis</em>, stricter than the published bounds (Salikhov 2007, Wu 2003, Simons-de Weger 2005) — see <a href="/#meaculpa">mea culpa #28</a> and the <strong>δ10 lemma</strong> (Phase 64) which formally proves why this strength is necessary.
+    For a hypothetical Collatz cycle of length $k$ to exist, we need $S \cdot \log 2 \approx k \cdot \log 3$, i.e. $\Lambda_{S,k} \approx 0$. But $\log_2 3$ is <strong>irrational</strong>, so this equality can only be approximate. <em>By how much</em>? This is what an <strong>effective Baker-type bound</strong> measures. Our <code>BakerSeparation</code> axiom uses the form $(2^s - 3^k) \cdot k^6 \geq 3^k$ as a <strong>working hypothesis (conjecture)</strong>: undemonstrated strengthening of published Diophantine bounds (Rhin 1987, Salikhov 2007, Wu 2003, Simons-de Weger 2005), not an external theorem — see <a href="/#meaculpa">mea culpa #28</a> and the <strong>δ10 lemma</strong> (Phase 64) which formally proves why no published bound is sufficient.
   </p>
 
   <div class="card-grid">
@@ -197,8 +197,8 @@
       <div class="card-eyebrow">BakerSeparation (effective)</div>
       <h3 lang="fr">$(2^s - 3^k) \cdot k^6 \geq 3^k$</h3>
       <h3 lang="en">$(2^s - 3^k) \cdot k^6 \geq 3^k$</h3>
-      <p lang="fr">Forme effective sur $|S \log 2 - k \log 3|$ — <strong>axiome pivot</strong> (hypothèse de travail explicite, plus stricte que littérature publiée — voir <a href="/#meaculpa">#28</a> et <strong>δ10</strong>) qui ferme les grands cycles ($k > 1322$) via continued fractions.</p>
-      <p lang="en">Effective form on $|S \log 2 - k \log 3|$ — <strong>pivotal axiom</strong> (explicit working hypothesis, stricter than published literature — see <a href="/#meaculpa">#28</a> and <strong>δ10</strong>) that closes large cycles ($k > 1322$) via continued fractions.</p>
+      <p lang="fr">Forme effective sur $|S \log 2 - k \log 3|$ — <strong>axiome pivot</strong> (<em>conjecture de travail</em>, renforcement non démontré des bornes Rhin/Wu/Salikhov publiées — voir <a href="/#meaculpa">#28</a> et <strong>δ10</strong>) qui exclut les grands cycles ($k > 1322$) via continued fractions, sous condition que la conjecture tienne.</p>
+      <p lang="en">Effective form on $|S \log 2 - k \log 3|$ — <strong>pivotal axiom</strong> (working hypothesis (conjecture), undemonstrated strengthening of published Rhin/Wu/Salikhov bounds — see <a href="/#meaculpa">#28</a> and <strong>δ10</strong>) that excludes large cycles ($k > 1322$) via continued fractions, under the assumption that the conjecture holds.</p>
     </div>
   </div>
 </section>
