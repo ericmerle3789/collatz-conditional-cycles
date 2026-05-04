@@ -219,7 +219,7 @@
 </section>
 
 <section>
-  <details class="faq-item" open>
+  <details class="faq-item" id="q1" open>
     <summary><strong><span lang="fr">1. Qu'est-ce que la conjecture de Collatz / Syracuse ?</span><span lang="en">1. What is the Collatz / Syracuse conjecture?</span></strong></summary>
     <p>
       <span lang="fr">C'est un problème ouvert de théorie des nombres. Pour tout entier <code>n ≥ 1</code>, on itère la fonction <code>T(n) = n/2</code> si <code>n</code> est pair, <code>T(n) = 3n+1</code> si <code>n</code> est impair. La conjecture affirme que cette suite atteint toujours <code>1</code>. Aucun contre-exemple connu, aucune preuve générale. <a href="../syracuse/">Voir la page Syracuse pour la définition complète et les alias internationaux</a>.</span>
@@ -227,7 +227,7 @@
     </p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item" id="q2">
     <summary><strong><span lang="fr">2. La conjecture est-elle prouvée ?</span><span lang="en">2. Is the conjecture proved?</span></strong></summary>
     <p>
       <span lang="fr"><strong>Non</strong> (état 2026). Le résultat majeur récent est <strong>Tao 2019</strong> : presque toutes les orbites de Collatz atteignent presque des valeurs bornées (densité naturelle 1). Vérification computationnelle : <strong>Barina 2025</strong>, <code>n &lt; 2<sup>71</sup></code>. Aucune preuve inconditionnelle n'existe.</span>
@@ -235,7 +235,7 @@
     </p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item" id="q3">
     <summary><strong><span lang="fr">3. Y a-t-il une récompense financière ?</span><span lang="en">3. Is there a financial reward?</span></strong></summary>
     <p>
       <span lang="fr"><strong>Bryan Thwaites</strong> a offert £1000 en 1996 pour une preuve. <strong>Paul Erdős</strong> a dit "Les mathématiques ne sont pas prêtes pour ce problème" et a offert $500. Ce <strong>n'est pas</strong> un Millennium Prize Problem (Clay Institute, $1M réservés à 7 problèmes : Riemann, Yang-Mills, Navier-Stokes, etc.).</span>
@@ -243,7 +243,7 @@
     </p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item" id="q4">
     <summary><strong><span lang="fr">4. Pourquoi est-ce si difficile ?</span><span lang="en">4. Why is it so hard?</span></strong></summary>
     <p>
       <span lang="fr">L'opération <code>3n+1</code> mélange multiplication par 3 et division par 2. Aucun outil arithmétique standard (théorie des nombres analytique, dynamique ergodique, théorie diophantienne) ne capture pleinement ce mélange. Conway 1972 a montré que des généralisations naturelles sont <strong>indécidables</strong>. Citation Erdős : "Mathematics is not yet ripe for such questions."</span>
@@ -251,7 +251,7 @@
     </p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item" id="q5">
     <summary><strong><span lang="fr">5. Qu'apporte ce site (collatz-lab.org) ?</span><span lang="en">5. What does this site (collatz-lab.org) contribute?</span></strong></summary>
     <p>
       <span lang="fr">Un <strong>théorème conditionnel formalisé</strong> en Lean 4, kernel-checked (Mathlib v4.27.0) — <strong>ne prouve PAS la conjecture Collatz</strong>, mais établit la non-existence de cycles non-triviaux modulo 3 axiomes externes documentés :
@@ -262,7 +262,7 @@
     </p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item" id="q6">
     <summary><strong><span lang="fr">6. Qu'est-ce que Lean 4 ?</span><span lang="en">6. What is Lean 4?</span></strong></summary>
     <p>
       <span lang="fr">Lean 4 est un <strong>assistant de preuve formelle</strong> (proof assistant) développé à Microsoft Research. Une preuve écrite en Lean 4 et acceptée par le noyau (kernel) est mathématiquement vérifiée à un niveau de rigueur supérieur à la peer review traditionnelle. <strong>Mathlib</strong> est sa bibliothèque mathématique standard (<code>v4.27.0</code> utilisée ici).</span>
@@ -270,7 +270,7 @@
     </p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item" id="q7">
     <summary><strong><span lang="fr">7. Que veut dire "kernel-checked" ?</span><span lang="en">7. What does "kernel-checked" mean?</span></strong></summary>
     <p>
       <span lang="fr">Le <strong>noyau (kernel) Lean 4</strong> est un petit programme qui vérifie chaque pas de preuve. Si le noyau accepte, la preuve est correcte modulo la confiance qu'on accorde à ce noyau et aux <strong>3 axiomes minimaux Lean</strong> : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>. Notre théorème principal <code>no_nontrivial_cycle_phase59</code> a été kernel-checked avec ces 3 axiomes seulement.</span>
@@ -278,7 +278,7 @@
     </p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item" id="q8">
     <summary><strong><span lang="fr">8. Pourquoi parle-t-on de preuve "conditionnelle" ?</span><span lang="en">8. Why "conditional" proof?</span></strong></summary>
     <p>
       <span lang="fr">Le théorème dépend de <strong>trois hypothèses externes documentées</strong> (BakerSeparation, BarinaVerification, DerivedLargeKBound). Ce n'est donc <strong>pas une preuve inconditionnelle</strong> de Collatz/Syracuse. L'apport est de cartographier rigoureusement les obstructions structurelles qui rendent cette conditionnalité <em>nécessaire</em>, pas <em>arbitraire</em>.</span>
@@ -286,7 +286,7 @@
     </p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item" id="q9">
     <summary><strong><span lang="fr">9. Quelles sont les autres approches ?</span><span lang="en">9. What are the other approaches?</span></strong></summary>
     <p>
       <span lang="fr"><strong>Tao 2019</strong> (densité presque-1, méthodes analytiques),
@@ -306,7 +306,7 @@
     </p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item" id="q10">
     <summary><strong><span lang="fr">10. Comment puis-je contribuer ?</span><span lang="en">10. How can I contribute?</span></strong></summary>
     <p>
       <span lang="fr">Code Lean 4 et paper sont open-source : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub repository</a> (MIT pour le code, CC BY-SA 4.0 pour le site). Issues, pull requests, audits Red Team bienvenus. Le <a href="../research-ledger/">Research Ledger</a> documente publiquement audits, mea culpa, corrections.</span>
@@ -314,7 +314,7 @@
     </p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item" id="q11">
     <summary><strong><span lang="fr">11. Qui maintient ce site ?</span><span lang="en">11. Who maintains this site?</span></strong></summary>
     <p>
       <span lang="fr">Eric Merle (<a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>), avec un protocole <strong>Three-Key validation</strong> multi-IA — consultation indépendante de 3 modèles : <strong>Anthropic Claude Opus 4.7</strong> (OLD3), <strong>Anthropic Claude Sonnet 4.6</strong> (NEW4), <strong>OpenAI ChatGPT 5.5</strong> (mode raisonnement étendu) — pour les décisions structurantes, et <strong>Two-Key validation</strong> (OLD3 ↔ NEW4) pour les contributions courantes. <em>Ce protocole multi-IA est une discipline interne anti-hallucination ; il n'est PAS un peer review et ne remplace ni la vérification kernel-checked Lean 4 ni le processus de review JAR Springer en cours.</em></span>
@@ -322,7 +322,7 @@
     </p>
   </details>
 
-  <details class="faq-item">
+  <details class="faq-item" id="q12">
     <summary><strong><span lang="fr">12. C'est quoi le protocole ARES ?</span><span lang="en">12. What is the ARES protocol?</span></strong></summary>
     <p>
       <span lang="fr"><strong>ARES v2</strong> est notre méthodologie anti-hallucination multi-IA : 6 règles strictes pour vérifier toute claim avant publication, incluant la nécessité d'une source primaire ou secondaire vérifiable, l'absence d'interpolation, et la documentation des incertitudes (<code>epistemic_status: verified | partial | external_unverified</code>). Chaque event du <a href="../research-ledger/">research-ledger</a> porte ces métadonnées.</span>
