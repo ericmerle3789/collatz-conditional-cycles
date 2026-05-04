@@ -35,7 +35,7 @@
   // Architecture de la preuve (extraite du Mermaid de /preuve/ + lemmes.json)
   const NODES = [
     // Axiomes externes (3 conditions JAR)
-    { id: 'BakerSeparation', type: NODE_TYPE.EXTERNAL, label: 'BakerSeparation', sub: 'effective: (2^s − 3^k)·k^6 ≥ 3^k (stricter than published — see #28, δ10)' },
+    { id: 'BakerSeparation', type: NODE_TYPE.EXTERNAL, label: 'BakerSeparation', sub: 'effective: (2^s − 3^k)·k^6 ≥ 3^k (working conjecture, undemonstrated strengthening of Rhin/Wu/Salikhov — see #28, δ10)' },
     { id: 'BarinaVerification', type: NODE_TYPE.EXTERNAL, label: 'BarinaVerification', sub: 'Barina 2025 — n < 2⁷¹' },
     { id: 'DerivedLargeKBound', type: NODE_TYPE.EXTERNAL, label: 'DerivedLargeKBound', sub: 'Hercher 2023 — m ≤ 91' },
     // Axiomes kernel (3 universels)
