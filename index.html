@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Collatz / Syracuse Conditional Cycles — Lean 4 Formal Proof</title>
-<meta name="description" content="Conjecture de Syracuse / Collatz : preuve formelle conditionnelle Lean 4 de la non-existence de cycles non-triviaux. Conditional formal proof of the Collatz (a.k.a. Syracuse) conjecture in Lean 4. Main theorem kernel-checked, 3 explicit axioms, δ8/δ8'/δ10 trilogy.">
+<meta name="description" content="Conjecture de Syracuse / Collatz : théorème conditionnel formalisé en Lean 4 (kernel-checked). Ne prouve PAS la conjecture. Prouve la non-existence de cycles non-triviaux modulo 3 axiomes externes documentés (1 conjecture de travail, 1 vérification computationnelle reproductible, 1 théorème publié conditionnel). Conditional theorem formalized in Lean 4 — does NOT prove Collatz, modulo 3 documented external axioms. δ8/δ8'/δ10 trilogy.">
 <meta name="keywords" content="Collatz conjecture, Syracuse conjecture, conjecture de Syracuse, suite de Syracuse, 3x+1 problem, 3n+1, Kakutani problem, Hasse problem, Lean 4, Mathlib, formal verification, kernel-checked theorem, Baker's theorem, continued fractions, Diophantine approximation, non-trivial cycles, ARES protocol">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -62,7 +62,7 @@
         "Kakutani problem conditional proof"
       ],
       "abstract": "We present a Lean 4 formalization of the non-existence of non-trivial Collatz cycles, conditional on three documented external hypotheses: BakerSeparation (an effective separation hypothesis on |S log 2 − k log 3|, motivated by Baker-type bounds in the Rhin 1987 / Simons-de Weger 2005 / Wu 2003 tradition; the specific exponent in our Lean axiom is stronger than currently published bounds and should be read as an explicit hypothesis, not derived from a published theorem — see paper §4 and audit findings #28; a formal cartographic complement, the δ10 lemma in Phase 64 [propext]-only kernel-checked, demonstrates that no published bound from the audited finite catalogue {Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005} can replace BarinaVerification, justifying the necessity of the chosen exponent strength), BarinaVerification (n < 2^71, Barina 2025), and DerivedLargeKBound (Hercher 2023, m ≤ 91). The main theorem no_nontrivial_cycle_phase59 is kernel-checked with a minimal axiom profile (propext, Classical.choice, Quot.sound). We document a trilogy of impossibility lemmas (δ8 Product-Bound, δ8' Baker+CF lower-not-upper, δ10 Barina-Replacement cartographic) which structurally proves that this conditionality is necessary within the Baker+CF paradigm used in this paper. Non-Khinchin paradigms (e.g., arithmetic holonomy Calegari-Dimitrov-Tang 2025) are explicitly out of δ8's scope and tracked separately as Hypothesis A' on the project website.",
-      "description": "Conditional formal proof in Lean 4 of no non-trivial Collatz cycles, modulo three explicit external hypotheses. Kernel-checked, reproducible.",
+      "description": "Conditional theorem formalized in Lean 4: no non-trivial Collatz cycles modulo 3 documented external axioms (1 working conjecture: BakerSeparation; 1 reproducible computational verification: BarinaVerification n<2^71, Barina 2025; 1 published conditional theorem: DerivedLargeKBound m≤91, Hercher 2023). Does NOT prove the Collatz conjecture. Kernel-checked, reproducible.",
       "url": "https://collatz-lab.org/",
       "sameAs": [
         "https://doi.org/10.5281/zenodo.19790406",
@@ -236,9 +236,9 @@
   <div class="hero-banner-content">
     <div class="hero-banner-eyebrow">DOI · 10.5281/zenodo.19790406 · JAR submission</div>
     <h2 class="hero-banner-title">
-      <span lang="en">No non-trivial Collatz cycle</span>
-      <span lang="fr">Aucun cycle Collatz non-trivial</span>
-      <em><span lang="en"> — modulo three explicit conditions</span><span lang="fr"> — modulo trois conditions explicites</span></em>
+      <span lang="en">Conditional theorem: no non-trivial Collatz cycle</span>
+      <span lang="fr">Théorème conditionnel : aucun cycle Collatz non-trivial</span>
+      <em><span lang="en"> — modulo 3 documented external axioms (1 working conjecture, 1 reproducible computational verification, 1 published conditional theorem)</span><span lang="fr"> — modulo 3 axiomes externes documentés (1 conjecture de travail, 1 vérification computationnelle reproductible, 1 théorème publié conditionnel)</span></em>
     </h2>
     <div class="hero-banner-subtitle">
       <code>no_nontrivial_cycle_phase59</code> · kernel-checked Lean 4 · Mathlib v4.27
@@ -269,8 +269,13 @@
   <div class="highlight" style="margin-top: 2.5rem; border-left-color: var(--accent);">
     <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem;" data-i18n="mainResultEyebrow">Résultat principal — paper soumis JAR Springer</div>
     <h3 style="font-family: var(--serif); font-size: 1.4rem; line-height: 1.35; margin: 0 0 0.8rem 0; color: var(--text-primary);" data-i18n="mainResultTitle">
-      Aucun cycle Collatz non-trivial — modulo trois conditions explicites
+      Théorème conditionnel : aucun cycle Collatz non-trivial — modulo 3 axiomes externes documentés
     </h3>
+    <div class="conditional-warning" role="note" aria-label="Conditional theorem warning">
+      <strong lang="fr">⚠ Théorème CONDITIONNEL</strong><strong lang="en">⚠ CONDITIONAL theorem</strong>
+      <span lang="fr"> — modulo 3 axiomes externes documentés : <code>BakerSeparation</code> (conjecture de travail), <code>BarinaVerification</code> (n&lt;2<sup>71</sup>, vérification computationnelle reproductible Barina 2025), <code>DerivedLargeKBound</code> (m≤91, théorème publié conditionnel Hercher 2023). <strong>Ne prouve PAS la conjecture Collatz.</strong></span>
+      <span lang="en"> — modulo 3 documented external axioms: <code>BakerSeparation</code> (working conjecture), <code>BarinaVerification</code> (n&lt;2<sup>71</sup>, reproducible computational verification, Barina 2025), <code>DerivedLargeKBound</code> (m&le;91, published conditional theorem, Hercher 2023). <strong>Does NOT prove the Collatz conjecture.</strong></span>
+    </div>
     <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); margin: 0 0 1rem 0;" data-i18n="mainResultDesc">
       Le théorème principal <code>no_nontrivial_cycle_phase59</code> est <strong>kernel-checked</strong> en Lean 4 (Mathlib v4.27), avec un profil d'axiomes minimal (3 axiomes Lean kernel : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) et trois hypothèses externes documentées : <strong>BakerSeparation</strong> (séparation effective sur |S log 2 − k log 3|, motivée par les bornes Baker-type Rhin 1987 / Simons-de Weger 2005 / Wu 2003 — l'exposant utilisé dans notre formalisation Lean est plus strict que les bornes publiées et constitue donc une <em>hypothèse explicite</em>, pas un théorème dérivé), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>), <strong>DerivedLargeKBound</strong> (Hercher 2023, m ≤ 91).
     </p>
@@ -343,7 +348,7 @@ graph LR
     P15["Inv. statistiques"] -->|"autocorr. Christoffel"| LAMBDA
 
     LAMBDA["Λ_{S,k}<br/>VERROU"]
-    BAKER["BakerSeparation<br/>borne effective<br/>(plus stricte que publié)"]
+    BAKER["BakerSeparation<br/>(conjecture de travail)<br/>renforcement non démontré<br/>de Rhin/Wu/Salikhov"]
     BARINA["Barina 2025<br/>n &lt; 2^71"]
     HERCHER["Hercher 2023<br/>m ≤ 91"]
     JAR["★ JAR<br/>no_nontrivial_cycle_phase59<br/>kernel-checked Lean 4"]
