@@ -1448,3 +1448,18 @@ ER  - `;
     init();
   }
 })();
+
+// C22 (Phase 3.5 F-θ): scroll auto + ouverture details post-hash navigation
+// Détecté UX MCP A2 runtime — DOM ancres FAQ q1-q12 OK (C20) mais browser ne scrolle pas auto post-click sur ../faq/#qN
+(function() {
+  function scrollToHashTarget() {
+    if (!window.location.hash) return;
+    const target = document.querySelector(window.location.hash);
+    if (target?.tagName === 'DETAILS') {
+      target.setAttribute('open', '');
+      target.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+  }
+  window.addEventListener('hashchange', scrollToHashTarget);
+  window.addEventListener('load', () => setTimeout(scrollToHashTarget, 100));
+})();
