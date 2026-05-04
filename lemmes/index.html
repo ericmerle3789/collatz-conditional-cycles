@@ -151,8 +151,8 @@
   <div class="section-eyebrow">§ I</div>
   <h2 lang="fr">Profil d'axiomes</h2>
   <h2 lang="en">Axiom profile</h2>
-  <p lang="fr">Les théorèmes centraux dépendent uniquement des trois axiomes fondamentaux du noyau Lean. Aucun <code>sorryAx</code> dans la chaîne critique.</p>
-  <p lang="en">The central theorems rely only on the three fundamental axioms of the Lean kernel. No <code>sorryAx</code> in the critical chain.</p>
+  <p lang="fr">Les théorèmes centraux reposent sur <strong>deux types d'hypothèses distincts</strong> : (1) les <strong>axiomes du noyau Lean</strong> (3, standards : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) ; (2) les <strong>3 axiomes externes documentés</strong> (1 conjecture de travail : <code>BakerSeparation</code> ; 1 vérification computationnelle reproductible : <code>BarinaVerification</code> n&lt;2<sup>71</sup>, Barina 2025 ; 1 théorème publié conditionnel : <code>DerivedLargeKBound</code> m≤91, Hercher 2023). Aucun <code>sorryAx</code> dans la chaîne critique.</p>
+  <p lang="en">The central theorems rely on <strong>two distinct types of hypotheses</strong>: (1) <strong>Lean kernel axioms</strong> (3, standard: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>); (2) <strong>3 documented external axioms</strong> (1 working conjecture: <code>BakerSeparation</code>; 1 reproducible computational verification: <code>BarinaVerification</code> n&lt;2<sup>71</sup>, Barina 2025; 1 published conditional theorem: <code>DerivedLargeKBound</code> m&le;91, Hercher 2023). No <code>sorryAx</code> in the critical chain.</p>
 
   <div class="card-grid">
     <div class="card">
@@ -184,7 +184,7 @@
       <h3 lang="fr">3 axiomes documentés</h3>
       <h3 lang="en">3 documented axioms</h3>
       <ul>
-        <li><code>BakerSeparation</code> <span lang="fr">(effective, plus stricte que publié — <a href="/#meaculpa">#28</a> + <strong>δ10</strong>)</span><span lang="en">(effective, stricter than published — <a href="/#meaculpa">#28</a> + <strong>δ10</strong>)</span></li>
+        <li><code>BakerSeparation</code> <span lang="fr">(<strong>conjecture de travail</strong> — renforcement non démontré des bornes Rhin 1987 / Wu 2003 / Salikhov 2007 publiées ; voir <a href="/#meaculpa">#28</a> + lemme <strong>δ10</strong>)</span><span lang="en">(<strong>working hypothesis / conjecture</strong> — undemonstrated strengthening of published Rhin 1987 / Wu 2003 / Salikhov 2007 bounds; see <a href="/#meaculpa">#28</a> + <strong>δ10</strong> lemma)</span></li>
         <li><code>BarinaVerification</code> (n &lt; 2^71)</li>
         <li><code>DerivedLargeKBound</code> (Hercher)</li>
       </ul>
