@@ -23,11 +23,11 @@
       "id": "A",
       "fr": {
         "name": "BakerSeparation effective (k^6)",
-        "why": "Pilier projet — borne effective sur |S log 2 − k log 3|. Forme axiome : (2^s − 3^k)·k^6 ≥ 3^k. Plus stricte que toute borne diophantienne publiée extractable directement (Salikhov 2007 μ ≤ 5.125, Wu 2003 μ ≈ 7.6155, Simons-de Weger 2005 exposant ≈ 13.3) — déclarée comme hypothèse de travail explicite (mea culpa #28). Le lemme cartographique δ10 (Phase 64, kernel-1 [propext]) démontre formellement pourquoi cette force est nécessaire : aucune source publiée ne peut remplacer Barina sans X_0 computationnel."
+        "why": "Pilier projet — borne effective sur |S log 2 − k log 3|. Forme axiome : (2^s − 3^k)·k^6 ≥ 3^k. <strong>Conjecture de travail</strong> : renforcement non démontré des bornes diophantiennes publiées (Salikhov 2007 μ ≤ 5.125, Wu 2003 μ ≈ 7.6155, Simons-de Weger 2005 exposant ≈ 13.3) — déclarée comme hypothèse explicite, pas un théorème externe (mea culpa #28). Le lemme cartographique δ10 (Phase 64, kernel-1 [propext]) démontre formellement pourquoi cette force est nécessaire : aucune source publiée ne peut remplacer Barina sans X_0 computationnel."
       },
       "en": {
         "name": "BakerSeparation effective (k^6)",
-        "why": "Project pillar — effective bound on |S log 2 − k log 3|. Axiom form: (2^s − 3^k)·k^6 ≥ 3^k. Stricter than any directly extractable published Diophantine bound (Salikhov 2007 μ ≤ 5.125, Wu 2003 μ ≈ 7.6155, Simons-de Weger 2005 exponent ≈ 13.3) — declared as explicit working hypothesis (mea culpa #28). The δ10 cartographic lemma (Phase 64, kernel-1 [propext]) formally proves why this strength is necessary: no published source can replace Barina without computational X_0."
+        "why": "Project pillar — effective bound on |S log 2 − k log 3|. Axiom form: (2^s − 3^k)·k^6 ≥ 3^k. <strong>Working conjecture</strong>: undemonstrated strengthening of published Diophantine bounds (Salikhov 2007 μ ≤ 5.125, Wu 2003 μ ≈ 7.6155, Simons-de Weger 2005 exponent ≈ 13.3) — declared as explicit hypothesis, not an external theorem (mea culpa #28). The δ10 cartographic lemma (Phase 64, kernel-1 [propext]) formally proves why this strength is necessary: no published source can replace Barina without computational X_0."
       },
       "region": "I",
       "status": "axiome",
@@ -559,12 +559,12 @@
       "id": "A",
       "fr": {
         "name": "BakerSeparation",
-        "desc": "(2^s − 3^k)·k^6 ≥ 3^k effective (plus stricte que publié)",
+        "desc": "(2^s − 3^k)·k^6 ≥ 3^k. Conjecture de travail : renforcement non démontré des bornes Rhin 1987 / Wu 2003 / Salikhov 2007 publiées (voir mea culpa #28)",
         "limit": "Désaxiomatisation bloquée par δ8 lemma + δ10 (Phase 64) prouve qu'aucune source publiée ne suffit"
       },
       "en": {
         "name": "BakerSeparation",
-        "desc": "(2^s − 3^k)·k^6 ≥ 3^k effective (stricter than published)",
+        "desc": "(2^s − 3^k)·k^6 ≥ 3^k. Working hypothesis (conjecture): undemonstrated strengthening of published Rhin 1987 / Wu 2003 / Salikhov 2007 bounds (see mea culpa #28)",
         "limit": "Deaxiomatization blocked by δ8 lemma + δ10 (Phase 64) proves no published source suffices"
       },
       "ref": "Effective bound — see mea culpa #28 + δ10 cartographic"
