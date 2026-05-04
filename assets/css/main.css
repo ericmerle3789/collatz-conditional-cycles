@@ -2140,3 +2140,27 @@ footer a:hover { border-bottom-color: var(--accent); }
 .right { text-align: right; }
 
 /* Inter + Crimson fonts via Google Fonts CDN (optimal load) */
+
+/* --- W7 a11y patch (Phase 3.5) --- focus-visible alternative pour les outline:none */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* --- F02 conditional warning banner (Phase 3.5) --- */
+.conditional-warning {
+  background: rgba(224, 184, 124, 0.15);
+  border-left: 4px solid var(--accent-amber, #e0b87c);
+  padding: 0.75em 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+.conditional-warning strong { color: var(--accent-amber, #e0b87c); }
+.conditional-warning code {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+  font-size: 0.9em;
+}
