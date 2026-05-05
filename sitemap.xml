@@ -5,7 +5,7 @@
   <!-- Page d'accueil — version anglaise canonique -->
   <url>
     <loc>https://collatz-lab.org/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/"/>
@@ -16,7 +16,7 @@
   <!-- Architecture de la preuve formelle -->
   <url>
     <loc>https://collatz-lab.org/preuve/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/preuve/"/>
@@ -27,7 +27,7 @@
   <!-- Pipeline éditorial des papers -->
   <url>
     <loc>https://collatz-lab.org/papers/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/papers/"/>
@@ -38,7 +38,7 @@
   <!-- Catalogue Lean des théorèmes (avec D3 dependency graph) -->
   <url>
     <loc>https://collatz-lab.org/lemmes/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/lemmes/"/>
@@ -49,7 +49,7 @@
   <!-- Λ_{S,k} explorer interactif -->
   <url>
     <loc>https://collatz-lab.org/lambda/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/lambda/"/>
@@ -60,7 +60,7 @@
   <!-- Changelog versionné -->
   <url>
     <loc>https://collatz-lab.org/changelog/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/changelog/"/>
@@ -71,7 +71,7 @@
   <!-- Research Ledger — public versioned registry (Three-Key validated 2026-04-30) -->
   <url>
     <loc>https://collatz-lab.org/research-ledger/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/research-ledger/"/>
@@ -82,7 +82,7 @@
   <!-- Syracuse / Collatz reference page (FR market SEO entry point) -->
   <url>
     <loc>https://collatz-lab.org/syracuse/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/syracuse/"/>
@@ -93,7 +93,7 @@
   <!-- FAQ — bilingual Q&A with FAQPage schema -->
   <url>
     <loc>https://collatz-lab.org/faq/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/faq/"/>
@@ -104,7 +104,7 @@
   <!-- Histoire / History — timeline 1937-2026 -->
   <url>
     <loc>https://collatz-lab.org/histoire/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/histoire/"/>

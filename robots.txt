@@ -1,5 +1,5 @@
 # Collatz Conditional Cycles — robots.txt
-# Open academic site: indexing authorized for all crawlers
+# Open academic site: indexing authorized for all crawlers (Open Science philosophy)
 
 User-agent: *
 Allow: /
@@ -9,3 +9,27 @@ Sitemap: https://collatz-lab.org/sitemap.xml
 
 # Reasonable crawl delay (politeness)
 Crawl-delay: 1
+
+# Internal data assets — served via HTML pages, no need to index raw JSON
+Disallow: /assets/data/
+
+# IA crawlers explicitly allowed (academic content sharing — Open Science)
+# These bots may absorb collatz-lab.org content into RAG/training corpora.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
