@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour les non-mathématiciens / For everyone — Comprendre Collatz en 5 minutes — collatz-lab.org</title>
+<meta name="description" content="Pour les non-mathématiciens : comprendre la conjecture de Collatz et ce qu'on a fait sur collatz-lab.org. Sans jargon. Avec des images. Méthode 'on a un enfant en face de nous'.">
+<meta name="keywords" content="Collatz vulgarisation, Syracuse expliqué, Collatz pour débutants, Lean 4 simple, théorème conditionnel grand public">
+<meta name="author" content="Eric Merle">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="canonical" href="https://collatz-lab.org/pour-tous/">
+<link rel="alternate" hreflang="en" href="https://collatz-lab.org/pour-tous/">
+<link rel="alternate" hreflang="fr" href="https://collatz-lab.org/pour-tous/?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://collatz-lab.org/pour-tous/">
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#0e0f13">
+
+<meta property="og:title" content="Pour les non-mathématiciens — Comprendre Collatz en 5 minutes">
+<meta property="og:description" content="Sans jargon. Avec des images. Méthode 'on a un enfant en face de nous'. Comprendre Collatz et ce que collatz-lab.org apporte.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://collatz-lab.org/pour-tous/">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Collatz / Syracuse Conditional Cycles">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pour les non-mathématiciens — Comprendre Collatz en 5 minutes">
+<meta name="twitter:description" content="Sans jargon. Avec des images. Comprendre Collatz et notre théorème conditionnel formalisé en Lean 4.">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+
+<link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LearningResource",
+      "@id": "https://collatz-lab.org/pour-tous/",
+      "headline": "Pour les non-mathématiciens — Comprendre Collatz en 5 minutes",
+      "name": "Pour les non-mathématiciens",
+      "alternateName": ["For everyone — Understanding Collatz in 5 minutes", "Collatz pour débutants"],
+      "description": "Page de vulgarisation : comprendre la conjecture de Collatz et ce qu'on a fait sur collatz-lab.org, sans jargon, avec des images. Méthode 'on a un enfant en face de nous'.",
+      "url": "https://collatz-lab.org/pour-tous/",
+      "image": "https://collatz-lab.org/assets/og-image.png",
+      "inLanguage": ["fr", "en"],
+      "datePublished": "2026-05-05T00:00:00+02:00",
+      "dateModified": "2026-05-05T00:00:00+02:00",
+      "author": {
+        "@type": "Person",
+        "@id": "https://orcid.org/0009-0008-7940-402X",
+        "name": "Eric Merle"
+      },
+      "isPartOf": {"@id": "https://collatz-lab.org/"},
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "audience": {"@type": "Audience", "audienceType": "general public"},
+      "educationalLevel": "Beginner",
+      "learningResourceType": "Explanation",
+      "about": {
+        "@type": "Thing",
+        "name": "Collatz conjecture",
+        "alternateName": ["Conjecture de Syracuse", "3n+1 problem"]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://collatz-lab.org/"},
+        {"@type": "ListItem", "position": 2, "name": "Pour les non-mathématiciens", "item": "https://collatz-lab.org/pour-tous/"}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/crimsonpro/v28/q5uDsoa5M_tv7IihmnkabARboYF6CsKj.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+
+<link rel="stylesheet" href="../assets/css/main.css?v=20260505-C29-HERO-FONT">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../" class="brand">
+      <span class="brand-mark">Λ</span>
+      <span lang="fr">Cycles Conditionnels de Collatz/Syracuse</span>
+      <span lang="en">Collatz / Syracuse Conditional Cycles</span>
+    </a>
+    <nav class="nav">
+      <a href="../" data-i18n="navAccueil">Home</a>
+      <a href="../#pistes" data-i18n="navPistes">Approaches</a>
+      <a href="../lemmes/" data-i18n="navLemmes">Lemmas</a>
+      <a href="../preuve/" data-i18n="navPreuve">Proof</a>
+      <a href="../papers/" data-i18n="navPapers">Papers</a>
+      <a href="../#hypotheses" data-i18n="navHypotheses">Hypotheses</a>
+      <a href="../research-ledger/" data-i18n="navLedger">Ledger</a>
+      <a href="../#team" data-i18n="navEquipe">Team</a>
+    </nav>
+    <div class="toolbar-actions">
+      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
+        <span class="moon-icon" aria-hidden="true">☾</span>
+        <span class="sun-icon" aria-hidden="true">☀</span>
+      </button>
+      <button class="btn-icon" id="langBtn" aria-label="Switch language">FR</button>
+      <button class="btn-icon" id="printBtn" data-i18n="print">Print</button>
+    </div>
+  </div>
+</header>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<main>
+
+<article style="max-width: 760px; margin: 3rem auto; padding: 0 1.2rem;">
+
+<header class="article-header" style="text-align: center; margin-bottom: 3rem;">
+  <p class="text-muted" style="font-size: 0.85rem; letter-spacing: 0.05em;">
+    <span lang="fr">5 MIN DE LECTURE · POUR DÉBUTER · ÉCRIT POUR TOI</span>
+    <span lang="en">5 MIN READ · TO START · WRITTEN FOR YOU</span>
+  </p>
+  <h1 style="font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.6rem); margin-top: 0.5rem; line-height: 1.15;">
+    <span lang="fr">Pour les non-mathématiciens</span>
+    <span lang="en">For everyone</span>
+  </h1>
+  <p style="font-size: 1.05rem; color: var(--accent); margin-top: 1rem; font-weight: 600;">
+    <span lang="fr">🎓 Une grande énigme mathématique vieille de presque 100 ans. Un petit pas de plus dans sa résolution.</span>
+    <span lang="en">🎓 A great mathematical puzzle, nearly 100 years old. One small step further toward solving it.</span>
+  </p>
+  <p style="font-size: 1.15rem; color: var(--text-secondary); font-style: italic; margin-top: 1rem;">
+    <span lang="fr">Tu es là par curiosité, ou parce que quelqu'un t'en a parlé. Tu n'es pas mathématicien. Pas grave. Cette page est faite pour toi.</span>
+    <span lang="en">You're here out of curiosity, or because someone mentioned it. You're not a mathematician. No problem. This page is for you.</span>
+  </p>
+  <p style="margin-top: 1rem;">
+    <span lang="fr">Pas de jargon. Pas de formules cachées. Juste des images.</span>
+    <span lang="en">No jargon. No hidden formulas. Just pictures.</span>
+  </p>
+</header>
+
+<section>
+<h2 id="quoi-collatz">
+  <span lang="fr">1. C'est quoi cette histoire de Collatz ?</span>
+  <span lang="en">1. What is this Collatz story?</span>
+</h2>
+<p>
+  <span lang="fr">Imagine un jeu très simple. Tu prends n'importe quel nombre. Vraiment <strong>n'importe lequel</strong>. 7. 23. 1872. Peu importe.</span>
+  <span lang="en">Imagine a very simple game. You take any number. Really <strong>any one</strong>. 7. 23. 1872. Doesn't matter.</span>
+</p>
+<p>
+  <span lang="fr">La règle est en deux temps :</span>
+  <span lang="en">The rule has two cases:</span>
+</p>
+<ul>
+  <li><span lang="fr">Si ton nombre est <strong>PAIR</strong> → tu le divises par 2.</span><span lang="en">If your number is <strong>EVEN</strong> → you divide it by 2.</span></li>
+  <li><span lang="fr">Si ton nombre est <strong>IMPAIR</strong> → tu le multiplies par 3, et tu ajoutes 1.</span><span lang="en">If your number is <strong>ODD</strong> → you multiply by 3, and add 1.</span></li>
+</ul>
+<p>
+  <span lang="fr">Et tu recommences. Encore et encore.</span>
+  <span lang="en">And you repeat. Again and again.</span>
+</p>
+<p>
+  <span lang="fr">Exemple avec <strong>6</strong> :</span>
+  <span lang="en">Example with <strong>6</strong>:</span>
+</p>
+<p style="font-family: var(--mono); font-size: 1.05rem; padding: 1rem; background: var(--bg-secondary); border-left: 3px solid var(--accent); border-radius: 4px;">
+  6 (pair) → 3 (impair) → 10 (pair) → 5 (impair) → 16 → 8 → 4 → 2 → <strong>1</strong>
+</p>
+<p>
+  <span lang="fr">On finit toujours sur 1. <strong>Toujours.</strong></span>
+  <span lang="en">It always ends on 1. <strong>Always.</strong></span>
+</p>
+<p>
+  <span lang="fr">La conjecture de Collatz, c'est juste une question : <strong>est-ce que ça marche pour TOUS les nombres ?</strong></span>
+  <span lang="en">The Collatz conjecture is just a question: <strong>does this work for ALL numbers?</strong></span>
+</p>
+<p>
+  <span lang="fr">Personne ne sait.</span>
+  <span lang="en">Nobody knows.</span>
+</p>
+</section>
+
+<section>
+<h2 id="pourquoi-celebre">
+  <span lang="fr">2. Pourquoi c'est célèbre ?</span>
+  <span lang="en">2. Why is it famous?</span>
+</h2>
+<p>
+  <span lang="fr">Parce que c'est facile à comprendre, mais <strong>personne au monde n'arrive à le démontrer</strong>. Depuis presque 100 ans.</span>
+  <span lang="en">Because it's easy to understand, but <strong>nobody in the world can prove it</strong>. For almost 100 years.</span>
+</p>
+<p>
+  <span lang="fr">(Précisons.) On a vérifié sur ordinateur des nombres de plus en plus grands. Aujourd'hui, on a testé tous les nombres jusqu'à <strong>2<sup>71</sup></strong> — c'est plus que le nombre d'étoiles dans la galaxie.</span>
+  <span lang="en">(Let me be precise.) Computers have checked larger and larger numbers. Today we've tested all integers up to <strong>2<sup>71</sup></strong> — that's more than the number of stars in our galaxy.</span>
+</p>
+<p>
+  <span lang="fr">Et toujours, ils retombent sur 1.</span>
+  <span lang="en">And they always fall back to 1.</span>
+</p>
+<p>
+  <span lang="fr">Mais « vérifier des nombres » n'est pas « <strong>prouver</strong> que TOUS retombent ». Les maths demandent une vraie démonstration. On en a pas. Pas encore.</span>
+  <span lang="en">But "checking numbers" is not "<strong>proving</strong> that ALL of them fall back". Math demands a real demonstration. We don't have one. Not yet.</span>
+</p>
+<p>
+  <span lang="fr">Paul Erdős, un grand mathématicien hongrois, disait : <em>« Les mathématiques ne sont pas prêtes pour ce problème. »</em></span>
+  <span lang="en">Paul Erdős, a great Hungarian mathematician, said: <em>"Mathematics is not yet ripe for such questions."</em></span>
+</p>
+</section>
+
+<section>
+<h2 id="ce-quon-a-fait">
+  <span lang="fr">3. Qu'est-ce qu'on a fait ici ?</span>
+  <span lang="en">3. What did we do here?</span>
+</h2>
+
+<aside style="background: rgba(217, 119, 6, 0.08); border-left: 4px solid var(--accent); padding: 1rem 1.2rem; border-radius: 4px; margin: 1.5rem 0;">
+  <p style="margin: 0;">
+    <span lang="fr">⚠️ <strong>Important.</strong> J'ai PAS prouvé la conjecture de Collatz. J'ai prouvé un théorème <strong>conditionnel</strong> : « SI ces 3 hypothèses sont vraies, ALORS pas d'autre boucle que 1→4→2→1. » Les 3 hypothèses sont des conjectures de travail à part entière, pas des évidences.</span>
+    <span lang="en">⚠️ <strong>Important.</strong> I did NOT prove the Collatz conjecture. I proved a <strong>conditional</strong> theorem: "IF these 3 hypotheses hold, THEN no other loop than 1→4→2→1." The 3 hypotheses are working conjectures in their own right, not obvious facts.</span>
+  </p>
+</aside>
+
+<p>
+  <span lang="fr">(Et je dis « j'ai » mais c'est un travail d'équipe avec des IA et des mathématiciens — je ne marche pas seul.)</span>
+  <span lang="en">(And I say "I" but it's a team effort with AIs and mathematicians — I don't walk alone.)</span>
+</p>
+<p>
+  <span lang="fr">Ce qu'on a fait, c'est plus modeste. Mais c'est solide.</span>
+  <span lang="en">What we did is more modest. But it's solid.</span>
+</p>
+<p>
+  <span lang="fr">On a montré que <strong>SI</strong> on accepte 3 conditions techniques, <strong>ALORS</strong> on est sûr d'une chose : il n'y a pas d'autre « boucle » que celle qu'on connaît déjà (1 → 4 → 2 → 1).</span>
+  <span lang="en">We showed that <strong>IF</strong> we accept 3 technical conditions, <strong>THEN</strong> we're sure of one thing: there's no other "loop" than the one we already know (1 → 4 → 2 → 1).</span>
+</p>
+<p>
+  <span lang="fr">C'est un théorème <strong>conditionnel</strong>. Avec un grand SI au début.</span>
+  <span lang="en">It's a <strong>conditional</strong> theorem. With a big IF at the start.</span>
+</p>
+<p>
+  <span lang="fr">Les 3 conditions, en très très simplifié :</span>
+  <span lang="en">The 3 conditions, very simplified:</span>
+</p>
+<ol>
+  <li><span lang="fr">Une <strong>conjecture de travail</strong> sur les bornes de Baker (un truc technique pas démontré, qu'on pose comme hypothèse <em>explicitement</em>)</span><span lang="en">A <strong>working conjecture</strong> on Baker bounds (a technical thing not proved, which we explicitly state as a hypothesis)</span></li>
+  <li><span lang="fr">Une <strong>vérification ordinateur</strong> (Barina 2025, jusqu'à 2<sup>71</sup>, déjà faite et reproductible)</span><span lang="en">A <strong>computer verification</strong> (Barina 2025, up to 2<sup>71</sup>, already done and reproducible)</span></li>
+  <li><span lang="fr">Un <strong>théorème publié</strong> (Hercher 2023, déjà accepté par d'autres mathématiciens)</span><span lang="en">A <strong>published theorem</strong> (Hercher 2023, already accepted by other mathematicians)</span></li>
+</ol>
+<p>
+  <span lang="fr">C'est petit. Mais c'est carré. Et c'est vérifié par une machine (voir section suivante).</span>
+  <span lang="en">It's small. But it's clean. And it's verified by a machine (see next section).</span>
+</p>
+
+<h3 style="margin-top: 2rem;">
+  <span lang="fr">Comment on a vérifié ?</span>
+  <span lang="en">How did we verify?</span>
+</h3>
+<p>
+  <span lang="fr">Trois IA différentes ont relu la preuve <strong>indépendamment</strong> : Claude (Anthropic), ChatGPT (OpenAI) et Gemini (Google). Trois cerveaux différents, trois pédigrées différents.</span>
+  <span lang="en">Three different AIs read the proof <strong>independently</strong>: Claude (Anthropic), ChatGPT (OpenAI), and Gemini (Google). Three different brains, three different pedigrees.</span>
+</p>
+<p>
+  <span lang="fr">C'est comme demander à 3 experts différents de relire un texte pour ne rien manquer. Chacun voit ce que les autres ratent. On a appelé ça la <strong>méthode Three-Key</strong>.</span>
+  <span lang="en">It's like asking 3 different experts to proofread a text so nothing slips through. Each one catches what the others miss. We called this the <strong>Three-Key method</strong>.</span>
+</p>
+<p>
+  <span lang="fr">Et pour boucler la boucle : la machine Lean 4 a tout revérifié, à la virgule près. Voir section suivante.</span>
+  <span lang="en">And to close the loop: the Lean 4 machine rechecked everything, down to the comma. See next section.</span>
+</p>
+</section>
+
+<section>
+<h2 id="cest-quoi-lean">
+  <span lang="fr">4. C'est quoi Lean 4 ?</span>
+  <span lang="en">4. What is Lean 4?</span>
+</h2>
+<p>
+  <span lang="fr">Lean 4, c'est une <strong>machine ultra-pointilleuse</strong>. Imagine un correcteur d'orthographe, mais pour les preuves mathématiques.</span>
+  <span lang="en">Lean 4 is an <strong>ultra-picky machine</strong>. Imagine a spellchecker, but for mathematical proofs.</span>
+</p>
+<p>
+  <span lang="fr">Tu lui donnes ta démonstration ligne par ligne. Si une seule ligne a une erreur logique, il refuse. Tout est rouge. Tu corriges, tu recommences.</span>
+  <span lang="en">You give it your proof line by line. If just one line has a logical error, it refuses. Everything turns red. You fix, you restart.</span>
+</p>
+<p>
+  <span lang="fr">Si la machine accepte, ta preuve est correcte. <strong>À 100%.</strong> Pas « l'arbitre humain est probablement d'accord ». À 100%.</span>
+  <span lang="en">If the machine accepts, your proof is correct. <strong>100%.</strong> Not "the human reviewer probably agrees". 100%.</span>
+</p>
+<p>
+  <span lang="fr">C'est plus fiable qu'un peer review humain (où tout le monde peut louper un détail).</span>
+  <span lang="en">It's more reliable than human peer review (where everyone can miss a detail).</span>
+</p>
+<p>
+  <span lang="fr">Notre théorème principal, <code>no_nontrivial_cycle_phase59</code>, a été accepté par Lean 4. C'est solide.</span>
+  <span lang="en">Our main theorem, <code>no_nontrivial_cycle_phase59</code>, was accepted by Lean 4. It's solid.</span>
+</p>
+</section>
+
+<section>
+<h2 id="aller-plus-loin">
+  <span lang="fr">5. Pour aller plus loin</span>
+  <span lang="en">5. Going further</span>
+</h2>
+<p>
+  <span lang="fr">Si tu veux plonger un peu plus :</span>
+  <span lang="en">If you want to dive deeper:</span>
+</p>
+<p>
+  <span lang="fr">Les liens sont rangés du plus accessible au plus technique. Tu peux t'arrêter au premier qui te parle.</span>
+  <span lang="en">Links are ordered from most accessible to most technical. You can stop at the first one that speaks to you.</span>
+</p>
+<ul>
+  <li><a href="../faq/"><span lang="fr">La FAQ détaillée</span><span lang="en">The detailed FAQ</span></a> — <span lang="fr">12 questions sur Collatz et notre travail</span><span lang="en">12 questions about Collatz and our work</span></li>
+  <li><a href="../histoire/"><span lang="fr">L'histoire</span><span lang="en">The story</span></a> — <span lang="fr">le récit personnel du chemin parcouru</span><span lang="en">the personal narrative of the journey</span></li>
+  <li><a href="../syracuse/"><span lang="fr">La page Syracuse</span><span lang="en">The Syracuse page</span></a> — <span lang="fr">définition complète et alias internationaux du problème</span><span lang="en">full definition and international aliases of the problem</span></li>
+  <li><a href="../preuve/"><span lang="fr">La preuve étape par étape</span><span lang="en">The step-by-step proof</span></a> — <span lang="fr">l'architecture détaillée</span><span lang="en">the detailed architecture</span></li>
+  <li><a href="../papers/"><span lang="fr">Le paper formel</span><span lang="en">The formal paper</span></a> — <span lang="fr">28 pages, soumis au <em>Journal of Automated Reasoning</em> (en review)</span><span lang="en">28 pages, submitted to <em>Journal of Automated Reasoning</em> (under review)</span></li>
+</ul>
+<p style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-secondary); border-radius: 6px;">
+  <span lang="fr"><strong>Une dernière chose.</strong> Ce site est un <em>document vivant</em>. Si tu trouves une erreur, une formulation maladroite, ou si tu as une question — écris-moi sur <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a> ou via la page <a href="../#equipe">Équipe</a>.</span>
+  <span lang="en"><strong>One last thing.</strong> This site is a <em>living document</em>. If you find an error, an awkward phrasing, or have a question — write me on <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a> or via the <a href="../#equipe">Team</a> page.</span>
+</p>
+</section>
+
+</article>
+
+</main>
+
+<footer style="padding: 3rem 2rem 4rem; text-align: center; color: var(--text-secondary); font-size: 0.88rem; border-top: 1px solid var(--border); margin-top: 4rem;">
+  <p>
+    <span lang="fr">© Eric Merle 2026 · </span><span lang="en">© Eric Merle 2026 · </span>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    · <a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>
+    · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a>
+    · <a href="../changelog/">Changelog</a>
+    · <a href="../feed.xml" rel="alternate" type="application/atom+xml" title="Fil RSS">📡 RSS</a>
+  </p>
+  <p style="margin-top: 0.6rem;">
+    <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
+    · <a href="../feed.xml" rel="alternate" type="application/atom+xml" title="Fil RSS">📡 RSS</a>
+  </p>
+  <p style="margin-top: 0.5rem;">
+    <span lang="fr">Page Pour les non-mathématiciens · v0.7.1 · 2026-05-05</span>
+    <span lang="en">For everyone page · v0.7.1 · 2026-05-05</span>
+  </p>
+</footer>
+
+<script src="../assets/js/main.js?v=20260505-C29-HERO-FONT"></script>
+
+</body>
+</html>
+</content>
