@@ -27,6 +27,7 @@
   const t = {
     fr: {
       navAccueil: "Accueil",
+      navPourTous: "Pour tous",
       navPistes: "Pistes",
       navLemmes: "Lemmes",
       navPreuve: "Preuve",
@@ -119,6 +120,7 @@
     },
     en: {
       navAccueil: "Home",
+      navPourTous: "For everyone",
       navPistes: "Approaches",
       navLemmes: "Lemmas",
       navPreuve: "Proof",
