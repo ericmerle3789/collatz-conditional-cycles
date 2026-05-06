@@ -2,7 +2,7 @@
 
 > Ce fichier liste les mainteneurs du site `collatz-lab.org` et le plan de continuité associé.
 > **Source canonique** : ce fichier (branche `gh-pages`).
-> **Dernière mise à jour** : 2026-05-01.
+> **Dernière mise à jour** : 2026-05-06.
 
 ---
 
@@ -35,6 +35,19 @@
 **Comment se proposer** : ouvrir une issue sur le repo `ericmerle3789/collatz-conditional-cycles` ou contacter Eric Merle via ORCID.
 
 **Compensation** : co-authorship paper futur (sur publication post-JAR) ou simple acknowledgment dans le research-ledger, selon contribution.
+
+---
+
+## Community channels
+
+**[GitHub Discussions](https://github.com/ericmerle3789/collatz-conditional-cycles/discussions)** (activé 2026-05-06) — 4 catégories ouvertes :
+
+- 📢 **Announcements** — Mises à jour officielles (posts maintainers uniquement)
+- 💬 **General** — Discussions générales sur le projet
+- 🔬 **Math discussions** — Théorie Collatz, axiomes, pistes mathématiques, formalisation Lean 4
+- 🐛 **Site feedback** — Bugs, suggestions UX, améliorations site `collatz-lab.org`
+
+Pour des questions purement techniques (bugs code, build issues), les [Issues](https://github.com/ericmerle3789/collatz-conditional-cycles/issues) restent disponibles en parallèle.
 
 ---
 
@@ -106,4 +119,4 @@ post-audit 4 IA (CM5a — cf. `findings/ROADMAP_CONSOLIDEE.md` dans le dossier d
 - **Mirror du repo** : aucun mirror actif identifié (Codeberg, GitLab, Software Heritage).
   Recommandé pour résilience.
 
-— Eric Merle (mainteneur principal), 2026-05-01.
+— Eric Merle (mainteneur principal), 2026-05-06.
