@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/feed-style.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Collatz Conditional Cycles — Updates</title>
   <subtitle>Updates on the conditional formal proof of no non-trivial Collatz cycles in Lean 4.</subtitle>
