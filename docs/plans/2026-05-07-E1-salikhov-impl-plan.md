@@ -534,139 +534,145 @@ EOF
 
 ---
 
-## Phase 4 (G3) — 5 audits parallèles (J6)
+## Phase 4 (G3) — Audits primary + cross-validation (J6)
 
-### Task 4.1 — Red Team audit (Session A)
+### Task 4.1 — Session D dispatche 3 sub-agents parallèles (primary)
+
+**Acteur** : Session D (Opus 4.7 CLI) via Agent tool
 
 **Files :**
-- Create : `/Users/ericmerle/Documents/collatz-lab-audit/findings/E1_audit_red_team.md`
+- Create : `findings/E1_audit_red_team_primary.md` (D-1)
+- Create : `findings/E1_audit_nasa_primary.md` (D-2)
+- Create : `findings/E1_audit_ares_primary.md` (D-3)
 
-**Step 1 :** Lire template `findings/AUDIT_RED_TEAM_REPORT_CGS7.md`
+**Step 1 :** Session D lit les templates audit dans `collatz-lab-audit/findings/` :
+- `AUDIT_RED_TEAM_REPORT_CGS7.md` (12 pts RT1-RT12)
+- `AUDIT_NASA_REPORT_CGS7.md` (15 pts N1-N15)
+- `AUDIT_ARES_REPORT_CGS7.md` (10 pts A1-A10)
 
-**Step 2 :** Adapter les 12 critères RT à δ11 :
-- RT1 Toute affirmation traçable à commit Lean buildable ?
-- RT2 Citations académiques DOI vérifiables ?
-- RT3 Liens GitHub bonne branche ?
-- RT4 Disclaimer conditionnel présent ?
-- RT5 Pas de sur-promesse ?
-- RT6 Pas de confusion `prouve` vs `partiel` ?
-- RT7-12 (cf. C §8)
+**Step 2 :** Session D rédige 3 prompts d'audit (un par protocole) ciblés sur :
+- `Delta11Salikhov.lean` (commit hash post-G2)
+- design doc commit `ac285d3`
+- pre-registration `findings/PREREG_E1_DELTA11.md`
+- consensus G1 `findings/CONSENSUS_5IA_DELTA11_G1.md`
 
-**Step 3 :** Exécuter audit + remplir 12 entrées
+**Step 3 :** Session D dispatche les 3 sub-agents **dans un seul tool_use block** Agent tool en parallèle :
+```
+Agent(description="Red Team E1 audit", subagent_type="general-purpose", prompt="<RT 12pts prompt + Lean file path + Lean local read access>")
+Agent(description="NASA E1 audit", subagent_type="general-purpose", prompt="<NASA 15pts prompt + lake build edge cases>")
+Agent(description="ARES E1 audit", subagent_type="general-purpose", prompt="<ARES 10pts prompt + adversarial focus>")
+# Les 3 lances dans le meme message → vrai parallèle (Claude Code Agent tool)
+```
 
-**Step 4 :** Verdict global PASS / FAIL avec note /12
+**Step 4 :** Session D collecte les 3 verdicts retournés (chaque sub-agent renvoie son rapport)
 
-**Verify :** 12 entrées remplies, verdict explicite.
+**Step 5 :** Session D écrit les 3 rapports dans `collatz-lab-audit/findings/` avec frontmatter YAML :
+- Score X/12, X/15, X/10 explicite
+- Verdict PASS/FAIL/NOTE par critère
+- Conclusion globale PASS/FAIL/itérer
+
+**Verify :** 3 fichiers créés, scores explicites, verdict global PASS unanime ou FAIL identifié + root cause.
+
+**Si échec sub-agent :** Re-dispatch avec prompt raffiné. Max 2 itérations avant escalade Eric.
 
 ---
 
-### Task 4.2 — NASA failure modes (Session D)
+### Task 4.2 — ChatGPT shadow Red Team (cross-val cross-modèle)
 
 **Files :**
-- Create : `/Users/ericmerle/Documents/collatz-lab-audit/findings/E1_audit_nasa.md`
+- Create : `_mailbox/E1_salikhov_2026-05-06/020_A_chatgpt_RT_prompt.md`
+- Create : `findings/E1_audit_red_team_shadow_chatgpt.md`
 
-**Step 1 :** Session D lit template `AUDIT_NASA_REPORT_CGS7.md`
+**Step 1 :** Session A drafte prompt ChatGPT thinking étendu (CTCO + XML, anti-base64 GF2)
 
-**Step 2 :** Tester 15 cas limites Lean :
-- Edge cases k=3694 et k=3732 (bornes)
-- k hors range (k=3693, k=3733) → comportement attendu ?
-- Inputs invalides (k=0, k négatif si applicable)
-- Build avec mathlib v4.27 ET v4.26 si disponible (GF11)
+**Step 2 :** Session A dispatch via Chrome MCP onglet ChatGPT 5.5
 
-**Step 3 :** Verdict /15 + notes
+**Step 3 :** Si silent failure (textContent < 100 chars) → fallback Eric copy-paste écran
 
-**Verify :** 15 entrées, build cross-version si possible.
+**Step 4 :** Collecter réponse, sauvegarder
+
+**Verify :** Score X/12 explicite, comparaison post-hoc avec D-1 primary cohérente OU divergence analysée.
 
 ---
 
-### Task 4.3 — ARES adversarial (Gemini Pro)
+### Task 4.3 — Claude.ai shadow NASA (cross-val cross-Claude pur)
 
 **Files :**
-- Create : `/Users/ericmerle/Documents/collatz-lab-audit/findings/E1_audit_ares.md`
+- Create : `_mailbox/E1_salikhov_2026-05-06/021_A_claudeai_NASA_prompt.md`
+- Create : `findings/E1_audit_nasa_shadow_claude.md`
 
-**Step 1 :** Session A dispatch prompt ARES à Gemini via Chrome MCP avec Deep Research mode :
-« Tu es un reviewer hostile d'une publication mathématique. Trouve toutes les raisons de rejeter δ11 (Salikhov-Insufficient-for-3732). »
+**Step 1 :** Session A drafte prompt Claude.ai web (mode Adaptatif) avec instruction « Refais indépendamment, ne regarde pas D-2 primary »
 
-**Step 2 :** Collecter réponse Gemini, sauvegarder dans le fichier
+**Step 2 :** Dispatch via Chrome MCP onglet Claude.ai (Tab 1543732071)
 
-**Step 3 :** Verdict /10 + liste failles potentielles
+**Step 3 :** Collecter réponse, sauvegarder
 
-**Verify :** Réponse > 500 chars, 10 critères ARES couverts.
+**Verify :** Score X/15 + comparaison post-hoc avec D-2 primary. Si divergence → cross-Claude blind spot identifié (révèle effet scaffolding même modèle).
 
 ---
 
-### Task 4.4 — Meta-audit cross-check (ChatGPT 5.5)
+### Task 4.4 — Gemini shadow ARES (cross-val cross-modèle Deep Research)
 
 **Files :**
-- Create : `/Users/ericmerle/Documents/collatz-lab-audit/findings/E1_meta_audit_chatgpt.md`
+- Create : `_mailbox/E1_salikhov_2026-05-06/022_A_gemini_ARES_prompt.md`
+- Create : `findings/E1_audit_ares_shadow_gemini.md`
 
-**Step 1 :** Session A dispatch prompt à ChatGPT thinking étendu :
-« Voici 3 audits (Red Team par Session A, NASA par Session D, ARES par Gemini). Vérifie leur cohérence mutuelle, contradictions éventuelles, et identifie les blind spots communs. »
-+ joindre les 3 audits précédents
+**Step 1 :** Session A drafte prompt Gemini Pro avec Deep Research mode actif (vérification DOI Salikhov 2007 + Wu 2003)
 
-**Step 2 :** Collecter réponse ChatGPT
+**Step 2 :** Dispatch via Chrome MCP onglet Gemini
 
-**Step 3 :** Sauvegarder dans le fichier
+**Step 3 :** Collecter réponse Deep Research (peut prendre 2-5 min)
 
-**Verify :** Cohérence vérifiée, contradictions explicites listées.
+**Verify :** Score X/10 + bibliographie vérifiée externe + comparaison post-hoc avec D-3 primary.
 
 ---
 
-### Task 4.5 — Cross-Claude NASA (Claude.ai web)
+### Task 4.5 — Session A meta-audit synthesis 5-IA
 
 **Files :**
-- Create : `/Users/ericmerle/Documents/collatz-lab-audit/findings/E1_cross_claude_nasa.md`
+- Create : `findings/E1_meta_audit_synthesis.md`
 
-**Step 1 :** Session A dispatch prompt à Claude.ai (NASA template) :
-« Refais indépendamment l'audit NASA 15 critères de la preuve δ11 Salikhov, sans regarder ce que Session D a produit. »
+**Step 1 :** Session A lit les 6 audits :
+- Primary D-1 RT, D-2 NASA, D-3 ARES (Session D sub-agents)
+- Shadow ChatGPT RT, Claude.ai NASA, Gemini ARES
 
-**Step 2 :** Collecter réponse Claude.ai
+**Step 2 :** Tableau récap par protocole :
+| Protocole | Primary (Session D) | Cross-val (externe) | Convergent ? | Notes |
+|-----------|---------------------|---------------------|--------------|-------|
+| Red Team 12 | D-1 score X/12 | ChatGPT score Y/12 | OUI/NON | ... |
+| NASA 15 | D-2 score X/15 | Claude.ai score Y/15 | OUI/NON | ... |
+| ARES 10 | D-3 score X/10 | Gemini score Y/10 | OUI/NON | ... |
 
-**Step 3 :** Comparaison Session D NASA vs Claude.ai NASA — convergence ou divergence ?
+**Step 3 :** Anti-corrélation 3 niveaux check :
+- Sub-agents Session D inter-cohérence (3 prompts différents convergent ou non) ?
+- Cross-modèle convergent (D-1 vs ChatGPT, D-3 vs Gemini) ?
+- Cross-Claude convergent (D-2 vs Claude.ai) ?
 
-**Step 4 :** Si convergence → confiance maximale. Si divergence → analyser source (effet pipeline / effet model).
+**Step 4 :** Verdict G3 final :
+- ✅ PASS unanime sur 3 protocoles + 3 niveaux anti-corr → G3 GREEN
+- ⚠️ Divergence quelconque → analyser source (model bias / scaffolding bias) avant validation
+- ❌ FAIL primary ou cross-val → fix iteration loop (retour G2 ou G1 selon root cause)
 
-**Verify :** Verdict 15/15 + tableau comparatif Session D vs Claude.ai.
+**Verify :** Synthèse complète, divergences explicites si applicable, recommandation Eric.
 
 ---
 
-### Task 4.6 — Synthèse audits + verdict G3
+### Task 4.6 — Provenance graph (GF10)
 
-**Files :**
-- Create : `/Users/ericmerle/Documents/collatz-lab-audit/findings/E1_audit_synthesis_G3.md`
-
-**Step 1 :** Lire les 5 audits
-
-**Step 2 :** Tableau récap :
-| Protocole | Acteur | Score | Verdict | Notes |
-|-----------|--------|-------|---------|-------|
-| Red Team 12 | Session A | x/12 | PASS/FAIL | ... |
-| NASA 15 | Session D | x/15 | PASS/FAIL | ... |
-| ARES 10 | Gemini | x/10 | PASS/FAIL | ... |
-| Meta cross | ChatGPT | qual | OK/KO | ... |
-| Cross-Claude NASA | Claude.ai | x/15 | PASS/FAIL | ... |
-
-**Step 3 :** Verdict G3 global (PASS unanime requis)
-
-**Step 4 :** Si FAIL → fix iteration loop (retour G2 ou G1 selon root cause)
-
-**Verify :** Synthèse complète, verdict explicite.
-
----
-
-### Task 4.7 — Provenance graph
+**Acteur** : Session D (Opus 4.7 CLI) en post-G3
 
 **Files :**
 - Create : `/Users/ericmerle/Documents/collatz-lab-audit/findings/PROVENANCE_DELTA11.md`
 
-**Step 1 :** Session D documenter lineage complet (GF10) :
+**Step 1 :** Session D documente le lineage complet :
 - Claim : δ11 Salikhov-Insufficient-for-3732
 - Theorem Lean : `delta11_salikhov_insufficient_for_3732` dans `Delta11Salikhov.lean`
-- Axioms : [propext] (kernel-1)
-- Sources externes : Salikhov 2007 (DOI), Wu 2003 (DOI), δ10 (commit branch)
-- Tests connexes : REQ-MATH-003
+- Axioms : [propext] (kernel-1) ou kernel-3 (selon résultat G2)
+- Sources externes : Salikhov 2007 (DOI Doklady Math. 76(3)), Wu 2003 (DOI), δ10 (branch + commit)
+- Tests connexes : REQ-MATH-003 (`tests_math/test_REQ-MATH-003_wu_salikhov_kmax.py`)
+- Audits : 3 primary + 3 shadow + 1 meta-synthesis (chemins findings/ explicites)
 
-**Verify :** Lineage complet et vérifiable.
+**Verify :** Lineage complet, vérifiable indépendamment, DOIs résolvables.
 
 ---
 

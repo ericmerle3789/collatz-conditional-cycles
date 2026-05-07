@@ -66,17 +66,49 @@ Eric (superviseur)
 |------|----------|---------------|------------|
 | **G1 — Énoncé math δ11** | Théorème formel d'insuffisance E.1 (forme finale) | 5 IA parallèle, prompt identique | Unanimité 5/5 |
 | **G2 — Preuve Lean** | `Delta11Salikhov.lean` compile sans `sorry` | Session D leads, Gemini + ChatGPT + Claude.ai relisent par chunks | Build vert + 5 IA OK |
-| **G3 — Audits 3 protocoles + meta + cross-Claude** | Red Team + NASA + ARES + meta-audit + cross-Claude NASA | 5 IA parallèle, 1 protocole / IA | Unanimité PASS |
+| **G3 — Audits primary + cross-validation** | (Primary) Session D dispatche 3 sub-agents parallèles RT/NASA/ARES via Agent tool ; (Cross-val) 4 IA externes shadow-audit | Pattern « primary + cross » : double audit par protocole | PASS unanime sur chaque protocole |
 
-## 5. Distribution des rôles G3
+## 5. Distribution des rôles G3 — pattern « primary + cross-validation »
 
-| IA | Rôle G3 | Justification |
-|----|---------|---------------|
-| Session A (Claude Code) | Red Team épistémique 12pts | Skill `superpowers` + accès codebase + meta-skills |
-| Session D (Opus 4.7 CLI) | NASA failure modes 15pts | Lean local, peut tester edge cases au build |
-| Gemini Pro | ARES adversarial 10pts | Deep Research + force adversariale |
-| ChatGPT 5.5 | Meta-audit cross | Vérifie la cohérence entre les 3 audits |
-| Claude.ai (web) | Cross-Claude NASA + revue éditoriale site | Refait NASA indépendamment de Session D ; relit la MAJ site |
+### 5.1 Layer Primary — Session D parallel sub-agents
+
+Session D (Opus 4.7 CLI) dispatche 3 sub-agents **en parallèle** via Agent tool dans un seul tool_use block :
+
+| Sub-agent | Protocole | Critères | Avantage |
+|-----------|-----------|----------|----------|
+| D-1 | Red Team épistémique | 12 pts (RT1-RT12) | Lean local + filesystem + Bash |
+| D-2 | NASA failure modes | 15 pts (N1-N15) | Build edge cases au lake build |
+| D-3 | ARES adversarial | 10 pts (A1-A10) | Tests adversariaux contre Lean code |
+
+Tous opèrent sur le même `Delta11Salikhov.lean` mais avec prompts isolés et perspectives différentes. Anti-corrélation interne via prompts différenciés.
+
+### 5.2 Layer Cross-validation — 4 IA externes shadow
+
+| IA | Rôle shadow G3 | Justification |
+|-----|----------------|---------------|
+| Session A (Claude Code, moi) | Meta-audit synthesis 5-IA | Skills + accès design doc + identifie blind spots méta |
+| ChatGPT 5.5 | Shadow Red Team (cross-modèle) | Modèle ≠ Opus, mode thinking étendu |
+| Claude.ai (web) | Shadow NASA (cross-Claude pur) + revue éditoriale | Même Opus mais scaffolding ≠ Session D |
+| Gemini Pro | Shadow ARES (cross-modèle Deep Research) | Modèle ≠ Opus, force adversariale max |
+
+### 5.3 Pattern « double audit par protocole »
+
+| Protocole | Primary (Session D sub-agent) | Cross-val (IA externe) |
+|-----------|-------------------------------|------------------------|
+| Red Team 12 | D-1 | ChatGPT 5.5 |
+| NASA 15 | D-2 | Claude.ai (cross-Claude pur) |
+| ARES 10 | D-3 | Gemini Pro (Deep Research) |
+| (Meta) | — | Session A synthesis |
+
+Critère unanimité G3 : pour chaque protocole, primary ET cross-val doivent PASS. Si divergence → blind spot révélé, à analyser avant validation.
+
+### 5.4 Anti-corrélation à 3 niveaux
+
+1. **Sub-agents Session D** : 3 prompts différents → perspectives différentes (même modèle Opus)
+2. **Modèle externe vs Opus** : ChatGPT/Gemini cross-valident contre famille de modèle ≠ Opus
+3. **Scaffolding Session D vs Claude.ai** : 2 environnements Opus 4.7 différents (CLI+filesystem vs web+artifacts)
+
+Si convergence G3 sur les 3 niveaux → confiance maximale dans le verdict.
 
 ## 6. Timeline cible (5-7 jours)
 
@@ -107,16 +139,18 @@ Eric (superviseur)
 | 3 | `_mailbox/E1_salikhov_2026-05-06/000_brief.md` | collatz-lab-audit | (no git) | next |
 | 4 | `findings/PREREG_E1_DELTA11.md` | collatz-lab-audit | (no git) | post-G1 (GF9) |
 | 5 | `ProjetCollatz/PostJAR/Delta11Salikhov.lean` | collatz-conditional-cycles | study/E1-salikhov-2007-impossibility | post-G2 |
-| 6 | `findings/E1_audit_red_team.md` | collatz-lab-audit | (no git) | post-G3 |
-| 7 | `findings/E1_audit_nasa.md` | collatz-lab-audit | (no git) | post-G3 |
-| 8 | `findings/E1_audit_ares.md` | collatz-lab-audit | (no git) | post-G3 |
-| 9 | `findings/E1_meta_audit_chatgpt.md` | collatz-lab-audit | (no git) | post-G3 |
-| 10 | `findings/E1_cross_claude_nasa.md` | collatz-lab-audit | (no git) | post-G3 |
-| 11 | `findings/PROVENANCE_DELTA11.md` | collatz-lab-audit | (no git) | post-G3 (GF10) |
-| 12 | `papers/index.html` L372-378 (raturer ou reformuler) | collatz-gh-pages | gh-pages | post-validation Eric |
-| 13 | `assets/data/pistes.json` E.1 entry MAJ | collatz-gh-pages | gh-pages | post-validation Eric |
-| 14 | `changelog/index.html` (entrée δ11 + mea culpa #29 si applicable) | collatz-gh-pages | gh-pages | post-validation Eric |
-| 15 | `index.html` (frise chronologique + diagrammes selon impact) | collatz-gh-pages | gh-pages | post-validation Eric |
+| 6 | `findings/E1_audit_red_team_primary.md` (Session D D-1) | collatz-lab-audit | (no git) | post-G3 primary |
+| 7 | `findings/E1_audit_nasa_primary.md` (Session D D-2) | collatz-lab-audit | (no git) | post-G3 primary |
+| 8 | `findings/E1_audit_ares_primary.md` (Session D D-3) | collatz-lab-audit | (no git) | post-G3 primary |
+| 9 | `findings/E1_audit_red_team_shadow_chatgpt.md` | collatz-lab-audit | (no git) | post-G3 cross-val |
+| 10 | `findings/E1_audit_nasa_shadow_claude.md` | collatz-lab-audit | (no git) | post-G3 cross-val |
+| 11 | `findings/E1_audit_ares_shadow_gemini.md` | collatz-lab-audit | (no git) | post-G3 cross-val |
+| 12 | `findings/E1_meta_audit_synthesis.md` | collatz-lab-audit | (no git) | post-G3 synthesis |
+| 13 | `findings/PROVENANCE_DELTA11.md` | collatz-lab-audit | (no git) | post-G3 (GF10) |
+| 14 | `papers/index.html` L372-378 (raturer ou reformuler) | collatz-gh-pages | gh-pages | post-validation Eric |
+| 15 | `assets/data/pistes.json` E.1 entry MAJ | collatz-gh-pages | gh-pages | post-validation Eric |
+| 16 | `changelog/index.html` (entrée δ11 + mea culpa #29 si applicable) | collatz-gh-pages | gh-pages | post-validation Eric |
+| 17 | `index.html` (frise chronologique + diagrammes selon impact) | collatz-gh-pages | gh-pages | post-validation Eric |
 
 ## 9. Sauvegardes anti-biais
 
