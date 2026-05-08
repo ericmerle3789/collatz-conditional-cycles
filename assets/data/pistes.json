@@ -112,7 +112,7 @@
         "why": "Closes k ≤ 3693 unconditionally ; plateau μ ≥ 2 (Bundschuh-Wallisser). δ11 (Phase 65) formally proves CONDITIONAL granular insufficiency on k ∈ [3694, 3732] under 3 transparent ad-hoc axioms (<code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>) ; validated on Mathlib v4.27 (v4.26 retro-compatibility not covered by design). G3 score ~37/37 + 0 residual reservation. See mea culpa #29 #30 #31 #32."
       },
       "region": "I",
-      "status": "partiel",
+      "status": "insuf",
       "test4": "3/4",
       "lean": "Delta11Salikhov.lean (prouvé conditionnel, kernel-3 + 3 axiomes ad-hoc transparents, Mathlib v4.27 pin, build ~11s)",
       "leanFile": "ProjetCollatz/PostJAR/Delta11Salikhov.lean",

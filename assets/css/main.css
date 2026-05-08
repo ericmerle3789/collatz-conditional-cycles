@@ -1676,6 +1676,7 @@ td code {
 .badge.jar { background: linear-gradient(135deg, rgba(200, 168, 106, 0.35), rgba(200, 168, 106, 0.15)); color: #f3d99c; border: 1px solid rgba(200, 168, 106, 0.7); font-weight: 700; box-shadow: 0 0 0.4rem rgba(200, 168, 106, 0.3); }
 .badge.cds { background: rgba(194, 84, 80, 0.15); color: #d57975; border: 1px solid rgba(194, 84, 80, 0.4); }
 .badge.partiel { background: rgba(212, 160, 69, 0.15); color: #e0b87c; border: 1px solid rgba(212, 160, 69, 0.4); }
+.badge.insuf { background: rgba(82, 152, 161, 0.15); color: #86b8be; border: 1px solid rgba(82, 152, 161, 0.45); }
 .badge.inconnu { background: rgba(106, 147, 184, 0.15); color: #9bb6cf; border: 1px solid rgba(106, 147, 184, 0.4); }
 .badge.prouve { background: rgba(106, 155, 122, 0.15); color: #94c3a4; border: 1px solid rgba(106, 155, 122, 0.4); }
 .badge.prometteur { background: rgba(200, 168, 106, 0.15); color: var(--accent); border: 1px solid rgba(200, 168, 106, 0.4); }
