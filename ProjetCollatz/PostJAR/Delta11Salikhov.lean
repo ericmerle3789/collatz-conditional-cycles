@@ -39,11 +39,33 @@ shadow catch C_Salikhov non-positivement-restreint (mea culpa #32).
 Quot.sound], kernel-1 [propext] strict si possible). Pas de touche `BakerSeparation`
 (26 occurrences ProjetCollatz/, intactes per GF12).
 
+**Compatibilité Mathlib** (Phase 6-bis, décision Eric explicite 2026-05-08T11:40 « on
+restera sur Mathlib dernière version ») : le théorème δ11 est validé strictement sur
+**Mathlib v4.27** (dernière version stable au moment du commit). La rétro-compatibilité
+avec Mathlib v4.26 ou antérieures **n'est pas garantie par design** (décision design
+assumée explicite). Cela résout par décision design les réserves G3 :
+- NASA N14 « multi-version Mathlib v4.26 non testé » → **décision design assumée**
+- ARES A9 « multi-version Mathlib v4.26 non testé » → **décision design assumée**
+
+Si un user tiers veut migrer vers une autre version Mathlib, c'est de sa responsabilité ;
+le mainteneur ne s'engage pas sur la portabilité.
+
 — Session D (Claude Opus 4.7 CLI), 2026-05-08, branche `study/E1-salikhov-2007-impossibility`
 -/
 
-import Mathlib
-import ProjetCollatz.Phase60IrrationalityLog23  -- conventions Real.log / Real.logb (cohérent δ10 Phase 60)
+-- Imports spécifiques (Phase 6-bis A2 refactor) : remplace `import Mathlib` global
+-- par les imports ciblés effectivement utilisés par la preuve. Bénéfice :
+-- compilation plus rapide, dependency surface réduite, signal académique
+-- « on sait ce qu'on utilise ». Catché par ARES A2 réserve G3.
+import Mathlib.Analysis.SpecialFunctions.Pow.Real  -- Real.rpow + lemmas (rpow_add, rpow_pos, rpow_le_rpow, rpow_natCast, rpow_neg, rpow_mul)
+import Mathlib.Tactic.Positivity                    -- positivity tactic
+import Mathlib.Tactic.NormNum                       -- norm_num tactic
+import Mathlib.Tactic.Ring                          -- ring + ring_nf tactics
+import Mathlib.Tactic.Linarith                      -- linarith tactic
+import Mathlib.Tactic.GCongr                        -- gcongr tactic (monotonie generic, key pour reduction_step1b)
+import ProjetCollatz.Phase60IrrationalityLog23      -- conventions Real.log / Real.logb (cohérent δ10 Phase 60)
+-- Note : exact_mod_cast / push_cast sont disponibles transitivement via les imports ci-dessus
+--        (pas d'import direct `Mathlib.Tactic.NormCast` nécessaire en Mathlib v4.27)
 
 namespace ProjetCollatz.PostJAR.Delta11Salikhov
 
@@ -290,7 +312,21 @@ lemma reduction_step1b (k : ℕ) (hk_lb : 3694 ≤ k) (hk_ub : k ≤ 3732) :
     **Note paramètre `s`** (cf. ChatGPT 015 + Claude.ai 016) : `s` est mathématiquement
     inutilisé dans les définitions (les bornes ne dépendent que de k). La condition
     `1 ≤ s` colle à l'énoncé Collatz original mais n'est pas utilisée dans la preuve
-    algébrique. Réintégration via `|2^s - 3^k|` proprement dite serait Phase G2 ultérieure. -/
+    algébrique. Réintégration via `|2^s - 3^k|` proprement dite serait Phase G2 ultérieure.
+
+    **Range mécanique = range narratif** (Phase 6-bis, catch ChatGPT G3 RT shadow RT2) :
+    - **Range narratif** : « pour la sous-branche k ∈ [3694, 3732] de la piste E.1
+      Salikhov 2007 », i.e. les cycles Collatz hypothétiques de longueur k entre
+      3694 (premier k non couvert par Salikhov k_max=3693) et 3732 (dernier k
+      couvert par Wu 2003 c=5.117).
+    - **Range mécanique** : `(hk_lo : 3694 ≤ k) (hk_hi : k ≤ 3732)` — bornes Lean
+      strictes appliquées par les hypothèses du théorème.
+    - **Aucune extrapolation cachée** : la preuve n'utilise aucune propriété
+      asymptotique au-delà de [3694, 3732]. Le binding intermédiaire `k ≤ 10000`
+      dans `reduction_step1b` est purement instrumental (optimisation
+      computationnelle pour `norm_num` via `(10:ℝ)^4` exact), PAS une revendication
+      mathématique étendue. La conclusion mathématique reste sur l'intervalle
+      strict signaturé. -/
 theorem delta11_salikhov_insufficient
     (k : ℕ) (hk_lo : 3694 ≤ k) (hk_hi : k ≤ 3732)
     (s : ℕ) (_hs : 1 ≤ s) :
