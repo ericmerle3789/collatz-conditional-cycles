@@ -1,8 +1,11 @@
 /-
 # δ11 Salikhov-Insufficient-for-3732 lemma
 
-**Mission** : closure piste E.1 Salikhov 2007 (μ ≤ 5.125) → preuve formelle
-d'**impossibilité granulaire** sur la sous-branche k ∈ [3694, 3732].
+**Mission** : closure piste E.1 Salikhov 2007 (μ ≤ 5.125) → preuve formelle Lean 4
+d'**insuffisance granulaire CONDITIONNELLE** sur la sous-branche k ∈ [3694, 3732],
+**sous axiome ad-hoc** `c_salikhov_upper_bound : C_Salikhov < (10:ℝ)^(-30:ℤ)`
+(borne supérieure conservatrice cohérente avec la littérature diophantienne effective ;
+PAS une dérivation directe du paper Salikhov 2007).
 
 **Position** : affine δ10 (Phase 64, kernel-1 [propext], commit 7efbf34, branche
 `study/delta10-barina-replacement-impossibility`) qui prouve l'impossibilité GLOBALE
@@ -16,9 +19,16 @@ Session D shadow 9/9 cross-val, branche créée commit 9c24a43)
 
 **Architecture** : 5-IA (Session A + Session D + Gemini Pro + ChatGPT 5.5 + Claude.ai)
 
-**Disclaimer GF7** : théorème CONDITIONNEL — l'axiome `c_salikhov_upper_bound` est
-dérivé de la littérature en théorie diophantienne effective (typique ≪ 10^{-30}).
-DOI Salikhov 2007 à vérifier en G2 (Option C condition Eric).
+**Disclaimer GF7** : théorème **CONDITIONNEL** sous 2 axiomes ad-hoc transparents :
+1. `axiom C_Salikhov : ℝ` (existence de la constante effective Salikhov)
+2. `axiom c_salikhov_upper_bound : C_Salikhov < (10:ℝ)^(-30:ℤ)` (borne supérieure
+   conservatrice plausible cohérente Baker-Mignotte ; **PAS extraite du paper
+   Salikhov 2007** mais cohérente avec la littérature diophantienne effective).
+
+Le théorème δ11 prouve UNE INSUFFISANCE NUMÉRIQUE de la borne ad-hoc retenue,
+pas une propriété directement publiée par Salikhov 2007. C'est une **maquette
+formelle conditionnelle**, pas une extraction certifiée du paper original.
+DOIs vérifiés CrossRef API 2026-05-08.
 
 **Garde-fous** : 0 sorry obligatoire au commit (cible kernel-3 [propext, Classical.choice,
 Quot.sound], kernel-1 [propext] strict si possible). Pas de touche `BakerSeparation`
@@ -77,6 +87,30 @@ def δ_gap : ℝ := β_BakerSeparation - (μ_Salikhov - 1)  -- = 15/8 = 1.875
     marge vs ~10^{-7} mathématiquement requis sur k ∈ [3694, 3732]. -/
 axiom C_Salikhov : ℝ
 
+/-! ## Lineage des bornes d'irrationalité de log 3
+
+Séquence historique (ordre chronologique) :
+- **Rhin 1987** : μ(log 3) ≤ 8.616 (méthode Padé classique)
+- **Wu 2003** : Math. Comp. 72(242), 901-911, DOI 10.1090/S0025-5718-02-01442-4
+  (online 2002, print 2003) — borne effective `c = 5.117` pour formes linéaires
+  en logarithmes, k_max = 3732 (ferme inconditionnellement la sous-branche)
+- **Salikhov 2007** : Doklady Math. 76(3), 955-957, DOI 10.1134/S1064562407060361
+  — μ(log 3) ≤ 5.125 (mesure d'irrationalité asymptotique meilleure
+  mais constante effective non-publiée explicite, k_max = 3693)
+- **Wu & Wang 2014** : J. Number Theory 142, 264-273, DOI 10.1016/j.jnt.2014.03.007
+  — μ(log 3) ≤ 5.1163051 (raffinement Salikhov, méthode arithmétique).
+  Mea culpa #30 candidat : ABSENTE du registre `pistes.json` initial.
+
+Le présent lemme δ11 prouve formellement l'**insuffisance granulaire** de Salikhov 2007
+pour la sous-branche k ∈ [3694, 3732], **SOUS axiome ad-hoc** `C_Salikhov < (10:ℝ)^(-30:ℤ)`
+— borne supérieure conservatrice cohérente avec la littérature diophantienne
+effective (Baker, Mignotte). **L'axiome n'est PAS une dérivation directe du paper
+Salikhov 2007** ; c'est une borne plausible documentée transparente (GF7).
+
+DOIs vérifiés via CrossRef API 2026-05-08T09:55 (mea culpa #31 candidat : DOI Wu&Wang
+initial Agent background `.004` était erroné = Anglès-Pellarin, corrigé `.007`
+post-audit cross-modèle ChatGPT G3 RT shadow). -/
+
 /-- Borne supérieure conservatrice sur C_Salikhov.
 
     24 ordres de marge vs `k^{-15/8} ≈ 2.05 · 10^{-7}` requis pour k=3694.
@@ -104,7 +138,7 @@ def hercher_threshold (k _s : ℕ) : ℝ :=
     Forme iff pour usage flexible (rw dans les deux directions).
 
     Pattern Phase 64 / Claude.ai 016 : isole l'arithmétique symbolique. -/
-lemma reduction_step1a (k _s : ℕ) (hk : 0 < k) :
+lemma reduction_step1a (k _s : ℕ) (_hk : 0 < k) :
     salikhov_lower_bound k _s < hercher_threshold k _s ↔
     C_Salikhov * (k : ℝ)^(-(μ_Salikhov - 1)) < (k : ℝ)^(-β_BakerSeparation) := by
   unfold salikhov_lower_bound hercher_threshold
