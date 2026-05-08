@@ -537,7 +537,12 @@ ER  - `;
     const base = assetsBaseURL();
     if (!SEARCH_LEMMES) {
       try {
-        const r = await fetch(base + 'data/lemmes.json');
+        // Cache buster aligné main.js (cf. bug catché 2026-05-08, voir init())
+        const scriptSrc = document.currentScript?.src
+          || Array.from(document.querySelectorAll('script[src*="main.js"]')).map(s => s.src)[0]
+          || '';
+        const cacheBuster = scriptSrc.match(/\?v=([^&]+)/)?.[1] || Date.now();
+        const r = await fetch(base + 'data/lemmes.json?v=' + cacheBuster);
         if (r.ok) SEARCH_LEMMES = await r.json();
       } catch (e) { /* sous-page sans accès */ }
     }
@@ -1352,7 +1357,15 @@ ER  - `;
     // mais on charge quand même pour permettre i18n cohérent partout
     try {
       const base = assetsBaseURL();
-      const resp = await fetch(base + 'data/pistes.json');
+      // Cache buster aligné avec celui du <script> courant pour invalider le
+      // cache HTTP du JSON dès qu'une release modifie le pistes.json
+      // (sinon les utilisateurs continuent à voir l'ancien snapshot — bug catché
+      // post-Phase 7-ter via test UX Chrome MCP, 2026-05-08)
+      const scriptSrc = document.currentScript?.src
+        || Array.from(document.querySelectorAll('script[src*="main.js"]')).map(s => s.src)[0]
+        || '';
+      const cacheBuster = scriptSrc.match(/\?v=([^&]+)/)?.[1] || Date.now();
+      const resp = await fetch(base + 'data/pistes.json?v=' + cacheBuster);
       if (resp.ok) STATE.data = await resp.json();
     } catch (e) {
       console.warn('Données pistes.json non chargées (page secondaire ?) :', e.message);
