@@ -105,16 +105,16 @@
       "id": "E.1",
       "fr": {
         "name": "Salikhov 2007 (μ ≤ 5.125)",
-        "why": "Ferme k ≤ 3693 inconditionnel ; plafond μ ≥ 2 (Bundschuh-Wallisser). δ11 (Phase 65) prouve formellement l'insuffisance granulaire CONDITIONNELLE sur k ∈ [3694, 3732] sous 3 axiomes ad-hoc transparents (<code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>) — voir mea culpa #29 #30 #31 #32."
+        "why": "Ferme k ≤ 3693 inconditionnel ; plafond μ ≥ 2 (Bundschuh-Wallisser). δ11 (Phase 65) prouve formellement l'insuffisance granulaire CONDITIONNELLE sur k ∈ [3694, 3732] sous 3 axiomes ad-hoc transparents (<code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>) ; validé Mathlib v4.27 (rétro-compat v4.26 non couverte par design). Score G3 ~37/37 + 0 réserve résiduelle. Voir mea culpa #29 #30 #31 #32."
       },
       "en": {
         "name": "Salikhov 2007 (μ ≤ 5.125)",
-        "why": "Closes k ≤ 3693 unconditionally ; plateau μ ≥ 2 (Bundschuh-Wallisser). δ11 (Phase 65) formally proves CONDITIONAL granular insufficiency on k ∈ [3694, 3732] under 3 transparent ad-hoc axioms (<code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>) — see mea culpa #29 #30 #31 #32."
+        "why": "Closes k ≤ 3693 unconditionally ; plateau μ ≥ 2 (Bundschuh-Wallisser). δ11 (Phase 65) formally proves CONDITIONAL granular insufficiency on k ∈ [3694, 3732] under 3 transparent ad-hoc axioms (<code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>) ; validated on Mathlib v4.27 (v4.26 retro-compatibility not covered by design). G3 score ~37/37 + 0 residual reservation. See mea culpa #29 #30 #31 #32."
       },
       "region": "I",
       "status": "partiel",
       "test4": "3/4",
-      "lean": "Delta11Salikhov.lean (prouvé conditionnel, kernel-3 + 3 axiomes ad-hoc transparents)",
+      "lean": "Delta11Salikhov.lean (prouvé conditionnel, kernel-3 + 3 axiomes ad-hoc transparents, Mathlib v4.27 pin, build ~11s)",
       "leanFile": "ProjetCollatz/PostJAR/Delta11Salikhov.lean",
       "ref": "Salikhov, Doklady Math. 76(3), 955-957 (2007), DOI 10.1134/S1064562407060361"
     },
