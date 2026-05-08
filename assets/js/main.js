@@ -76,7 +76,7 @@
       testsTitle: "Tests REQ-MATH-NNN exécutés",
       testsIntro: "Chaque assertion mathématique est validée par script dans le sandbox tests_math/, conformément au PROTOCOLE ARES (Règle 1 : zéro calcul mental).",
       meaCulpaTitle: "Vingt-huit mea culpa publics",
-      meaCulpaIntro: "La discipline antifragile demande que chaque erreur détectée soit documentée publiquement avec sévérité 0-10 et règle extraite. Sans cela, le pattern multi-cerveau humain-IA répète indéfiniment les mêmes hallucinations. <em>Aperçu de 12 mea culpa parmi les 28 documentés au total ; archive complète dans le repo GitHub <code>_handoff_mailbox/</code>.</em>",
+      meaCulpaIntro: "La discipline antifragile demande que chaque erreur détectée soit documentée publiquement avec sévérité 0-10 et règle extraite. Sans cela, le pattern multi-cerveau humain-IA répète indéfiniment les mêmes hallucinations. <em>Aperçu de 16 mea culpa parmi les 32 documentés au total ; archive complète dans le repo GitHub <code>_handoff_mailbox/</code>.</em>",
       researchStatusTitle: "État des travaux",
       researchStatusIntro: "Snapshot d'activité du projet, traçable sur GitHub. <a href=\"/research-ledger/\">Registre complet (Research Ledger) →</a>",
       statusLastMilestone: "Dernier jalon validé",
@@ -176,7 +176,7 @@
       statusLastAudit: "Last resolved audit",
       statusOngoing: "Ongoing studies",
       meaCulpaTitle: "Twenty-eight public mea culpa",
-      meaCulpaIntro: "Antifragile discipline requires every detected error be documented publicly with severity 0-10 and an extracted rule. Without this, the human-AI multi-brain pattern repeats the same hallucinations indefinitely. <em>Sample of 12 mea culpa out of 28 total documented ; full archive in the GitHub repo <code>_handoff_mailbox/</code>.</em>",
+      meaCulpaIntro: "Antifragile discipline requires every detected error be documented publicly with severity 0-10 and an extracted rule. Without this, the human-AI multi-brain pattern repeats the same hallucinations indefinitely. <em>Sample of 16 mea culpa out of 32 total documented ; full archive in the GitHub repo <code>_handoff_mailbox/</code>.</em>",
       teamTitle: "Team",
       teamIntro: "This project is led by an independent researcher in collaboration with AI systems, under a rigorous verification protocol (PROTOCOLE ARES v2).",
       communityTitle: "Collatz community",
@@ -243,6 +243,7 @@
   // main = JAR paper (Phase12-63, paper/, reproduce.sh, expected_axioms.md)
   // arsenal-postjar = extensions R34-R96 (PostJAR/, tests_math/ general)
   // study/delta10-... = Phase64 cartographic impossibility + delta10-specific tests
+  // study/E1-salikhov-2007-impossibility = Phase65 δ11 conditional E.1 closure
   // study/cgs-7-instantiation = CGS-7 theorem + CGS7Dependencies (Phase 3 finalisation)
   const GH_REPO = 'https://github.com/ericmerle3789/collatz-conditional-cycles/blob/';
 
@@ -255,6 +256,10 @@
     // delta10-specific files (Phase64 theorem + REQ-MATH-012 numerical test)
     if (filePath.includes('Phase64') || filePath.includes('delta10')) {
       return GH_REPO + 'study/delta10-barina-replacement-impossibility/' + filePath;
+    }
+    // δ11 Salikhov-Insufficient files (Phase65 conditional E.1 closure, post-Phase 6 push 2026-05-08)
+    if (filePath.includes('Delta11Salikhov') || filePath.includes('Phase65')) {
+      return GH_REPO + 'study/E1-salikhov-2007-impossibility/' + filePath;
     }
     if (filePath.startsWith('ProjetCollatz/PostJAR/') || filePath.startsWith('tests_math/')) {
       return GH_REPO + 'arsenal-postjar/' + filePath;
