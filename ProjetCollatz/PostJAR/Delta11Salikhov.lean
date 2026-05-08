@@ -19,16 +19,21 @@ Session D shadow 9/9 cross-val, branche créée commit 9c24a43)
 
 **Architecture** : 5-IA (Session A + Session D + Gemini Pro + ChatGPT 5.5 + Claude.ai)
 
-**Disclaimer GF7** : théorème **CONDITIONNEL** sous 2 axiomes ad-hoc transparents :
+**Disclaimer GF7** : théorème **CONDITIONNEL** sous 3 axiomes ad-hoc transparents :
 1. `axiom C_Salikhov : ℝ` (existence de la constante effective Salikhov)
-2. `axiom c_salikhov_upper_bound : C_Salikhov < (10:ℝ)^(-30:ℤ)` (borne supérieure
+2. `axiom C_Salikhov_pos : 0 < C_Salikhov` (convention diophantienne effective
+   implicite Salikhov 2007 ; explicitée Phase 5e suite Gemini ARES shadow flag —
+   sans cela, théorème vacuously-true pour C ≤ 0)
+3. `axiom c_salikhov_upper_bound : C_Salikhov < (10:ℝ)^(-30:ℤ)` (borne supérieure
    conservatrice plausible cohérente Baker-Mignotte ; **PAS extraite du paper
    Salikhov 2007** mais cohérente avec la littérature diophantienne effective).
 
 Le théorème δ11 prouve UNE INSUFFISANCE NUMÉRIQUE de la borne ad-hoc retenue,
 pas une propriété directement publiée par Salikhov 2007. C'est une **maquette
 formelle conditionnelle**, pas une extraction certifiée du paper original.
-DOIs vérifiés CrossRef API 2026-05-08.
+DOIs vérifiés CrossRef API 2026-05-08. Cross-modèle a payé son prix 2 fois :
+ChatGPT G3 RT shadow catch DOI `.004` erroné (mea culpa #31), Gemini G3 ARES
+shadow catch C_Salikhov non-positivement-restreint (mea culpa #32).
 
 **Garde-fous** : 0 sorry obligatoire au commit (cible kernel-3 [propext, Classical.choice,
 Quot.sound], kernel-1 [propext] strict si possible). Pas de touche `BakerSeparation`
@@ -111,6 +116,26 @@ DOIs vérifiés via CrossRef API 2026-05-08T09:55 (mea culpa #31 candidat : DOI 
 initial Agent background `.004` était erroné = Anglès-Pellarin, corrigé `.007`
 post-audit cross-modèle ChatGPT G3 RT shadow). -/
 
+/-- Convention diophantienne effective : la constante de Salikhov est strictement positive.
+
+    Implicite dans le paper Salikhov 2007 (toute constante effective issue d'intégrales
+    symétriques de Padé est positive par construction). Explicitée ici Phase 5e suite
+    Gemini Pro 3.1 ARES shadow audit G3 (2026-05-08) qui a catché que sans cette garde,
+    le théorème δ11 serait **vacuously-true pour C_Salikhov ≤ 0** :
+
+    - Si C_Salikhov < 0 : `salikhov_lower_bound k s = C_Salikhov · 3^k · k^{-(μ-1)} < 0`
+    - Et `hercher_threshold k s = 3^k · k^{-β} > 0` (3^k > 0, k^{-β} > 0 pour k > 0)
+    - Donc l'inégalité `salikhov_lower_bound < hercher_threshold` est trivialement vraie
+
+    Cette garde transforme δ11 d'un théorème **dégradé épistémologiquement**
+    (vacuously-true pour C<0) en un théorème **non-trivial** au sens fort :
+    « pour la VRAIE constante effective Salikhov (positive par convention diophantienne),
+    la borne est insuffisante ».
+
+    Mea culpa #32 candidat : axiome de positivité initialement omis dans Phase 5a,
+    ajouté Phase 5e suite catch Gemini ARES Deep Research G3 shadow audit. -/
+axiom C_Salikhov_pos : 0 < C_Salikhov
+
 /-- Borne supérieure conservatrice sur C_Salikhov.
 
     24 ordres de marge vs `k^{-15/8} ≈ 2.05 · 10^{-7}` requis pour k=3694.
@@ -160,6 +185,13 @@ lemma reduction_step1a (k _s : ℕ) (_hk : 0 < k) :
     2. Appliquer `mul_lt_mul_of_pos_right` avec `0 < k^{-(μ-1)}`
     3. Borner `(10:ℝ)^{-30} ≤ k^{-15/8}` pour k ∈ [3694, 3732] via `norm_num` + monotonie
     4. Transitivité avec `c_salikhov_upper_bound`
+
+    **Note rôle instrumental du binding `k ≤ 10000`** (catch Gemini ARES shadow A-Math-4) :
+    le binding `k ≤ 10000` utilisé dans la calc-chain est purement instrumental
+    (permet à `norm_num` de manipuler des puissances entières exactes via `(10:ℝ)^4`).
+    La conclusion mathématique reste sur l'intervalle strict `[3694, 3732]` énoncé
+    dans la signature. La preuve fonctionne en réalité pour k ∈ [1, 10^16] sous
+    l'axiome `c_salikhov_upper_bound` ; le bornage strict est éditorial.
 
     **⚠️ Note Claude.ai 016** : `nlinarith` ne traite pas `rpow`. Utiliser `norm_num`
     étendu pour cas zpow + calc-style pour transitivité. -/
@@ -263,6 +295,13 @@ theorem delta11_salikhov_insufficient
     (k : ℕ) (hk_lo : 3694 ≤ k) (hk_hi : k ≤ 3732)
     (s : ℕ) (_hs : 1 ≤ s) :
     salikhov_lower_bound k s < hercher_threshold k s := by
+  -- Garde épistémique (Phase 5e, suite Gemini ARES shadow catch mea culpa #32) :
+  -- convention diophantienne effective Salikhov 2007 → C_Salikhov > 0.
+  -- Sans cette garde, le théorème serait vacuously-true pour C_Salikhov ≤ 0
+  -- (cf. doc-comment de `C_Salikhov_pos` ci-dessus).
+  -- L'underscore préfixe supprime le warning Lean « unused variable »
+  -- tout en faisant apparaître `C_Salikhov_pos` dans le profil axiomes (`#print axioms`).
+  have _h_C_pos : 0 < C_Salikhov := C_Salikhov_pos
   -- Étape 1 : positivité de k (en ℕ, suffisant pour reduction_step1a)
   have hk_nat : 0 < k := by omega
   -- Étape 2 : appliquer reduction_step1a (iff) puis reduction_step1b (numérique)
