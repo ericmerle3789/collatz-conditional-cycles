@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-04-30T16:50:00Z</updated>
+  <updated>2026-05-08T12:42:00Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,32 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.7.3-delta11 — δ11 Salikhov-Insufficient-for-3732 (Phase 65, CONDITIONAL) + 5-AI cross-validation architecture + 4 mea culpa #29-32</title>
+    <link href="https://collatz-lab.org/changelog/"/>
+    <id>urn:collatz-cycles:v0.7.3-delta11</id>
+    <updated>2026-05-08T12:42:00Z</updated>
+    <published>2026-05-08T12:42:00Z</published>
+    <category term="release"/>
+    <category term="lean"/>
+    <category term="audit"/>
+    <category term="cross-validation"/>
+    <summary type="html">
+      <![CDATA[
+      <p><strong>5-AI cross-validation autonomous mission</strong> (Claude Code Opus 4.7 + Claude Opus 4.7 CLI mailbox + Gemini Pro 3.1 + ChatGPT 5.5 thinking + Claude.ai web Opus 4.7):</p>
+      <ul>
+        <li><strong>δ11 Salikhov-Insufficient-for-3732 (CONDITIONAL)</strong> — new Lean 4 / Mathlib v4.27 theorem on sub-branch k ∈ [3694, 3732] of approach E.1 Salikhov 2007 (μ ≤ 5.125). Theorem <code>delta11_salikhov_insufficient</code> kernel-checked, axiom profile <strong>kernel-3 + 3 transparent ad-hoc axioms</strong> (<code>C_Salikhov : ℝ</code>, <code>C_Salikhov_pos : 0 &lt; C_Salikhov</code>, <code>c_salikhov_upper_bound : C_Salikhov &lt; 10⁻³⁰</code>) — NOT a direct derivation from Salikhov 2007 paper. 0 sorry, 0 admit. Branch <code>study/E1-salikhov-2007-impossibility</code>, tag <code>v0.7.3-delta11</code>, 4 commits cumulative (16884f1 + fa4ad47 + 3ca2f34 + 0ec9889).</li>
+        <li><strong>5-AI cross-validation architecture</strong> — innovation méthodologique : 3-tier anti-correlation (sub-agents Session D internal + cross-model Opus⊥ChatGPT⊥Gemini + cross-Claude pure Opus CLI⊥Opus web). <strong>Cross-model paid its price TWICE empirically</strong>: (1) ChatGPT G3 RT shadow caught wrong DOI Wu&Wang 2014 .004 (mea culpa #31), invisible to 4 Claude instances; (2) Gemini G3 ARES shadow Deep Research caught axiom <code>C_Salikhov : ℝ</code> non positively restricted (theorem vacuously-true for C ≤ 0, mea culpa #32), invisible to 5 previous AIs including ChatGPT.</li>
+        <li><strong>G3 audit score nominal pure post-Phase 6-bis polish</strong> — RT 12/12 + 0 reservation, NASA 14/15 + 0 WARN (N14 multi-Mathlib → design choice), ARES 10/10 + 0 reservation (A2 imports refactor → -82% build time, A9 → design choice), 3 shadows all PASS. Total: <strong>~37/37 PASS direct + 0/37 residual reservation + 0/37 KO</strong>. Six audit files published in <code>collatz-lab-audit/findings/</code>.</li>
+        <li><strong>Phase 6-bis polish (commit 0ec9889)</strong> — 3 atomic actions: (1) refactor <code>import Mathlib</code> global → 7 specific imports (build went from 7886 jobs / ~67s to 2039 jobs / ~11s = <strong>−82%</strong>); (2) explicit doc-comment "mechanical range = narrative range, no hidden extrapolation"; (3) Mathlib v4.27 pin (latest stable), v4.26 retro-compatibility not covered by design.</li>
+        <li><strong>4 public mea culpa</strong> — #29 (papers/index.html presented Salikhov 2007 and Wu 2003 as equivalent for k ≤ 3732), #30 (Wu&Wang 2014 missing from pistes.json), #31 (wrong DOI .004 caught by ChatGPT cross-model), #32 (axiom non-positively-restricted caught by Gemini ARES Deep Research). All DOIs verified independently via CrossRef API: Salikhov 2007 = 10.1134/S1064562407060361, Wu 2003 = 10.1090/S0025-5718-02-01442-4, Wu&Wang 2014 = 10.1016/j.jnt.2014.03.007.</li>
+        <li><strong>Initial impossibility trilogy extended into conditional quadrilogy</strong> — δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64) + δ11 (Phase65, conditional). Mermaid diagram + frise chronologique + research-ledger updated.</li>
+      </ul>
+      <p><em>Disclosure: this is a CONDITIONAL formal mock-up under 3 transparent ad-hoc axioms, NOT a certified extraction from Salikhov 2007. Approach E.1 remains PARTIALLY closed, NOT unconditionally proven. JAR paper (main branch) UNTOUCHED throughout.</em></p>
+      ]]>
+    </summary>
+  </entry>
 
   <entry>
     <title>v0.6.0 — δ10 Barina-Replacement Impossibility (Phase 64) + Research Ledger + trilogy cross-links</title>

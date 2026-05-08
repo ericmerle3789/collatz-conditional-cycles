@@ -48,6 +48,48 @@
     },
 
     {
+      "id": "delta11-pushed",
+      "type": "lean",
+      "subtype": "impossibility-lemma-conditional",
+      "date": "2026-05-08",
+      "datetime": "2026-05-08T12:42:00+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean_conditional",
+      "verification_method": "lean_kernel",
+      "evidence_level": "lean_check_conditional",
+      "epistemic_status": "verified_conditional",
+      "last_verified_at": "2026-05-08",
+      "title": {
+        "fr": "δ11 — Salikhov-Insufficient-for-3732 Impossibility Lemma (Phase 65, CONDITIONNEL) pushé",
+        "en": "δ11 — Salikhov-Insufficient-for-3732 Impossibility Lemma (Phase 65, CONDITIONAL) pushed"
+      },
+      "summary": {
+        "fr": "Lemme conditionnel sur la sous-branche k ∈ [3694, 3732] de la piste E.1 Salikhov 2007 (μ ≤ 5.125). Théorème delta11_salikhov_insufficient kernel-checked Lean 4 / Mathlib v4.27, axiom profile kernel-3 + 3 ad-hoc transparents (C_Salikhov, C_Salikhov_pos, c_salikhov_upper_bound). 0 sorry, 0 admit, build 2039 jobs ~11s post-Phase 6-bis polish (-82% vs ~67s pre-polish). Architecture 5-IA cross-validation (Claude Code + Claude Opus CLI + Gemini Pro 3.1 + ChatGPT 5.5 thinking + Claude.ai web). Cross-modèle a payé son prix DEUX FOIS (mea culpa #31 DOI Wu&Wang catché par ChatGPT, mea culpa #32 axiome non-positivement-restreint catché par Gemini ARES shadow). Score G3 6/6 cross-val ~37/37 + 0 réserve résiduelle + 0 KO. Trilogie d'impossibilité étendue en quadrilogie conditionnelle (δ8, δ8', δ10, δ11).",
+        "en": "Conditional lemma on sub-branch k ∈ [3694, 3732] of approach E.1 Salikhov 2007 (μ ≤ 5.125). Theorem delta11_salikhov_insufficient kernel-checked Lean 4 / Mathlib v4.27, axiom profile kernel-3 + 3 transparent ad-hoc (C_Salikhov, C_Salikhov_pos, c_salikhov_upper_bound). 0 sorry, 0 admit, build 2039 jobs ~11s post-Phase 6-bis polish (-82% vs ~67s pre-polish). 5-AI cross-validation architecture (Claude Code + Claude Opus CLI + Gemini Pro 3.1 + ChatGPT 5.5 thinking + Claude.ai web). Cross-model paid its price TWICE (mea culpa #31 wrong Wu&Wang DOI caught by ChatGPT, mea culpa #32 non-positively-restricted axiom caught by Gemini ARES shadow). G3 6/6 cross-val score ~37/37 + 0 residual reservation + 0 KO. Initial impossibility trilogy extended into conditional quadrilogy (δ8, δ8', δ10, δ11)."
+      },
+      "artefacts": [
+        {"label": "GitHub tag v0.7.3-delta11", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v0.7.3-delta11", "kind": "tag"},
+        {"label": "Branch study/E1-salikhov-2007-impossibility", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/E1-salikhov-2007-impossibility", "kind": "branch"},
+        {"label": "Delta11Salikhov.lean", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/ProjetCollatz/PostJAR/Delta11Salikhov.lean", "kind": "lean-file"},
+        {"label": "GitHub commit Phase 6-bis 0ec9889", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/0ec9889", "kind": "commit"}
+      ],
+      "lean": {
+        "checked": true,
+        "files": ["ProjetCollatz/PostJAR/Delta11Salikhov.lean"],
+        "axiom_profile": ["propext", "Classical.choice", "Quot.sound", "C_Salikhov", "C_Salikhov_pos", "c_salikhov_upper_bound"],
+        "mathlib_version": "v4.27",
+        "build_jobs": 2039,
+        "build_time_seconds": 11
+      },
+      "related": ["delta10-pushed", "FIND-016", "trilogy-impossibility-complete", "meaculpa-29", "meaculpa-30", "meaculpa-31", "meaculpa-32", "5ai-cross-validation"],
+      "provenance": {
+        "from_piste": "E.1 Salikhov 2007 (μ ≤ 5.125) — pistes.json catalogue",
+        "promoted_at": "2026-05-08T07:00:00+02:00"
+      }
+    },
+
+    {
       "id": "delta10-pushed",
       "type": "lean",
       "subtype": "impossibility-lemma",

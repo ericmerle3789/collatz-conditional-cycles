@@ -333,14 +333,26 @@
 
     <div class="timeline-event major">
       <div class="timeline-dot"></div>
-      <div class="timeline-year">2026</div>
+      <div class="timeline-year">avril 2026</div>
       <h3 class="timeline-title" lang="fr">Lean 4 : théorème conditionnel formalisé (ne prouve PAS la conjecture)</h3>
       <h3 class="timeline-title" lang="en">Lean 4: conditional theorem formalized (does NOT prove the conjecture)</h3>
       <p class="timeline-content">
-        <span lang="fr"><strong>Eric Merle</strong> formalise en Lean 4 (Mathlib v4.27.0) la non-existence de cycles non-triviaux <strong>conditionnellement à 3 hypothèses externes documentées</strong> : BakerSeparation, BarinaVerification, DerivedLargeKBound. Théorème principal <code>no_nontrivial_cycle_phase59</code> kernel-checked. Trilogie d'impossibilité (δ8, δ8', δ10) prouve formellement que cette conditionnalité est <strong>structurelle, pas arbitraire</strong>. Paper soumis JAR Springer (28 pages, DOI 10.5281/zenodo.19790406).</span>
-        <span lang="en"><strong>Eric Merle</strong> formalizes in Lean 4 (Mathlib v4.27.0) the non-existence of non-trivial cycles <strong>conditional on 3 documented external hypotheses</strong>: BakerSeparation, BarinaVerification, DerivedLargeKBound. Main theorem <code>no_nontrivial_cycle_phase59</code> kernel-checked. Impossibility trilogy (δ8, δ8', δ10) formally proves this conditionality is <strong>structural, not arbitrary</strong>. Paper submitted JAR Springer (28 pages, DOI 10.5281/zenodo.19790406).</span>
+        <span lang="fr"><strong>Eric Merle</strong> formalise en Lean 4 (Mathlib v4.27) la non-existence de cycles non-triviaux <strong>conditionnellement à 3 hypothèses externes documentées</strong> : BakerSeparation, BarinaVerification, DerivedLargeKBound. Théorème principal <code>no_nontrivial_cycle_phase59</code> kernel-checked. Trilogie initiale d'impossibilité (δ8, δ8', δ10) prouve formellement que cette conditionnalité est <strong>structurelle, pas arbitraire</strong> — étendue ultérieurement en <em>quadrilogie</em> avec δ11 (voir mai 2026). Paper soumis JAR Springer (28 pages, DOI 10.5281/zenodo.19790406).</span>
+        <span lang="en"><strong>Eric Merle</strong> formalizes in Lean 4 (Mathlib v4.27) the non-existence of non-trivial cycles <strong>conditional on 3 documented external hypotheses</strong>: BakerSeparation, BarinaVerification, DerivedLargeKBound. Main theorem <code>no_nontrivial_cycle_phase59</code> kernel-checked. Initial impossibility trilogy (δ8, δ8', δ10) formally proves this conditionality is <strong>structural, not arbitrary</strong> — later extended into a <em>quadrilogy</em> with δ11 (see May 2026). Paper submitted JAR Springer (28 pages, DOI 10.5281/zenodo.19790406).</span>
       </p>
       <div class="timeline-source"><span lang="fr">Voir <a href="../">Accueil</a>, <a href="../preuve/">architecture de la preuve</a>, <a href="../research-ledger/">research ledger</a>.</span><span lang="en">See <a href="../">Home</a>, <a href="../preuve/">proof architecture</a>, <a href="../research-ledger/">research ledger</a>.</span></div>
+    </div>
+
+    <div class="timeline-event major">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">mai 2026</div>
+      <h3 class="timeline-title" lang="fr">δ11 — closure conditionnelle E.1 Salikhov 2007 + architecture 5-IA cross-validation</h3>
+      <h3 class="timeline-title" lang="en">δ11 — conditional closure of approach E.1 Salikhov 2007 + 5-AI cross-validation architecture</h3>
+      <p class="timeline-content">
+        <span lang="fr"><strong>Eric Merle</strong> ferme partiellement la piste E.1 du registre via le lemme <code>delta11_salikhov_insufficient</code> (Lean 4 / Mathlib v4.27) : Salikhov 2007 (μ ≤ 5.125) <strong>seul</strong> est insuffisant pour fermer la sous-branche k ∈ [3694, 3732], contrairement à Wu 2003. Théorème <strong>CONDITIONNEL</strong> sous 3 axiomes ad-hoc transparents (kernel-3 + <code>C_Salikhov</code>, <code>C_Salikhov_pos</code>, <code>c_salikhov_upper_bound</code>) — pas une dérivation directe du paper Salikhov 2007. <strong>Architecture 5-IA cross-validation</strong> (Claude Code + Claude Opus CLI + Gemini Pro 3.1 + ChatGPT 5.5 + Claude.ai web) : le cross-modèle a payé son prix DEUX FOIS (DOI Wu&amp;Wang erroné catché par ChatGPT, axiome non-positivement-restreint catché par Gemini). 4 mea culpa publics #29 #30 #31 #32, score G3 final ~37/37 + 0 réserve. Build optimisé −82% (Phase 6-bis polish). Trilogie d'impossibilité étendue en <strong>quadrilogie conditionnelle</strong> (δ8, δ8', δ10, δ11). Tag <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v0.7.3-delta11" target="_blank" rel="noopener">v0.7.3-delta11</a>.</span>
+        <span lang="en"><strong>Eric Merle</strong> partially closes approach E.1 of the registry via the <code>delta11_salikhov_insufficient</code> lemma (Lean 4 / Mathlib v4.27): Salikhov 2007 (μ ≤ 5.125) <strong>alone</strong> is insufficient to close the sub-branch k ∈ [3694, 3732], unlike Wu 2003. <strong>CONDITIONAL</strong> theorem under 3 transparent ad-hoc axioms (kernel-3 + <code>C_Salikhov</code>, <code>C_Salikhov_pos</code>, <code>c_salikhov_upper_bound</code>) — not a direct derivation from Salikhov 2007 paper. <strong>5-AI cross-validation architecture</strong> (Claude Code + Claude Opus CLI + Gemini Pro 3.1 + ChatGPT 5.5 + Claude.ai web): cross-model paid its price TWICE (wrong Wu&amp;Wang DOI caught by ChatGPT, non-positively-restricted axiom caught by Gemini). 4 public mea culpa #29 #30 #31 #32, final G3 score ~37/37 + 0 reservation. Optimized build −82% (Phase 6-bis polish). Initial impossibility trilogy extended into <strong>conditional quadrilogy</strong> (δ8, δ8', δ10, δ11). Tag <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v0.7.3-delta11" target="_blank" rel="noopener">v0.7.3-delta11</a>.</span>
+      </p>
+      <div class="timeline-source"><span lang="fr">Voir <a href="../changelog/">v0.7.3 changelog</a>, <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/ProjetCollatz/PostJAR/Delta11Salikhov.lean" target="_blank" rel="noopener">Delta11Salikhov.lean</a>, <a href="../research-ledger/">research ledger</a>.</span><span lang="en">See <a href="../changelog/">v0.7.3 changelog</a>, <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/ProjetCollatz/PostJAR/Delta11Salikhov.lean" target="_blank" rel="noopener">Delta11Salikhov.lean</a>, <a href="../research-ledger/">research ledger</a>.</span></div>
     </div>
   </div>
 </section>
@@ -377,8 +389,8 @@
     · <a href="../feed.xml">Atom feed</a>
   </p>
   <p style="margin-top: 0.5rem;">
-    <span lang="fr">Page mise à jour le 2026-04-30 · v0.6.0</span>
-    <span lang="en">Page last updated 2026-04-30 · v0.6.0</span>
+    <span lang="fr">Page mise à jour le 2026-05-08 · v0.7.3</span>
+    <span lang="en">Page last updated 2026-05-08 · v0.7.3</span>
   </p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
