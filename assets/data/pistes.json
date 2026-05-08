@@ -105,18 +105,18 @@
       "id": "E.1",
       "fr": {
         "name": "Salikhov 2007 (μ ≤ 5.125)",
-        "why": "Ferme k ≤ 3693 inconditionnel ; plafond μ ≥ 2 (Bundschuh-Wallisser)"
+        "why": "Ferme k ≤ 3693 inconditionnel ; plafond μ ≥ 2 (Bundschuh-Wallisser). δ11 (Phase 65) prouve formellement l'insuffisance granulaire CONDITIONNELLE sur k ∈ [3694, 3732] sous axiome ad-hoc <code>C_Salikhov &lt; 10⁻³⁰</code> — voir mea culpa #29 #30 #31."
       },
       "en": {
         "name": "Salikhov 2007 (μ ≤ 5.125)",
-        "why": "Closes k ≤ 3693 unconditionally ; plateau μ ≥ 2 (Bundschuh-Wallisser)"
+        "why": "Closes k ≤ 3693 unconditionally ; plateau μ ≥ 2 (Bundschuh-Wallisser). δ11 (Phase 65) formally proves CONDITIONAL granular insufficiency on k ∈ [3694, 3732] under ad-hoc axiom <code>C_Salikhov &lt; 10⁻³⁰</code> — see mea culpa #29 #30 #31."
       },
       "region": "I",
       "status": "partiel",
       "test4": "3/4",
-      "lean": "PadeBound (à prouver)",
-      "leanFile": "ProjetCollatz/PostJAR/PadeBound.lean",
-      "ref": "Salikhov, Doklady Math. 76(3)"
+      "lean": "Delta11Salikhov.lean (prouvé conditionnel sous axiomes ad-hoc, kernel-3)",
+      "leanFile": "ProjetCollatz/PostJAR/Delta11Salikhov.lean",
+      "ref": "Salikhov, Doklady Math. 76(3), 955-957 (2007), DOI 10.1134/S1064562407060361"
     },
     {
       "id": "E.2",

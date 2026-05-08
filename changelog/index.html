@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa, Red Team cycles. Latest: v0.6.0 (2026-04-30) — δ10 cartographic + Research Ledger + impossibility trilogy.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa, Red Team cycles. Latest: v0.7.3 (2026-05-08) — δ11 Salikhov-Insufficient-for-3732 (CONDITIONAL) + 5-AI cross-validation architecture + 3 mea culpa #29/#30/#31.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -56,7 +56,7 @@
         "name": "Eric Merle"
       },
       "datePublished": "2026-04-27",
-      "dateModified": "2026-04-30",
+      "dateModified": "2026-05-08",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
@@ -132,6 +132,33 @@
 </section>
 
 <section>
+  <article class="changelog-entry">
+    <header>
+      <h2><span class="version-tag">v0.7.3</span> <span lang="fr">δ11 Salikhov-Insufficient-for-3732 (CONDITIONNEL) — architecture 5-IA cross-validation</span><span lang="en">δ11 Salikhov-Insufficient-for-3732 (CONDITIONAL) — 5-AI cross-validation architecture</span></h2>
+      <time datetime="2026-05-08">2026-05-08 (autonomous 5-AI session, ~12h cumulés sur 3 jours)</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>δ11 — Salikhov-Insufficient-for-3732 (Lean 4 / Mathlib v4.27)</strong> : nouveau lemme formel sur la sous-branche <code>k ∈ [3694, 3732]</code> de la piste E.1 Salikhov 2007 (μ ≤ 5.125). Théorème <code>delta11_salikhov_insufficient</code> kernel-checked, <code>lake build PASS</code> (7886 jobs, 68s sur Mac M1, <strong>0 warning</strong>), 0 sorry, 0 admit. Branche <code>study/E1-salikhov-2007-impossibility</code> (2 commits : <code>16884f1</code> + <code>fa4ad47</code>), paper JAR (<code>main</code>) intouché, push origin verrouillé tant que GF8 n'est pas levé.</li>
+      <li><strong>Profil épistémique CONDITIONNEL transparent</strong> : <code>[propext, Classical.choice, Quot.sound, C_Salikhov, c_salikhov_upper_bound]</code> — kernel-3 standard + 2 axiomes ad-hoc explicitement déclarés. <code>axiom C_Salikhov : ℝ</code> (existence de la constante effective Salikhov, non-publiée explicitement) + <code>axiom c_salikhov_upper_bound : C_Salikhov &lt; (10:ℝ)^(-30:ℤ)</code> (borne supérieure conservatrice cohérente avec la littérature diophantienne effective Baker / Mignotte ; <strong>PAS extraite du paper Salikhov 2007</strong>). Le théorème δ11 prouve une <strong>insuffisance numérique de la borne ad-hoc retenue</strong>, pas une propriété directement publiée par Salikhov 2007.</li>
+      <li><strong>Architecture 5-IA cross-validation</strong> : Session A (Claude Code Opus 4.7) + Session D (Claude Opus 4.7 CLI mailbox indépendante) + Gemini Pro 3.1 + ChatGPT 5.5 thinking + Claude.ai web Opus 4.7. Anti-corrélation 3 niveaux : sub-agents internal Session D (3 prompts différenciés) + cross-modèle Opus vs ChatGPT/Gemini + cross-Claude pur Opus CLI vs Opus web. <strong>Le cross-modèle a payé son prix</strong> : ChatGPT G3 RT shadow a flagué un DOI Wu & Wang 2014 erroné dans la version initiale du PROVENANCE (cf. mea culpa #31), invisible aux 4 instances Claude.</li>
+      <li><strong>Trois protocoles d'audit G3 indépendants</strong> : RED TEAM épistémique 12/12 PASS + 1 réserve mineure, NASA failure modes 14/15 PASS + 1 WARN (multi-version Mathlib hors scope strict), ARES adversarial 8/10 PASS + 2 GO réserves (imports lourds optionnels). Score consolidé post-Phase 5a : <strong>34/37 PASS direct + 3/37 réserves mineures non-bloquantes + 0/37 KO</strong>. Cinq fichiers d'audit publiés dans <code>collatz-lab-audit/findings/</code> (3 primary Session D + 2 shadow ChatGPT/Claude.ai web).</li>
+      <li><strong>Lineage formel des bornes d'irrationalité de log 3</strong> documenté dans le doc-comment Lean (Phase 5a fix Session D) : Rhin 1987 (μ ≤ 8.616) → Wu 2003 (Math. Comp. 72(242), DOI <code>10.1090/S0025-5718-02-01442-4</code>, online 2002 / print 2003) → Salikhov 2007 (Doklady Math. 76(3), DOI <code>10.1134/S1064562407060361</code>) → Wu &amp; Wang 2014 (J. Number Theory 142, DOI <code>10.1016/j.jnt.2014.03.007</code>, raffinement μ ≤ 5.1163051). Tous les DOIs vérifiés indépendamment via <a href="https://api.crossref.org/works/" target="_blank" rel="noopener">CrossRef API</a> 2026-05-08.</li>
+      <li><strong>Trois mea culpa publics</strong> : <strong>#29</strong> /papers/ présentait Salikhov 2007 et Wu 2003 comme équivalents pour <code>k ≤ 3732</code> alors que Wu 2003 est strictement plus fort sur cette sous-branche (k_max=3732 vs Salikhov k_max=3693) ; <strong>#30</strong> Wu &amp; Wang 2014 (μ ≤ 5.116) absent du registre <code>pistes.json</code> initial alors que c'est le raffinement le plus récent ; <strong>#31</strong> DOI Wu &amp; Wang 2014 initialement erroné (<code>.004</code> = Anglès-Pellarin) dans <code>PROVENANCE_DELTA11.md</code>, corrigé <code>.007</code> après audit cross-modèle ChatGPT (CrossRef API confirmation indépendante).</li>
+      <li><strong>Méthode Lean (Phase 64 algébrique vs numérique)</strong> : décomposition en deux lemmes <code>reduction_step1a</code> (algébrique, isolation de la signature pure) + <code>reduction_step1b</code> (numérique, calc-chain via puissance entière 10000-binding pour éviter <code>norm_num</code> sur <code>rpow</code> rationnel). Direction monotonie confirmée upper-bound sur <code>k</code> (binding <code>k ≤ 10000</code>). Erreur initiale chunk 2 (binding lower) catchée par ChatGPT cross-modèle, corrigée Session D.</li>
+      <li><em>Disclosure : ce théorème est <strong>CONDITIONNEL</strong> sous deux axiomes ad-hoc transparents. C'est une <strong>maquette formelle conditionnelle</strong>, pas une extraction certifiée du paper original Salikhov 2007. La piste E.1 reste donc <strong>partiellement fermée</strong>, pas démontrée inconditionnellement. Voir le disclaimer GF7 complet dans le header du fichier <code>Delta11Salikhov.lean</code>.</em></li>
+    </ul>
+    <ul lang="en">
+      <li><strong>δ11 — Salikhov-Insufficient-for-3732 (Lean 4 / Mathlib v4.27)</strong>: new formal lemma on sub-branch <code>k ∈ [3694, 3732]</code> of approach E.1 Salikhov 2007 (μ ≤ 5.125). Theorem <code>delta11_salikhov_insufficient</code> kernel-checked, <code>lake build PASS</code> (7886 jobs, 68s on Mac M1, <strong>0 warning</strong>), 0 sorry, 0 admit. Branch <code>study/E1-salikhov-2007-impossibility</code> (2 commits: <code>16884f1</code> + <code>fa4ad47</code>), JAR paper (<code>main</code>) untouched, push origin locked until GF8 is lifted.</li>
+      <li><strong>CONDITIONAL transparent epistemic profile</strong>: <code>[propext, Classical.choice, Quot.sound, C_Salikhov, c_salikhov_upper_bound]</code> — standard kernel-3 + 2 explicitly declared ad-hoc axioms. <code>axiom C_Salikhov : ℝ</code> (existence of Salikhov's effective constant, not explicitly published) + <code>axiom c_salikhov_upper_bound : C_Salikhov &lt; (10:ℝ)^(-30:ℤ)</code> (conservative upper bound consistent with effective Diophantine literature Baker / Mignotte; <strong>NOT extracted from Salikhov 2007 paper</strong>). The δ11 theorem proves a <strong>numerical insufficiency of the chosen ad-hoc bound</strong>, not a property directly published by Salikhov 2007.</li>
+      <li><strong>5-AI cross-validation architecture</strong>: Session A (Claude Code Opus 4.7) + Session D (Claude Opus 4.7 CLI independent mailbox) + Gemini Pro 3.1 + ChatGPT 5.5 thinking + Claude.ai web Opus 4.7. 3-tier anti-correlation: Session D internal sub-agents (3 differentiated prompts) + cross-model Opus vs ChatGPT/Gemini + pure cross-Claude Opus CLI vs Opus web. <strong>Cross-model paid its price</strong>: ChatGPT G3 RT shadow flagged a wrong Wu &amp; Wang 2014 DOI in the initial PROVENANCE (cf. mea culpa #31), invisible to all 4 Claude instances.</li>
+      <li><strong>Three independent G3 audit protocols</strong>: epistemic RED TEAM 12/12 PASS + 1 minor reservation, NASA failure modes 14/15 PASS + 1 WARN (multi-version Mathlib out of strict scope), ARES adversarial 8/10 PASS + 2 GO reservations (heavy imports optional). Consolidated score post-Phase 5a: <strong>34/37 direct PASS + 3/37 minor non-blocking reservations + 0/37 KO</strong>. Five audit files published in <code>collatz-lab-audit/findings/</code> (3 primary Session D + 2 shadow ChatGPT/Claude.ai web).</li>
+      <li><strong>Formal lineage of log 3 irrationality bounds</strong> documented in Lean doc-comment (Phase 5a Session D fix): Rhin 1987 (μ ≤ 8.616) → Wu 2003 (Math. Comp. 72(242), DOI <code>10.1090/S0025-5718-02-01442-4</code>, online 2002 / print 2003) → Salikhov 2007 (Doklady Math. 76(3), DOI <code>10.1134/S1064562407060361</code>) → Wu &amp; Wang 2014 (J. Number Theory 142, DOI <code>10.1016/j.jnt.2014.03.007</code>, refinement μ ≤ 5.1163051). All DOIs independently verified via <a href="https://api.crossref.org/works/" target="_blank" rel="noopener">CrossRef API</a> 2026-05-08.</li>
+      <li><strong>Three public mea culpa</strong>: <strong>#29</strong> /papers/ presented Salikhov 2007 and Wu 2003 as equivalent for <code>k ≤ 3732</code> while Wu 2003 is strictly stronger on this sub-branch (k_max=3732 vs Salikhov k_max=3693); <strong>#30</strong> Wu &amp; Wang 2014 (μ ≤ 5.116) missing from the initial <code>pistes.json</code> registry whereas it is the most recent refinement; <strong>#31</strong> Wu &amp; Wang 2014 DOI initially wrong (<code>.004</code> = Anglès-Pellarin) in <code>PROVENANCE_DELTA11.md</code>, corrected to <code>.007</code> after cross-model ChatGPT audit (CrossRef API independent confirmation).</li>
+      <li><strong>Lean methodology (Phase 64 algebraic vs numerical)</strong>: decomposition into two lemmas <code>reduction_step1a</code> (algebraic, isolation of pure signature) + <code>reduction_step1b</code> (numerical, calc-chain via integer power 10000-binding to avoid <code>norm_num</code> on rational <code>rpow</code>). Monotonicity direction confirmed upper-bound on <code>k</code> (<code>k ≤ 10000</code> binding). Initial chunk 2 error (lower-bound binding) caught by ChatGPT cross-model, fixed by Session D.</li>
+      <li><em>Disclosure: this theorem is <strong>CONDITIONAL</strong> under two transparent ad-hoc axioms. It is a <strong>conditional formal mock-up</strong>, not a certified extraction from the original Salikhov 2007 paper. Approach E.1 thus remains <strong>partially closed</strong>, not unconditionally proven. See full GF7 disclaimer in the header of <code>Delta11Salikhov.lean</code>.</em></li>
+    </ul>
+  </article>
+
   <article class="changelog-entry">
     <header>
       <h2><span class="version-tag">v0.7.0</span> <span lang="fr">CGS-7 finalisé — audit indépendant 4 IA + lake build PASS</span><span lang="en">CGS-7 finalized — independent 4-AI audit + lake build PASS</span></h2>
@@ -308,7 +335,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.6.0 · 2026-04-30</div>
+  <div class="footer-meta">Cartography · v0.7.3 · 2026-05-08</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
   <p class="footer-status">

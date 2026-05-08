@@ -367,15 +367,15 @@
     </div>
 
     <div class="card">
-      <div class="card-eyebrow" lang="fr">À explorer</div>
-      <div class="card-eyebrow" lang="en">To explore</div>
-      <h3 lang="fr">Désaxiomatisation Baker partielle (Salikhov / Wu)</h3>
-      <h3 lang="en">Partial Baker deaxiomatization (Salikhov / Wu)</h3>
+      <div class="card-eyebrow" lang="fr">★ Validé Lean 4 kernel-checked (conditionnel, kernel-3 + 2 axiomes ad-hoc)</div>
+      <div class="card-eyebrow" lang="en">★ Validated Lean 4 kernel-checked (conditional, kernel-3 + 2 ad-hoc axioms)</div>
+      <h3 lang="fr">δ11 Salikhov-Insufficient-for-3732 — impossibilité granulaire conditionnelle</h3>
+      <h3 lang="en">δ11 Salikhov-Insufficient-for-3732 — conditional granular impossibility</h3>
       <p style="font-size: 0.92rem;" lang="fr">
-        Idée : formaliser Salikhov 2007 ($\mu \leq 5.125$) ou Wu 2003 ($c = 5.117$) pour réduire la dépendance Baker dans la sous-branche $k \leq 3732$. Le gap résiduel ($k \in [3733, 1.375 \cdot 10^{11}]$) reste conditionnel.
+        Lemme cartographique <strong>conditionnel</strong> Lean 4 / Mathlib v4.27 (Phase 65, kernel-3 + 2 axiomes ad-hoc transparents) prouvant que Salikhov 2007 ($\mu \leq 5.125$, DOI <a href="https://doi.org/10.1134/S1064562407060361" target="_blank" rel="noopener">10.1134/S1064562407060361</a>) <strong>SEUL</strong> est insuffisant pour fermer la sous-branche $k \in [3694, 3732]$, contrairement à Wu 2003 ($c = 5.117$, $k_{\max} = 3732$, DOI <a href="https://doi.org/10.1090/S0025-5718-02-01442-4" target="_blank" rel="noopener">10.1090/S0025-5718-02-01442-4</a>). Wu &amp; Wang 2014 ($\mu \leq 5.1163051$, J. Number Theory 142, 264-273, DOI <a href="https://doi.org/10.1016/j.jnt.2014.03.007" target="_blank" rel="noopener">10.1016/j.jnt.2014.03.007</a>) raffine Salikhov sans changer qualitativement le verdict δ11. <em>Le théorème est <strong>CONDITIONNEL</strong> sous axiome ad-hoc <code>C_Salikhov &lt; 10^{-30}</code> — pas une dérivation directe du paper Salikhov 2007 ; cohérent avec littérature diophantienne effective (Baker, Mignotte). Cf. mea culpa #29 / #30 / #31.</em> Le gap résiduel ($k \in [3733, 1.375 \cdot 10^{11}]$) reste conditionnel sur BakerSeparation. Branche <code>study/E1-salikhov-2007-impossibility</code>.
       </p>
       <p style="font-size: 0.92rem;" lang="en">
-        Idea: formalize Salikhov 2007 ($\mu \leq 5.125$) or Wu 2003 ($c = 5.117$) to reduce Baker dependency on the sub-branch $k \leq 3732$. The residual gap ($k \in [3733, 1.375 \cdot 10^{11}]$) remains conditional.
+        <strong>Conditional</strong> cartographic Lean 4 / Mathlib v4.27 lemma (Phase 65, kernel-3 + 2 transparent ad-hoc axioms) proving that Salikhov 2007 ($\mu \leq 5.125$, DOI <a href="https://doi.org/10.1134/S1064562407060361" target="_blank" rel="noopener">10.1134/S1064562407060361</a>) <strong>alone</strong> is insufficient to close the sub-branch $k \in [3694, 3732]$, unlike Wu 2003 ($c = 5.117$, $k_{\max} = 3732$, DOI <a href="https://doi.org/10.1090/S0025-5718-02-01442-4" target="_blank" rel="noopener">10.1090/S0025-5718-02-01442-4</a>). Wu &amp; Wang 2014 ($\mu \leq 5.1163051$, J. Number Theory 142, 264-273, DOI <a href="https://doi.org/10.1016/j.jnt.2014.03.007" target="_blank" rel="noopener">10.1016/j.jnt.2014.03.007</a>) refines Salikhov without qualitatively changing the δ11 verdict. <em>The theorem is <strong>CONDITIONAL</strong> under ad-hoc axiom <code>C_Salikhov &lt; 10^{-30}</code> — not a direct derivation from Salikhov 2007 paper ; consistent with effective Diophantine literature (Baker, Mignotte). See mea culpa #29 / #30 / #31.</em> The residual gap ($k \in [3733, 1.375 \cdot 10^{11}]$) remains conditional on BakerSeparation. Branch <code>study/E1-salikhov-2007-impossibility</code>.
       </p>
     </div>
 
