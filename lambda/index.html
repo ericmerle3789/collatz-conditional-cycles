@@ -20,7 +20,7 @@
 <meta name="theme-color" content="#0e0f13">
 
 <meta property="og:title" content="Λ_{S,k} interactive — Collatz / Syracuse Conditional Cycles">
-<meta property="og:description" content="(Syracuse · Collatz · 3n+1) Interactive visualization of the Λ lock and the three forbidden regions (Baker, Barina, Hercher).">
+<meta property="og:description" content="(Syracuse · Collatz · 3n+1) Interactive visualization of the Λ lock and the three forbidden regions (BakerSeparation, BarinaVerification, DerivedLargeKBound).">
 <meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -46,7 +46,7 @@
       "@id": "https://collatz-lab.org/lambda/",
       "headline": "Interactive visualization of the Λ_{S,k} Diophantine lock",
       "name": "Λ_{S,k} interactive explorer",
-      "description": "Interactive (S, k) plane explorer showing the three forbidden regions of any hypothetical non-trivial Collatz cycle: BarinaVerification (n < 2^71, reproducible computational verification, Barina 2025), DerivedLargeKBound (m ≤ 91 local minima, published conditional theorem, Hercher 2023), and BakerSeparation (working conjecture, undemonstrated strengthening of published Rhin/Wu/Salikhov bounds — see mea culpa #28 + δ10 cartographic lemma).",
+      "description": "Interactive (S, k) plane explorer showing the three forbidden regions of any hypothetical non-trivial Collatz cycle: BarinaVerification (n < 2^71, reproducible computational verification, Barina 2025), DerivedLargeKBound (project-derived hypothesis: k > 1322 → n < 2^71; combines BakerSeparation + continued-fraction gaps of log₂3 + Product Bound + BarinaVerification; NOT a published theorem — see HYPOTHESES.md §5), and BakerSeparation (working conjecture, undemonstrated strengthening of published Rhin/Wu/Salikhov bounds — see mea culpa #28 + δ10 cartographic lemma).",
       "url": "https://collatz-lab.org/lambda/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -88,7 +88,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
         onload="setTimeout(() => renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]}), 200);"></script>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-4-JAR-REJECTED">
+<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
 </head>
 <body>
 
@@ -132,10 +132,10 @@
   <h1 style="font-size: clamp(1.6rem, 4vw, 2.8rem);" lang="fr">Le verrou Λ<sub>S,k</sub> en action</h1>
   <h1 style="font-size: clamp(1.6rem, 4vw, 2.8rem);" lang="en">The Λ<sub>S,k</sub> lock in action</h1>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">
-    Faites varier $S$ et $k$ et observez en direct la valeur du verrou diophantien $\Lambda_{S,k} = S \log 2 - k \log 3$, ainsi que les régions interdites par chacun des trois axiomes externes (Baker, Barina, Hercher).
+    Faites varier $S$ et $k$ et observez en direct la valeur du verrou diophantien $\Lambda_{S,k} = S \log 2 - k \log 3$, ainsi que les régions interdites par chacune des trois hypothèses externes (BakerSeparation, BarinaVerification, DerivedLargeKBound).
   </p>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="en">
-    Vary $S$ and $k$ and observe in real time the value of the Diophantine lock $\Lambda_{S,k} = S \log 2 - k \log 3$, along with the regions forbidden by each of the three external axioms (Baker, Barina, Hercher).
+    Vary $S$ and $k$ and observe in real time the value of the Diophantine lock $\Lambda_{S,k} = S \log 2 - k \log 3$, along with the regions forbidden by each of the three external hypotheses (BakerSeparation, BarinaVerification, DerivedLargeKBound).
   </p>
 </section>
 
@@ -160,7 +160,7 @@
 
     <div class="lambda-legend">
       <div class="legend-item"><span class="legend-color" style="background: #c25450;"></span> <span lang="fr">Région exclue Barina ($n &lt; 2^{71}$)</span><span lang="en">Barina-excluded region ($n &lt; 2^{71}$)</span></div>
-      <div class="legend-item"><span class="legend-color" style="background: #d4a045;"></span> <span lang="fr">Région exclue Hercher ($m \leq 91$)</span><span lang="en">Hercher-excluded region ($m \leq 91$)</span></div>
+      <div class="legend-item"><span class="legend-color" style="background: #d4a045;"></span> <span lang="fr">Région exclue DerivedLargeKBound (dérivation projet, $k &gt; 1322 \Rightarrow n &lt; 2^{71}$)</span><span lang="en">DerivedLargeKBound-excluded region (project-derived, $k &gt; 1322 \Rightarrow n &lt; 2^{71}$)</span></div>
       <div class="legend-item"><span class="legend-color" style="background: #6a93b8;"></span> <span lang="fr">Région bornée BakerSeparation (effective)</span><span lang="en">BakerSeparation effective bounded region</span></div>
       <div class="legend-item"><span class="legend-color" style="background: #c8a86a;"></span> <span lang="fr">Position courante (S, k)</span><span lang="en">Current position (S, k)</span></div>
       <div class="legend-item"><span class="legend-color legend-line" style="background: #6a9b7a;"></span> <span lang="fr">Droite $S = k \cdot \log_2 3 \approx 1.585\,k$</span><span lang="en">Line $S = k \cdot \log_2 3 \approx 1.585\,k$</span></div>
@@ -189,11 +189,11 @@
       <p lang="en">Covers <strong>small cycles</strong> ($k \leq 1322$) by combining Product-Bound + numerical verification.</p>
     </div>
     <div class="card">
-      <div class="card-eyebrow">Hercher 2023</div>
-      <h3 lang="fr">$m \leq 91$ minima locaux</h3>
-      <h3 lang="en">$m \leq 91$ local minima</h3>
-      <p lang="fr">Borne dérivée à partir de Baker — restreint la <strong>structure interne</strong> de tout cycle hypothétique.</p>
-      <p lang="en">Derived bound from Baker — restricts the <strong>internal structure</strong> of any hypothetical cycle.</p>
+      <div class="card-eyebrow">DerivedLargeKBound (dérivation projet)</div>
+      <h3 lang="fr">$k &gt; 1322 \Rightarrow n &lt; 2^{71}$</h3>
+      <h3 lang="en">$k &gt; 1322 \Rightarrow n &lt; 2^{71}$</h3>
+      <p lang="fr">Hypothèse <strong>dérivée projet</strong> (combine BakerSeparation + gaps fractions continues log<sub>2</sub>3 + Product Bound + BarinaVerification) — couvre les <strong>grands cycles</strong>. <em>N'est pas un théorème publié</em> : voir <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>. Hercher 2023 (J. Integer Seq. 26.3.5) sur les m-cycles porte sur une quantité distincte (m = minima locaux, ≠ k = pas impairs).</p>
+      <p lang="en">A <strong>project-derived hypothesis</strong> (combines BakerSeparation + continued-fraction gaps of log<sub>2</sub>3 + Product Bound + BarinaVerification) — covers <strong>large cycles</strong>. <em>Not a published theorem</em>: see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>. Hercher 2023 (J. Integer Seq. 26.3.5) on m-cycles addresses a distinct quantity (m = local minima, ≠ k = odd steps).</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--accent);">
       <div class="card-eyebrow">BakerSeparation (effective)</div>
@@ -230,7 +230,7 @@
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20260513-V0-7-4-JAR-REJECTED"></script>
+<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
 <script src="../assets/js/lambda-explorer.js"></script>
 
 </body>

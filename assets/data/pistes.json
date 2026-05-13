@@ -6,11 +6,11 @@
       "id": "★ Main",
       "fr": {
         "name": "no_nontrivial_cycle_phase59 — résultat principal",
-        "why": "Théorème principal du preprint (v1.1, 2026-04-27, DOI Zenodo 10.5281/zenodo.19790406) : aucun cycle Collatz non-trivial sous 3 conditions explicites. Kernel-checked Lean 4 (Mathlib v4.27). Profil d'axiomes minimal : 3 axiomes Lean kernel (propext, Classical.choice, Quot.sound) + 3 hypothèses externes documentées (BakerSeparation effective, BarinaVerification n<2^71, DerivedLargeKBound m≤91). 28 pages, ~30 fichiers Lean, reproductible via reproduce.sh EXIT 0. Contribution : pas la non-existence inconditionnelle (irréalisable cf. δ8 lemma) mais la cartographie rigoureuse des obstructions structurelles qui rend la conditionnalité nécessaire."
+        "why": "Théorème principal du preprint (v1.1, 2026-04-27, DOI Zenodo 10.5281/zenodo.19790406) : aucun cycle Collatz non-trivial sous 3 conditions explicites. Kernel-checked Lean 4 (Mathlib v4.27). Profil d'axiomes minimal : 3 axiomes Lean kernel (propext, Classical.choice, Quot.sound) + 3 hypothèses externes documentées (BakerSeparation effective Baker 1966 / Matveev 2000, BarinaVerification n<2^71 Barina 2025, DerivedLargeKBound dérivation projet k>1322⇒n<2^71 — voir HYPOTHESES.md §5). 28 pages, ~30 fichiers Lean, reproductible via reproduce.sh EXIT 0. Contribution : pas la non-existence inconditionnelle (irréalisable cf. δ8 lemma) mais la cartographie rigoureuse des obstructions structurelles qui rend la conditionnalité nécessaire."
       },
       "en": {
         "name": "no_nontrivial_cycle_phase59 — main result",
-        "why": "Main theorem of the preprint (v1.1, 2026-04-27, Zenodo DOI 10.5281/zenodo.19790406): no non-trivial Collatz cycle under 3 explicit conditions. Kernel-checked Lean 4 (Mathlib v4.27). Minimal axiom profile: 3 Lean kernel axioms (propext, Classical.choice, Quot.sound) + 3 documented external hypotheses (BakerSeparation effective, BarinaVerification n<2^71, DerivedLargeKBound m≤91). 28 pages, ~30 Lean files, reproducible via reproduce.sh EXIT 0. Contribution: not unconditional non-existence (unattainable cf. δ8 lemma) but the rigorous mapping of structural obstructions that makes conditionality necessary."
+        "why": "Main theorem of the preprint (v1.1, 2026-04-27, Zenodo DOI 10.5281/zenodo.19790406): no non-trivial Collatz cycle under 3 explicit conditions. Kernel-checked Lean 4 (Mathlib v4.27). Minimal axiom profile: 3 Lean kernel axioms (propext, Classical.choice, Quot.sound) + 3 documented external hypotheses (BakerSeparation effective Baker 1966 / Matveev 2000, BarinaVerification n<2^71 Barina 2025, DerivedLargeKBound project-derived k>1322⇒n<2^71 — see HYPOTHESES.md §5). 28 pages, ~30 Lean files, reproducible via reproduce.sh EXIT 0. Contribution: not unconditional non-existence (unattainable cf. δ8 lemma) but the rigorous mapping of structural obstructions that makes conditionality necessary."
       },
       "region": "I",
       "status": "main",
@@ -586,16 +586,16 @@
     {
       "id": "C",
       "fr": {
-        "name": "DerivedLargeKBound",
-        "desc": "Cycles ont m ≤ 91 minima locaux",
-        "limit": "Conditional sur BakerSeparation effective"
+        "name": "DerivedLargeKBound (dérivation projet)",
+        "desc": "Pour tout cycle non trivial (n,k) avec k > 1322, n < 2^71 ; combine BakerSeparation + gaps fractions continues log₂3 + Product Bound + BarinaVerification",
+        "limit": "N'est pas un théorème publié — dérivation interne projet (HYPOTHESES.md §5). Hercher 2023 sur m-cycles (m ≤ 91, minima locaux) est une quantité différente et indépendante (cf. HYPOTHESES.md §relation m vs k)."
       },
       "en": {
-        "name": "DerivedLargeKBound",
-        "desc": "Cycles have m ≤ 91 local minima",
-        "limit": "Conditional on BakerSeparation effective"
+        "name": "DerivedLargeKBound (project-derived)",
+        "desc": "For any non-trivial cycle (n,k) with k > 1322, n < 2^71; combines BakerSeparation + continued-fraction gaps of log₂3 + Product Bound + BarinaVerification",
+        "limit": "Not a published theorem — project-internal derivation (HYPOTHESES.md §5). Hercher 2023 on m-cycles (m ≤ 91, local minima) addresses a different and independent quantity (cf. HYPOTHESES.md §relation m vs k)."
       },
-      "ref": "Hercher 2023, J. Integer Seq. 26.3.5"
+      "ref": "Project derivation — see HYPOTHESES.md §5 + paper §4 + Phase59ContinuedFractions.lean:115. Context literature: Hercher 2023 (J. Integer Seq. 26.3.5) on m-cycles, NOT the source of this hypothesis."
     }
   ],
   "tests": [
