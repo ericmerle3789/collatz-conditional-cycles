@@ -100,7 +100,7 @@
 <!-- D3 v7 pour le dependency graph -->
 <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js" integrity="sha384-su5kReKyYlIFrI62mbQRKXHzFobMa7BHp1cK6julLPbnYcCW9NIZKJiTODjLPeDh" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-4-JAR-REJECTED">
+<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
 </head>
 <body>
 
@@ -153,8 +153,8 @@
   <div class="section-eyebrow">§ I</div>
   <h2 lang="fr">Profil d'axiomes</h2>
   <h2 lang="en">Axiom profile</h2>
-  <p lang="fr">Les théorèmes centraux reposent sur <strong>deux types d'hypothèses distincts</strong> : (1) les <strong>axiomes du noyau Lean</strong> (3, standards : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) ; (2) les <strong>3 axiomes externes documentés</strong> (1 conjecture de travail : <code>BakerSeparation</code> ; 1 vérification computationnelle reproductible : <code>BarinaVerification</code> n&lt;2<sup>71</sup>, Barina 2025 ; 1 théorème publié conditionnel : <code>DerivedLargeKBound</code> m≤91, Hercher 2023). Aucun <code>sorryAx</code> dans la chaîne critique.</p>
-  <p lang="en">The central theorems rely on <strong>two distinct types of hypotheses</strong>: (1) <strong>Lean kernel axioms</strong> (3, standard: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>); (2) <strong>3 documented external axioms</strong> (1 working conjecture: <code>BakerSeparation</code>; 1 reproducible computational verification: <code>BarinaVerification</code> n&lt;2<sup>71</sup>, Barina 2025; 1 published conditional theorem: <code>DerivedLargeKBound</code> m&le;91, Hercher 2023). No <code>sorryAx</code> in the critical chain.</p>
+  <p lang="fr">Les théorèmes centraux reposent sur <strong>deux types d'hypothèses distincts</strong> : (1) les <strong>axiomes du noyau Lean</strong> (3, standards : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) ; (2) les <strong>3 hypothèses externes documentées</strong> (1 conjecture de travail : <code>BakerSeparation</code>, Baker 1966 / Matveev 2000 effectif ; 1 vérification computationnelle reproductible : <code>BarinaVerification</code> n&lt;2<sup>71</sup>, Barina 2025 ; 1 dérivation projet : <code>DerivedLargeKBound</code>, <code>k&gt;1322 ⇒ n&lt;2<sup>71</sup></code>, combine Baker + fractions continues + Product Bound + Barina, <strong>n'est pas un théorème publié</strong> — cf. <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>). Aucun <code>sorryAx</code> dans la chaîne critique.</p>
+  <p lang="en">The central theorems rely on <strong>two distinct types of hypotheses</strong>: (1) <strong>Lean kernel axioms</strong> (3, standard: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>); (2) <strong>3 documented external hypotheses</strong> (1 working conjecture: <code>BakerSeparation</code>, Baker 1966 / Matveev 2000 effective; 1 reproducible computational verification: <code>BarinaVerification</code> n&lt;2<sup>71</sup>, Barina 2025; 1 project-derived hypothesis: <code>DerivedLargeKBound</code>, <code>k&gt;1322 ⇒ n&lt;2<sup>71</sup></code>, combines Baker + continued fractions + Product Bound + Barina, <strong>not a published theorem</strong> — see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>). No <code>sorryAx</code> in the critical chain.</p>
 
   <div class="card-grid">
     <div class="card">
@@ -188,7 +188,7 @@
       <ul>
         <li><code>BakerSeparation</code> <span lang="fr">(<strong>conjecture de travail</strong> — renforcement non démontré des bornes Rhin 1987 / Wu 2003 / Salikhov 2007 publiées ; voir <a href="/#meaculpa">#28</a> + lemme <strong>δ10</strong>)</span><span lang="en">(<strong>working hypothesis / conjecture</strong> — undemonstrated strengthening of published Rhin 1987 / Wu 2003 / Salikhov 2007 bounds; see <a href="/#meaculpa">#28</a> + <strong>δ10</strong> lemma)</span></li>
         <li><code>BarinaVerification</code> (n &lt; 2^71)</li>
-        <li><code>DerivedLargeKBound</code> (Hercher)</li>
+        <li><code>DerivedLargeKBound</code> <span lang="fr">(<strong>dérivation projet</strong> : <code>k&gt;1322 ⇒ n&lt;2^71</code>, n'est pas un théorème publié)</span><span lang="en">(<strong>project-derived</strong>: <code>k&gt;1322 ⇒ n&lt;2^71</code>, not a published theorem)</span></li>
       </ul>
     </div>
   </div>
@@ -208,8 +208,8 @@
   <div class="section-eyebrow" lang="en">§ III — Dependency graph</div>
   <h2 lang="fr">Architecture interactive (D3 force-directed)</h2>
   <h2 lang="en">Interactive architecture (D3 force-directed)</h2>
-  <p lang="fr">Graphe interactif de l'architecture de la preuve. <strong>Drag</strong> pour déplacer les nœuds, <strong>scroll</strong> pour zoomer. <em>Étoile dorée</em> = résultat principal. <span style="color: var(--accent-violet);">●</span> Axiomes externes (Baker, Barina, Hercher) · <span style="color: var(--accent-green);">●</span> Axiomes Lean kernel · <span style="color: var(--accent-blue);">●</span> Lemmes auxiliaires · <span style="color: var(--accent-amber);">●</span> Théorèmes centraux. Lignes pleines = dépendances logiques, pointillés courts = axiomes kernel, pointillés longs dorés = alias.</p>
-  <p lang="en">Interactive graph of the proof architecture. <strong>Drag</strong> to reposition nodes, <strong>scroll</strong> to zoom. <em>Golden star</em> = main result. <span style="color: var(--accent-violet);">●</span> External axioms (Baker, Barina, Hercher) · <span style="color: var(--accent-green);">●</span> Lean kernel axioms · <span style="color: var(--accent-blue);">●</span> Auxiliary lemmas · <span style="color: var(--accent-amber);">●</span> Central theorems. Solid lines = logical dependencies, short dashes = kernel axioms, long golden dashes = aliases.</p>
+  <p lang="fr">Graphe interactif de l'architecture de la preuve. <strong>Drag</strong> pour déplacer les nœuds, <strong>scroll</strong> pour zoomer. <em>Étoile dorée</em> = résultat principal. <span style="color: var(--accent-violet);">●</span> Hypothèses externes (BakerSeparation, BarinaVerification, DerivedLargeKBound) · <span style="color: var(--accent-green);">●</span> Axiomes Lean kernel · <span style="color: var(--accent-blue);">●</span> Lemmes auxiliaires · <span style="color: var(--accent-amber);">●</span> Théorèmes centraux. Lignes pleines = dépendances logiques, pointillés courts = axiomes kernel, pointillés longs dorés = alias.</p>
+  <p lang="en">Interactive graph of the proof architecture. <strong>Drag</strong> to reposition nodes, <strong>scroll</strong> to zoom. <em>Golden star</em> = main result. <span style="color: var(--accent-violet);">●</span> External hypotheses (BakerSeparation, BarinaVerification, DerivedLargeKBound) · <span style="color: var(--accent-green);">●</span> Lean kernel axioms · <span style="color: var(--accent-blue);">●</span> Auxiliary lemmas · <span style="color: var(--accent-amber);">●</span> Central theorems. Solid lines = logical dependencies, short dashes = kernel axioms, long golden dashes = aliases.</p>
 
   <div id="dependency-graph" style="width: 100%; min-height: 600px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 4px; margin: 1.5rem 0; position: relative;"></div>
 
@@ -329,9 +329,9 @@ cd collatz-conditional-cycles
 </footer>
 
 <!-- main.js : i18n, langBtn, navigator.language detection -->
-<script src="../assets/js/main.js?v=20260513-V0-7-4-JAR-REJECTED"></script>
+<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
 <!-- dependency-graph.js : D3 force-directed visualization -->
-<script src="../assets/js/dependency-graph.js?v=20260513-V0-7-4-JAR-REJECTED"></script>
+<script src="../assets/js/dependency-graph.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
 <script>
   // Init du graphe quand D3 est disponible
   function initDepGraph() {

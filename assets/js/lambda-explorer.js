@@ -3,7 +3,7 @@
    Plot dans le plan (k, S) avec :
    - droite y = k log_2 3 (cycle approximatif)
    - région Barina k ≤ 1322 (rouge)
-   - région Hercher m ≤ 91 (amber)
+   - région DerivedLargeKBound (dérivation projet, k > 1322) — amber
    - bande BakerSeparation effective (bleu, autour de la droite)
    - point courant (S, k) cliqué/sliders
    ========================================================================== */
@@ -131,9 +131,9 @@
       ctx.fillText('Barina k ≤ 1322', x0 + 15, y3 + 25);
     }
 
-    function drawHercherRegion() {
-      // Hercher m ≤ 91 minima locaux. Pour visualiser, on prend une bande
-      // approximative : k entre 1322 et ~92 * 80 ≈ borne supérieure conditionnelle
+    function drawDerivedLargeKBoundRegion() {
+      // DerivedLargeKBound (dérivation projet) : k > 1322 ⇒ n < 2^71
+      // Région visualisée : bande k ∈ (1322, K_MAX)
       ctx.fillStyle = 'rgba(212, 160, 69, 0.10)';
       const [x0, y0] = project(1322, 0);
       const [x1, y1] = project(K_MAX, 0);
@@ -148,7 +148,7 @@
       ctx.fill();
       ctx.fillStyle = '#d4a045';
       ctx.font = 'bold 11px JetBrains Mono';
-      ctx.fillText('Hercher m ≤ 91', x0 + 15, y3 + 25);
+      ctx.fillText('DerivedLargeKBound (k > 1322)', x0 + 15, y3 + 25);
     }
 
     function drawCycleLine() {
@@ -209,7 +209,7 @@
       const lambdaAbs = Math.abs(lambda);
       const closeToCycle = lambdaAbs < 1.5;
       const inBarina = k <= 1322;
-      const inHercher = k > 1322;
+      const inDerivedLargeK = k > 1322;
 
       if (!closeToCycle) {
         return {
@@ -225,11 +225,11 @@
           en: '⊕ Barina + Product-Bound region: excluded for n < 2⁷¹'
         };
       }
-      if (inHercher) {
+      if (inDerivedLargeK) {
         return {
-          status: 'hercher-baker',
-          fr: '⊕ Région Hercher + BakerSeparation effective : exclu via continued fractions',
-          en: '⊕ Hercher + BakerSeparation effective region: excluded via continued fractions'
+          status: 'derived-large-k',
+          fr: '⊕ Région DerivedLargeKBound (dérivation projet) + BakerSeparation effective : exclu via continued fractions',
+          en: '⊕ DerivedLargeKBound (project-derived) + BakerSeparation effective region: excluded via continued fractions'
         };
       }
       return { status: 'unknown', fr: '?', en: '?' };
@@ -239,7 +239,7 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       drawAxes();
       drawBarinaRegion();
-      drawHercherRegion();
+      drawDerivedLargeKBoundRegion();
       drawBakerBand();
       drawCycleLine();
 

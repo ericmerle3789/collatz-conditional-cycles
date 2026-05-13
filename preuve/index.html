@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Proof chain — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Conjecture de Syracuse / Collatz : architecture de la preuve Lean 4 de no_nontrivial_cycle_phase59. Phase52 Steiner identity → Phase58 small cycles (k ≤ 1322) → Phase59 continued fractions (k > 1322) → Phase63 Hercher derivation. δ8 lemma documented.">
+<meta name="description" content="Conjecture de Syracuse / Collatz : architecture de la preuve Lean 4 de no_nontrivial_cycle_phase59. Phase52 Steiner identity → Phase58 small cycles (k ≤ 1322) → Phase59 continued fractions (k > 1322, DerivedLargeKBound). δ8 lemma documented.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, Lean 4, formal proof, Steiner identity, continued fractions, Phase59, kernel-checked">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -99,7 +99,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-4-JAR-REJECTED">
+<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
 </head>
 <body>
 
@@ -161,7 +161,7 @@
 flowchart TB
     A["Axiom BakerSeparation<br/>(working conjecture,<br/>undemonstrated strengthening<br/>of Rhin/Wu/Salikhov —<br/>see #28 + δ10)"] --> B["Phase52SteinerEquation<br/>steiner_cycle_eq"]
     A2["Axiom BarinaVerification<br/>(n &lt; 2^71)"] --> C["Phase58PorteDeuxFinal<br/>no_cycle_k_le_1322"]
-    A3["Axiom DerivedLargeKBound<br/>(Hercher m ≤ 91)"] --> C
+    A3["Axiom DerivedLargeKBound<br/>(project-derived:<br/>k &gt; 1322 → n &lt; 2^71)"] --> C
 
     B --> C
     B --> D["Phase59ContinuedFractions<br/>cf_gap_8 ... cf_gap_13<br/>(native_decide)"]
@@ -230,13 +230,13 @@ flowchart TB
       <li><code>product_bound_fits_barina_1322</code> — vérification numérique $(1322^7+1322)/3 &lt; 2^{71}$</li>
       <li><code>k1322_bound_implies_n_bound</code> — implication $k \leq 1322 \Rightarrow n &lt; 2^{71}$</li>
       <li><code>no_cycle_k_le_1322</code> — résultat final pour cette sous-branche</li>
-      <li><code>hercher_from_baker_barina</code> — dérivation Hercher m ≤ 91 conditional</li>
+      <li><code>hercher_from_baker_barina</code> — dérivation projet $k \geq 92$ depuis Baker + Barina (nommée par analogie au $m \geq 92$ de Hercher 2023, quantité distincte)</li>
     </ul>
     <ul style="margin: 1rem 2rem;" lang="en">
       <li><code>product_bound_fits_barina_1322</code> — numerical verification $(1322^7+1322)/3 &lt; 2^{71}$</li>
       <li><code>k1322_bound_implies_n_bound</code> — implication $k \leq 1322 \Rightarrow n &lt; 2^{71}$</li>
       <li><code>no_cycle_k_le_1322</code> — final result for this sub-branch</li>
-      <li><code>hercher_from_baker_barina</code> — conditional Hercher m ≤ 91 derivation</li>
+      <li><code>hercher_from_baker_barina</code> — project-derived $k \geq 92$ from Baker + Barina (named by analogy with Hercher 2023's $m \geq 92$, a distinct quantity)</li>
     </ul>
   </div>
 </section>
@@ -421,7 +421,7 @@ cd collatz-conditional-cycles
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20260513-V0-7-4-JAR-REJECTED"></script>
+<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
 <script>
 mermaid.initialize({
   startOnLoad: true,

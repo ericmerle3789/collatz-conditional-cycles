@@ -78,7 +78,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-4-JAR-REJECTED">
+<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
 
 <style>
   .timeline {
@@ -302,8 +302,8 @@
       <h3 class="timeline-title" lang="fr">Hercher : bornes locales sur m</h3>
       <h3 class="timeline-title" lang="en">Hercher: local bounds on m</h3>
       <p class="timeline-content">
-        <span lang="fr"><strong>Christoph Hercher</strong> établit que pour tout cycle hypothétique non-trivial, <code>m ≤ 91</code> où <code>m</code> est le nombre de minima locaux dans la trajectoire impair-impair. Borne réutilisée comme axiome <code>DerivedLargeKBound</code> dans notre formalisation Lean 4.</span>
-        <span lang="en"><strong>Christoph Hercher</strong> establishes that for any hypothetical non-trivial cycle, <code>m ≤ 91</code> where <code>m</code> is the number of local minima in the odd-odd trajectory. Bound reused as <code>DerivedLargeKBound</code> axiom in our Lean 4 formalization.</span>
+        <span lang="fr"><strong>Christoph Hercher</strong> établit que pour tout cycle hypothétique non-trivial, <code>m ≤ 91</code> où <code>m</code> est le nombre de minima locaux dans la trajectoire impair-impair. <em>Littérature contextuelle</em> : cette borne sur <code>m</code> (minima locaux) porte sur une quantité distincte de <code>k</code> (pas impairs) et <strong>n'est pas la source de notre axiome <code>DerivedLargeKBound</code></strong>, qui est une dérivation projet sur <code>k</code> (cf. HYPOTHESES.md §5 + §relation m vs k).</span>
+        <span lang="en"><strong>Christoph Hercher</strong> establishes that for any hypothetical non-trivial cycle, <code>m ≤ 91</code> where <code>m</code> is the number of local minima in the odd-odd trajectory. <em>Context literature</em>: this bound on <code>m</code> (local minima) addresses a distinct quantity from <code>k</code> (odd steps) and <strong>is not the source of our <code>DerivedLargeKBound</code> axiom</strong>, which is a project-derived hypothesis on <code>k</code> (see HYPOTHESES.md §5 + §relation m vs k).</span>
       </p>
       <div class="timeline-source"><span lang="fr">Référencé dans le paper §4 et l'arsenal Lean v4.27.0.</span><span lang="en">Cited in paper §4 and Lean v4.27.0 arsenal.</span></div>
     </div>
@@ -367,7 +367,7 @@
     <li>Conway, J. H. (1972). <em>Unpredictable iterations</em>. Proc. Number Theory Conf., Boulder, 49-52.</li>
     <li>Crandall, R. E. (1978). <em>On the "3x+1" problem</em>. Math. Comp. 32(144), 1281-1292.</li>
     <li>Tao, T. (2019). <em>Almost all Collatz orbits attain almost bounded values</em>. <a href="https://arxiv.org/abs/1909.03562">arXiv:1909.03562</a>.</li>
-    <li>Hercher, C. (2023). Bounds on m for hypothetical non-trivial cycles. (Cited as <code>DerivedLargeKBound</code>.)</li>
+    <li>Hercher, C. (2023). Bounds on m for hypothetical non-trivial cycles, J. Integer Seq. 26.3.5. (Context literature only — <em>not</em> the source of <code>DerivedLargeKBound</code>, which is a project-derived hypothesis on k; see HYPOTHESES.md §5.)</li>
     <li>Barina, D. (2025). Convergence verification <code>n &lt; 2<sup>71</sup></code>. (Cited as <code>BarinaVerification</code>.)</li>
     <li>Merle, E. (2026). <em>On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4</em>. Preprint, Zenodo. <a href="https://doi.org/10.5281/zenodo.19790406">DOI 10.5281/zenodo.19790406</a>.</li>
   </ol>
@@ -398,6 +398,6 @@
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20260513-V0-7-4-JAR-REJECTED"></script>
+<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
 </body>
 </html>

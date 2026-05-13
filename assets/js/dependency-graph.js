@@ -9,7 +9,7 @@
 
   // Catégorisation visuelle des nœuds
   const NODE_TYPE = {
-    EXTERNAL: 'external',     // axiomes externes documentés (Baker, Barina, Hercher)
+    EXTERNAL: 'external',     // hypothèses externes documentées (BakerSeparation, BarinaVerification, DerivedLargeKBound)
     KERNEL: 'kernel',          // axiomes Lean kernel
     AUXILIARY: 'auxiliary',    // lemmes auxiliaires
     CENTRAL: 'central',        // théorèmes centraux
@@ -37,7 +37,7 @@
     // Axiomes externes (3 conditions du résultat principal)
     { id: 'BakerSeparation', type: NODE_TYPE.EXTERNAL, label: 'BakerSeparation', sub: 'effective: (2^s − 3^k)·k^6 ≥ 3^k (working conjecture, undemonstrated strengthening of Rhin/Wu/Salikhov — see #28, δ10)' },
     { id: 'BarinaVerification', type: NODE_TYPE.EXTERNAL, label: 'BarinaVerification', sub: 'Barina 2025 — n < 2⁷¹' },
-    { id: 'DerivedLargeKBound', type: NODE_TYPE.EXTERNAL, label: 'DerivedLargeKBound', sub: 'Hercher 2023 — m ≤ 91' },
+    { id: 'DerivedLargeKBound', type: NODE_TYPE.EXTERNAL, label: 'DerivedLargeKBound', sub: 'project-derived: k > 1322 → n < 2⁷¹ (combines Baker + CF + Product Bound + Barina; not Hercher 2023, not a published theorem — see HYPOTHESES.md §5)' },
     // Axiomes kernel (3 universels)
     { id: 'propext', type: NODE_TYPE.KERNEL, label: 'propext', sub: 'Propositional extensionality' },
     { id: 'Classical.choice', type: NODE_TYPE.KERNEL, label: 'Classical.choice', sub: 'Axiom of choice' },
