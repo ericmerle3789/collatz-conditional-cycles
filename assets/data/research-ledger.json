@@ -275,8 +275,8 @@
         "en": "Baker+CF+Khinchin impossibility trilogy complete"
       },
       "summary": {
-        "fr": "Les 3 hypothèses externes du paper JAR (BakerSeparation, BarinaVerification, DerivedLargeKBound) sont chacune adossées à une preuve d'impossibilité Lean 4 kernel-checked. δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64). Profil épistémique strictement décroissant : kernel-3 → kernel-3 → kernel-1 [propext].",
-        "en": "The 3 external hypotheses of JAR paper are each backed by a Lean 4 kernel-checked impossibility proof. δ8 + δ8' + δ10. Strictly decreasing epistemic profile: kernel-3 → kernel-3 → kernel-1 [propext]."
+        "fr": "Les 3 hypothèses externes du preprint (BakerSeparation, BarinaVerification, DerivedLargeKBound) sont chacune adossées à une preuve d'impossibilité Lean 4 kernel-checked. δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64). Profil épistémique strictement décroissant : kernel-3 → kernel-3 → kernel-1 [propext].",
+        "en": "The 3 external hypotheses of the preprint are each backed by a Lean 4 kernel-checked impossibility proof. δ8 + δ8' + δ10. Strictly decreasing epistemic profile: kernel-3 → kernel-3 → kernel-1 [propext]."
       },
       "related": ["delta10-pushed", "find016-closed"]
     },
@@ -285,25 +285,52 @@
       "id": "paper-jar-submitted",
       "type": "paper",
       "date": "2026-04-27",
-      "status": "submitted",
+      "status": "superseded",
       "milestone": true,
       "claim_scope": "submitted_paper",
       "verification_method": "github_tag",
       "evidence_level": "soumission",
-      "epistemic_status": "under_review",
-      "last_verified_at": "2026-04-27",
+      "epistemic_status": "superseded_by_rejection",
+      "last_verified_at": "2026-05-13",
+      "superseded_by": "paper-jar-rejected",
       "title": {
-        "fr": "Paper JAR soumis (28 pages, kernel-checked Lean 4)",
-        "en": "JAR paper submitted (28 pages, kernel-checked Lean 4)"
+        "fr": "Paper soumis au Journal of Automated Reasoning (28 pages, kernel-checked Lean 4)",
+        "en": "Paper submitted to Journal of Automated Reasoning (28 pages, kernel-checked Lean 4)"
       },
       "summary": {
-        "fr": "Soumission au Journal of Automated Reasoning (Springer). 'On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions'. Sous review.",
-        "en": "Submitted to Journal of Automated Reasoning (Springer). 'On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions'. Under review."
+        "fr": "Soumission au Journal of Automated Reasoning (Springer) le 2026-04-27. 'On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions'. Entrée historique conservée pour traçabilité ; verdict éditorial : voir événement paper-jar-rejected (2026-05-13).",
+        "en": "Submitted to Journal of Automated Reasoning (Springer) on 2026-04-27. 'On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions'. Historical entry preserved for traceability; editorial verdict: see event paper-jar-rejected (2026-05-13)."
       },
       "artefacts": [
         {"label": "DOI Zenodo", "url": "https://doi.org/10.5281/zenodo.19790406", "kind": "doi"},
         {"label": "GitHub commit main", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/c24633c", "kind": "commit"}
       ]
+    },
+
+    {
+      "id": "paper-jar-rejected",
+      "type": "paper",
+      "date": "2026-05-13",
+      "status": "rejected",
+      "milestone": true,
+      "claim_scope": "editorial_outcome",
+      "verification_method": "editorial_notification",
+      "evidence_level": "external_notification",
+      "epistemic_status": "external_unverified",
+      "last_verified_at": "2026-05-13",
+      "supersedes": "paper-jar-submitted",
+      "title": {
+        "fr": "Notification de rejet — Journal of Automated Reasoning",
+        "en": "Rejection notification — Journal of Automated Reasoning"
+      },
+      "summary": {
+        "fr": "Notification de rejet reçue 2026-05-13 pour la soumission du 2026-04-27. Le preprint reste disponible sur Zenodo sous le DOI permanent 10.5281/zenodo.19790406 (v1.1, 28 pages, kernel-checked Lean 4). Aucune modification des artefacts formels (Lean 4 / Mathlib v4.27) : le théorème conditionnel no_nontrivial_cycle_phase59 et le profil d'axiomes (kernel-3 + 3 externes documentés) restent inchangés. Repositionnement éditorial en cours ; aucune nouvelle cible journal n'est annoncée publiquement à ce stade (cf. discipline anti-promotionnelle FIND-015).",
+        "en": "Rejection notification received 2026-05-13 for the 2026-04-27 submission. The preprint remains available on Zenodo under the permanent DOI 10.5281/zenodo.19790406 (v1.1, 28 pages, kernel-checked Lean 4). No modification of formal artefacts (Lean 4 / Mathlib v4.27): the conditional theorem no_nontrivial_cycle_phase59 and the axiom profile (kernel-3 + 3 documented external) remain unchanged. Editorial repositioning in progress; no new target journal is publicly announced at this stage (cf. anti-promotional discipline FIND-015)."
+      },
+      "artefacts": [
+        {"label": "DOI Zenodo (preprint v1.1)", "url": "https://doi.org/10.5281/zenodo.19790406", "kind": "doi"}
+      ],
+      "related": ["paper-jar-submitted"]
     },
 
     {

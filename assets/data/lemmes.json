@@ -104,12 +104,12 @@
   ],
   "postJarArsenal": {
     "fr": {
-      "title": "Arsenal R34-R96 (Post-JAR)",
-      "desc": "Extensions développées après soumission JAR : transport modulaire, décomposition par blocs, amplification."
+      "title": "Arsenal R34-R96 (extensions post-preprint)",
+      "desc": "Extensions développées après le dépôt du preprint v1.1 (2026-04-27, DOI Zenodo) : transport modulaire, décomposition par blocs, amplification."
     },
     "en": {
-      "title": "R34-R96 Arsenal (Post-JAR)",
-      "desc": "Extensions developed after JAR submission: modular transport, block decomposition, amplification."
+      "title": "R34-R96 Arsenal (post-preprint extensions)",
+      "desc": "Extensions developed after the v1.1 preprint deposit (2026-04-27, Zenodo DOI): modular transport, block decomposition, amplification."
     },
     "files": [
       {"name": "CongruenceTransport.lean", "theoremCount": 47, "fr": "Transport de congruences modulo p (R63-R96)", "en": "Modular congruence transport (R63-R96)"},

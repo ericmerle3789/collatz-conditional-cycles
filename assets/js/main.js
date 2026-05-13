@@ -98,13 +98,13 @@
       modalRef: "Référence",
       modalWhy: "Pourquoi cette piste est-elle dans cet état ?",
       noResult: "Aucune piste ne correspond à la recherche.",
-      mainResultEyebrow: "Résultat principal — paper soumis JAR Springer",
+      mainResultEyebrow: "Résultat principal — preprint 28 p. (DOI Zenodo)",
       mainResultTitle: "Théorème conditionnel : aucun cycle Collatz non-trivial — modulo 3 axiomes externes documentés",
       mainResultDesc: "Le théorème principal <code>no_nontrivial_cycle_phase59</code> est <strong>kernel-checked</strong> en Lean 4 (Mathlib v4.27), avec 3 axiomes Lean kernel (<code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) et <strong>3 axiomes externes documentés</strong> : <strong>BakerSeparation</strong> (<em>conjecture de travail</em>, renforcement non démontré des bornes Rhin 1987 / Wu 2003 / Salikhov 2007 publiées — voir <a href=\"#meaculpa\">#28</a> + <strong>δ10</strong>), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>, vérification computationnelle reproductible, Barina 2025), <strong>DerivedLargeKBound</strong> (m ≤ 91, théorème publié conditionnel, Hercher 2023).",
       mainResultContrib: "<strong>Contribution scientifique</strong> : pas la non-existence inconditionnelle (cf. δ8 lemma, irréalisable avec les outils 2026), mais la <em>cartographie rigoureuse des obstructions structurelles</em> qui rend la conditionnalité <strong>nécessaire</strong>, pas <em>arbitraire</em>. Sept théorèmes centraux, ~30 fichiers Lean, paper 28 pages, reproductible via <code>reproduce.sh</code> EXIT 0.",
       readPaper: "Lire le paper (PDF, 28 p.)",
       readProof: "Architecture de la preuve",
-      diagramCaption: "→ Le théorème JAR <code>no_nontrivial_cycle_phase59</code> est l'unique nœud de fermeture conditionnelle. Les 14 paradigmes convergent vers le verrou Λ ; seules les 3 hypothèses externes (Baker, Barina, Hercher) — et non les paradigmes — alimentent le théorème final.",
+      diagramCaption: "→ Le théorème principal <code>no_nontrivial_cycle_phase59</code> est l'unique nœud de fermeture conditionnelle. Les 14 paradigmes convergent vers le verrou Λ ; seules les 3 hypothèses externes (Baker, Barina, Hercher) — et non les paradigmes — alimentent le théorème final.",
       citeBtn: "Citer",
       citeTitle: "Comment citer ce travail",
       citePlain: "Texte simple",
@@ -192,13 +192,13 @@
       modalRef: "Reference",
       modalWhy: "Why is this approach in that state?",
       noResult: "No approach matches the search.",
-      mainResultEyebrow: "Main result — paper submitted to JAR Springer",
+      mainResultEyebrow: "Main result — 28-page preprint (Zenodo DOI)",
       mainResultTitle: "Conditional theorem: no non-trivial Collatz cycle — modulo 3 documented external axioms",
       mainResultDesc: "The main theorem <code>no_nontrivial_cycle_phase59</code> is <strong>kernel-checked</strong> in Lean 4 (Mathlib v4.27), with 3 Lean kernel axioms (<code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) and <strong>3 documented external axioms</strong>: <strong>BakerSeparation</strong> (<em>working conjecture</em>, undemonstrated strengthening of published Rhin 1987 / Wu 2003 / Salikhov 2007 bounds — see <a href=\"#meaculpa\">#28</a> + <strong>δ10</strong>), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>, reproducible computational verification, Barina 2025), <strong>DerivedLargeKBound</strong> (m ≤ 91, published conditional theorem, Hercher 2023).",
       mainResultContrib: "<strong>Scientific contribution</strong>: not unconditional non-existence (cf. δ8 lemma, unattainable with 2026 tools), but a <em>rigorous mapping of structural obstructions</em> that makes the conditionality <strong>necessary</strong>, not <em>arbitrary</em>. Seven central theorems, ~30 Lean files, 28-page paper, reproducible via <code>reproduce.sh</code> EXIT 0.",
       readPaper: "Read the paper (PDF, 28 pp.)",
       readProof: "Proof architecture",
-      diagramCaption: "→ The JAR theorem <code>no_nontrivial_cycle_phase59</code> is the unique conditional closure node. The 14 paradigms converge onto the Λ lock ; only the 3 external hypotheses (Baker, Barina, Hercher) — not the paradigms — feed the final theorem.",
+      diagramCaption: "→ The main theorem <code>no_nontrivial_cycle_phase59</code> is the unique conditional closure node. The 14 paradigms converge onto the Λ lock ; only the 3 external hypotheses (Baker, Barina, Hercher) — not the paradigms — feed the final theorem.",
       citeBtn: "Cite",
       citeTitle: "How to cite this work",
       citePlain: "Plain text",
@@ -217,7 +217,7 @@
 
   const STATUS_LABELS = {
     fr: {
-      jar: "★ Résultat JAR",
+      main: "★ Résultat principal",
       cds: "Cul-de-sac",
       partiel: "Partielle",
       insuf: "Insuffisance formelle prouvée (conditionnelle)",
@@ -227,7 +227,7 @@
       axiome: "Axiome"
     },
     en: {
-      jar: "★ JAR result",
+      main: "★ Main result",
       cds: "Dead end",
       partiel: "Partial",
       insuf: "Formal insufficiency proven (conditional)",
@@ -244,8 +244,8 @@
   };
 
   // ========== GITHUB URL ROUTING ==========
-  // main = JAR paper (Phase12-63, paper/, reproduce.sh, expected_axioms.md)
-  // arsenal-postjar = extensions R34-R96 (PostJAR/, tests_math/ general)
+  // main = preprint v1.1 (Phase12-63, paper/, reproduce.sh, expected_axioms.md)
+  // arsenal-postjar = extensions R34-R96 (PostJAR/, tests_math/ general) — branch name preserved historically
   // study/delta10-... = Phase64 cartographic impossibility + delta10-specific tests
   // study/E1-salikhov-2007-impossibility = Phase65 δ11 conditional E.1 closure
   // study/cgs-7-instantiation = CGS-7 theorem + CGS7Dependencies (Phase 3 finalisation)
@@ -389,8 +389,7 @@
     url: "https://doi.org/10.5281/zenodo.19790406",
     repo: "https://github.com/ericmerle3789/collatz-conditional-cycles",
     publisher: "Zenodo",
-    journal: "Journal of Automated Reasoning",
-    note: "Submitted to Journal of Automated Reasoning",
+    note: "Preprint deposited on Zenodo",
     orcid: "0009-0008-7940-402X"
   };
 
@@ -408,10 +407,10 @@
 }`;
   }
   function citeAPA(c) {
-    return `${c.authorFamily}, ${c.authorGiven.charAt(0)}. (${c.year}). ${c.title} [Manuscript submitted for publication]. ${c.publisher}. https://doi.org/${c.doi}`;
+    return `${c.authorFamily}, ${c.authorGiven.charAt(0)}. (${c.year}). ${c.title} [Preprint]. ${c.publisher}. https://doi.org/${c.doi}`;
   }
   function citeChicago(c) {
-    return `${c.authorFamily}, ${c.authorGiven}. "${c.title}." Submitted to ${c.journal}. ${c.publisher}, ${c.month} ${c.day}, ${c.year}. https://doi.org/${c.doi}.`;
+    return `${c.authorFamily}, ${c.authorGiven}. "${c.title}." Preprint. ${c.publisher}, ${c.month} ${c.day}, ${c.year}. https://doi.org/${c.doi}.`;
   }
   function citeRIS(c) {
     return `TY  - GEN
@@ -621,7 +620,7 @@ ER  - `;
     SEARCH_INDEX.push(
       { type: 'page', id: '/', title: 'Home — Cartography', subtitle: 'Page · Main entry', desc: '35 approaches, 3 axiom pillars, the lock Λ_{S,k}', url: 'index.html', keywords: 'home cartography main lambda lock baker barina hercher' },
       { type: 'page', id: '/preuve/', title: 'Proof chain', subtitle: 'Page · Lean 4 architecture', desc: 'Phase52 → Phase58 → Phase59 → Phase63', url: 'preuve/', keywords: 'proof chain phase52 phase58 phase59 phase63 steiner barina continued fractions' },
-      { type: 'page', id: '/papers/', title: 'Papers pipeline', subtitle: 'Page · 1 submitted + 5 drafts + 2 meta', desc: 'JAR + AITP + Math. Intelligencer + ITP + JFR + JNT', url: 'papers/', keywords: 'papers pipeline jar aitp math intelligencer itp jfr jnt drafts' },
+      { type: 'page', id: '/papers/', title: 'Papers pipeline', subtitle: 'Page · 1 preprint + drafts', desc: 'Preprint (Zenodo DOI) + drafts in progress', url: 'papers/', keywords: 'papers pipeline preprint zenodo drafts' },
       { type: 'page', id: '/lemmes/', title: 'Lean catalog', subtitle: 'Page · 7 central + auxiliaries + cf_gaps + PostJAR', desc: 'Catalog of all Lean 4 theorems', url: 'lemmes/', keywords: 'lean catalog theorems central auxiliary cf_gap postjar arsenal' }
     );
     return SEARCH_INDEX;
@@ -814,10 +813,10 @@ ER  - `;
       const matchSearch = !search || text.includes(search);
       const matchStatus = STATE.statusFilter === 'all' || p.status === STATE.statusFilter;
 
-      // JAR result is always pinned at top (ignores status filter, respects search)
-      const isJar = p.status === 'jar';
+      // Main result is always pinned at top (ignores status filter, respects search)
+      const isMain = p.status === 'main';
       if (!matchSearch) return;
-      if (!isJar && !matchStatus) return;
+      if (!isMain && !matchStatus) return;
       visibleCount++;
 
       const tr = document.createElement('tr');

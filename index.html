@@ -28,7 +28,7 @@
 
 <!-- Open Graph (Facebook, LinkedIn, Mastodon, Slack, Discord) -->
 <meta property="og:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formal proof">
-<meta property="og:description" content="Conjecture de Syracuse (a.k.a. Collatz). Conditional theorem formalized in Lean 4 — does NOT prove the Collatz conjecture, but establishes non-existence of non-trivial cycles modulo 3 documented external axioms: BakerSeparation (working conjecture), BarinaVerification (reproducible computational verification, Barina 2025), DerivedLargeKBound (published conditional theorem, Hercher 2023). Kernel-checked, 28-page paper submitted JAR.">
+<meta property="og:description" content="Conjecture de Syracuse (a.k.a. Collatz). Conditional theorem formalized in Lean 4 — does NOT prove the Collatz conjecture, but establishes non-existence of non-trivial cycles modulo 3 documented external axioms: BakerSeparation (working conjecture), BarinaVerification (reproducible computational verification, Barina 2025), DerivedLargeKBound (published conditional theorem, Hercher 2023). Kernel-checked, 28-page preprint (DOI Zenodo 10.5281/zenodo.19790406).">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
 <meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
@@ -96,7 +96,7 @@
       "keywords": "Collatz conjecture, Syracuse conjecture, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, Lean 4, formal verification, Baker theorem, continued fractions, Diophantine approximation",
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "isAccessibleForFree": true,
-      "publication": "Journal of Automated Reasoning (submitted)",
+      "publication": "Preprint — Zenodo DOI 10.5281/zenodo.19790406",
       "discipline": "Mathematics",
       "about": [
         {
@@ -185,7 +185,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
 <!-- CSS principal -->
-<link rel="stylesheet" href="assets/css/main.css?v=20260508-V0-7-3-DELTA11-INSUF-FIX">
+<link rel="stylesheet" href="assets/css/main.css?v=20260513-V0-7-4-JAR-REJECTED">
 
 <!-- Analytics : Cloudflare Web Analytics activé côté Cloudflare dashboard
      (privacy-first, no cookies, GDPR-compliant, no consent banner needed).
@@ -242,7 +242,7 @@
   <div class="hero-banner-overlay"></div>
   <div class="hero-banner-lambda">Λ</div>
   <div class="hero-banner-content">
-    <div class="hero-banner-eyebrow">DOI · 10.5281/zenodo.19790406 · JAR submission</div>
+    <div class="hero-banner-eyebrow">DOI · 10.5281/zenodo.19790406 · Preprint 28 p.</div>
     <h2 class="hero-banner-title">
       <span lang="en">Conditional theorem: no non-trivial Collatz cycle</span>
       <span lang="fr">Théorème conditionnel : aucun cycle Collatz non-trivial</span>
@@ -273,9 +273,9 @@
     Trente-cinq pistes mathématiques, trois axiomes piliers, une famille d'hypothèses ouvertes — organisées autour d'une obstruction diophantienne unique : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.
   </p>
 
-  <!-- Result box : mise en avant du résultat principal JAR -->
+  <!-- Result box : mise en avant du résultat principal -->
   <div class="highlight" style="margin-top: 2.5rem; border-left-color: var(--accent);">
-    <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem;" data-i18n="mainResultEyebrow">Résultat principal — paper soumis JAR Springer</div>
+    <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem;" data-i18n="mainResultEyebrow">Résultat principal — preprint 28 p. (DOI Zenodo)</div>
     <h3 style="font-family: var(--serif); font-size: 1.4rem; line-height: 1.35; margin: 0 0 0.8rem 0; color: var(--text-primary);" data-i18n="mainResultTitle">
       Théorème conditionnel : aucun cycle Collatz non-trivial — modulo 3 axiomes externes documentés
     </h3>
@@ -369,7 +369,7 @@ graph LR
     BAKER["BakerSeparation<br/>(conjecture de travail)<br/>renforcement non démontré<br/>de Rhin/Wu/Salikhov"]
     BARINA["Barina 2025<br/>n &lt; 2^71"]
     HERCHER["Hercher 2023<br/>m ≤ 91"]
-    JAR["★ JAR<br/>no_nontrivial_cycle_phase59<br/>kernel-checked Lean 4"]
+    MAIN["★ Main result<br/>no_nontrivial_cycle_phase59<br/>kernel-checked Lean 4"]
 
     DELTA8["δ8 (Phase58)<br/>Product-Bound<br/>impossibility"]
     DELTA8P["δ8' (Phase58 §5.2)<br/>Baker+CF lower<br/>not upper"]
@@ -377,9 +377,9 @@ graph LR
     DELTA11["δ11 (Phase65)<br/>Salikhov-Insufficient<br/>conditional · kernel-3 + 3 ad-hoc"]
 
     LAMBDA -->|"axiome 1"| BAKER
-    BAKER -->|"BakerSeparation"| JAR
-    BARINA -->|"BarinaVerification"| JAR
-    HERCHER -->|"DerivedLargeKBound"| JAR
+    BAKER -->|"BakerSeparation"| MAIN
+    BARINA -->|"BarinaVerification"| MAIN
+    HERCHER -->|"DerivedLargeKBound"| MAIN
 
     DELTA8 -.->|"justifie"| HERCHER
     DELTA8P -.->|"justifie"| HERCHER
@@ -390,7 +390,7 @@ graph LR
     style BAKER fill:#6a9b7a,color:#0e0f13
     style BARINA fill:#6a9b7a,color:#0e0f13
     style HERCHER fill:#6a9b7a,color:#0e0f13
-    style JAR fill:#f3d99c,color:#0e0f13,stroke:#c8a86a,stroke-width:3px
+    style MAIN fill:#f3d99c,color:#0e0f13,stroke:#c8a86a,stroke-width:3px
     style DELTA8 fill:#3a4a5a,color:#e0e6f0,stroke:#6366f1,stroke-width:1px
     style DELTA8P fill:#3a4a5a,color:#e0e6f0,stroke:#6366f1,stroke-width:1px
     style DELTA10 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px
@@ -399,7 +399,7 @@ graph LR
   </div>
 
   <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 1rem; font-style: italic;" data-i18n="diagramCaption">
-    → Le théorème JAR <code>no_nontrivial_cycle_phase59</code> est l'unique nœud de fermeture conditionnelle. Les 14 paradigmes convergent vers le verrou Λ ; seules les 3 hypothèses externes (Baker, Barina, Hercher) — et non les paradigmes — alimentent le théorème final.
+    → Le théorème principal <code>no_nontrivial_cycle_phase59</code> est l'unique nœud de fermeture conditionnelle. Les 14 paradigmes convergent vers le verrou Λ ; seules les 3 hypothèses externes (Baker, Barina, Hercher) — et non les paradigmes — alimentent le théorème final.
   </p>
 </section>
 
@@ -571,7 +571,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   <h2 data-i18n="researchStatusTitle">État des travaux</h2>
   <p class="research-status-intro" data-i18n="researchStatusIntro">Snapshot d'activité du projet, traçable sur GitHub. <a href="/research-ledger/">Registre complet (Research Ledger) →</a></p>
 
-  <!-- Anti-promotional positioning bar (Q14 critical for JAR reviewer) -->
+  <!-- Anti-promotional positioning bar (Q14 critical for any reviewer) -->
   <p class="research-status-positioning">
     <em lang="fr">Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.</em>
     <em lang="en">This section documents project status and traceability; it is not a claim of acceptance or final proof.</em>
@@ -598,14 +598,14 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     <!-- Carte 2 : Statut paper -->
     <div class="status-card" data-family="paper">
       <div class="status-card-eyebrow" data-i18n="statusPaper">Statut paper</div>
-      <div class="status-card-title">JAR Springer — Submitted</div>
+      <div class="status-card-title">Preprint — Zenodo (v1.1, 28 p.)</div>
       <div class="status-card-meta">
-        <span class="event-status-badge" data-status="submitted">SUBMITTED</span>
+        <span class="event-status-badge" data-status="preprint">PREPRINT</span>
         <span class="status-card-date">2026-04-27</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">"On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4". DOI Zenodo. Under review.</span>
-        <span lang="en">"On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4". Zenodo DOI. Under review.</span>
+        <span lang="fr">"On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4". DOI Zenodo permanent. Première soumission éditoriale 2026-04-27 rejetée 2026-05-13 ; repositionnement éditorial en cours, voir <a href="changelog/">changelog</a> et <a href="research-ledger/">research ledger</a>.</span>
+        <span lang="en">"On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4". Permanent Zenodo DOI. Initial editorial submission 2026-04-27 rejected 2026-05-13; editorial repositioning in progress, see <a href="changelog/">changelog</a> and <a href="research-ledger/">research ledger</a>.</span>
       </p>
       <a class="status-card-link" href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener">→ DOI Zenodo</a>
     </div>
@@ -775,12 +775,12 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
         <p lang="fr">Conception et coordination scientifique du projet. Auteur du <strong>PROTOCOLE ARES v2</strong>, méthodologie de vérification anti-hallucination pour la recherche mathématique humain-IA. Travaille en architecture multi-agents (Claude Opus + ChatGPT) sous discipline antifragile : chaque erreur détectée devient une règle opérationnelle publique.</p>
         <p lang="en">Project design and scientific coordination. Author of <strong>PROTOCOLE ARES v2</strong>, an anti-hallucination verification methodology for human-AI mathematical research. Works under a multi-agent architecture (Claude Opus + ChatGPT) with antifragile discipline: every detected error becomes a public operational rule.</p>
         <ul lang="fr">
-          <li>Soumission JAR Springer (paper 28 p., DOI Zenodo)</li>
+          <li>Preprint 28 p. (DOI Zenodo 10.5281/zenodo.19790406)</li>
           <li>Architecte du PROTOCOLE ARES v2 (28 mea culpa publics)</li>
           <li>Direction multi-cerveau (NEW · NEW2 · OLD · Red Team)</li>
         </ul>
         <ul lang="en">
-          <li>JAR Springer submission (28-page paper, Zenodo DOI)</li>
+          <li>28-page preprint (Zenodo DOI 10.5281/zenodo.19790406)</li>
           <li>Architect of PROTOCOLE ARES v2 (28 public mea culpa)</li>
           <li>Multi-brain coordination (NEW · NEW2 · OLD · Red Team)</li>
         </ul>
@@ -924,6 +924,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20260508-V0-7-3-DELTA11-INSUF-FIX"></script>
+<script src="assets/js/main.js?v=20260513-V0-7-4-JAR-REJECTED"></script>
 </body>
 </html>

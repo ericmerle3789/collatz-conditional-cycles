@@ -3,21 +3,21 @@
   "lastUpdate": "2026-05-01",
   "pistes": [
     {
-      "id": "★ JAR",
+      "id": "★ Main",
       "fr": {
-        "name": "no_nontrivial_cycle_phase59 — résultat principal JAR",
-        "why": "Théorème principal du paper soumis Journal of Automated Reasoning (2026-04-27, v1.1) : aucun cycle Collatz non-trivial sous 3 conditions explicites. Kernel-checked Lean 4 (Mathlib v4.27). Profil d'axiomes minimal : 3 axiomes Lean kernel (propext, Classical.choice, Quot.sound) + 3 hypothèses externes documentées (BakerSeparation effective, BarinaVerification n<2^71, DerivedLargeKBound m≤91). 28 pages, ~30 fichiers Lean, reproductible via reproduce.sh EXIT 0. Contribution : pas la non-existence inconditionnelle (irréalisable cf. δ8 lemma) mais la cartographie rigoureuse des obstructions structurelles qui rend la conditionnalité nécessaire."
+        "name": "no_nontrivial_cycle_phase59 — résultat principal",
+        "why": "Théorème principal du preprint (v1.1, 2026-04-27, DOI Zenodo 10.5281/zenodo.19790406) : aucun cycle Collatz non-trivial sous 3 conditions explicites. Kernel-checked Lean 4 (Mathlib v4.27). Profil d'axiomes minimal : 3 axiomes Lean kernel (propext, Classical.choice, Quot.sound) + 3 hypothèses externes documentées (BakerSeparation effective, BarinaVerification n<2^71, DerivedLargeKBound m≤91). 28 pages, ~30 fichiers Lean, reproductible via reproduce.sh EXIT 0. Contribution : pas la non-existence inconditionnelle (irréalisable cf. δ8 lemma) mais la cartographie rigoureuse des obstructions structurelles qui rend la conditionnalité nécessaire."
       },
       "en": {
-        "name": "no_nontrivial_cycle_phase59 — JAR main result",
-        "why": "Main theorem of the paper submitted to Journal of Automated Reasoning (2026-04-27, v1.1): no non-trivial Collatz cycle under 3 explicit conditions. Kernel-checked Lean 4 (Mathlib v4.27). Minimal axiom profile: 3 Lean kernel axioms (propext, Classical.choice, Quot.sound) + 3 documented external hypotheses (BakerSeparation effective, BarinaVerification n<2^71, DerivedLargeKBound m≤91). 28 pages, ~30 Lean files, reproducible via reproduce.sh EXIT 0. Contribution: not unconditional non-existence (unattainable cf. δ8 lemma) but the rigorous mapping of structural obstructions that makes conditionality necessary."
+        "name": "no_nontrivial_cycle_phase59 — main result",
+        "why": "Main theorem of the preprint (v1.1, 2026-04-27, Zenodo DOI 10.5281/zenodo.19790406): no non-trivial Collatz cycle under 3 explicit conditions. Kernel-checked Lean 4 (Mathlib v4.27). Minimal axiom profile: 3 Lean kernel axioms (propext, Classical.choice, Quot.sound) + 3 documented external hypotheses (BakerSeparation effective, BarinaVerification n<2^71, DerivedLargeKBound m≤91). 28 pages, ~30 Lean files, reproducible via reproduce.sh EXIT 0. Contribution: not unconditional non-existence (unattainable cf. δ8 lemma) but the rigorous mapping of structural obstructions that makes conditionality necessary."
       },
       "region": "I",
-      "status": "jar",
+      "status": "main",
       "test4": "4/4 ✓",
       "lean": "no_nontrivial_cycle_phase59",
       "leanFile": "ProjetCollatz/Phase59ContinuedFractions.lean",
-      "ref": "Merle 2026, JAR submission v1.1, DOI 10.5281/zenodo.19790406"
+      "ref": "Merle 2026, preprint v1.1, DOI 10.5281/zenodo.19790406"
     },
     {
       "id": "A",
@@ -540,11 +540,11 @@
       "id": "CGS-7",
       "fr": {
         "name": "sum_s_ge_length_plus_num_nonincrease",
-        "why": "Phase 3 (2026-05-02) : audit indépendant 4 IA (Session A + Session B + Gemini Pro 3.1 + ChatGPT) sur l'esquisse NEW3 (2026-04-29) → convergence forte sur faille (polarité inversée drop_forces_s_ge_two, ambiguïté D = #{s_t≥2} algébrique vs descentes dynamiques). Reformulation 4 IA convergente : N = #{t<k | x_{t+1}≤x_t}. Démonstration Lean 4 / Mathlib v4.27 en 2 lemmes (cgs7_algebraic_pure + cgs7_dynamic_transfer) sur branche dérivée study/cgs-7-instantiation, lake build PASS (7888 jobs, 0 sorry), profil axiomes [propext, Classical.choice, Quot.sound] (kernel-3 standard). Test négatif Red Team (#check_failure) opérationnel au build. Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 verifications post-build. Branche dédiée hors paper JAR."
+        "why": "Phase 3 (2026-05-02) : audit indépendant 4 IA (Session A + Session B + Gemini Pro 3.1 + ChatGPT) sur l'esquisse NEW3 (2026-04-29) → convergence forte sur faille (polarité inversée drop_forces_s_ge_two, ambiguïté D = #{s_t≥2} algébrique vs descentes dynamiques). Reformulation 4 IA convergente : N = #{t<k | x_{t+1}≤x_t}. Démonstration Lean 4 / Mathlib v4.27 en 2 lemmes (cgs7_algebraic_pure + cgs7_dynamic_transfer) sur branche dérivée study/cgs-7-instantiation, lake build PASS (7888 jobs, 0 sorry), profil axiomes [propext, Classical.choice, Quot.sound] (kernel-3 standard). Test négatif Red Team (#check_failure) opérationnel au build. Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 verifications post-build. Branche dédiée, hors preprint principal."
       },
       "en": {
         "name": "sum_s_ge_length_plus_num_nonincrease",
-        "why": "Phase 3 (2026-05-02): independent 4-AI audit (Session A + Session B + Gemini Pro 3.1 + ChatGPT) on NEW3 sketch (2026-04-29) → strong convergence on flaw (inverted polarity in drop_forces_s_ge_two, ambiguity D = #{s_t≥2} algebraic vs dynamic descents). Convergent 4-AI reformulation: N = #{t<k | x_{t+1}≤x_t}. Lean 4 / Mathlib v4.27 demonstration in 2 lemmas (cgs7_algebraic_pure + cgs7_dynamic_transfer) on derived branch study/cgs-7-instantiation, lake build PASS (7888 jobs, 0 sorry), axiom profile [propext, Classical.choice, Quot.sound] (kernel-3 standard). Negative Red Team test (#check_failure) operational at build. Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 post-build verifications. Dedicated branch separate from JAR paper."
+        "why": "Phase 3 (2026-05-02): independent 4-AI audit (Session A + Session B + Gemini Pro 3.1 + ChatGPT) on NEW3 sketch (2026-04-29) → strong convergence on flaw (inverted polarity in drop_forces_s_ge_two, ambiguity D = #{s_t≥2} algebraic vs dynamic descents). Convergent 4-AI reformulation: N = #{t<k | x_{t+1}≤x_t}. Lean 4 / Mathlib v4.27 demonstration in 2 lemmas (cgs7_algebraic_pure + cgs7_dynamic_transfer) on derived branch study/cgs-7-instantiation, lake build PASS (7888 jobs, 0 sorry), axiom profile [propext, Classical.choice, Quot.sound] (kernel-3 standard). Negative Red Team test (#check_failure) operational at build. Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 post-build verifications. Dedicated branch, separate from main preprint."
       },
       "region": "I",
       "status": "prouve",
