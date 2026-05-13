@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lean catalog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Catalog of Lean 4 theorems for the non-existence of non-trivial Collatz/Syracuse cycles. 7 central theorems + auxiliaries + 6 cf_gap windows + R34-R96 PostJAR arsenal. All kernel-checked, Mathlib v4.27.">
+<meta name="description" content="Catalog of Lean 4 theorems for the non-existence of non-trivial Collatz/Syracuse cycles. 7 central theorems + auxiliaries + 6 cf_gap windows + R34-R96 extended arsenal. All kernel-checked, Mathlib v4.27.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, Lean 4 theorems, Mathlib v4.27, no_nontrivial_cycle_phase59, cf_gap, Steiner, kernel-checked">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -23,7 +23,7 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="Lean catalog — Collatz / Syracuse Conditional Cycles">
-<meta property="og:description" content="(Syracuse · Collatz · 3n+1) 7 central kernel-checked theorems + auxiliaries + 6 cf_gap arithmetic windows + R34-R96 PostJAR arsenal. Mathlib v4.27.0, reproduce.sh EXIT 0.">
+<meta property="og:description" content="(Syracuse · Collatz · 3n+1) 7 central kernel-checked theorems + auxiliaries + 6 cf_gap arithmetic windows + R34-R96 extended arsenal. Mathlib v4.27.0, reproduce.sh EXIT 0.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/lemmes/">
 <meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
@@ -45,7 +45,7 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Collatz / Syracuse Conditional Cycles — Lean theorem catalog",
-  "description": "Comprehensive catalog of Lean 4 theorems for the non-existence of non-trivial Collatz/Syracuse cycles, including 7 central theorems (no_nontrivial_cycle_phase59 chain), auxiliary lemmas, and the R34-R96 PostJAR arsenal.",
+  "description": "Comprehensive catalog of Lean 4 theorems for the non-existence of non-trivial Collatz/Syracuse cycles, including 7 central theorems (no_nontrivial_cycle_phase59 chain), auxiliary lemmas, and the R34-R96 extended arsenal.",
   "url": "https://collatz-lab.org/lemmes/",
   "keywords": "Lean 4, Mathlib, Collatz, formal verification, theorems",
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -100,7 +100,7 @@
 <!-- D3 v7 pour le dependency graph -->
 <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js" integrity="sha384-su5kReKyYlIFrI62mbQRKXHzFobMa7BHp1cK6julLPbnYcCW9NIZKJiTODjLPeDh" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260508-V0-7-3-DELTA11-INSUF-FIX">
+<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-4-JAR-REJECTED">
 </head>
 <body>
 
@@ -142,10 +142,10 @@
   <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="fr">Théorèmes formellement vérifiés</h1>
   <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="en">Formally verified theorems</h1>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">
-    Sept théorèmes centraux constituent la chaîne de preuve de <code>no_nontrivial_cycle_phase59</code>, plus l'arsenal R34-R96 (PostJAR) qui étend le transport modulaire et la décomposition par blocs. Tous sont kernel-checked et passent <code>reproduce.sh</code> EXIT 0.
+    Sept théorèmes centraux constituent la chaîne de preuve de <code>no_nontrivial_cycle_phase59</code>, plus l'arsenal R34-R96 (extensions post-preprint) qui étend le transport modulaire et la décomposition par blocs. Tous sont kernel-checked et passent <code>reproduce.sh</code> EXIT 0.
   </p>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="en">
-    Seven central theorems form the proof chain of <code>no_nontrivial_cycle_phase59</code>, plus the R34-R96 arsenal (PostJAR) that extends modular transport and block decomposition. All are kernel-checked and pass <code>reproduce.sh</code> EXIT 0.
+    Seven central theorems form the proof chain of <code>no_nontrivial_cycle_phase59</code>, plus the R34-R96 arsenal (post-preprint extensions) that extends modular transport and block decomposition. All are kernel-checked and pass <code>reproduce.sh</code> EXIT 0.
   </p>
 </section>
 
@@ -208,8 +208,8 @@
   <div class="section-eyebrow" lang="en">§ III — Dependency graph</div>
   <h2 lang="fr">Architecture interactive (D3 force-directed)</h2>
   <h2 lang="en">Interactive architecture (D3 force-directed)</h2>
-  <p lang="fr">Graphe interactif de l'architecture de la preuve. <strong>Drag</strong> pour déplacer les nœuds, <strong>scroll</strong> pour zoomer. <em>Étoile dorée</em> = résultat principal JAR. <span style="color: var(--accent-violet);">●</span> Axiomes externes (Baker, Barina, Hercher) · <span style="color: var(--accent-green);">●</span> Axiomes Lean kernel · <span style="color: var(--accent-blue);">●</span> Lemmes auxiliaires · <span style="color: var(--accent-amber);">●</span> Théorèmes centraux. Lignes pleines = dépendances logiques, pointillés courts = axiomes kernel, pointillés longs dorés = alias.</p>
-  <p lang="en">Interactive graph of the proof architecture. <strong>Drag</strong> to reposition nodes, <strong>scroll</strong> to zoom. <em>Golden star</em> = JAR main result. <span style="color: var(--accent-violet);">●</span> External axioms (Baker, Barina, Hercher) · <span style="color: var(--accent-green);">●</span> Lean kernel axioms · <span style="color: var(--accent-blue);">●</span> Auxiliary lemmas · <span style="color: var(--accent-amber);">●</span> Central theorems. Solid lines = logical dependencies, short dashes = kernel axioms, long golden dashes = aliases.</p>
+  <p lang="fr">Graphe interactif de l'architecture de la preuve. <strong>Drag</strong> pour déplacer les nœuds, <strong>scroll</strong> pour zoomer. <em>Étoile dorée</em> = résultat principal. <span style="color: var(--accent-violet);">●</span> Axiomes externes (Baker, Barina, Hercher) · <span style="color: var(--accent-green);">●</span> Axiomes Lean kernel · <span style="color: var(--accent-blue);">●</span> Lemmes auxiliaires · <span style="color: var(--accent-amber);">●</span> Théorèmes centraux. Lignes pleines = dépendances logiques, pointillés courts = axiomes kernel, pointillés longs dorés = alias.</p>
+  <p lang="en">Interactive graph of the proof architecture. <strong>Drag</strong> to reposition nodes, <strong>scroll</strong> to zoom. <em>Golden star</em> = main result. <span style="color: var(--accent-violet);">●</span> External axioms (Baker, Barina, Hercher) · <span style="color: var(--accent-green);">●</span> Lean kernel axioms · <span style="color: var(--accent-blue);">●</span> Auxiliary lemmas · <span style="color: var(--accent-amber);">●</span> Central theorems. Solid lines = logical dependencies, short dashes = kernel axioms, long golden dashes = aliases.</p>
 
   <div id="dependency-graph" style="width: 100%; min-height: 600px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 4px; margin: 1.5rem 0; position: relative;"></div>
 
@@ -246,10 +246,10 @@
 </section>
 
 <section>
-  <div class="section-eyebrow">§ VI — PostJAR</div>
-  <h2>Arsenal R34-R96 (PostJAR)</h2>
-  <p lang="fr">Extensions développées après la soumission JAR. Trois familles principales :</p>
-  <p lang="en">Extensions developed after the JAR submission. Three main families:</p>
+  <div class="section-eyebrow">§ VI — Extensions post-preprint</div>
+  <h2>Arsenal R34-R96 (extensions post-preprint)</h2>
+  <p lang="fr">Extensions développées après le dépôt du preprint v1.1 (2026-04-27). Trois familles principales :</p>
+  <p lang="en">Extensions developed after the v1.1 preprint deposit (2026-04-27). Three main families:</p>
   <div class="card-grid" id="postJarFiles"></div>
 </section>
 
@@ -329,9 +329,9 @@ cd collatz-conditional-cycles
 </footer>
 
 <!-- main.js : i18n, langBtn, navigator.language detection -->
-<script src="../assets/js/main.js?v=20260508-V0-7-3-DELTA11-INSUF-FIX"></script>
+<script src="../assets/js/main.js?v=20260513-V0-7-4-JAR-REJECTED"></script>
 <!-- dependency-graph.js : D3 force-directed visualization -->
-<script src="../assets/js/dependency-graph.js?v=20260508-V0-7-3-DELTA11-INSUF-FIX"></script>
+<script src="../assets/js/dependency-graph.js?v=20260513-V0-7-4-JAR-REJECTED"></script>
 <script>
   // Init du graphe quand D3 est disponible
   function initDepGraph() {
@@ -349,7 +349,7 @@ cd collatz-conditional-cycles
 </script>
 
 <script>
-// Routing : main (JAR) vs arsenal-postjar (extensions R34-R96)
+// Routing : main (preprint v1.1) vs arsenal-postjar (extensions R34-R96 — branch name preserved)
 const GH_REPO = 'https://github.com/ericmerle3789/collatz-conditional-cycles/blob/';
 function ghURL(filePath) {
   if (!filePath) return null;

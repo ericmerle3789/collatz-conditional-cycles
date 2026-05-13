@@ -13,7 +13,7 @@
     KERNEL: 'kernel',          // axiomes Lean kernel
     AUXILIARY: 'auxiliary',    // lemmes auxiliaires
     CENTRAL: 'central',        // théorèmes centraux
-    MAIN: 'main'               // résultat principal JAR
+    MAIN: 'main'               // résultat principal (theorem)
   };
 
   const COLOR = {
@@ -34,7 +34,7 @@
 
   // Architecture de la preuve (extraite du Mermaid de /preuve/ + lemmes.json)
   const NODES = [
-    // Axiomes externes (3 conditions JAR)
+    // Axiomes externes (3 conditions du résultat principal)
     { id: 'BakerSeparation', type: NODE_TYPE.EXTERNAL, label: 'BakerSeparation', sub: 'effective: (2^s − 3^k)·k^6 ≥ 3^k (working conjecture, undemonstrated strengthening of Rhin/Wu/Salikhov — see #28, δ10)' },
     { id: 'BarinaVerification', type: NODE_TYPE.EXTERNAL, label: 'BarinaVerification', sub: 'Barina 2025 — n < 2⁷¹' },
     { id: 'DerivedLargeKBound', type: NODE_TYPE.EXTERNAL, label: 'DerivedLargeKBound', sub: 'Hercher 2023 — m ≤ 91' },
@@ -53,7 +53,7 @@
     { id: 'no_cycle_k_gt_1322', type: NODE_TYPE.CENTRAL, label: 'no_cycle_k_gt_1322', sub: 'k > 1322 — continued fractions' },
     { id: 'sdw_from_cf', type: NODE_TYPE.CENTRAL, label: 'sdw_from_cf', sub: 'Simons-de Weger from CF' },
     // Théorème principal + 3 alias
-    { id: 'no_nontrivial_cycle_phase59', type: NODE_TYPE.MAIN, label: 'no_nontrivial_cycle_phase59', sub: '★ JAR result — kernel-checked' },
+    { id: 'no_nontrivial_cycle_phase59', type: NODE_TYPE.MAIN, label: 'no_nontrivial_cycle_phase59', sub: '★ Main result — kernel-checked' },
     { id: 'no_nontrivial_cycle_final', type: NODE_TYPE.CENTRAL, label: 'no_nontrivial_cycle_final', sub: 'alias variant' },
     { id: 'no_nontrivial_cycle_derived', type: NODE_TYPE.CENTRAL, label: 'no_nontrivial_cycle_derived', sub: 'cleanup alias' },
     { id: 'no_nontrivial_cycle_full', type: NODE_TYPE.CENTRAL, label: 'no_nontrivial_cycle_full', sub: 'extended alias' }

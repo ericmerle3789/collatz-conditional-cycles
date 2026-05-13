@@ -1673,7 +1673,7 @@ td code {
   font-family: var(--sans);
 }
 
-.badge.jar { background: linear-gradient(135deg, rgba(200, 168, 106, 0.35), rgba(200, 168, 106, 0.15)); color: #f3d99c; border: 1px solid rgba(200, 168, 106, 0.7); font-weight: 700; box-shadow: 0 0 0.4rem rgba(200, 168, 106, 0.3); }
+.badge.main { background: linear-gradient(135deg, rgba(200, 168, 106, 0.35), rgba(200, 168, 106, 0.15)); color: #f3d99c; border: 1px solid rgba(200, 168, 106, 0.7); font-weight: 700; box-shadow: 0 0 0.4rem rgba(200, 168, 106, 0.3); }
 .badge.cds { background: rgba(194, 84, 80, 0.15); color: #d57975; border: 1px solid rgba(194, 84, 80, 0.4); }
 .badge.partiel { background: rgba(212, 160, 69, 0.15); color: #e0b87c; border: 1px solid rgba(212, 160, 69, 0.4); }
 .badge.insuf { background: rgba(82, 152, 161, 0.15); color: #86b8be; border: 1px solid rgba(82, 152, 161, 0.45); }
@@ -1683,16 +1683,16 @@ td code {
 .badge.axiome { background: rgba(144, 128, 168, 0.15); color: #b3a4cc; border: 1px solid rgba(144, 128, 168, 0.4); }
 .badge.invente { background: rgba(94, 30, 30, 0.4); color: #c89895; border: 1px solid rgba(127, 29, 29, 0.5); text-decoration: line-through; }
 
-/* Mise en valeur ligne JAR dans le tableau */
-#pistesTable tbody tr[data-piste-id="★ JAR"] {
+/* Mise en valeur ligne résultat principal dans le tableau */
+#pistesTable tbody tr[data-piste-id="★ Main"] {
   background: linear-gradient(90deg, rgba(200, 168, 106, 0.08), rgba(200, 168, 106, 0.02));
   border-left: 3px solid var(--accent);
 }
-#pistesTable tbody tr[data-piste-id="★ JAR"] td:first-child {
+#pistesTable tbody tr[data-piste-id="★ Main"] td:first-child {
   color: var(--accent);
   font-weight: 700;
 }
-#pistesTable tbody tr[data-piste-id="★ JAR"]:hover {
+#pistesTable tbody tr[data-piste-id="★ Main"]:hover {
   background: linear-gradient(90deg, rgba(200, 168, 106, 0.15), rgba(200, 168, 106, 0.05));
 }
 

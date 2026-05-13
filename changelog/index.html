@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa, Red Team cycles. Latest: v0.7.3 (2026-05-08) — δ11 Salikhov-Insufficient-for-3732 (CONDITIONAL, kernel-3 + 3 ad-hoc axioms, Mathlib v4.27 pin) + 5-AI cross-validation architecture (cross-model paid its price twice) + 4 mea culpa #29/#30/#31/#32 + Phase 6-bis polish G3 score ~37/37 + 0 reservation + build −82%.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa, Red Team cycles. Latest: v0.7.4 (2026-05-13) — JAR rejection notification + site repositioned in preprint mode (Zenodo DOI canonical, all 'submitted to JAR' claims neutralized, visual labels renamed jar→main, historical entries preserved, code paths preserved).",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -56,7 +56,7 @@
         "name": "Eric Merle"
       },
       "datePublished": "2026-04-27",
-      "dateModified": "2026-05-08",
+      "dateModified": "2026-05-13",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
@@ -80,7 +80,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260508-V0-7-3-DELTA11-INSUF-FIX">
+<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-4-JAR-REJECTED">
 </head>
 <body>
 
@@ -132,6 +132,25 @@
 </section>
 
 <section>
+  <article class="changelog-entry">
+    <header>
+      <h2><span class="version-tag">v0.7.4</span> <span lang="fr">JAR rejection — repositionnement éditorial</span><span lang="en">JAR rejection — editorial repositioning</span></h2>
+      <time datetime="2026-05-13">2026-05-13</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Notification de rejet — Journal of Automated Reasoning</strong> : la soumission du 2026-04-27 (v1.1, 28 pages, kernel-checked Lean 4) a été rejetée le 2026-05-13. Aucune modification des artefacts formels : le théorème conditionnel <code>no_nontrivial_cycle_phase59</code> et le profil d'axiomes minimal (kernel-3 + 3 hypothèses externes documentées) restent inchangés et reproductibles via <code>reproduce.sh</code> EXIT 0.</li>
+      <li><strong>Site repositionné en mode preprint</strong> : le DOI Zenodo permanent <a href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener">10.5281/zenodo.19790406</a> reste la référence canonique. Toutes les affirmations actives « submitted to JAR » / « en review » de l'index, /papers/, /pour-tous/, /syracuse/, /histoire/, /research-ledger/, /faq/, OG image, modale Citer, et meta descriptions ont été neutralisées en mention preprint Zenodo neutre. Le badge <code>★ JAR</code> du tableau des pistes est renommé en <code>★ Main</code> (status <code>jar</code> → <code>main</code> dans <code>pistes.json</code>, classe CSS <code>.badge.jar</code> → <code>.badge.main</code>).</li>
+      <li><strong>Discipline anti-promotionnelle FIND-015 réaffirmée</strong> : aucune nouvelle cible journal n'est annoncée publiquement à ce stade. Les entrées historiques (v0.3.0 soumission, v0.5.0 mise en valeur résultat) sont <strong>préservées</strong> pour traçabilité — elles décrivent des faits datés vrais et ne sont pas réécrites. Une nouvelle entrée <code>paper-jar-rejected</code> est ajoutée au research-ledger en complément historique (<code>supersedes</code> ↔ <code>superseded_by</code>).</li>
+      <li><strong>Code paths préservés</strong> : la branche Git <code>arsenal-postjar</code>, le répertoire Lean <code>ProjetCollatz/PostJAR/</code>, et tous les permaliens GitHub blob/raw restent inchangés. Ces noms désignent des conventions de code (« travail postérieur au dépôt v1.1 ») qui restent factuellement correctes indépendamment du verdict éditorial.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Rejection notification — Journal of Automated Reasoning</strong>: the 2026-04-27 submission (v1.1, 28 pages, kernel-checked Lean 4) was rejected on 2026-05-13. No modification of formal artefacts: the conditional theorem <code>no_nontrivial_cycle_phase59</code> and the minimal axiom profile (kernel-3 + 3 documented external hypotheses) remain unchanged and reproducible via <code>reproduce.sh</code> EXIT 0.</li>
+      <li><strong>Site repositioned in preprint mode</strong>: the permanent Zenodo DOI <a href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener">10.5281/zenodo.19790406</a> remains the canonical reference. All active "submitted to JAR" / "under review" claims across index, /papers/, /pour-tous/, /syracuse/, /histoire/, /research-ledger/, /faq/, OG image, Cite modal, and meta descriptions have been neutralized to a Zenodo-preprint mention. The <code>★ JAR</code> badge of the approaches table is renamed <code>★ Main</code> (status <code>jar</code> → <code>main</code> in <code>pistes.json</code>, CSS class <code>.badge.jar</code> → <code>.badge.main</code>).</li>
+      <li><strong>FIND-015 anti-promotional discipline reaffirmed</strong>: no new target journal is publicly announced at this stage. Historical entries (v0.3.0 submission, v0.5.0 main result featured) are <strong>preserved</strong> for traceability — they describe dated factual events and are not rewritten. A new <code>paper-jar-rejected</code> event is added to the research ledger as historical complement (<code>supersedes</code> ↔ <code>superseded_by</code>).</li>
+      <li><strong>Code paths preserved</strong>: the Git branch <code>arsenal-postjar</code>, the Lean directory <code>ProjetCollatz/PostJAR/</code>, and all GitHub blob/raw permalinks remain unchanged. These names denote code conventions ("work after the v1.1 deposit") that remain factually correct regardless of editorial verdict.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry">
     <header>
       <h2><span class="version-tag">v0.7.3</span> <span lang="fr">δ11 Salikhov-Insufficient-for-3732 (CONDITIONNEL) — architecture 5-IA cross-validation</span><span lang="en">δ11 Salikhov-Insufficient-for-3732 (CONDITIONAL) — 5-AI cross-validation architecture</span></h2>
@@ -362,7 +381,7 @@
 <!-- Hypothes.is annotations -->
 <script src="https://hypothes.is/embed.js" async></script>
 
-<script src="../assets/js/main.js?v=20260508-V0-7-3-DELTA11-INSUF-FIX"></script>
+<script src="../assets/js/main.js?v=20260513-V0-7-4-JAR-REJECTED"></script>
 
 </body>
 </html>

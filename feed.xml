@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-05-08T12:42:00Z</updated>
+  <updated>2026-05-13T12:00:00Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,31 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.7.4 — JAR rejection notification + site repositioned in preprint mode</title>
+    <link href="https://collatz-lab.org/changelog/"/>
+    <id>urn:collatz-cycles:v0.7.4-jar-rejection</id>
+    <updated>2026-05-13T12:00:00Z</updated>
+    <published>2026-05-13T12:00:00Z</published>
+    <category term="release"/>
+    <category term="editorial"/>
+    <category term="repositioning"/>
+    <summary type="html">
+      <![CDATA[
+      <p><strong>Editorial repositioning following JAR rejection:</strong></p>
+      <ul>
+        <li><strong>Rejection notification — Journal of Automated Reasoning</strong>: the 2026-04-27 submission (v1.1, 28 pages, kernel-checked Lean 4) was rejected on 2026-05-13. No modification of formal artefacts: the conditional theorem <code>no_nontrivial_cycle_phase59</code> and the minimal axiom profile (kernel-3 + 3 documented external hypotheses) remain unchanged and reproducible via <code>reproduce.sh</code> EXIT 0.</li>
+        <li><strong>Site neutralized to preprint mode</strong>: the permanent Zenodo DOI <a href="https://doi.org/10.5281/zenodo.19790406">10.5281/zenodo.19790406</a> remains the canonical reference. All active "submitted to JAR" / "under review" claims across index, /papers/, /pour-tous/, /syracuse/, /histoire/, /research-ledger/, /faq/, OG image, Cite modal (BibTeX/APA/Chicago/RIS/Plain), and meta descriptions have been neutralized.</li>
+        <li><strong>Visual labels renamed</strong>: <code>★ JAR</code> badge → <code>★ Main</code>, <code>status: "jar"</code> → <code>status: "main"</code> in <code>pistes.json</code>, CSS class <code>.badge.jar</code> → <code>.badge.main</code>, dependency-graph sub-label updated, Mermaid node <code>JAR</code> renamed <code>MAIN</code>.</li>
+        <li><strong>Historical entries preserved</strong> (FIND-015 anti-promotional discipline): v0.3.0 submission and v0.5.0 main-result-featured entries remain intact — they describe dated factual events. A new <code>paper-jar-rejected</code> event is added to the research ledger as historical complement (<code>supersedes</code> ↔ <code>superseded_by</code>) with <code>epistemic_status: external_unverified</code>.</li>
+        <li><strong>Code paths preserved</strong>: branch <code>arsenal-postjar</code>, directory <code>ProjetCollatz/PostJAR/</code>, and all GitHub blob/raw permalinks unchanged — these denote code conventions ("work after the v1.1 deposit") that remain factually correct regardless of editorial verdict.</li>
+        <li><strong>No new target journal publicly announced</strong> at this stage (FIND-015 discipline). Editorial repositioning is in progress.</li>
+      </ul>
+      <p><em>Disclosure: the rejection concerns the editorial fit, not the formal correctness of the Lean 4 kernel-checked artefact. The preprint v1.1 remains accessible under its permanent Zenodo DOI.</em></p>
+      ]]>
+    </summary>
+  </entry>
 
   <entry>
     <title>v0.7.3-delta11 — δ11 Salikhov-Insufficient-for-3732 (Phase 65, CONDITIONAL) + 5-AI cross-validation architecture + 4 mea culpa #29-32</title>
