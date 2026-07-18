@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-05-13T12:00:00Z</updated>
+  <updated>2026-07-19T12:00:00Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -17,6 +17,17 @@
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
 
+  <entry>
+    <title>v0.8.0 — Cycles page + open collaboration with B. Macindoe</title>
+    <link href="https://collatz-lab.org/cycles/"/>
+    <id>urn:collatz-cycles:v0.8.0-cycles-page-macindoe</id>
+    <updated>2026-07-19T12:00:00Z</updated>
+    <published>2026-07-19T12:00:00Z</published>
+    <category term="release"/>
+    <category term="collaboration"/>
+    <category term="outreach"/>
+    <summary>New narrative page /cycles/ (two towers, four harbours: the real loops 1, -1, -5, -17, Gersonides 1342, Benford's twist) companion to B. Macindoe's interactive cycle gateway; two-key collaboration (joint result L-A1, Lean 4 kernel-3) referenced on the papers page with his Zenodo DOIs (10.5281/zenodo.21421120 v2 + 3-adic mirror 10.5281/zenodo.21303918); Cycles link added to all 12 page navs.</summary>
+  </entry>
   <entry>
     <title>v0.7.4 — JAR rejection notification + site repositioned in preprint mode</title>
     <link href="https://collatz-lab.org/changelog/"/>

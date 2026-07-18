@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collatz cycles: two towers, four harbours — collatz-lab.org</title>
+<meta name="description" content="Why hidden loops are so hard to rule out in the Collatz / Syracuse problem — told in pictures. The two towers of powers of 2 and 3, the four real cycles (1, −1, −5, −17), Gersonides' 1343 free locks, and Benford's twist. Companion narrative to Benjamin Macindoe's interactive cycle gateway.">
+<meta name="keywords" content="Collatz cycles, Syracuse cycles, non-trivial cycles, powers of 2 and 3, near-misses, Gersonides, harmonic numbers, Benford, negative cycles, 3x-1, Collatz vulgarisation">
+<meta name="author" content="Eric Merle">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="canonical" href="https://collatz-lab.org/cycles/">
+<link rel="alternate" hreflang="en" href="https://collatz-lab.org/cycles/">
+<link rel="alternate" hreflang="fr" href="https://collatz-lab.org/cycles/?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://collatz-lab.org/cycles/">
+
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180">
+<meta name="theme-color" content="#0e0f13">
+
+<meta property="og:title" content="Collatz cycles: two towers, four harbours">
+<meta property="og:description" content="Why hidden loops are so hard to rule out — in pictures. Two towers of powers, four real cycles, Gersonides' 1343 free locks, and Benford's twist. Companion to B. Macindoe's interactive gateway.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://collatz-lab.org/cycles/">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:site_name" content="Collatz / Syracuse Conditional Cycles">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Collatz cycles: two towers, four harbours">
+<meta name="twitter:description" content="Why hidden loops are so hard to rule out — in pictures. Companion to B. Macindoe's interactive cycle gateway.">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+
+<link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LearningResource",
+      "@id": "https://collatz-lab.org/cycles/",
+      "headline": "Collatz cycles: two towers, four harbours",
+      "name": "Collatz cycles: two towers, four harbours",
+      "alternateName": ["Les cycles de Collatz : deux tours, quatre ports"],
+      "description": "A narrative, picture-led explanation of why hidden loops are so hard to rule out in the Collatz problem: the two towers of powers of 2 and 3, the four real cycles, Gersonides' 1343 free locks, and Benford's twist.",
+      "url": "https://collatz-lab.org/cycles/",
+      "image": "https://collatz-lab.org/assets/og-image.png",
+      "inLanguage": ["en", "fr"],
+      "datePublished": "2026-07-19T12:00:00+02:00",
+      "dateModified": "2026-07-19T12:00:00+02:00",
+      "author": {"@type": "Person", "@id": "https://orcid.org/0009-0008-7940-402X", "name": "Eric Merle"},
+      "isPartOf": {"@id": "https://collatz-lab.org/"},
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "audience": {"@type": "Audience", "audienceType": "general public"},
+      "educationalLevel": "Beginner",
+      "learningResourceType": "Explanation",
+      "citation": [
+        {"@type": "CreativeWork", "name": "Reduced coordinates for the Collatz map (B. Macindoe)", "identifier": "https://doi.org/10.5281/zenodo.21421120"}
+      ],
+      "about": {"@type": "Thing", "name": "Collatz conjecture", "alternateName": ["Conjecture de Syracuse", "3n+1 problem"]}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://collatz-lab.org/"},
+        {"@type": "ListItem", "position": 2, "name": "Cycles", "item": "https://collatz-lab.org/cycles/"}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+
+<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
+
+<style>
+  /* page-local: SVG figures inherit the site's theme variables */
+  .fig { max-width: 720px; margin: 2rem auto; }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .fig figcaption { font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.6rem; font-style: italic; }
+  .fig .s-axis { stroke: var(--border); stroke-width: 1; }
+  .fig .s-dot2 { fill: var(--accent-blue); }
+  .fig .s-dot3 { fill: var(--accent-amber); }
+  .fig .s-lab { font-family: var(--mono); font-size: 12px; fill: var(--text-secondary); }
+  .fig .s-title { font-family: var(--serif); font-size: 15px; fill: var(--text-primary); }
+  .fig .s-note { font-family: var(--sans); font-size: 12px; fill: var(--text-muted); }
+  .fig .s-tie { stroke: var(--accent); stroke-width: 1; stroke-dasharray: 4 4; }
+  .fig .s-port-n { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+  .fig .s-port-s { fill: none; stroke: var(--accent-red); stroke-width: 1.5; }
+  .fig .s-port-lott { fill: none; stroke: var(--accent-violet); stroke-width: 1.5; }
+  .fig .s-portlab { font-family: var(--serif); font-size: 13px; fill: var(--text-primary); }
+  .cross-card { background: var(--bg-secondary); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 6px; padding: 1.1rem 1.3rem; margin: 1.5rem 0; }
+  .harbour-list { font-family: var(--mono); font-size: 0.95rem; line-height: 1.9; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="../" class="brand">
+      <span class="brand-mark">Λ</span>
+      <span lang="fr">Cycles Conditionnels de Collatz/Syracuse</span>
+      <span lang="en">Collatz / Syracuse Conditional Cycles</span>
+    </a>
+    <nav class="nav">
+      <a href="../" data-i18n="navAccueil">Home</a>
+      <a href="../pour-tous/" data-i18n="navPourTous">For everyone</a>
+      <a href="../cycles/" aria-current="page">Cycles</a>
+      <a href="../lemmes/" data-i18n="navLemmes">Lemmas</a>
+      <a href="../preuve/" data-i18n="navPreuve">Proof</a>
+      <a href="../papers/" data-i18n="navPapers">Papers</a>
+      <a href="../research-ledger/" data-i18n="navLedger">Ledger</a>
+      <a href="../#team" data-i18n="navEquipe">Team</a>
+    </nav>
+    <div class="toolbar-actions">
+      <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
+        <span class="moon-icon" aria-hidden="true">☾</span>
+        <span class="sun-icon" aria-hidden="true">☀</span>
+      </button>
+      <button class="btn-icon" id="langBtn" aria-label="Switch language">FR</button>
+      <button class="btn-icon" id="printBtn" data-i18n="print">Print</button>
+    </div>
+  </div>
+</header>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<main>
+<article style="max-width: 780px; margin: 3rem auto; padding: 0 1.2rem;">
+
+<header class="article-header" style="text-align: center; margin-bottom: 2.5rem;">
+  <p class="text-muted" style="font-size: 0.85rem; letter-spacing: 0.05em;">
+    <span lang="fr">8 MIN DE LECTURE · EN IMAGES · LE CŒUR DU PROBLÈME</span>
+    <span lang="en">8 MIN READ · IN PICTURES · THE HEART OF THE PROBLEM</span>
+  </p>
+  <h1 style="font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.6rem); margin-top: 0.5rem; line-height: 1.15;">
+    <span lang="fr">Les cycles de Collatz&nbsp;: deux tours, quatre ports</span>
+    <span lang="en">Collatz cycles: two towers, four harbours</span>
+  </h1>
+  <p style="font-size: 1.1rem; color: var(--text-secondary); font-style: italic; margin-top: 1rem;">
+    <span lang="fr">Une «&nbsp;boucle cachée&nbsp;» dans Collatz est presque impossible à exclure. Voici pourquoi — sans formule, juste des images.</span>
+    <span lang="en">A "hidden loop" in Collatz is fiendishly hard to rule out. Here is why — no formulas, just pictures.</span>
+  </p>
+  <div class="cross-card" style="text-align: left; margin-top: 1.8rem;">
+    <p style="margin: 0; font-size: 0.95rem;">
+      <span lang="fr">📖 Page compagnon. Celle-ci <strong>raconte</strong>&nbsp;; sa jumelle, le <a href="https://macindoe.github.io/collatz/viz/cycle_anchor_gateway.html" target="_blank" rel="noopener">gateway interactif de Benjamin Macindoe</a>, vous laisse <strong>manipuler</strong>. Deux voix, deux dépôts indépendants — c'est précisément ce qui rend la vérification croisée solide.</span>
+      <span lang="en">📖 Companion page. This one <strong>tells the story</strong>; its twin, <a href="https://macindoe.github.io/collatz/viz/cycle_anchor_gateway.html" target="_blank" rel="noopener">Benjamin Macindoe's interactive gateway</a>, lets you <strong>operate the machine</strong>. Two voices, two independent repositories — which is exactly what makes the cross-verification solid.</span>
+    </p>
+  </div>
+</header>
+
+<section>
+<h2>
+  <span lang="fr">1. Une boucle cachée</span>
+  <span lang="en">1. A hidden loop</span>
+</h2>
+<p>
+  <span lang="fr">Le jeu de Collatz (pair → ÷2, impair → ×3+1) semble toujours redescendre vers 1. Pour le <em>prouver</em>, il faut écarter deux fantômes&nbsp;: qu'un nombre parte à l'infini, et qu'un nombre tourne en rond dans une <strong>boucle</strong> qui ne contient pas 1. Cette page parle du second — les <strong>cycles</strong>.</span>
+  <span lang="en">The Collatz game (even → ÷2, odd → ×3+1) always seems to fall back to 1. To <em>prove</em> it, you must banish two ghosts: a number running off to infinity, and a number going round forever in a <strong>loop</strong> that never contains 1. This page is about the second — the <strong>cycles</strong>.</span>
+</p>
+<p>
+  <span lang="fr">On croit qu'il n'existe qu'une seule boucle&nbsp;: 1 → 4 → 2 → 1. Mais personne ne sait le démontrer pour l'infinité des boucles imaginables. Pourquoi est-ce si dur&nbsp;? La réponse tient dans une image très simple.</span>
+  <span lang="en">We believe there is only one loop: 1 → 4 → 2 → 1. But nobody can prove it for the infinity of conceivable loops. Why is it so hard? The answer lives in one very simple picture.</span>
+</p>
+</section>
+
+<section>
+<h2>
+  <span lang="fr">2. Deux tours qui se frôlent</span>
+  <span lang="en">2. Two towers that graze</span>
+</h2>
+<p>
+  <span lang="fr">Imaginez deux tours. L'une monte en <strong>doublant</strong> (2, 4, 8, 16…), l'autre en <strong>triplant</strong> (3, 9, 27, 81…). Fait élémentaire&nbsp;: un étage de l'une n'est <em>jamais</em> exactement à la hauteur d'un étage de l'autre — une puissance de 2 est paire, une puissance de 3 est impaire.</span>
+  <span lang="en">Picture two towers. One climbs by <strong>doubling</strong> (2, 4, 8, 16…), the other by <strong>tripling</strong> (3, 9, 27, 81…). Elementary fact: a floor of one is <em>never</em> exactly level with a floor of the other — a power of 2 is even, a power of 3 is odd.</span>
+</p>
+
+<figure class="fig">
+<svg viewBox="0 40 720 278" role="img" aria-labelledby="fig1title fig1desc">
+  <title id="fig1title">Powers of 2 and powers of 3 never coincide</title>
+  <desc id="fig1desc">Two vertical scales: powers of two on the left, powers of three on the right, at the same logarithmic height. No dot on one side is ever level with a dot on the other, but 8 and 9, then 256 and 243, graze very closely.</desc>
+  <line class="s-axis" x1="250" y1="52" x2="250" y2="288"/>
+  <line class="s-axis" x1="470" y1="52" x2="470" y2="288"/>
+  <text class="s-note" x="250" y="306" text-anchor="middle">× 2</text>
+  <text class="s-note" x="470" y="306" text-anchor="middle">× 3</text>
+  <!-- powers of 2 : y = 288 - 24*log2(n) ; here log2 values 1..10 -->
+  <g>
+    <circle class="s-dot2" cx="250" cy="264" r="3.5"/><text class="s-lab" x="234" y="268" text-anchor="end">2</text>
+    <circle class="s-dot2" cx="250" cy="240" r="3.5"/><text class="s-lab" x="234" y="244" text-anchor="end">4</text>
+    <circle class="s-dot2" cx="250" cy="216" r="3.5"/><text class="s-lab" x="234" y="220" text-anchor="end">8</text>
+    <circle class="s-dot2" cx="250" cy="192" r="3.5"/><text class="s-lab" x="234" y="196" text-anchor="end">16</text>
+    <circle class="s-dot2" cx="250" cy="168" r="3.5"/><text class="s-lab" x="234" y="172" text-anchor="end">32</text>
+    <circle class="s-dot2" cx="250" cy="144" r="3.5"/><text class="s-lab" x="234" y="148" text-anchor="end">64</text>
+    <circle class="s-dot2" cx="250" cy="120" r="3.5"/><text class="s-lab" x="234" y="124" text-anchor="end">128</text>
+    <circle class="s-dot2" cx="250" cy="96" r="3.5"/><text class="s-lab" x="234" y="100" text-anchor="end">256</text>
+    <circle class="s-dot2" cx="250" cy="72" r="3.5"/><text class="s-lab" x="234" y="76" text-anchor="end">512</text>
+  </g>
+  <!-- powers of 3 : y = 288 - 24*log2(3^k) = 288 - 38.04*k -->
+  <g>
+    <circle class="s-dot3" cx="470" cy="250" r="3.5"/><text class="s-lab" x="486" y="254" text-anchor="start">3</text>
+    <circle class="s-dot3" cx="470" cy="212" r="3.5"/><text class="s-lab" x="486" y="216" text-anchor="start">9</text>
+    <circle class="s-dot3" cx="470" cy="174" r="3.5"/><text class="s-lab" x="486" y="178" text-anchor="start">27</text>
+    <circle class="s-dot3" cx="470" cy="135" r="3.5"/><text class="s-lab" x="486" y="139" text-anchor="start">81</text>
+    <circle class="s-dot3" cx="470" cy="97" r="3.5"/><text class="s-lab" x="486" y="101" text-anchor="start">243</text>
+  </g>
+  <!-- near-misses -->
+  <line class="s-tie" x1="254" y1="215" x2="466" y2="213"/>
+  <text class="s-note" x="360" y="208" text-anchor="middle">8 &amp; 9</text>
+  <line class="s-tie" x1="254" y1="96.5" x2="466" y2="97"/>
+  <text class="s-note" x="360" y="90" text-anchor="middle">256 &amp; 243</text>
+</svg>
+<figcaption>
+  <span lang="fr">Deux tours&nbsp;: les puissances de 2 (à gauche) et de 3 (à droite), à la même hauteur logarithmique. Jamais le même étage — mais 8 frôle 9, et 256 frôle 243. Ces «&nbsp;presque&nbsp;» sont le cœur du problème.</span>
+  <span lang="en">Two towers: the powers of 2 (left) and 3 (right), at the same logarithmic height. Never the same floor — yet 8 grazes 9, and 256 grazes 243. These "almosts" are the heart of the problem.</span>
+</figcaption>
+</figure>
+
+<p>
+  <span lang="fr">Un cycle de Collatz, c'est exactement ça&nbsp;: un frôlement <em>si parfait</em> entre une puissance de 2 et une puissance de 3 qu'un petit ajustement (le «&nbsp;+1&nbsp;») referme la boucle. Le «&nbsp;presque&nbsp;» de 8/9 ne suffit pas&nbsp;; celui de 256/243 non plus. Il en faudrait un infiniment meilleur.</span>
+  <span lang="en">A Collatz cycle is precisely that: a graze <em>so perfect</em> between a power of 2 and a power of 3 that a small adjustment (the "+1") snaps the loop shut. The 8/9 graze isn't good enough; nor is 256/243. You would need an infinitely better one.</span>
+</p>
+</section>
+
+<section>
+<h2>
+  <span lang="fr">3. Quatre ports, deux rives</span>
+  <span lang="en">3. Four harbours, two shores</span>
+</h2>
+<p>
+  <span lang="fr">Voici le retournement. Ce frôlement parfait <strong>a déjà eu lieu — quatre fois.</strong> Collatz possède réellement quatre boucles, et chacune est accrochée à un frôlement des deux tours. Trois vivent du côté des nombres <em>négatifs</em> (le monde miroir «&nbsp;×3−1&nbsp;»), une seule du côté positif&nbsp;: la nôtre, 1.</span>
+  <span lang="en">Here is the twist. That perfect graze <strong>has already happened — four times.</strong> Collatz really does have four loops, and each is anchored to a graze of the two towers. Three live on the <em>negative</em> side (the mirror world "×3−1"), only one on the positive side: ours, 1.</span>
+</p>
+
+<figure class="fig">
+<svg viewBox="0 36 720 214" role="img" aria-labelledby="fig2title fig2desc">
+  <title id="fig2title">The four real Collatz loops, one on the positive shore and three on the negative</title>
+  <desc id="fig2desc">The positive shore has a single harbour, the number 1, riding the gap 4 minus 3. The negative shore, the times-three-minus-one mirror, has three harbours: minus 1 on gap 2 minus 3, minus 5 on gap 9 minus 8, and minus 17 whose gap q equals minus 139.</desc>
+
+  <text class="s-portlab" x="58" y="76" text-anchor="middle" style="font-size:24px; fill:var(--accent);">+</text>
+  <g class="s-port-n"><rect x="290" y="48" width="130" height="40" rx="9"/></g>
+  <text class="s-portlab" x="355" y="64" text-anchor="middle">1</text>
+  <text class="s-note" x="355" y="80" text-anchor="middle">4 − 3</text>
+
+  <line class="s-axis" x1="40" y1="148" x2="680" y2="148" stroke-dasharray="2 6"/>
+
+  <text class="s-portlab" x="58" y="210" text-anchor="middle" style="font-size:24px; fill:var(--accent-red);">−</text>
+  <text class="s-note" x="58" y="228" text-anchor="middle">×3 − 1</text>
+  <g class="s-port-s"><rect x="120" y="192" width="120" height="40" rx="9"/></g>
+  <text class="s-portlab" x="180" y="208" text-anchor="middle">−1</text>
+  <text class="s-note" x="180" y="224" text-anchor="middle">2 − 3</text>
+  <g class="s-port-s"><rect x="290" y="192" width="130" height="40" rx="9"/></g>
+  <text class="s-portlab" x="355" y="208" text-anchor="middle">−5, −7</text>
+  <text class="s-note" x="355" y="224" text-anchor="middle">9 − 8</text>
+  <g class="s-port-lott"><rect x="500" y="192" width="140" height="40" rx="9"/></g>
+  <text class="s-portlab" x="570" y="208" text-anchor="middle">−17</text>
+  <text class="s-note" x="570" y="224" text-anchor="middle">q = −139</text>
+</svg>
+<figcaption>
+  <span lang="fr">Rive positive (+)&nbsp;: un seul port, 1. Rive négative (le monde miroir ×3−1)&nbsp;: trois ports. Sous chaque port, l'écart du frôlement — exactement ±1 (serrure «&nbsp;gratuite&nbsp;», §4), sauf −17 dont l'écart q&nbsp;= −139 est une coïncidence rare. Vérifié exhaustivement.</span>
+  <span lang="en">Positive shore (+): a single harbour, 1. Negative shore (the ×3−1 mirror): three harbours. Below each, its near-miss gap — exactly ±1 (a "free" lock, §4), except −17 whose gap q&nbsp;= −139 is a rare coincidence. Verified exhaustively.</span>
+</figcaption>
+</figure>
+
+<p>
+  <span lang="fr">Cela a une conséquence redoutable, un vrai «&nbsp;test anti-fausse-preuve&nbsp;»&nbsp;: <strong>tout argument «&nbsp;simple&nbsp;»</strong> (de parité, de vitesse) qui prétendrait interdire les boucles interdirait <em>aussi</em> ces quatre-là… qui existent. Il prouverait trop&nbsp;; il est donc faux. La vraie conjecture n'est pas «&nbsp;pas de boucle&nbsp;»&nbsp;: c'est «&nbsp;le côté positif n'aura plus jamais le coup de chance&nbsp;».</span>
+  <span lang="en">This has a fearsome consequence, a genuine "crank-proof detector": <strong>any "simple" argument</strong> (parity, speed) claiming to forbid loops would <em>also</em> forbid those four… which exist. It would prove too much, so it is wrong. The real conjecture isn't "no loops": it is "the positive side never gets the lucky break again".</span>
+</p>
+</section>
+
+<section>
+<h2>
+  <span lang="fr">4. Le cadeau de Gersonides (1342)</span>
+  <span lang="en">4. Gersonides' gift (1342)</span>
+</h2>
+<p>
+  <span lang="fr">Pourquoi trois boucles «&nbsp;faciles&nbsp;»&nbsp;? Parce qu'il existe des serrures <strong>gratuites</strong>&nbsp;: quand l'écart entre la puissance de 2 et la puissance de 3 vaut exactement <strong>1</strong>, il ouvre tout. Combien y en a-t-il&nbsp;? La réponse est vieille de près de 700 ans.</span>
+  <span lang="en">Why three "easy" loops? Because some locks are <strong>free</strong>: when the gap between the power of 2 and the power of 3 is exactly <strong>1</strong>, it opens everything. How many such gaps exist? The answer is nearly 700 years old.</span>
+</p>
+<p>
+  <span lang="fr">En 1342, le savant provençal <strong>Levi ben Gershom (Gersonides)</strong>, à la demande du compositeur <strong>Philippe de Vitry</strong>, démontre dans <em>De numeris harmonicis</em> que les seules puissances de 2 et de 3 qui diffèrent de 1 sont <strong>2 et 3, 3 et 4, 8 et 9</strong>. Trois, et pas une de plus — <em>jamais</em>. La serrure gratuite est littéralement médiévale.</span>
+  <span lang="en">In 1342, the Provençal scholar <strong>Levi ben Gershom (Gersonides)</strong>, at the request of the composer <strong>Philippe de Vitry</strong>, proved in <em>De numeris harmonicis</em> that the only powers of 2 and 3 differing by 1 are <strong>2 and 3, 3 and 4, 8 and 9</strong>. Three, and never one more. The free lock is literally fourteenth-century.</span>
+</p>
+<p class="cross-card">
+  <span lang="fr">Le hasard a distribué ces trois tickets&nbsp;: <strong>un</strong> au nord (4−3 → la boucle 1), <strong>deux</strong> au sud (2−3 → −1, et 9−8 → −5). Épuisés depuis le XIV<sup>e</sup> siècle. Après eux, plus aucune boucle ne peut s'ouvrir «&nbsp;gratuitement&nbsp;» — il faut une coïncidence arithmétique complète. C'est exactement ce qui rend la suite si dure.</span>
+  <span lang="en">Chance dealt those three tickets: <strong>one</strong> north (4−3 → the loop 1), <strong>two</strong> south (2−3 → −1, and 9−8 → −5). Spent since the fourteenth century. After them, no loop can open "for free" — it needs a complete arithmetic coincidence. That is exactly what makes the rest so hard.</span>
+</p>
+<p style="font-size: 0.9rem; color: var(--text-muted);">
+  <span lang="fr">(Ce lien avec Gersonides nous a été rappelé par notre collaborateur Benjamin Macindoe&nbsp;; il évite d'invoquer le lourd théorème de Catalan–Mihailescu, et c'est une bien plus belle histoire.)</span>
+  <span lang="en">(This Gersonides connection was pointed out by our collaborator Benjamin Macindoe; it avoids invoking the heavy Catalan–Mihailescu theorem, and it is a far better story.)</span>
+</p>
+</section>
+
+<section>
+<h2>
+  <span lang="fr">5. Le dé de Benford</span>
+  <span lang="en">5. Benford's dice</span>
+</h2>
+<p>
+  <span lang="fr">Une petite énigme rencontrée en chemin&nbsp;: à chaque étage, quel côté frôle le mieux, le nord ou le sud&nbsp;? Notre première réponse machine disait «&nbsp;50/50&nbsp;». C'était juste… pour une <em>certaine</em> façon de mesurer la distance. Pour la distance qui compte vraiment pour les boucles, le sud gagne dans <strong>58,5&nbsp;%</strong> des cas — exactement la loi de <strong>Benford</strong> (celle qui fait que les nombres commencent plus souvent par 1 que par 9).</span>
+  <span lang="en">A small puzzle met along the way: at each floor, which side grazes better, north or south? Our first machine answer said "50/50". It was right… for <em>one</em> way of measuring distance. For the distance that actually matters to loops, the south wins <strong>58.5&nbsp;%</strong> of the time — exactly <strong>Benford's law</strong> (the one that makes numbers start with 1 more often than 9).</span>
+</p>
+<p>
+  <span lang="fr">Les deux réponses sont vraies, à deux questions différentes — et c'est notre collaborateur qui a tranché laquelle compte. C'est ça, la vérification à deux clés&nbsp;: chacun corrige l'autre, par générosité.</span>
+  <span lang="en">Both answers are true, to two different questions — and it was our collaborator who adjudicated which one counts. That is two-key verification: each corrects the other, out of generosity.</span>
+</p>
+</section>
+
+<section>
+<h2>
+  <span lang="fr">6. Le mur</span>
+  <span lang="en">6. The wall</span>
+</h2>
+<p>
+  <span lang="fr">Au fond, exclure les boucles revient à savoir si les chiffres binaires (base 2) et ternaires (base 3) d'un même nombre peuvent «&nbsp;conspirer&nbsp;» parfaitement. C'est une question ouverte de toute la théorie des nombres — le <strong>fossé ×2×3</strong> de Furstenberg. Personne ne sait la franchir.</span>
+  <span lang="en">Ultimately, ruling out loops comes down to whether the binary (base 2) and ternary (base 3) digits of one number can perfectly "conspire". That is an open question across all of number theory — Furstenberg's <strong>×2×3 gap</strong>. Nobody knows how to cross it.</span>
+</p>
+<p>
+  <span lang="fr">Ce qu'on peut faire, honnêtement, ce n'est pas franchir le mur&nbsp;: c'est en <strong>dessiner la carte exacte</strong>, nommer sa forme, et bâtir un <strong>échafaudage conditionnel</strong> vérifié par la machine (voir la <a href="../preuve/">preuve</a> et le <a href="../pour-tous/">résumé pour tous</a>). Le vrai apport n'est pas une borne&nbsp;; c'est la méthode et la forme de l'obstruction.</span>
+  <span lang="en">What one can honestly do is not to cross the wall: it is to <strong>draw its exact map</strong>, name its shape, and build a machine-checked <strong>conditional scaffold</strong> (see the <a href="../preuve/">proof</a> and the <a href="../pour-tous/">plain-language summary</a>). The real contribution isn't a bound; it's the method and the shape of the obstruction.</span>
+</p>
+</section>
+
+<section>
+<h2>
+  <span lang="fr">7. Deux voix, une carte</span>
+  <span lang="en">7. Two voices, one map</span>
+</h2>
+<p>
+  <span lang="fr">Tout ce que raconte cette page a été <strong>vérifié des deux côtés</strong>, indépendamment — un noyau formel Lean&nbsp;4 d'un côté, du code Python de l'autre, aucun copié sur l'autre. Pour aller plus loin&nbsp;:</span>
+  <span lang="en">Everything on this page has been <strong>verified on both sides</strong>, independently — a formal Lean&nbsp;4 kernel on one side, Python code on the other, neither derived from the other. To go further:</span>
+</p>
+<ul>
+  <li>
+    <a href="https://macindoe.github.io/collatz/viz/cycle_anchor_gateway.html" target="_blank" rel="noopener"><span lang="fr">Le gateway interactif de Benjamin Macindoe</span><span lang="en">Benjamin Macindoe's interactive gateway</span></a>
+    — <span lang="fr">manipulez les frôlements, les boucles et Benford en direct (arithmétique exacte).</span><span lang="en">operate the near-misses, the loops and Benford live (exact arithmetic).</span>
+  </li>
+  <li>
+    <span lang="fr">Son preprint&nbsp;: <a href="https://doi.org/10.5281/zenodo.21421120" target="_blank" rel="noopener">«&nbsp;Reduced coordinates for the Collatz map&nbsp;» (v2, DOI 10.5281/zenodo.21421120)</a> — et son <a href="https://doi.org/10.5281/zenodo.21303918" target="_blank" rel="noopener">papier miroir</a>.</span>
+    <span lang="en">His preprint: <a href="https://doi.org/10.5281/zenodo.21421120" target="_blank" rel="noopener">"Reduced coordinates for the Collatz map" (v2, DOI 10.5281/zenodo.21421120)</a> — and his <a href="https://doi.org/10.5281/zenodo.21303918" target="_blank" rel="noopener">mirror paper</a>.</span>
+  </li>
+  <li>
+    <a href="../papers/"><span lang="fr">Nos papiers</span><span lang="en">Our papers</span></a>
+    — <span lang="fr">le théorème conditionnel formalisé en Lean&nbsp;4 et ses obstructions structurelles.</span><span lang="en">the conditional theorem formalized in Lean&nbsp;4 and its structural obstructions.</span>
+  </li>
+</ul>
+<p style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-secondary); border-radius: 6px; font-size: 0.95rem;">
+  <span lang="fr"><strong>Une note sincère.</strong> Ce travail ne cherche ni la gloire ni la paternité&nbsp;; il est fait pour tout le monde. Les noms sur les découvertes ne sont là que pour la traçabilité honnête — savoir quelle brique vérifier, et sur laquelle bâtir.</span>
+  <span lang="en"><strong>A sincere note.</strong> This work seeks neither glory nor authorship; it is done for everyone. The names on the findings are there only for honest traceability — knowing which brick to check, and which to build on.</span>
+</p>
+</section>
+
+</article>
+</main>
+
+<footer style="padding: 3rem 2rem 4rem; text-align: center; color: var(--text-secondary); font-size: 0.88rem; border-top: 1px solid var(--border); margin-top: 4rem;">
+  <p>
+    <span lang="fr">© Eric Merle 2026 · </span><span lang="en">© Eric Merle 2026 · </span>
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    · <a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>
+    · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a>
+    · <a href="../changelog/">Changelog</a>
+    · <a href="../feed.xml">Atom feed</a>
+  </p>
+  <p style="margin-top: 0.5rem;">
+    <span lang="fr">Page Cycles publiée le 2026-07-19 · v0.1 · faits vérifiés des deux côtés</span>
+    <span lang="en">Cycles page published 2026-07-19 · v0.1 · facts verified on both sides</span>
+  </p>
+  <p style="margin-top: 0.6rem;">
+    <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
+    · <a href="../feed.xml" rel="alternate" type="application/atom+xml" title="Fil RSS">📡 RSS</a>
+  </p>
+</footer>
+
+<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
+
+</body>
+</html>
