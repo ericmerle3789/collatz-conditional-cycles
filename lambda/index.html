@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Λ_{S,k} interactive — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Conjecture de Syracuse / Collatz : visualisation interactive du verrou Λ_{S,k} = S log 2 - k log 3. Voir comment les trois hypothèses externes interdisent différentes régions du plan (S,k).">
+<meta name="description" content="Conjecture de Syracuse / Collatz : visualisation interactive du verrou Λ_{S,k} = S log 2 - k log 3. Voir les régions associées aux trois hypothèses H1-H3 du théorème conditionnel (H3 supposée : voir l'erratum du 02/10/2026).">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, Lambda lock, S log 2, k log 3, Diophantine, Baker, Barina, Hercher">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -20,8 +20,8 @@
 <meta name="theme-color" content="#0e0f13">
 
 <meta property="og:title" content="Λ_{S,k} interactive — Collatz / Syracuse Conditional Cycles">
-<meta property="og:description" content="(Syracuse · Collatz · 3n+1) Interactive visualization of the Λ lock and the three forbidden regions (BakerSeparation, BarinaVerification, DerivedLargeKBound).">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:description" content="(Syracuse · Collatz · 3n+1) Interactive visualization of the Λ lock and of the regions associated with the three hypotheses (BakerSeparation, BarinaVerification, DerivedLargeKBound — the last one assumed, not derived).">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="article">
@@ -34,7 +34,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Λ_{S,k} interactive — Collatz / Syracuse Conditional Cycles">
 <meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Interactive visualization of the Λ_{S,k} = S log 2 - k log 3 Diophantine lock.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 
 <!-- JSON-LD : TechArticle (interactive viz) + BreadcrumbList -->
 <script type="application/ld+json">
@@ -46,7 +46,7 @@
       "@id": "https://collatz-lab.org/lambda/",
       "headline": "Interactive visualization of the Λ_{S,k} Diophantine lock",
       "name": "Λ_{S,k} interactive explorer",
-      "description": "Interactive (S, k) plane explorer showing the three forbidden regions of any hypothetical non-trivial Collatz cycle: BarinaVerification (n < 2^71, reproducible computational verification, Barina 2025), DerivedLargeKBound (project-derived hypothesis: k > 1322 → n < 2^71; combines BakerSeparation + continued-fraction gaps of log₂3 + Product Bound + BarinaVerification; NOT a published theorem — see HYPOTHESES.md §5), and BakerSeparation (working conjecture, undemonstrated strengthening of published Rhin/Wu/Salikhov bounds — see mea culpa #28 + δ10 cartographic lemma).",
+      "description": "Interactive (S, k) plane explorer showing the regions associated with the three hypotheses of the conditional theorem: BarinaVerification (H2, encoding of a published computational result, Barina 2025, n < 2^71), DerivedLargeKBound (H3, k > 1322 → n < 2^71: assumed hypothesis, not derived; under H2 equivalent to the conclusion for k > 1322 — see HYPOTHESES.md, section H3, and the erratum of 2 Oct 2026), and BakerSeparation (H1, working hypothesis, stronger in this form than published effective bounds — see mea culpa #28).",
       "url": "https://collatz-lab.org/lambda/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -55,7 +55,7 @@
         "name": "Eric Merle"
       },
       "datePublished": "2026-04-29",
-      "dateModified": "2026-04-30",
+      "dateModified": "2026-10-02",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "proficiencyLevel": "Expert",
@@ -88,7 +88,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
         onload="setTimeout(() => renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]}), 200);"></script>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
 </head>
 <body>
 
@@ -133,10 +133,10 @@
   <h1 style="font-size: clamp(1.6rem, 4vw, 2.8rem);" lang="fr">Le verrou Λ<sub>S,k</sub> en action</h1>
   <h1 style="font-size: clamp(1.6rem, 4vw, 2.8rem);" lang="en">The Λ<sub>S,k</sub> lock in action</h1>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">
-    Faites varier $S$ et $k$ et observez en direct la valeur du verrou diophantien $\Lambda_{S,k} = S \log 2 - k \log 3$, ainsi que les régions interdites par chacune des trois hypothèses externes (BakerSeparation, BarinaVerification, DerivedLargeKBound).
+    Faites varier $S$ et $k$ et observez en direct la valeur du verrou diophantien $\Lambda_{S,k} = S \log 2 - k \log 3$, ainsi que les régions associées à chacune des trois hypothèses H1-H3 (BakerSeparation, BarinaVerification, DerivedLargeKBound ; H3 est supposée, voir l'erratum).
   </p>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="en">
-    Vary $S$ and $k$ and observe in real time the value of the Diophantine lock $\Lambda_{S,k} = S \log 2 - k \log 3$, along with the regions forbidden by each of the three external hypotheses (BakerSeparation, BarinaVerification, DerivedLargeKBound).
+    Vary $S$ and $k$ and observe in real time the value of the Diophantine lock $\Lambda_{S,k} = S \log 2 - k \log 3$, along with the regions associated with each of the three hypotheses H1-H3 (BakerSeparation, BarinaVerification, DerivedLargeKBound; H3 is assumed, see the erratum).
   </p>
 </section>
 
@@ -161,8 +161,8 @@
 
     <div class="lambda-legend">
       <div class="legend-item"><span class="legend-color" style="background: #c25450;"></span> <span lang="fr">Région exclue Barina ($n &lt; 2^{71}$)</span><span lang="en">Barina-excluded region ($n &lt; 2^{71}$)</span></div>
-      <div class="legend-item"><span class="legend-color" style="background: #d4a045;"></span> <span lang="fr">Région exclue DerivedLargeKBound (dérivation projet, $k &gt; 1322 \Rightarrow n &lt; 2^{71}$)</span><span lang="en">DerivedLargeKBound-excluded region (project-derived, $k &gt; 1322 \Rightarrow n &lt; 2^{71}$)</span></div>
-      <div class="legend-item"><span class="legend-color" style="background: #6a93b8;"></span> <span lang="fr">Région bornée BakerSeparation (effective)</span><span lang="en">BakerSeparation effective bounded region</span></div>
+      <div class="legend-item"><span class="legend-color" style="background: #d4a045;"></span> <span lang="fr">Région exclue par H3 DerivedLargeKBound (hypothèse supposée, non dérivée : $k &gt; 1322 \Rightarrow n &lt; 2^{71}$)</span><span lang="en">Region excluded by H3 DerivedLargeKBound (assumed hypothesis, not derived: $k &gt; 1322 \Rightarrow n &lt; 2^{71}$)</span></div>
+      <div class="legend-item"><span class="legend-color" style="background: #6a93b8;"></span> <span lang="fr">Bande H1 BakerSeparation (hypothèse de travail)</span><span lang="en">H1 BakerSeparation band (working hypothesis)</span></div>
       <div class="legend-item"><span class="legend-color" style="background: #c8a86a;"></span> <span lang="fr">Position courante (S, k)</span><span lang="en">Current position (S, k)</span></div>
       <div class="legend-item"><span class="legend-color legend-line" style="background: #6a9b7a;"></span> <span lang="fr">Droite $S = k \cdot \log_2 3 \approx 1.585\,k$</span><span lang="en">Line $S = k \cdot \log_2 3 \approx 1.585\,k$</span></div>
     </div>
@@ -175,10 +175,10 @@
   <h2 lang="fr">Pourquoi $\Lambda_{S,k}$ est le verrou central</h2>
   <h2 lang="en">Why $\Lambda_{S,k}$ is the central lock</h2>
   <p lang="fr">
-    Pour qu'un cycle Collatz hypothétique de longueur $k$ existe, il faut que $S \cdot \log 2 \approx k \cdot \log 3$, c'est-à-dire $\Lambda_{S,k} \approx 0$. Mais $\log_2 3$ est <strong>irrationnel</strong>, donc cette égalité ne peut être qu'approchée. <em>De combien</em> ? C'est ce que mesure une <strong>borne effective de type Baker</strong>. Notre axiome <code>BakerSeparation</code> utilise la forme $(2^s - 3^k) \cdot k^6 \geq 3^k$ comme <strong>conjecture de travail</strong> : renforcement non démontré des bornes diophantiennes publiées (Rhin 1987, Salikhov 2007, Wu 2003, Simons-de Weger 2005), pas un théorème externe — voir <a href="/#meaculpa">mea culpa #28</a> et le lemme <strong>δ10</strong> (Phase 64) qui démontre formellement pourquoi aucune borne publiée ne suffit.
+    Pour qu'un cycle Collatz hypothétique à $k$ termes impairs existe, il faut que $S \cdot \log 2 \approx k \cdot \log 3$, c'est-à-dire $\Lambda_{S,k} \approx 0$. Mais $\log_2 3$ est <strong>irrationnel</strong>, donc cette égalité ne peut être qu'approchée. <em>De combien</em> ? C'est ce que mesure une <strong>borne effective de type Baker</strong>. Notre hypothèse H1 <code>BakerSeparation</code> (paramètre des théorèmes, pas un axiome Lean) utilise la forme $(2^s - 3^k) \cdot k^6 \geq 3^k$ comme <strong>hypothèse de travail</strong>, plus forte que les bornes effectives publiées sous cette forme : ce n'est pas un théorème publié — voir <a href="/#meaculpa">mea culpa #28</a>.
   </p>
   <p lang="en">
-    For a hypothetical Collatz cycle of length $k$ to exist, we need $S \cdot \log 2 \approx k \cdot \log 3$, i.e. $\Lambda_{S,k} \approx 0$. But $\log_2 3$ is <strong>irrational</strong>, so this equality can only be approximate. <em>By how much</em>? This is what an <strong>effective Baker-type bound</strong> measures. Our <code>BakerSeparation</code> axiom uses the form $(2^s - 3^k) \cdot k^6 \geq 3^k$ as a <strong>working hypothesis (conjecture)</strong>: undemonstrated strengthening of published Diophantine bounds (Rhin 1987, Salikhov 2007, Wu 2003, Simons-de Weger 2005), not an external theorem — see <a href="/#meaculpa">mea culpa #28</a> and the <strong>δ10 lemma</strong> (Phase 64) which formally proves why no published bound is sufficient.
+    For a hypothetical Collatz cycle with $k$ odd terms to exist, we need $S \cdot \log 2 \approx k \cdot \log 3$, i.e. $\Lambda_{S,k} \approx 0$. But $\log_2 3$ is <strong>irrational</strong>, so this equality can only be approximate. <em>By how much</em>? This is what an <strong>effective Baker-type bound</strong> measures. Our hypothesis H1 <code>BakerSeparation</code> (a parameter of the theorems, not a Lean axiom) uses the form $(2^s - 3^k) \cdot k^6 \geq 3^k$ as a <strong>working hypothesis</strong>, stronger in this form than published effective bounds: it is not a published theorem — see <a href="/#meaculpa">mea culpa #28</a>.
   </p>
 
   <div class="card-grid">
@@ -186,22 +186,22 @@
       <div class="card-eyebrow">Barina 2025</div>
       <h3 lang="fr">$n &lt; 2^{71}$ vérifié</h3>
       <h3 lang="en">$n &lt; 2^{71}$ verified</h3>
-      <p lang="fr">Couvre les <strong>petits cycles</strong> ($k \leq 1322$) en combinant Product-Bound + vérification numérique.</p>
-      <p lang="en">Covers <strong>small cycles</strong> ($k \leq 1322$) by combining Product-Bound + numerical verification.</p>
+      <p lang="fr">H2 : traduction d'un résultat de calcul publié (Bařina 2025, $n &lt; 2^{71}$). Avec H1 (Product-Bound $n \leq (k^7+k)/3$), exclut les <strong>petits cycles</strong> ($k \leq 1322$).</p>
+      <p lang="en">H2: encoding of a published computational result (Barina 2025, $n &lt; 2^{71}$). Together with H1 (Product-Bound $n \leq (k^7+k)/3$), excludes <strong>small cycles</strong> ($k \leq 1322$).</p>
     </div>
     <div class="card">
-      <div class="card-eyebrow">DerivedLargeKBound (dérivation projet)</div>
+      <div class="card-eyebrow"><span lang="fr">H3 DerivedLargeKBound (supposée)</span><span lang="en">H3 DerivedLargeKBound (assumed)</span></div>
       <h3 lang="fr">$k &gt; 1322 \Rightarrow n &lt; 2^{71}$</h3>
       <h3 lang="en">$k &gt; 1322 \Rightarrow n &lt; 2^{71}$</h3>
-      <p lang="fr">Hypothèse <strong>dérivée projet</strong> (combine BakerSeparation + gaps fractions continues log<sub>2</sub>3 + Product Bound + BarinaVerification) — couvre les <strong>grands cycles</strong>. <em>N'est pas un théorème publié</em> : voir <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>. Hercher 2023 (J. Integer Seq. 26.3.5) sur les m-cycles porte sur une quantité distincte (m = minima locaux, ≠ k = pas impairs).</p>
-      <p lang="en">A <strong>project-derived hypothesis</strong> (combines BakerSeparation + continued-fraction gaps of log<sub>2</sub>3 + Product Bound + BarinaVerification) — covers <strong>large cycles</strong>. <em>Not a published theorem</em>: see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>. Hercher 2023 (J. Integer Seq. 26.3.5) on m-cycles addresses a distinct quantity (m = local minima, ≠ k = odd steps).</p>
+      <p lang="fr">Hypothèse <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion pour $k &gt; 1322$ (erratum du 2 octobre 2026). Les grands cycles ne sont donc exclus que par cette hypothèse. Voir <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a> (ce fichier la présente comme une dérivation : c'est corrigé par l'erratum du 02/10/2026). Pour situer : Hercher (2023, <em>J. Integer Seq.</em> 26, Article 23.3.5) montre que, si la conjecture est vérifiée jusqu'à 3·2⁶⁹ (ce que couvre la vérification de Bařina, 2⁷¹), tout cycle non trivial a au moins 1,375·10¹¹ termes impairs. Ce n'est pas la source de H3.</p>
+      <p lang="en">An <strong>assumed hypothesis, not derived</strong>; under H2 it is equivalent to the conclusion for $k &gt; 1322$ (erratum of 2 October 2026). Large cycles are therefore excluded only by this hypothesis. See <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a> (that file presents it as a derivation: corrected by the erratum of 2 Oct 2026). For context: Hercher (2023, <em>J. Integer Seq.</em> 26, Article 23.3.5) shows that, if the conjecture is verified up to 3·2⁶⁹ (covered by Barina's verification, 2⁷¹), every non-trivial cycle has at least 1.375·10¹¹ odd terms. This is not the source of H3.</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--accent);">
-      <div class="card-eyebrow">BakerSeparation (effective)</div>
+      <div class="card-eyebrow"><span lang="fr">H1 BakerSeparation (hypothèse de travail)</span><span lang="en">H1 BakerSeparation (working hypothesis)</span></div>
       <h3 lang="fr">$(2^s - 3^k) \cdot k^6 \geq 3^k$</h3>
       <h3 lang="en">$(2^s - 3^k) \cdot k^6 \geq 3^k$</h3>
-      <p lang="fr">Forme effective sur $|S \log 2 - k \log 3|$ — <strong>axiome pivot</strong> (<em>conjecture de travail</em>, renforcement non démontré des bornes Rhin/Wu/Salikhov publiées — voir <a href="/#meaculpa">#28</a> et <strong>δ10</strong>) qui exclut les grands cycles ($k > 1322$) via continued fractions, sous condition que la conjecture tienne.</p>
-      <p lang="en">Effective form on $|S \log 2 - k \log 3|$ — <strong>pivotal axiom</strong> (working hypothesis (conjecture), undemonstrated strengthening of published Rhin/Wu/Salikhov bounds — see <a href="/#meaculpa">#28</a> and <strong>δ10</strong>) that excludes large cycles ($k > 1322$) via continued fractions, under the assumption that the conjecture holds.</p>
+      <p lang="fr">Forme effective sur $|S \log 2 - k \log 3|$ — hypothèse H1 (paramètre ; <em>hypothèse de travail</em>, plus forte que les bornes effectives publiées sous cette forme — voir <a href="/#meaculpa">mea culpa #28</a>). Dans le code publié, elle sert au Product-Bound $n \leq (k^7+k)/3$, donc au cas $k \leq 1322$. Les grands cycles ($k &gt; 1322$) sont exclus uniquement par l'hypothèse supposée H3 (avec H2).</p>
+      <p lang="en">Effective form on $|S \log 2 - k \log 3|$ — hypothesis H1 (parameter; <em>working hypothesis</em>, stronger in this form than published effective bounds — see <a href="/#meaculpa">mea culpa #28</a>). In the published code it serves the Product-Bound $n \leq (k^7+k)/3$, hence the case $k \leq 1322$. Large cycles ($k &gt; 1322$) are excluded only by the assumed hypothesis H3 (with H2).</p>
     </div>
   </div>
 </section>
@@ -209,13 +209,13 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.6.0 · 2026-04-30</div>
+  <div class="footer-meta">Cartography · v0.9.0 · 2026-10-02</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2</p>
   <p class="footer-status">
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/actions" target="_blank" rel="noopener" class="status-badge">
       <span class="status-dot" aria-hidden="true"></span>
-      <span data-i18n="buildPassing">site build: passing</span>
+      <span data-i18n="buildPassing">build history (GitHub)</span>
     </a>
     <span class="status-sep">·</span>
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/commits/gh-pages" target="_blank" rel="noopener" class="text-muted small">
@@ -231,8 +231,8 @@
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
-<script src="../assets/js/lambda-explorer.js"></script>
+<script src="../assets/js/main.js?v=20261002-V0-9-0"></script>
+<script src="../assets/js/lambda-explorer.js?v=20261002-V0-9-0"></script>
 
 </body>
 </html>

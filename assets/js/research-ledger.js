@@ -1,8 +1,7 @@
 /**
  * research-ledger.js
  *
- * Renders the Research Ledger page from assets/data/research-ledger.json.
- * Three-Key validated 2026-04-30 (OLD3 + NEW4 + ChatGPT 5.5 Q14+Q15).
+ * Research ledger renderer (assets/data/research-ledger.json).
  *
  * INTEGRATION WITH main.js i18n:
  *   - Generates Pattern B HTML: <span lang="fr">…</span><span lang="en">…</span>
@@ -187,7 +186,7 @@
     const container = document.getElementById('ongoingContainer');
     if (!container) return;
     const ongoing = events
-      .filter(e => e.status === 'in-progress' || e.status === 'to-explore' || e.status === 'hypothesis')
+      .filter(e => familyOf(e) === 'study' && (e.status === 'in-progress' || e.status === 'to-explore' || e.status === 'hypothesis'))
       .sort((a, b) => (b.datetime || b.date).localeCompare(a.datetime || a.date));
     container.innerHTML = ongoing.map(renderEventCard).join('') || '<p>—</p>';
     syncLangToCurrent(container);
@@ -264,7 +263,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('../assets/data/research-ledger.json');
+      const resp = await fetch('../assets/data/research-ledger.json?v=20261002-V0-9-0');
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       STATE.data = await resp.json();
 

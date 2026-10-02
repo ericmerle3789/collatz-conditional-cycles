@@ -1,57 +1,57 @@
 {
-  "version": "0.6.3",
-  "lastUpdate": "2026-05-01",
+  "version": "0.9.0",
+  "lastUpdate": "2026-10-02",
   "pistes": [
     {
       "id": "★ Main",
       "fr": {
-        "name": "no_nontrivial_cycle_phase59 — résultat principal",
-        "why": "Théorème principal du preprint (v1.1, 2026-04-27, DOI Zenodo 10.5281/zenodo.19790406) : aucun cycle Collatz non-trivial sous 3 conditions explicites. Kernel-checked Lean 4 (Mathlib v4.27). Profil d'axiomes minimal : 3 axiomes Lean kernel (propext, Classical.choice, Quot.sound) + 3 hypothèses externes documentées (BakerSeparation effective Baker 1966 / Matveev 2000, BarinaVerification n<2^71 Barina 2025, DerivedLargeKBound dérivation projet k>1322⇒n<2^71 — voir HYPOTHESES.md §5). 28 pages, ~30 fichiers Lean, reproductible via reproduce.sh EXIT 0. Contribution : pas la non-existence inconditionnelle (irréalisable cf. δ8 lemma) mais la cartographie rigoureuse des obstructions structurelles qui rend la conditionnalité nécessaire."
+        "name": "no_nontrivial_cycle_phase59 — résultat principal (erratum du 02/10/2026)",
+        "why": "Théorème principal du preprint (DOI Zenodo de concept 10.5281/zenodo.19790405) : aucun cycle Collatz non trivial, sous trois hypothèses passées en paramètres (pas des axiomes Lean) : H1 BakerSeparation (hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28), H2 BarinaVerification (traduction d'un résultat de calcul publié, Bařina 2025, n < 2^71), H3 DerivedLargeKBound (hypothèse supposée (non dérivée) ; équivaut sous H2 à la conclusion pour k > 1322). <strong>Erratum (02/10/2026)</strong> : ce qui est démontré sans circularité est l'absence de cycle non trivial avec k ≤ 1322, sous H1 et H2 (no_cycle_k_le_1322) ; le théorème principal n'apporte rien au-delà. Vérifié par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant la correction du bug de noyau lean4#14576 (Lean v4.32.2, 28/07/2026) ; non revérifié depuis. Profil d'axiomes selon la référence expected_axioms.md (Lean 4.27.0) : [propext, Classical.choice, Quot.sound]. Une quarantaine de fichiers Lean ; script reproduce.sh fourni. Le PDF Zenodo porte encore l'ancien énoncé."
       },
       "en": {
-        "name": "no_nontrivial_cycle_phase59 — main result",
-        "why": "Main theorem of the preprint (v1.1, 2026-04-27, Zenodo DOI 10.5281/zenodo.19790406): no non-trivial Collatz cycle under 3 explicit conditions. Kernel-checked Lean 4 (Mathlib v4.27). Minimal axiom profile: 3 Lean kernel axioms (propext, Classical.choice, Quot.sound) + 3 documented external hypotheses (BakerSeparation effective Baker 1966 / Matveev 2000, BarinaVerification n<2^71 Barina 2025, DerivedLargeKBound project-derived k>1322⇒n<2^71 — see HYPOTHESES.md §5). 28 pages, ~30 Lean files, reproducible via reproduce.sh EXIT 0. Contribution: not unconditional non-existence (unattainable cf. δ8 lemma) but the rigorous mapping of structural obstructions that makes conditionality necessary."
+        "name": "no_nontrivial_cycle_phase59 — main result (erratum of 2026-10-02)",
+        "why": "Main theorem of the preprint (Zenodo concept DOI 10.5281/zenodo.19790405): no non-trivial Collatz cycle, under three hypotheses passed as parameters (not Lean axioms): H1 BakerSeparation (working hypothesis, stronger in this form than published effective bounds, see mea culpa #28), H2 BarinaVerification (encoding of a published computational result, Barina 2025, n < 2^71), H3 DerivedLargeKBound (assumed hypothesis (not derived); under H2 equivalent to the conclusion for k > 1322). <strong>Erratum (2026-10-02)</strong>: what is proved without circularity is the absence of non-trivial cycles with k ≤ 1322, under H1 and H2 (no_cycle_k_le_1322); the main theorem adds nothing beyond that. Checked by the Lean 4.27.0 kernel (Mathlib v4.27.0), before the fix of kernel bug lean4#14576 (Lean v4.32.2, 28 July 2026); not re-checked since. Axiom profile according to the reference expected_axioms.md (Lean 4.27.0): [propext, Classical.choice, Quot.sound]. About forty Lean files; reproduce.sh script provided. The Zenodo PDF still carries the old statement."
       },
       "region": "I",
       "status": "main",
       "test4": "4/4 ✓",
       "lean": "no_nontrivial_cycle_phase59",
       "leanFile": "ProjetCollatz/Phase59ContinuedFractions.lean",
-      "ref": "Merle 2026, preprint v1.1, DOI 10.5281/zenodo.19790406"
+      "ref": "Merle 2026, preprint, DOI 10.5281/zenodo.19790405"
     },
     {
       "id": "A",
       "fr": {
-        "name": "BakerSeparation effective (k^6)",
-        "why": "Pilier projet — borne effective sur |S log 2 − k log 3|. Forme axiome : (2^s − 3^k)·k^6 ≥ 3^k. <strong>Conjecture de travail</strong> : renforcement non démontré des bornes diophantiennes publiées (Salikhov 2007 μ ≤ 5.125, Wu 2003 μ ≈ 7.6155, Simons-de Weger 2005 exposant ≈ 13.3) — déclarée comme hypothèse explicite, pas un théorème externe (mea culpa #28). Le lemme cartographique δ10 (Phase 64, kernel-1 [propext]) démontre formellement pourquoi cette force est nécessaire : aucune source publiée ne peut remplacer Barina sans X_0 computationnel."
+        "name": "BakerSeparation (k^6) — hypothèse H1",
+        "why": "Hypothèse H1 (paramètre du théorème, pas un axiome Lean) — borne sur |S log 2 − k log 3| de la forme (2^s − 3^k)·k^6 ≥ 3^k. <strong>Hypothèse de travail</strong>, plus forte que les bornes effectives publiées sous cette forme (mea culpa #28) ; tradition : Rhin 1987, Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125), Wu & Wang 2014. Le lemme cartographique δ10 (Phase 64, [propext]) montre, pour un catalogue fini de bornes publiées, qu'aucune ne remplace la vérification de Bařina."
       },
       "en": {
-        "name": "BakerSeparation effective (k^6)",
-        "why": "Project pillar — effective bound on |S log 2 − k log 3|. Axiom form: (2^s − 3^k)·k^6 ≥ 3^k. <strong>Working conjecture</strong>: undemonstrated strengthening of published Diophantine bounds (Salikhov 2007 μ ≤ 5.125, Wu 2003 μ ≈ 7.6155, Simons-de Weger 2005 exponent ≈ 13.3) — declared as explicit hypothesis, not an external theorem (mea culpa #28). The δ10 cartographic lemma (Phase 64, kernel-1 [propext]) formally proves why this strength is necessary: no published source can replace Barina without computational X_0."
+        "name": "BakerSeparation (k^6) — hypothesis H1",
+        "why": "Hypothesis H1 (a parameter of the theorem, not a Lean axiom) — bound on |S log 2 − k log 3| of the form (2^s − 3^k)·k^6 ≥ 3^k. <strong>Working hypothesis</strong>, stronger in this form than published effective bounds (mea culpa #28); tradition: Rhin 1987, Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125), Wu & Wang 2014. The δ10 cartographic lemma (Phase 64, [propext]) shows, for a finite catalogue of published bounds, that none replaces Barina's verification."
       },
       "region": "I",
       "status": "axiome",
       "test4": "—",
       "lean": "BakerSeparation",
       "leanFile": "ProjetCollatz/Phase58PorteDeuxFinal.lean",
-      "ref": "Effective bound; literature: Salikhov 2007, Wu 2003, Simons-de Weger 2005, Rhin 1987 — see mea culpa #28 + δ10"
+      "ref": "Working hypothesis H1; literature: Rhin 1987, Salikhov 2007 (ln 3), Wu & Wang 2014 — see mea culpa #28 + δ10"
     },
     {
       "id": "δ10",
       "fr": {
         "name": "δ10 — Barina-Replacement Impossibility (Phase 64)",
-        "why": "PROUVÉ Lean 4 kernel-checked (2026-04-30, commit 7efbf34). Lemme cartographique fini démontrant qu'aucune borne diophantienne publiée du catalogue audité {Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005} ne peut remplacer BarinaVerification dans no_nontrivial_cycle_phase59. 296 lignes Lean, 0 sorry, axiom profile [propext] only (kernel-1, plus minimal de tout le projet, plus pur que les théorèmes centraux qui utilisent kernel-3). Three-Key validated (OLD3 + NEW4 + ChatGPT 5.5 Q12+Q13). Trilogie d'impossibilité Baker+CF+Khinchin maintenant complète : δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64). Branche dédiée, tag annoté. Justifie formellement la force k^6 de BakerSeparation (mea culpa #28)."
+        "why": "Prouvé en Lean 4 (Lean 4.27.0, 2026-04-30, commit 7efbf34), avant la correction du bug de noyau lean4#14576 ; non revérifié depuis. Lemme cartographique fini : aucune borne du catalogue examiné {Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125), Wu 2003, Rhin 1987, Simons-de Weger 2005} ne peut remplacer BarinaVerification dans no_nontrivial_cycle_phase59. Ce n'est pas une impossibilité universelle. 296 lignes Lean, 0 sorry, profil d'axiomes [propext]. Relecture croisée assistée par IA (Three-Key Q12+Q13). Branche dédiée, tag annoté."
       },
       "en": {
         "name": "δ10 — Barina-Replacement Impossibility (Phase 64)",
-        "why": "PROVEN in Lean 4 kernel-checked (2026-04-30, commit 7efbf34). Cartographic finite catalogue lemma proving that no published Diophantine bound from the audited set {Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005} can replace BarinaVerification in no_nontrivial_cycle_phase59. 296 Lean lines, 0 sorry, axiom profile [propext] only (kernel-1, most minimal in project, purer than central theorems which use kernel-3). Three-Key validated (OLD3 + NEW4 + ChatGPT 5.5 Q12+Q13). Baker+CF+Khinchin impossibility trilogy now complete: δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64). Dedicated branch, annotated tag. Formally justifies the k^6 strength of BakerSeparation (mea culpa #28)."
+        "why": "Proved in Lean 4 (Lean 4.27.0, 2026-04-30, commit 7efbf34), before the fix of kernel bug lean4#14576; not re-checked since. Finite cartographic lemma: no bound from the examined catalogue {Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125), Wu 2003, Rhin 1987, Simons-de Weger 2005} can replace BarinaVerification in no_nontrivial_cycle_phase59. This is not a universal impossibility. 296 Lean lines, 0 sorry, axiom profile [propext]. AI-assisted cross-review (Three-Key Q12+Q13). Dedicated branch, annotated tag."
       },
       "region": "I",
       "status": "prouve",
       "test4": "4/4 ✓",
       "lean": "delta10_barina_replacement_impossibility",
       "leanFile": "ProjetCollatz/Phase64Delta10BarinaReplacement.lean",
-      "ref": "Three-Key validated 2026-04-30, branch study/delta10-barina-replacement-impossibility, tag study-delta10-2026-04-30, commit 7efbf34"
+      "ref": "Branch study/delta10-barina-replacement-impossibility, tag study-delta10-2026-04-30, commit 7efbf34"
     },
     {
       "id": "B",
@@ -104,36 +104,36 @@
     {
       "id": "E.1",
       "fr": {
-        "name": "Salikhov 2007 (μ ≤ 5.125)",
-        "why": "Ferme k ≤ 3693 inconditionnel ; plafond μ ≥ 2 (Bundschuh-Wallisser). δ11 (Phase 65) prouve formellement l'insuffisance granulaire CONDITIONNELLE sur k ∈ [3694, 3732] sous 3 axiomes ad-hoc transparents (<code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>) ; validé Mathlib v4.27 (rétro-compat v4.26 non couverte par design). Score G3 ~37/37 + 0 réserve résiduelle. Voir mea culpa #29 #30 #31 #32."
+        "name": "Salikhov 2007 (μ(ln 3) ≤ 5,125)",
+        "why": "Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125). <strong>En réexamen.</strong> L'usage de cette borne pour le problème et δ11 (Phase 65) reposent sur une transposition de Salikhov 2007 (mesure de ln 3) au problème ; cette transposition est en réexamen. δ11 est conditionnel (trois axiomes ad hoc : <code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>). Vérifié sous Lean 4.27.0, non revérifié depuis. Voir mea culpa #29 à #32."
       },
       "en": {
-        "name": "Salikhov 2007 (μ ≤ 5.125)",
-        "why": "Closes k ≤ 3693 unconditionally ; plateau μ ≥ 2 (Bundschuh-Wallisser). δ11 (Phase 65) formally proves CONDITIONAL granular insufficiency on k ∈ [3694, 3732] under 3 transparent ad-hoc axioms (<code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>) ; validated on Mathlib v4.27 (v4.26 retro-compatibility not covered by design). G3 score ~37/37 + 0 residual reservation. See mea culpa #29 #30 #31 #32."
+        "name": "Salikhov 2007 (μ(ln 3) ≤ 5.125)",
+        "why": "Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125). <strong>Under re-examination.</strong> The use of this bound for the problem and δ11 (Phase 65) rest on a transposition of Salikhov 2007 (a measure for ln 3) to the problem; that transposition is under re-examination. δ11 is conditional (three ad-hoc axioms: <code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>). Checked on Lean 4.27.0, not re-checked since. See mea culpa #29 to #32."
       },
       "region": "I",
       "status": "insuf",
       "test4": "3/4",
-      "lean": "Delta11Salikhov.lean (prouvé conditionnel, kernel-3 + 3 axiomes ad-hoc transparents, Mathlib v4.27 pin, build ~11s)",
+      "lean": "Delta11Salikhov.lean (conditionnel : 3 axiomes ad hoc ; Lean 4.27.0 ; en réexamen)",
       "leanFile": "ProjetCollatz/PostJAR/Delta11Salikhov.lean",
       "ref": "Salikhov, Doklady Math. 76(3), 955-957 (2007), DOI 10.1134/S1064562407060361"
     },
     {
       "id": "E.2",
       "fr": {
-        "name": "Wu 2003 c = 5.117",
-        "why": "Ferme k ≤ 3732 inconditionnel — meilleur que Salikhov"
+        "name": "Wu & Wang 2014 (μ(log 3) < 5,117)",
+        "why": "Mesure d'irrationalité de log 3 : μ(log 3) < 5,117 (Wu & Wang 2014). Cette valeur était attribuée à tort à « Wu 2003 » (Wu 2003 porte sur des mesures d'indépendance linéaire de 1, log 2, log 3, log 5). Son usage pour le problème repose sur la même transposition que Salikhov 2007 : en réexamen."
       },
       "en": {
-        "name": "Wu 2003 c = 5.117",
-        "why": "Closes k ≤ 3732 unconditionally — better than Salikhov"
+        "name": "Wu & Wang 2014 (μ(log 3) < 5.117)",
+        "why": "Irrationality measure of log 3: μ(log 3) < 5.117 (Wu & Wang 2014). This value was wrongly attributed to \"Wu 2003\" (Wu 2003 concerns linear-independence measures of 1, log 2, log 3, log 5). Its use for the problem rests on the same transposition as Salikhov 2007: under re-examination."
       },
       "region": "I",
       "status": "partiel",
       "test4": "3/4",
       "lean": "PadeBound (à prouver)",
       "leanFile": "ProjetCollatz/PostJAR/PadeBound.lean",
-      "ref": "Wu, Math. Comp. 72(242), 901-911"
+      "ref": "Wu & Wang, J. Number Theory 142, 264-273 (2014), DOI 10.1016/j.jnt.2014.03.007 ; see also Wu, Math. Comp. 72 (2003), DOI 10.1090/S0025-5718-02-01442-4"
     },
     {
       "id": "E.4",
@@ -201,12 +201,12 @@
     {
       "id": "J",
       "fr": {
-        "name": "Tropical (ChatGPT 5.5)",
-        "why": "Risque Baker via décroissance fine, §B.2 oracle"
+        "name": "Tropical (suggestion d'un assistant IA)",
+        "why": "Risque de retomber sur Baker via décroissance fine"
       },
       "en": {
-        "name": "Tropical (ChatGPT 5.5)",
-        "why": "Baker risk via fine decay, oracle §B.2"
+        "name": "Tropical (suggested by an AI assistant)",
+        "why": "Risk of falling back on Baker via fine decay"
       },
       "region": "I",
       "status": "partiel",
@@ -482,11 +482,11 @@
       "id": "P6",
       "fr": {
         "name": "Calegari-Dimitrov-Tang 2025 holonomy",
-        "why": "Cycle 3 (2026-04-29) : CUL-DE-SAC 80%. Holonomy bounds CDT ciblent ζ(5)/1/π, pas log_2 3. Si applicable au ratio, retomberait sur μ(log_2 3) — même famille fonctionnelle que Baker. Probabilité fermeture gap : 3-7%. Coût Lean prohibitif (5+ années Mathlib)."
+        "why": "Cycle 3 (2026-04-29) : CUL-DE-SAC 80%. Les applications annoncées par CDT (arXiv:2510.04156) portent sur des racines de nombres algébriques, des équations diophantiennes effectives, L(2,χ₋₃) et ζ(5) 2-adique ; rien sur log_2 3. Si applicable au ratio, retomberait sur μ(log_2 3) — même famille fonctionnelle que Baker. Probabilité fermeture gap : 3-7%. Coût Lean prohibitif (5+ années Mathlib)."
       },
       "en": {
         "name": "Calegari-Dimitrov-Tang 2025 holonomy",
-        "why": "Cycle 3 (2026-04-29): DEAD END 80%. CDT holonomy bounds target ζ(5)/1/π, not log_2 3. If applicable to ratio, would fall back to μ(log_2 3) — same functional family as Baker. Gap closure probability: 3-7%. Prohibitive Lean cost (5+ Mathlib years)."
+        "why": "Cycle 3 (2026-04-29): DEAD END 80%. The applications announced by CDT (arXiv:2510.04156) concern roots of algebraic numbers, effective Diophantine equations, L(2,χ₋₃) and the 2-adic ζ(5); nothing on log_2 3. If applicable to ratio, would fall back to μ(log_2 3) — same functional family as Baker. Gap closure probability: 3-7%. Prohibitive Lean cost (5+ Mathlib years)."
       },
       "region": "II",
       "status": "cds",
@@ -540,11 +540,11 @@
       "id": "CGS-7",
       "fr": {
         "name": "sum_s_ge_length_plus_num_nonincrease",
-        "why": "Phase 3 (2026-05-02) : audit indépendant 4 IA (Session A + Session B + Gemini Pro 3.1 + ChatGPT) sur l'esquisse NEW3 (2026-04-29) → convergence forte sur faille (polarité inversée drop_forces_s_ge_two, ambiguïté D = #{s_t≥2} algébrique vs descentes dynamiques). Reformulation 4 IA convergente : N = #{t<k | x_{t+1}≤x_t}. Démonstration Lean 4 / Mathlib v4.27 en 2 lemmes (cgs7_algebraic_pure + cgs7_dynamic_transfer) sur branche dérivée study/cgs-7-instantiation, lake build PASS (7888 jobs, 0 sorry), profil axiomes [propext, Classical.choice, Quot.sound] (kernel-3 standard). Test négatif Red Team (#check_failure) opérationnel au build. Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 verifications post-build. Branche dédiée, hors preprint principal."
+        "why": "Phase 3 (2026-05-02) : une relecture croisée assistée par IA (plusieurs modèles) de l'esquisse du 2026-04-29 a relevé une faille (polarité inversée drop_forces_s_ge_two, ambiguïté D = #{s_t≥2} algébrique vs descentes dynamiques). Reformulation : N = #{t<k | x_{t+1}≤x_t}. Démonstration Lean 4 (Lean 4.27.0 / Mathlib v4.27, avant la correction du bug de noyau lean4#14576 ; non revérifié depuis) en 2 lemmes (cgs7_algebraic_pure + cgs7_dynamic_transfer) sur branche dérivée study/cgs-7-instantiation, lake build PASS (7888 jobs, 0 sorry), profil axiomes [propext, Classical.choice, Quot.sound] (standard). Test négatif (#check_failure) opérationnel au build. Branche dédiée, hors preprint principal."
       },
       "en": {
         "name": "sum_s_ge_length_plus_num_nonincrease",
-        "why": "Phase 3 (2026-05-02): independent 4-AI audit (Session A + Session B + Gemini Pro 3.1 + ChatGPT) on NEW3 sketch (2026-04-29) → strong convergence on flaw (inverted polarity in drop_forces_s_ge_two, ambiguity D = #{s_t≥2} algebraic vs dynamic descents). Convergent 4-AI reformulation: N = #{t<k | x_{t+1}≤x_t}. Lean 4 / Mathlib v4.27 demonstration in 2 lemmas (cgs7_algebraic_pure + cgs7_dynamic_transfer) on derived branch study/cgs-7-instantiation, lake build PASS (7888 jobs, 0 sorry), axiom profile [propext, Classical.choice, Quot.sound] (kernel-3 standard). Negative Red Team test (#check_failure) operational at build. Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 post-build verifications. Dedicated branch, separate from main preprint."
+        "why": "Phase 3 (2026-05-02): an AI-assisted cross-review (several models) of the 2026-04-29 sketch found a flaw (inverted polarity in drop_forces_s_ge_two, ambiguity D = #{s_t≥2} algebraic vs dynamic descents). Reformulation: N = #{t<k | x_{t+1}≤x_t}. Lean 4 demonstration (Lean 4.27.0 / Mathlib v4.27, before the fix of kernel bug lean4#14576; not re-checked since) in 2 lemmas (cgs7_algebraic_pure + cgs7_dynamic_transfer) on derived branch study/cgs-7-instantiation, lake build PASS (7888 jobs, 0 sorry), axiom profile [propext, Classical.choice, Quot.sound] (standard). Negative test (#check_failure) operational at build. Dedicated branch, separate from main preprint."
       },
       "region": "I",
       "status": "prouve",
@@ -559,43 +559,43 @@
       "id": "A",
       "fr": {
         "name": "BakerSeparation",
-        "desc": "(2^s − 3^k)·k^6 ≥ 3^k. Conjecture de travail : renforcement non démontré des bornes Rhin 1987 / Wu 2003 / Salikhov 2007 publiées (voir mea culpa #28)",
-        "limit": "Désaxiomatisation bloquée par δ8 lemma + δ10 (Phase 64) prouve qu'aucune source publiée ne suffit"
+        "desc": "H1 (paramètre, pas un axiome Lean) : (2^s − 3^k)·k^6 ≥ 3^k. Hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme (voir mea culpa #28)",
+        "limit": "Non démontrée. δ10 (Phase 64) examine un catalogue fini de bornes publiées : aucune ne remplace la vérification de Bařina."
       },
       "en": {
         "name": "BakerSeparation",
-        "desc": "(2^s − 3^k)·k^6 ≥ 3^k. Working hypothesis (conjecture): undemonstrated strengthening of published Rhin 1987 / Wu 2003 / Salikhov 2007 bounds (see mea culpa #28)",
-        "limit": "Deaxiomatization blocked by δ8 lemma + δ10 (Phase 64) proves no published source suffices"
+        "desc": "H1 (a parameter, not a Lean axiom): (2^s − 3^k)·k^6 ≥ 3^k. Working hypothesis, stronger in this form than published effective bounds (see mea culpa #28)",
+        "limit": "Not proved. δ10 (Phase 64) examines a finite catalogue of published bounds: none replaces Barina's verification."
       },
-      "ref": "Effective bound — see mea culpa #28 + δ10 cartographic"
+      "ref": "Working hypothesis H1 — see mea culpa #28 + δ10 cartographic"
     },
     {
       "id": "B",
       "fr": {
         "name": "BarinaVerification",
-        "desc": "Tous n < 2^71 atteignent 1",
-        "limit": "Computationnel reproductible — δ10 prouve qu'aucune borne publiée ne peut remplacer cette vérification"
+        "desc": "H2 (paramètre) : tous les n < 2^71 atteignent 1. Traduction d'un résultat de calcul publié (Bařina 2025, n < 2⁷¹)",
+        "limit": "δ10 (Phase 64) : aucune borne du catalogue publié examiné ne remplace cette vérification"
       },
       "en": {
         "name": "BarinaVerification",
-        "desc": "All n < 2^71 reach 1",
-        "limit": "Reproducibly computational — δ10 proves no published bound can replace this verification"
+        "desc": "H2 (parameter): every n < 2^71 reaches 1. Encoding of a published computational result (Barina 2025, n < 2⁷¹)",
+        "limit": "δ10 (Phase 64): no bound from the examined published catalogue replaces this verification"
       },
-      "ref": "Barina 2025, J. Supercomp. 81, 810"
+      "ref": "Barina 2025, J. Supercomputing 81(7), art. 810, DOI 10.1007/s11227-025-07337-0"
     },
     {
       "id": "C",
       "fr": {
-        "name": "DerivedLargeKBound (dérivation projet)",
-        "desc": "Pour tout cycle non trivial (n,k) avec k > 1322, n < 2^71 ; combine BakerSeparation + gaps fractions continues log₂3 + Product Bound + BarinaVerification",
-        "limit": "N'est pas un théorème publié — dérivation interne projet (HYPOTHESES.md §5). Hercher 2023 sur m-cycles (m ≤ 91, minima locaux) est une quantité différente et indépendante (cf. HYPOTHESES.md §relation m vs k)."
+        "name": "DerivedLargeKBound (hypothèse supposée)",
+        "desc": "H3 (paramètre) : pour tout cycle non trivial (n,k) avec k > 1322, n < 2^71. Hypothèse supposée (non dérivée) ; équivaut sous H2 à la conclusion pour k > 1322 (erratum du 02/10/2026)",
+        "limit": "Aucun théorème du dépôt ne la démontre (les fenêtres de fractions continues s'arrêtent à k < 10 590 737). Ce n'est pas un résultat de Hercher : C. Hercher (JIS 26, 2023, art. 23.3.5) montre qu'aucun m-cycle n'existe pour m ≤ 91 (m ≥ 92 minima locaux) et, avec la vérification jusqu'à 3·2⁶⁹ (couverte par Bařina), que tout cycle non trivial a au moins 1,375·10¹¹ termes impairs."
       },
       "en": {
-        "name": "DerivedLargeKBound (project-derived)",
-        "desc": "For any non-trivial cycle (n,k) with k > 1322, n < 2^71; combines BakerSeparation + continued-fraction gaps of log₂3 + Product Bound + BarinaVerification",
-        "limit": "Not a published theorem — project-internal derivation (HYPOTHESES.md §5). Hercher 2023 on m-cycles (m ≤ 91, local minima) addresses a different and independent quantity (cf. HYPOTHESES.md §relation m vs k)."
+        "name": "DerivedLargeKBound (assumed hypothesis)",
+        "desc": "H3 (parameter): for any non-trivial cycle (n,k) with k > 1322, n < 2^71. Assumed hypothesis (not derived); under H2 equivalent to the conclusion for k > 1322 (erratum of 2026-10-02)",
+        "limit": "No theorem of the repository proves it (the continued-fraction windows stop at k < 10,590,737). It is not a result of Hercher: C. Hercher (JIS 26, 2023, Art. 23.3.5) proves there is no m-cycle with m ≤ 91 (m ≥ 92 local minima) and, with verification up to 3·2⁶⁹ (covered by Barina), that every non-trivial cycle has at least 1.375·10¹¹ odd terms."
       },
-      "ref": "Project derivation — see HYPOTHESES.md §5 + paper §4 + Phase59ContinuedFractions.lean:115. Context literature: Hercher 2023 (J. Integer Seq. 26.3.5) on m-cycles, NOT the source of this hypothesis."
+      "ref": "Assumed hypothesis — see HYPOTHESES.md, section H3 (that file presents it as a derivation: corrected by the erratum of 2 Oct 2026) + Phase59ContinuedFractions.lean:115. Hercher, C. (2023). There are no Collatz m-Cycles with m ≤ 91. Journal of Integer Sequences 26, Article 23.3.5. arXiv:2201.00406 — NOT the source of this hypothesis."
     }
   ],
   "tests": [
@@ -615,12 +615,12 @@
     {
       "id": "REQ-MATH-003",
       "fr": {
-        "title": "Wu vs Salikhov k_max",
-        "result": "Wu k_max=3732, Salikhov k_max=3693, Baker k_max=1322 vérifiés"
+        "title": "k_max selon l'exposant (5,117 / 5,125 / Baker)",
+        "result": "Un script local (non publié) calcule k_max = 3732 (c = 5,117), 3693 (c = 5,125) et 1322 (BakerSeparation). Les deux premiers reposent sur une transposition de mesures de log 3 au problème, en réexamen ; 5,117 est la borne de Wu & Wang 2014 (pas « Wu 2003 »)."
       },
       "en": {
-        "title": "Wu vs Salikhov k_max",
-        "result": "Wu k_max=3732, Salikhov k_max=3693, Baker k_max=1322 verified"
+        "title": "k_max by exponent (5.117 / 5.125 / Baker)",
+        "result": "A local (unpublished) script computes k_max = 3732 (c = 5.117), 3693 (c = 5.125) and 1322 (BakerSeparation). The first two rest on a transposition of log 3 measures to the problem, under re-examination; 5.117 is the Wu & Wang 2014 bound (not \"Wu 2003\")."
       },
       "exit": 0,
       "file": "tests_math/test_REQ-MATH-003_wu_salikhov_kmax.py"
@@ -628,12 +628,12 @@
     {
       "id": "REQ-MATH-004",
       "fr": {
-        "title": "Gap résiduel exact",
-        "result": "Gap = 7.566 ordres de grandeur (≈ 1.375 × 10^11 valeurs)"
+        "title": "Écart résiduel (indicatif)",
+        "result": "Environ 7,6 ordres de grandeur entre k_max = 3732 (valeur non confirmée, voir REQ-MATH-003) et 1,375·10¹¹ (Hercher 2023 + Bařina)."
       },
       "en": {
-        "title": "Exact residual gap",
-        "result": "Gap = 7.566 orders of magnitude (≈ 1.375 × 10^11 values)"
+        "title": "Residual gap (indicative)",
+        "result": "About 7.6 orders of magnitude between k_max = 3732 (unconfirmed value, see REQ-MATH-003) and 1.375·10¹¹ (Hercher 2023 + Barina)."
       },
       "exit": 0,
       "file": "tests_math/test_REQ-MATH-004_gap_residuel.py"
@@ -655,11 +655,11 @@
       "id": "REQ-MATH-006",
       "fr": {
         "title": "Vérification refs vs references.bib",
-        "result": "3 références inventées confirmées (Rozier 2023, Berstel-Mignotte 1976, Bell-Burris-Hanrot-Sands 2013)"
+        "result": "Contrôle des références d'un brouillon contre references.bib : 3 écarts relevés."
       },
       "en": {
         "title": "Refs verification vs references.bib",
-        "result": "3 invented references confirmed (Rozier 2023, Berstel-Mignotte 1976, Bell-Burris-Hanrot-Sands 2013)"
+        "result": "Check of a draft's references against references.bib: 3 discrepancies found."
       },
       "exit": 0,
       "file": "(grep bash inline)"
@@ -681,11 +681,11 @@
       "id": "REQ-MATH-012",
       "fr": {
         "title": "Seuils numériques δ10 Barina-Replacement",
-        "result": "Aucune borne diophantienne publiée (Salikhov, Wu, Rhin, Simons-de Weger) ne donne n<2^71 uniformément sans Barina X_0 — confirme nécessité k^6 (FIND-016)"
+        "result": "Aucune borne du catalogue examiné (Salikhov, Wu, Rhin, Simons-de Weger) ne donne n<2^71 uniformément sans Barina X_0 (FIND-016)"
       },
       "en": {
         "title": "δ10 Barina-Replacement numerical thresholds",
-        "result": "No published Diophantine bound (Salikhov, Wu, Rhin, Simons-de Weger) yields n<2^71 uniformly without Barina X_0 — confirms necessity of k^6 (FIND-016)"
+        "result": "No bound from the examined catalogue (Salikhov, Wu, Rhin, Simons-de Weger) yields n<2^71 uniformly without Barina X_0 (FIND-016)"
       },
       "exit": 0,
       "file": "tests_math/test_REQ-MATH-012_delta10_barina_thresholds.py"

@@ -1,15 +1,18 @@
 /* ==========================================================================
    Theorem Dependency Graph — D3 force-directed visualization
-   Affiche l'architecture complète de la preuve : 3 axiomes externes
-   alimentent 6 lemmes auxiliaires, qui alimentent 7 théorèmes centraux
-   convergant vers no_nontrivial_cycle_phase59.
+   Affiche l'architecture de la preuve : 3 hypothèses H1-H3 (paramètres des
+   théorèmes, pas des axiomes Lean), lemmes auxiliaires, théorèmes centraux et
+   no_nontrivial_cycle_phase59. Arêtes vérifiées contre le code (branche main,
+   Phase52/56/58/59) le 2026-10-02 : H3 n'alimente que no_cycle_k_gt_1322 ;
+   sdw_from_cf est un corollaire en aval ; les cf_gap_* ne sont utilisés par
+   aucun théorème de la chaîne principale.
    ========================================================================== */
 (function() {
   'use strict';
 
   // Catégorisation visuelle des nœuds
   const NODE_TYPE = {
-    EXTERNAL: 'external',     // hypothèses externes documentées (BakerSeparation, BarinaVerification, DerivedLargeKBound)
+    EXTERNAL: 'external',     // hypothèses H1-H3, paramètres des théorèmes (BakerSeparation, BarinaVerification, DerivedLargeKBound)
     KERNEL: 'kernel',          // axiomes Lean kernel
     AUXILIARY: 'auxiliary',    // lemmes auxiliaires
     CENTRAL: 'central',        // théorèmes centraux
@@ -34,56 +37,54 @@
 
   // Architecture de la preuve (extraite du Mermaid de /preuve/ + lemmes.json)
   const NODES = [
-    // Axiomes externes (3 conditions du résultat principal)
-    { id: 'BakerSeparation', type: NODE_TYPE.EXTERNAL, label: 'BakerSeparation', sub: 'effective: (2^s − 3^k)·k^6 ≥ 3^k (working conjecture, undemonstrated strengthening of Rhin/Wu/Salikhov — see #28, δ10)' },
-    { id: 'BarinaVerification', type: NODE_TYPE.EXTERNAL, label: 'BarinaVerification', sub: 'Barina 2025 — n < 2⁷¹' },
-    { id: 'DerivedLargeKBound', type: NODE_TYPE.EXTERNAL, label: 'DerivedLargeKBound', sub: 'project-derived: k > 1322 → n < 2⁷¹ (combines Baker + CF + Product Bound + Barina; not Hercher 2023, not a published theorem — see HYPOTHESES.md §5)' },
-    // Axiomes kernel (3 universels)
+    // Hypothèses H1-H3 (paramètres des théorèmes, pas des axiomes Lean)
+    { id: 'BakerSeparation', type: NODE_TYPE.EXTERNAL, label: 'H1 BakerSeparation', sub: 'parameter: (2^s − 3^k)·k^6 ≥ 3^k — working hypothesis, stronger in this form than published effective bounds (see mea culpa #28)' },
+    { id: 'BarinaVerification', type: NODE_TYPE.EXTERNAL, label: 'H2 BarinaVerification', sub: 'parameter: encoding of a published computational result (Barina 2025, n < 2⁷¹)' },
+    { id: 'DerivedLargeKBound', type: NODE_TYPE.EXTERNAL, label: 'H3 DerivedLargeKBound', sub: 'parameter: k > 1322 → n < 2⁷¹ — assumed hypothesis (not derived); under H2 equivalent to the conclusion for k > 1322 (erratum of 2 Oct 2026; HYPOTHESES.md, section H3)' },
+    // Axiomes kernel (profil du théorème principal selon expected_axioms.md, Lean 4.27.0)
     { id: 'propext', type: NODE_TYPE.KERNEL, label: 'propext', sub: 'Propositional extensionality' },
     { id: 'Classical.choice', type: NODE_TYPE.KERNEL, label: 'Classical.choice', sub: 'Axiom of choice' },
     { id: 'Quot.sound', type: NODE_TYPE.KERNEL, label: 'Quot.sound', sub: 'Quotient soundness' },
-    // Lemmes auxiliaires (Phase 52 + Phase 59 + PostJAR)
-    { id: 'steiner_cycle_eq', type: NODE_TYPE.AUXILIARY, label: 'steiner_cycle_eq', sub: 'Steiner identity (Phase52)' },
-    { id: 'cycle_pow2_gt_pow3_universal', type: NODE_TYPE.AUXILIARY, label: 'cycle_pow2_gt_pow3', sub: 'D_s positive (Phase52)' },
-    { id: 'cycle_n_mul_D_s_eq_corrSum', type: NODE_TYPE.AUXILIARY, label: 'R72 factored', sub: 'PostJAR CongruenceTransport' },
-    { id: 'cycle_corrSum_mod_p_double_periodic', type: NODE_TYPE.AUXILIARY, label: 'R89 lacunary', sub: 'PostJAR CongruenceTransport' },
-    { id: 'cf_gap_8_to_13', type: NODE_TYPE.AUXILIARY, label: 'cf_gap_8 … cf_gap_13', sub: 'Phase59 native_decide (6 windows)' },
+    // Lemmes auxiliaires
+    { id: 'steiner_cycle_eq', type: NODE_TYPE.AUXILIARY, label: 'steiner_cycle_eq', sub: 'Steiner identity (Phase52); used by R72 (arsenal)' },
+    { id: 'cycle_min_bound_nat', type: NODE_TYPE.AUXILIARY, label: 'cycle_min_bound_nat', sub: 'Product Bound n ≤ (k^7+k)/3, uses H1 (Phase56)' },
+    { id: 'cycle_pow2_gt_pow3', type: NODE_TYPE.AUXILIARY, label: 'cycle_pow2_gt_pow3', sub: '2^S > 3^k (Phase50); used by the Product Bound and, via cycle_pow2_gt_pow3_universal, by R72' },
+    { id: 'cycle_n_mul_D_s_eq_corrSum', type: NODE_TYPE.AUXILIARY, label: 'R72 factored', sub: 'PostJAR CongruenceTransport (arsenal-postjar branch)' },
+    { id: 'cycle_corrSum_mod_p_double_periodic', type: NODE_TYPE.AUXILIARY, label: 'R89 lacunary', sub: 'PostJAR CongruenceTransport (arsenal-postjar branch)' },
+    { id: 'cf_gap_8_to_13', type: NODE_TYPE.AUXILIARY, label: 'cf_gap_8 … cf_gap_13', sub: 'Phase59 native_decide (6 windows) — isolated arithmetic checks, used by no theorem of the main chain; they do not prove H3' },
     // Sous-branches centrales
-    { id: 'no_cycle_k_le_1322', type: NODE_TYPE.CENTRAL, label: 'no_cycle_k_le_1322', sub: 'k ≤ 1322 — Barina + ProductBound' },
-    { id: 'no_cycle_k_gt_1322', type: NODE_TYPE.CENTRAL, label: 'no_cycle_k_gt_1322', sub: 'k > 1322 — continued fractions' },
-    { id: 'sdw_from_cf', type: NODE_TYPE.CENTRAL, label: 'sdw_from_cf', sub: 'Simons-de Weger from CF' },
-    // Théorème principal + 3 alias
-    { id: 'no_nontrivial_cycle_phase59', type: NODE_TYPE.MAIN, label: 'no_nontrivial_cycle_phase59', sub: '★ Main result — kernel-checked' },
-    { id: 'no_nontrivial_cycle_final', type: NODE_TYPE.CENTRAL, label: 'no_nontrivial_cycle_final', sub: 'alias variant' },
-    { id: 'no_nontrivial_cycle_derived', type: NODE_TYPE.CENTRAL, label: 'no_nontrivial_cycle_derived', sub: 'cleanup alias' },
-    { id: 'no_nontrivial_cycle_full', type: NODE_TYPE.CENTRAL, label: 'no_nontrivial_cycle_full', sub: 'extended alias' }
+    { id: 'no_cycle_k_le_1322', type: NODE_TYPE.CENTRAL, label: 'no_cycle_k_le_1322', sub: 'k ≤ 1322 — Product Bound (H1) + Barina (H2)' },
+    { id: 'no_cycle_k_gt_1322', type: NODE_TYPE.CENTRAL, label: 'no_cycle_k_gt_1322', sub: 'k > 1322 — only H3 (assumed) + H2; circular (erratum of 2 Oct 2026)' },
+    { id: 'sdw_from_cf', type: NODE_TYPE.CENTRAL, label: 'sdw_from_cf', sub: 'downstream corollary: ProductBoundThreshold (k ≤ 982), vacuous under H1–H3' },
+    // Théorème principal + 3 variantes (autres hypothèses)
+    { id: 'no_nontrivial_cycle_phase59', type: NODE_TYPE.MAIN, label: 'no_nontrivial_cycle_phase59', sub: 'Main theorem (H1, H2, H3) — Lean 4.27.0, not re-checked after lean4#14576; adds nothing beyond k ≤ 1322 (erratum)' },
+    { id: 'no_nontrivial_cycle_final', type: NODE_TYPE.CENTRAL, label: 'no_nontrivial_cycle_final', sub: 'variant with ProductBoundThreshold as 3rd hypothesis (statement of the Zenodo PDF)' },
+    { id: 'no_nontrivial_cycle_derived', type: NODE_TYPE.CENTRAL, label: 'no_nontrivial_cycle_derived', sub: 'variant with hypothesis structure ExternalCycleHypothesesDerived (Phase56)' },
+    { id: 'no_nontrivial_cycle_full', type: NODE_TYPE.CENTRAL, label: 'no_nontrivial_cycle_full', sub: 'variant assuming every cycle element < 2⁷¹ (Phase52)' }
   ];
 
   const LINKS = [
-    // Axiomes externes vers sous-branches
-    { source: 'BakerSeparation', target: 'no_cycle_k_le_1322' },
-    { source: 'BakerSeparation', target: 'sdw_from_cf' },
+    // Hypothèses vers théorèmes (paramètres effectivement utilisés)
+    { source: 'BakerSeparation', target: 'cycle_min_bound_nat' },
     { source: 'BarinaVerification', target: 'no_cycle_k_le_1322' },
-    { source: 'DerivedLargeKBound', target: 'no_cycle_k_le_1322' },
-    // Axiomes kernel vers résultat principal (universel sur tous les théorèmes)
+    { source: 'BarinaVerification', target: 'no_cycle_k_gt_1322' },
+    { source: 'DerivedLargeKBound', target: 'no_cycle_k_gt_1322' },
+    // Axiomes kernel vers résultat principal
     { source: 'propext', target: 'no_nontrivial_cycle_phase59', kernel: true },
     { source: 'Classical.choice', target: 'no_nontrivial_cycle_phase59', kernel: true },
     { source: 'Quot.sound', target: 'no_nontrivial_cycle_phase59', kernel: true },
-    // Auxiliaires vers sous-branches
-    { source: 'steiner_cycle_eq', target: 'no_cycle_k_le_1322' },
-    { source: 'steiner_cycle_eq', target: 'no_cycle_k_gt_1322' },
-    { source: 'cycle_pow2_gt_pow3_universal', target: 'no_cycle_k_le_1322' },
-    { source: 'cycle_pow2_gt_pow3_universal', target: 'no_cycle_k_gt_1322' },
-    { source: 'cycle_n_mul_D_s_eq_corrSum', target: 'cycle_corrSum_mod_p_double_periodic' },
-    { source: 'cf_gap_8_to_13', target: 'sdw_from_cf' },
-    { source: 'sdw_from_cf', target: 'no_cycle_k_gt_1322' },
-    // Sous-branches vers principal
+    // Auxiliaires
+    { source: 'cycle_min_bound_nat', target: 'no_cycle_k_le_1322' },
+    { source: 'steiner_cycle_eq', target: 'cycle_n_mul_D_s_eq_corrSum' },
+    { source: 'cycle_pow2_gt_pow3', target: 'cycle_min_bound_nat' },
+    { source: 'cycle_pow2_gt_pow3', target: 'cycle_n_mul_D_s_eq_corrSum' },
+    // Sous-branches vers principal et corollaire en aval
     { source: 'no_cycle_k_le_1322', target: 'no_nontrivial_cycle_phase59' },
     { source: 'no_cycle_k_gt_1322', target: 'no_nontrivial_cycle_phase59' },
-    // Alias liés au principal
-    { source: 'no_nontrivial_cycle_phase59', target: 'no_nontrivial_cycle_final', alias: true },
-    { source: 'no_nontrivial_cycle_phase59', target: 'no_nontrivial_cycle_derived', alias: true },
-    { source: 'no_nontrivial_cycle_phase59', target: 'no_nontrivial_cycle_full', alias: true }
+    { source: 'no_cycle_k_le_1322', target: 'sdw_from_cf' },
+    { source: 'no_cycle_k_gt_1322', target: 'sdw_from_cf' },
+    // Variantes (autres hypothèses) et leur dépendance réelle
+    { source: 'no_nontrivial_cycle_derived', target: 'no_nontrivial_cycle_final' }
   ];
 
   function init(containerId) {

@@ -1,11 +1,153 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-05-02T08:25:00Z",
-  "audit_status": "Four-AI validated 2026-05-02 (Session A + Session B + Gemini Pro 3.1 + ChatGPT, 4/4 effective on CGS-7 v3 post-build)",
+  "generated": "2026-10-02T12:00:00Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-02: erratum on the main statement (H3 DerivedLargeKBound is assumed, not derived).",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "erratum-main-statement-2026-10-02",
+      "type": "mea-culpa",
+      "subtype": "erratum",
+      "date": "2026-10-02",
+      "datetime": "2026-10-02T12:00:00+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-02",
+      "title": {
+        "fr": "Erratum de l'énoncé principal",
+        "en": "Erratum to the main statement"
+      },
+      "summary": {
+        "fr": "Ce qui est démontré, tel que publié : aucun cycle non trivial avec k ≤ 1322 (k = nombre de termes impairs du cycle), sous H1 (BakerSeparation) et H2 (BarinaVerification) — théorème no_cycle_k_le_1322. H3 (DerivedLargeKBound : « pour tout cycle avec k > 1322, n < 2^71 ») est supposée, non dérivée ; sous H2, elle équivaut à l'absence de cycle avec k > 1322 (un sens est le théorème no_cycle_k_gt_1322 ; l'autre se voit à la lecture de l'énoncé). no_nontrivial_cycle_phase59 n'apporte donc rien au-delà de k ≤ 1322. Le PDF Zenodo porte encore l'ancien énoncé (avec ProductBoundThreshold, qui pose le même problème).",
+        "en": "What is proved, as published: no non-trivial cycle with k ≤ 1322 (k = number of odd terms of the cycle), under H1 (BakerSeparation) and H2 (BarinaVerification) — theorem no_cycle_k_le_1322. H3 (DerivedLargeKBound: \"for every cycle with k > 1322, n < 2^71\") is assumed, not derived; under H2 it is equivalent to the absence of cycles with k > 1322 (one direction is the theorem no_cycle_k_gt_1322; the other is seen by reading the statement). no_nontrivial_cycle_phase59 therefore adds nothing beyond k ≤ 1322. The Zenodo PDF still carries the old statement (with ProductBoundThreshold, which has the same problem)."
+      },
+      "artefacts": [
+        {"label": "Phase59ContinuedFractions.lean (main)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/ProjetCollatz/Phase59ContinuedFractions.lean", "kind": "lean-file"},
+        {"label": "Phase58PorteDeuxFinal.lean (main)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/ProjetCollatz/Phase58PorteDeuxFinal.lean", "kind": "lean-file"},
+        {"label": "Changelog v0.9.0", "url": "/changelog/", "kind": "site-section"}
+      ],
+      "related": ["site-audit-2026-10-02", "paper-jar-rejected"]
+    },
+
+    {
+      "id": "site-audit-2026-10-02",
+      "type": "audit",
+      "subtype": "site-audit",
+      "date": "2026-10-02",
+      "datetime": "2026-10-02T12:00:00+02:00",
+      "status": "validated",
+      "milestone": false,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-02",
+      "title": {
+        "fr": "Audit du site",
+        "en": "Site audit"
+      },
+      "summary": {
+        "fr": "Corrections : énoncé principal (erratum), Hercher, Salikhov (ln 3), chiffres sans source retirés, mention du bug lean4#14576.",
+        "en": "Corrections: main statement (erratum), Hercher, Salikhov (ln 3), unsourced figures removed, mention of bug lean4#14576."
+      },
+      "artefacts": [
+        {"label": "Changelog v0.9.0", "url": "/changelog/", "kind": "site-section"}
+      ],
+      "related": ["erratum-main-statement-2026-10-02"]
+    },
+
+    {
+      "id": "shared-repo-prs-6-7-merged",
+      "type": "repository",
+      "subtype": "collaboration",
+      "date": "2026-10-02",
+      "datetime": "2026-10-02T08:48:00+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-02",
+      "title": {
+        "fr": "Dépôt commun avec B. Macindoe : PR #6 et #7 fusionnées (rounds 16 et 17)",
+        "en": "Shared repository with B. Macindoe: PRs #6 and #7 merged (rounds 16 and 17)"
+      },
+      "summary": {
+        "fr": "Dans le dépôt public one-obstruction-three-faces, les pull requests #6 (round 16) et #7 (round 17), approuvées par B. Macindoe le 26/09/2026, ont été fusionnées le 02/10/2026. Sept pull requests fusionnées au total.",
+        "en": "In the public repository one-obstruction-three-faces, pull requests #6 (round 16) and #7 (round 17), approved by B. Macindoe on 2026-09-26, were merged on 2026-10-02. Seven pull requests merged in total."
+      },
+      "artefacts": [
+        {"label": "macindoe/one-obstruction-three-faces", "url": "https://github.com/macindoe/one-obstruction-three-faces", "kind": "repository"},
+        {"label": "PR #6", "url": "https://github.com/macindoe/one-obstruction-three-faces/pull/6", "kind": "pull-request"},
+        {"label": "PR #7", "url": "https://github.com/macindoe/one-obstruction-three-faces/pull/7", "kind": "pull-request"}
+      ],
+      "related": ["lean-recheck-shared-v4-34", "collaboration-macindoe-2026-07"]
+    },
+
+    {
+      "id": "lean-recheck-shared-v4-34",
+      "type": "lean",
+      "subtype": "recheck",
+      "date": "2026-09-23",
+      "datetime": "2026-09-23T12:00:00+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "lean_check",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-09-23",
+      "title": {
+        "fr": "Six fichiers de la pile commune revérifiés sous Lean 4.34.0",
+        "en": "Six files of the shared stack re-checked on Lean 4.34.0"
+      },
+      "summary": {
+        "fr": "Après le bug de noyau lean4#14576 (corrigé en v4.32.2, 28/07/2026) : les six fichiers de la pile commune avec B. Macindoe (TransportRecurrence, ContentDescent, ContentSeparation, DeficitLemma, T1Structure, LegendreApprox) ont été recompilés sous Lean 4.34.0 + Mathlib v4.34.0 : 0 erreur, 0 sorry, 40 déclarations, axiomes standard (propext, Classical.choice, Quot.sound) — artefact 9934df4. Enregistré dans le registre commun depuis la fusion de la PR #6 (02/10/2026). Ces fichiers ne contiennent pas le théorème principal, qui a été vérifié sous Lean 4.27.0 et n'a pas été revérifié.",
+        "en": "After kernel bug lean4#14576 (fixed in v4.32.2, 2026-07-28): the six files of the stack shared with B. Macindoe (TransportRecurrence, ContentDescent, ContentSeparation, DeficitLemma, T1Structure, LegendreApprox) were recompiled on Lean 4.34.0 + Mathlib v4.34.0: 0 errors, 0 sorry, 40 declarations, standard axioms (propext, Classical.choice, Quot.sound) — artifact 9934df4. Recorded in the shared ledger since PR #6 was merged (2026-10-02). These files do not contain the main theorem, which was checked on Lean 4.27.0 and has not been re-checked."
+      },
+      "artefacts": [
+        {"label": "recheck-v4.34 (commit 9934df4)", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9934df4/recheck-v4.34", "kind": "commit"},
+        {"label": "lean4#14576", "url": "https://github.com/leanprover/lean4/issues/14576", "kind": "issue"},
+        {"label": "LEDGER.md (shared)", "url": "https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md", "kind": "ledger"}
+      ],
+      "related": ["shared-repo-prs-6-7-merged"]
+    },
+
+    {
+      "id": "collaboration-macindoe-2026-07",
+      "type": "repository",
+      "subtype": "collaboration",
+      "date": "2026-07-16",
+      "datetime": "2026-07-16T12:00:00+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-02",
+      "title": {
+        "fr": "Collaboration ouverte avec Benjamin Macindoe",
+        "en": "Open collaboration with Benjamin Macindoe"
+      },
+      "summary": {
+        "fr": "Collaboration ouverte depuis juillet 2026 avec Benjamin Macindoe (chercheur indépendant) ; première entrée du registre commun : correspondance du 16/07/2026. Le travail commun se fait dans un dépôt public (registre LEDGER.md et note de travail NOTE-v1, non publiée). Le détail des résultats communs sera publié ici avec son accord.",
+        "en": "Open collaboration since July 2026 with Benjamin Macindoe (independent researcher); first entry of the shared ledger: correspondence of 2026-07-16. The joint work lives in a public repository (LEDGER.md ledger and NOTE-v1 working note, unpublished). The detail of the joint results will be published here with his agreement."
+      },
+      "artefacts": [
+        {"label": "macindoe/one-obstruction-three-faces", "url": "https://github.com/macindoe/one-obstruction-three-faces", "kind": "repository"},
+        {"label": "LEDGER.md (shared)", "url": "https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md", "kind": "ledger"}
+      ],
+      "related": ["shared-repo-prs-6-7-merged"]
+    },
 
     {
       "id": "cgs7-instantiation-pushed",
@@ -25,8 +167,8 @@
         "en": "CGS-7 — sum_s_ge_length_plus_num_nonincrease (Phase 3 instantiation) built"
       },
       "summary": {
-        "fr": "Théorème CGS-7 (cycle Collatz hypothétique : S = ∑_{t<k} s_t ≥ k + N où N = #{t<k | x_{t+1} ≤ x_t}) démontré en Lean 4 / Mathlib v4.27. Décomposition en 2 lemmes : cgs7_algebraic_pure (algébrique pur) + cgs7_dynamic_transfer (transfert dynamique via drop_forces_s_ge_two). Audit indépendant 4 IA convergent sur faille esquisse NEW3 (polarité inversée) + reformulation. lake build TestsMath PASS (7888 jobs, 31s, 0 sorry, kernel-3 axioms : [propext, Classical.choice, Quot.sound]). Test négatif Red Team #check_failure opérationnel au build (bloque polarité inversée). Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 vérifications post-build.",
-        "en": "Theorem CGS-7 (hypothetical Collatz cycle: S = ∑_{t<k} s_t ≥ k + N where N = #{t<k | x_{t+1} ≤ x_t}) proved in Lean 4 / Mathlib v4.27. Decomposition into 2 lemmas: cgs7_algebraic_pure (pure algebraic) + cgs7_dynamic_transfer (dynamic transfer via drop_forces_s_ge_two). Independent 4-AI audit converged on NEW3 sketch flaw (inverted polarity) + reformulation. lake build TestsMath PASS (7888 jobs, 31s, 0 sorry, kernel-3 axioms: [propext, Classical.choice, Quot.sound]). Negative Red Team test #check_failure operational at build (blocks inverted polarity). Audits RED TEAM 12/12, NASA 14/15, ARES 8/10 + 4 post-build verifications."
+        "fr": "Théorème CGS-7 (cycle Collatz hypothétique : S = ∑_{t<k} s_t ≥ k + N où N = #{t<k | x_{t+1} ≤ x_t}) démontré en Lean 4 (Lean 4.27.0 / Mathlib v4.27, avant la correction du bug de noyau lean4#14576 ; non revérifié depuis). Décomposition en 2 lemmes : cgs7_algebraic_pure (algébrique pur) + cgs7_dynamic_transfer (transfert dynamique via drop_forces_s_ge_two). Une relecture croisée assistée par IA a relevé une faille dans l'esquisse initiale (polarité inversée), d'où la reformulation. lake build TestsMath PASS (7888 jobs, 31s, 0 sorry, axiomes : [propext, Classical.choice, Quot.sound]). Test négatif #check_failure opérationnel au build (bloque la polarité inversée).",
+        "en": "Theorem CGS-7 (hypothetical Collatz cycle: S = ∑_{t<k} s_t ≥ k + N where N = #{t<k | x_{t+1} ≤ x_t}) proved in Lean 4 (Lean 4.27.0 / Mathlib v4.27, before the fix of kernel bug lean4#14576; not re-checked since). Decomposition into 2 lemmas: cgs7_algebraic_pure (pure algebraic) + cgs7_dynamic_transfer (dynamic transfer via drop_forces_s_ge_two). An AI-assisted cross-review found a flaw in the initial sketch (inverted polarity), hence the reformulation. lake build TestsMath PASS (7888 jobs, 31s, 0 sorry, axioms: [propext, Classical.choice, Quot.sound]). Negative test #check_failure operational at build (blocks the inverted polarity)."
       },
       "artefacts": [
         {"label": "GitHub commit (build PASS)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/2ea578c", "kind": "commit"},
@@ -53,20 +195,20 @@
       "subtype": "impossibility-lemma-conditional",
       "date": "2026-05-08",
       "datetime": "2026-05-08T12:42:00+02:00",
-      "status": "validated",
+      "status": "in-progress",
       "milestone": true,
       "claim_scope": "formal_lean_conditional",
       "verification_method": "lean_kernel",
       "evidence_level": "lean_check_conditional",
-      "epistemic_status": "verified_conditional",
+      "epistemic_status": "under_review",
       "last_verified_at": "2026-05-08",
       "title": {
-        "fr": "δ11 — Salikhov-Insufficient-for-3732 Impossibility Lemma (Phase 65, CONDITIONNEL) pushé",
-        "en": "δ11 — Salikhov-Insufficient-for-3732 Impossibility Lemma (Phase 65, CONDITIONAL) pushed"
+        "fr": "δ11 — lemme conditionnel delta11_salikhov_insufficient (Phase 65) — en réexamen",
+        "en": "δ11 — conditional lemma delta11_salikhov_insufficient (Phase 65) — under re-examination"
       },
       "summary": {
-        "fr": "Lemme conditionnel sur la sous-branche k ∈ [3694, 3732] de la piste E.1 Salikhov 2007 (μ ≤ 5.125). Théorème delta11_salikhov_insufficient kernel-checked Lean 4 / Mathlib v4.27, axiom profile kernel-3 + 3 ad-hoc transparents (C_Salikhov, C_Salikhov_pos, c_salikhov_upper_bound). 0 sorry, 0 admit, build 2039 jobs ~11s post-Phase 6-bis polish (-82% vs ~67s pre-polish). Architecture 5-IA cross-validation (Claude Code + Claude Opus CLI + Gemini Pro 3.1 + ChatGPT 5.5 thinking + Claude.ai web). Cross-modèle a payé son prix DEUX FOIS (mea culpa #31 DOI Wu&Wang catché par ChatGPT, mea culpa #32 axiome non-positivement-restreint catché par Gemini ARES shadow). Score G3 6/6 cross-val ~37/37 + 0 réserve résiduelle + 0 KO. Trilogie d'impossibilité étendue en quadrilogie conditionnelle (δ8, δ8', δ10, δ11).",
-        "en": "Conditional lemma on sub-branch k ∈ [3694, 3732] of approach E.1 Salikhov 2007 (μ ≤ 5.125). Theorem delta11_salikhov_insufficient kernel-checked Lean 4 / Mathlib v4.27, axiom profile kernel-3 + 3 transparent ad-hoc (C_Salikhov, C_Salikhov_pos, c_salikhov_upper_bound). 0 sorry, 0 admit, build 2039 jobs ~11s post-Phase 6-bis polish (-82% vs ~67s pre-polish). 5-AI cross-validation architecture (Claude Code + Claude Opus CLI + Gemini Pro 3.1 + ChatGPT 5.5 thinking + Claude.ai web). Cross-model paid its price TWICE (mea culpa #31 wrong Wu&Wang DOI caught by ChatGPT, mea culpa #32 non-positively-restricted axiom caught by Gemini ARES shadow). G3 6/6 cross-val score ~37/37 + 0 residual reservation + 0 KO. Initial impossibility trilogy extended into conditional quadrilogy (δ8, δ8', δ10, δ11)."
+        "fr": "Lemme delta11_salikhov_insufficient (branche study/E1-salikhov-2007-impossibility), lié à Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125). <strong>En réexamen.</strong> δ11 est conditionnel (trois axiomes ad hoc : C_Salikhov, C_Salikhov_pos, c_salikhov_upper_bound) et repose sur une transposition de Salikhov 2007 (mesure de ln 3) au problème ; cette transposition est en réexamen. Vérifié sous Lean 4.27.0, non revérifié depuis. 0 sorry. Mea culpa publics associés : #29 à #32.",
+        "en": "Lemma delta11_salikhov_insufficient (branch study/E1-salikhov-2007-impossibility), related to Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125). <strong>Under re-examination.</strong> δ11 is conditional (three ad-hoc axioms: C_Salikhov, C_Salikhov_pos, c_salikhov_upper_bound) and rests on a transposition of Salikhov 2007 (a measure for ln 3) to the problem; that transposition is under re-examination. Checked on Lean 4.27.0, not re-checked since. 0 sorry. Related public mea culpa: #29 to #32."
       },
       "artefacts": [
         {"label": "GitHub tag v0.7.3-delta11", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v0.7.3-delta11", "kind": "tag"},
@@ -84,7 +226,7 @@
       },
       "related": ["delta10-pushed", "FIND-016", "trilogy-impossibility-complete", "meaculpa-29", "meaculpa-30", "meaculpa-31", "meaculpa-32", "5ai-cross-validation"],
       "provenance": {
-        "from_piste": "E.1 Salikhov 2007 (μ ≤ 5.125) — pistes.json catalogue",
+        "from_piste": "E.1 Salikhov 2007 (μ(ln 3) ≤ 5.125) — pistes.json catalogue",
         "promoted_at": "2026-05-08T07:00:00+02:00"
       }
     },
@@ -107,8 +249,8 @@
         "en": "δ10 — Barina-Replacement Impossibility Lemma (Phase 64) pushed"
       },
       "summary": {
-        "fr": "Lemme cartographique fini démontrant qu'aucune borne diophantienne publiée (Salikhov 2007 / Wu 2003 / Rhin 1987 / Simons-de Weger 2005) ne peut remplacer BarinaVerification (n < 2^71). 296 lignes Lean 4, 0 sorry, axiom profile [propext] only (kernel-1).",
-        "en": "Cartographic finite catalogue lemma proving no published Diophantine bound (Salikhov 2007 / Wu 2003 / Rhin 1987 / Simons-de Weger 2005) can replace BarinaVerification (n < 2^71). 296 lines Lean 4, 0 sorry, axiom profile [propext] only (kernel-1)."
+        "fr": "Lemme cartographique fini : pour le catalogue examiné de bornes publiées (Rhin 1987, Wu 2003, Simons-de Weger 2005, Salikhov 2007 — mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125), aucune ne peut remplacer BarinaVerification (n < 2^71). Ce n'est pas une impossibilité universelle. 296 lignes Lean 4 (Lean 4.27.0, avant la correction du bug de noyau lean4#14576 ; non revérifié depuis), 0 sorry, profil d'axiomes [propext].",
+        "en": "Finite cartographic lemma: for the examined catalogue of published bounds (Rhin 1987, Wu 2003, Simons-de Weger 2005, Salikhov 2007 — irrationality measure of ln 3: μ(ln 3) ≤ 5.125), none can replace BarinaVerification (n < 2^71). This is not a universal impossibility. 296 lines of Lean 4 (Lean 4.27.0, before the fix of kernel bug lean4#14576; not re-checked since), 0 sorry, axiom profile [propext]."
       },
       "artefacts": [
         {"label": "GitHub commit", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/7efbf34", "kind": "commit"},
@@ -123,7 +265,7 @@
       },
       "related": ["FIND-016", "trilogy-impossibility-complete", "three-key-q12-piste-departage", "three-key-q13-delta10-study"],
       "provenance": {
-        "from_piste": "Piste 1 (brainstorming OLD3+NEW4)",
+        "from_piste": "Piste 1 (brainstorming)",
         "promoted_at": "2026-04-30T14:28:00Z"
       }
     },
@@ -147,8 +289,8 @@
         "en": "FIND-016 (BakerSeparation k^6) — transparency disclosure pushed"
       },
       "summary": {
-        "fr": "AI-assisted audit Three-Key validated : axiome BakerSeparation k^6 — conjecture de travail, renforcement non démontré des bornes Rhin/Wu/Salikhov publiées. Doc-comment Lean transparency note ajoutée. Mea culpa #28 publié.",
-        "en": "AI-assisted audit Three-Key validated: BakerSeparation k^6 axiom — working conjecture, undemonstrated strengthening of published literature (Rhin/Wu/Salikhov). Lean radical transparency note added. Public mea culpa #28."
+        "fr": "Audit assisté par IA (Three-Key) : l'hypothèse BakerSeparation k^6 (H1, paramètre du théorème, pas un axiome Lean) est une hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme (Rhin/Wu/Salikhov). Note de transparence ajoutée en doc-comment Lean. Mea culpa #28 publié.",
+        "en": "AI-assisted audit (Three-Key): the BakerSeparation k^6 hypothesis (H1, a parameter of the theorem, not a Lean axiom) is a working hypothesis, stronger in this form than published effective bounds (Rhin/Wu/Salikhov). Lean doc-comment transparency note added. Public mea culpa #28."
       },
       "artefacts": [
         {"label": "GitHub commit", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/62866cd", "kind": "commit"},
@@ -179,8 +321,8 @@
         "en": "Mea culpa #28 published: BakerSeparation k^6 stronger than published bounds"
       },
       "summary": {
-        "fr": "Sévérité 8. Toute borne diophantienne effective utilisée comme axiome doit être validée contre la littérature ; si l'exposant est plus strict, le déclarer comme hypothèse de travail explicite.",
-        "en": "Severity 8. Any effective Diophantine bound used as axiom must be validated against published literature; if exponent is stricter, declare as explicit working hypothesis."
+        "fr": "Sévérité 8. Toute borne diophantienne effective utilisée comme hypothèse doit être validée contre la littérature ; si l'exposant est plus strict, le déclarer comme hypothèse de travail explicite.",
+        "en": "Severity 8. Any effective Diophantine bound used as a hypothesis must be validated against published literature; if exponent is stricter, declare as explicit working hypothesis."
       },
       "artefacts": [
         {"label": "GitHub commit gh-pages", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/4d86db5", "kind": "commit"},
@@ -206,8 +348,8 @@
         "en": "AI-assisted audit Three-Key Phase B: deep study δ10 (Q13)"
       },
       "summary": {
-        "fr": "ChatGPT 5.5 Q0 RED TEAM 'FEU ORANGE SÉRIEUX' → pivot scope crucial : δ10 = catalogue audit fini (pas universel). Convergence 3/3 OLD3+NEW4+ChatGPT.",
-        "en": "ChatGPT 5.5 Q0 RED TEAM 'SERIOUS ORANGE FLAG' → crucial scope pivot: δ10 = finite audit catalogue (not universal). 3/3 convergence."
+        "fr": "Une relecture critique (ChatGPT) a signalé un problème de portée : δ10 est un catalogue fini de bornes examinées, pas une impossibilité universelle. Les trois relectures IA ont convergé.",
+        "en": "A critical review (ChatGPT) flagged a scope problem: δ10 is a finite catalogue of examined bounds, not a universal impossibility. The three AI reviews converged."
       },
       "related": ["delta10-pushed"]
     },
@@ -229,8 +371,8 @@
         "en": "AI-assisted audit Three-Key Phase A: piste departage δ10 (Q12)"
       },
       "summary": {
-        "fr": "ChatGPT vote δ10 (Piste 1) à 86% confidence. Convergence 3/3 OLD3+NEW4+ChatGPT.",
-        "en": "ChatGPT votes δ10 (Path 1) at 86% confidence. 3/3 convergence."
+        "fr": "Choix de la piste δ10 (piste 1) ; les trois relectures IA ont convergé.",
+        "en": "Choice of the δ10 path (path 1); the three AI reviews converged."
       },
       "related": ["delta10-pushed"]
     },
@@ -265,18 +407,18 @@
       "date": "2026-04-30",
       "status": "validated",
       "milestone": true,
-      "claim_scope": "formal_lean",
-      "verification_method": "lean_kernel",
-      "evidence_level": "lean_check",
-      "epistemic_status": "verified",
-      "last_verified_at": "2026-04-30",
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "partial",
+      "last_verified_at": "2026-10-02",
       "title": {
-        "fr": "Trilogie d'impossibilité Baker+CF+Khinchin complète",
-        "en": "Baker+CF+Khinchin impossibility trilogy complete"
+        "fr": "« Trilogie d'impossibilité » (δ8, δ8', δ10) — annoncée le 30/04/2026, portée corrigée",
+        "en": "\"Impossibility trilogy\" (δ8, δ8', δ10) — announced 2026-04-30, scope corrected"
       },
       "summary": {
-        "fr": "Les 3 hypothèses externes du preprint (BakerSeparation, BarinaVerification, DerivedLargeKBound) sont chacune adossées à une preuve d'impossibilité Lean 4 kernel-checked. δ8 (Phase58 §5) + δ8' (Phase58 §5.2) + δ10 (Phase64). Profil épistémique strictement décroissant : kernel-3 → kernel-3 → kernel-1 [propext].",
-        "en": "The 3 external hypotheses of the preprint are each backed by a Lean 4 kernel-checked impossibility proof. δ8 + δ8' + δ10. Strictly decreasing epistemic profile: kernel-3 → kernel-3 → kernel-1 [propext]."
+        "fr": "Annoncé le 30/04/2026 : chacune des trois hypothèses du preprint serait adossée à une preuve d'impossibilité vérifiée en Lean. Correction du 02/10/2026 : δ8 (impossibilité Product-Bound) est un énoncé sur une méthode de preuve, non formalisé en Lean ; δ10 (Phase 64, Lean) porte sur un catalogue fini de bornes publiées ; et H3 (DerivedLargeKBound) n'est pas une hypothèse externe mais une hypothèse supposée, qui équivaut sous H2 à la conclusion pour k > 1322 (erratum).",
+        "en": "Announced 2026-04-30: each of the preprint's three hypotheses would be backed by an impossibility proof checked in Lean. Correction of 2026-10-02: δ8 (Product-Bound impossibility) is a statement about a proof method, not formalized in Lean; δ10 (Phase 64, Lean) covers a finite catalogue of published bounds; and H3 (DerivedLargeKBound) is not an external hypothesis but an assumed one, equivalent under H2 to the conclusion for k > 1322 (erratum)."
       },
       "related": ["delta10-pushed", "find016-closed"]
     },
@@ -294,15 +436,15 @@
       "last_verified_at": "2026-05-13",
       "superseded_by": "paper-jar-rejected",
       "title": {
-        "fr": "Paper soumis au Journal of Automated Reasoning (28 pages, kernel-checked Lean 4)",
-        "en": "Paper submitted to Journal of Automated Reasoning (28 pages, kernel-checked Lean 4)"
+        "fr": "Paper soumis au Journal of Automated Reasoning",
+        "en": "Paper submitted to Journal of Automated Reasoning"
       },
       "summary": {
         "fr": "Soumission au Journal of Automated Reasoning (Springer) le 2026-04-27. 'On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions'. Entrée historique conservée pour traçabilité ; verdict éditorial : voir événement paper-jar-rejected (2026-05-13).",
         "en": "Submitted to Journal of Automated Reasoning (Springer) on 2026-04-27. 'On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions'. Historical entry preserved for traceability; editorial verdict: see event paper-jar-rejected (2026-05-13)."
       },
       "artefacts": [
-        {"label": "DOI Zenodo", "url": "https://doi.org/10.5281/zenodo.19790406", "kind": "doi"},
+        {"label": "DOI Zenodo (concept)", "url": "https://doi.org/10.5281/zenodo.19790405", "kind": "doi"},
         {"label": "GitHub commit main", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/c24633c", "kind": "commit"}
       ]
     },
@@ -324,11 +466,11 @@
         "en": "Rejection notification — Journal of Automated Reasoning"
       },
       "summary": {
-        "fr": "Notification de rejet reçue 2026-05-13 pour la soumission du 2026-04-27. Le preprint reste disponible sur Zenodo sous le DOI permanent 10.5281/zenodo.19790406 (v1.1, 28 pages, kernel-checked Lean 4). Aucune modification des artefacts formels (Lean 4 / Mathlib v4.27) : le théorème conditionnel no_nontrivial_cycle_phase59 et le profil d'axiomes (kernel-3 + 3 externes documentés) restent inchangés. Repositionnement éditorial en cours ; aucune nouvelle cible journal n'est annoncée publiquement à ce stade (cf. discipline anti-promotionnelle FIND-015).",
-        "en": "Rejection notification received 2026-05-13 for the 2026-04-27 submission. The preprint remains available on Zenodo under the permanent DOI 10.5281/zenodo.19790406 (v1.1, 28 pages, kernel-checked Lean 4). No modification of formal artefacts (Lean 4 / Mathlib v4.27): the conditional theorem no_nontrivial_cycle_phase59 and the axiom profile (kernel-3 + 3 documented external) remain unchanged. Editorial repositioning in progress; no new target journal is publicly announced at this stage (cf. anti-promotional discipline FIND-015)."
+        "fr": "Notification de rejet reçue le 2026-05-13 pour la soumission du 2026-04-27. Le preprint reste disponible sur Zenodo (DOI de concept 10.5281/zenodo.19790405). Pas de nouvelle soumission depuis. Erratum du 02/10/2026 : H3 (DerivedLargeKBound) est supposée, non dérivée ; sous H2 elle équivaut à la conclusion pour k > 1322 ; le PDF porte encore l'ancien énoncé.",
+        "en": "Rejection notification received on 2026-05-13 for the 2026-04-27 submission. The preprint remains available on Zenodo (concept DOI 10.5281/zenodo.19790405). No new submission since. Erratum of 2026-10-02: H3 (DerivedLargeKBound) is assumed, not derived; under H2 it is equivalent to the conclusion for k > 1322; the PDF still carries the old statement."
       },
       "artefacts": [
-        {"label": "DOI Zenodo (preprint v1.1)", "url": "https://doi.org/10.5281/zenodo.19790406", "kind": "doi"}
+        {"label": "DOI Zenodo (concept)", "url": "https://doi.org/10.5281/zenodo.19790405", "kind": "doi"}
       ],
       "related": ["paper-jar-submitted"]
     },
@@ -364,12 +506,12 @@
       "epistemic_status": "hypothesis",
       "last_verified_at": "2026-04-30",
       "title": {
-        "fr": "Désaxiomatisation Baker partielle (Salikhov/Wu)",
-        "en": "Partial Baker desaxiomatisation (Salikhov/Wu)"
+        "fr": "Remplacement partiel de l'hypothèse de Baker (Salikhov/Wu)",
+        "en": "Partial replacement of the Baker hypothesis (Salikhov/Wu)"
       },
       "summary": {
-        "fr": "Étude exploratoire de la désaxiomatisation de BakerSeparation à partir de Salikhov 2007 / Wu 2003. Liée à FIND-016. À explorer post-δ10.",
-        "en": "Exploratory study of BakerSeparation desaxiomatisation from Salikhov 2007 / Wu 2003. Linked to FIND-016. To explore post-δ10."
+        "fr": "Étude exploratoire : remplacer l'hypothèse BakerSeparation (H1) par des résultats publiés, p. ex. Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125) ou Wu 2003. Liée à FIND-016. À explorer après δ10.",
+        "en": "Exploratory study: replacing the BakerSeparation hypothesis (H1) by published results, e.g. Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125) or Wu 2003. Linked to FIND-016. To explore after δ10."
       },
       "related": ["find016-closed", "delta10-pushed"]
     },
@@ -433,8 +575,8 @@
         "en": "AI-assisted Two-Key FIND-016 Phase 4 — commit + push validated (5/5)"
       },
       "summary": {
-        "fr": "Cross-check OLD3↔NEW4 sur 4 phases (baseline → édit → validation → commit). SHA-256 + reproduce.sh + axiom probe convergents.",
-        "en": "OLD3↔NEW4 cross-check on 4 phases (baseline → edit → validation → commit). SHA-256 + reproduce.sh + axiom probe convergent."
+        "fr": "Contre-vérification croisée entre deux sessions d'assistant IA sur 4 phases (baseline → édit → validation → commit). SHA-256 + reproduce.sh + axiom probe convergents.",
+        "en": "Cross-check between two AI-assistant sessions on 4 phases (baseline → edit → validation → commit). SHA-256 + reproduce.sh + axiom probe convergent."
       },
       "related": ["find016-closed"]
     },
@@ -451,8 +593,8 @@
       "epistemic_status": "verified",
       "last_verified_at": "2026-04-29",
       "title": {
-        "fr": "PROTOCOLE ARES v2 — méthodologie anti-hallucination multi-cerveau IA",
-        "en": "PROTOCOLE ARES v2 — multi-brain AI anti-hallucination methodology"
+        "fr": "PROTOCOLE ARES v2 — méthodologie de vérification assistée par IA",
+        "en": "PROTOCOLE ARES v2 — AI-assisted verification methodology"
       },
       "summary": {
         "fr": "6 règles ARES : zéro calcul mental, citation quarantine, Red Team, DO-178C trailers, sandbox tests_math/, Two-Key Rule.",
@@ -503,8 +645,8 @@
         "en": "Website collatz-lab.org design finalized — Research Ledger launched (Three-Key validated)"
       },
       "summary": {
-        "fr": "Conception du site web terminée : 7 pages (Accueil, Pistes, Lemmes, Preuve, Papers, Hypothèses, Registre, Équipe), i18n FR/EN, registre public versionné avec timeline visuelle. Three-Key Q14+Q15 convergent forte (OLD3 + NEW4 + ChatGPT 5.5) avec 3 raffinements + 3 garde-fous non négociables. Le contenu du registre continue de s'enrichir, mais la conception elle-même est figée.",
-        "en": "Website design completed: 7 pages (Home, Pistes, Lemmes, Preuve, Papers, Hypotheses, Ledger, Team), FR/EN i18n, public versioned ledger with visual timeline. Three-Key Q14+Q15 strongly convergent (OLD3 + NEW4 + ChatGPT 5.5) with 3 refinements + 3 non-negotiable safeguards. Ledger content keeps growing but the design itself is frozen."
+        "fr": "Conception du site web terminée : pages et sections (Accueil, Pistes, Lemmes, Preuve, Papers, Hypothèses, Registre, Équipe), i18n FR/EN, registre public versionné avec timeline visuelle. Relecture croisée assistée par IA (Three-Key Q14+Q15), avec 3 raffinements et 3 garde-fous. Le contenu du registre continue de s'enrichir, mais la conception elle-même est figée.",
+        "en": "Website design completed: pages and sections (Home, Pistes, Lemmes, Preuve, Papers, Hypotheses, Ledger, Team), FR/EN i18n, public versioned ledger with visual timeline. AI-assisted cross-review (Three-Key Q14+Q15), with 3 refinements and 3 safeguards. Ledger content keeps growing but the design itself is frozen."
       },
       "artefacts": [
         {"label": "GitHub commit (Research Ledger initial)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/f5ff864", "kind": "commit"},
@@ -514,13 +656,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 16,
-    "by_type": {"lean": 2, "audit": 5, "mea-culpa": 1, "paper": 1, "study": 4, "repository": 3},
-    "by_status": {"validated": 10, "resolved": 1, "in-progress": 3, "to-explore": 1, "submitted": 1},
-    "by_milestone": {"true": 6, "false": 10},
-    "by_claim_scope": {"formal_lean": 4, "documentation": 8, "submitted_paper": 1, "external_literature": 2, "implementation": 1},
-    "by_epistemic_status": {"verified": 9, "partial": 4, "under_review": 1, "external_unverified": 2, "hypothesis": 1},
-    "note_fr": "Seed v2 priorité haute, 16 événements clés. À enrichir post-implementation : 27 mea culpa publiés non encore détaillés ici (#1-27, le #28 est déjà dans le seed), 13 commits gh-pages secondaires, 14 phases Lean (47-63), 35 pistes cartographiées, 15 audit findings (FIND-001..015), Three-Key Q5+Q9 historiques. Total cible final ~80-100 events.",
-    "note_en": "Priority seed v2, 16 key events. To enrich post-implementation: 27 published mea culpa not yet detailed here (#1-27, #28 already in seed), 13 secondary gh-pages commits, 14 Lean phases (47-63), 35 cartographed paths, 15 audit findings (FIND-001..015), historical Three-Key Q5+Q9. Final target ~80-100 events."
+    "total_events": 24,
+    "by_type": {"audit": 6, "lean": 5, "repository": 5, "study": 4, "mea-culpa": 2, "paper": 2},
+    "by_status": {"validated": 16, "in-progress": 4, "rejected": 1, "resolved": 1, "superseded": 1, "to-explore": 1},
+    "by_milestone": {"true": 13, "false": 11},
+    "by_claim_scope": {"documentation": 14, "formal_lean": 5, "external_literature": 2, "editorial_outcome": 1, "formal_lean_conditional": 1, "submitted_paper": 1},
+    "by_epistemic_status": {"verified": 13, "partial": 5, "external_unverified": 3, "hypothesis": 1, "superseded_by_rejection": 1, "under_review": 1},
+    "note_fr": "Registre partiel : 24 événements (mise à jour du 2026-10-02). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 24 events (update of 2026-10-02). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }

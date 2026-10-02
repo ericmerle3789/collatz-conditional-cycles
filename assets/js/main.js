@@ -43,28 +43,28 @@
       backTop: "Haut",
       heroEyebrow: "Cartographie scientifique · Pré-publication",
       heroTitle: 'Une enquête sur les <em>cycles non triviaux</em> conjecturés de la suite de Collatz, formalisée en Lean 4.',
-      heroLede: "Trente-cinq pistes mathématiques, trois axiomes piliers, une famille d'hypothèses ouvertes — organisées autour d'une obstruction diophantienne unique : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.",
-      keyStat1Label: "Borne inf. |Λ|",
-      keyStat1Desc: "Salikhov 2007 inconditionnel",
-      keyStat2Label: "Requis pour cycle",
-      keyStat2Desc: "Hercher 2023 conditional Baker",
-      keyStat3Label: "Lemme du verrou",
-      keyStat3Desc: "Product-Bound Impossibility",
-      keyStat4Label: "Pistes étudiées",
+      heroLede: "Trente-six pistes mathématiques, trois hypothèses (H1, H2, H3), une famille d'hypothèses ouvertes — organisées autour d'une obstruction diophantienne unique : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.",
+      keyStat1Label: "tout entier sous 2<sup>71</sup> atteint 1",
+      keyStat1Desc: "Bařina 2025 (J. Supercomputing 81)",
+      keyStat2Label: "minima locaux de tout cycle non trivial",
+      keyStat2Desc: "Hercher 2023 (JIS 26, 23.3.5)",
+      keyStat3Label: "cycles exclus par notre théorème Lean (sous H1, H2)",
+      keyStat3Desc: "no_cycle_k_le_1322 · Lean 4.27.0",
+      keyStat4Label: "pistes cataloguées (dont 21 notes à sourcer)",
       keyStat4Desc: "Région I + II + III",
       lockTitle: "Le verrou Λ_{S,k}",
       lockText: "Quatorze des quinze paradigmes mathématiques investigués retombent sur la même obstruction diophantienne :",
-      lockFooter: "Théorème implicite (Cobham 1969 + δ8 lemma) : les bases 2 et 3 sont multiplicativement indépendantes ; toute formalisation de \"cycle Collatz\" qui évite la transcendance log_2 3 tombe dans une logique trop pauvre, ou bien retombe sur la pleine arithmétique indécidable.",
+      lockFooter: "Lecture heuristique (pas un théorème ; inspirée de Cobham 1969 et de δ8) : les bases 2 et 3 sont multiplicativement indépendantes ; toute formalisation de \"cycle Collatz\" qui évite la transcendance de log_2 3 semble tomber dans une logique trop pauvre, ou bien retomber sur la pleine arithmétique indécidable.",
       pistesTitle: "Catalogue des voies d'attaque",
       pistesIntro: "Catalogue exhaustif des approches mathématiques pour la non-existence des cycles non triviaux Collatz. Cliquez sur une ligne pour voir les détails. <em>Transparence éditoriale : 21 entrées sur 36 (≈58 %) sont en statut <code>stub</code> — notes exploratoires en attente de sourçage formel ; le champ <code>status_meta</code> du JSON les marque explicitement (cf. <code>assets/data/pistes.json</code>).</em>",
       searchPlaceholder: "Rechercher une piste, une référence, un auteur…",
       filterAll: "Toutes",
       filterCds: "Culs-de-sac",
-      filterInsuf: "Insuffisance prouvée",
+      filterInsuf: "Insuffisance conditionnelle",
       filterPartiel: "Partielles",
       filterInconnu: "Inconnues",
       filterPrometteur: "Prometteuses",
-      filterAxiome: "Axiomes",
+      filterAxiome: "Hypothèses (paramètres)",
       colId: "ID",
       colName: "Nom",
       colRegion: "Région",
@@ -73,24 +73,24 @@
       colLean: "Lean",
       colSource: "Source",
       hypothesesTitle: "Trois hypothèses sur la sortie",
-      hypothesesIntro: "Évolution des probabilités estimées au fil des cycles d'investigation (Cycle 0 → Cycle 2). La hausse de C reflète la convergence cumulative des paradigmes vers Λ_{S,k}.",
+      hypothesesIntro: "Évolution des probabilités estimées (estimations subjectives de l'auteur, non calculées) au fil des cycles d'investigation (Cycle 0 → Cycle 2). La hausse de C reflète la convergence cumulative des paradigmes vers Λ_{S,k}.",
       testsTitle: "Tests REQ-MATH-NNN exécutés",
-      testsIntro: "Chaque assertion mathématique est validée par script dans le sandbox tests_math/, conformément au PROTOCOLE ARES (Règle 1 : zéro calcul mental).",
-      meaCulpaTitle: "Vingt-huit mea culpa publics",
-      meaCulpaIntro: "La discipline antifragile demande que chaque erreur détectée soit documentée publiquement avec sévérité 0-10 et règle extraite. Sans cela, le pattern multi-cerveau humain-IA répète indéfiniment les mêmes hallucinations. <em>Aperçu de 16 mea culpa parmi les 32 documentés au total ; archive complète dans le repo GitHub <code>_handoff_mailbox/</code>.</em>",
+      testsIntro: "Scripts de contrôle numérique ponctuels. Seuls REQ-MATH-007 et REQ-MATH-012 sont publiés (branches d'étude du dépôt) ; les autres sont restés locaux. Ils vérifient des calculs précis ; ils ne valident pas toutes les affirmations du site.",
+      meaCulpaTitle: "Mea culpa publics",
+      meaCulpaIntro: "Chaque erreur détectée est documentée publiquement, avec une sévérité de 0 à 10 et la règle qui en est tirée. <em>Aperçu de 16 mea culpa (numérotés jusqu'au #32).</em>",
       researchStatusTitle: "État des travaux",
       researchStatusIntro: "Snapshot d'activité du projet, traçable sur GitHub. <a href=\"/research-ledger/\">Registre complet (Research Ledger) →</a>",
-      statusLastMilestone: "Dernier jalon validé",
+      statusLastMilestone: "Dernier jalon",
       statusPaper: "Statut paper",
       statusLastLean: "Dernière vérification Lean",
-      statusLastAudit: "Dernier audit résolu",
-      statusOngoing: "Études en cours",
+      statusLastAudit: "Dernier audit",
+      statusOngoing: "Travaux en cours",
       teamTitle: "Équipe",
-      teamIntro: "Ce projet est conduit par un chercheur indépendant en collaboration avec des systèmes d'IA, sous protocole de vérification rigoureux (PROTOCOLE ARES v2).",
+      teamIntro: "Ce projet est conduit par un chercheur indépendant, avec l'aide d'assistants IA, et en collaboration ouverte avec Benjamin Macindoe.",
       communityTitle: "Communauté Collatz",
       communityIntro: "Ressources et collaborations existantes autour de la conjecture de Collatz (vérifiées 2026-04-29).",
-      footerText: "Site produit avec PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)",
-      footerLicense: "Contenu CC-BY-SA 4.0 · Code Lean MIT · Document vivant",
+      footerText: "Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).",
+      footerLicense: "Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant",
       modalRegion: "Région",
       modalStatus: "Statut",
       modalTest4: "Filtre 4-test",
@@ -98,13 +98,13 @@
       modalRef: "Référence",
       modalWhy: "Pourquoi cette piste est-elle dans cet état ?",
       noResult: "Aucune piste ne correspond à la recherche.",
-      mainResultEyebrow: "Résultat principal — preprint 28 p. (DOI Zenodo)",
-      mainResultTitle: "Théorème conditionnel : aucun cycle Collatz non-trivial — modulo 3 hypothèses externes documentées",
-      mainResultDesc: "Le théorème principal <code>no_nontrivial_cycle_phase59</code> est <strong>kernel-checked</strong> en Lean 4 (Mathlib v4.27), avec 3 axiomes Lean kernel (<code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) et <strong>3 hypothèses externes documentées</strong> : <strong>BakerSeparation</strong> (<em>conjecture de travail</em>, renforcement non démontré des bornes Rhin 1987 / Wu 2003 / Salikhov 2007 publiées — voir <a href=\"#meaculpa\">#28</a> + <strong>δ10</strong>), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>, vérification computationnelle reproductible, Barina 2025), <strong>DerivedLargeKBound</strong> (<em>dérivation projet</em>, k &gt; 1322 ⇒ n &lt; 2<sup>71</sup> ; combine BakerSeparation + gaps fractions continues log<sub>2</sub>3 + Product Bound + BarinaVerification ; <strong>n'est pas un théorème publié</strong> — cf. <a href=\"https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md\" target=\"_blank\" rel=\"noopener\">HYPOTHESES.md §5</a>).",
-      mainResultContrib: "<strong>Contribution scientifique</strong> : pas la non-existence inconditionnelle (cf. δ8 lemma, irréalisable avec les outils 2026), mais la <em>cartographie rigoureuse des obstructions structurelles</em> qui rend la conditionnalité <strong>nécessaire</strong>, pas <em>arbitraire</em>. Sept théorèmes centraux, ~30 fichiers Lean, paper 28 pages, reproductible via <code>reproduce.sh</code> EXIT 0.",
-      readPaper: "Lire le paper (PDF, 28 p.)",
+      mainResultEyebrow: "Résultat principal — preprint (DOI Zenodo) · erratum du 2 octobre 2026",
+      mainResultTitle: "Théorème conditionnel : aucun cycle Collatz non trivial avec k ≤ 1322, sous les hypothèses H1 et H2",
+      mainResultDesc: "Les théorèmes <code>no_cycle_k_le_1322</code> (sous H1, H2) et <code>no_nontrivial_cycle_phase59</code> (sous H1, H2, H3) ont été vérifiés par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant la correction du bug de noyau <a href=\"https://github.com/leanprover/lean4/issues/14576\" target=\"_blank\" rel=\"noopener\">lean4#14576</a> (Lean v4.32.2, 28/07/2026) ; non revérifiés depuis. Profil d'axiomes du théorème principal : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>, selon la référence <code>expected_axioms.md</code> (Lean 4.27.0). Comme H3 équivaut sous H2 à la conclusion pour k &gt; 1322, seul le cas k ≤ 1322 est démontré sans circularité (voir l'<a href=\"#erratum\">erratum</a>).",
+      mainResultContrib: "<strong>Ce que le projet apporte</strong> : une formalisation Lean de l'exclusion des cycles avec k ≤ 1322 (sous H1 et H2) et un catalogue documenté de pistes et d'obstructions. Le résultat mathématique est déjà contenu dans la littérature : Hercher (2023) et la vérification de Bařina impliquent qu'un cycle non trivial a au moins 1,375·10<sup>11</sup> termes impairs. Sept théorèmes centraux, une quarantaine de fichiers Lean ; chaîne principale reproductible via <code>reproduce.sh</code> (Lean 4.27.0).",
+      readPaper: "Lire le paper (PDF)",
       readProof: "Architecture de la preuve",
-      diagramCaption: "→ Le théorème principal <code>no_nontrivial_cycle_phase59</code> est l'unique nœud de fermeture conditionnelle. Les 14 paradigmes convergent vers le verrou Λ ; seules les 3 hypothèses externes (BakerSeparation, BarinaVerification, DerivedLargeKBound) — et non les paradigmes — alimentent le théorème final.",
+      diagramCaption: "→ Les 14 paradigmes convergent vers le verrou Λ ; ce ne sont pas eux qui alimentent le théorème, mais les hypothèses H1, H2 et H3 (paramètres). Seule la branche k ≤ 1322 (H1, H2) est démontrée sans circularité ; la branche k &gt; 1322 repose sur H3, supposée (voir l'<a href=\"#erratum\">erratum</a>).",
       citeBtn: "Citer",
       citeTitle: "Comment citer ce travail",
       citePlain: "Texte simple",
@@ -115,7 +115,7 @@
       searchNav: "naviguer",
       searchOpen: "ouvrir",
       searchClose: "fermer",
-      buildPassing: "site build : passing",
+      buildPassing: "historique de build (GitHub)",
       lastCommit: "dernier commit",
       changelogLink: "changelog"
     },
@@ -137,28 +137,28 @@
       backTop: "Top",
       heroEyebrow: "Scientific cartography · Pre-publication",
       heroTitle: 'A survey of conjectural <em>non-trivial cycles</em> in the Collatz sequence, formalized in Lean 4.',
-      heroLede: "Thirty-five mathematical approaches, three pillar axioms, a family of open hypotheses — organized around a single diophantine obstruction: <em>the lock inequality</em> connecting the count of odd steps to the count of even steps in a hypothetical cycle.",
-      keyStat1Label: "Lower bound |Λ|",
-      keyStat1Desc: "Salikhov 2007 unconditional",
-      keyStat2Label: "Required for cycle",
-      keyStat2Desc: "Hercher 2023 conditional on Baker",
-      keyStat3Label: "Lock lemma",
-      keyStat3Desc: "Product-Bound Impossibility",
-      keyStat4Label: "Approaches studied",
+      heroLede: "Thirty-six mathematical approaches, three hypotheses (H1, H2, H3), a family of open hypotheses — organized around a single diophantine obstruction: <em>the lock inequality</em> connecting the count of odd steps to the count of even steps in a hypothetical cycle.",
+      keyStat1Label: "every integer below 2<sup>71</sup> reaches 1",
+      keyStat1Desc: "Barina 2025 (J. Supercomputing 81)",
+      keyStat2Label: "local minima of any non-trivial cycle",
+      keyStat2Desc: "Hercher 2023 (JIS 26, 23.3.5)",
+      keyStat3Label: "cycles excluded by our Lean theorem (under H1, H2)",
+      keyStat3Desc: "no_cycle_k_le_1322 · Lean 4.27.0",
+      keyStat4Label: "catalogued approaches (21 of them stub notes)",
       keyStat4Desc: "Region I + II + III",
       lockTitle: "The Λ_{S,k} lock",
       lockText: "Fourteen out of fifteen investigated mathematical paradigms reduce to the same diophantine obstruction:",
-      lockFooter: "Implicit theorem (Cobham 1969 + δ8 lemma): bases 2 and 3 are multiplicatively independent ; any formalization of \"Collatz cycle\" that avoids the transcendence of log_2 3 falls into a logic too weak, or back into undecidable full arithmetic.",
+      lockFooter: "Heuristic reading (not a theorem; inspired by Cobham 1969 and δ8): bases 2 and 3 are multiplicatively independent; any formalization of \"Collatz cycle\" that avoids the transcendence of log_2 3 seems to fall into a logic too weak, or back into undecidable full arithmetic.",
       pistesTitle: "Catalogue of attack pathways",
       pistesIntro: "Comprehensive catalog of mathematical approaches to the non-existence of non-trivial Collatz cycles. Click a row for details. <em>Editorial transparency: 21 of 36 entries (≈58 %) are <code>stub</code> status — unsourced exploratory notes pending formal sourcing; the JSON <code>status_meta</code> field flags them explicitly (cf. <code>assets/data/pistes.json</code>).</em>",
       searchPlaceholder: "Search by name, reference, or author…",
       filterAll: "All",
       filterCds: "Dead ends",
-      filterInsuf: "Insufficiency proven",
+      filterInsuf: "Conditional insufficiency",
       filterPartiel: "Partial",
       filterInconnu: "Unexplored",
       filterPrometteur: "Promising",
-      filterAxiome: "Axioms",
+      filterAxiome: "Hypotheses (parameters)",
       colId: "ID",
       colName: "Name",
       colRegion: "Region",
@@ -167,24 +167,24 @@
       colLean: "Lean",
       colSource: "Source",
       hypothesesTitle: "Three hypotheses on the exit",
-      hypothesesIntro: "Evolution of estimated probabilities across investigation cycles (Cycle 0 → Cycle 2). The rise of C reflects cumulative convergence of paradigms onto Λ_{S,k}.",
+      hypothesesIntro: "Evolution of estimated probabilities (the author's subjective estimates, not computed) across investigation cycles (Cycle 0 → Cycle 2). The rise of C reflects cumulative convergence of paradigms onto Λ_{S,k}.",
       testsTitle: "Executed REQ-MATH-NNN tests",
-      testsIntro: "Every mathematical claim is validated by a script in the tests_math/ sandbox, in accordance with PROTOCOLE ARES (Rule 1: no mental arithmetic).",
+      testsIntro: "Targeted numerical check scripts. Only REQ-MATH-007 and REQ-MATH-012 are published (study branches of the repository); the others remained local. They check specific computations; they do not validate every claim on this site.",
       researchStatusTitle: "Research status",
       researchStatusIntro: "Project activity snapshot, traceable on GitHub. <a href=\"/research-ledger/\">Full registry (Research Ledger) →</a>",
-      statusLastMilestone: "Last validated milestone",
+      statusLastMilestone: "Latest milestone",
       statusPaper: "Paper status",
       statusLastLean: "Last Lean verification",
-      statusLastAudit: "Last resolved audit",
-      statusOngoing: "Ongoing studies",
-      meaCulpaTitle: "Twenty-eight public mea culpa",
-      meaCulpaIntro: "Antifragile discipline requires every detected error be documented publicly with severity 0-10 and an extracted rule. Without this, the human-AI multi-brain pattern repeats the same hallucinations indefinitely. <em>Sample of 16 mea culpa out of 32 total documented ; full archive in the GitHub repo <code>_handoff_mailbox/</code>.</em>",
+      statusLastAudit: "Latest audit",
+      statusOngoing: "Ongoing work",
+      meaCulpaTitle: "Public mea culpa",
+      meaCulpaIntro: "Every detected error is documented publicly, with a severity from 0 to 10 and the rule drawn from it. <em>Overview of 16 mea culpa (numbered up to #32).</em>",
       teamTitle: "Team",
-      teamIntro: "This project is led by an independent researcher in collaboration with AI systems, under a rigorous verification protocol (PROTOCOLE ARES v2).",
+      teamIntro: "This project is led by an independent researcher, with the help of AI assistants, in open collaboration with Benjamin Macindoe.",
       communityTitle: "Collatz community",
       communityIntro: "Existing resources and collaborations around the Collatz conjecture (verified 2026-04-29).",
-      footerText: "Site produced with PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)",
-      footerLicense: "Content CC-BY-SA 4.0 · Lean code MIT · Living document",
+      footerText: "Errors found are corrected and documented publicly (mea culpa, erratum).",
+      footerLicense: "Site content CC-BY-SA 4.0 · Paper and Lean code CC BY 4.0 · Living document",
       modalRegion: "Region",
       modalStatus: "Status",
       modalTest4: "4-test filter",
@@ -192,13 +192,13 @@
       modalRef: "Reference",
       modalWhy: "Why is this approach in that state?",
       noResult: "No approach matches the search.",
-      mainResultEyebrow: "Main result — 28-page preprint (Zenodo DOI)",
-      mainResultTitle: "Conditional theorem: no non-trivial Collatz cycle — modulo 3 documented external hypotheses",
-      mainResultDesc: "The main theorem <code>no_nontrivial_cycle_phase59</code> is <strong>kernel-checked</strong> in Lean 4 (Mathlib v4.27), with 3 Lean kernel axioms (<code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) and <strong>3 documented external hypotheses</strong>: <strong>BakerSeparation</strong> (<em>working conjecture</em>, undemonstrated strengthening of published Rhin 1987 / Wu 2003 / Salikhov 2007 bounds — see <a href=\"#meaculpa\">#28</a> + <strong>δ10</strong>), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>, reproducible computational verification, Barina 2025), <strong>DerivedLargeKBound</strong> (<em>project-derived hypothesis</em>, k &gt; 1322 ⇒ n &lt; 2<sup>71</sup>; combines BakerSeparation + continued-fraction gaps of log<sub>2</sub>3 + Product Bound + BarinaVerification; <strong>not a published theorem</strong> — see <a href=\"https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md\" target=\"_blank\" rel=\"noopener\">HYPOTHESES.md §5</a>).",
-      mainResultContrib: "<strong>Scientific contribution</strong>: not unconditional non-existence (cf. δ8 lemma, unattainable with 2026 tools), but a <em>rigorous mapping of structural obstructions</em> that makes the conditionality <strong>necessary</strong>, not <em>arbitrary</em>. Seven central theorems, ~30 Lean files, 28-page paper, reproducible via <code>reproduce.sh</code> EXIT 0.",
-      readPaper: "Read the paper (PDF, 28 pp.)",
+      mainResultEyebrow: "Main result — preprint (Zenodo DOI) · erratum of 2 October 2026",
+      mainResultTitle: "Conditional theorem: no non-trivial Collatz cycle with k ≤ 1322, under hypotheses H1 and H2",
+      mainResultDesc: "The theorems <code>no_cycle_k_le_1322</code> (under H1, H2) and <code>no_nontrivial_cycle_phase59</code> (under H1, H2, H3) were checked by the Lean 4.27.0 kernel (Mathlib v4.27.0), before the fix of kernel bug <a href=\"https://github.com/leanprover/lean4/issues/14576\" target=\"_blank\" rel=\"noopener\">lean4#14576</a> (Lean v4.32.2, 28 July 2026); not re-checked since. Axiom profile of the main theorem: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>, according to the reference <code>expected_axioms.md</code> (Lean 4.27.0). Since H3 is equivalent under H2 to the conclusion for k &gt; 1322, only the case k ≤ 1322 is proved without circularity (see the <a href=\"#erratum\">erratum</a>).",
+      mainResultContrib: "<strong>What the project contributes</strong>: a Lean formalization of the exclusion of cycles with k ≤ 1322 (under H1 and H2) and a documented catalogue of approaches and obstructions. The mathematical result is already contained in the literature: Hercher (2023) together with Barina's verification implies that a non-trivial cycle has at least 1.375·10<sup>11</sup> odd terms. Seven central theorems, about forty Lean files; main chain reproducible via <code>reproduce.sh</code> (Lean 4.27.0).",
+      readPaper: "Read the paper (PDF)",
       readProof: "Proof architecture",
-      diagramCaption: "→ The main theorem <code>no_nontrivial_cycle_phase59</code> is the unique conditional closure node. The 14 paradigms converge onto the Λ lock ; only the 3 external hypotheses (BakerSeparation, BarinaVerification, DerivedLargeKBound) — not the paradigms — feed the final theorem.",
+      diagramCaption: "→ The 14 paradigms converge onto the Λ lock; they do not feed the theorem — hypotheses H1, H2 and H3 (parameters) do. Only the k ≤ 1322 branch (H1, H2) is proved without circularity; the k &gt; 1322 branch rests on H3, which is assumed (see the <a href=\"#erratum\">erratum</a>).",
       citeBtn: "Cite",
       citeTitle: "How to cite this work",
       citePlain: "Plain text",
@@ -209,7 +209,7 @@
       searchNav: "navigate",
       searchOpen: "open",
       searchClose: "close",
-      buildPassing: "site build: passing",
+      buildPassing: "build history (GitHub)",
       lastCommit: "last commit",
       changelogLink: "changelog"
     }
@@ -220,21 +220,21 @@
       main: "★ Résultat principal",
       cds: "Cul-de-sac",
       partiel: "Partielle",
-      insuf: "Insuffisance formelle prouvée (conditionnelle)",
+      insuf: "Insuffisance conditionnelle (en réexamen)",
       inconnu: "Inconnue",
       prouve: "Prouvée",
       prometteur: "Prometteuse",
-      axiome: "Axiome"
+      axiome: "Hypothèse (paramètre)"
     },
     en: {
       main: "★ Main result",
       cds: "Dead end",
       partiel: "Partial",
-      insuf: "Formal insufficiency proven (conditional)",
+      insuf: "Conditional insufficiency (under re-examination)",
       inconnu: "Unexplored",
       prouve: "Proven",
       prometteur: "Promising",
-      axiome: "Axiom"
+      axiome: "Hypothesis (parameter)"
     }
   };
 
@@ -244,7 +244,7 @@
   };
 
   // ========== GITHUB URL ROUTING ==========
-  // main = preprint v1.1 (Phase12-63, paper/, reproduce.sh, expected_axioms.md)
+  // main = preprint (DOI de concept 10.5281/zenodo.19790405) (Phase12-63, paper/, reproduce.sh, expected_axioms.md)
   // arsenal-postjar = extensions R34-R96 (PostJAR/, tests_math/ general) — branch name preserved historically
   // study/delta10-... = Phase64 cartographic impossibility + delta10-specific tests
   // study/E1-salikhov-2007-impossibility = Phase65 δ11 conditional E.1 closure
@@ -385,8 +385,8 @@
     year: "2026",
     month: "April",
     day: "27",
-    doi: "10.5281/zenodo.19790406",
-    url: "https://doi.org/10.5281/zenodo.19790406",
+    doi: "10.5281/zenodo.19790405",
+    url: "https://doi.org/10.5281/zenodo.19790405",
     repo: "https://github.com/ericmerle3789/collatz-conditional-cycles",
     publisher: "Zenodo",
     note: "Preprint deposited on Zenodo",
@@ -464,7 +464,7 @@ ER  - `;
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem; flex-wrap: wrap; gap: 0.6rem;">
               <span class="text-muted small">
                 <span data-i18n="citeDoiLabel">${dict.citeDoiLabel || 'DOI'}</span> :
-                <a href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener" style="color: var(--accent);">10.5281/zenodo.19790406</a>
+                <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener" style="color: var(--accent);">10.5281/zenodo.19790405</a>
                 · <a href="https://orcid.org/${CITATION_DATA.orcid}" target="_blank" rel="noopener" style="color: var(--accent);">ORCID</a>
               </span>
               <button id="copyCiteBtn" class="btn-icon" style="border: 1px solid var(--accent); padding: 0.5rem 1.1rem; color: var(--accent); border-radius: 3px;">
@@ -618,8 +618,8 @@ ER  - `;
     }
     // Pages
     SEARCH_INDEX.push(
-      { type: 'page', id: '/', title: 'Home — Cartography', subtitle: 'Page · Main entry', desc: '35 approaches, 3 axiom pillars, the lock Λ_{S,k}', url: 'index.html', keywords: 'home cartography main lambda lock baker barina hercher' },
-      { type: 'page', id: '/preuve/', title: 'Proof chain', subtitle: 'Page · Lean 4 architecture', desc: 'Phase52 → Phase58 → Phase59 → Phase63', url: 'preuve/', keywords: 'proof chain phase52 phase58 phase59 phase63 steiner barina continued fractions' },
+      { type: 'page', id: '/', title: 'Home — Cartography', subtitle: 'Page · Main entry', desc: '36 approaches, 3 hypotheses (H1–H3), the lock Λ_{S,k}', url: 'index.html', keywords: 'home cartography main lambda lock baker barina hercher' },
+      { type: 'page', id: '/preuve/', title: 'Proof chain', subtitle: 'Page · Lean 4 architecture', desc: 'Phase52 → Phase56 → Phase58 → Phase59 (erratum: H3 assumed)', url: 'preuve/', keywords: 'proof chain phase52 phase56 phase58 phase59 steiner barina continued fractions erratum' },
       { type: 'page', id: '/papers/', title: 'Papers pipeline', subtitle: 'Page · 1 preprint + drafts', desc: 'Preprint (Zenodo DOI) + drafts in progress', url: 'papers/', keywords: 'papers pipeline preprint zenodo drafts' },
       { type: 'page', id: '/lemmes/', title: 'Lean catalog', subtitle: 'Page · 7 central + auxiliaries + cf_gaps + PostJAR', desc: 'Catalog of all Lean 4 theorems', url: 'lemmes/', keywords: 'lean catalog theorems central auxiliary cf_gap postjar arsenal' }
     );
@@ -919,11 +919,11 @@ ER  - `;
       { id: '#23', sev: '9', title: '3 références inventées', rule: 'Vérifier toute référence par grep direct sur references.bib.' },
       { id: '#26', sev: '6', title: 'Migration domaine : robots.txt + sitemap.xml obsolètes', rule: 'Migration de domaine ⇒ checklist post-migration : sitemap, robots, JSON-LD, OG image, hreflang, canonical, redirects 301.' },
       { id: '#27', sev: '7', title: 'Annonces de conférences/cibles présomptueuses sur /papers/', rule: 'Humilité scientifique : ne jamais annoncer publiquement de conférence ou venue ciblée sans soumission ferme. On peut mentionner "en cours d\'écriture / de formalisation / à explorer", jamais "Cible : AITP 2026".' },
-      { id: '#28', sev: '8', title: 'BakerSeparation k^6 plus strict que littérature publiée', rule: 'Toute borne diophantienne effective utilisée comme axiome doit être validée contre la littérature (Rhin 1987 exp 13.3, Wu 2003 μ=7.6155, Simons-de Weger 2005 exp 13.3). Si l\'exposant est plus strict, le déclarer explicitement comme hypothèse de travail dans le doc-comment Lean + abstract JSON-LD + paper §4. La borne (2^s − 3^k)·k^6 ≥ 3^k n\'est attestée par AUCUNE source publiée et doit être tracée comme hypothèse. <strong>Suite formelle</strong> : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/delta10-barina-replacement-impossibility" target="_blank" rel="noopener">δ10 cartographic impossibility lemma</a> (Phase 64, kernel-checked Lean 4, axiom profile <code>[propext]</code>) prouve que la cartographie publiée NE PEUT PAS donner un remplaçant Barina-free, justifiant la nécessité de la force k^6.' }
-      , { id: '#29', sev: '5', title: 'papers/index.html présentait Salikhov 2007 et Wu 2003 comme équivalents pour k ≤ 3732', rule: 'Vérifier l\'exact k_max de chaque borne diophantienne avant de présenter plusieurs papers comme équivalents. Salikhov 2007 ferme k ≤ 3693 (μ=5.125 asymptotique mais constante effective trop large) ; Wu 2003 ferme k ≤ 3732 (c=5.117 effective). <strong>Suite formelle</strong> : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/E1-salikhov-2007-impossibility" target="_blank" rel="noopener">δ11 Salikhov-Insufficient-for-3732</a> (Phase 65, kernel-3 + 3 axiomes ad-hoc transparents).' }
-      , { id: '#30', sev: '6', title: 'Wu & Wang 2014 (μ ≤ 5.116) absent du registre pistes.json', rule: 'Le registre <code>pistes.json</code> doit contenir TOUTES les bornes d\'irrationalité de log 3 publiées et pertinentes. Wu &amp; Wang 2014 (J. Number Theory 142, 264-273, DOI <a href="https://doi.org/10.1016/j.jnt.2014.03.007" target="_blank" rel="noopener">10.1016/j.jnt.2014.03.007</a>, μ ≤ 5.1163051) raffine Salikhov 2007 et était omis du registre initial. Procédure : audit semestriel littérature diophantienne effective + ajout entrée dédiée par référence. Découvert par Gemini Pro 3.1 lors du brainstorming G1, confirmé par Session D Agent background + Session A CrossRef API.' }
-      , { id: '#31', sev: '7', title: 'DOI Wu & Wang 2014 initialement erroné dans PROVENANCE_DELTA11.md', rule: 'Tout DOI cité dans documentation Lean ou audit doit être vérifié indépendamment via CrossRef API ou source d\'autorité publique avant publication. Erreur initiale <code>10.1016/j.jnt.2014.03.004</code> (= Anglès-Pellarin 2014 « Functional identities for L-series ») corrigée en <code>10.1016/j.jnt.2014.03.007</code> (= Wu &amp; Wang 2014 « On the irrationality measure of log 3 ») suite à audit ChatGPT G3 RT shadow + verification CrossRef API. <strong>Leçon</strong> : valeur du cross-modèle (Opus a halluciné, ChatGPT a catché). <strong>Workflow recommandé</strong> : <code>curl -s api.crossref.org/works/&lt;DOI&gt;</code> + python parsing pour chaque référence avant publication.' }
-      , { id: '#32', sev: '8', title: 'axiom C_Salikhov : ℝ initialement non positivement restreint dans Delta11Salikhov.lean', rule: 'Tout axiome déclarant une constante d\'origine arithmétique/diophantienne dans Lean doit explicitement déclarer son signe (positivité, négativité) sous peine de rendre les théorèmes utilisateurs vacuously-true. Erreur initiale <code>axiom C_Salikhov : ℝ</code> permettait C ≤ 0 → théorème δ11 vacuously-true (négatif &lt; positif). Corrigé Phase 5e par ajout de <code>axiom C_Salikhov_pos : 0 &lt; C_Salikhov</code> (convention diophantienne effective Salikhov 2007 explicitée). Catché par <strong>Gemini Pro 3.1 ARES shadow Deep Research</strong> (G3 cross-modèle), invisible aux 5 IAs précédentes (Session D RT/NASA/ARES sub-agents Opus + ChatGPT G3 RT shadow + Claude.ai G3 NASA shadow). <strong>Leçon méthodologique</strong> : 2ème catch cross-modèle (après mea culpa #31), validation empirique du Niveau 2 anti-corrélation. <strong>Workflow recommandé</strong> : pour chaque <code>axiom X : T</code> futur, audit cross-modèle dédié sur le typage T (positivité, monotonie, contraintes implicites de domaine).' }
+      { id: '#28', sev: '8', title: 'BakerSeparation k^6 plus strict que littérature publiée', rule: 'Toute borne diophantienne effective utilisée comme hypothèse doit être confrontée à la littérature publiée (Rhin 1987, Wu 2003, Simons-de Weger 2005). Si l\'exposant est plus fort, le déclarer explicitement comme hypothèse de travail dans le doc-comment Lean, l\'abstract JSON-LD et le paper §4. La borne (2^s − 3^k)·k^6 ≥ 3^k n\'est attestée par AUCUNE source publiée et doit être tracée comme hypothèse (H1, paramètre du théorème, pas un axiome Lean). <strong>Suite</strong> : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/delta10-barina-replacement-impossibility" target="_blank" rel="noopener">δ10</a> (Phase 64, branche d\'étude, Lean 4.27.0) compare un catalogue fini de 4 sources dont les profils sont saisis à la main ; ce n\'est pas un théorème général sur les bornes publiées.' }
+      , { id: '#29', sev: '5', title: 'papers/index.html présentait Salikhov 2007 et Wu 2003 comme équivalents pour k ≤ 3732', rule: 'Vérifier la portée exacte de chaque borne diophantienne avant de présenter plusieurs articles comme équivalents. <strong>Correction du 02/10/2026</strong> : Salikhov 2007 est une mesure d\'irrationalité de ln 3 (μ(ln 3) ≤ 5,125) ; la valeur 5,117 est celle de Wu &amp; Wang 2014 pour log 3, pas de Wu 2003 ; les seuils k ≤ 3693 et k ≤ 3732 donnés ici ne sont pas confirmés. <strong>Suite</strong> : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/E1-salikhov-2007-impossibility" target="_blank" rel="noopener">δ11</a> (Phase 65, conditionnel, trois axiomes ad hoc ; en réexamen).' }
+      , { id: '#30', sev: '6', title: 'Wu & Wang 2014 (μ(log 3) < 5,117) absent du registre pistes.json', rule: 'Le registre <code>pistes.json</code> doit contenir les bornes d\'irrationalité de log 3 publiées et pertinentes. Wu &amp; Wang 2014 (J. Number Theory 142, 264-273, DOI <a href="https://doi.org/10.1016/j.jnt.2014.03.007" target="_blank" rel="noopener">10.1016/j.jnt.2014.03.007</a>, μ(log 3) < 5,117) améliore Salikhov 2007 et était omis du registre initial. Procédure : relecture périodique de la littérature diophantienne effective + une entrée par référence. Signalé lors d\'une relecture croisée par un autre modèle de langage, confirmé via l\'API Crossref.' }
+      , { id: '#31', sev: '7', title: 'DOI Wu & Wang 2014 initialement erroné dans PROVENANCE_DELTA11.md', rule: 'Tout DOI cité dans la documentation Lean ou un audit doit être vérifié indépendamment (API Crossref ou source d\'autorité publique) avant publication. Erreur initiale <code>10.1016/j.jnt.2014.03.004</code> (= Anglès-Pellarin 2014 « Functional identities for L-series ») corrigée en <code>10.1016/j.jnt.2014.03.007</code> (= Wu &amp; Wang 2014 « On the irrationality measure of log 3 »), après relecture croisée par un autre modèle de langage et vérification via l\'API Crossref. <strong>Leçon</strong> : l\'erreur venait d\'un assistant IA ; une relecture indépendante l\'a trouvée. <strong>Procédure</strong> : <code>curl -s api.crossref.org/works/&lt;DOI&gt;</code> pour chaque référence avant publication.' }
+      , { id: '#32', sev: '8', title: 'axiom C_Salikhov : ℝ initialement non positivement restreint dans Delta11Salikhov.lean', rule: 'Tout axiome déclarant une constante d\'origine arithmétique/diophantienne dans Lean doit explicitement déclarer son signe (positivité, négativité) sous peine de rendre les théorèmes utilisateurs vacuously-true. Erreur initiale <code>axiom C_Salikhov : ℝ</code> permettait C ≤ 0 → théorème δ11 vacuously-true (négatif &lt; positif). Corrigé (Phase 5e) par ajout de <code>axiom C_Salikhov_pos : 0 &lt; C_Salikhov</code>. Relevé lors d\'une relecture croisée par un autre modèle de langage, après plusieurs relectures qui ne l\'avaient pas vu. <strong>Règle</strong> : pour chaque <code>axiom X : T</code>, vérifier le typage de T (signe, monotonie, contraintes implicites de domaine).' }
     ] : [
       { id: '#3', sev: '9', title: 'R76b naming "at_min"', rule: 'Naming reflects the exact claim, not the intent.' },
       { id: '#11', sev: '10', title: 'BHV+lacunary conjecture', rule: 'Test R72 (Steiner identity) before any commit.' },
@@ -936,11 +936,11 @@ ER  - `;
       { id: '#23', sev: '9', title: '3 fabricated references', rule: 'Verify every reference via direct grep on references.bib.' },
       { id: '#26', sev: '6', title: 'Domain migration: robots.txt + sitemap.xml stale', rule: 'Domain migration ⇒ post-migration checklist: sitemap, robots, JSON-LD, OG image, hreflang, canonical, 301 redirects.' },
       { id: '#27', sev: '7', title: 'Presumptuous conference/venue announcements on /papers/', rule: 'Scientific humility: never publicly announce a conference or target venue without firm submission. Use "drafting / under formalization / to explore" instead, never "Target: AITP 2026".' },
-      { id: '#28', sev: '8', title: 'BakerSeparation k^6 stricter than published bounds', rule: 'Any effective Diophantine bound used as an axiom must be validated against published literature (Rhin 1987 exp 13.3, Wu 2003 μ=7.6155, Simons-de Weger 2005 exp 13.3). If the exponent is stricter, declare it explicitly as a working hypothesis in the Lean doc-comment + JSON-LD abstract + paper §4. The bound (2^s − 3^k)·k^6 ≥ 3^k is attested by NO published source and must be tracked as a hypothesis. <strong>Formal follow-up</strong>: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/delta10-barina-replacement-impossibility" target="_blank" rel="noopener">δ10 cartographic impossibility lemma</a> (Phase 64, kernel-checked Lean 4, axiom profile <code>[propext]</code>) proves that the published catalogue CANNOT provide a Barina-free replacement, justifying the necessity of the k^6 strength.' }
-      , { id: '#29', sev: '5', title: 'papers/index.html presented Salikhov 2007 and Wu 2003 as equivalent for k ≤ 3732', rule: 'Verify exact k_max of each Diophantine bound before presenting multiple papers as equivalent. Salikhov 2007 closes k ≤ 3693 (μ=5.125 asymptotic but effective constant too large) ; Wu 2003 closes k ≤ 3732 (c=5.117 effective). <strong>Formal follow-up</strong>: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/E1-salikhov-2007-impossibility" target="_blank" rel="noopener">δ11 Salikhov-Insufficient-for-3732</a> (Phase 65, kernel-3 + 3 transparent ad-hoc axioms).' }
-      , { id: '#30', sev: '6', title: 'Wu & Wang 2014 (μ ≤ 5.116) absent from pistes.json registry', rule: 'The <code>pistes.json</code> registry must contain ALL relevant published log 3 irrationality bounds. Wu &amp; Wang 2014 (J. Number Theory 142, 264-273, DOI <a href="https://doi.org/10.1016/j.jnt.2014.03.007" target="_blank" rel="noopener">10.1016/j.jnt.2014.03.007</a>, μ ≤ 5.1163051) refines Salikhov 2007 and was omitted from the initial registry. Procedure: semi-annual audit of effective Diophantine literature + dedicated entry per reference. Discovered by Gemini Pro 3.1 during G1 brainstorm, confirmed by Session D Agent background + Session A CrossRef API.' }
-      , { id: '#31', sev: '7', title: 'Wu & Wang 2014 DOI initially wrong in PROVENANCE_DELTA11.md', rule: 'Every DOI cited in Lean documentation or audit must be verified independently via CrossRef API or authoritative public source before publication. Initial error <code>10.1016/j.jnt.2014.03.004</code> (= Anglès-Pellarin 2014 "Functional identities for L-series") corrected to <code>10.1016/j.jnt.2014.03.007</code> (= Wu &amp; Wang 2014 "On the irrationality measure of log 3") following ChatGPT G3 RT shadow audit + CrossRef API verification. <strong>Lesson</strong>: value of cross-model audit (Opus hallucinated, ChatGPT caught). <strong>Recommended workflow</strong>: <code>curl -s api.crossref.org/works/&lt;DOI&gt;</code> + python parsing for each reference before publication.' }
-      , { id: '#32', sev: '8', title: 'axiom C_Salikhov : ℝ initially not positively restricted in Delta11Salikhov.lean', rule: 'Every Lean axiom declaring an arithmetic/Diophantine-origin constant must explicitly declare its sign (positivity, negativity) or risk making downstream theorems vacuously-true. Initial error <code>axiom C_Salikhov : ℝ</code> allowed C ≤ 0 → δ11 theorem vacuously-true (negative &lt; positive). Fixed in Phase 5e by adding <code>axiom C_Salikhov_pos : 0 &lt; C_Salikhov</code> (Salikhov 2007 effective Diophantine convention made explicit). Caught by <strong>Gemini Pro 3.1 ARES shadow Deep Research</strong> (G3 cross-model), invisible to all 5 previous AIs (Session D RT/NASA/ARES Opus sub-agents + ChatGPT G3 RT shadow + Claude.ai G3 NASA shadow). <strong>Methodological lesson</strong>: 2nd cross-model catch (after mea culpa #31), empirical validation of Level-2 anti-correlation. <strong>Recommended workflow</strong>: for every future <code>axiom X : T</code>, dedicated cross-model audit on typing T (positivity, monotonicity, implicit domain constraints).' }
+      { id: '#28', sev: '8', title: 'BakerSeparation k^6 stricter than published bounds', rule: 'Any effective Diophantine bound used as a hypothesis must be checked against published literature (Rhin 1987, Wu 2003, Simons-de Weger 2005). If the exponent is stronger, declare it explicitly as a working hypothesis in the Lean doc-comment, the JSON-LD abstract and paper §4. The bound (2^s − 3^k)·k^6 ≥ 3^k is attested by NO published source and must be tracked as a hypothesis (H1, a parameter of the theorem, not a Lean axiom). <strong>Follow-up</strong>: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/delta10-barina-replacement-impossibility" target="_blank" rel="noopener">δ10</a> (Phase 64, study branch, Lean 4.27.0) compares a finite catalogue of 4 sources whose profiles are entered by hand; it is not a general theorem about published bounds.' }
+      , { id: '#29', sev: '5', title: 'papers/index.html presented Salikhov 2007 and Wu 2003 as equivalent for k ≤ 3732', rule: 'Verify the exact scope of each Diophantine bound before presenting several papers as equivalent. <strong>Correction of 2 Oct 2026</strong>: Salikhov 2007 is an irrationality measure of ln 3 (μ(ln 3) ≤ 5.125); the value 5.117 is Wu &amp; Wang 2014 for log 3, not Wu 2003; the thresholds k ≤ 3693 and k ≤ 3732 given here are not confirmed. <strong>Follow-up</strong>: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/E1-salikhov-2007-impossibility" target="_blank" rel="noopener">δ11</a> (Phase 65, conditional, three ad-hoc axioms; under re-examination).' }
+      , { id: '#30', sev: '6', title: 'Wu & Wang 2014 (μ(log 3) < 5.117) absent from pistes.json registry', rule: 'The <code>pistes.json</code> registry must contain the relevant published irrationality bounds for log 3. Wu &amp; Wang 2014 (J. Number Theory 142, 264-273, DOI <a href="https://doi.org/10.1016/j.jnt.2014.03.007" target="_blank" rel="noopener">10.1016/j.jnt.2014.03.007</a>, μ(log 3) < 5.117) improves on Salikhov 2007 and was omitted from the initial registry. Procedure: periodic review of the effective Diophantine literature + one entry per reference. Flagged during a cross-review by another language model, confirmed via the Crossref API.' }
+      , { id: '#31', sev: '7', title: 'Wu & Wang 2014 DOI initially wrong in PROVENANCE_DELTA11.md', rule: 'Every DOI cited in Lean documentation or an audit must be verified independently (Crossref API or authoritative public source) before publication. Initial error <code>10.1016/j.jnt.2014.03.004</code> (= Anglès-Pellarin 2014 "Functional identities for L-series") corrected to <code>10.1016/j.jnt.2014.03.007</code> (= Wu &amp; Wang 2014 "On the irrationality measure of log 3"), after cross-review by another language model and verification via the Crossref API. <strong>Lesson</strong>: the error came from an AI assistant; an independent review caught it. <strong>Procedure</strong>: <code>curl -s api.crossref.org/works/&lt;DOI&gt;</code> for each reference before publication.' }
+      , { id: '#32', sev: '8', title: 'axiom C_Salikhov : ℝ initially not positively restricted in Delta11Salikhov.lean', rule: 'Every Lean axiom declaring an arithmetic/Diophantine-origin constant must explicitly declare its sign (positivity, negativity) or risk making downstream theorems vacuously-true. Initial error <code>axiom C_Salikhov : ℝ</code> allowed C ≤ 0 → δ11 theorem vacuously-true (negative &lt; positive). Fixed (Phase 5e) by adding <code>axiom C_Salikhov_pos : 0 &lt; C_Salikhov</code>. Caught during a cross-review by another language model, after several reviews had missed it. <strong>Rule</strong>: for every <code>axiom X : T</code>, check the typing of T (sign, monotonicity, implicit domain constraints).' }
     ];
 
     container.innerHTML = items.map(it => `
@@ -1163,15 +1163,14 @@ ER  - `;
     const hero = main.querySelector('.hero, .hero-banner');
     if (!hero) return;
 
-    const dict = { fr: { read: 'min de lecture', words: 'mots', verified: 'build vérifié' },
-                   en: { read: 'min read', words: 'words', verified: 'build verified' } };
+    const dict = { fr: { read: 'min de lecture', words: 'mots' },
+                   en: { read: 'min read', words: 'words' } };
     const d = dict[STATE.lang] || dict.en;
     const meta = document.createElement('div');
     meta.className = 'reading-meta';
     meta.innerHTML = `
       <span class="reading-meta-item">⏱ ${minutes} ${d.read}</span>
       <span class="reading-meta-item">${words.toLocaleString()} ${d.words}</span>
-      <span class="reading-meta-item" id="lastVerifiedMeta">⚡ ${d.verified} <span id="lastVerifiedDate">…</span></span>
     `;
     // Insère dans le hero
     const heroContent = hero.querySelector('.hero-eyebrow, .hero-banner-eyebrow');
@@ -1313,31 +1312,6 @@ ER  - `;
     } catch (e) { el.textContent = '—'; }
   }
 
-  // ========== LAST VERIFIED (date du dernier commit main) ==========
-  async function fetchLastVerified() {
-    const el = document.getElementById('lastVerifiedDate');
-    if (!el) return;
-    try {
-      const cached = sessionStorage.getItem('gh-mainsha-cache');
-      if (cached) {
-        const obj = JSON.parse(cached);
-        if (Date.now() - obj.ts < 30 * 60 * 1000) {
-          el.textContent = obj.date;
-          return;
-        }
-      }
-      const r = await fetch('https://api.github.com/repos/ericmerle3789/collatz-conditional-cycles/commits/main');
-      if (r.ok) {
-        const j = await r.json();
-        const date = (j.commit?.committer?.date || j.commit?.author?.date || '').substring(0, 10);
-        const sha = (j.sha || '').substring(0, 7);
-        const text = `${date} · ${sha}`;
-        el.textContent = text;
-        sessionStorage.setItem('gh-mainsha-cache', JSON.stringify({ ts: Date.now(), date: text }));
-      }
-    } catch (e) { el.textContent = '—'; }
-  }
-
   // ========== INIT ==========
   // Calcule un chemin absolu vers /assets/ depuis l'URL du script lui-même.
   // Permet à main.js de fonctionner depuis /, /preuve/, /papers/, /lemmes/, etc.
@@ -1358,8 +1332,8 @@ ER  - `;
       const base = assetsBaseURL();
       // Cache buster aligné avec celui du <script> courant pour invalider le
       // cache HTTP du JSON dès qu'une release modifie le pistes.json
-      // (sinon les utilisateurs continuent à voir l'ancien snapshot — bug catché
-      // post-Phase 7-ter via test UX Chrome MCP, 2026-05-08)
+      // (sinon les utilisateurs continuent à voir l'ancien snapshot — bug observé
+      // le 2026-05-08)
       const scriptSrc = document.currentScript?.src
         || Array.from(document.querySelectorAll('script[src*="main.js"]')).map(s => s.src)[0]
         || '';
@@ -1449,12 +1423,11 @@ ER  - `;
     // TOC sticky : init après applyLang pour avoir les bons headings
     setTimeout(initTableOfContents, 200);
 
-    // Reading meta + permalinks + focus mode + GitHub stars + last verified
+    // Reading meta + permalinks + focus mode + GitHub stars
     setTimeout(injectReadingMeta, 250);
     setTimeout(injectPermalinks, 300);
     setupFocusMode();
     fetchGitHubStars();
-    fetchLastVerified();
 
     // Smooth scroll nav
     document.querySelectorAll('.nav a').forEach(link => {
@@ -1480,8 +1453,8 @@ ER  - `;
   }
 })();
 
-// C22 (Phase 3.5 F-θ): scroll auto + ouverture details post-hash navigation
-// Détecté UX MCP A2 runtime — DOM ancres FAQ q1-q12 OK (C20) mais browser ne scrolle pas auto post-click sur ../faq/#qN
+// Scroll auto + ouverture des <details> après navigation par ancre
+// (ex. ../faq/#qN : le navigateur ne déroulait pas la question ciblée)
 (function() {
   function scrollToHashTarget() {
     if (!window.location.hash) return;

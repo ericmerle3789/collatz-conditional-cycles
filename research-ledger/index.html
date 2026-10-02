@@ -23,7 +23,7 @@
 <meta property="og:description" content="(Syracuse · Collatz · 3n+1) Public versioned research ledger: formal Lean developments, audit findings, corrections, literature studies, ongoing investigations.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/research-ledger/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
@@ -34,7 +34,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Research Ledger — Collatz / Syracuse Conditional Cycles">
 <meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Public versioned research ledger: Lean developments, audits, corrections, literature studies, ongoing investigations.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 
 <!-- Atom feed -->
 <link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
@@ -49,7 +49,7 @@
       "@id": "https://collatz-lab.org/research-ledger/",
       "name": "Collatz / Syracuse Conditional Cycles — Research Ledger",
       "alternateName": "Registre de recherche Collatz / Syracuse Conditional Cycles",
-      "description": "A public, versioned research ledger documenting formal Lean developments, audit findings, corrections, literature studies, and ongoing investigations related to conditional Collatz cycles. 16-event seed (priority high), bilingual FR/EN, filterable, with claim_scope + verification_method + epistemic_status fields per event. Three-Key validated 2026-04-30 (multi-AI audit protocol).",
+      "description": "A public, versioned research ledger documenting formal Lean developments, audit findings, corrections, literature studies, and ongoing investigations related to conditional Collatz cycles. 24 events, bilingual FR/EN, filterable, with claim_scope + verification_method + epistemic_status fields per event. Internal AI-assisted reviews, not peer review. Updated 2026-10-02 (erratum on the main statement).",
       "url": "https://collatz-lab.org/research-ledger/",
       "sameAs": [
         "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/gh-pages/assets/data/research-ledger.json"
@@ -69,15 +69,15 @@
         "contentUrl": "https://collatz-lab.org/assets/data/research-ledger.json"
       },
       "datePublished": "2026-04-30",
-      "dateModified": "2026-04-30",
+      "dateModified": "2026-10-02",
       "version": "1.0.0",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "inLanguage": ["en", "fr"],
       "variableMeasured": [
-        {"@type": "PropertyValue", "name": "events", "value": 16},
-        {"@type": "PropertyValue", "name": "milestones", "value": 5},
-        {"@type": "PropertyValue", "name": "claim_scope categories", "value": 5},
-        {"@type": "PropertyValue", "name": "epistemic_status categories", "value": 5}
+        {"@type": "PropertyValue", "name": "events", "value": 24},
+        {"@type": "PropertyValue", "name": "milestones", "value": 13},
+        {"@type": "PropertyValue", "name": "claim_scope categories", "value": 6},
+        {"@type": "PropertyValue", "name": "epistemic_status categories", "value": 6}
       ]
     },
     {
@@ -100,7 +100,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
 
 <style>
   /* === RESEARCH LEDGER PAGE — uses standard <section> centering (max-width 1100px) === */
@@ -415,13 +415,13 @@
   <div class="ledger-stats">
     <div class="stat-card" data-family="paper">
       <span class="stat-num">1</span>
-      <span class="stat-label" lang="fr">paper soumis</span>
-      <span class="stat-label" lang="en">paper submitted</span>
+      <span class="stat-label" lang="fr">preprint (Zenodo) — soumission JAR rejetée le 13/05/2026</span>
+      <span class="stat-label" lang="en">preprint (Zenodo) — JAR submission rejected on 2026-05-13</span>
     </div>
     <div class="stat-card" data-family="lean">
       <span class="stat-num">14+</span>
-      <span class="stat-label" lang="fr">phases Lean kernel-checked</span>
-      <span class="stat-label" lang="en">kernel-checked Lean phases</span>
+      <span class="stat-label" lang="fr">phases Lean (Lean 4.27.0 · non revérifié après lean4#14576)</span>
+      <span class="stat-label" lang="en">Lean phases (Lean 4.27.0 · not re-checked after lean4#14576)</span>
     </div>
     <div class="stat-card" data-family="audit">
       <span class="stat-num">16</span>
@@ -429,19 +429,14 @@
       <span class="stat-label" lang="en">audit findings</span>
     </div>
     <div class="stat-card" data-family="mea-culpa">
-      <span class="stat-num">28</span>
-      <span class="stat-label" lang="fr">mea culpa publics</span>
-      <span class="stat-label" lang="en">public mea culpa</span>
+      <span class="stat-num">32</span>
+      <span class="stat-label" lang="fr">mea culpa (numérotés jusqu'au #32 ; 16 présentés sur le site)</span>
+      <span class="stat-label" lang="en">mea culpa (numbered up to #32; 16 shown on the site)</span>
     </div>
     <div class="stat-card" data-family="study">
-      <span class="stat-num">5</span>
-      <span class="stat-label" lang="fr">études en cours</span>
-      <span class="stat-label" lang="en">ongoing studies</span>
-    </div>
-    <div class="stat-card" data-family="repository">
-      <span class="stat-num">26+</span>
-      <span class="stat-label" lang="fr">commits significatifs</span>
-      <span class="stat-label" lang="en">significant commits</span>
+      <span class="stat-num">4</span>
+      <span class="stat-label" lang="fr">études ouvertes au 13/05/2026</span>
+      <span class="stat-label" lang="en">open studies as of 2026-05-13</span>
     </div>
   </div>
 </section>
@@ -471,12 +466,12 @@
 </section>
 
 <section>
-  <div class="section-eyebrow" lang="fr">§ IV — Études en cours</div>
-  <div class="section-eyebrow" lang="en">§ IV — Ongoing studies</div>
-  <h2 lang="fr">Investigations actives</h2>
-  <h2 lang="en">Active investigations</h2>
-  <p lang="fr">Investigations actives, lectures critiques, formalisations Lean en cours, désaxiomatisations exploratoires.</p>
-  <p lang="en">Active investigations, critical readings, Lean formalizations in progress, exploratory desaxiomatizations.</p>
+  <div class="section-eyebrow" lang="fr">§ IV — Études ouvertes</div>
+  <div class="section-eyebrow" lang="en">§ IV — Open studies</div>
+  <h2 lang="fr">Études ouvertes au 13/05/2026</h2>
+  <h2 lang="en">Open studies as of 2026-05-13</h2>
+  <p lang="fr">Études déclarées ouvertes en avril 2026 (lectures critiques, formalisations Lean, remplacement exploratoire d'hypothèses). Leur état n'a pas été mis à jour depuis.</p>
+  <p lang="en">Studies declared open in April 2026 (critical readings, Lean formalizations, exploratory replacement of hypotheses). Their state has not been updated since.</p>
   <div id="ongoingContainer"><!-- generated --></div>
 </section>
 
@@ -543,10 +538,11 @@
   <h2 lang="en">Public links</h2>
   <ul>
     <li><strong>GitHub repo</strong> : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">github.com/ericmerle3789/collatz-conditional-cycles</a></li>
-    <li><strong>DOI Zenodo</strong> : <a href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener">10.5281/zenodo.19790406</a></li>
+    <li><strong>DOI Zenodo</strong> : <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">10.5281/zenodo.19790405</a></li>
+    <li><strong lang="fr">Dépôt commun avec B. Macindoe</strong><strong lang="en">Shared repository with B. Macindoe</strong> : <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener">github.com/macindoe/one-obstruction-three-faces</a></li>
     <li>
-      <strong lang="fr">Branches actives</strong>
-      <strong lang="en">Active branches</strong> :
+      <strong lang="fr">Branches</strong>
+      <strong lang="en">Branches</strong> :
       <ul>
         <li><code>main</code> — preprint v1.1 (DOI Zenodo)</li>
         <li><code>audit/find-016-transparency-doc-comment</code> — FIND-016 transparency note</li>
@@ -561,12 +557,10 @@
 </main>
 
 <footer>
-  <p lang="fr">Site produit avec PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
-  <p lang="en">Site produced with PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
-  <div class="footer-meta">Cartography · v0.6.0 · 2026-04-30</div>
+  <div class="footer-meta">Cartography · v0.9.0 · 2026-10-02</div>
   <p>
-    <span lang="fr">Registre généré depuis <code>assets/data/research-ledger.json</code>. Three-Key validated 2026-04-30 (OLD3 + NEW4 + ChatGPT 5.5) — <em>validation interne multi-IA, non peer review (cf. <a href="../faq/#q11">FAQ Q11</a>)</em>.</span>
-    <span lang="en">Ledger generated from <code>assets/data/research-ledger.json</code>. Three-Key validated 2026-04-30 (OLD3 + NEW4 + ChatGPT 5.5) — <em>internal multi-AI validation, not peer review (see <a href="../faq/#q11">FAQ Q11</a>)</em>.</span>
+    <span lang="fr">Registre généré depuis <code>assets/data/research-ledger.json</code>. Relectures internes assistées par IA — <em>non peer review (cf. <a href="../faq/#q11">FAQ Q11</a>)</em>.</span>
+    <span lang="en">Ledger generated from <code>assets/data/research-ledger.json</code>. Internal AI-assisted reviews — <em>not peer review (see <a href="../faq/#q11">FAQ Q11</a>)</em>.</span>
   </p>
   <p>Eric Merle · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a> · <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener">ORCID</a></p>
   <p style="margin-top: 0.6rem;">
@@ -575,8 +569,8 @@
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
-<script src="../assets/js/research-ledger.js?v=20260513-V0-7-5-DERIVED-CORRECTION" defer></script>
+<script src="../assets/js/main.js?v=20261002-V0-9-0"></script>
+<script src="../assets/js/research-ledger.js?v=20261002-V0-9-0" defer></script>
 
 </body>
 </html>

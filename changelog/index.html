@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa and Red Team cycles.">
-<meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, Red Team, ARES protocol">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.9.0 (2026-10-02), erratum on the main statement.">
+<meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -22,7 +22,7 @@
 
 <meta property="og:title" content="Changelog — Collatz / Syracuse Conditional Cycles">
 <meta property="og:description" content="(Syracuse · Collatz · 3n+1) Versioned history of paper, Lean arsenal, and website updates.">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="article">
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Changelog — Collatz / Syracuse Conditional Cycles">
 <meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Versioned changelog: paper revisions, Lean arsenal, site improvements, mea culpa.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 
 <!-- JSON-LD : Article changelog + BreadcrumbList -->
 <script type="application/ld+json">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa, Red Team cycles. Latest: v0.7.4 (2026-05-13) — JAR rejection notification + site repositioned in preprint mode (Zenodo DOI canonical, all 'submitted to JAR' claims neutralized, visual labels renamed jar→main, historical entries preserved, code paths preserved).",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -56,7 +56,7 @@
         "name": "Eric Merle"
       },
       "datePublished": "2026-04-27",
-      "dateModified": "2026-05-13",
+      "dateModified": "2026-10-02",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
@@ -80,7 +80,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
 </head>
 <body>
 
@@ -125,14 +125,45 @@
   <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="fr">Changelog</h1>
   <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="en">Changelog</h1>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">
-    Historique transparent de toutes les évolutions du projet : paper, arsenal Lean, site web, cycles Red Team, et mea culpa publics. Versioning sémantique. <a href="../feed.xml" style="color: var(--accent);">→ Atom feed</a>
+    Historique des principales évolutions du projet : paper, arsenal Lean, site web et mea culpa publics. Versioning sémantique. Les entrées anciennes sont conservées telles quelles ; la v0.9.0 corrige plusieurs de leurs affirmations. <a href="../feed.xml" style="color: var(--accent);">→ Atom feed</a>
   </p>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="en">
-    Transparent history of all project evolutions: paper, Lean arsenal, website, Red Team cycles, and public mea culpa. Semantic versioning. <a href="../feed.xml" style="color: var(--accent);">→ Atom feed</a>
+    History of the main project changes: paper, Lean arsenal, website and public mea culpa. Semantic versioning. Older entries are kept as they were; v0.9.0 corrects several of their claims. <a href="../feed.xml" style="color: var(--accent);">→ Atom feed</a>
   </p>
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.9.0">
+    <header>
+      <h2><span class="version-tag">v0.9.0</span> <span lang="fr">Erratum de l'énoncé principal + corrections factuelles</span><span lang="en">Erratum to the main statement + factual corrections</span></h2>
+      <time datetime="2026-10-02">2026-10-02</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Erratum</strong> (<a href="../#erratum">bandeau de l'accueil</a>) : la troisième hypothèse, H3 (<code>DerivedLargeKBound</code>), est <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à l'absence de cycle avec k &gt; 1322 (k = nombre de termes impairs du cycle). Seul « aucun cycle non trivial avec k ≤ 1322, sous H1 et H2 » (<code>no_cycle_k_le_1322</code>) est démontré sans circularité. Les versions précédentes présentaient H3 comme une « dérivation projet » : c'était faux. Le PDF déposé sur Zenodo n'est pas encore corrigé (il énonce le théorème avec <code>ProductBoundThreshold</code>, qui pose le même problème).</li>
+      <li><strong>Noyau Lean</strong> : mention du bug de noyau <a href="https://github.com/leanprover/lean4/issues/14576" target="_blank" rel="noopener">lean4#14576</a> (corrigé en Lean v4.32.2, 28/07/2026). Le théorème principal a été vérifié sous Lean 4.27.0, avant ce correctif, et n'a pas été revérifié depuis. Les six fichiers de la pile commune avec B. Macindoe ont été revérifiés sous Lean 4.34.0 le 23/09/2026 (<a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9934df4/recheck-v4.34" target="_blank" rel="noopener">artefact 9934df4</a>).</li>
+      <li><strong>Corrections factuelles</strong> : Christian Hercher (et non « Christoph »), <em>Journal of Integer Sequences</em> 26 (2023), Article 23.3.5 : aucun m-cycle non trivial avec m ≤ 91 ; Salikhov 2007 = mesure d'irrationalité de ln 3, δ11 en réexamen ; la valeur 5,117 est celle de Wu &amp; Wang 2014, pas de Wu 2003 ; chiffres clés sans source retirés de l'accueil ; énoncé de δ8 dans une seule convention ; vraie signature de <code>no_nontrivial_cycle_phase59</code> et diagramme de la preuve corrigé ; « HYPOTHESES.md §5 » → section H3 ; Gersonide 1342/43 ; « à 100 % » retiré ; statut du papier (soumission au JAR rejetée le 13/05/2026, pas de nouvelle soumission) et compteurs (36 pistes, mea culpa numérotés jusqu'au #32).</li>
+      <li><strong>Autres corrections</strong> : licence du paper et du code Lean = CC BY 4.0 (et non MIT) ; page Histoire : théorème de Tao (2019) en densité logarithmique, Crandall 1978 ; titre exact de l'article de Tao (Histoire, FAQ, Syracuse) ; auteur de l'article de Quanta Magazine sur Tao (Kevin Hartnett) ; référence de Knight (<em>Discrete Mathematics</em> 349(3), 2026) ; badge « build vérifié » retiré (il affichait la date d'un ancien commit).</li>
+      <li><strong>DOI</strong> : DOI de concept <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">10.5281/zenodo.19790405</a> (toutes versions) pour citer le preprint ; v3 du preprint de B. Macindoe (<a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">10.5281/zenodo.21730505</a>).</li>
+      <li><strong>Collaboration</strong> : lien vers le dépôt public commun <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener">one-obstruction-three-faces</a> ; pull requests #6 et #7 (rounds 16 et 17) fusionnées le 02/10/2026 ; B. Macindoe dans la section Équipe, dont les descriptions d'organisation interne sont retirées.</li>
+      <li><strong>Registre de recherche</strong> : cinq événements ajoutés (collaboration, revérification Lean 4.34.0, fusion des PR #6 et #7, audit du site, erratum) ; δ11 passe au statut « En cours » (en réexamen) ; statistiques recalculées.</li>
+      <li>Dossier <code>docs/</code> (notes internes de développement) retiré du site ; image de partage (réseaux sociaux) refaite avec l'énoncé corrigé ; pieds de page en v0.9.0.</li>
+      <li>Les versions v0.7.5 et v0.7.5b (13/05/2026, rectifications sur <code>DerivedLargeKBound</code>) n'avaient pas d'entrée dans ce changelog. Elles remplaçaient la présentation de H3 comme théorème publié de Hercher par « dérivation projet » ; cette présentation est à son tour corrigée par l'erratum (H3 est supposée).</li>
+      <li>Les entrées ci-dessous sont conservées telles quelles. Plusieurs de leurs affirmations sont corrigées par cette version : « 3 hypothèses externes documentées » (H3 est supposée : voir l'erratum) ; « kernel-checked » sans version de Lean ; « 28 pages » ; « trilogie d'impossibilité » (δ8 n'est pas formalisé en Lean ; δ10 porte sur un catalogue fini de quatre sources, pas sur toutes les bornes publiées) ; chiffres attribués à Wu 2003 (k_max = 3732) ; en v0.8.0, Gersonide « 1342 » (1342/43 selon les sources) et le lien Cycles « ajouté à la navigation des 12 pages » (il manquait sur Papers et Pour tous : ajouté en v0.9.0).</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Erratum</strong> (<a href="../#erratum">home page banner</a>): the third hypothesis, H3 (<code>DerivedLargeKBound</code>), is <strong>assumed, not derived</strong>; under H2 it is equivalent to the absence of cycles with k &gt; 1322 (k = number of odd terms of the cycle). Only "no non-trivial cycle with k ≤ 1322, under H1 and H2" (<code>no_cycle_k_le_1322</code>) is proved without circularity. Earlier versions presented H3 as a "project derivation": that was wrong. The PDF deposited on Zenodo is not yet corrected (it states the theorem with <code>ProductBoundThreshold</code>, which has the same problem).</li>
+      <li><strong>Lean kernel</strong>: kernel bug <a href="https://github.com/leanprover/lean4/issues/14576" target="_blank" rel="noopener">lean4#14576</a> is now mentioned (fixed in Lean v4.32.2, 28 July 2026). The main theorem was checked on Lean 4.27.0, before that fix, and has not been re-checked since. The six files of the stack shared with B. Macindoe were re-checked on Lean 4.34.0 on 23 September 2026 (<a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9934df4/recheck-v4.34" target="_blank" rel="noopener">artifact 9934df4</a>).</li>
+      <li><strong>Factual corrections</strong>: Christian Hercher (not "Christoph"), <em>Journal of Integer Sequences</em> 26 (2023), Article 23.3.5: no non-trivial m-cycle with m ≤ 91; Salikhov 2007 = irrationality measure of ln 3, δ11 under re-examination; the value 5.117 is that of Wu &amp; Wang 2014, not Wu 2003; unsourced key figures removed from the home page; δ8 stated in a single convention; true signature of <code>no_nontrivial_cycle_phase59</code> and corrected proof diagram; "HYPOTHESES.md §5" → section H3; Gersonides 1342/43; "100 %" removed; paper status (JAR submission rejected on 2026-05-13, no new submission) and counters (36 approaches, mea culpa numbered up to #32).</li>
+      <li><strong>Other corrections</strong>: license of the paper and the Lean code = CC BY 4.0 (not MIT); History page: Tao's theorem (2019) in logarithmic density, Crandall 1978; exact title of Tao's paper (History, FAQ, Syracuse); author of the Quanta Magazine article on Tao (Kevin Hartnett); Knight reference (<em>Discrete Mathematics</em> 349(3), 2026); "build verified" badge removed (it showed the date of an old commit).</li>
+      <li><strong>DOI</strong>: concept DOI <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">10.5281/zenodo.19790405</a> (all versions) to cite the preprint; v3 of B. Macindoe's preprint (<a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">10.5281/zenodo.21730505</a>).</li>
+      <li><strong>Collaboration</strong>: link to the shared public repository <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener">one-obstruction-three-faces</a>; pull requests #6 and #7 (rounds 16 and 17) merged on 2026-10-02; B. Macindoe in the Team section, from which descriptions of internal organisation are removed.</li>
+      <li><strong>Research ledger</strong>: five events added (collaboration, Lean 4.34.0 re-check, merge of PRs #6 and #7, site audit, erratum); δ11 moved to status "In progress" (under re-examination); statistics recomputed.</li>
+      <li><code>docs/</code> folder (internal development notes) removed from the site; social sharing image redone with the corrected statement; footers at v0.9.0.</li>
+      <li>Versions v0.7.5 and v0.7.5b (2026-05-13, rectifications on <code>DerivedLargeKBound</code>) had no entry in this changelog. They replaced the presentation of H3 as Hercher's published theorem with "project derivation"; that presentation is in turn corrected by the erratum (H3 is assumed).</li>
+      <li>The entries below are kept as they were. Several of their claims are corrected by this version: "3 documented external hypotheses" (H3 is assumed: see the erratum); "kernel-checked" without a Lean version; "28 pages"; "impossibility trilogy" (δ8 is not formalized in Lean; δ10 covers a finite catalogue of four sources, not all published bounds); figures attributed to Wu 2003 (k_max = 3732); in v0.8.0, Gersonides "1342" (1342/43 depending on the source) and the Cycles link "added to all 12 page navs" (it was missing on Papers and For everyone: added in v0.9.0).</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry">
     <header>
       <h2><span class="version-tag">v0.8.0</span> <span lang="fr">Page Cycles + collaboration ouverte avec B. Macindoe</span><span lang="en">Cycles page + open collaboration with B. Macindoe</span></h2>
@@ -205,7 +236,7 @@
     </header>
     <ul lang="fr">
       <li><strong>CGS-7 — sum_s_ge_length_plus_num_nonincrease</strong> : théorème Lean 4 / Mathlib v4.27 démontré formellement. <code>lake build TestsMath</code> PASS (7888 jobs, 31s sur Mac M1), 0 sorry, profil axiomes <code>[propext, Classical.choice, Quot.sound]</code> (kernel-3 standard). Branche <code>study/cgs-7-instantiation</code> dérivée d'<code>arsenal-postjar</code>, paper JAR (<code>main</code>) intouché.</li>
-      <li><strong>Énoncé final (reformulation 4 IA convergente)</strong> : pour cycle Collatz hypothétique avec x_t > 1, s_t ≥ 1, x_{t+1} = (3·x_t+1)/2^{s_t}, soit N = #{t < k | x_{t+1} ≤ x_t}. Alors S = ∑_{t<k} s_t ≥ k + N. Décomposition en 2 lemmes : <code>cgs7_algebraic_pure</code> (algébrique pur) + <code>cgs7_dynamic_transfer</code> (transfert dynamique via <code>drop_forces_s_ge_two</code>).</li>
+      <li><strong>Énoncé final (reformulation 4 IA convergente)</strong> : pour cycle Collatz hypothétique avec x_t > 1, s_t ≥ 1, x_{t+1} = (3·x_t+1)/2^{s_t}, soit N = #{t < k | x_{t+1} ≤ x_t}. Alors S = ∑_{t&lt;k} s_t ≥ k + N. Décomposition en 2 lemmes : <code>cgs7_algebraic_pure</code> (algébrique pur) + <code>cgs7_dynamic_transfer</code> (transfert dynamique via <code>drop_forces_s_ge_two</code>).</li>
       <li><strong>Audit indépendant 4 IA convergent</strong> : Session A (Claude Opus 4.7) + Session B (Claude Opus 4.7 indépendante) + Gemini Pro 3.1 + ChatGPT (thinking étendu/Instant). Convergence 4/4 sur faille esquisse NEW3 originale (polarité inversée drop_forces_s_ge_two + ambiguïté sémantique D = #{s_t≥2} algébrique vs descentes dynamiques) → reformulation collective + démonstration validée.</li>
       <li><strong>Test négatif Red Team exécutable</strong> : <code>#check_failure</code> dans section <code>RedTeamNegativeTest</code> bloque au build toute tentative de polarité inversée. Garde-fou anti-régression actif (Lean affiche "info: Application type mismatch" sur la version inversée).</li>
       <li><strong>Audits 3 protocoles</strong> : RED TEAM 12/12 PASS, NASA 14/15 PASS + 1 note v4.28, ARES 8/10 PASS direct + 2 notes optimisation. Vérification anti-hallucination cross-vérifiée ligne à ligne (CGS7Dependencies = ChatGPTLemmas_test strict modulo patches Mathlib v4.27 documentés).</li>
@@ -214,7 +245,7 @@
     </ul>
     <ul lang="en">
       <li><strong>CGS-7 — sum_s_ge_length_plus_num_nonincrease</strong>: Lean 4 / Mathlib v4.27 theorem formally proved. <code>lake build TestsMath</code> PASS (7888 jobs, 31s on Mac M1), 0 sorry, axiom profile <code>[propext, Classical.choice, Quot.sound]</code> (kernel-3 standard). Branch <code>study/cgs-7-instantiation</code> derived from <code>arsenal-postjar</code>, JAR paper (<code>main</code>) untouched.</li>
-      <li><strong>Final statement (4-AI convergent reformulation)</strong>: for hypothetical Collatz cycle with x_t > 1, s_t ≥ 1, x_{t+1} = (3·x_t+1)/2^{s_t}, let N = #{t < k | x_{t+1} ≤ x_t}. Then S = ∑_{t<k} s_t ≥ k + N. Two-lemma decomposition: <code>cgs7_algebraic_pure</code> (pure algebraic) + <code>cgs7_dynamic_transfer</code> (dynamic transfer via <code>drop_forces_s_ge_two</code>).</li>
+      <li><strong>Final statement (4-AI convergent reformulation)</strong>: for hypothetical Collatz cycle with x_t > 1, s_t ≥ 1, x_{t+1} = (3·x_t+1)/2^{s_t}, let N = #{t < k | x_{t+1} ≤ x_t}. Then S = ∑_{t&lt;k} s_t ≥ k + N. Two-lemma decomposition: <code>cgs7_algebraic_pure</code> (pure algebraic) + <code>cgs7_dynamic_transfer</code> (dynamic transfer via <code>drop_forces_s_ge_two</code>).</li>
       <li><strong>Independent 4-AI audit</strong>: Session A (Claude Opus 4.7) + Session B (Claude Opus 4.7 independent) + Gemini Pro 3.1 + ChatGPT (extended thinking/Instant). 4/4 convergence on original NEW3 sketch flaw (inverted polarity in drop_forces_s_ge_two + semantic ambiguity D = #{s_t≥2} algebraic vs dynamic descents) → collective reformulation + validated proof.</li>
       <li><strong>Executable negative Red Team test</strong>: <code>#check_failure</code> in <code>RedTeamNegativeTest</code> section blocks at build any attempt at inverted polarity. Active anti-regression safeguard (Lean displays "info: Application type mismatch" on inverted version).</li>
       <li><strong>3-protocol audits</strong>: RED TEAM 12/12 PASS, NASA 14/15 PASS + 1 v4.28 note, ARES 8/10 direct PASS + 2 optimization notes. Anti-hallucination cross-verified line-by-line (CGS7Dependencies = ChatGPTLemmas_test strict modulo documented Mathlib v4.27 patches).</li>
@@ -374,15 +405,10 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.7.3 · 2026-05-08</div>
-  <p lang="fr">Site produit avec PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
-  <p lang="en">Site produced with PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
+  <div class="footer-meta">Cartography · v0.9.0 · 2026-10-02</div>
+  <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
+  <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">
-    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/actions" target="_blank" rel="noopener" class="status-badge">
-      <span class="status-dot" aria-hidden="true"></span>
-      <span data-i18n="buildPassing">site build: passing</span>
-    </a>
-    <span class="status-sep">·</span>
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/commits/gh-pages" target="_blank" rel="noopener" class="text-muted small">
       <span data-i18n="lastCommit">last commit</span> : <span id="lastCommitDate">…</span>
     </a>
@@ -399,7 +425,7 @@
 <!-- Hypothes.is annotations -->
 <script src="https://hypothes.is/embed.js" async></script>
 
-<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
+<script src="../assets/js/main.js?v=20261002-V0-9-0"></script>
 
 </body>
 </html>

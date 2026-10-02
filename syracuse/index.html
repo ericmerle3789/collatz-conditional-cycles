@@ -23,7 +23,7 @@
 <meta property="og:description" content="Page de référence sur l'équivalence entre Conjecture de Syracuse (FR) et Conjecture de Collatz (EN) : définition unifiée, origine historique du nom, alias internationaux (Kakutani, Hasse, Ulam, Thwaites, 3n+1, Hailstone).">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/syracuse/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="fr_FR">
@@ -33,7 +33,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Conjecture de Syracuse / Collatz — Définition, équivalence, alias">
 <meta name="twitter:description" content="Page de référence : Syracuse = Collatz = 3n+1. Définition, alias, origine du nom.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 
 <link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
 
@@ -55,7 +55,7 @@
       "url": "https://collatz-lab.org/syracuse/",
       "inLanguage": ["fr", "en"],
       "datePublished": "2026-04-30",
-      "dateModified": "2026-04-30",
+      "dateModified": "2026-10-02",
       "author": {
         "@type": "Person",
         "@id": "https://orcid.org/0009-0008-7940-402X",
@@ -114,7 +114,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
         onload="setTimeout(() => renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]}), 200);"></script>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
 </head>
 <body>
 
@@ -283,8 +283,8 @@
   <ul style="list-style: none; padding: 0;">
     <li style="margin-bottom: 0.7rem;">
       → <a href="../"><strong>Accueil</strong></a> :
-      <span lang="fr">vue d'ensemble du projet, théorème principal kernel-checked.</span>
-      <span lang="en">project overview, main kernel-checked theorem.</span>
+      <span lang="fr">vue d'ensemble du projet, théorème conditionnel (Lean 4.27.0) et son erratum du 2 octobre 2026.</span>
+      <span lang="en">project overview, conditional theorem (Lean 4.27.0) and its erratum of 2 October 2026.</span>
     </li>
     <li style="margin-bottom: 0.7rem;">
       → <a href="../preuve/"><strong>Architecture de la preuve</strong></a> :
@@ -298,8 +298,8 @@
     </li>
     <li style="margin-bottom: 0.7rem;">
       → <a href="../papers/"><strong>Papers</strong></a> :
-      <span lang="fr">preprint Zenodo 28 pages (DOI 10.5281/zenodo.19790406).</span>
-      <span lang="en">Zenodo preprint, 28 pages (DOI 10.5281/zenodo.19790406).</span>
+      <span lang="fr">preprint Zenodo (DOI 10.5281/zenodo.19790405).</span>
+      <span lang="en">Zenodo preprint (DOI 10.5281/zenodo.19790405).</span>
     </li>
     <li style="margin-bottom: 0.7rem;">
       → <a href="../research-ledger/"><strong>Research Ledger</strong></a> :
@@ -335,12 +335,12 @@
       Reference survey establishing terminology "3x+1 problem".
     </li>
     <li>
-      <strong>Tao, Terence</strong> (2019). "Almost all Collatz orbits attain almost bounded values". <a href="https://arxiv.org/abs/1909.03562">arXiv:1909.03562</a>.
+      <strong>Tao, Terence</strong> (2019). "Almost all orbits of the Collatz map attain almost bounded values". <a href="https://arxiv.org/abs/1909.03562">arXiv:1909.03562</a>.
       Recent major progress (almost-all density result).
     </li>
     <li>
-      <strong>Barina, David</strong> (2025). Convergence verification for n &lt; 2<sup>71</sup>.
-      Largest computational verification to date (referenced as <code>BarinaVerification</code> axiom in our Lean 4 formalization).
+      <strong>Barina, David</strong> (2025). <em>Improved verification limit for the convergence of the Collatz conjecture</em>. J. Supercomputing 81(7), art. 810. DOI <a href="https://doi.org/10.1007/s11227-025-07337-0">10.1007/s11227-025-07337-0</a>.
+      Verification up to 2<sup>71</sup>; encoded as hypothesis H2 <code>BarinaVerification</code> (a parameter of the theorem, not a Lean axiom).
     </li>
   </ol>
   <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 1.5rem; font-style: italic;">
@@ -361,8 +361,8 @@
     · <a href="../feed.xml">Atom feed</a>
   </p>
   <p style="margin-top: 0.5rem;">
-    <span lang="fr">Page mise à jour le 2026-04-30 · v0.6.0</span>
-    <span lang="en">Page last updated 2026-04-30 · v0.6.0</span>
+    <span lang="fr">Page mise à jour le 2026-10-02 · v0.9.0</span>
+    <span lang="en">Page last updated 2026-10-02 · v0.9.0</span>
   </p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
@@ -370,6 +370,6 @@
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
+<script src="../assets/js/main.js?v=20261002-V0-9-0"></script>
 </body>
 </html>

@@ -1,57 +1,57 @@
 {
-  "version": "0.5.0",
-  "lastUpdate": "2026-04-29",
+  "version": "0.9.0",
+  "lastUpdate": "2026-10-02",
   "source": "expected_axioms.md (commit main)",
   "kernelAxioms": ["propext", "Classical.choice", "Quot.sound"],
   "nativeAxioms": ["Lean.ofReduceBool", "Lean.trustCompiler"],
   "centralTheorems": [
     {
       "name": "no_nontrivial_cycle_phase59",
-      "fr": {"role": "Théorème principal", "desc": "Aucun cycle non-trivial Collatz, modulo 3 axiomes externes."},
-      "en": {"role": "Principal theorem", "desc": "No non-trivial Collatz cycle, modulo 3 external axioms."},
+      "fr": {"role": "Théorème principal (conditionnel)", "desc": "Aucun cycle non trivial, sous trois hypothèses passées en paramètres (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound ; pas des axiomes Lean). Erratum du 02/10/2026 : H3 est supposée, non dérivée, et équivaut sous H2 à la conclusion pour k &gt; 1322 ; seul le cas k ≤ 1322 (no_cycle_k_le_1322, sous H1 et H2) est démontré sans circularité. Lean 4.27.0, non revérifié après lean4#14576."},
+      "en": {"role": "Principal theorem (conditional)", "desc": "No non-trivial cycle, under three hypotheses passed as parameters (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound; not Lean axioms). Erratum of 2026-10-02: H3 is assumed, not derived, and under H2 is equivalent to the conclusion for k &gt; 1322; only the case k ≤ 1322 (no_cycle_k_le_1322, under H1 and H2) is proved without circularity. Lean 4.27.0, not re-checked after lean4#14576."},
       "file": "ProjetCollatz/Phase59ContinuedFractions.lean",
       "axioms": ["propext", "Classical.choice", "Quot.sound"],
-      "depends": ["no_cycle_k_le_1322", "no_cycle_k_gt_1322", "sdw_from_cf"]
+      "depends": ["no_cycle_k_le_1322", "no_cycle_k_gt_1322"]
     },
     {
       "name": "no_nontrivial_cycle_final",
-      "fr": {"role": "Variante principale", "desc": "Forme finale du théorème principal."},
-      "en": {"role": "Principal variant", "desc": "Final form of the main theorem."},
+      "fr": {"role": "Variante (énoncé du PDF Zenodo)", "desc": "Variante avec une autre 3e hypothèse, ProductBoundThreshold (« k ≤ 982 pour tout cycle ») ; c'est l'énoncé du Théorème 3.1 du PDF Zenodo. Sous H1 et H2, cette hypothèse équivaut (à la lecture de l'énoncé) à l'absence de tout cycle non trivial : même problème que H3 (erratum du 02/10/2026)."},
+      "en": {"role": "Variant (statement of the Zenodo PDF)", "desc": "Variant with a different 3rd hypothesis, ProductBoundThreshold (\"k ≤ 982 for every cycle\"); this is the statement of Theorem 3.1 in the Zenodo PDF. Under H1 and H2, this hypothesis is equivalent (by reading the statement) to the absence of any non-trivial cycle: same problem as H3 (erratum of 2026-10-02)."},
       "file": "ProjetCollatz/Phase58PorteDeuxFinal.lean",
       "axioms": ["propext", "Classical.choice", "Quot.sound"]
     },
     {
       "name": "no_nontrivial_cycle_derived",
-      "fr": {"role": "Variante dérivée", "desc": "Alias de cleanup."},
-      "en": {"role": "Derived variant", "desc": "Cleanup alias."},
-      "file": "ProjetCollatz/Phase58PorteDeuxFinal.lean",
+      "fr": {"role": "Variante (autres hypothèses)", "desc": "Variante (Phase56) sous la structure ExternalCycleHypothesesDerived, qui suppose notamment k ≤ 982 pour tout cycle : même problème que ProductBoundThreshold (erratum du 02/10/2026)."},
+      "en": {"role": "Variant (other hypotheses)", "desc": "Variant (Phase56) under the structure ExternalCycleHypothesesDerived, which assumes in particular k ≤ 982 for every cycle: same problem as ProductBoundThreshold (erratum of 2026-10-02)."},
+      "file": "ProjetCollatz/Phase56Bloc18Complete.lean",
       "axioms": ["propext", "Classical.choice", "Quot.sound"]
     },
     {
       "name": "no_nontrivial_cycle_full",
-      "fr": {"role": "Variante complète", "desc": "Forme étendue assemblant Steiner + descente."},
-      "en": {"role": "Full variant", "desc": "Extended form assembling Steiner + descent."},
+      "fr": {"role": "Variante (autres hypothèses)", "desc": "Variante (Phase52) qui suppose que tout élément de cycle est &lt; 2^71 ; avec H2, cette hypothèse contient déjà la conclusion."},
+      "en": {"role": "Variant (other hypotheses)", "desc": "Variant (Phase52) assuming every cycle element is &lt; 2^71; with H2, this hypothesis already contains the conclusion."},
       "file": "ProjetCollatz/Phase52SteinerEquation.lean",
       "axioms": ["propext", "Classical.choice", "Quot.sound"]
     },
     {
       "name": "no_cycle_k_le_1322",
-      "fr": {"role": "Sous-branche k ≤ 1322", "desc": "Pas de cycle pour k petit, via Barina ≤ 2^71 + Product-Bound."},
-      "en": {"role": "Sub-branch k ≤ 1322", "desc": "No cycle for small k, via Barina ≤ 2^71 + Product-Bound."},
+      "fr": {"role": "Sous-branche k ≤ 1322", "desc": "Aucun cycle non trivial avec k ≤ 1322, sous H1 (BakerSeparation, via le Product Bound n ≤ (k⁷+k)/3) et H2 (BarinaVerification, n &lt; 2^71). C'est ce qui est démontré sans circularité."},
+      "en": {"role": "Sub-branch k ≤ 1322", "desc": "No non-trivial cycle with k ≤ 1322, under H1 (BakerSeparation, via the Product Bound n ≤ (k⁷+k)/3) and H2 (BarinaVerification, n &lt; 2^71). This is what is proved without circularity."},
       "file": "ProjetCollatz/Phase58PorteDeuxFinal.lean",
       "axioms": ["propext", "Classical.choice", "Quot.sound"]
     },
     {
       "name": "no_cycle_k_gt_1322",
-      "fr": {"role": "Sous-branche k > 1322", "desc": "Pas de cycle pour k grand, via Continued Fractions Phase59."},
-      "en": {"role": "Sub-branch k > 1322", "desc": "No cycle for large k, via Continued Fractions Phase59."},
+      "fr": {"role": "Sous-branche k > 1322", "desc": "Aucun cycle avec k &gt; 1322, sous H2 et H3 seulement : conséquence directe de H3 (supposée), qui équivaut sous H2 à cet énoncé. Les fractions continues n'y interviennent pas."},
+      "en": {"role": "Sub-branch k > 1322", "desc": "No cycle with k &gt; 1322, under H2 and H3 only: a direct consequence of H3 (assumed), which under H2 is equivalent to this statement. Continued fractions play no part in it."},
       "file": "ProjetCollatz/Phase59ContinuedFractions.lean",
       "axioms": ["propext", "Classical.choice", "Quot.sound"]
     },
     {
       "name": "sdw_from_cf",
-      "fr": {"role": "Lemme conditionnel clé", "desc": "Simons-de Weger borne dérivée des continued fractions."},
-      "en": {"role": "Key conditional lemma", "desc": "Simons-de Weger bound derived from continued fractions."},
+      "fr": {"role": "Corollaire en aval", "desc": "Construit ProductBoundThreshold à partir des trois hypothèses (H1, H2, H3). Ce n'est pas une étape vers no_cycle_k_gt_1322."},
+      "en": {"role": "Downstream corollary", "desc": "Builds ProductBoundThreshold from the three hypotheses (H1, H2, H3). It is not a step towards no_cycle_k_gt_1322."},
       "file": "ProjetCollatz/Phase59ContinuedFractions.lean",
       "axioms": ["propext", "Classical.choice", "Quot.sound"]
     }
@@ -67,7 +67,7 @@
       "name": "cycle_pow2_gt_pow3_universal",
       "fr": {"role": "D_s positif", "desc": "Pour tout cycle, 2^S > 3^k (donc D_s = 2^S - 3^k > 0)."},
       "en": {"role": "D_s positive", "desc": "For any cycle, 2^S > 3^k (hence D_s = 2^S - 3^k > 0)."},
-      "file": "ProjetCollatz/Phase52SteinerEquation.lean"
+      "file": "ProjetCollatz/PostJAR/CycleArithmetic.lean"
     },
     {
       "name": "cycle_n_mul_D_s_eq_corrSum",
@@ -105,11 +105,11 @@
   "postJarArsenal": {
     "fr": {
       "title": "Arsenal R34-R96 (extensions post-preprint)",
-      "desc": "Extensions développées après le dépôt du preprint v1.1 (2026-04-27, DOI Zenodo) : transport modulaire, décomposition par blocs, amplification."
+      "desc": "Extensions développées après le dépôt du preprint (avril 2026, DOI Zenodo 10.5281/zenodo.19790405) : transport modulaire, décomposition par blocs, amplification."
     },
     "en": {
       "title": "R34-R96 Arsenal (post-preprint extensions)",
-      "desc": "Extensions developed after the v1.1 preprint deposit (2026-04-27, Zenodo DOI): modular transport, block decomposition, amplification."
+      "desc": "Extensions developed after the preprint deposit (April 2026, Zenodo DOI 10.5281/zenodo.19790405): modular transport, block decomposition, amplification."
     },
     "files": [
       {"name": "CongruenceTransport.lean", "theoremCount": 47, "fr": "Transport de congruences modulo p (R63-R96)", "en": "Modular congruence transport (R63-R96)"},

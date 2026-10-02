@@ -1137,7 +1137,7 @@ html[data-theme="sepia"] {
   .badge { border: 1px solid #666 !important; color: black !important; background: #eee !important; }
   /* Inclure URL canonique en footer print */
   body::after {
-    content: "Source: collatz-lab.org · DOI 10.5281/zenodo.19790406 · Eric Merle 2026";
+    content: "Source: collatz-lab.org · DOI 10.5281/zenodo.19790405 · Eric Merle 2026";
     display: block;
     margin-top: 2rem;
     padding-top: 1rem;

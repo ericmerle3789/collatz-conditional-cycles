@@ -14,7 +14,8 @@ body {
   color: #e8e6e0;
   position: relative;
   /* Padding contrôle la hauteur de tous les blocs ; total ~630 */
-  padding: 55px 70px 50px;
+  height: 630px;
+  padding: 90px 70px 50px;
   overflow: hidden;
 }
 .lambda-watermark {
@@ -37,7 +38,7 @@ body {
   justify-content: space-between;
   position: relative;
   z-index: 2;
-  margin-bottom: 70px;
+  margin-bottom: 56px;
 }
 .brand {
   display: flex;
@@ -72,18 +73,21 @@ body {
 .center {
   position: relative;
   z-index: 2;
-  margin-bottom: 65px;
+  margin-bottom: 48px;
 }
 .main-title {
   font-family: 'Crimson Pro', serif;
-  font-size: 58px;
+  font-size: 50px;
   font-weight: 700;
   line-height: 1.1;
-  max-width: 880px;
+  max-width: 900px;
   color: #f3d99c;
   margin-bottom: 24px;
 }
 .main-title em {
+  display: block;
+  font-size: 36px;
+  margin-top: 10px;
   font-style: italic;
   color: #c8a86a;
 }
@@ -142,22 +146,22 @@ body {
       <div class="brand-mark">Λ</div>
       <span>Collatz Conditional Cycles</span>
     </div>
-    <div class="doi-badge">DOI · 10.5281/zenodo.19790406</div>
+    <div class="doi-badge">DOI · 10.5281/zenodo.19790405</div>
   </div>
 
   <div class="center">
-    <div class="main-title">No non-trivial Collatz cycle — <em>modulo three explicit conditions</em></div>
-    <div class="subtitle"><code>no_nontrivial_cycle_phase59</code> · kernel-checked Lean 4 · Mathlib v4.27</div>
+    <div class="main-title">Conditional theorem: no non-trivial cycle with k ≤ 1322 <em>— under H1 and H2 · erratum of 2 Oct 2026</em></div>
+    <div class="subtitle"><code>no_cycle_k_le_1322</code> · Lean 4.27.0 · not re-checked after lean4#14576</div>
   </div>
 
   <div class="bottom">
     <div class="axioms">
-      <div class="axiom-pill">BakerSeparation</div>
-      <div class="axiom-pill">BarinaVerification</div>
-      <div class="axiom-pill">DerivedLargeKBound</div>
+      <div class="axiom-pill">H1 BakerSeparation</div>
+      <div class="axiom-pill">H2 BarinaVerification</div>
+      <div class="axiom-pill">H3 DerivedLargeKBound (assumed)</div>
     </div>
     <div class="author">
-      <strong>Eric Merle</strong> · 2026 · <span class="pub">Preprint · DOI Zenodo</span>
+      <strong>Eric Merle</strong> · 2026 · <span class="pub">Preprint</span>
     </div>
   </div>
 </body>

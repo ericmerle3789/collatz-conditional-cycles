@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collatz / Syracuse Conditional Cycles — Lean 4 Formal Proof</title>
-<meta name="description" content="Conjecture de Syracuse / Collatz : théorème conditionnel formalisé en Lean 4 (kernel-checked). Ne prouve PAS la conjecture. Prouve la non-existence de cycles non-triviaux modulo 3 hypothèses externes documentées (1 conjecture de travail Baker, 1 vérification computationnelle reproductible Barina, 1 dérivation projet DerivedLargeKBound). Conditional theorem formalized in Lean 4 — does NOT prove Collatz, modulo 3 documented external hypotheses. δ8/δ8'/δ10/δ11 quadrilogie d'impossibilité (δ11 conditionnelle, Phase 65, mai 2026).">
-<meta name="keywords" content="Collatz conjecture, Syracuse conjecture, conjecture de Syracuse, suite de Syracuse, 3x+1 problem, 3n+1, Kakutani problem, Hasse problem, Lean 4, Mathlib, formal verification, kernel-checked theorem, Baker's theorem, continued fractions, Diophantine approximation, non-trivial cycles, ARES protocol">
+<title>Collatz / Syracuse Conditional Cycles — Lean 4 formalization</title>
+<meta name="description" content="Conjecture de Syracuse / Collatz : Théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0). Ne prouve pas la conjecture. Démontré : aucun cycle non trivial avec k ≤ 1322, sous les hypothèses de Baker (H1) et de Bařina (H2). La 3e hypothèse (H3) est supposée et équivaut, sous H2, à la conclusion pour k > 1322 (erratum du 02/10/2026). — Collatz conjecture: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion for k > 1322 (erratum of 2 Oct 2026).">
+<meta name="keywords" content="Collatz conjecture, Syracuse conjecture, conjecture de Syracuse, suite de Syracuse, 3x+1 problem, 3n+1, Kakutani problem, Hasse problem, Lean 4, Mathlib, formal verification, Baker's theorem, continued fractions, Diophantine approximation, non-trivial cycles">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -27,11 +27,11 @@
 <link rel="alternate" type="application/atom+xml" title="Collatz Conditional Cycles updates" href="feed.xml">
 
 <!-- Open Graph (Facebook, LinkedIn, Mastodon, Slack, Discord) -->
-<meta property="og:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formal proof">
-<meta property="og:description" content="Conjecture de Syracuse (a.k.a. Collatz). Conditional theorem formalized in Lean 4 — does NOT prove the Collatz conjecture, but establishes non-existence of non-trivial cycles modulo 3 documented external hypotheses: BakerSeparation (working conjecture, Baker 1966 / Matveev 2000 effective), BarinaVerification (reproducible computational verification, Barina 2025, n < 2^71), DerivedLargeKBound (project-derived hypothesis, k > 1322 → n < 2^71, NOT a single published theorem — see HYPOTHESES.md §5). Kernel-checked, 28-page preprint (DOI Zenodo 10.5281/zenodo.19790406).">
+<meta property="og:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
+<meta property="og:description" content="Conjecture de Syracuse (a.k.a. Collatz). Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion for k > 1322 (erratum of 2 Oct 2026). Zenodo preprint, concept DOI 10.5281/zenodo.19790405.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Λ_{S,k} = S log 2 - k log 3 — Collatz Conditional Cycles">
@@ -41,9 +41,9 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formal proof">
-<meta name="twitter:description" content="Conjecture de Syracuse / Collatz. Conditional theorem formalized in Lean 4 — does NOT prove Collatz, modulo 3 documented external hypotheses (Baker working conjecture + Barina computational verification + DerivedLargeKBound project derivation). Kernel-checked, 28-page preprint (DOI Zenodo).">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
+<meta name="twitter:description" content="Conjecture de Syracuse / Collatz. Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion for k > 1322 (erratum of 2 Oct 2026). Zenodo preprint (DOI).">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
 <script type="application/ld+json">
@@ -52,7 +52,7 @@
   "@graph": [
     {
       "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.5281/zenodo.19790406",
+      "@id": "https://doi.org/10.5281/zenodo.19790405",
       "headline": "On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions",
       "name": "On the non-existence of non-trivial Collatz cycles",
       "alternateName": [
@@ -61,18 +61,18 @@
         "3n+1 problem formal proof",
         "Kakutani problem conditional proof"
       ],
-      "abstract": "We present a Lean 4 formalization of the non-existence of non-trivial Collatz cycles, conditional on three documented external hypotheses: BakerSeparation (an effective separation hypothesis on |S log 2 − k log 3|, motivated by Baker-type bounds in the Rhin 1987 / Simons-de Weger 2005 / Wu 2003 tradition; the specific exponent in our Lean axiom is stronger than currently published bounds and should be read as an explicit hypothesis, not derived from a published theorem — see paper §4 and audit findings #28; a formal cartographic complement, the δ10 lemma in Phase 64 [propext]-only kernel-checked, demonstrates that no published bound from the audited finite catalogue {Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005} can replace BarinaVerification, justifying the necessity of the chosen exponent strength; subsequently extended in Phase 65 by the conditional δ11 lemma Salikhov-Insufficient-for-3732 which formally proves under 3 transparent ad-hoc axioms that Salikhov 2007 alone is insufficient to close the sub-branch k ∈ [3694, 3732]), BarinaVerification (n < 2^71, Barina 2025), and DerivedLargeKBound (project-derived hypothesis: for any non-trivial cycle (n,k) with k > 1322, n < 2^71; combines BakerSeparation + continued-fraction gaps of log_2 3 + Product Bound + BarinaVerification; explicitly classified as OUR derivation in HYPOTHESES.md §5, NOT a direct result from any single published paper; Hercher 2023 on m-cycles addresses a different quantity (m = local minima, not k = odd steps) and is not the source of DerivedLargeKBound). The main theorem no_nontrivial_cycle_phase59 is kernel-checked with a minimal axiom profile (propext, Classical.choice, Quot.sound). We document a quadrilogy of impossibility lemmas (δ8 Product-Bound, δ8' Baker+CF lower-not-upper, δ10 Barina-Replacement cartographic, δ11 Salikhov-Insufficient-for-3732 conditional) which structurally proves that this conditionality is necessary within the Baker+CF paradigm used in this paper. Non-Khinchin paradigms (e.g., arithmetic holonomy Calegari-Dimitrov-Tang 2025) are explicitly out of δ8's scope and tracked separately as Hypothesis A' on the project website.",
-      "description": "Conditional theorem formalized in Lean 4: no non-trivial Collatz cycles modulo 3 documented external hypotheses (1 working conjecture: BakerSeparation, Baker 1966 / Matveev 2000 effective; 1 reproducible computational verification: BarinaVerification n<2^71, Barina 2025; 1 project-derived hypothesis: DerivedLargeKBound, k > 1322 → n < 2^71, NOT a published theorem — see HYPOTHESES.md §5). Does NOT prove the Collatz conjecture. Kernel-checked, reproducible.",
+      "abstract": "We present a Lean 4 formalization of a conditional result on non-trivial Collatz cycles. Erratum (2 October 2026): what is proved, as published, is that there is no non-trivial cycle with k ≤ 1322 (k = number of odd terms of the cycle), under hypotheses H1 (BakerSeparation, a working hypothesis, stronger in this form than published effective bounds — see mea culpa #28) and H2 (BarinaVerification, an encoding of a published computational result: Barina 2025, n < 2^71) — theorem no_cycle_k_le_1322. The third hypothesis, H3 (DerivedLargeKBound: for every cycle with k > 1322, n < 2^71), is assumed, not derived; under H2 it is equivalent to the absence of cycles with k > 1322, i.e. to the conclusion itself for large cycles. The theorem no_nontrivial_cycle_phase59 therefore adds nothing beyond k ≤ 1322. H1–H3 are parameters of the theorems, not Lean axioms. Machine checking: the main theorem was checked on Lean 4.27.0 (Mathlib v4.27.0), before the fix of kernel bug lean4#14576 (Lean v4.32.2, 28 July 2026), and has not been re-checked since; axiom profile [propext, Classical.choice, Quot.sound] according to the reference expected_axioms.md (Lean 4.27.0). The Zenodo PDF still carries the old statement (with ProductBoundThreshold, which has the same problem). For context: Hercher (2023) together with Barina's verification already implies that a non-trivial cycle has at least 1.375·10^11 odd terms.",
+      "description": "Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion for k > 1322 (erratum of 2 Oct 2026).",
       "url": "https://collatz-lab.org/",
       "sameAs": [
-        "https://doi.org/10.5281/zenodo.19790406",
+        "https://doi.org/10.5281/zenodo.19790405",
         "https://github.com/ericmerle3789/collatz-conditional-cycles"
       ],
       "identifier": [
         {
           "@type": "PropertyValue",
           "propertyID": "DOI",
-          "value": "10.5281/zenodo.19790406"
+          "value": "10.5281/zenodo.19790405"
         }
       ],
       "author": {
@@ -85,7 +85,7 @@
         "url": "https://github.com/ericmerle3789"
       },
       "datePublished": "2026-04-27T00:00:00+02:00",
-      "dateModified": "2026-05-05T00:00:00+02:00",
+      "dateModified": "2026-10-02T00:00:00+02:00",
       "genre": "research article",
       "image": "https://collatz-lab.org/assets/og-image.png",
       "mainEntityOfPage": {
@@ -94,9 +94,9 @@
       },
       "inLanguage": ["en", "fr"],
       "keywords": "Collatz conjecture, Syracuse conjecture, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, Lean 4, formal verification, Baker theorem, continued fractions, Diophantine approximation",
-      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
       "isAccessibleForFree": true,
-      "publication": "Preprint — Zenodo DOI 10.5281/zenodo.19790406",
+      "publication": "Preprint — Zenodo, concept DOI 10.5281/zenodo.19790405",
       "discipline": "Mathematics",
       "about": [
         {
@@ -116,19 +116,19 @@
         "name": "collatz-conditional-proof.pdf",
         "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/collatz-conditional-proof.pdf",
         "encodingFormat": "application/pdf",
-        "numberOfPages": 28
+        "numberOfPages": 29
       }
     },
     {
       "@type": "SoftwareSourceCode",
       "@id": "https://github.com/ericmerle3789/collatz-conditional-cycles",
       "name": "collatz-conditional-cycles",
-      "description": "Lean 4 source code for the conditional formal proof of no non-trivial Collatz cycles",
+      "description": "Lean 4 source code of the conditional theorem on non-trivial Collatz cycles (proved: no cycle with k ≤ 1322 under H1, H2; erratum of 2 Oct 2026)",
       "url": "https://github.com/ericmerle3789/collatz-conditional-cycles",
       "codeRepository": "https://github.com/ericmerle3789/collatz-conditional-cycles",
       "programmingLanguage": "Lean 4",
-      "runtimePlatform": "Lean 4 + Mathlib v4.27.0",
-      "license": "https://opensource.org/licenses/MIT",
+      "runtimePlatform": "Lean 4.27.0 + Mathlib v4.27.0",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
       "author": {"@id": "https://orcid.org/0009-0008-7940-402X"}
     },
     {
@@ -185,7 +185,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
 <!-- CSS principal -->
-<link rel="stylesheet" href="assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
+<link rel="stylesheet" href="assets/css/main.css?v=20261002-V0-9-0">
 
 <!-- Analytics : Cloudflare Web Analytics activé côté Cloudflare dashboard
      (privacy-first, no cookies, GDPR-compliant, no consent banner needed).
@@ -243,19 +243,19 @@
   <div class="hero-banner-overlay"></div>
   <div class="hero-banner-lambda">Λ</div>
   <div class="hero-banner-content">
-    <div class="hero-banner-eyebrow">DOI · 10.5281/zenodo.19790406 · Preprint 28 p.</div>
+    <div class="hero-banner-eyebrow">DOI · 10.5281/zenodo.19790405 · Preprint</div>
     <h2 class="hero-banner-title">
-      <span lang="en">Conditional theorem: no non-trivial Collatz cycle</span>
-      <span lang="fr">Théorème conditionnel : aucun cycle Collatz non-trivial</span>
-      <em><span lang="en"> — modulo 3 documented external hypotheses (1 working conjecture, 1 reproducible computational verification, 1 project-derived hypothesis)</span><span lang="fr"> — modulo 3 hypothèses externes documentées (1 conjecture de travail, 1 vérification computationnelle reproductible, 1 dérivation projet)</span></em>
+      <span lang="en">Conditional theorem: no non-trivial Collatz cycle with k ≤ 1322, under H1 and H2</span>
+      <span lang="fr">Théorème conditionnel : aucun cycle Collatz non trivial avec k ≤ 1322, sous H1 et H2</span>
+      <em><span lang="en"> — erratum of 2 October 2026: the third hypothesis (H3) is assumed, not derived, and under H2 it is equivalent to the conclusion for k &gt; 1322</span><span lang="fr"> — erratum du 2 octobre 2026 : la troisième hypothèse (H3) est supposée, non dérivée, et sous H2 elle équivaut à la conclusion pour k &gt; 1322</span></em>
     </h2>
     <div class="hero-banner-subtitle">
-      <code>no_nontrivial_cycle_phase59</code> · kernel-checked Lean 4 · Mathlib v4.27
+      <code>no_cycle_k_le_1322</code> · <span lang="en">Lean 4.27.0 · not re-checked after lean4#14576</span><span lang="fr">Lean 4.27.0 · non revérifié après lean4#14576</span>
     </div>
     <div class="hero-banner-pills">
-      <span class="banner-pill">BakerSeparation</span>
-      <span class="banner-pill">BarinaVerification</span>
-      <span class="banner-pill">DerivedLargeKBound</span>
+      <span class="banner-pill">H1 BakerSeparation</span>
+      <span class="banner-pill">H2 BarinaVerification</span>
+      <span class="banner-pill">H3 DerivedLargeKBound <span lang="en">(assumed)</span><span lang="fr">(supposée)</span></span>
     </div>
   </div>
 </section>
@@ -271,52 +271,60 @@
     <span lang="en">Also known as the <strong>Syracuse problem</strong>, the <strong>3n+1 problem</strong>, the <strong>Kakutani problem</strong>, the <strong>Hasse algorithm</strong>, or the <strong>Ulam conjecture</strong>.</span>
   </p>
   <p class="hero-lede" data-i18n="heroLede">
-    Trente-cinq pistes mathématiques, trois axiomes piliers, une famille d'hypothèses ouvertes — organisées autour d'une obstruction diophantienne unique : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.
+    Trente-six pistes mathématiques, trois hypothèses (H1, H2, H3), une famille d'hypothèses ouvertes — organisées autour d'une obstruction diophantienne unique : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.
   </p>
+
+  <!-- Erratum du 2 octobre 2026 (texte approuvé, FR/EN) -->
+  <div class="conditional-warning erratum-banner" id="erratum" role="note" aria-label="Erratum">
+    <p lang="fr" style="margin: 0 0 0.6em 0;"><strong>Erratum (2 octobre 2026).</strong> Ce qui est démontré, tel que publié : <strong>aucun cycle non trivial avec k ≤ 1322</strong> (k = nombre de termes impairs du cycle), sous les hypothèses H1 (<code>BakerSeparation</code>) et H2 (<code>BarinaVerification</code>, vérification de Bařina jusqu'à 2<sup>71</sup>) — théorème <code>no_cycle_k_le_1322</code>. La troisième hypothèse, H3 (<code>DerivedLargeKBound</code> : « pour tout cycle avec k &gt; 1322, n &lt; 2<sup>71</sup> »), est <strong>supposée, non dérivée</strong>. Sous H2, elle équivaut à l'absence de cycle avec k &gt; 1322, c'est-à-dire à la conclusion elle-même pour les grands cycles (un sens est le théorème <code>no_cycle_k_gt_1322</code> ; l'autre se voit à la lecture de l'énoncé). Le théorème <code>no_nontrivial_cycle_phase59</code> n'apporte donc rien au-delà de k ≤ 1322. Le PDF déposé sur Zenodo porte encore l'ancien énoncé (avec <code>ProductBoundThreshold</code>, qui pose le même problème). Vérification machine : le théorème principal a été vérifié sous Lean 4.27.0 (Mathlib v4.27.0), avant la correction du bug du noyau <a href="https://github.com/leanprover/lean4/issues/14576" target="_blank" rel="noopener">lean4#14576</a> (Lean v4.32.2, 28/07/2026), et n'a pas été revérifié depuis. Les six fichiers Lean de la pile commune avec B. Macindoe ont été revérifiés sous Lean 4.34.0 (artefact <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9934df4/recheck-v4.34" target="_blank" rel="noopener"><code>9934df4</code></a>, 23/09/2026).</p>
+    <p lang="fr" style="margin: 0;">Pour situer : Hercher (2023) et la vérification de Bařina impliquent déjà qu'un cycle non trivial a au moins 1,375·10<sup>11</sup> termes impairs.</p>
+    <p lang="en" style="margin: 0 0 0.6em 0;"><strong>Erratum (2 October 2026).</strong> What is proved, as published: <strong>no non-trivial cycle with k ≤ 1322</strong> (k = number of odd terms of the cycle), under hypotheses H1 (<code>BakerSeparation</code>) and H2 (<code>BarinaVerification</code>, Barina's verification up to 2<sup>71</sup>) — theorem <code>no_cycle_k_le_1322</code>. The third hypothesis, H3 (<code>DerivedLargeKBound</code>: "for every cycle with k &gt; 1322, n &lt; 2<sup>71</sup>"), is <strong>assumed, not derived</strong>. Under H2 it is equivalent to the absence of cycles with k &gt; 1322, i.e. to the conclusion itself for large cycles (one direction is the theorem <code>no_cycle_k_gt_1322</code>; the other is seen by reading the statement). The theorem <code>no_nontrivial_cycle_phase59</code> therefore adds nothing beyond k ≤ 1322. The PDF deposited on Zenodo still carries the old statement (with <code>ProductBoundThreshold</code>, which has the same problem). Machine checking: the main theorem was checked on Lean 4.27.0 (Mathlib v4.27.0), before the fix of kernel bug <a href="https://github.com/leanprover/lean4/issues/14576" target="_blank" rel="noopener">lean4#14576</a> (Lean v4.32.2, 28 July 2026), and has not been re-checked since. The six Lean files of the stack shared with B. Macindoe were re-checked on Lean 4.34.0 (artifact <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9934df4/recheck-v4.34" target="_blank" rel="noopener"><code>9934df4</code></a>, 23 September 2026).</p>
+    <p lang="en" style="margin: 0;">For context: Hercher (2023) together with Barina's verification already implies that a non-trivial cycle has at least 1.375·10<sup>11</sup> odd terms.</p>
+  </div>
 
   <!-- Result box : mise en avant du résultat principal -->
   <div class="highlight" style="margin-top: 2.5rem; border-left-color: var(--accent);">
-    <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem;" data-i18n="mainResultEyebrow">Résultat principal — preprint 28 p. (DOI Zenodo)</div>
+    <div style="font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.6rem;" data-i18n="mainResultEyebrow">Résultat principal — preprint (DOI Zenodo) · erratum du 2 octobre 2026</div>
     <h3 style="font-family: var(--serif); font-size: 1.4rem; line-height: 1.35; margin: 0 0 0.8rem 0; color: var(--text-primary);" data-i18n="mainResultTitle">
-      Théorème conditionnel : aucun cycle Collatz non-trivial — modulo 3 axiomes externes documentés
+      Théorème conditionnel : aucun cycle Collatz non trivial avec k ≤ 1322, sous les hypothèses H1 et H2
     </h3>
     <div class="conditional-warning" role="note" aria-label="Conditional theorem warning">
       <strong lang="fr">⚠ Théorème CONDITIONNEL</strong><strong lang="en">⚠ CONDITIONAL theorem</strong>
-      <span lang="fr"> — modulo 3 hypothèses externes documentées : <code>BakerSeparation</code> (conjecture de travail, Baker 1966 / Matveev 2000 effectif), <code>BarinaVerification</code> (n&lt;2<sup>71</sup>, vérification computationnelle reproductible Barina 2025), <code>DerivedLargeKBound</code> (<em>dérivation projet</em>, k&gt;1322 ⇒ n&lt;2<sup>71</sup>, n'est pas un théorème publié — cf. <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>). <strong>Ne prouve PAS la conjecture Collatz.</strong></span>
-      <span lang="en"> — modulo 3 documented external hypotheses: <code>BakerSeparation</code> (working conjecture, Baker 1966 / Matveev 2000 effective), <code>BarinaVerification</code> (n&lt;2<sup>71</sup>, reproducible computational verification, Barina 2025), <code>DerivedLargeKBound</code> (<em>project-derived hypothesis</em>, k&gt;1322 ⇒ n&lt;2<sup>71</sup>, not a published theorem — see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>). <strong>Does NOT prove the Collatz conjecture.</strong></span>
+      <span lang="fr"> — trois hypothèses, paramètres des théorèmes (pas des axiomes Lean) : <code>BakerSeparation</code> (H1 : hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme — voir <a href="#meaculpa">mea culpa #28</a>), <code>BarinaVerification</code> (H2 : traduction d'un résultat de calcul publié, Bařina 2025, n&lt;2<sup>71</sup>), <code>DerivedLargeKBound</code> (H3 : hypothèse supposée, non dérivée ; équivaut sous H2 à la conclusion pour k&gt;1322 — <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a> ; ce fichier la présente comme une dérivation : c'est corrigé par l'<a href="#erratum">erratum du 02/10/2026</a>). <strong>Ne prouve PAS la conjecture de Collatz.</strong></span>
+      <span lang="en"> — three hypotheses, parameters of the theorems (not Lean axioms): <code>BakerSeparation</code> (H1: working hypothesis, stronger in this form than published effective bounds — see <a href="#meaculpa">mea culpa #28</a>), <code>BarinaVerification</code> (H2: encoding of a published computational result, Barina 2025, n&lt;2<sup>71</sup>), <code>DerivedLargeKBound</code> (H3: assumed hypothesis, not derived; under H2 equivalent to the conclusion for k&gt;1322 — <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>; that file presents it as a derivation: corrected by the <a href="#erratum">erratum of 2 Oct 2026</a>). <strong>Does NOT prove the Collatz conjecture.</strong></span>
     </div>
     <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); margin: 0 0 1rem 0;" data-i18n="mainResultDesc">
-      Le théorème principal <code>no_nontrivial_cycle_phase59</code> est <strong>kernel-checked</strong> en Lean 4 (Mathlib v4.27), avec 3 axiomes Lean kernel (<code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) et <strong>3 hypothèses externes documentées</strong> : <strong>BakerSeparation</strong> (<em>conjecture de travail</em>, renforcement non démontré des bornes Rhin 1987 / Wu 2003 / Salikhov 2007 publiées — voir <a href="#meaculpa">#28</a> + <strong>δ10</strong> + <strong>δ11</strong>), <strong>BarinaVerification</strong> (n &lt; 2<sup>71</sup>, vérification computationnelle reproductible, Barina 2025), <strong>DerivedLargeKBound</strong> (<em>dérivation projet</em>, k &gt; 1322 ⇒ n &lt; 2<sup>71</sup> ; combine BakerSeparation + gaps fractions continues log<sub>2</sub>3 + Product Bound + BarinaVerification ; <strong>n'est pas un théorème publié</strong> — cf. <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a> ; Hercher 2023 sur les m-cycles porte sur une quantité différente (m = minima locaux, ≠ k = pas impairs) et n'est pas la source de DerivedLargeKBound).
+      Les théorèmes <code>no_cycle_k_le_1322</code> (sous H1, H2) et <code>no_nontrivial_cycle_phase59</code> (sous H1, H2, H3) ont été vérifiés par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant la correction du bug de noyau <a href="https://github.com/leanprover/lean4/issues/14576" target="_blank" rel="noopener">lean4#14576</a> (Lean v4.32.2, 28/07/2026) ; non revérifiés depuis. Profil d'axiomes du théorème principal : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>, selon la référence <code>expected_axioms.md</code> (Lean 4.27.0). Comme H3 équivaut sous H2 à la conclusion pour k &gt; 1322, seul le cas k ≤ 1322 est démontré sans circularité (voir l'<a href="#erratum">erratum</a>).
     </p>
     <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary); margin: 0 0 1rem 0;" data-i18n="mainResultContrib">
-      <strong>Contribution scientifique</strong> : pas la non-existence inconditionnelle (cf. δ8 lemma, irréalisable avec les outils 2026), mais la <em>cartographie rigoureuse des obstructions structurelles</em> qui rend la conditionnalité <strong>nécessaire</strong>, pas <em>arbitraire</em>. Sept théorèmes centraux, ~30 fichiers Lean, paper 28 pages, reproductible via <code>reproduce.sh</code> EXIT 0.
+      <strong>Ce que le projet apporte</strong> : une formalisation Lean de l'exclusion des cycles avec k ≤ 1322 (sous H1 et H2) et un catalogue documenté de pistes et d'obstructions. Le résultat mathématique est déjà contenu dans la littérature : Hercher (2023) et la vérification de Bařina impliquent qu'un cycle non trivial a au moins 1,375·10<sup>11</sup> termes impairs. Sept théorèmes centraux, une quarantaine de fichiers Lean ; chaîne principale reproductible via <code>reproduce.sh</code> (Lean 4.27.0).
     </p>
     <p style="font-size: 0.9rem; margin-top: 1.2rem;">
-      <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/collatz-conditional-proof.pdf" target="_blank" rel="noopener" style="color: var(--accent); margin-right: 1.5rem;">→ <span data-i18n="readPaper">Lire le paper (PDF, 28 p.)</span></a>
-      <a href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener" style="color: var(--accent); margin-right: 1.5rem;">→ DOI Zenodo</a>
+      <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/collatz-conditional-proof.pdf" target="_blank" rel="noopener" style="color: var(--accent); margin-right: 1.5rem;">→ <span data-i18n="readPaper">Lire le paper (PDF)</span></a>
+      <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener" style="color: var(--accent); margin-right: 1.5rem;">→ DOI Zenodo</a>
       <a href="preuve/" style="color: var(--accent);">→ <span data-i18n="readProof">Architecture de la preuve</span></a>
     </p>
   </div>
 
   <div class="key-stats">
     <div class="key-stat">
-      <div class="value">2,4·10<sup>−9</sup></div>
-      <div class="label" data-i18n="keyStat1Label">Borne inf. |Λ|</div>
-      <div class="desc" data-i18n="keyStat1Desc">Salikhov 2007 inconditionnel</div>
+      <div class="value">2<sup>71</sup></div>
+      <div class="label" data-i18n="keyStat1Label">tout entier sous 2<sup>71</sup> atteint 1</div>
+      <div class="desc" data-i18n="keyStat1Desc">Bařina 2025 (J. Supercomputing 81)</div>
     </div>
     <div class="key-stat">
-      <div class="value">k ≥ 2·10<sup>20</sup></div>
-      <div class="label" data-i18n="keyStat2Label">Requis pour cycle</div>
-      <div class="desc" data-i18n="keyStat2Desc">Hercher 2023 conditional Baker</div>
+      <div class="value">m ≥ 92</div>
+      <div class="label" data-i18n="keyStat2Label">minima locaux de tout cycle non trivial</div>
+      <div class="desc" data-i18n="keyStat2Desc">Hercher 2023 (JIS 26, 23.3.5)</div>
     </div>
     <div class="key-stat">
-      <div class="value">δ<sub>8</sub> = 8</div>
-      <div class="label" data-i18n="keyStat3Label">Lemme du verrou</div>
-      <div class="desc" data-i18n="keyStat3Desc">Product-Bound Impossibility</div>
+      <div class="value">k ≤ 1322</div>
+      <div class="label" data-i18n="keyStat3Label">cycles exclus par notre théorème Lean (sous H1, H2)</div>
+      <div class="desc" data-i18n="keyStat3Desc">no_cycle_k_le_1322 · Lean 4.27.0</div>
     </div>
     <div class="key-stat">
-      <div class="value">35+</div>
-      <div class="label" data-i18n="keyStat4Label">Pistes étudiées</div>
+      <div class="value">36</div>
+      <div class="label" data-i18n="keyStat4Label">pistes cataloguées (dont 21 notes à sourcer)</div>
       <div class="desc" data-i18n="keyStat4Desc">Région I + II + III</div>
     </div>
   </div>
@@ -343,7 +351,7 @@
   <div class="lockbox">
     <span class="formula">$$\Lambda_{S,k} = S \log 2 - k \log 3$$</span>
     <p data-i18n="lockFooter" class="footer">
-      Théorème implicite (Cobham 1969 + δ8 lemma) : les bases 2 et 3 sont multiplicativement indépendantes ; toute formalisation de "cycle Collatz" qui évite la transcendance log_2 3 tombe dans une logique trop pauvre, ou bien retombe sur la pleine arithmétique indécidable.
+      Lecture heuristique (pas un théorème ; inspirée de Cobham 1969 et de δ8) : les bases 2 et 3 sont multiplicativement indépendantes ; toute formalisation de "cycle Collatz" qui évite la transcendance de log_2 3 semble tomber dans une logique trop pauvre, ou bien retomber sur la pleine arithmétique indécidable.
     </p>
   </div>
 
@@ -353,9 +361,9 @@ graph LR
     P1["Tao 2019 ergodique"] -->|"Haar 0 ≠ ∅"| LAMBDA
     P2["Kolmogorov-Chaitin"] -->|"K=O(log k)"| LAMBDA
     P3["Fourier Sturmien"] -->|"slope log_2 3"| LAMBDA
-    P4["Padé / Wu / Salikhov"] -->|"plafond μ ≥ 5.117"| LAMBDA
+    P4["Padé / Wu / Salikhov"] -->|"μ(ln 3) &lt; 5,117 (Wu &amp; Wang 2014)"| LAMBDA
     P5["Marcovecchio 2025"] -->|"μ_2 algébriques"| LAMBDA
-    P6["Tropical (oracle)"] -->|"décroissance fine"| LAMBDA
+    P6["Tropical (piste IA)"] -->|"décroissance fine"| LAMBDA
     P7["Schémas + Faltings"] -->|"hauteurs ⇔ ABC"| LAMBDA
     P8["Néron-Tate"] -->|"ABC effective"| LAMBDA
     P9["Tresses / Nœuds"] -->|"insensible 2/3-adique"| LAMBDA
@@ -367,31 +375,38 @@ graph LR
     P15["Inv. statistiques"] -->|"autocorr. Christoffel"| LAMBDA
 
     LAMBDA["Λ_{S,k}<br/>VERROU"]
-    BAKER["BakerSeparation<br/>(conjecture de travail)<br/>renforcement non démontré<br/>de Rhin/Wu/Salikhov"]
-    BARINA["Barina 2025<br/>n &lt; 2^71"]
-    DERIVED["DerivedLargeKBound<br/>dérivation projet<br/>k > 1322 → n &lt; 2^71"]
-    MAIN["★ Main result<br/>no_nontrivial_cycle_phase59<br/>kernel-checked Lean 4"]
+    BAKER["H1 BakerSeparation<br/>(paramètre — hypothèse de travail)"]
+    BARINA["H2 BarinaVerification<br/>Bařina 2025, n &lt; 2^71"]
+    DERIVED["H3 DerivedLargeKBound<br/>(paramètre SUPPOSÉ)<br/>k > 1322 → n &lt; 2^71"]
+    LE["no_cycle_k_le_1322<br/>k ≤ 1322 · sous H1, H2"]
+    GT["no_cycle_k_gt_1322<br/>k > 1322 · H3 + H2<br/>(circulaire, voir l'erratum)"]
+    MAIN["no_nontrivial_cycle_phase59<br/>Lean 4.27.0"]
 
-    DELTA8["δ8 (Phase58)<br/>Product-Bound<br/>impossibility"]
-    DELTA8P["δ8' (Phase58 §5.2)<br/>Baker+CF lower<br/>not upper"]
-    DELTA10["δ10 (Phase64)<br/>Barina-Replacement<br/>impossibility · kernel-1"]
-    DELTA11["δ11 (Phase65)<br/>Salikhov-Insufficient<br/>conditional · kernel-3 + 3 ad-hoc"]
+    DELTA8["δ8<br/>Product-Bound<br/>impossibility · non formalisé"]
+    DELTA8P["δ8'<br/>Baker+CF lower<br/>not upper"]
+    DELTA10["δ10 (Phase64)<br/>catalogue fini<br/>de 4 sources"]
+    DELTA11["δ11 (Phase65)<br/>conditionnel · 3 axiomes ad hoc<br/>en réexamen"]
 
-    LAMBDA -->|"axiome 1"| BAKER
-    BAKER -->|"BakerSeparation"| MAIN
-    BARINA -->|"BarinaVerification"| MAIN
-    DERIVED -->|"3e hypothèse externe"| MAIN
+    LAMBDA -->|"hypothèse H1"| BAKER
+    BAKER --> LE
+    BARINA --> LE
+    BARINA --> GT
+    DERIVED --> GT
+    LE --> MAIN
+    GT --> MAIN
 
-    DELTA8 -.->|"justifie"| DERIVED
-    DELTA8P -.->|"justifie"| DERIVED
-    DELTA10 -.->|"justifie"| BARINA
-    DELTA11 -.->|"justifie (CONDITIONNEL)"| BAKER
+    DELTA8 -.->|"Product-Bound ne ferme pas la fenêtre"| DERIVED
+    DELTA8P -.->|"contexte"| DERIVED
+    DELTA10 -.->|"contexte"| BARINA
+    DELTA11 -.->|"contexte (en réexamen)"| BAKER
 
     style LAMBDA fill:#c8a86a,color:#0e0f13,stroke:#fff,stroke-width:2px
     style BAKER fill:#6a9b7a,color:#0e0f13
     style BARINA fill:#6a9b7a,color:#0e0f13
-    style DERIVED fill:#6a9b7a,color:#0e0f13
-    style MAIN fill:#f3d99c,color:#0e0f13,stroke:#c8a86a,stroke-width:3px
+    style DERIVED fill:#3a4a5a,color:#e0e6f0,stroke:#fb923c,stroke-width:2px,stroke-dasharray:5
+    style LE fill:#f3d99c,color:#0e0f13,stroke:#c8a86a,stroke-width:3px
+    style GT fill:#3a4a5a,color:#e0e6f0,stroke:#fb923c,stroke-width:2px,stroke-dasharray:5
+    style MAIN fill:#6a9b7a,color:#0e0f13
     style DELTA8 fill:#3a4a5a,color:#e0e6f0,stroke:#6366f1,stroke-width:1px
     style DELTA8P fill:#3a4a5a,color:#e0e6f0,stroke:#6366f1,stroke-width:1px
     style DELTA10 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px
@@ -400,7 +415,7 @@ graph LR
   </div>
 
   <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 1rem; font-style: italic;" data-i18n="diagramCaption">
-    → Le théorème principal <code>no_nontrivial_cycle_phase59</code> est l'unique nœud de fermeture conditionnelle. Les 14 paradigmes convergent vers le verrou Λ ; seules les 3 hypothèses externes (BakerSeparation, BarinaVerification, DerivedLargeKBound) — et non les paradigmes — alimentent le théorème final.
+      → Les 14 paradigmes convergent vers le verrou Λ ; ce ne sont pas eux qui alimentent le théorème, mais les hypothèses H1, H2 et H3 (paramètres). Seule la branche k ≤ 1322 (H1, H2) est démontrée sans circularité ; la branche k &gt; 1322 repose sur H3, supposée (voir l'<a href="#erratum">erratum</a>).
   </p>
 </section>
 
@@ -417,10 +432,10 @@ graph LR
     <button class="filter-btn active" data-status="all" data-i18n="filterAll">Toutes</button>
     <button class="filter-btn" data-status="cds" data-i18n="filterCds">Culs-de-sac</button>
     <button class="filter-btn" data-status="partiel" data-i18n="filterPartiel">Partielles</button>
-    <button class="filter-btn" data-status="insuf" data-i18n="filterInsuf">Insuffisance prouvée</button>
+    <button class="filter-btn" data-status="insuf" data-i18n="filterInsuf">Insuffisance conditionnelle</button>
     <button class="filter-btn" data-status="inconnu" data-i18n="filterInconnu">Inconnues</button>
     <button class="filter-btn" data-status="prometteur" data-i18n="filterPrometteur">Prometteuses</button>
-    <button class="filter-btn" data-status="axiome" data-i18n="filterAxiome">Axiomes</button>
+    <button class="filter-btn" data-status="axiome" data-i18n="filterAxiome">Hypothèses (paramètres)</button>
   </div>
 
   <div class="table-wrap">
@@ -447,7 +462,7 @@ graph LR
 <section id="hypotheses">
   <div class="section-eyebrow">§ III</div>
   <h2 data-i18n="hypothesesTitle">Trois hypothèses sur la sortie</h2>
-  <p data-i18n="hypothesesIntro">Évolution des probabilités estimées au fil des cycles d'investigation (Cycle 0 → Cycle 2). La hausse de C reflète la convergence cumulative des paradigmes vers Λ_{S,k}.</p>
+  <p data-i18n="hypothesesIntro">Évolution des probabilités estimées (estimations subjectives de l'auteur, non calculées) au fil des cycles d'investigation (Cycle 0 → Cycle 2). La hausse de C reflète la convergence cumulative des paradigmes vers Λ_{S,k}.</p>
 
   <div class="chart-container">
     <canvas id="hypothesesChart"></canvas>
@@ -458,15 +473,15 @@ graph LR
       <div class="card-eyebrow">A</div>
       <h3 lang="fr">Combinaison Baker+CF+Khinchin</h3>
       <h3 lang="en">Baker+CF+Khinchin combination</h3>
-      <p lang="fr">Probabilité finale : <strong>&lt;5%</strong> — bloquée par le δ8 lemma (paper §5 obstruction-I).</p>
-      <p lang="en">Final probability: <strong>&lt;5%</strong> — blocked by the δ8 lemma (paper §5 obstruction-I).</p>
+      <p lang="fr">Probabilité finale : <strong>&lt;5%</strong> — bloquée par δ8 (énoncé sur la méthode Product-Bound, non formalisé).</p>
+      <p lang="en">Final probability: <strong>&lt;5%</strong> — blocked by δ8 (a statement about the Product-Bound method, not formalized).</p>
     </div>
     <div class="card">
       <div class="card-eyebrow">A'</div>
       <h3 lang="fr">Combinaison HORS-δ8 (holonomy)</h3>
       <h3 lang="en">δ8-FREE combination (holonomy)</h3>
-      <p lang="fr">Probabilité finale : <strong>8-12%</strong> — voie Calegari-Dimitrov-Tang 2025, hors cadre Baker+CF.</p>
-      <p lang="en">Final probability: <strong>8-12%</strong> — Calegari-Dimitrov-Tang 2025 route, outside the Baker+CF framework.</p>
+      <p lang="fr">Probabilité finale : <strong>8-12%</strong> — voie de l'holonomie arithmétique (Calegari-Dimitrov-Tang), hors cadre Baker+CF.</p>
+      <p lang="en">Final probability: <strong>8-12%</strong> — arithmetic holonomy route (Calegari-Dimitrov-Tang), outside the Baker+CF framework.</p>
     </div>
     <div class="card">
       <div class="card-eyebrow">B</div>
@@ -484,14 +499,14 @@ graph LR
     </div>
   </div>
 
-  <h3 style="margin-top: 3rem;" lang="fr">Le δ8 lemma — impossibilité structurelle</h3>
-  <h3 style="margin-top: 3rem;" lang="en">The δ8 lemma — structural impossibility</h3>
+  <h3 style="margin-top: 3rem;" lang="fr">δ8 — impossibilité Product-Bound</h3>
+  <h3 style="margin-top: 3rem;" lang="en">δ8 — Product-Bound impossibility</h3>
   <div class="highlight warning">
     <p lang="fr">
-      <strong>Lemma δ8 (Product-Bound Impossibility)</strong> — Soit $\xi \in \mathbb{R} \setminus \mathbb{Q}$ avec mesure d'irrationalité effective $\mu(\xi) \leq c$. Supposons un cycle Collatz $(n,k)$ avec borne Product-Bound $m \leq (k^{c+1}+k)/3$. Alors aucune borne uniforme algébrique $F(k) < 2^{71}$ ne peut être obtenue via cette dérivation pour tout $k \in \mathbb{N}$.
+      <strong>δ8 (impossibilité Product-Bound)</strong> — Pour fermer la fenêtre actuelle, la chaîne Product-Bound aurait besoin d'une minoration K·ln 2 − k·ln 3 &gt; k<sup>−c</sup> avec un exposant de forme linéaire c ≈ 0,96 (soit une mesure d'irrationalité μ = c + 1 ≈ 1,96). Or le théorème de Dirichlet impose c ≥ 1 (μ ≥ 2) : cette voie est fermée, quelle que soit la constante, avec une marge d'environ 0,04 sur l'exposant. C'est un énoncé sur une méthode de preuve : il n'exclut aucun cycle et n'est pas formalisé en Lean. Source : registre commun, entrée L-A9 (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener">LEDGER.md</a> ; convention corrigée en août 2026 ; l'énoncé du PDF Zenodo mélange les deux conventions).
     </p>
     <p lang="en">
-      <strong>Lemma δ8 (Product-Bound Impossibility)</strong> — Let $\xi \in \mathbb{R} \setminus \mathbb{Q}$ have effective irrationality measure $\mu(\xi) \leq c$. Suppose a Collatz cycle $(n,k)$ with Product-Bound $m \leq (k^{c+1}+k)/3$. Then no uniform algebraic bound $F(k) < 2^{71}$ can be obtained via this derivation for every $k \in \mathbb{N}$.
+      <strong>δ8 (Product-Bound impossibility)</strong> — To close the current window, the Product-Bound chain would need a lower bound K·ln 2 − k·ln 3 &gt; k<sup>−c</sup> with a linear-form exponent c ≈ 0.96 (i.e. an irrationality measure μ = c + 1 ≈ 1.96). Dirichlet's theorem forces c ≥ 1 (μ ≥ 2): this route is closed, whatever the constant, by a margin of about 0.04 in the exponent. This is a statement about a proof method: it excludes no cycle and is not formalized in Lean. Source: shared ledger, entry L-A9 (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener">LEDGER.md</a>; convention corrected in August 2026; the statement in the Zenodo PDF mixes the two conventions).
     </p>
   </div>
 
@@ -499,7 +514,7 @@ graph LR
   <h3 lang="en">Lemma R72 (Lean 4)</h3>
   <p lang="fr">Identité Steiner factorisée — pierre angulaire de l'arsenal.</p>
   <p lang="en">Factored Steiner identity — cornerstone of the arsenal.</p>
-<pre><span class="lean-badge">Lean · compiled</span><code class="language-lean">/-- R72 NEW — identité Steiner factorisée :
+<pre><span class="lean-badge">Lean 4.27.0 · arsenal-postjar</span><code class="language-lean">/-- R72 NEW — identité Steiner factorisée :
     n · (2^S - 3^k) = corrSum n k.
     Universel : pour tout cycle `IsOddCycle n k`. -/
 theorem cycle_n_mul_D_s_eq_corrSum
@@ -520,7 +535,7 @@ theorem cycle_n_mul_D_s_eq_corrSum
   <h3 lang="en">Lemma R92 (Lean 4)</h3>
   <p lang="fr">Premier certificat fini case-by-case dérivé de l'arsenal lacunaire.</p>
   <p lang="en">First finite case-by-case certificate derived from the lacunary arsenal.</p>
-<pre><span class="lean-badge">Lean · compiled</span><code class="language-lean">/-- R92 NEW — Showcase : pour cycle k=2 avec aSeq[0] ≡ 1 mod 3
+<pre><span class="lean-badge">Lean 4.27.0 · arsenal-postjar</span><code class="language-lean">/-- R92 NEW — Showcase : pour cycle k=2 avec aSeq[0] ≡ 1 mod 3
     et aSeq[1] ≡ 1 mod 3, on a 7 ∤ D_s. -/
 theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     (n : ℕ) (hcyc : IsOddCycle n 2)
@@ -543,7 +558,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 <section id="tests">
   <div class="section-eyebrow">§ IV</div>
   <h2 data-i18n="testsTitle">Tests REQ-MATH-NNN exécutés</h2>
-  <p data-i18n="testsIntro">Chaque assertion mathématique est validée par script dans le sandbox <code>tests_math/</code>, conformément au PROTOCOLE ARES (Règle 1 : zéro calcul mental).</p>
+  <p data-i18n="testsIntro">Scripts de contrôle numérique ponctuels. Seuls REQ-MATH-007 et REQ-MATH-012 sont publiés (branches d'étude du dépôt) ; les autres sont restés locaux. Ils vérifient des calculs précis ; ils ne valident pas toutes les affirmations du site.</p>
 
   <div class="card-grid" id="testsGrid">
     <!-- généré par main.js -->
@@ -555,8 +570,8 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <section id="meaculpa">
   <div class="section-eyebrow">§ V</div>
-  <h2 data-i18n="meaCulpaTitle">Vingt-huit mea culpa publics</h2>
-  <p data-i18n="meaCulpaIntro">La discipline antifragile demande que chaque erreur détectée soit documentée publiquement avec sévérité 0-10 et règle extraite. Sans cela, le pattern multi-cerveau humain-IA répète indéfiniment les mêmes hallucinations. <em>Aperçu de 16 mea culpa parmi les 32 documentés au total ; archive complète dans le repo GitHub <code>_handoff_mailbox/</code>.</em></p>
+  <h2 data-i18n="meaCulpaTitle">Mea culpa publics</h2>
+  <p data-i18n="meaCulpaIntro">Chaque erreur détectée est documentée publiquement, avec une sévérité de 0 à 10 et la règle qui en est tirée. <em>Aperçu de 16 mea culpa (numérotés jusqu'au #32).</em></p>
 
   <div class="mea-culpa-grid" id="meaCulpaGrid">
     <!-- généré par main.js -->
@@ -565,98 +580,92 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 
 <!-- ========================================================================
      RESEARCH STATUS / ÉTAT DES TRAVAUX (Research Ledger preview)
-     Three-Key validated 2026-04-30 (OLD3 + NEW4 + ChatGPT 5.5 Q14+Q15)
+     Mis à jour le 2026-10-02 (v0.9.0)
      ======================================================================== -->
 <section id="research-status" class="research-status-snapshot">
   <div class="section-eyebrow">§ VI</div>
   <h2 data-i18n="researchStatusTitle">État des travaux</h2>
   <p class="research-status-intro" data-i18n="researchStatusIntro">Snapshot d'activité du projet, traçable sur GitHub. <a href="/research-ledger/">Registre complet (Research Ledger) →</a></p>
 
-  <!-- Anti-promotional positioning bar (Q14 critical for any reviewer) -->
+  <!-- Positioning bar -->
   <p class="research-status-positioning">
     <em lang="fr">Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.</em>
     <em lang="en">This section documents project status and traceability; it is not a claim of acceptance or final proof.</em>
   </p>
 
-  <!-- Status snapshot : 5 cartes compactes -->
+  <!-- Status snapshot : 5 cartes compactes (état au 2026-10-02) -->
   <div class="status-snapshot-grid">
 
-    <!-- Carte 1 : Dernier jalon validé (δ11 — closure conditionnelle E.1 Salikhov 2007) -->
-    <div class="status-card" data-family="lean" data-milestone="true">
-      <div class="status-card-eyebrow" data-i18n="statusLastMilestone">Dernier jalon validé</div>
-      <div class="status-card-title">δ11 — Salikhov-Insufficient-for-3732 (CONDITIONNEL)</div>
+    <!-- Carte 1 : Dernier jalon — erratum de l'énoncé principal -->
+    <div class="status-card" data-family="audit">
+      <div class="status-card-eyebrow" data-i18n="statusLastMilestone">Dernier jalon</div>
+      <div class="status-card-title"><span lang="fr">Erratum de l'énoncé principal</span><span lang="en">Erratum to the main statement</span></div>
       <div class="status-card-meta">
-        <span class="event-status-badge" data-status="validated">VALIDATED</span>
-        <span class="status-card-date">2026-05-08</span>
+        <span class="event-status-badge" data-status="erratum">ERRATUM</span>
+        <span class="status-card-date">2026-10-02</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Closure conditionnelle E.1 Salikhov 2007. Lean 4 / Mathlib v4.27 kernel-checked. kernel-3 + 3 axiomes ad-hoc transparents. Score G3 6/6 cross-val ~37/37 + 0 réserve. 4 mea culpa publics #29-32.</span>
-        <span lang="en">Conditional closure of approach E.1 Salikhov 2007. Lean 4 / Mathlib v4.27 kernel-checked. kernel-3 + 3 transparent ad-hoc axioms. G3 6/6 cross-val score ~37/37 + 0 reservation. 4 public mea culpa #29-32.</span>
+        <span lang="fr">H3 (DerivedLargeKBound) est supposée, non dérivée ; sous H2 elle équivaut à la conclusion pour k &gt; 1322. Démontré sans circularité : aucun cycle non trivial avec k ≤ 1322, sous H1 et H2.</span>
+        <span lang="en">H3 (DerivedLargeKBound) is assumed, not derived; under H2 it is equivalent to the conclusion for k &gt; 1322. Proved without circularity: no non-trivial cycle with k ≤ 1322, under H1 and H2.</span>
       </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v0.7.3-delta11" target="_blank" rel="noopener">→ <span lang="fr">Voir tag v0.7.3-delta11</span><span lang="en">See tag v0.7.3-delta11</span></a>
+      <a class="status-card-link" href="#erratum">→ <span lang="fr">Lire l'erratum</span><span lang="en">Read the erratum</span></a>
     </div>
 
     <!-- Carte 2 : Statut paper -->
     <div class="status-card" data-family="paper">
       <div class="status-card-eyebrow" data-i18n="statusPaper">Statut paper</div>
-      <div class="status-card-title">Preprint — Zenodo (v1.1, 28 p.)</div>
+      <div class="status-card-title"><span lang="fr">Preprint — Zenodo (3 versions, avril 2026)</span><span lang="en">Preprint — Zenodo (3 versions, April 2026)</span></div>
       <div class="status-card-meta">
         <span class="event-status-badge" data-status="preprint">PREPRINT</span>
         <span class="status-card-date">2026-04-27</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">"On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4". DOI Zenodo permanent. Première soumission éditoriale 2026-04-27 rejetée 2026-05-13 ; repositionnement éditorial en cours, voir <a href="changelog/">changelog</a> et <a href="research-ledger/">research ledger</a>.</span>
-        <span lang="en">"On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4". Permanent Zenodo DOI. Initial editorial submission 2026-04-27 rejected 2026-05-13; editorial repositioning in progress, see <a href="changelog/">changelog</a> and <a href="research-ledger/">research ledger</a>.</span>
+        <span lang="fr">"On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4". Soumission au Journal of Automated Reasoning le 27/04/2026, rejetée le 13/05/2026 ; pas de nouvelle soumission. Le PDF porte encore l'ancien énoncé : voir l'<a href="#erratum">erratum</a>.</span>
+        <span lang="en">"On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4". Submitted to the Journal of Automated Reasoning on 2026-04-27, rejected on 2026-05-13; no new submission. The PDF still carries the old statement: see the <a href="#erratum">erratum</a>.</span>
       </p>
-      <a class="status-card-link" href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener">→ DOI Zenodo</a>
+      <a class="status-card-link" href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">→ DOI Zenodo</a>
     </div>
 
-    <!-- Carte 3 : Dernière vérification Lean (post-Phase 6-bis polish 2026-05-08) -->
+    <!-- Carte 3 : Dernière vérification Lean (six fichiers de la pile commune, 2026-09-23) -->
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow" data-i18n="statusLastLean">Dernière vérification Lean</div>
-      <div class="status-card-title">lake build Delta11Salikhov PASS (Mathlib v4.27)</div>
+      <div class="status-card-title"><span lang="fr">Six fichiers de la pile commune revérifiés sous Lean 4.34.0</span><span lang="en">Six files of the shared stack re-checked on Lean 4.34.0</span></div>
       <div class="status-card-meta">
-        <span class="event-status-badge" data-status="validated">VALIDATED</span>
-        <span class="status-card-date">2026-05-08</span>
+        <span class="status-card-date">2026-09-23</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">2039 jobs / ~11s / 0 warning post-Phase 6-bis polish (−82% vs ~67s pré-polish). 0 sorry, 0 admit. Profil axiomes kernel-3 + 3 ad-hoc transparents.</span>
-        <span lang="en">2039 jobs / ~11s / 0 warning post-Phase 6-bis polish (−82% vs ~67s pre-polish). 0 sorry, 0 admit. Axiom profile kernel-3 + 3 transparent ad-hoc.</span>
+        <span lang="fr">Après le bug de noyau lean4#14576 (corrigé en v4.32.2) : 0 erreur, 0 sorry, 40 déclarations, axiomes standard (artefact 9934df4). Le théorème principal, lui, a été vérifié sous Lean 4.27.0 et n'a pas été revérifié.</span>
+        <span lang="en">After kernel bug lean4#14576 (fixed in v4.32.2): 0 errors, 0 sorry, 40 declarations, standard axioms (artifact 9934df4). The main theorem itself was checked on Lean 4.27.0 and has not been re-checked.</span>
       </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/ProjetCollatz/PostJAR/Delta11Salikhov.lean" target="_blank" rel="noopener">→ Delta11Salikhov.lean</a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9934df4/recheck-v4.34" target="_blank" rel="noopener">→ recheck-v4.34 (9934df4)</a>
     </div>
 
-    <!-- Carte 4 : Dernier audit résolu (mea culpa #29-32 cycle 2026-05-08) -->
+    <!-- Carte 4 : Dernier audit (audit du site, 2026-10-02) -->
     <div class="status-card" data-family="audit">
-      <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit résolu</div>
-      <div class="status-card-title">Mea culpa #29 #30 #31 #32 (5-IA cross-validation catch)</div>
+      <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
+      <div class="status-card-title"><span lang="fr">Audit du site</span><span lang="en">Site audit</span></div>
       <div class="status-card-meta">
-        <span class="event-status-badge" data-status="resolved">RESOLVED</span>
-        <span class="status-card-date">2026-05-08</span>
+        <span class="status-card-date">2026-10-02</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Cycle δ11 closure E.1 — cross-modèle a payé son prix DEUX FOIS : ChatGPT catché DOI Wu&amp;Wang erroné (#31), Gemini catché axiome non-positivement-restreint (#32). Score G3 6/6 cross-val ~37/37 + 0 réserve.</span>
-        <span lang="en">δ11 E.1 closure cycle — cross-model paid its price TWICE: ChatGPT caught wrong Wu&amp;Wang DOI (#31), Gemini caught non-positively-restricted axiom (#32). G3 6/6 cross-val score ~37/37 + 0 reservation.</span>
+        <span lang="fr">Corrections : énoncé principal (erratum), Hercher, Salikhov (ln 3), chiffres sans source retirés, mention du bug lean4#14576.</span>
+        <span lang="en">Corrections: main statement (erratum), Hercher, Salikhov (ln 3), unsourced figures removed, mention of bug lean4#14576.</span>
       </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v0.7.3-delta11" target="_blank" rel="noopener">→ <span lang="fr">Voir tag v0.7.3-delta11</span><span lang="en">See tag v0.7.3-delta11</span></a>
+      <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
 
-    <!-- Carte 5 : Études en cours (post-fermeture E.1 Salikhov via δ11) -->
+    <!-- Carte 5 : Travaux en cours — collaboration ouverte avec B. Macindoe -->
     <div class="status-card" data-family="study">
-      <div class="status-card-eyebrow" data-i18n="statusOngoing">Études en cours</div>
-      <div class="status-card-title">
-        <span lang="fr">2 études actives</span>
-        <span lang="en">2 active studies</span>
-      </div>
+      <div class="status-card-eyebrow" data-i18n="statusOngoing">Travaux en cours</div>
+      <div class="status-card-title"><span lang="fr">Collaboration ouverte avec B. Macindoe</span><span lang="en">Open collaboration with B. Macindoe</span></div>
       <div class="status-card-meta">
-        <span class="event-status-badge" data-status="in-progress">IN PROGRESS</span>
-        <span class="status-card-date">2026-05-08</span>
+        <span class="status-card-date">2026-10-02</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Eliahou-Steiner formalisation · Knight 2026 lecture critique. <em>(Désaxiomatisation Baker E.1 Salikhov : fermée conditionnellement par δ11 le 2026-05-08, voir tag v0.7.3-delta11.)</em></span>
-        <span lang="en">Eliahou-Steiner formalization · Knight 2026 critical reading. <em>(Baker desaxiomatisation E.1 Salikhov: conditionally closed by δ11 on 2026-05-08, see tag v0.7.3-delta11.)</em></span>
+        <span lang="fr">Dépôt public commun ; sept pull requests fusionnées, dont les rounds 16 et 17 le 2 octobre 2026.</span>
+        <span lang="en">Shared public repository; seven pull requests merged, including rounds 16 and 17 on 2 October 2026.</span>
       </p>
-      <a class="status-card-link" href="/research-ledger/">→ <span lang="fr">Voir études</span><span lang="en">See studies</span></a>
+      <a class="status-card-link" href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener">→ one-obstruction-three-faces</a>
     </div>
 
   </div>
@@ -690,6 +699,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   .event-status-badge[data-status="resolved"]    { background: #2e1065; color: #c4b5fd; }
   .event-status-badge[data-status="in-progress"] { background: #1e3a8a; color: #93c5fd; }
   .event-status-badge[data-status="submitted"]   { background: #7c2d12; color: #fdba74; }
+  .event-status-badge[data-status="erratum"]     { background: #7c2d12; color: #fdba74; }
   .status-card-summary { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.5rem; }
   .status-card-link { display: inline-block; font-size: 0.8rem; color: var(--family-color); text-decoration: none; font-weight: 500; }
   .status-card-link:hover { text-decoration: underline; }
@@ -735,8 +745,8 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     <div class="card">
       <div class="card-eyebrow">Quanta</div>
       <h3>Mathematician Proves Huge Result</h3>
-      <p lang="fr">Article de vulgarisation sur les avancées Tao 2019. Décembre 2019, Erica Klarreich.</p>
-      <p lang="en">Popular-science article on the Tao 2019 advances. December 2019, Erica Klarreich.</p>
+      <p lang="fr">Article de vulgarisation sur les avancées Tao 2019. Décembre 2019, Kevin Hartnett.</p>
+      <p lang="en">Popular-science article on the Tao 2019 advances. December 2019, Kevin Hartnett.</p>
       <a href="https://www.quantamagazine.org/mathematician-proves-huge-result-on-dangerous-problem-20191211/" target="_blank" rel="noopener">→ Quanta Magazine</a>
     </div>
     <div class="card">
@@ -755,7 +765,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 <section id="team">
   <div class="section-eyebrow">§ VIII</div>
   <h2 data-i18n="teamTitle">Équipe</h2>
-  <p data-i18n="teamIntro">Ce projet est conduit par un chercheur indépendant en collaboration avec des systèmes d'IA, sous protocole de vérification rigoureux (PROTOCOLE ARES v2).</p>
+  <p data-i18n="teamIntro">Ce projet est conduit par un chercheur indépendant, avec l'aide d'assistants IA, et en collaboration ouverte avec Benjamin Macindoe.</p>
 
   <div class="card-grid">
     <div class="card team-card team-card-pi">
@@ -773,18 +783,8 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
         <h3>Eric Merle</h3>
         <p class="team-role" lang="fr">Chercheur indépendant · France</p>
         <p class="team-role" lang="en">Independent researcher · France</p>
-        <p lang="fr">Conception et coordination scientifique du projet. Auteur du <strong>PROTOCOLE ARES v2</strong>, méthodologie de vérification anti-hallucination pour la recherche mathématique humain-IA. Travaille en architecture multi-agents (Claude Opus + ChatGPT) sous discipline antifragile : chaque erreur détectée devient une règle opérationnelle publique.</p>
-        <p lang="en">Project design and scientific coordination. Author of <strong>PROTOCOLE ARES v2</strong>, an anti-hallucination verification methodology for human-AI mathematical research. Works under a multi-agent architecture (Claude Opus + ChatGPT) with antifragile discipline: every detected error becomes a public operational rule.</p>
-        <ul lang="fr">
-          <li>Preprint 28 p. (DOI Zenodo 10.5281/zenodo.19790406)</li>
-          <li>Architecte du PROTOCOLE ARES v2 (28 mea culpa publics)</li>
-          <li>Direction multi-cerveau (NEW · NEW2 · OLD · Red Team)</li>
-        </ul>
-        <ul lang="en">
-          <li>28-page preprint (Zenodo DOI 10.5281/zenodo.19790406)</li>
-          <li>Architect of PROTOCOLE ARES v2 (28 public mea culpa)</li>
-          <li>Multi-brain coordination (NEW · NEW2 · OLD · Red Team)</li>
-        </ul>
+        <p lang="fr">Conception, rédaction et formalisation Lean du projet. Auteur du preprint (DOI Zenodo <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">10.5281/zenodo.19790405</a>). Les erreurs trouvées sont publiées (<a href="#meaculpa">mea culpa</a>, <a href="#erratum">erratum</a>).</p>
+        <p lang="en">Project design, writing and Lean formalization. Author of the preprint (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">10.5281/zenodo.19790405</a>). Errors found are published (<a href="#meaculpa">mea culpa</a>, <a href="#erratum">erratum</a>).</p>
         <p class="team-links">
           <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener" class="team-link team-link-orcid">ORCID</a>
           <a href="https://github.com/ericmerle3789" target="_blank" rel="noopener" class="team-link">GitHub</a>
@@ -793,48 +793,32 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
       </div>
     </div>
     <div class="card">
-      <div class="card-eyebrow" lang="fr">Agents de recherche IA</div>
-      <div class="card-eyebrow" lang="en">AI Research Agents</div>
-      <h3>Claude Opus (Anthropic)</h3>
-      <p lang="fr">Architecture multi-cerveau asynchrone. Quatre sous-agents (NEW, NEW2, OLD, Red Team) communiquant via mailbox horodaté. Discipline antifragile : chaque erreur détectée est documentée publiquement pour produire des règles opérationnelles applicables.</p>
-      <p lang="en">Asynchronous multi-brain architecture. Four sub-agents (NEW, NEW2, OLD, Red Team) communicating via timestamped mailbox. Antifragile discipline: every detected error is documented publicly to produce applicable operational rules.</p>
-      <ul lang="fr">
-        <li>NEW — direction de recherche</li>
-        <li>NEW2 — spécialiste Lean</li>
-        <li>OLD — intuition mathématique</li>
-        <li>Red Team — audit adversarial</li>
-      </ul>
-      <ul lang="en">
-        <li>NEW — research direction</li>
-        <li>NEW2 — Lean specialist</li>
-        <li>OLD — mathematical intuition</li>
-        <li>Red Team — adversarial audit</li>
-      </ul>
+      <div class="card-eyebrow" lang="fr">Collaborateur · chercheur indépendant</div>
+      <div class="card-eyebrow" lang="en">Collaborator · independent researcher</div>
+      <h3>Benjamin Macindoe</h3>
+      <p lang="fr">Collaboration ouverte depuis juillet 2026 : dépôt public commun et registre des résultats vérifiés des deux côtés. Auteur du preprint « Reduced coordinates for the Collatz map » (DOI <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">10.5281/zenodo.21730505</a>) et du gateway interactif des cycles.</p>
+      <p lang="en">Open collaboration since July 2026: shared public repository and a ledger of results checked on both sides. Author of the preprint "Reduced coordinates for the Collatz map" (DOI <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">10.5281/zenodo.21730505</a>) and of the interactive cycle gateway.</p>
+      <p class="team-links">
+        <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener" class="team-link">one-obstruction-three-faces</a>
+        <a href="https://macindoe.github.io/collatz/viz/cycle_anchor_gateway.html" target="_blank" rel="noopener" class="team-link">Gateway</a>
+        <a href="cycles/" class="team-link">Cycles</a>
+      </p>
     </div>
     <div class="card">
-      <div class="card-eyebrow" lang="fr">Oracle stratégique</div>
-      <div class="card-eyebrow" lang="en">Strategic Oracle</div>
-      <h3>ChatGPT 5.5 (OpenAI)</h3>
-      <p lang="fr">Validation indépendante. Consultations structurées sur les questions stratégiques : méta-prompts à rôles multiples, recherche de contre-exemples, auto-vérification falsifiable. Application de la Two-Key Rule — aucun résultat n'est validé par l'instance qui l'a généré.</p>
-      <p lang="en">Independent validation. Structured consultations on strategic questions: multi-role meta-prompts, counter-example search, falsifiable self-verification. Two-Key Rule applied — no result is validated by the instance that produced it.</p>
-      <ul lang="fr">
-        <li>Validation croisée des paradigmes</li>
-        <li>Bibliographie tagée [VÉRIFIÉ]/[INCERTAIN]</li>
-        <li>Document de synthèse régénéré</li>
-      </ul>
-      <ul lang="en">
-        <li>Cross-validation of paradigms</li>
-        <li>Bibliography tagged [VERIFIED]/[UNCERTAIN]</li>
-        <li>Regenerated synthesis document</li>
-      </ul>
+      <div class="card-eyebrow" lang="fr">Outils</div>
+      <div class="card-eyebrow" lang="en">Tools</div>
+      <h3 lang="fr">Assistants IA</h3>
+      <h3 lang="en">AI assistants</h3>
+      <p lang="fr">Des modèles de langage, notamment Claude (Anthropic), servent à la recherche bibliographique, au code, à la formalisation et à la relecture. D'autres modèles ont servi ponctuellement à des relectures croisées. Leurs sorties sont revérifiées à la source ; elles peuvent se tromper, et l'ont fait (voir les <a href="#meaculpa">mea culpa</a>).</p>
+      <p lang="en">Language models, notably Claude (Anthropic), are used for literature search, code, formalization and review. Other models were occasionally used for cross-review. Their outputs are re-checked at the source; they can be wrong, and have been (see the <a href="#meaculpa">mea culpa</a>).</p>
     </div>
   </div>
 
   <div class="highlight" style="margin-top: 2rem;">
     <h3 lang="fr">Méthodologie</h3>
     <h3 lang="en">Methodology</h3>
-    <p lang="fr">Cette cartographie résulte d'un protocole de recherche humain-IA encadré par le PROTOCOLE ARES v2 (Audit, Rigueur, Évaluation, Sécurité). Toutes les affirmations mathématiques sont vérifiées par script (sandbox <code>tests_math/</code>), toutes les références sont vérifiées contre <code>references.bib</code> avant citation, et chaque erreur détectée est documentée publiquement.</p>
-    <p lang="en">This cartography results from a human-AI research protocol governed by PROTOCOLE ARES v2 (Audit, Rigor, Evaluation, Security). Every mathematical claim is verified by script (sandbox <code>tests_math/</code>), every reference is verified against <code>references.bib</code> before citation, and every detected error is documented publicly.</p>
+    <p lang="fr">Les affirmations sont vérifiées autant que possible par script et à la source ; quand une erreur est trouvée, elle est corrigée et documentée publiquement.</p>
+    <p lang="en">Claims are checked by script and at the source as far as possible; when an error is found, it is corrected and documented publicly.</p>
     <p class="text-muted small" style="margin-top: 1rem;" lang="fr">Inspirations méthodologiques : Polymath Project (Tao, Gowers), Lean community (Mathlib), formalisation collaborative (ccchallenge.org).</p>
     <p class="text-muted small" style="margin-top: 1rem;" lang="en">Methodological inspirations: Polymath Project (Tao, Gowers), Lean community (Mathlib), collaborative formalization (ccchallenge.org).</p>
   </div>
@@ -860,18 +844,13 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.7.3 · 2026-05-08
+    Cartography · v0.9.0 · 2026-10-02
   </div>
-  <p data-i18n="footerText">Site produit avec PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
-  <p data-i18n="footerLicense">Contenu CC-BY-SA 4.0 · Code Lean MIT · Document vivant</p>
+  <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
+  <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
 
   <!-- Build status + commit info dynamique -->
   <p class="footer-status">
-    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/actions" target="_blank" rel="noopener" class="status-badge">
-      <span class="status-dot" aria-hidden="true"></span>
-      <span data-i18n="buildPassing">site build: passing</span>
-    </a>
-    <span class="status-sep">·</span>
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/commits/gh-pages" target="_blank" rel="noopener" id="lastCommitInfo" class="text-muted small">
       <span data-i18n="lastCommit">last commit</span> : <span id="lastCommitDate">…</span>
     </a>
@@ -904,27 +883,24 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 
   <!-- Open Science badges -->
   <div class="footer-badges" aria-label="Open Science badges">
-    <a href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener" class="footer-badge badge-doi" title="DOI Zenodo permanent identifier">
-      DOI 10.5281/zenodo.19790406
+    <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener" class="footer-badge badge-doi" title="DOI Zenodo permanent identifier (concept DOI, all versions)">
+      DOI 10.5281/zenodo.19790405
     </a>
     <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener" class="footer-badge badge-orcid" title="ORCID iD permanent author identifier">
       ORCID 0009-0008-7940-402X
     </a>
-    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener" class="footer-badge badge-license" title="CC-BY-SA 4.0 license">
-      CC-BY-SA 4.0
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener" class="footer-badge badge-license" title="CC-BY-SA 4.0 license (site content)">
+      CC-BY-SA 4.0 (site)
     </a>
-    <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener" class="footer-badge badge-license" title="MIT license for Lean code">
-      MIT (code)
+    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/LICENSE" target="_blank" rel="noopener" class="footer-badge badge-license" title="CC BY 4.0 license for the paper sources and the Lean code">
+      CC BY 4.0 (paper + Lean)
     </a>
-    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/reproduce.sh" target="_blank" rel="noopener" class="footer-badge badge-verify" title="Reproduce in 3-5 minutes via reproduce.sh">
-      Verify in ~3 min
-    </a>
-    <a href="https://www.cos.io/initiatives/badges" target="_blank" rel="noopener" class="footer-badge badge-open" title="Open Materials + Open Code (Center for Open Science)">
-      Open Materials
+    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/reproduce.sh" target="_blank" rel="noopener" class="footer-badge badge-verify" title="reproduce.sh (Lean 4.27.0 toolchain)">
+      reproduce.sh
     </a>
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
+<script src="assets/js/main.js?v=20261002-V0-9-0"></script>
 </body>
 </html>

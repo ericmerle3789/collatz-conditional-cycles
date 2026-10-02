@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Proof chain — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Conjecture de Syracuse / Collatz : architecture de la preuve Lean 4 de no_nontrivial_cycle_phase59. Phase52 Steiner identity → Phase58 small cycles (k ≤ 1322) → Phase59 continued fractions (k > 1322, DerivedLargeKBound). δ8 lemma documented.">
+<meta name="description" content="Conjecture de Syracuse / Collatz : architecture de la preuve Lean 4 de no_nontrivial_cycle_phase59. Phase56 Product Bound → Phase58 small cycles (k ≤ 1322, under H1 and H2) → Phase59 large cycles (k > 1322, closed only by the assumed hypothesis H3 DerivedLargeKBound; erratum of 2 Oct 2026). δ8 documented.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, Lean 4, formal proof, Steiner identity, continued fractions, Phase59, kernel-checked">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -23,10 +23,10 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="Proof chain — Collatz / Syracuse Conditional Cycles">
-<meta property="og:description" content="(Syracuse · Collatz · 3n+1) Lean 4 proof architecture: from BakerSeparation axiom to no_nontrivial_cycle_phase59. Two sub-branches (k ≤ 1322 Barina + Product-Bound, k > 1322 continued fractions), kernel-checked.">
+<meta property="og:description" content="(Syracuse · Collatz · 3n+1) Lean 4 proof architecture of no_nontrivial_cycle_phase59. Two sub-branches: k ≤ 1322 (H1 Baker + Product-Bound + H2 Barina) and k > 1322 (assumed hypothesis H3). Lean 4.27.0 · not re-checked after lean4#14576.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/preuve/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
@@ -36,8 +36,8 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Proof chain — Collatz / Syracuse Conditional Cycles">
-<meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Lean 4 proof architecture: from BakerSeparation axiom to no_nontrivial_cycle_phase59. Kernel-checked.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Lean 4 proof architecture of no_nontrivial_cycle_phase59. Lean 4.27.0 · not re-checked after lean4#14576.">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 
 <!-- JSON-LD : TechArticle (proof architecture page) -->
 <script type="application/ld+json">
@@ -55,7 +55,7 @@
     "name": "Eric Merle"
   },
   "datePublished": "2026-04-27",
-  "dateModified": "2026-04-30",
+  "dateModified": "2026-10-02",
   "isPartOf": {"@id": "https://collatz-lab.org/"},
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "proficiencyLevel": "Expert",
@@ -99,7 +99,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
 </head>
 <body>
 
@@ -144,10 +144,10 @@
   <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="fr">Chaîne de preuve formelle</h1>
   <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="en">Formal proof chain</h1>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">
-    Le théorème principal <code>no_nontrivial_cycle_phase59</code> se décompose en deux sous-branches : <strong>k ≤ 1322</strong> (Barina + Product-Bound) et <strong>k &gt; 1322</strong> (continued fractions de $\log_2 3$). La transition s'opère par <code>sdw_from_cf</code>, le lemme conditionnel clé qui dérive la borne Simons-de Weger des fractions continues.
+    Le théorème principal <code>no_nontrivial_cycle_phase59</code> se décompose en deux sous-branches : <strong>k ≤ 1322</strong> (H1 Baker + Product-Bound + H2 Bařina) et <strong>k &gt; 1322</strong> (fermé uniquement par l'hypothèse supposée H3, avec H2). Sous H2, H3 équivaut à la conclusion pour k &gt; 1322 : seul le cas k ≤ 1322 est démontré sans circularité (erratum du 2 octobre 2026, voir le <a href="../changelog/">changelog</a> et la page <a href="../papers/">Papers</a>). <code>sdw_from_cf</code> est un corollaire en aval, pas une étape de la preuve.
   </p>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="en">
-    The main theorem <code>no_nontrivial_cycle_phase59</code> splits into two sub-branches: <strong>k ≤ 1322</strong> (Barina + Product-Bound) and <strong>k &gt; 1322</strong> (continued fractions of $\log_2 3$). The transition is handled by <code>sdw_from_cf</code>, the key conditional lemma that derives the Simons-de Weger bound from continued fractions.
+    The main theorem <code>no_nontrivial_cycle_phase59</code> splits into two sub-branches: <strong>k ≤ 1322</strong> (H1 Baker + Product-Bound + H2 Barina) and <strong>k &gt; 1322</strong> (closed only by the assumed hypothesis H3, with H2). Under H2, H3 is equivalent to the conclusion for k &gt; 1322: only the case k ≤ 1322 is proved without circularity (erratum of 2 October 2026, see the <a href="../changelog/">changelog</a> and the <a href="../papers/">Papers</a> page). <code>sdw_from_cf</code> is a downstream corollary, not a step of the proof.
   </p>
 </section>
 
@@ -160,28 +160,28 @@
   <div class="mermaid-container">
     <pre class="mermaid">
 flowchart TB
-    A["Axiom BakerSeparation<br/>(working conjecture,<br/>undemonstrated strengthening<br/>of Rhin/Wu/Salikhov —<br/>see #28 + δ10)"] --> B["Phase52SteinerEquation<br/>steiner_cycle_eq"]
-    A2["Axiom BarinaVerification<br/>(n &lt; 2^71)"] --> C["Phase58PorteDeuxFinal<br/>no_cycle_k_le_1322"]
-    A3["Axiom DerivedLargeKBound<br/>(project-derived:<br/>k &gt; 1322 → n &lt; 2^71)"] --> C
-
-    B --> C
-    B --> D["Phase59ContinuedFractions<br/>cf_gap_8 ... cf_gap_13<br/>(native_decide)"]
-
-    D --> E["Phase59<br/>sdw_from_cf"]
-    E --> F["Phase59<br/>no_cycle_k_gt_1322"]
-
+    A["H1 BakerSeparation<br/>(parameter — working hypothesis)"] --> PB["Phase56 cycle_min_bound_nat<br/>n ≤ (k^7+k)/3"]
+    S["Phase52 nSeq_step_mul"] --> PB
+    PB --> C["Phase58 no_cycle_k_le_1322"]
+    A2["H2 BarinaVerification<br/>(parameter — n &lt; 2^71)"] --> C
+    A2 --> F["Phase59 no_cycle_k_gt_1322"]
+    A3["H3 DerivedLargeKBound<br/>(ASSUMED parameter:<br/>k &gt; 1322 → n &lt; 2^71)"] --> F
     C --> G["no_nontrivial_cycle_phase59<br/>(Main theorem)"]
     F --> G
-
-    G --> H["Alias variants:<br/>no_nontrivial_cycle_final<br/>no_nontrivial_cycle_derived<br/>no_nontrivial_cycle_full"]
+    G -.-> E["sdw_from_cf (corollary)"]
 
     style A fill:#9080a8,color:#0e0f13
     style A2 fill:#9080a8,color:#0e0f13
     style A3 fill:#9080a8,color:#0e0f13
     style G fill:#c8a86a,color:#0e0f13,stroke:#fff,stroke-width:2px
-    style H fill:#6a9b7a,color:#0e0f13
     </pre>
   </div>
+  <p style="font-size: 0.9rem; color: var(--text-secondary);" lang="fr">
+    H1, H2, H3 sont des paramètres des théorèmes, pas des axiomes Lean. Les vérifications arithmétiques <code>cf_gap_8</code> … <code>cf_gap_13</code> ne sont utilisées par aucun théorème de cette chaîne (voir § IV). <code>no_nontrivial_cycle_final</code> (Phase58) est une variante dont la 3e hypothèse est <code>ProductBoundThreshold</code> (k ≤ 982) : c'est elle qu'énonce le PDF Zenodo.
+  </p>
+  <p style="font-size: 0.9rem; color: var(--text-secondary);" lang="en">
+    H1, H2, H3 are parameters of the theorems, not Lean axioms. The arithmetic checks <code>cf_gap_8</code> … <code>cf_gap_13</code> are used by no theorem of this chain (see § IV). <code>no_nontrivial_cycle_final</code> (Phase58) is a variant whose 3rd hypothesis is <code>ProductBoundThreshold</code> (k ≤ 982): it is the one stated in the Zenodo PDF.
+  </p>
 </section>
 
 <section>
@@ -215,13 +215,13 @@ flowchart TB
 <section>
   <div class="section-eyebrow" lang="fr">§ III — Sous-branche k ≤ 1322</div>
   <div class="section-eyebrow" lang="en">§ III — Sub-branch k ≤ 1322</div>
-  <h2 lang="fr">Petits cycles : Barina + Product-Bound</h2>
-  <h2 lang="en">Small cycles: Barina + Product-Bound</h2>
+  <h2 lang="fr">Petits cycles : Product-Bound (H1) + Barina (H2)</h2>
+  <h2 lang="en">Small cycles: Product-Bound (H1) + Barina (H2)</h2>
   <p lang="fr">
-    Pour $k \leq 1322$, l'axiome <code>BakerSeparation</code> (forme effective $(2^s - 3^k) \cdot k^6 \geq 3^k$ — <strong>conjecture de travail</strong>, renforcement non démontré des bornes Rhin/Wu/Salikhov publiées — voir <a href="/#meaculpa">#28</a> + lemme <strong>δ10</strong>) donne, <em>sous réserve qu'il tienne</em>, une borne effective sur $|\Lambda_{S,k}|$. La chaîne Product-Bound $(k^7 + k)/3 < 2^{71}$ implique $n_\min < 2^{71}$, ce qui est exclu par <code>BarinaVerification</code>.
+    Pour $k \leq 1322$, l'hypothèse H1 <code>BakerSeparation</code> (paramètre ; forme effective $(2^s - 3^k) \cdot k^6 \geq 3^k$ — <strong>hypothèse de travail</strong>, plus forte que les bornes effectives publiées sous cette forme — voir <a href="/#meaculpa">mea culpa #28</a>) donne, <em>sous réserve qu'elle tienne</em>, une borne effective sur $|\Lambda_{S,k}|$. La chaîne Product-Bound $(k^7 + k)/3 < 2^{71}$ implique $n_{\min} < 2^{71}$, ce qui est exclu par H2 <code>BarinaVerification</code>.
   </p>
   <p lang="en">
-    For $k \leq 1322$, the <code>BakerSeparation</code> axiom (effective form $(2^s - 3^k) \cdot k^6 \geq 3^k$ — <strong>working hypothesis (conjecture)</strong>, undemonstrated strengthening of published Rhin/Wu/Salikhov bounds — see <a href="/#meaculpa">#28</a> + <strong>δ10</strong> lemma) gives, <em>under the assumption that it holds</em>, an effective bound on $|\Lambda_{S,k}|$. The Product-Bound chain $(k^7 + k)/3 < 2^{71}$ implies $n_\min < 2^{71}$, which is excluded by <code>BarinaVerification</code>.
+    For $k \leq 1322$, hypothesis H1 <code>BakerSeparation</code> (parameter; effective form $(2^s - 3^k) \cdot k^6 \geq 3^k$ — <strong>working hypothesis</strong>, stronger in this form than published effective bounds — see <a href="/#meaculpa">mea culpa #28</a>) gives, <em>under the assumption that it holds</em>, an effective bound on $|\Lambda_{S,k}|$. The Product-Bound chain $(k^7 + k)/3 < 2^{71}$ implies $n_{\min} < 2^{71}$, which is excluded by H2 <code>BarinaVerification</code>.
   </p>
 
   <div class="highlight">
@@ -231,13 +231,13 @@ flowchart TB
       <li><code>product_bound_fits_barina_1322</code> — vérification numérique $(1322^7+1322)/3 &lt; 2^{71}$</li>
       <li><code>k1322_bound_implies_n_bound</code> — implication $k \leq 1322 \Rightarrow n &lt; 2^{71}$</li>
       <li><code>no_cycle_k_le_1322</code> — résultat final pour cette sous-branche</li>
-      <li><code>hercher_from_baker_barina</code> — dérivation projet $k \geq 92$ depuis Baker + Barina (nommée par analogie au $m \geq 92$ de Hercher 2023, quantité distincte)</li>
+      <li><code>hercher_from_baker_barina</code> — conséquence de <code>no_cycle_k_le_1322</code> : $k \geq 92$, sous H1, H2 (nommée par analogie avec le $m \geq 92$ de Hercher 2023, quantité distincte)</li>
     </ul>
     <ul style="margin: 1rem 2rem;" lang="en">
       <li><code>product_bound_fits_barina_1322</code> — numerical verification $(1322^7+1322)/3 &lt; 2^{71}$</li>
       <li><code>k1322_bound_implies_n_bound</code> — implication $k \leq 1322 \Rightarrow n &lt; 2^{71}$</li>
       <li><code>no_cycle_k_le_1322</code> — final result for this sub-branch</li>
-      <li><code>hercher_from_baker_barina</code> — project-derived $k \geq 92$ from Baker + Barina (named by analogy with Hercher 2023's $m \geq 92$, a distinct quantity)</li>
+      <li><code>hercher_from_baker_barina</code> — consequence of <code>no_cycle_k_le_1322</code>: $k \geq 92$, under H1, H2 (named by analogy with Hercher 2023's $m \geq 92$, a distinct quantity)</li>
     </ul>
   </div>
 </section>
@@ -245,13 +245,13 @@ flowchart TB
 <section>
   <div class="section-eyebrow" lang="fr">§ IV — Sous-branche k &gt; 1322</div>
   <div class="section-eyebrow" lang="en">§ IV — Sub-branch k &gt; 1322</div>
-  <h2 lang="fr">Grands cycles : continued fractions</h2>
-  <h2 lang="en">Large cycles: continued fractions</h2>
+  <h2 lang="fr">Grands cycles : l'hypothèse supposée H3</h2>
+  <h2 lang="en">Large cycles: the assumed hypothesis H3</h2>
   <p lang="fr">
-    Pour $k > 1322$, l'argument classique (Lagarias 1985, Simons-de Weger 2005) utilise les <strong>convergents</strong> $p_n/q_n$ de $\log_2 3$. Six fenêtres arithmétiques sont vérifiées par <code>native_decide</code> :
+    Pour $k > 1322$, aucun argument n'est formalisé : le cas est fermé par <code>no_cycle_k_gt_1322</code>, qui ne prend que H2 (<code>barina</code>) et H3 (<code>cf</code>). H3 est <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion pour $k > 1322$. Le dépôt contient aussi six vérifications arithmétiques aux <strong>convergents</strong> $p_n/q_n$ de $\log_2 3$, faites par <code>native_decide</code> (axiomes <code>Lean.ofReduceBool</code>, <code>Lean.trustCompiler</code>). Elles ne sont utilisées par aucun théorème de la chaîne principale, ne couvrent que $k$ de 665 à 10 590 736 (une plage finie), et le passage de ces fenêtres à H3 n'est pas formalisé (le fichier Phase63 prévu pour cela n'est qu'un squelette). Elles ne démontrent donc pas H3 :
   </p>
   <p lang="en">
-    For $k > 1322$, the classical argument (Lagarias 1985, Simons-de Weger 2005) uses the <strong>convergents</strong> $p_n/q_n$ of $\log_2 3$. Six arithmetic windows are verified via <code>native_decide</code>:
+    For $k > 1322$, no argument is formalized: the case is closed by <code>no_cycle_k_gt_1322</code>, which takes only H2 (<code>barina</code>) and H3 (<code>cf</code>). H3 is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion for $k > 1322$. The repository also contains six arithmetic checks at the <strong>convergents</strong> $p_n/q_n$ of $\log_2 3$, done by <code>native_decide</code> (axioms <code>Lean.ofReduceBool</code>, <code>Lean.trustCompiler</code>). They are used by no theorem of the main chain, cover only $k$ from 665 to 10,590,736 (a finite range), and the step from these windows to H3 is not formalized (the Phase63 file intended for it is only a skeleton). They therefore do not prove H3:
   </p>
 
   <div class="table-wrap">
@@ -272,10 +272,10 @@ flowchart TB
   </div>
 
   <p lang="fr">
-    Le lemme conditionnel <code>sdw_from_cf</code> dérive la borne Simons-de Weger des fractions continues, et <code>no_cycle_k_gt_1322</code> conclut.
+    <code>sdw_from_cf</code> est un corollaire en aval : à partir des trois hypothèses H1, H2, H3, il établit <code>ProductBoundThreshold</code> (k ≤ 982), vrai par vacuité puisque, sous ces hypothèses, aucun cycle n'existe.
   </p>
   <p lang="en">
-    The conditional lemma <code>sdw_from_cf</code> derives the Simons-de Weger bound from continued fractions, and <code>no_cycle_k_gt_1322</code> closes the argument.
+    <code>sdw_from_cf</code> is a downstream corollary: from the three hypotheses H1, H2, H3 it establishes <code>ProductBoundThreshold</code> (k ≤ 982), vacuously true since, under these hypotheses, no cycle exists.
   </p>
 
   <p>
@@ -289,24 +289,23 @@ flowchart TB
   <div class="section-eyebrow" lang="en">§ V — Lean ↔ Mathematics</div>
   <h2 lang="fr">Vue côte-à-côte : code Lean et énoncé informel</h2>
   <h2 lang="en">Side-by-side view: Lean code and informal statement</h2>
-  <p lang="fr">Pour chaque théorème pivot, le code Lean (vérifié par le noyau) à gauche, l'énoncé mathématique informel (lisible) à droite.</p>
-  <p lang="en">For each pivotal theorem, the Lean code (kernel-verified) on the left, the informal mathematical statement (readable) on the right.</p>
+  <p lang="fr">Pour chaque théorème pivot, le code Lean (vérifié par le noyau de Lean 4.27.0, avant la correction du bug de noyau lean4#14576 ; non revérifié depuis) à gauche, l'énoncé mathématique informel (lisible) à droite.</p>
+  <p lang="en">For each pivotal theorem, the Lean code (checked by the Lean 4.27.0 kernel, before the fix of kernel bug lean4#14576; not re-checked since) on the left, the informal mathematical statement (readable) on the right.</p>
 
   <h3 style="margin-top: 2rem;">steiner_cycle_eq <span class="text-muted small">— Phase52 universal identity</span></h3>
   <div class="lean-math-pair">
     <div>
       <span class="lmp-label">Lean 4</span>
-<pre><code class="language-lean">theorem steiner_cycle_eq
-    (n k : ℕ) (hcyc : IsOddCycle n k) :
-    n * 2 ^ (aSumSeq n k) = 3 ^ k * n + corrSum n k := by
-  -- preuve par récurrence sur la longueur k du cycle
-  -- Mathlib v4.27, kernel-checked, 0 sorry</code></pre>
+<pre><code class="language-lean">theorem steiner_cycle_eq (n k : ℕ) (hcyc : IsOddCycle n k) :
+    n * 2 ^ aSumSeq n k = 3 ^ k * n + corrSum n k := by
+  have h := steiner_eq n k
+  rwa [hcyc.2.2.2] at h</code></pre>
     </div>
     <div class="lmp-math">
       <span class="lmp-label" lang="fr">Énoncé mathématique</span>
       <span class="lmp-label" lang="en">Mathematical statement</span>
-      <p lang="fr"><strong>Identité de Steiner.</strong> Soit un cycle Collatz $(n, k)$ hypothétique de longueur $k$, avec $n$ minimum. Alors :</p>
-      <p lang="en"><strong>Steiner identity.</strong> Let $(n, k)$ be a hypothetical Collatz cycle of length $k$, with $n$ minimum. Then:</p>
+      <p lang="fr"><strong>Identité de Steiner.</strong> Soit un cycle Collatz hypothétique $(n, k)$, issu de $n$, avec $k$ termes impairs. Alors :</p>
+      <p lang="en"><strong>Steiner identity.</strong> Let $(n, k)$ be a hypothetical Collatz cycle starting at $n$, with $k$ odd terms. Then:</p>
       <p>$$n \cdot 2^S = 3^k \cdot n + \mathrm{corrSum}(n, k)$$</p>
       <p lang="fr">où $S = \sum_{i} a_i$ est la somme des valuations 2-adiques le long du cycle.</p>
       <p lang="en">where $S = \sum_{i} a_i$ is the sum of 2-adic valuations along the cycle.</p>
@@ -317,24 +316,23 @@ flowchart TB
   <div class="lean-math-pair">
     <div>
       <span class="lmp-label">Lean 4</span>
-<pre><code class="language-lean">theorem no_nontrivial_cycle_phase59 :
-    ∀ (n k : ℕ), n > 1 → ¬ IsOddCycle n k := by
-  intro n k hn
-  by_contra hcyc
-  -- (1) k ≤ 1322 → no_cycle_k_le_1322 (Barina + Product-Bound)
-  -- (2) k > 1322 → no_cycle_k_gt_1322 (continued fractions + Baker)
-  rcases Nat.lt_or_ge k 1323 with hk | hk
-  · exact no_cycle_k_le_1322 hcyc hk
-  · exact no_cycle_k_gt_1322 hcyc hk</code></pre>
+<pre><code class="language-lean">theorem no_nontrivial_cycle_phase59
+    (baker : BakerSeparation) (barina : BarinaVerification)
+    (cf : DerivedLargeKBound)
+    (n k : ℕ) (hcyc : IsOddCycle n k) : False := by
+  by_cases hk : k ≤ 1322
+  · exact no_cycle_k_le_1322 baker barina n k hcyc hk
+  · push_neg at hk
+    exact no_cycle_k_gt_1322 barina cf n k hcyc hk</code></pre>
     </div>
     <div class="lmp-math">
       <span class="lmp-label" lang="fr">Énoncé mathématique</span>
       <span class="lmp-label" lang="en">Mathematical statement</span>
-      <p lang="fr"><strong>Théorème principal (Merle 2026).</strong> Sous les trois hypothèses externes <em>BakerSeparation</em>, <em>BarinaVerification</em>, et <em>DerivedLargeKBound</em> :</p>
-      <p lang="en"><strong>Main theorem (Merle 2026).</strong> Under the three external hypotheses <em>BakerSeparation</em>, <em>BarinaVerification</em>, and <em>DerivedLargeKBound</em>:</p>
+      <p lang="fr"><strong>Théorème principal (Merle 2026).</strong> Sous les trois hypothèses H1 <em>BakerSeparation</em>, H2 <em>BarinaVerification</em> et H3 <em>DerivedLargeKBound</em> (paramètres du théorème) :</p>
+      <p lang="en"><strong>Main theorem (Merle 2026).</strong> Under the three hypotheses H1 <em>BakerSeparation</em>, H2 <em>BarinaVerification</em> and H3 <em>DerivedLargeKBound</em> (parameters of the theorem):</p>
       <p>$$\forall\, n &gt; 1,\ \forall\, k \in \mathbb{N},\ \neg\, \mathrm{IsOddCycle}(n, k)$$</p>
-      <p lang="fr">i.e. il n'existe aucun cycle Collatz non-trivial. La preuve se décompose en deux sous-branches selon que $k \leq 1322$ (Barina) ou $k > 1322$ (continued fractions de $\log_2 3$).</p>
-      <p lang="en">i.e. there exists no non-trivial Collatz cycle. The proof splits in two sub-branches depending on whether $k \leq 1322$ (Barina) or $k > 1322$ (continued fractions of $\log_2 3$).</p>
+      <p lang="fr">(<code>IsOddCycle n k</code> impose $n &gt; 1$.) La preuve se décompose en deux sous-branches : $k \leq 1322$ (H1 + H2, via le Product-Bound) et $k > 1322$ (H3 + H2). <strong>Erratum (2 octobre 2026)</strong> : H3 est supposée, non dérivée ; sous H2 elle équivaut à la conclusion pour $k > 1322$. Seul « aucun cycle non trivial avec $k \leq 1322$, sous H1 et H2 » est démontré sans circularité.</p>
+      <p lang="en">(<code>IsOddCycle n k</code> requires $n &gt; 1$.) The proof splits in two sub-branches: $k \leq 1322$ (H1 + H2, via the Product-Bound) and $k > 1322$ (H3 + H2). <strong>Erratum (2 October 2026)</strong>: H3 is assumed, not derived; under H2 it is equivalent to the conclusion for $k > 1322$. Only "no non-trivial cycle with $k \leq 1322$, under H1 and H2" is proved without circularity.</p>
     </div>
   </div>
 </section>
@@ -342,28 +340,28 @@ flowchart TB
 <section>
   <div class="section-eyebrow" lang="fr">§ VI — Verrou structurel</div>
   <div class="section-eyebrow" lang="en">§ VI — Structural lock</div>
-  <h2 lang="fr">Pourquoi les 3 axiomes sont nécessaires</h2>
-  <h2 lang="en">Why the 3 axioms are necessary</h2>
+  <h2 lang="fr">Pourquoi la voie Product-Bound ne ferme pas les grands cycles</h2>
+  <h2 lang="en">Why the Product-Bound route does not close large cycles</h2>
   <p lang="fr">
-    Le δ8 lemma (paper §5 obstruction-I) prouve <strong>structurellement</strong> qu'aucune dérivation de la forme Baker + continued fractions + Khinchin ne peut produire de borne uniforme algébrique $F(k) < 2^{71}$ pour tout $k$. La conditionnalité sur Baker n'est donc <strong>pas</strong> un placeholder, mais une obstruction prouvée.
+    Le Product-Bound $n \leq (k^7+k)/3$ passe sous $2^{71}$ seulement jusqu'à $k = 1322$. L'énoncé δ8 ci-dessous explique pourquoi cette voie ne peut pas, à elle seule, fermer la fenêtre des grands cycles. C'est un énoncé sur une méthode de preuve : il ne remplace pas H3 et n'exclut aucun cycle.
   </p>
   <p lang="en">
-    The δ8 lemma (paper §5 obstruction-I) <strong>structurally</strong> proves that no derivation of the form Baker + continued fractions + Khinchin can produce a uniform algebraic bound $F(k) < 2^{71}$ for every $k$. The conditionality on Baker is therefore <strong>not</strong> a placeholder, but a proven obstruction.
+    The Product-Bound $n \leq (k^7+k)/3$ stays below $2^{71}$ only up to $k = 1322$. The δ8 statement below explains why this route cannot, on its own, close the window of large cycles. It is a statement about a proof method: it does not replace H3 and excludes no cycle.
   </p>
 
   <div class="highlight warning">
-    <h3 style="margin-top: 0;">Lemma δ8 (Product-Bound Impossibility)</h3>
+    <h3 style="margin-top: 0;">δ8 (Product-Bound impossibility)</h3>
     <p lang="fr">
-      Soit $\xi \in \mathbb{R} \setminus \mathbb{Q}$ avec mesure d'irrationalité effective $\mu(\xi) \leq c$. Alors aucune borne uniforme algébrique $F(k) < 2^{71}$ ne peut être obtenue via la chaîne Product-Bound pour tout $k \in \mathbb{N}$.
+      Pour fermer la fenêtre actuelle, la chaîne Product-Bound aurait besoin d'une minoration $K \ln 2 - k \ln 3 > k^{-c}$ avec un exposant de forme linéaire $c \approx 0{,}96$ (soit une mesure d'irrationalité $\mu = c + 1 \approx 1{,}96$). Or le théorème de Dirichlet impose $c \geq 1$ ($\mu \geq 2$) : cette voie est fermée, quelle que soit la constante, avec une marge d'environ 0,04 sur l'exposant. C'est un énoncé sur une méthode de preuve : il n'exclut aucun cycle et n'est pas formalisé en Lean.
     </p>
     <p lang="en">
-      Let $\xi \in \mathbb{R} \setminus \mathbb{Q}$ with effective irrationality measure $\mu(\xi) \leq c$. Then no uniform algebraic bound $F(k) < 2^{71}$ can be obtained via the Product-Bound chain for every $k \in \mathbb{N}$.
+      To close the current window, the Product-Bound chain would need a lower bound $K \ln 2 - k \ln 3 > k^{-c}$ with a linear-form exponent $c \approx 0.96$ (i.e. an irrationality measure $\mu = c + 1 \approx 1.96$). Dirichlet's theorem forces $c \geq 1$ ($\mu \geq 2$): this route is closed, whatever the constant, by a margin of about 0.04 in the exponent. This is a statement about a proof method: it excludes no cycle and is not formalized in Lean.
     </p>
     <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;" lang="fr">
-      Source : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/05-obstruction-I-product-bound-impossibility.md" target="_blank" rel="noopener" style="color: var(--accent);">paper/v2/05-obstruction-I-product-bound-impossibility.md</a>
+      Source : registre commun, entrée L-A9 (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener" style="color: var(--accent);">LEDGER.md</a> ; convention corrigée en août 2026). L'énoncé du PDF Zenodo et de <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/05-obstruction-I-product-bound-impossibility.md" target="_blank" rel="noopener" style="color: var(--accent);">paper/v2/05-obstruction-I-product-bound-impossibility.md</a> mélange les deux conventions.
     </p>
     <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;" lang="en">
-      Source: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/05-obstruction-I-product-bound-impossibility.md" target="_blank" rel="noopener" style="color: var(--accent);">paper/v2/05-obstruction-I-product-bound-impossibility.md</a>
+      Source: shared ledger, entry L-A9 (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener" style="color: var(--accent);">LEDGER.md</a>; convention corrected in August 2026). The statement in the Zenodo PDF and in <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/05-obstruction-I-product-bound-impossibility.md" target="_blank" rel="noopener" style="color: var(--accent);">paper/v2/05-obstruction-I-product-bound-impossibility.md</a> mixes the two conventions.
     </p>
   </div>
 </section>
@@ -377,34 +375,36 @@ flowchart TB
 <pre lang="fr"><code class="language-bash">git clone https://github.com/ericmerle3789/collatz-conditional-cycles.git
 cd collatz-conditional-cycles
 ./reproduce.sh
-# EXIT 0 = build green, axioms match expected_axioms.md, 0 sorry detected</code></pre>
+# EXIT 0 = build green, axioms match expected_axioms.md, 0 sorry detected
+# (toolchain imposée par le script : Lean 4.27.0)</code></pre>
 <pre lang="en"><code class="language-bash">git clone https://github.com/ericmerle3789/collatz-conditional-cycles.git
 cd collatz-conditional-cycles
 ./reproduce.sh
-# EXIT 0 = build green, axioms match expected_axioms.md, 0 sorry detected</code></pre>
+# EXIT 0 = build green, axioms match expected_axioms.md, 0 sorry detected
+# (toolchain required by the script: Lean 4.27.0)</code></pre>
 
   <p lang="fr">
     <a href="../lemmes/" style="color: var(--accent);">→ Voir le catalogue détaillé des lemmes</a><br>
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener" style="color: var(--accent);">→ Repo GitHub complet</a><br>
-    <a href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener" style="color: var(--accent);">→ DOI Zenodo 10.5281/zenodo.19790406</a>
+    <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener" style="color: var(--accent);">→ DOI Zenodo 10.5281/zenodo.19790405</a>
   </p>
   <p lang="en">
     <a href="../lemmes/" style="color: var(--accent);">→ See the detailed lemma catalog</a><br>
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener" style="color: var(--accent);">→ Full GitHub repo</a><br>
-    <a href="https://doi.org/10.5281/zenodo.19790406" target="_blank" rel="noopener" style="color: var(--accent);">→ Zenodo DOI 10.5281/zenodo.19790406</a>
+    <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener" style="color: var(--accent);">→ Zenodo DOI 10.5281/zenodo.19790405</a>
   </p>
 </section>
 
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.6.0 · 2026-04-30</div>
+  <div class="footer-meta">Cartography · v0.9.0 · 2026-10-02</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2</p>
   <p class="footer-status">
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/actions" target="_blank" rel="noopener" class="status-badge">
       <span class="status-dot" aria-hidden="true"></span>
-      <span data-i18n="buildPassing">site build: passing</span>
+      <span data-i18n="buildPassing">build history (GitHub)</span>
     </a>
     <span class="status-sep">·</span>
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/commits/gh-pages" target="_blank" rel="noopener" id="lastCommitInfo" class="text-muted small">
@@ -422,10 +422,12 @@ cd collatz-conditional-cycles
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
+<script src="../assets/js/main.js?v=20261002-V0-9-0"></script>
 <script>
+document.addEventListener('DOMContentLoaded', function () {
+if (typeof mermaid === 'undefined') return;
 mermaid.initialize({
-  startOnLoad: true,
+  startOnLoad: false,
   theme: 'dark',
   themeVariables: {
     primaryColor: '#16181f',
@@ -436,6 +438,8 @@ mermaid.initialize({
     tertiaryColor: '#1f2229',
     fontFamily: "'Inter', sans-serif"
   }
+});
+mermaid.run();
 });
 </script>
 

@@ -23,7 +23,7 @@
 <meta property="og:description" content="Sans jargon. Avec des images. Méthode 'on a un enfant en face de nous'. Comprendre Collatz et ce que collatz-lab.org apporte.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/pour-tous/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="fr_FR">
@@ -33,7 +33,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pour les non-mathématiciens — Comprendre Collatz en 5 minutes">
 <meta name="twitter:description" content="Sans jargon. Avec des images. Comprendre Collatz et notre théorème conditionnel formalisé en Lean 4.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 
 <link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
 
@@ -52,7 +52,7 @@
       "image": "https://collatz-lab.org/assets/og-image.png",
       "inLanguage": ["fr", "en"],
       "datePublished": "2026-05-05T21:00:00+02:00",
-      "dateModified": "2026-05-05T21:00:00+02:00",
+      "dateModified": "2026-10-02T00:00:00+02:00",
       "author": {
         "@type": "Person",
         "@id": "https://orcid.org/0009-0008-7940-402X",
@@ -87,7 +87,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
 </head>
 <body>
 
@@ -101,6 +101,7 @@
     <nav class="nav">
       <a href="../" data-i18n="navAccueil">Home</a>
       <a href="../pour-tous/" data-i18n="navPourTous">For everyone</a>
+      <a href="../cycles/">Cycles</a>
       <a href="../#pistes" data-i18n="navPistes">Approaches</a>
       <a href="../lemmes/" data-i18n="navLemmes">Lemmas</a>
       <a href="../preuve/" data-i18n="navPreuve">Proof</a>
@@ -137,8 +138,8 @@
     <span lang="en">For everyone</span>
   </h1>
   <p style="font-size: 1.05rem; color: var(--accent); margin-top: 1rem; font-weight: 600;">
-    <span lang="fr">🎓 Une grande énigme mathématique vieille de presque 100 ans. Un petit pas de plus dans sa résolution.</span>
-    <span lang="en">🎓 A great mathematical puzzle, nearly 100 years old. One small step further toward solving it.</span>
+    <span lang="fr">🎓 Une grande énigme mathématique vieille de presque 100 ans. Ce qu'on a fait, et ce qu'on n'a pas fait.</span>
+    <span lang="en">🎓 A great mathematical puzzle, nearly 100 years old. What we did, and what we did not do.</span>
   </p>
   <p style="font-size: 1.15rem; color: var(--text-secondary); font-style: italic; margin-top: 1rem;">
     <span lang="fr">Tu es là par curiosité, ou parce que quelqu'un t'en a parlé. Tu n'es pas mathématicien. Pas grave. Cette page est faite pour toi.</span>
@@ -179,8 +180,8 @@
   6 (pair) → 3 (impair) → 10 (pair) → 5 (impair) → 16 → 8 → 4 → 2 → <strong>1</strong>
 </p>
 <p>
-  <span lang="fr">On finit toujours sur 1. <strong>Toujours.</strong></span>
-  <span lang="en">It always ends on 1. <strong>Always.</strong></span>
+  <span lang="fr">On finit sur 1. Et avec tous les nombres qu'on a essayés jusqu'ici, <strong>aussi</strong>.</span>
+  <span lang="en">It ends on 1. And so does every number tried so far.</span>
 </p>
 <p>
   <span lang="fr">La conjecture de Collatz, c'est juste une question : <strong>est-ce que ça marche pour TOUS les nombres ?</strong></span>
@@ -227,22 +228,22 @@
 
 <aside style="background: rgba(217, 119, 6, 0.08); border-left: 4px solid var(--accent); padding: 1rem 1.2rem; border-radius: 4px; margin: 1.5rem 0;">
   <p style="margin: 0;">
-    <span lang="fr">⚠️ <strong>Important.</strong> J'ai PAS prouvé la conjecture de Collatz. J'ai prouvé un théorème <strong>conditionnel</strong> : « SI ces 3 hypothèses sont vraies, ALORS pas d'autre boucle que 1→4→2→1. » Les 3 hypothèses sont des conjectures de travail à part entière, pas des évidences.</span>
-    <span lang="en">⚠️ <strong>Important.</strong> I did NOT prove the Collatz conjecture. I proved a <strong>conditional</strong> theorem: "IF these 3 hypotheses hold, THEN no other loop than 1→4→2→1." The 3 hypotheses are working conjectures in their own right, not obvious facts.</span>
+    <span lang="fr">⚠️ <strong>Important.</strong> Je n'ai PAS prouvé la conjecture de Collatz. Le théorème formalisé est <strong>conditionnel</strong> : « SI ces 3 hypothèses sont vraies, ALORS pas d'autre boucle que 1→4→2→1. » Mais (<a href="../#erratum">erratum du 2 octobre 2026</a>) la 3<sup>e</sup> hypothèse, avec la 2<sup>e</sup>, contient déjà la réponse pour les très grandes boucles. Ce qui est vraiment démontré est plus petit : pas d'autre boucle qui passe par au plus 1322 nombres impairs, sous les 2 premières hypothèses.</span>
+    <span lang="en">⚠️ <strong>Important.</strong> I did NOT prove the Collatz conjecture. The formalized theorem is <strong>conditional</strong>: "IF these 3 hypotheses hold, THEN no other loop than 1→4→2→1." But (<a href="../#erratum">erratum of 2 October 2026</a>) the 3rd hypothesis, together with the 2nd, already contains the answer for very large loops. What is really proved is smaller: no other loop that goes through at most 1322 odd numbers, under the first 2 hypotheses.</span>
   </p>
 </aside>
 
 <p>
-  <span lang="fr">(Et je dis « j'ai » mais c'est un travail d'équipe avec des IA et des mathématiciens — je ne marche pas seul.)</span>
-  <span lang="en">(And I say "I" but it's a team effort with AIs and mathematicians — I don't walk alone.)</span>
+  <span lang="fr">(Et je dis « j'ai » : je travaille avec l'aide d'assistants IA et, depuis juillet 2026, en collaboration ouverte avec Benjamin Macindoe.)</span>
+  <span lang="en">(And I say "I": I work with the help of AI assistants and, since July 2026, in open collaboration with Benjamin Macindoe.)</span>
 </p>
 <p>
-  <span lang="fr">Ce qu'on a fait, c'est plus modeste. Mais c'est solide.</span>
-  <span lang="en">What we did is more modest. But it's solid.</span>
+  <span lang="fr">Ce qu'on a fait, c'est plus modeste.</span>
+  <span lang="en">What we did is more modest.</span>
 </p>
 <p>
-  <span lang="fr">On a montré que <strong>SI</strong> on accepte 3 conditions techniques, <strong>ALORS</strong> on est sûr d'une chose : il n'y a pas d'autre « boucle » que celle qu'on connaît déjà (1 → 4 → 2 → 1).</span>
-  <span lang="en">We showed that <strong>IF</strong> we accept 3 technical conditions, <strong>THEN</strong> we're sure of one thing: there's no other "loop" than the one we already know (1 → 4 → 2 → 1).</span>
+  <span lang="fr">Le théorème dit : <strong>SI</strong> on accepte 3 conditions techniques, <strong>ALORS</strong> il n'y a pas d'autre « boucle » que celle qu'on connaît déjà (1 → 4 → 2 → 1). Le problème, corrigé le 2 octobre 2026 : la 3<sup>e</sup> condition, jointe à la 2<sup>e</sup>, dit déjà qu'il n'y a pas de très grande boucle. Ce SI-là contenait donc une partie de la réponse.</span>
+  <span lang="en">The theorem says: <strong>IF</strong> we accept 3 technical conditions, <strong>THEN</strong> there's no other "loop" than the one we already know (1 → 4 → 2 → 1). The problem, corrected on 2 October 2026: the 3rd condition, together with the 2nd, already says that there is no very large loop. So that IF already contained part of the answer.</span>
 </p>
 <p>
   <span lang="fr">C'est un théorème <strong>conditionnel</strong>. Avec un grand SI au début.</span>
@@ -253,13 +254,13 @@
   <span lang="en">The 3 conditions, very simplified:</span>
 </p>
 <ol>
-  <li><span lang="fr">Une <strong>conjecture de travail</strong> sur les bornes de Baker (un truc technique pas démontré, qu'on pose comme hypothèse <em>explicitement</em>)</span><span lang="en">A <strong>working conjecture</strong> on Baker bounds (a technical thing not proved, which we explicitly state as a hypothesis)</span></li>
-  <li><span lang="fr">Une <strong>vérification ordinateur</strong> (Barina 2025, jusqu'à 2<sup>71</sup>, déjà faite et reproductible)</span><span lang="en">A <strong>computer verification</strong> (Barina 2025, up to 2<sup>71</sup>, already done and reproducible)</span></li>
-  <li><span lang="fr">Une <strong>dérivation propre au projet</strong> (qu'on appelle <em>DerivedLargeKBound</em> — pour les très grands cycles ; ce n'est <em>pas</em> un théorème publié, c'est notre dérivation explicite à partir des deux conditions précédentes + la théorie des fractions continues)</span><span lang="en">A <strong>project-specific derivation</strong> (called <em>DerivedLargeKBound</em> — for very large cycles; this is <em>not</em> a published theorem, it's our explicit derivation from the two previous conditions + continued fractions theory)</span></li>
+  <li><span lang="fr">Une <strong>hypothèse de travail</strong> sur les bornes de Baker (un truc technique pas démontré, plus fort que ce qui est publié, qu'on pose comme hypothèse <em>explicitement</em>)</span><span lang="en">A <strong>working hypothesis</strong> on Baker bounds (a technical thing not proved, stronger than what is published, which we explicitly state as a hypothesis)</span></li>
+  <li><span lang="fr">Une <strong>vérification ordinateur</strong> (Bařina 2025, jusqu'à 2<sup>71</sup>, déjà faite et publiée)</span><span lang="en">A <strong>computer verification</strong> (Barina 2025, up to 2<sup>71</sup>, already done and published)</span></li>
+  <li><span lang="fr">Une <strong>hypothèse supposée</strong> (qu'on appelle <em>DerivedLargeKBound</em> — pour les très grands cycles, plus de 1322 nombres impairs). On l'avait présentée comme une dérivation : c'était faux. Elle n'est démontrée nulle part, et avec la condition 2 elle dit déjà qu'il n'y a pas de très grande boucle (<a href="../#erratum">erratum du 2 octobre 2026</a>).</span><span lang="en">An <strong>assumed hypothesis</strong> (called <em>DerivedLargeKBound</em> — for very large cycles, more than 1322 odd numbers). We had presented it as a derivation: that was wrong. It is proved nowhere, and together with condition 2 it already says there is no very large loop (<a href="../#erratum">erratum of 2 October 2026</a>).</span></li>
 </ol>
 <p>
-  <span lang="fr">C'est petit. Mais c'est carré. Et c'est vérifié par une machine (voir section suivante).</span>
-  <span lang="en">It's small. But it's clean. And it's verified by a machine (see next section).</span>
+  <span lang="fr">Ce qui reste démontré est petit. Et c'est vérifié par une machine, avec des réserves (voir section suivante).</span>
+  <span lang="en">What remains proved is small. And it's checked by a machine, with caveats (see next section).</span>
 </p>
 
 <h3 style="margin-top: 2rem;">
@@ -267,16 +268,16 @@
   <span lang="en">How did we verify?</span>
 </h3>
 <p>
-  <span lang="fr">Trois IA différentes ont relu la preuve <strong>indépendamment</strong> : Claude (Anthropic), ChatGPT (OpenAI) et Gemini (Google). Trois cerveaux différents, trois pédigrées différents.</span>
-  <span lang="en">Three different AIs read the proof <strong>independently</strong>: Claude (Anthropic), ChatGPT (OpenAI), and Gemini (Google). Three different brains, three different pedigrees.</span>
+  <span lang="fr">Des assistants IA ont relu la preuve : notamment Claude (Anthropic), et ponctuellement d'autres modèles pour des relectures croisées.</span>
+  <span lang="en">AI assistants reviewed the proof: notably Claude (Anthropic), and occasionally other models for cross-review.</span>
 </p>
 <p>
-  <span lang="fr">C'est comme demander à 3 experts différents de relire un texte pour ne rien manquer. Chacun voit ce que les autres ratent. On a appelé ça la <strong>méthode Three-Key</strong>.</span>
-  <span lang="en">It's like asking 3 different experts to proofread a text so nothing slips through. Each one catches what the others miss. We called this the <strong>Three-Key method</strong>.</span>
+  <span lang="fr">Ces relectures ne suffisent pas : la 3<sup>e</sup> hypothèse contenait déjà une partie de la réponse, et ce n'est corrigé que depuis le 2 octobre 2026 (erratum public).</span>
+  <span lang="en">These reviews are not enough: the 3rd hypothesis already contained part of the answer, and this was only corrected on 2 October 2026 (public erratum).</span>
 </p>
 <p>
-  <span lang="fr">Et pour boucler la boucle : la machine Lean 4 a tout revérifié, à la virgule près. Voir section suivante.</span>
-  <span lang="en">And to close the loop: the Lean 4 machine rechecked everything, down to the comma. See next section.</span>
+  <span lang="fr">Et la machine Lean 4 a vérifié chaque étape du raisonnement, à partir des hypothèses. Mais elle ne juge pas ce que valent les hypothèses. Voir section suivante.</span>
+  <span lang="en">And the Lean 4 machine checked every step of the reasoning, starting from the hypotheses. But it does not judge what the hypotheses are worth. See next section.</span>
 </p>
 </section>
 
@@ -294,16 +295,8 @@
   <span lang="en">You give it your proof line by line. If just one line has a logical error, it refuses. Everything turns red. You fix, you restart.</span>
 </p>
 <p>
-  <span lang="fr">Si la machine accepte, ta preuve est correcte. <strong>À 100%.</strong> Pas « l'arbitre humain est probablement d'accord ». À 100%.</span>
-  <span lang="en">If the machine accepts, your proof is correct. <strong>100%.</strong> Not "the human reviewer probably agrees". 100%.</span>
-</p>
-<p>
-  <span lang="fr">C'est plus fiable qu'un peer review humain (où tout le monde peut louper un détail).</span>
-  <span lang="en">It's more reliable than human peer review (where everyone can miss a detail).</span>
-</p>
-<p>
-  <span lang="fr">Notre théorème principal, <code>no_nontrivial_cycle_phase59</code>, a été accepté par Lean 4. C'est solide.</span>
-  <span lang="en">Our main theorem, <code>no_nontrivial_cycle_phase59</code>, was accepted by Lean 4. It's solid.</span>
+  <span lang="fr">Si la machine accepte, le raisonnement est correct <strong>à partir des hypothèses données</strong> — à condition que le vérificateur lui-même n'ait pas de bug (c'est arrivé : bug <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, juillet 2026). Il reste aussi à vérifier que les hypothèses ne contiennent pas déjà la réponse : c'est exactement l'erreur corrigée sur ce site le 2 octobre 2026. Notre théorème principal, <code>no_nontrivial_cycle_phase59</code>, a été accepté par Lean 4.27.0 ; ce qu'il démontre vraiment est expliqué dans l'<a href="../#erratum">erratum</a>.</span>
+  <span lang="en">If the machine accepts, the reasoning is correct <strong>from the given hypotheses</strong> — provided the checker itself has no bug (it happened: bug <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, July 2026). One must also check that the hypotheses do not already contain the answer: that is exactly the error corrected on this site on 2 October 2026. Our main theorem, <code>no_nontrivial_cycle_phase59</code>, was accepted by Lean 4.27.0; what it really proves is explained in the <a href="../#erratum">erratum</a>.</span>
 </p>
 </section>
 
@@ -323,14 +316,14 @@
 <ul>
   <li><a href="../cycles/"><span lang="fr">Les cycles, en images</span><span lang="en">The cycles, in pictures</span></a> — <span lang="fr">deux tours, quatre boucles, et pourquoi c'est si dur (page compagnon du gateway interactif de B. Macindoe)</span><span lang="en">two towers, four loops, and why it's so hard (companion to B. Macindoe's interactive gateway)</span></li>
   <li><a href="../faq/"><span lang="fr">La FAQ détaillée</span><span lang="en">The detailed FAQ</span></a> — <span lang="fr">12 questions sur Collatz et notre travail</span><span lang="en">12 questions about Collatz and our work</span></li>
-  <li><a href="../histoire/"><span lang="fr">L'histoire</span><span lang="en">The story</span></a> — <span lang="fr">le récit personnel du chemin parcouru</span><span lang="en">the personal narrative of the journey</span></li>
+  <li><a href="../histoire/"><span lang="fr">L'histoire</span><span lang="en">The story</span></a> — <span lang="fr">la chronologie de la conjecture, de 1937 à aujourd'hui</span><span lang="en">the timeline of the conjecture, from 1937 to today</span></li>
   <li><a href="../syracuse/"><span lang="fr">La page Syracuse</span><span lang="en">The Syracuse page</span></a> — <span lang="fr">définition complète et alias internationaux du problème</span><span lang="en">full definition and international aliases of the problem</span></li>
   <li><a href="../preuve/"><span lang="fr">La preuve étape par étape</span><span lang="en">The step-by-step proof</span></a> — <span lang="fr">l'architecture détaillée</span><span lang="en">the detailed architecture</span></li>
-  <li><a href="../papers/"><span lang="fr">Le paper formel</span><span lang="en">The formal paper</span></a> — <span lang="fr">preprint 28 pages, DOI Zenodo 10.5281/zenodo.19790406 (en repositionnement éditorial)</span><span lang="en">28-page preprint, Zenodo DOI 10.5281/zenodo.19790406 (in editorial repositioning)</span></li>
+  <li><a href="../papers/"><span lang="fr">Le paper formel</span><span lang="en">The formal paper</span></a> — <span lang="fr">preprint, DOI Zenodo 10.5281/zenodo.19790405 (le PDF porte encore l'ancien énoncé : voir l'erratum)</span><span lang="en">preprint, Zenodo DOI 10.5281/zenodo.19790405 (the PDF still carries the old statement: see the erratum)</span></li>
 </ul>
 <p style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-secondary); border-radius: 6px;">
-  <span lang="fr"><strong>Une dernière chose.</strong> Ce site est un <em>document vivant</em>. Si tu trouves une erreur, une formulation maladroite, ou si tu as une question — écris-moi sur <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a> ou via la page <a href="../#equipe">Équipe</a>.</span>
-  <span lang="en"><strong>One last thing.</strong> This site is a <em>living document</em>. If you find an error, an awkward phrasing, or have a question — write me on <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a> or via the <a href="../#equipe">Team</a> page.</span>
+  <span lang="fr"><strong>Une dernière chose.</strong> Ce site est un <em>document vivant</em>. Si tu trouves une erreur, une formulation maladroite, ou si tu as une question — écris-moi sur <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a> ou via la page <a href="../#team">Équipe</a>.</span>
+  <span lang="en"><strong>One last thing.</strong> This site is a <em>living document</em>. If you find an error, an awkward phrasing, or have a question — write me on <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a> or via the <a href="../#team">Team</a> page.</span>
 </p>
 </section>
 
@@ -348,8 +341,8 @@
     · <a href="../feed.xml">Atom feed</a>
   </p>
   <p style="margin-top: 0.5rem;">
-    <span lang="fr">Page Pour les non-mathématiciens mise à jour le 2026-05-05 · v0.7.1</span>
-    <span lang="en">For everyone page last updated 2026-05-05 · v0.7.1</span>
+    <span lang="fr">Page Pour les non-mathématiciens mise à jour le 2026-10-02 · v0.9.0</span>
+    <span lang="en">For everyone page last updated 2026-10-02 · v0.9.0</span>
   </p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
@@ -357,8 +350,7 @@
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
+<script src="../assets/js/main.js?v=20261002-V0-9-0"></script>
 
 </body>
 </html>
-</content>

@@ -23,7 +23,7 @@
 <meta property="og:description" content="Réponses sourcées aux questions fréquentes sur Collatz/Syracuse/3n+1. Statut, récompense, difficulté, Lean 4, apports du projet.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/faq/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="fr_FR">
@@ -33,7 +33,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FAQ — Conjecture de Collatz / Syracuse">
 <meta name="twitter:description" content="Réponses sourcées aux questions fréquentes Collatz/Syracuse/3n+1.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 
 <link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
 
@@ -48,7 +48,7 @@
       "url": "https://collatz-lab.org/faq/",
       "inLanguage": ["fr", "en"],
       "datePublished": "2026-04-30",
-      "dateModified": "2026-04-30",
+      "dateModified": "2026-10-02",
       "author": {"@type": "Person", "@id": "https://orcid.org/0009-0008-7940-402X", "name": "Eric Merle"},
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -66,7 +66,7 @@
           "name": "La conjecture de Collatz est-elle prouvée ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Non, elle reste ouverte (état 2026). Le résultat majeur le plus récent est Tao 2019 : presque toutes les orbites atteignent presque des valeurs bornées (densité naturelle 1). Aucune preuve inconditionnelle n'existe. Vérification computationnelle : Barina 2025, n < 2^71."
+            "text": "Non, elle reste ouverte (état 2026). Le résultat majeur le plus récent est Tao 2019 : presque toutes les orbites atteignent presque des valeurs bornées (au sens de la densité logarithmique). Aucune preuve inconditionnelle n'existe. Vérification computationnelle : Barina 2025, n < 2^71."
           }
         },
         {
@@ -90,7 +90,7 @@
           "name": "Qu'apporte ce site (collatz-lab.org) ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Un théorème conditionnel formalisé en Lean 4, kernel-checked (Mathlib v4.27). Le théorème ne prouve PAS la conjecture Collatz : il établit la non-existence de cycles non-triviaux modulo 3 hypothèses externes documentées (1 conjecture de travail : BakerSeparation, renforcement non démontré des bornes Rhin/Wu/Salikhov ; 1 vérification computationnelle reproductible : BarinaVerification n<2^71, Barina 2025 ; 1 dérivation projet : DerivedLargeKBound, k>1322 → n<2^71, combinant Baker + fractions continues + Product Bound + Barina, n'est PAS un théorème publié — cf. HYPOTHESES.md §5). Plus une quadrilogie d'impossibilité (δ8, δ8', δ10, δ11 conditionnel) prouvant que cette conditionnalité est nécessaire dans le paradigme Baker+CF, pas arbitraire."
+            "text": "Un théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0). Il ne prouve pas la conjecture de Collatz. Démontré : aucun cycle non trivial avec k ≤ 1322 (k = nombre de termes impairs), sous les hypothèses H1 BakerSeparation (hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et H2 BarinaVerification (traduction d'un résultat de calcul publié, Bařina 2025, n < 2^71). La 3e hypothèse, H3 DerivedLargeKBound (k > 1322 → n < 2^71), est supposée, non dérivée ; sous H2, elle équivaut à la conclusion pour k > 1322 (erratum du 2 octobre 2026 ; HYPOTHESES.md, section H3, la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple δ8 : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles."
           }
         },
         {
@@ -98,7 +98,7 @@
           "name": "Qu'est-ce que Lean 4 ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Lean 4 est un assistant de preuve formelle (proof assistant) développé à Microsoft Research. Une preuve écrite en Lean 4 et acceptée par le noyau (kernel) est mathématiquement vérifiée à un niveau de rigueur supérieur à la révision par les pairs traditionnelle. Mathlib est sa bibliothèque mathématique standard."
+            "text": "Lean 4 est un assistant de preuve formelle (proof assistant) ; le projet Lean a été lancé par Leonardo de Moura à Microsoft Research. Si le noyau (kernel) accepte une preuve, le raisonnement est correct à partir des hypothèses données — à condition que le vérificateur lui-même n'ait pas de bug (c'est arrivé : bug lean4#14576, juillet 2026). Il reste aussi à vérifier que les hypothèses ne contiennent pas déjà la réponse : c'est exactement l'erreur corrigée sur ce site le 2 octobre 2026. Mathlib est sa bibliothèque mathématique standard."
           }
         },
         {
@@ -106,7 +106,7 @@
           "name": "Que veut dire 'kernel-checked' ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Le noyau (kernel) Lean 4 est un petit programme qui vérifie chaque pas de preuve. Si le noyau accepte la preuve, elle est correcte modulo la confiance qu'on accorde à ce noyau et aux trois axiomes minimaux de Lean (propext, Classical.choice, Quot.sound). Notre théorème principal no_nontrivial_cycle_phase59 a été kernel-checked avec ces 3 axiomes seulement."
+            "text": "Le noyau (kernel) Lean 4 est un petit programme qui vérifie chaque pas de preuve. Si le noyau accepte la preuve, elle est correcte modulo la confiance qu'on accorde à ce noyau (il a déjà eu un bug : lean4#14576, corrigé dans Lean v4.32.2 le 28/07/2026) et aux axiomes utilisés. Notre théorème principal no_nontrivial_cycle_phase59 a été vérifié par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant cette correction, et n'a pas été revérifié depuis ; selon la référence expected_axioms.md, ses axiomes Lean sont propext, Classical.choice et Quot.sound. Ses trois hypothèses H1-H3 ne sont pas des axiomes Lean : ce sont des paramètres du théorème."
           }
         },
         {
@@ -114,7 +114,7 @@
           "name": "Pourquoi parle-t-on de preuve 'conditionnelle' ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Notre théorème dépend de trois hypothèses externes documentées (BakerSeparation, BarinaVerification, DerivedLargeKBound). Ce n'est donc pas une preuve inconditionnelle de la conjecture de Collatz. Notre apport est de cartographier rigoureusement les obstructions structurelles qui rendent cette conditionnalité nécessaire, pas arbitraire."
+            "text": "Notre théorème dépend de trois hypothèses (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound), qui sont des paramètres du théorème Lean. Ce n'est donc pas une preuve inconditionnelle de la conjecture de Collatz. De plus, H3 équivaut, sous H2, à la conclusion pour k > 1322 : seul le cas k ≤ 1322 est démontré sans circularité, sous H1 et H2 (erratum du 2 octobre 2026). Pour situer : Hercher (2023) et la vérification de Bařina impliquent déjà qu'un cycle non trivial a au moins 1,375·10¹¹ termes impairs."
           }
         },
         {
@@ -122,7 +122,7 @@
           "name": "Quelles sont les approches existantes ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tao 2019 (densité presque-1), Krasikov-Lagarias (densité partielle), Eliahou-Steiner (cycle structure), Knight (sieve methods), Calegari-Dimitrov-Tang 2025 (arithmetic holonomy), Barina (vérification computationnelle), Hercher (m-bornes locales). Ce site documente les piliers conditionnels et leurs limites structurelles."
+            "text": "Tao 2019 (densité logarithmique 1), Krasikov-Lagarias (densité partielle), Eliahou-Steiner (structure des cycles), Knight 2026 (« Collatz high cycles do not exist »), Barina 2025 (vérification computationnelle), Hercher 2023 (aucun m-cycle non trivial avec m ≤ 91). Ce site documente les piliers conditionnels et leurs limites structurelles."
           }
         },
         {
@@ -130,7 +130,7 @@
           "name": "Comment puis-je contribuer ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Le code Lean 4 et le paper sont open-source sur GitHub (ericmerle3789/collatz-conditional-cycles, licence MIT pour le code, CC BY-SA 4.0 pour le site). Issues, pull requests, audits Red Team sont bienvenus. Le research-ledger documente publiquement audits, mea culpa, et corrections."
+            "text": "Le code Lean 4 et le paper sont open-source sur GitHub (ericmerle3789/collatz-conditional-cycles, licence CC BY 4.0 pour le paper et le code Lean ; CC BY-SA 4.0 pour le site). Issues, pull requests et audits sont bienvenus. Le research-ledger documente publiquement audits, mea culpa et corrections."
           }
         },
         {
@@ -138,7 +138,7 @@
           "name": "Qui maintient ce site ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Eric Merle (ORCID 0009-0008-7940-402X), avec un protocole Three-Key validation multi-IA — consultation indépendante de 3 modèles (Anthropic Claude Opus 4.7 = OLD3, Anthropic Claude Sonnet 4.6 = NEW4, OpenAI ChatGPT 5.5 en mode raisonnement étendu) pour les décisions structurantes, et Two-Key validation (OLD3 ↔ NEW4) pour les contributions courantes. Ce protocole multi-IA est une discipline interne anti-hallucination ; il n'est PAS un peer review et ne remplace pas la vérification kernel-checked Lean 4."
+            "text": "Eric Merle (ORCID 0009-0008-7940-402X), chercheur indépendant (France), avec l'aide d'assistants IA, et en collaboration ouverte avec Benjamin Macindoe depuis juillet 2026. Des modèles de langage, notamment Claude (Anthropic), servent à la recherche bibliographique, au code, à la formalisation et à la relecture ; d'autres modèles ont servi ponctuellement à des relectures croisées. Leurs sorties sont revérifiées à la source ; elles peuvent se tromper, et l'ont fait (voir les mea culpa). Ces relectures ne sont pas un peer review."
           }
         },
         {
@@ -146,7 +146,7 @@
           "name": "C'est quoi le protocole ARES ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ARES v2 est notre méthodologie anti-hallucination multi-IA : 6 règles strictes pour vérifier toute claim avant publication, incluant la nécessité d'une source primaire ou secondaire vérifiable, l'absence d'interpolation, et la documentation des incertitudes (epistemic_status: verified | partial | external_unverified). Chaque event du research-ledger porte ces métadonnées."
+            "text": "ARES v2 est le nom de notre méthode interne de vérification avant publication : chaque affirmation doit avoir une source primaire ou secondaire vérifiable, sans interpolation, et les incertitudes sont documentées (epistemic_status : verified, partial, external_unverified…). Chaque événement du research-ledger porte ces métadonnées. Cette méthode n'a pas empêché des erreurs (voir l'erratum du 2 octobre 2026 et les mea culpa) ; quand une erreur est trouvée, elle est corrigée et documentée publiquement."
           }
         }
       ]
@@ -170,7 +170,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
 </head>
 <body>
 
@@ -232,8 +232,8 @@
   <details class="faq-item" id="q2">
     <summary><strong><span lang="fr">2. La conjecture est-elle prouvée ?</span><span lang="en">2. Is the conjecture proved?</span></strong></summary>
     <p>
-      <span lang="fr"><strong>Non</strong> (état 2026). Le résultat majeur récent est <strong>Tao 2019</strong> : presque toutes les orbites de Collatz atteignent presque des valeurs bornées (densité naturelle 1). Vérification computationnelle : <strong>Barina 2025</strong>, <code>n &lt; 2<sup>71</sup></code>. Aucune preuve inconditionnelle n'existe.</span>
-      <span lang="en"><strong>No</strong> (as of 2026). Major recent result: <strong>Tao 2019</strong> — almost all Collatz orbits attain almost bounded values (natural density 1). Computational verification: <strong>Barina 2025</strong>, <code>n &lt; 2<sup>71</sup></code>. No unconditional proof exists.</span>
+      <span lang="fr"><strong>Non</strong> (état 2026). Le résultat majeur récent est <strong>Tao 2019</strong> : presque toutes les orbites de Collatz atteignent presque des valeurs bornées (au sens de la densité logarithmique). Vérification computationnelle : <strong>Barina 2025</strong>, <code>n &lt; 2<sup>71</sup></code>. Aucune preuve inconditionnelle n'existe.</span>
+      <span lang="en"><strong>No</strong> (as of 2026). Major recent result: <strong>Tao 2019</strong> — almost all Collatz orbits attain almost bounded values (in the sense of logarithmic density). Computational verification: <strong>Barina 2025</strong>, <code>n &lt; 2<sup>71</sup></code>. No unconditional proof exists.</span>
     </p>
   </details>
 
@@ -256,79 +256,77 @@
   <details class="faq-item" id="q5">
     <summary><strong><span lang="fr">5. Qu'apporte ce site (collatz-lab.org) ?</span><span lang="en">5. What does this site (collatz-lab.org) contribute?</span></strong></summary>
     <p>
-      <span lang="fr">Un <strong>théorème conditionnel formalisé</strong> en Lean 4, kernel-checked (Mathlib v4.27.0) — <strong>ne prouve PAS la conjecture Collatz</strong>, mais établit la non-existence de cycles non-triviaux modulo 3 hypothèses externes documentées :
-      <strong>BakerSeparation</strong> (<em>conjecture de travail</em>, renforcement non démontré des bornes Rhin/Wu/Salikhov publiées),
-      <strong>BarinaVerification</strong> (<code>n &lt; 2<sup>71</sup></code>, vérification computationnelle reproductible Barina 2025),
-      <strong>DerivedLargeKBound</strong> (<em>dérivation projet</em>, <code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>, combine Baker + fractions continues + Product Bound + Barina ; <strong>n'est pas un théorème publié</strong> — cf. <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>). Plus une <strong>quadrilogie d'impossibilité conditionnelle</strong> (δ8, δ8', δ10, δ11) prouvant que cette conditionnalité est <em>nécessaire</em> dans le paradigme Baker+CF, pas <em>arbitraire</em>.</span>
-      <span lang="en">A <strong>conditional theorem formalized</strong> in Lean 4, kernel-checked (Mathlib v4.27) — <strong>does NOT prove the Collatz conjecture</strong>, but establishes the non-existence of non-trivial cycles modulo 3 documented external hypotheses: <strong>BakerSeparation</strong> (<em>working conjecture</em>, undemonstrated strengthening of published Rhin/Wu/Salikhov bounds), <strong>BarinaVerification</strong> (<code>n &lt; 2<sup>71</sup></code>, reproducible computational verification Barina 2025), <strong>DerivedLargeKBound</strong> (<em>project-derived hypothesis</em>, <code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>, combines Baker + continued fractions + Product Bound + Barina; <strong>not a published theorem</strong> — see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>). Plus an <strong>impossibility quadrilogy</strong> (δ8, δ8', δ10, δ11 conditional) proving that this conditionality is <em>necessary</em> in the Baker+CF paradigm, not <em>arbitrary</em>.</span>
+      <span lang="fr">Un <strong>théorème conditionnel formalisé</strong> en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0) — <strong>il ne prouve pas la conjecture de Collatz</strong>. Démontré : <strong>aucun cycle non trivial avec <code>k ≤ 1322</code></strong> (k = nombre de termes impairs), sous les hypothèses
+      H1 <strong>BakerSeparation</strong> (<em>hypothèse de travail</em>, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et
+      H2 <strong>BarinaVerification</strong> (traduction d'un résultat de calcul publié, Bařina 2025, <code>n &lt; 2<sup>71</sup></code>).
+      La 3e hypothèse, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), est <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion pour <code>k &gt; 1322</code> (erratum du 2 octobre 2026 ; voir <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, qui la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple <strong>δ8</strong> : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles.</span>
+      <span lang="en">A <strong>conditional theorem formalized</strong> in Lean 4 (checked on Lean 4.27.0, Mathlib v4.27.0) — <strong>it does not prove the Collatz conjecture</strong>. Proved: <strong>no non-trivial cycle with <code>k ≤ 1322</code></strong> (k = number of odd terms), under hypotheses H1 <strong>BakerSeparation</strong> (<em>working hypothesis</em>, stronger in this form than published effective bounds, see mea culpa #28) and H2 <strong>BarinaVerification</strong> (encoding of a published computational result, Barina 2025, <code>n &lt; 2<sup>71</sup></code>). The 3rd hypothesis, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion for <code>k &gt; 1322</code> (erratum of 2 October 2026; see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, which presents it as a derivation: corrected by this erratum). The site also documents statements about the limits of some methods, e.g. <strong>δ8</strong>: the Product-Bound chain cannot, on its own, close large cycles.</span>
     </p>
   </details>
 
   <details class="faq-item" id="q6">
     <summary><strong><span lang="fr">6. Qu'est-ce que Lean 4 ?</span><span lang="en">6. What is Lean 4?</span></strong></summary>
     <p>
-      <span lang="fr">Lean 4 est un <strong>assistant de preuve formelle</strong> (proof assistant) développé à Microsoft Research. Une preuve écrite en Lean 4 et acceptée par le noyau (kernel) est mathématiquement vérifiée à un niveau de rigueur supérieur à la peer review traditionnelle. <strong>Mathlib</strong> est sa bibliothèque mathématique standard (<code>v4.27.0</code> utilisée ici).</span>
-      <span lang="en">Lean 4 is a <strong>formal proof assistant</strong> developed at Microsoft Research. A proof written in Lean 4 and accepted by the kernel is mathematically verified to a level of rigor exceeding traditional peer review. <strong>Mathlib</strong> is its standard mathematics library (<code>v4.27.0</code> used here).</span>
+      <span lang="fr">Lean 4 est un <strong>assistant de preuve formelle</strong> (proof assistant) ; le projet Lean a été lancé par Leonardo de Moura à Microsoft Research. Si le noyau (kernel) accepte une preuve, le raisonnement est correct <strong>à partir des hypothèses données</strong> — à condition que le vérificateur lui-même n'ait pas de bug (c'est arrivé : bug <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, juillet 2026). Il reste aussi à vérifier que les hypothèses ne contiennent pas déjà la réponse : c'est exactement l'erreur corrigée sur ce site le 2 octobre 2026. <strong>Mathlib</strong> est sa bibliothèque mathématique standard (<code>v4.27.0</code> utilisée ici).</span>
+      <span lang="en">Lean 4 is a <strong>formal proof assistant</strong>; the Lean project was started by Leonardo de Moura at Microsoft Research. If the kernel accepts a proof, the reasoning is correct <strong>from the given hypotheses</strong> — provided the checker itself has no bug (it happened: bug <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, July 2026). One must also check that the hypotheses do not already contain the answer: that is exactly the error corrected on this site on 2 October 2026. <strong>Mathlib</strong> is its standard mathematics library (<code>v4.27.0</code> used here).</span>
     </p>
   </details>
 
   <details class="faq-item" id="q7">
     <summary><strong><span lang="fr">7. Que veut dire "kernel-checked" ?</span><span lang="en">7. What does "kernel-checked" mean?</span></strong></summary>
     <p>
-      <span lang="fr">Le <strong>noyau (kernel) Lean 4</strong> est un petit programme qui vérifie chaque pas de preuve. Si le noyau accepte, la preuve est correcte modulo la confiance qu'on accorde à ce noyau et aux <strong>3 axiomes minimaux Lean</strong> : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>. Notre théorème principal <code>no_nontrivial_cycle_phase59</code> a été kernel-checked avec ces 3 axiomes seulement.</span>
-      <span lang="en">The <strong>Lean 4 kernel</strong> is a small program that checks every proof step. If the kernel accepts, the proof is correct modulo trust in this kernel and Lean's <strong>3 minimal axioms</strong>: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>. Our main theorem <code>no_nontrivial_cycle_phase59</code> is kernel-checked with these 3 axioms only.</span>
+      <span lang="fr">Le <strong>noyau (kernel) Lean 4</strong> est un petit programme qui vérifie chaque pas de preuve. Si le noyau accepte, la preuve est correcte modulo la confiance qu'on accorde à ce noyau (il a déjà eu un bug : <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, corrigé dans Lean v4.32.2 le 28/07/2026) et aux axiomes utilisés. Notre théorème principal <code>no_nontrivial_cycle_phase59</code> a été vérifié par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant cette correction, et <strong>n'a pas été revérifié depuis</strong> ; selon la référence <code>expected_axioms.md</code>, ses axiomes Lean sont <code>propext</code>, <code>Classical.choice</code> et <code>Quot.sound</code>. Ses trois hypothèses H1-H3 ne sont pas des axiomes Lean : ce sont des paramètres du théorème.</span>
+      <span lang="en">The <strong>Lean 4 kernel</strong> is a small program that checks every proof step. If the kernel accepts, the proof is correct modulo trust in this kernel (it has had a bug: <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, fixed in Lean v4.32.2 on 28 July 2026) and in the axioms used. Our main theorem <code>no_nontrivial_cycle_phase59</code> was checked by the Lean 4.27.0 kernel (Mathlib v4.27.0), before that fix, and <strong>has not been re-checked since</strong>; according to the reference <code>expected_axioms.md</code>, its Lean axioms are <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code>. Its three hypotheses H1-H3 are not Lean axioms: they are parameters of the theorem.</span>
     </p>
   </details>
 
   <details class="faq-item" id="q8">
     <summary><strong><span lang="fr">8. Pourquoi parle-t-on de preuve "conditionnelle" ?</span><span lang="en">8. Why "conditional" proof?</span></strong></summary>
     <p>
-      <span lang="fr">Le théorème dépend de <strong>trois hypothèses externes documentées</strong> (BakerSeparation, BarinaVerification, DerivedLargeKBound). Ce n'est donc <strong>pas une preuve inconditionnelle</strong> de Collatz/Syracuse. L'apport est de cartographier rigoureusement les obstructions structurelles qui rendent cette conditionnalité <em>nécessaire</em>, pas <em>arbitraire</em>.</span>
-      <span lang="en">The theorem depends on <strong>three documented external hypotheses</strong> (BakerSeparation, BarinaVerification, DerivedLargeKBound). It is therefore <strong>not an unconditional proof</strong> of Collatz/Syracuse. The contribution is rigorously mapping the structural obstructions that make this conditionality <em>necessary</em>, not <em>arbitrary</em>.</span>
+      <span lang="fr">Le théorème dépend de <strong>trois hypothèses</strong> (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound), qui sont des paramètres du théorème Lean. Ce n'est donc <strong>pas une preuve inconditionnelle</strong> de Collatz/Syracuse. De plus, H3 équivaut, sous H2, à la conclusion pour <code>k &gt; 1322</code> : seul le cas <code>k ≤ 1322</code> est démontré sans circularité, sous H1 et H2 (erratum du 2 octobre 2026). Pour situer : Hercher (2023) et la vérification de Bařina impliquent déjà qu'un cycle non trivial a au moins 1,375·10¹¹ termes impairs.</span>
+      <span lang="en">The theorem depends on <strong>three hypotheses</strong> (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound), which are parameters of the Lean theorem. It is therefore <strong>not an unconditional proof</strong> of Collatz/Syracuse. Moreover, under H2, H3 is equivalent to the conclusion for <code>k &gt; 1322</code>: only the case <code>k ≤ 1322</code> is proved without circularity, under H1 and H2 (erratum of 2 October 2026). For context: Hercher (2023) together with Barina's verification already implies that a non-trivial cycle has at least 1.375·10¹¹ odd terms.</span>
     </p>
   </details>
 
   <details class="faq-item" id="q9">
     <summary><strong><span lang="fr">9. Quelles sont les autres approches ?</span><span lang="en">9. What are the other approaches?</span></strong></summary>
     <p>
-      <span lang="fr"><strong>Tao 2019</strong> (densité presque-1, méthodes analytiques),
-      <strong>Krasikov-Lagarias</strong> (densité partielle, sieve),
+      <span lang="fr"><strong>Tao 2019</strong> (densité logarithmique 1, méthodes analytiques),
+      <strong>Krasikov-Lagarias</strong> (densité partielle),
       <strong>Eliahou-Steiner</strong> (structure des cycles, identité fondamentale),
-      <strong>Knight</strong> (méthodes de tamis),
-      <strong>Calegari-Dimitrov-Tang 2025</strong> (arithmetic holonomy — paradigme alternatif),
+      <strong>Knight 2026</strong> (« Collatz high cycles do not exist »),
       <strong>Barina 2025</strong> (vérification computationnelle),
-      <strong>Hercher 2023</strong> (bornes locales sur <code>m</code>). Notre site documente le paradigme <em>Baker+CF</em> et ses limites structurelles.</span>
-      <span lang="en"><strong>Tao 2019</strong> (near-1 density, analytic methods),
-      <strong>Krasikov-Lagarias</strong> (partial density, sieve),
+      <strong>Hercher 2023</strong> (aucun m-cycle non trivial avec <code>m ≤ 91</code>). Notre site documente le paradigme <em>Baker+CF</em> et ses limites structurelles.</span>
+      <span lang="en"><strong>Tao 2019</strong> (logarithmic density 1, analytic methods),
+      <strong>Krasikov-Lagarias</strong> (partial density),
       <strong>Eliahou-Steiner</strong> (cycle structure, fundamental identity),
-      <strong>Knight</strong> (sieve methods),
-      <strong>Calegari-Dimitrov-Tang 2025</strong> (arithmetic holonomy — alternative paradigm),
+      <strong>Knight 2026</strong> ("Collatz high cycles do not exist"),
       <strong>Barina 2025</strong> (computational verification),
-      <strong>Hercher 2023</strong> (local bounds on <code>m</code>). Our site documents the <em>Baker+CF paradigm</em> and its structural limits.</span>
+      <strong>Hercher 2023</strong> (no non-trivial m-cycle with <code>m ≤ 91</code>). Our site documents the <em>Baker+CF paradigm</em> and its structural limits.</span>
     </p>
   </details>
 
   <details class="faq-item" id="q10">
     <summary><strong><span lang="fr">10. Comment puis-je contribuer ?</span><span lang="en">10. How can I contribute?</span></strong></summary>
     <p>
-      <span lang="fr">Code Lean 4 et paper sont open-source : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub repository</a> (MIT pour le code, CC BY-SA 4.0 pour le site). Issues, pull requests, audits Red Team bienvenus. Le <a href="../research-ledger/">Research Ledger</a> documente publiquement audits, mea culpa, corrections.</span>
-      <span lang="en">Lean 4 code and paper are open-source: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub repository</a> (MIT for code, CC BY-SA 4.0 for site). Issues, pull requests, Red Team audits welcome. The <a href="../research-ledger/">Research Ledger</a> publicly documents audits, mea culpa, corrections.</span>
+      <span lang="fr">Code Lean 4 et paper sont open-source : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub repository</a> (CC BY 4.0 pour le paper et le code Lean, CC BY-SA 4.0 pour le site). Issues, pull requests et audits bienvenus. Le <a href="../research-ledger/">Research Ledger</a> documente publiquement audits, mea culpa, corrections.</span>
+      <span lang="en">Lean 4 code and paper are open-source: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub repository</a> (CC BY 4.0 for the paper and the Lean code, CC BY-SA 4.0 for the site). Issues, pull requests and audits welcome. The <a href="../research-ledger/">Research Ledger</a> publicly documents audits, mea culpa, corrections.</span>
     </p>
   </details>
 
   <details class="faq-item" id="q11">
     <summary><strong><span lang="fr">11. Qui maintient ce site ?</span><span lang="en">11. Who maintains this site?</span></strong></summary>
     <p>
-      <span lang="fr">Eric Merle (<a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>), avec un protocole <strong>Three-Key validation</strong> multi-IA — consultation indépendante de 3 modèles : <strong>Anthropic Claude Opus 4.7</strong> (OLD3), <strong>Anthropic Claude Sonnet 4.6</strong> (NEW4), <strong>OpenAI ChatGPT</strong> en mode raisonnement étendu (désigné « 5.5 » dans la nomenclature interne du protocole tri-IA, ne reflète pas la dénomination officielle publique d'OpenAI) — pour les décisions structurantes, et <strong>Two-Key validation</strong> (OLD3 ↔ NEW4) pour les contributions courantes. <em>Ce protocole multi-IA est une discipline interne anti-hallucination ; il n'est PAS un peer review et ne remplace pas la vérification kernel-checked Lean 4.</em></span>
-      <span lang="en">Eric Merle (<a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>), with a <strong>Three-Key validation</strong> multi-AI protocol — independent consultation of 3 models: <strong>Anthropic Claude Opus 4.7</strong> (OLD3), <strong>Anthropic Claude Sonnet 4.6</strong> (NEW4), <strong>OpenAI ChatGPT</strong> in extended reasoning mode (referred to as "5.5" in the internal tri-AI protocol nomenclature, does not reflect the official public OpenAI naming) — for structural decisions, and <strong>Two-Key validation</strong> (OLD3 ↔ NEW4) for routine contributions. <em>This multi-AI protocol is an internal anti-hallucination discipline; it is NOT a peer review and does not replace the Lean 4 kernel-checked verification.</em></span>
+      <span lang="fr">Eric Merle (<a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>), chercheur indépendant (France), avec l'aide d'assistants IA, et en <strong>collaboration ouverte avec Benjamin Macindoe</strong> depuis juillet 2026 (<a href="https://github.com/macindoe/one-obstruction-three-faces">dépôt public commun</a>). Des modèles de langage, notamment Claude (Anthropic), servent à la recherche bibliographique, au code, à la formalisation et à la relecture ; d'autres modèles ont servi ponctuellement à des relectures croisées. Leurs sorties sont revérifiées à la source ; elles peuvent se tromper, et l'ont fait (voir les mea culpa). <em>Ces relectures ne sont pas un peer review.</em></span>
+      <span lang="en">Eric Merle (<a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>), independent researcher (France), with the help of AI assistants, in <strong>open collaboration with Benjamin Macindoe</strong> since July 2026 (<a href="https://github.com/macindoe/one-obstruction-three-faces">shared public repository</a>). Language models, notably Claude (Anthropic), are used for literature search, code, formalization and review; other models were occasionally used for cross-review. Their outputs are re-checked at the source; they can be wrong, and have been (see the mea culpa). <em>These reviews are not a peer review.</em></span>
     </p>
   </details>
 
   <details class="faq-item" id="q12">
     <summary><strong><span lang="fr">12. C'est quoi le protocole ARES ?</span><span lang="en">12. What is the ARES protocol?</span></strong></summary>
     <p>
-      <span lang="fr"><strong>ARES v2</strong> est notre méthodologie anti-hallucination multi-IA : 6 règles strictes pour vérifier toute claim avant publication, incluant la nécessité d'une source primaire ou secondaire vérifiable, l'absence d'interpolation, et la documentation des incertitudes (<code>epistemic_status: verified | partial | external_unverified</code>). Chaque event du <a href="../research-ledger/">research-ledger</a> porte ces métadonnées.</span>
-      <span lang="en"><strong>ARES v2</strong> is our anti-hallucination multi-AI methodology: 6 strict rules to verify any claim before publication, including the need for a verifiable primary or secondary source, no interpolation, and documentation of uncertainty (<code>epistemic_status: verified | partial | external_unverified</code>). Every event in the <a href="../research-ledger/">research-ledger</a> carries these metadata.</span>
+      <span lang="fr"><strong>ARES v2</strong> est le nom de notre méthode interne de vérification avant publication : chaque affirmation doit avoir une source primaire ou secondaire vérifiable, sans interpolation, et les incertitudes sont documentées (<code>epistemic_status</code> : <code>verified</code>, <code>partial</code>, <code>external_unverified</code>…). Chaque événement du <a href="../research-ledger/">research-ledger</a> porte ces métadonnées. Cette méthode n'a pas empêché des erreurs (voir l'erratum du 2 octobre 2026 et les mea culpa) ; quand une erreur est trouvée, elle est corrigée et documentée publiquement.</span>
+      <span lang="en"><strong>ARES v2</strong> is the name of our internal pre-publication checking method: every claim must have a verifiable primary or secondary source, with no interpolation, and uncertainty is documented (<code>epistemic_status</code>: <code>verified</code>, <code>partial</code>, <code>external_unverified</code>…). Every event in the <a href="../research-ledger/">research-ledger</a> carries these metadata. This method did not prevent errors (see the erratum of 2 October 2026 and the mea culpa); when an error is found, it is corrected and documented publicly.</span>
     </p>
   </details>
 </section>
@@ -338,10 +336,12 @@
   <h3 lang="en">Primary and secondary sources</h3>
   <ol style="font-size: 0.92rem; line-height: 1.7;">
     <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture (EN)</a> · <a href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">Conjecture de Syracuse (FR)</a></li>
-    <li>Tao, T. (2019). <em>Almost all Collatz orbits attain almost bounded values</em>. <a href="https://arxiv.org/abs/1909.03562">arXiv:1909.03562</a></li>
+    <li>Tao, T. (2019). <em>Almost all orbits of the Collatz map attain almost bounded values</em>. <a href="https://arxiv.org/abs/1909.03562">arXiv:1909.03562</a></li>
     <li>Lagarias, J. C. (1985). <em>The 3x+1 Problem and its Generalizations</em>. American Mathematical Monthly, 92(1), 3-23. <a href="https://www.jstor.org/stable/2322189">JSTOR 2322189</a></li>
     <li>Conway, J. H. (1972). <em>Unpredictable iterations</em>. Proceedings of the Number Theory Conference, 49-52. (Undecidability of generalizations.)</li>
-    <li>Barina, D. (2025). Convergence verification <code>n &lt; 2<sup>71</sup></code>. (Cited as <code>BarinaVerification</code> axiom in the Lean formalization.)</li>
+    <li>Barina, D. (2025). <em>Improved verification limit for the convergence of the Collatz conjecture</em>. J. Supercomputing 81(7), article 810. <a href="https://doi.org/10.1007/s11227-025-07337-0">DOI 10.1007/s11227-025-07337-0</a> — verification up to <code>2<sup>71</sup></code>. (Encoded as the hypothesis <code>BarinaVerification</code>, a parameter of the Lean theorems, not a Lean axiom.)</li>
+    <li>Hercher, C. (2023). <em>There are no Collatz m-Cycles with m ≤ 91</em>. Journal of Integer Sequences 26, Article 23.3.5. <a href="https://arxiv.org/abs/2201.00406">arXiv:2201.00406</a></li>
+    <li>Knight, K. (2026). <em>Collatz high cycles do not exist</em>. Discrete Mathematics 349(3), article 114812. <a href="https://doi.org/10.1016/j.disc.2025.114812">DOI 10.1016/j.disc.2025.114812</a></li>
   </ol>
 </section>
 
@@ -357,8 +357,8 @@
     · <a href="../feed.xml">Atom feed</a>
   </p>
   <p style="margin-top: 0.5rem;">
-    <span lang="fr">FAQ mise à jour le 2026-04-30 · v0.6.0</span>
-    <span lang="en">FAQ last updated 2026-04-30 · v0.6.0</span>
+    <span lang="fr">FAQ mise à jour le 2026-10-02 · v0.9.0</span>
+    <span lang="en">FAQ last updated 2026-10-02 · v0.9.0</span>
   </p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
@@ -389,6 +389,6 @@
   .faq-item[open] summary { color: var(--accent, #c8a86a); }
 </style>
 
-<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
+<script src="../assets/js/main.js?v=20261002-V0-9-0"></script>
 </body>
 </html>

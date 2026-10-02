@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lean catalog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Catalog of Lean 4 theorems for the non-existence of non-trivial Collatz/Syracuse cycles. 7 central theorems + auxiliaries + 6 cf_gap windows + R34-R96 extended arsenal. All kernel-checked, Mathlib v4.27.">
+<meta name="description" content="Catalog of Lean 4 theorems for the conditional non-existence of non-trivial Collatz/Syracuse cycles. 7 central theorems + auxiliaries + 6 cf_gap windows + R34-R96 extended arsenal (prototypes). Main chain: Lean 4.27.0 · not re-checked after lean4#14576.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, Lean 4 theorems, Mathlib v4.27, no_nontrivial_cycle_phase59, cf_gap, Steiner, kernel-checked">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -23,10 +23,10 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="Lean catalog — Collatz / Syracuse Conditional Cycles">
-<meta property="og:description" content="(Syracuse · Collatz · 3n+1) 7 central kernel-checked theorems + auxiliaries + 6 cf_gap arithmetic windows + R34-R96 extended arsenal. Mathlib v4.27.0, reproduce.sh EXIT 0.">
+<meta property="og:description" content="(Syracuse · Collatz · 3n+1) 7 central theorems + auxiliaries + 6 cf_gap arithmetic windows + R34-R96 extended arsenal (prototypes). Main chain: Lean 4.27.0 · not re-checked after lean4#14576.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/lemmes/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
@@ -36,8 +36,8 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lean catalog — Collatz / Syracuse Conditional Cycles">
-<meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) 7 central kernel-checked theorems + auxiliaries + 6 cf_gap windows + R34-R96 arsenal.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png">
+<meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) 7 central theorems + auxiliaries + 6 cf_gap windows + R34-R96 arsenal (prototypes). Lean 4.27.0 · not re-checked after lean4#14576.">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 
 <!-- JSON-LD : Dataset (catalog of theorems) -->
 <script type="application/ld+json">
@@ -100,7 +100,7 @@
 <!-- D3 v7 pour le dependency graph -->
 <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js" integrity="sha384-su5kReKyYlIFrI62mbQRKXHzFobMa7BHp1cK6julLPbnYcCW9NIZKJiTODjLPeDh" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20260513-V0-7-5-DERIVED-CORRECTION">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
 </head>
 <body>
 
@@ -140,13 +140,13 @@
 
 <section class="hero" style="padding: 4rem 2rem 3rem;">
   <div class="hero-eyebrow">Catalogue Lean 4 · Mathlib v4.27.0</div>
-  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="fr">Théorèmes formellement vérifiés</h1>
-  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="en">Formally verified theorems</h1>
+  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="fr">Catalogue des théorèmes Lean</h1>
+  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="en">Lean theorem catalog</h1>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">
-    Sept théorèmes centraux constituent la chaîne de preuve de <code>no_nontrivial_cycle_phase59</code>, plus l'arsenal R34-R96 (extensions post-preprint) qui étend le transport modulaire et la décomposition par blocs. Tous sont kernel-checked et passent <code>reproduce.sh</code> EXIT 0.
+    Sept théorèmes centraux (le théorème principal <code>no_nontrivial_cycle_phase59</code>, ses deux sous-branches, le corollaire <code>sdw_from_cf</code> et trois variantes) sont contrôlés par <code>reproduce.sh</code> sur la branche <code>main</code> : vérifiés par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant la correction du bug de noyau <a href="https://github.com/leanprover/lean4/issues/14576" target="_blank" rel="noopener">lean4#14576</a> (Lean v4.32.2, 28/07/2026) ; non revérifiés depuis. L'arsenal R34-R96 (extensions post-preprint, branche <code>arsenal-postjar</code>) étend le transport modulaire et la décomposition par blocs ; ce sont des prototypes, dont certains énoncés sont encore laissés en <code>sorry</code>.
   </p>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="en">
-    Seven central theorems form the proof chain of <code>no_nontrivial_cycle_phase59</code>, plus the R34-R96 arsenal (post-preprint extensions) that extends modular transport and block decomposition. All are kernel-checked and pass <code>reproduce.sh</code> EXIT 0.
+    Seven central theorems (the main theorem <code>no_nontrivial_cycle_phase59</code>, its two sub-branches, the corollary <code>sdw_from_cf</code> and three variants) are checked by <code>reproduce.sh</code> on the <code>main</code> branch: checked by the Lean 4.27.0 kernel (Mathlib v4.27.0), before the fix of kernel bug <a href="https://github.com/leanprover/lean4/issues/14576" target="_blank" rel="noopener">lean4#14576</a> (Lean v4.32.2, 28 July 2026); not re-checked since. The R34-R96 arsenal (post-preprint extensions, <code>arsenal-postjar</code> branch) extends modular transport and block decomposition; these are prototypes, some of whose statements are still left as <code>sorry</code>.
   </p>
 </section>
 
@@ -154,8 +154,8 @@
   <div class="section-eyebrow">§ I</div>
   <h2 lang="fr">Profil d'axiomes</h2>
   <h2 lang="en">Axiom profile</h2>
-  <p lang="fr">Les théorèmes centraux reposent sur <strong>deux types d'hypothèses distincts</strong> : (1) les <strong>axiomes du noyau Lean</strong> (3, standards : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) ; (2) les <strong>3 hypothèses externes documentées</strong> (1 conjecture de travail : <code>BakerSeparation</code>, Baker 1966 / Matveev 2000 effectif ; 1 vérification computationnelle reproductible : <code>BarinaVerification</code> n&lt;2<sup>71</sup>, Barina 2025 ; 1 dérivation projet : <code>DerivedLargeKBound</code>, <code>k&gt;1322 ⇒ n&lt;2<sup>71</sup></code>, combine Baker + fractions continues + Product Bound + Barina, <strong>n'est pas un théorème publié</strong> — cf. <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>). Aucun <code>sorryAx</code> dans la chaîne critique.</p>
-  <p lang="en">The central theorems rely on <strong>two distinct types of hypotheses</strong>: (1) <strong>Lean kernel axioms</strong> (3, standard: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>); (2) <strong>3 documented external hypotheses</strong> (1 working conjecture: <code>BakerSeparation</code>, Baker 1966 / Matveev 2000 effective; 1 reproducible computational verification: <code>BarinaVerification</code> n&lt;2<sup>71</sup>, Barina 2025; 1 project-derived hypothesis: <code>DerivedLargeKBound</code>, <code>k&gt;1322 ⇒ n&lt;2<sup>71</sup></code>, combines Baker + continued fractions + Product Bound + Barina, <strong>not a published theorem</strong> — see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md" target="_blank" rel="noopener">HYPOTHESES.md §5</a>). No <code>sorryAx</code> in the critical chain.</p>
+  <p lang="fr">Les théorèmes centraux reposent sur <strong>deux types d'hypothèses distincts</strong> : (1) les <strong>axiomes du noyau Lean</strong> (3, standards : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) ; (2) les <strong>3 hypothèses H1-H3</strong>, qui sont des paramètres des théorèmes, pas des axiomes Lean (H1 <code>BakerSeparation</code> : hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28 ; H2 <code>BarinaVerification</code> : traduction d'un résultat de calcul publié, Bařina 2025, n&lt;2<sup>71</sup> ; H3 <code>DerivedLargeKBound</code>, <code>k&gt;1322 ⇒ n&lt;2<sup>71</sup></code> : hypothèse supposée, non dérivée ; équivaut sous H2 à la conclusion pour k &gt; 1322 — cf. <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, qui la présente comme une dérivation : c'est corrigé par l'erratum du 02/10/2026). Selon la référence <code>expected_axioms.md</code> (Lean 4.27.0), aucun <code>sorryAx</code> dans la chaîne critique.</p>
+  <p lang="en">The central theorems rely on <strong>two distinct types of hypotheses</strong>: (1) <strong>Lean kernel axioms</strong> (3, standard: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>); (2) the <strong>3 hypotheses H1-H3</strong>, which are parameters of the theorems, not Lean axioms (H1 <code>BakerSeparation</code>: working hypothesis, stronger in this form than published effective bounds, see mea culpa #28; H2 <code>BarinaVerification</code>: encoding of a published computational result, Barina 2025, n&lt;2<sup>71</sup>; H3 <code>DerivedLargeKBound</code>, <code>k&gt;1322 ⇒ n&lt;2<sup>71</sup></code>: assumed hypothesis, not derived; under H2 equivalent to the conclusion for k &gt; 1322 — see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, which presents it as a derivation: corrected by the erratum of 2 Oct 2026). According to the reference <code>expected_axioms.md</code> (Lean 4.27.0), no <code>sorryAx</code> in the critical chain.</p>
 
   <div class="card-grid">
     <div class="card">
@@ -178,18 +178,18 @@
         <li><code>Lean.ofReduceBool</code></li>
         <li><code>Lean.trustCompiler</code></li>
       </ul>
-      <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);" lang="fr">Utilisés par les <code>cf_gap_*</code> arithmétiques.</p>
-      <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);" lang="en">Used by the arithmetic <code>cf_gap_*</code>.</p>
+      <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);" lang="fr">Utilisés par les <code>cf_gap_*</code> arithmétiques, hors de la chaîne du théorème principal.</p>
+      <p style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);" lang="en">Used by the arithmetic <code>cf_gap_*</code>, outside the chain of the main theorem.</p>
     </div>
     <div class="card">
-      <div class="card-eyebrow" lang="fr">Hypothèses externes</div>
-      <div class="card-eyebrow" lang="en">External hypotheses</div>
-      <h3 lang="fr">3 axiomes documentés</h3>
-      <h3 lang="en">3 documented axioms</h3>
+      <div class="card-eyebrow" lang="fr">Hypothèses H1-H3 (paramètres)</div>
+      <div class="card-eyebrow" lang="en">Hypotheses H1-H3 (parameters)</div>
+      <h3 lang="fr">3 hypothèses (pas des axiomes Lean)</h3>
+      <h3 lang="en">3 hypotheses (not Lean axioms)</h3>
       <ul>
-        <li><code>BakerSeparation</code> <span lang="fr">(<strong>conjecture de travail</strong> — renforcement non démontré des bornes Rhin 1987 / Wu 2003 / Salikhov 2007 publiées ; voir <a href="/#meaculpa">#28</a> + lemme <strong>δ10</strong>)</span><span lang="en">(<strong>working hypothesis / conjecture</strong> — undemonstrated strengthening of published Rhin 1987 / Wu 2003 / Salikhov 2007 bounds; see <a href="/#meaculpa">#28</a> + <strong>δ10</strong> lemma)</span></li>
-        <li><code>BarinaVerification</code> (n &lt; 2^71)</li>
-        <li><code>DerivedLargeKBound</code> <span lang="fr">(<strong>dérivation projet</strong> : <code>k&gt;1322 ⇒ n&lt;2^71</code>, n'est pas un théorème publié)</span><span lang="en">(<strong>project-derived</strong>: <code>k&gt;1322 ⇒ n&lt;2^71</code>, not a published theorem)</span></li>
+        <li>H1 <code>BakerSeparation</code> <span lang="fr">(<strong>hypothèse de travail</strong>, plus forte que les bornes effectives publiées sous cette forme ; voir <a href="/#meaculpa">mea culpa #28</a>)</span><span lang="en">(<strong>working hypothesis</strong>, stronger in this form than published effective bounds; see <a href="/#meaculpa">mea culpa #28</a>)</span></li>
+        <li>H2 <code>BarinaVerification</code> <span lang="fr">(traduction d'un résultat de calcul publié : Bařina 2025, n &lt; 2^71)</span><span lang="en">(encoding of a published computational result: Barina 2025, n &lt; 2^71)</span></li>
+        <li>H3 <code>DerivedLargeKBound</code> <span lang="fr">(<code>k&gt;1322 ⇒ n&lt;2^71</code> : <strong>hypothèse supposée, non dérivée</strong> ; équivaut sous H2 à la conclusion pour k &gt; 1322)</span><span lang="en">(<code>k&gt;1322 ⇒ n&lt;2^71</code>: <strong>assumed hypothesis, not derived</strong>; under H2 equivalent to the conclusion for k &gt; 1322)</span></li>
       </ul>
     </div>
   </div>
@@ -209,8 +209,8 @@
   <div class="section-eyebrow" lang="en">§ III — Dependency graph</div>
   <h2 lang="fr">Architecture interactive (D3 force-directed)</h2>
   <h2 lang="en">Interactive architecture (D3 force-directed)</h2>
-  <p lang="fr">Graphe interactif de l'architecture de la preuve. <strong>Drag</strong> pour déplacer les nœuds, <strong>scroll</strong> pour zoomer. <em>Étoile dorée</em> = résultat principal. <span style="color: var(--accent-violet);">●</span> Hypothèses externes (BakerSeparation, BarinaVerification, DerivedLargeKBound) · <span style="color: var(--accent-green);">●</span> Axiomes Lean kernel · <span style="color: var(--accent-blue);">●</span> Lemmes auxiliaires · <span style="color: var(--accent-amber);">●</span> Théorèmes centraux. Lignes pleines = dépendances logiques, pointillés courts = axiomes kernel, pointillés longs dorés = alias.</p>
-  <p lang="en">Interactive graph of the proof architecture. <strong>Drag</strong> to reposition nodes, <strong>scroll</strong> to zoom. <em>Golden star</em> = main result. <span style="color: var(--accent-violet);">●</span> External hypotheses (BakerSeparation, BarinaVerification, DerivedLargeKBound) · <span style="color: var(--accent-green);">●</span> Lean kernel axioms · <span style="color: var(--accent-blue);">●</span> Auxiliary lemmas · <span style="color: var(--accent-amber);">●</span> Central theorems. Solid lines = logical dependencies, short dashes = kernel axioms, long golden dashes = aliases.</p>
+  <p lang="fr">Graphe interactif de l'architecture de la preuve. <strong>Drag</strong> pour déplacer les nœuds, <strong>scroll</strong> pour zoomer. <em>Étoile dorée</em> = résultat principal. <span style="color: var(--accent-violet);">●</span> Hypothèses H1-H3 (paramètres ; H3 supposée) · <span style="color: var(--accent-green);">●</span> Axiomes Lean kernel · <span style="color: var(--accent-blue);">●</span> Lemmes auxiliaires · <span style="color: var(--accent-amber);">●</span> Théorèmes centraux. Lignes pleines = dépendances logiques, pointillés courts = axiomes kernel. Les variantes (autres hypothèses, pas de simples alias) ne sont pas reliées au résultat principal.</p>
+  <p lang="en">Interactive graph of the proof architecture. <strong>Drag</strong> to reposition nodes, <strong>scroll</strong> to zoom. <em>Golden star</em> = main result. <span style="color: var(--accent-violet);">●</span> Hypotheses H1-H3 (parameters; H3 assumed) · <span style="color: var(--accent-green);">●</span> Lean kernel axioms · <span style="color: var(--accent-blue);">●</span> Auxiliary lemmas · <span style="color: var(--accent-amber);">●</span> Central theorems. Solid lines = logical dependencies, short dashes = kernel axioms. The variants (other hypotheses, not mere aliases) are not connected to the main result.</p>
 
   <div id="dependency-graph" style="width: 100%; min-height: 600px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 4px; margin: 1.5rem 0; position: relative;"></div>
 
@@ -223,8 +223,8 @@
 <section>
   <div class="section-eyebrow">§ IV — CF Windows</div>
   <h2>Continued fractions arithmetic gaps</h2>
-  <p lang="fr">Les théorèmes <code>cf_gap_8</code> à <code>cf_gap_13</code> calculent les inégalités arithmétiques aux convergents de $\log_2 3$, validées par <code>native_decide</code>.</p>
-  <p lang="en">Theorems <code>cf_gap_8</code> to <code>cf_gap_13</code> compute arithmetic inequalities at the convergents of $\log_2 3$, validated by <code>native_decide</code>.</p>
+  <p lang="fr">Les théorèmes <code>cf_gap_8</code> à <code>cf_gap_13</code> calculent les inégalités arithmétiques aux convergents de $\log_2 3$, validées par <code>native_decide</code>. Ce sont des vérifications isolées : aucun théorème de la chaîne principale ne les utilise, et elles ne démontrent pas H3.</p>
+  <p lang="en">Theorems <code>cf_gap_8</code> to <code>cf_gap_13</code> compute arithmetic inequalities at the convergents of $\log_2 3$, validated by <code>native_decide</code>. These are isolated checks: no theorem of the main chain uses them, and they do not prove H3.</p>
   <div class="table-wrap">
     <table>
       <thead>
@@ -241,16 +241,16 @@
   <div class="section-eyebrow" lang="en">§ V — Auxiliaries</div>
   <h2 lang="fr">Lemmes de l'arsenal</h2>
   <h2 lang="en">Arsenal lemmas</h2>
-  <p lang="fr">Théorèmes auxiliaires qui constituent les briques de la preuve principale : identité de Steiner, positivité de $D_s$, transport modulaire, périodisation lacunaire.</p>
-  <p lang="en">Auxiliary theorems that form the building blocks of the main proof: Steiner identity, positivity of $D_s$, modular transport, lacunary periodization.</p>
+  <p lang="fr">Théorèmes auxiliaires du projet : identité de Steiner, positivité de $D_s$, transport modulaire, périodisation lacunaire.</p>
+  <p lang="en">Auxiliary theorems of the project: Steiner identity, positivity of $D_s$, modular transport, lacunary periodization.</p>
   <div id="auxList"></div>
 </section>
 
 <section>
   <div class="section-eyebrow">§ VI — Extensions post-preprint</div>
   <h2>Arsenal R34-R96 (extensions post-preprint)</h2>
-  <p lang="fr">Extensions développées après le dépôt du preprint v1.1 (2026-04-27). Trois familles principales :</p>
-  <p lang="en">Extensions developed after the v1.1 preprint deposit (2026-04-27). Three main families:</p>
+  <p lang="fr">Extensions développées après le dépôt du preprint (avril 2026), sur la branche <code>arsenal-postjar</code>. Ce sont des prototypes : certains fichiers (par exemple <code>PadeBound.lean</code>, <code>CycleArithmetic.lean</code>) contiennent encore des énoncés laissés en <code>sorry</code>. Trois familles principales :</p>
+  <p lang="en">Extensions developed after the preprint deposit (April 2026), on the <code>arsenal-postjar</code> branch. These are prototypes: some files (e.g. <code>PadeBound.lean</code>, <code>CycleArithmetic.lean</code>) still contain statements left as <code>sorry</code>. Three main families:</p>
   <div class="card-grid" id="postJarFiles"></div>
 </section>
 
@@ -259,8 +259,8 @@
   <div class="section-eyebrow" lang="en">§ VII — Reproducibility</div>
   <h2 lang="fr">Vérifier la preuve localement</h2>
   <h2 lang="en">Verify the proof locally</h2>
-  <p lang="fr">Tout est reproductible depuis un clone propre via <code>reproduce.sh</code>. Le script vérifie : compilation propre, profil d'axiomes attendu, absence de <code>sorryAx</code>.</p>
-  <p lang="en">Everything is reproducible from a clean clone via <code>reproduce.sh</code>. The script checks: clean compilation, expected axiom profile, no <code>sorryAx</code>.</p>
+  <p lang="fr">La chaîne principale (branche <code>main</code>) est reproductible depuis un clone propre via <code>reproduce.sh</code>, sous Lean 4.27.0 (toolchain imposée par le script). Le script vérifie : compilation propre, profil d'axiomes attendu, absence de <code>sorryAx</code>.</p>
+  <p lang="en">The main chain (<code>main</code> branch) is reproducible from a clean clone via <code>reproduce.sh</code>, on Lean 4.27.0 (toolchain required by the script). The script checks: clean compilation, expected axiom profile, no <code>sorryAx</code>.</p>
 
   <div class="highlight">
     <h3 style="margin-top: 0;" lang="fr">Procédure</h3>
@@ -305,13 +305,13 @@ cd collatz-conditional-cycles
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.6.0 · 2026-04-30</div>
+  <div class="footer-meta">Cartography · v0.9.0 · 2026-10-02</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
   <p class="footer-status">
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/actions" target="_blank" rel="noopener" class="status-badge">
       <span class="status-dot" aria-hidden="true"></span>
-      <span data-i18n="buildPassing">site build: passing</span>
+      <span data-i18n="buildPassing">build history (GitHub)</span>
     </a>
     <span class="status-sep">·</span>
     <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/commits/gh-pages" target="_blank" rel="noopener" id="lastCommitInfo" class="text-muted small">
@@ -330,9 +330,9 @@ cd collatz-conditional-cycles
 </footer>
 
 <!-- main.js : i18n, langBtn, navigator.language detection -->
-<script src="../assets/js/main.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
+<script src="../assets/js/main.js?v=20261002-V0-9-0"></script>
 <!-- dependency-graph.js : D3 force-directed visualization -->
-<script src="../assets/js/dependency-graph.js?v=20260513-V0-7-5-DERIVED-CORRECTION"></script>
+<script src="../assets/js/dependency-graph.js?v=20261002-V0-9-0"></script>
 <script>
   // Init du graphe quand D3 est disponible
   function initDepGraph() {

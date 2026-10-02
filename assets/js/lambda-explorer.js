@@ -3,8 +3,8 @@
    Plot dans le plan (k, S) avec :
    - droite y = k log_2 3 (cycle approximatif)
    - région Barina k ≤ 1322 (rouge)
-   - région DerivedLargeKBound (dérivation projet, k > 1322) — amber
-   - bande BakerSeparation effective (bleu, autour de la droite)
+   - région DerivedLargeKBound (hypothèse supposée H3, k > 1322) — amber
+   - bande BakerSeparation (H1, hypothèse de travail ; bleu, autour de la droite)
    - point courant (S, k) cliqué/sliders
    ========================================================================== */
 (function() {
@@ -132,7 +132,7 @@
     }
 
     function drawDerivedLargeKBoundRegion() {
-      // DerivedLargeKBound (dérivation projet) : k > 1322 ⇒ n < 2^71
+      // DerivedLargeKBound (hypothèse supposée H3) : k > 1322 ⇒ n < 2^71
       // Région visualisée : bande k ∈ (1322, K_MAX)
       ctx.fillStyle = 'rgba(212, 160, 69, 0.10)';
       const [x0, y0] = project(1322, 0);
@@ -228,8 +228,8 @@
       if (inDerivedLargeK) {
         return {
           status: 'derived-large-k',
-          fr: '⊕ Région DerivedLargeKBound (dérivation projet) + BakerSeparation effective : exclu via continued fractions',
-          en: '⊕ DerivedLargeKBound (project-derived) + BakerSeparation effective region: excluded via continued fractions'
+          fr: '⊕ Région k > 1322 : exclue uniquement par l\'hypothèse supposée H3 DerivedLargeKBound (avec H2) — voir l\'erratum du 2 octobre 2026',
+          en: '⊕ k > 1322 region: excluded only by the assumed hypothesis H3 DerivedLargeKBound (with H2) — see the erratum of 2 October 2026'
         };
       }
       return { status: 'unknown', fr: '?', en: '?' };
