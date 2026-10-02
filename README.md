@@ -32,7 +32,7 @@ Contact: `eric.merle@ac-versailles.fr`.
 
 | Path | Description |
 |---|---|
-| `paper/v2/` | Paper sources (Markdown), bibliography (`references.bib`), build configuration (`Makefile`), and the compiled `collatz-conditional-proof.pdf` (28 pages) plus its Pandoc-generated `.tex` source. |
+| `paper/v2/` | Paper sources (Markdown), bibliography (`references.bib`), build configuration (`Makefile`), and the compiled `collatz-conditional-proof.pdf` (29 pages) plus its Pandoc-generated `.tex` source. |
 | `ProjetCollatz/` | Lean 4 formalization (40 files, Mathlib v4.27.0). |
 | `probes/` | Axiom-profile probes used by the verification script. |
 | `expected_axioms.md` | Reference axiom profile for the central theorem chain. |
