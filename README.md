@@ -1,15 +1,26 @@
 # Collatz cycles: conditional non-existence in Lean 4
 
+> **Erratum (October 2026) — please read before citing.**
+>
+> 1. **The headline theorem is circular.** Given `BakerSeparation` and `BarinaVerification`, the third hypothesis `ProductBoundThreshold` ("every odd cycle has k ≤ 982") is equivalent to "no non-trivial cycle": `no_cycle_k_le_1322` (same file) already rules out every cycle with k ≤ 1322, and conversely the bound holds vacuously if there is no cycle. Likewise, given `BarinaVerification`, `DerivedLargeKBound` (Phase59) amounts to "no cycle with k > 1322". The value 982 is not derived from (k⁷+k)/3 < 2⁷¹: that inequality only shows that small k are excluded. Paper §4.3 itself notes that k ≤ 982 is "vacuously true assuming the Collatz no-cycle conjecture".
+> 2. **What is actually proved** is `no_cycle_k_le_1322`: no non-trivial cycle with k ≤ 1322 odd steps, assuming `BakerSeparation` and `BarinaVerification`. This range is already covered by published results (e.g. Hercher 2023).
+> 3. **`BakerSeparation` is a working hypothesis, not a published theorem.** We know of no published result giving (2^s − 3^k)·k⁶ ≥ 3^k for all k ≥ 2 with constant 1 (the effective bound in Simons–de Weger 2005, Lemma 12, after Rhin 1987, has exponent 13.3). Its "≈ 50× margin" is the value at k = 2; "for all k ≥ 2" is not proved. For k ≤ 1322 only finitely many instances are needed, but the theorem takes the full hypothesis as a parameter.
+> 4. **μ ≤ 5.125 is Salikhov's (2007) irrationality measure of ln 3**, not a measure of log₂3, and not Rhin's. `HYPOTHESES.md` and the paper (§2, §4.1, §10) misattribute it and apply it to log₂3; the claim that the exponents of ln 3 and log₂3 coincide (§4.1) is unjustified (log₂3 is not a rational multiple of ln 3), and the bound "k ≤ 3693" (§10) is withdrawn.
+> 5. **Hercher 2023** (Christian Hercher, *There are no Collatz m-Cycles with m ≤ 91*, J. Integer Seq. 26 (2023), Article 23.3.5) is about m (local minima), not k. The Lean lemmas proving k ≥ 92 (`hercher_from_baker_barina`, `hercher_derived`) do not recover Hercher's theorem. `HYPOTHESES.md` line 24 should read m ≤ 91.
+> 6. **Lean kernel.** The project is pinned to Lean v4.27.0, before the fix of the kernel soundness bug lean4#14576 (fixed in v4.32.2, 28 July 2026). It has not been re-checked on a fixed kernel in this repository. The bug does not by itself invalidate these proofs.
+>
+> The paper, PDF and Lean sources below are kept unchanged as deposited in April 2026 (Zenodo); this erratum takes precedence over their headline claims.
+
 Companion repository for the paper *On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions*, by Eric Merle.
 
 **Repository**: <https://github.com/ericmerle3789/collatz-conditional-cycles> (branch `main`).
-**Paper PDF (28 pages)**: [`paper/v2/collatz-conditional-proof.pdf`](paper/v2/collatz-conditional-proof.pdf), also available as a [GitHub Release v1.0 download](https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v1.0).
+**Paper PDF (29 pages; the v1.0 release PDF has 28)**: [`paper/v2/collatz-conditional-proof.pdf`](paper/v2/collatz-conditional-proof.pdf), also available as a [GitHub Release v1.0 download](https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v1.0).
 **Zenodo DOI**: [10.5281/zenodo.19790406](https://doi.org/10.5281/zenodo.19790406)
 **Author ORCID**: [0009-0008-7940-402X](https://orcid.org/0009-0008-7940-402X)
 
 ## Status
 
-The paper proves a **conditional** theorem: there are no non-trivial Collatz cycles, *provided* three explicit hypotheses (one published, one computational, one project-derived) hold. It does not address the unconditional convergence-to-1 statement (the divergence half of the Collatz conjecture); only the no-non-trivial-cycle disjunct is treated. See paper §3 for the statement and §4–§6 for the status of each hypothesis.
+The repository compiles a theorem with three hypothesis parameters. As explained in the erratum above, the third parameter is equivalent to the conclusion, so the theorem does not establish the non-existence of non-trivial cycles, even conditionally on published results. Its non-circular content is `no_cycle_k_le_1322`. The divergence half of the Collatz conjecture is not addressed.
 
 ## Author
 
@@ -43,9 +54,9 @@ theorem ProjetCollatz.no_nontrivial_cycle_final
 
 Defined in `ProjetCollatz/Phase58PorteDeuxFinal.lean` (line 339). The full axiom dependency can be inspected with `#print axioms ProjetCollatz.no_nontrivial_cycle_final`. The three structure parameters represent:
 
-- **`BakerSeparation`** — a quantitative form of Baker's theorem on linear forms in logarithms (A. Baker, *Linear forms in the logarithms of algebraic numbers*, *Mathematika* 13 (1966), 204–216).
+- **`BakerSeparation`** — a working hypothesis of Baker type, (2^s − 3^k)·k⁶ ≥ 3^k for k ≥ 2, motivated by A. Baker, *Mathematika* 13 (1966), 204–216; it is not a published theorem (see erratum, point 3).
 - **`BarinaVerification`** — the computational verification of D. Barina, *Improved verification limit for the convergence of the Collatz conjecture*, *J. Supercomputing* 81 (2025), 810 (extending the verified bound to `2⁷¹`).
-- **`ProductBoundThreshold`** — a project-derived cycle-complexity bound, introduced and justified in paper §4.3.
+- **`ProductBoundThreshold`** — "every odd cycle has k ≤ 982"; given the two other hypotheses it is equivalent to the conclusion (see erratum, point 1).
 
 See paper §4 for the published-source pedigree of each.
 
