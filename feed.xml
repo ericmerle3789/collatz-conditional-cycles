@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-02T12:00:00Z</updated>
+  <updated>2026-10-19T20:00:00Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,17 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.0 — Halbeisen–Hungerbühler 1997 in Lean 4</title>
+    <link href="https://collatz-lab.org/changelog/"/>
+    <id>urn:collatz-cycles:v0.10.0-hh1997-lean</id>
+    <updated>2026-10-19T20:00:00Z</updated>
+    <published>2026-10-19T20:00:00Z</published>
+    <category term="release"/>
+    <category term="lean"/>
+    <summary>Formalisation in Lean 4.34.0 (Mathlib v4.34.0) of a classical paper, not a new result: L. Halbeisen and N. Hungerbühler, "Optimal bounds for the length of rational Collatz cycles", Acta Arithmetica 78 (1997), 227-239. Everything the paper proves is kernel-checked, with the finite verification behind the example of §4.4 (if the conjecture is verified up to 212,366,032,807,211, every cycle of integers not containing 1 has at least 102,225,496 elements); 70 statements frozen before their proofs, 0 sorry, 0 native_decide, standard axioms only; not proved: the 1/2 bound of Remark 1, which the paper does not prove. Code: https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997</summary>
+  </entry>
 
   <entry>
     <title>v0.9.0 — Erratum to the main statement + factual corrections</title>

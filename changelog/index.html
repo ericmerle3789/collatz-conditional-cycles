@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.9.0 (2026-10-02), erratum on the main statement.">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.0 (2026-10-19), Halbeisen–Hungerbühler 1997 formalised in Lean 4.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -56,7 +56,7 @@
         "name": "Eric Merle"
       },
       "datePublished": "2026-04-27",
-      "dateModified": "2026-10-02",
+      "dateModified": "2026-10-19",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
@@ -133,6 +133,23 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.0">
+    <header>
+      <h2><span class="version-tag">v0.10.0</span> <span lang="fr">Halbeisen–Hungerbühler 1997 en Lean 4</span><span lang="en">Halbeisen–Hungerbühler 1997 in Lean 4</span></h2>
+      <time datetime="2026-10-19">2026-10-19</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Formalisation d'un classique</strong> : L. Halbeisen et N. Hungerbühler, « Optimal bounds for the length of rational Collatz cycles », <em>Acta Arithmetica</em> 78 (1997), 227-239, en Lean 4.34.0 (Mathlib v4.34.0). Ce n'est pas un résultat nouveau. Tout ce que l'article démontre est vérifié par le noyau, ainsi que la vérification finie de l'exemple du §4.4 (faite en partie, dans l'article, par un calcul approché). 70 énoncés figés avant leur preuve, 0 <code>sorry</code>, 0 <code>native_decide</code>, axiomes standard seuls. Non démontrée : la borne 1/2 de la Remarque 1, que l'article ne démontre pas. Dossier <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997" target="_blank" rel="noopener"><code>hh1997/</code> (36d5136)</a> : code, commande de vérification, correspondance ligne à ligne avec l'article, coquilles relevées.</li>
+      <li><strong>Pages</strong> : nouvelle carte sur la page <a href="../papers/">Papers</a> ; carte « Dernière vérification Lean » de l'accueil mise à jour.</li>
+      <li><strong>Inchangé</strong> : l'erratum du 2 octobre 2026 ; le théorème principal, vérifié sous Lean 4.27.0 et non revérifié depuis.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Formalisation of a classic</strong>: L. Halbeisen and N. Hungerbühler, "Optimal bounds for the length of rational Collatz cycles", <em>Acta Arithmetica</em> 78 (1997), 227-239, in Lean 4.34.0 (Mathlib v4.34.0). This is not a new result. Everything the paper proves is checked by the kernel, together with the finite verification behind the example of §4.4 (done partly numerically in the paper). 70 statements frozen before their proofs, 0 <code>sorry</code>, 0 <code>native_decide</code>, standard axioms only. Not proved: the 1/2 bound of Remark 1, which the paper does not prove. Folder <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997" target="_blank" rel="noopener"><code>hh1997/</code> (36d5136)</a>: code, verification command, line-by-line comparison with the paper, typos found.</li>
+      <li><strong>Pages</strong>: new card on the <a href="../papers/">Papers</a> page; the home page "Last Lean verification" card updated.</li>
+      <li><strong>Unchanged</strong>: the erratum of 2 October 2026; the main theorem, checked on Lean 4.27.0 and not re-checked since.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.9.0">
     <header>
       <h2><span class="version-tag">v0.9.0</span> <span lang="fr">Erratum de l'énoncé principal + corrections factuelles</span><span lang="en">Erratum to the main statement + factual corrections</span></h2>
@@ -405,7 +422,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.9.0 · 2026-10-02</div>
+  <div class="footer-meta">Cartography · v0.10.0 · 2026-10-19</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">

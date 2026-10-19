@@ -5,7 +5,7 @@
   <!-- Page d'accueil — version anglaise canonique -->
   <url>
     <loc>https://collatz-lab.org/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/"/>
@@ -27,7 +27,7 @@
   <!-- Pipeline éditorial des papers -->
   <url>
     <loc>https://collatz-lab.org/papers/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/papers/"/>
@@ -60,7 +60,7 @@
   <!-- Changelog versionné -->
   <url>
     <loc>https://collatz-lab.org/changelog/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/changelog/"/>
