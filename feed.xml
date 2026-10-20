@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-20T12:00:00Z</updated>
+  <updated>2026-10-20T16:00:00Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,17 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.2 — Aligned with the Zenodo v4 version (erratum)</title>
+    <link href="https://collatz-lab.org/changelog/"/>
+    <id>urn:collatz-cycles:v0.10.2-zenodo-v4</id>
+    <updated>2026-10-20T16:00:00Z</updated>
+    <published>2026-10-20T16:00:00Z</published>
+    <category term="release"/>
+    <category term="erratum"/>
+    <summary>Version v4 of the preprint on Zenodo (DOI 10.5281/zenodo.23496480) keeps the PDF of 27 April 2026 and adds a 2-page erratum; the site no longer says the PDF still carries the old statement. Item 1 of the erratum: in Lean, k is any return time, so under H2 the hypothesis H3 excludes every non-trivial cycle on its own, as does ProductBoundThreshold; both are equivalent to the conclusion (the earlier wording "for k &gt; 1322" was too weak). What is proved without circularity is unchanged: no non-trivial cycle with k ≤ 1322, under H1 and H2. The thresholds k ≤ 3693 and k ≤ 3732 are withdrawn; δ8 is credited to a remark of Halbeisen–Hungerbühler 1997 (§5).</summary>
+  </entry>
 
   <entry>
     <title>v0.10.1 — Corrections: credit for L-A1, state of the collaboration</title>

@@ -55,7 +55,7 @@
     "name": "Eric Merle"
   },
   "datePublished": "2026-04-27",
-  "dateModified": "2026-10-02",
+  "dateModified": "2026-10-20",
   "isPartOf": {"@id": "https://collatz-lab.org/"},
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "proficiencyLevel": "Expert",
@@ -144,10 +144,10 @@
   <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="fr">Chaîne de preuve formelle</h1>
   <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="en">Formal proof chain</h1>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">
-    Le théorème principal <code>no_nontrivial_cycle_phase59</code> se décompose en deux sous-branches : <strong>k ≤ 1322</strong> (H1 Baker + Product-Bound + H2 Bařina) et <strong>k &gt; 1322</strong> (fermé uniquement par l'hypothèse supposée H3, avec H2). Sous H2, H3 équivaut à la conclusion pour k &gt; 1322 : seul le cas k ≤ 1322 est démontré sans circularité (erratum du 2 octobre 2026, voir le <a href="../changelog/">changelog</a> et la page <a href="../papers/">Papers</a>). <code>sdw_from_cf</code> est un corollaire en aval, pas une étape de la preuve.
+    Le théorème principal <code>no_nontrivial_cycle_phase59</code> se décompose en deux sous-branches : <strong>k ≤ 1322</strong> (H1 Baker + Product-Bound + H2 Bařina) et <strong>k &gt; 1322</strong> (fermé uniquement par l'hypothèse supposée H3, avec H2). Sous H2, H3 équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) : seul le cas k ≤ 1322 est démontré sans circularité (erratum du 2 octobre 2026, voir le <a href="../changelog/">changelog</a> et la page <a href="../papers/">Papers</a>). <code>sdw_from_cf</code> est un corollaire en aval, pas une étape de la preuve.
   </p>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="en">
-    The main theorem <code>no_nontrivial_cycle_phase59</code> splits into two sub-branches: <strong>k ≤ 1322</strong> (H1 Baker + Product-Bound + H2 Barina) and <strong>k &gt; 1322</strong> (closed only by the assumed hypothesis H3, with H2). Under H2, H3 is equivalent to the conclusion for k &gt; 1322: only the case k ≤ 1322 is proved without circularity (erratum of 2 October 2026, see the <a href="../changelog/">changelog</a> and the <a href="../papers/">Papers</a> page). <code>sdw_from_cf</code> is a downstream corollary, not a step of the proof.
+    The main theorem <code>no_nontrivial_cycle_phase59</code> splits into two sub-branches: <strong>k ≤ 1322</strong> (H1 Baker + Product-Bound + H2 Barina) and <strong>k &gt; 1322</strong> (closed only by the assumed hypothesis H3, with H2). Under H2, H3 is equivalent to the conclusion itself (in Lean, k is any return time): only the case k ≤ 1322 is proved without circularity (erratum of 2 October 2026, see the <a href="../changelog/">changelog</a> and the <a href="../papers/">Papers</a> page). <code>sdw_from_cf</code> is a downstream corollary, not a step of the proof.
   </p>
 </section>
 
@@ -248,10 +248,10 @@ flowchart TB
   <h2 lang="fr">Grands cycles : l'hypothèse supposée H3</h2>
   <h2 lang="en">Large cycles: the assumed hypothesis H3</h2>
   <p lang="fr">
-    Pour $k > 1322$, aucun argument n'est formalisé : le cas est fermé par <code>no_cycle_k_gt_1322</code>, qui ne prend que H2 (<code>barina</code>) et H3 (<code>cf</code>). H3 est <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion pour $k > 1322$. Le dépôt contient aussi six vérifications arithmétiques aux <strong>convergents</strong> $p_n/q_n$ de $\log_2 3$, faites par <code>native_decide</code> (axiomes <code>Lean.ofReduceBool</code>, <code>Lean.trustCompiler</code>). Elles ne sont utilisées par aucun théorème de la chaîne principale, ne couvrent que $k$ de 665 à 10 590 736 (une plage finie), et le passage de ces fenêtres à H3 n'est pas formalisé (le fichier Phase63 prévu pour cela n'est qu'un squelette). Elles ne démontrent donc pas H3 :
+    Pour $k > 1322$, aucun argument n'est formalisé : le cas est fermé par <code>no_cycle_k_gt_1322</code>, qui ne prend que H2 (<code>barina</code>) et H3 (<code>cf</code>). H3 est <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque). Le dépôt contient aussi six vérifications arithmétiques aux <strong>convergents</strong> $p_n/q_n$ de $\log_2 3$, faites par <code>native_decide</code> (axiomes <code>Lean.ofReduceBool</code>, <code>Lean.trustCompiler</code>). Elles ne sont utilisées par aucun théorème de la chaîne principale, ne couvrent que $k$ de 665 à 10 590 736 (une plage finie), et le passage de ces fenêtres à H3 n'est pas formalisé (le fichier Phase63 prévu pour cela n'est qu'un squelette). Elles ne démontrent donc pas H3 :
   </p>
   <p lang="en">
-    For $k > 1322$, no argument is formalized: the case is closed by <code>no_cycle_k_gt_1322</code>, which takes only H2 (<code>barina</code>) and H3 (<code>cf</code>). H3 is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion for $k > 1322$. The repository also contains six arithmetic checks at the <strong>convergents</strong> $p_n/q_n$ of $\log_2 3$, done by <code>native_decide</code> (axioms <code>Lean.ofReduceBool</code>, <code>Lean.trustCompiler</code>). They are used by no theorem of the main chain, cover only $k$ from 665 to 10,590,736 (a finite range), and the step from these windows to H3 is not formalized (the Phase63 file intended for it is only a skeleton). They therefore do not prove H3:
+    For $k > 1322$, no argument is formalized: the case is closed by <code>no_cycle_k_gt_1322</code>, which takes only H2 (<code>barina</code>) and H3 (<code>cf</code>). H3 is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion itself (in Lean, k is any return time). The repository also contains six arithmetic checks at the <strong>convergents</strong> $p_n/q_n$ of $\log_2 3$, done by <code>native_decide</code> (axioms <code>Lean.ofReduceBool</code>, <code>Lean.trustCompiler</code>). They are used by no theorem of the main chain, cover only $k$ from 665 to 10,590,736 (a finite range), and the step from these windows to H3 is not formalized (the Phase63 file intended for it is only a skeleton). They therefore do not prove H3:
   </p>
 
   <div class="table-wrap">
@@ -331,8 +331,8 @@ flowchart TB
       <p lang="fr"><strong>Théorème principal (Merle 2026).</strong> Sous les trois hypothèses H1 <em>BakerSeparation</em>, H2 <em>BarinaVerification</em> et H3 <em>DerivedLargeKBound</em> (paramètres du théorème) :</p>
       <p lang="en"><strong>Main theorem (Merle 2026).</strong> Under the three hypotheses H1 <em>BakerSeparation</em>, H2 <em>BarinaVerification</em> and H3 <em>DerivedLargeKBound</em> (parameters of the theorem):</p>
       <p>$$\forall\, n &gt; 1,\ \forall\, k \in \mathbb{N},\ \neg\, \mathrm{IsOddCycle}(n, k)$$</p>
-      <p lang="fr">(<code>IsOddCycle n k</code> impose $n &gt; 1$.) La preuve se décompose en deux sous-branches : $k \leq 1322$ (H1 + H2, via le Product-Bound) et $k > 1322$ (H3 + H2). <strong>Erratum (2 octobre 2026)</strong> : H3 est supposée, non dérivée ; sous H2 elle équivaut à la conclusion pour $k > 1322$. Seul « aucun cycle non trivial avec $k \leq 1322$, sous H1 et H2 » est démontré sans circularité.</p>
-      <p lang="en">(<code>IsOddCycle n k</code> requires $n &gt; 1$.) The proof splits in two sub-branches: $k \leq 1322$ (H1 + H2, via the Product-Bound) and $k > 1322$ (H3 + H2). <strong>Erratum (2 October 2026)</strong>: H3 is assumed, not derived; under H2 it is equivalent to the conclusion for $k > 1322$. Only "no non-trivial cycle with $k \leq 1322$, under H1 and H2" is proved without circularity.</p>
+      <p lang="fr">(<code>IsOddCycle n k</code> impose $n &gt; 1$.) La preuve se décompose en deux sous-branches : $k \leq 1322$ (H1 + H2, via le Product-Bound) et $k > 1322$ (H3 + H2). <strong>Erratum (2 octobre 2026)</strong> : H3 est supposée, non dérivée ; sous H2 elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque). Seul « aucun cycle non trivial avec $k \leq 1322$, sous H1 et H2 » est démontré sans circularité.</p>
+      <p lang="en">(<code>IsOddCycle n k</code> requires $n &gt; 1$.) The proof splits in two sub-branches: $k \leq 1322$ (H1 + H2, via the Product-Bound) and $k > 1322$ (H3 + H2). <strong>Erratum (2 October 2026)</strong>: H3 is assumed, not derived; under H2 it is equivalent to the conclusion itself (in Lean, k is any return time). Only "no non-trivial cycle with $k \leq 1322$, under H1 and H2" is proved without circularity.</p>
     </div>
   </div>
 </section>
@@ -358,10 +358,10 @@ flowchart TB
       To close the current window, the Product-Bound chain would need a lower bound $K \ln 2 - k \ln 3 > k^{-c}$ with a linear-form exponent $c \approx 0.96$ (i.e. an irrationality measure $\mu = c + 1 \approx 1.96$). Dirichlet's theorem forces $c \geq 1$ ($\mu \geq 2$): this route is closed, whatever the constant, by a margin of about 0.04 in the exponent. This is a statement about a proof method: it excludes no cycle and is not formalized in Lean.
     </p>
     <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;" lang="fr">
-      Source : registre commun, entrée L-A9 (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener" style="color: var(--accent);">LEDGER.md</a> ; convention corrigée en août 2026). L'énoncé du PDF Zenodo et de <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/05-obstruction-I-product-bound-impossibility.md" target="_blank" rel="noopener" style="color: var(--accent);">paper/v2/05-obstruction-I-product-bound-impossibility.md</a> mélange les deux conventions.
+      Source : registre commun, entrée L-A9 (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener" style="color: var(--accent);">LEDGER.md</a> ; convention corrigée en août 2026). L'énoncé du PDF Zenodo et de <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/05-obstruction-I-product-bound-impossibility.md" target="_blank" rel="noopener" style="color: var(--accent);">paper/v2/05-obstruction-I-product-bound-impossibility.md</a> mélange les deux conventions. La conclusion rejoint une remarque de Halbeisen et Hungerbühler (<em>Acta Arith.</em> 78 (1997), §5, p. 238) : des estimations valables pour les cycles rationnels ne suffisent pas, seules, à exclure les cycles entiers. L'esquisse de preuve du Lemme 5.1 du PDF est retirée (erratum de la version Zenodo v4, item 7).
     </p>
     <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;" lang="en">
-      Source: shared ledger, entry L-A9 (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener" style="color: var(--accent);">LEDGER.md</a>; convention corrected in August 2026). The statement in the Zenodo PDF and in <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/05-obstruction-I-product-bound-impossibility.md" target="_blank" rel="noopener" style="color: var(--accent);">paper/v2/05-obstruction-I-product-bound-impossibility.md</a> mixes the two conventions.
+      Source: shared ledger, entry L-A9 (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener" style="color: var(--accent);">LEDGER.md</a>; convention corrected in August 2026). The statement in the Zenodo PDF and in <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/05-obstruction-I-product-bound-impossibility.md" target="_blank" rel="noopener" style="color: var(--accent);">paper/v2/05-obstruction-I-product-bound-impossibility.md</a> mixes the two conventions. The conclusion amounts to a remark of Halbeisen and Hungerbühler (<em>Acta Arith.</em> 78 (1997), §5, p. 238): estimates valid for rational cycles cannot on their own exclude integer cycles. The proof sketch of Lemma 5.1 in the PDF is withdrawn (erratum of the Zenodo v4 version, item 7).
     </p>
   </div>
 </section>
@@ -398,7 +398,7 @@ cd collatz-conditional-cycles
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.9.0 · 2026-10-02</div>
+  <div class="footer-meta">Cartography · v0.10.2 · 2026-10-20</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2</p>
   <p class="footer-status">

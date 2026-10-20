@@ -16,7 +16,7 @@
   <!-- Architecture de la preuve formelle -->
   <url>
     <loc>https://collatz-lab.org/preuve/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/preuve/"/>
@@ -38,7 +38,7 @@
   <!-- Catalogue Lean des théorèmes (avec D3 dependency graph) -->
   <url>
     <loc>https://collatz-lab.org/lemmes/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/lemmes/"/>
@@ -49,7 +49,7 @@
   <!-- Λ_{S,k} explorer interactif -->
   <url>
     <loc>https://collatz-lab.org/lambda/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/lambda/"/>
@@ -104,7 +104,7 @@
   <!-- Pour les non-mathématiciens / For everyone — vulgarization entry point (general public) -->
   <url>
     <loc>https://collatz-lab.org/pour-tous/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/pour-tous/"/>
@@ -124,7 +124,7 @@
   <!-- Histoire / History — timeline 1937-2026 -->
   <url>
     <loc>https://collatz-lab.org/histoire/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/histoire/"/>

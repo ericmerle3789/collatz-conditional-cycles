@@ -46,7 +46,7 @@
       "@id": "https://collatz-lab.org/lambda/",
       "headline": "Interactive visualization of the Λ_{S,k} Diophantine lock",
       "name": "Λ_{S,k} interactive explorer",
-      "description": "Interactive (S, k) plane explorer showing the regions associated with the three hypotheses of the conditional theorem: BarinaVerification (H2, encoding of a published computational result, Barina 2025, n < 2^71), DerivedLargeKBound (H3, k > 1322 → n < 2^71: assumed hypothesis, not derived; under H2 equivalent to the conclusion for k > 1322 — see HYPOTHESES.md, section H3, and the erratum of 2 Oct 2026), and BakerSeparation (H1, working hypothesis, stronger in this form than published effective bounds — see mea culpa #28).",
+      "description": "Interactive (S, k) plane explorer showing the regions associated with the three hypotheses of the conditional theorem: BarinaVerification (H2, encoding of a published computational result, Barina 2025, n < 2^71), DerivedLargeKBound (H3, k > 1322 → n < 2^71: assumed hypothesis, not derived; under H2 equivalent to the conclusion itself (in Lean, k is any return time) — see HYPOTHESES.md, section H3, and the erratum of 2 Oct 2026), and BakerSeparation (H1, working hypothesis, stronger in this form than published effective bounds — see mea culpa #28).",
       "url": "https://collatz-lab.org/lambda/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -55,7 +55,7 @@
         "name": "Eric Merle"
       },
       "datePublished": "2026-04-29",
-      "dateModified": "2026-10-02",
+      "dateModified": "2026-10-20",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "proficiencyLevel": "Expert",
@@ -193,8 +193,8 @@
       <div class="card-eyebrow"><span lang="fr">H3 DerivedLargeKBound (supposée)</span><span lang="en">H3 DerivedLargeKBound (assumed)</span></div>
       <h3 lang="fr">$k &gt; 1322 \Rightarrow n &lt; 2^{71}$</h3>
       <h3 lang="en">$k &gt; 1322 \Rightarrow n &lt; 2^{71}$</h3>
-      <p lang="fr">Hypothèse <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion pour $k &gt; 1322$ (erratum du 2 octobre 2026). Les grands cycles ne sont donc exclus que par cette hypothèse. Voir <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a> (ce fichier la présente comme une dérivation : c'est corrigé par l'erratum du 02/10/2026). Pour situer : Hercher (2023, <em>J. Integer Seq.</em> 26, Article 23.3.5) montre que, si la conjecture est vérifiée jusqu'à 3·2⁶⁹ (ce que couvre la vérification de Bařina, 2⁷¹), tout cycle non trivial a au moins 1,375·10¹¹ termes impairs. Ce n'est pas la source de H3.</p>
-      <p lang="en">An <strong>assumed hypothesis, not derived</strong>; under H2 it is equivalent to the conclusion for $k &gt; 1322$ (erratum of 2 October 2026). Large cycles are therefore excluded only by this hypothesis. See <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a> (that file presents it as a derivation: corrected by the erratum of 2 Oct 2026). For context: Hercher (2023, <em>J. Integer Seq.</em> 26, Article 23.3.5) shows that, if the conjecture is verified up to 3·2⁶⁹ (covered by Barina's verification, 2⁷¹), every non-trivial cycle has at least 1.375·10¹¹ odd terms. This is not the source of H3.</p>
+      <p lang="fr">Hypothèse <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026). Les grands cycles ne sont donc exclus que par cette hypothèse. Voir <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a> (ce fichier la présente comme une dérivation : c'est corrigé par l'erratum du 02/10/2026). Pour situer : Hercher (2023, <em>J. Integer Seq.</em> 26, Article 23.3.5) montre que, si la conjecture est vérifiée jusqu'à 3·2⁶⁹ (ce que couvre la vérification de Bařina, 2⁷¹), tout cycle non trivial a au moins 1,375·10¹¹ termes impairs. Ce n'est pas la source de H3.</p>
+      <p lang="en">An <strong>assumed hypothesis, not derived</strong>; under H2 it is equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 October 2026). Large cycles are therefore excluded only by this hypothesis. See <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a> (that file presents it as a derivation: corrected by the erratum of 2 Oct 2026). For context: Hercher (2023, <em>J. Integer Seq.</em> 26, Article 23.3.5) shows that, if the conjecture is verified up to 3·2⁶⁹ (covered by Barina's verification, 2⁷¹), every non-trivial cycle has at least 1.375·10¹¹ odd terms. This is not the source of H3.</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--accent);">
       <div class="card-eyebrow"><span lang="fr">H1 BakerSeparation (hypothèse de travail)</span><span lang="en">H1 BakerSeparation (working hypothesis)</span></div>
@@ -209,7 +209,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.9.0 · 2026-10-02</div>
+  <div class="footer-meta">Cartography · v0.10.2 · 2026-10-20</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2</p>
   <p class="footer-status">

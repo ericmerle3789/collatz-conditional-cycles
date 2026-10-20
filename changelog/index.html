@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.1 (2026-10-20), corrections (credit for L-A1, state of the collaboration).">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.2 (2026-10-20), aligned with the Zenodo v4 version (erratum).">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -133,6 +133,27 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.2">
+    <header>
+      <h2><span class="version-tag">v0.10.2</span> <span lang="fr">Alignement sur la version Zenodo v4 (erratum)</span><span lang="en">Aligned with the Zenodo v4 version (erratum)</span></h2>
+      <time datetime="2026-10-20">2026-10-20</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Zenodo</strong> : la version v4 du preprint (20/10/2026, DOI <a href="https://doi.org/10.5281/zenodo.23496480" target="_blank" rel="noopener">10.5281/zenodo.23496480</a>) conserve le PDF du 27 avril 2026 et ajoute un erratum de 2 pages. Les phrases « le PDF porte encore l'ancien énoncé » sont remplacées sur toutes les pages.</li>
+      <li><strong>Erratum, item 1</strong> : la formule « sous H2, H3 équivaut à la conclusion pour k &gt; 1322 » (v0.9.0 à v0.10.1) était trop faible. En Lean, k est un temps de retour quelconque, et tout multiple d'un temps de retour en est un (<code>cycle_nSeq_multiples</code>). Sous H2, H3 exclut donc à elle seule tout cycle non trivial, comme <code>ProductBoundThreshold</code>, l'hypothèse du PDF : les deux équivalent à la conclusion. Ce qui est démontré sans circularité ne change pas : aucun cycle non trivial avec k ≤ 1322, sous H1 et H2.</li>
+      <li><strong>Cohérence avec l'erratum v4</strong> : les seuils k ≤ 3693 et k ≤ 3732 sont retirés (item 3) ; pour δ8, la conclusion rejoint une remarque de Halbeisen–Hungerbühler 1997 (§5, p. 238), et l'esquisse de preuve du Lemme 5.1 du PDF est retirée (item 7).</li>
+      <li><strong>Inchangé</strong> : la mention « non revérifié depuis » du théorème principal (Lean 4.27.0) ; le bloc sur la collaboration.</li>
+      <li>Les entrées ci-dessous restent telles quelles ; celles de v0.9.0 à v0.10.1 sont corrigées par la deuxième ligne ci-dessus.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Zenodo</strong>: version v4 of the preprint (2026-10-20, DOI <a href="https://doi.org/10.5281/zenodo.23496480" target="_blank" rel="noopener">10.5281/zenodo.23496480</a>) keeps the PDF of 27 April 2026 and adds a 2-page erratum. The sentences "the PDF still carries the old statement" are replaced on every page.</li>
+      <li><strong>Erratum, item 1</strong>: the wording "under H2, H3 is equivalent to the conclusion for k &gt; 1322" (v0.9.0 to v0.10.1) was too weak. In Lean, k is any return time, and every multiple of a return time is again one (<code>cycle_nSeq_multiples</code>). Under H2, H3 therefore excludes every non-trivial cycle on its own, as does <code>ProductBoundThreshold</code>, the hypothesis of the PDF: both are equivalent to the conclusion. What is proved without circularity is unchanged: no non-trivial cycle with k ≤ 1322, under H1 and H2.</li>
+      <li><strong>Consistency with the v4 erratum</strong>: the thresholds k ≤ 3693 and k ≤ 3732 are withdrawn (item 3); for δ8, the conclusion amounts to a remark of Halbeisen–Hungerbühler 1997 (§5, p. 238), and the proof sketch of Lemma 5.1 in the PDF is withdrawn (item 7).</li>
+      <li><strong>Unchanged</strong>: the statement that the main theorem (Lean 4.27.0) has not been re-checked since; the collaboration block.</li>
+      <li>The entries below are kept as they were; those of v0.9.0 to v0.10.1 are corrected by the second line above.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.10.1">
     <header>
       <h2><span class="version-tag">v0.10.1</span> <span lang="fr">Corrections : crédit de L-A1, état de la collaboration</span><span lang="en">Corrections: credit for L-A1, state of the collaboration</span></h2>
@@ -441,7 +462,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.1 · 2026-10-20</div>
+  <div class="footer-meta">Cartography · v0.10.2 · 2026-10-20</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">
