@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-20T19:00:00Z</updated>
+  <updated>2026-10-20T12:47:21Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -21,8 +21,8 @@
     <title>v0.10.5 — All pages reviewed: remaining fixes</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.5-all-pages</id>
-    <updated>2026-10-20T19:00:00Z</updated>
-    <published>2026-10-20T19:00:00Z</published>
+    <updated>2026-10-20T12:47:21Z</updated>
+    <published>2026-10-20T12:47:21Z</published>
     <category term="release"/>
     <category term="erratum"/>
     <summary>FAQ and dependency graph aligned with item 1 of the v4 erratum (in Lean, k is any return time, so H3 with H2 is equivalent to the conclusion itself); Papers: 4 versions on Zenodo; research ledger: links to the v4 preprint, the Lean repository and its software archive; History: μ(ln 3) &lt; 5.117 (Wu &amp; Wang 2014); home diagram: δ8 points to the remark of Halbeisen–Hungerbühler 1997 (§5).</summary>
@@ -32,8 +32,8 @@
     <title>v0.10.4 — Timeline and cards up to date</title>
     <link href="https://collatz-lab.org/research-ledger/"/>
     <id>urn:collatz-cycles:v0.10.4-timeline</id>
-    <updated>2026-10-20T18:00:00Z</updated>
-    <published>2026-10-20T18:00:00Z</published>
+    <updated>2026-10-20T12:43:31Z</updated>
+    <published>2026-10-20T12:43:31Z</published>
     <category term="release"/>
     <summary>Research ledger: five events added (Halbeisen–Hungerbühler 1997 in Lean; PR #8 merged; prior-literature credits; preprint version v4 with erratum; Zenodo software archive). Home cards updated (latest milestone: version v4 with erratum; preprint: 4 versions; latest audit: internal AI-assisted adversarial review of the erratum, not peer review). History timeline: July 2026 and October 2026.</summary>
   </entry>
@@ -42,8 +42,8 @@
     <title>v0.10.3 — Zenodo archive of the HH 1997 formalisation</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.3-hh1997-zenodo</id>
-    <updated>2026-10-20T17:00:00Z</updated>
-    <published>2026-10-20T17:00:00Z</published>
+    <updated>2026-10-20T11:44:08Z</updated>
+    <published>2026-10-20T11:44:08Z</published>
     <category term="release"/>
     <category term="lean"/>
     <summary>The Lean repository containing the formalisation of Halbeisen–Hungerbühler 1997 (folder hh1997/) is archived on Zenodo as software, release v1.0: DOI 10.5281/zenodo.23498096 (concept DOI 10.5281/zenodo.23498095). Link added on the Papers page and on the home page.</summary>
@@ -53,8 +53,8 @@
     <title>v0.10.2 — Aligned with the Zenodo v4 version (erratum)</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.2-zenodo-v4</id>
-    <updated>2026-10-20T16:00:00Z</updated>
-    <published>2026-10-20T16:00:00Z</published>
+    <updated>2026-10-20T10:59:43Z</updated>
+    <published>2026-10-20T10:59:43Z</published>
     <category term="release"/>
     <category term="erratum"/>
     <summary>Version v4 of the preprint on Zenodo (DOI 10.5281/zenodo.23496480) keeps the PDF of 27 April 2026 and adds a 2-page erratum; the site no longer says the PDF still carries the old statement. Item 1 of the erratum: in Lean, k is any return time, so under H2 the hypothesis H3 excludes every non-trivial cycle on its own, as does ProductBoundThreshold; both are equivalent to the conclusion (the earlier wording "for k &gt; 1322" was too weak). What is proved without circularity is unchanged: no non-trivial cycle with k ≤ 1322, under H1 and H2. The thresholds k ≤ 3693 and k ≤ 3732 are withdrawn; δ8 is credited to a remark of Halbeisen–Hungerbühler 1997 (§5).</summary>
@@ -64,8 +64,8 @@
     <title>v0.10.1 — Corrections: credit for L-A1, state of the collaboration</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.1-corrections</id>
-    <updated>2026-10-20T12:00:00Z</updated>
-    <published>2026-10-20T12:00:00Z</published>
+    <updated>2026-10-20T06:22:22Z</updated>
+    <published>2026-10-20T06:22:22Z</published>
     <category term="release"/>
     <category term="erratum"/>
     <summary>Correction of the v0.8.0 entry: the transport recurrence L-A1, presented as a joint result of the collaboration with B. Macindoe, was not new; it is Lemma 9, eq. (13)-(15), of Halbeisen–Hungerbühler 1997 and Theorem 1 of Seifert 1988 (what remains ours: the Lean check; the shared-ledger correction is under review in round 20). Pull-request count updated (eight merged, the last on 19 October 2026; two under review). Prior-literature credits added to the Lean repository README (7221e7a); no Lean file changed.</summary>
@@ -75,8 +75,8 @@
     <title>v0.10.0 — Halbeisen–Hungerbühler 1997 in Lean 4</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.0-hh1997-lean</id>
-    <updated>2026-10-19T20:00:00Z</updated>
-    <published>2026-10-19T20:00:00Z</published>
+    <updated>2026-10-19T20:25:23Z</updated>
+    <published>2026-10-19T20:25:23Z</published>
     <category term="release"/>
     <category term="lean"/>
     <summary>Formalisation in Lean 4.34.0 (Mathlib v4.34.0) of a classical paper, not a new result: L. Halbeisen and N. Hungerbühler, "Optimal bounds for the length of rational Collatz cycles", Acta Arithmetica 78 (1997), 227-239. Everything the paper proves is kernel-checked, with the finite verification behind the example of §4.4 (if the conjecture is verified up to 212,366,032,807,211, every cycle of integers not containing 1 has at least 102,225,496 elements); 70 statements frozen before their proofs, 0 sorry, 0 native_decide, standard axioms only; not proved: the 1/2 bound of Remark 1, which the paper does not prove. Code: https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997</summary>
