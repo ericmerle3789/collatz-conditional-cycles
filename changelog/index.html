@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.0 (2026-10-19), Halbeisen–Hungerbühler 1997 formalised in Lean 4.">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.1 (2026-10-20), corrections (credit for L-A1, state of the collaboration).">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -56,7 +56,7 @@
         "name": "Eric Merle"
       },
       "datePublished": "2026-04-27",
-      "dateModified": "2026-10-19",
+      "dateModified": "2026-10-20",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
@@ -133,6 +133,25 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.1">
+    <header>
+      <h2><span class="version-tag">v0.10.1</span> <span lang="fr">Corrections : crédit de L-A1, état de la collaboration</span><span lang="en">Corrections: credit for L-A1, state of the collaboration</span></h2>
+      <time datetime="2026-10-20">2026-10-20</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Crédit de L-A1</strong> : l'entrée v0.8.0 ci-dessous présente la récurrence de transport L-A1 comme un « résultat commun » de la collaboration avec B. Macindoe. Ce n'était pas un résultat nouveau : c'est le Lemme 9, éq. (13)-(15), de Halbeisen–Hungerbühler 1997 et le Théorème 1 de Seifert 1988. Ce qui reste à nous : la vérification en Lean. La correction du registre commun est proposée à B. Macindoe (round 20, <a href="https://github.com/macindoe/one-obstruction-three-faces/pull/10" target="_blank" rel="noopener">pull request #10</a>, en cours de revue).</li>
+      <li><strong>Collaboration</strong> : compte des pull requests mis à jour sur la page <a href="../papers/">Papers</a> et sur l'accueil (huit fusionnées, la dernière le 19 octobre 2026 ; deux en cours de revue).</li>
+      <li><strong>Dépôt Lean</strong> : crédits d'antériorité ajoutés au README (L-A1, L-A4, L-A5, L-A7, L-A8 : <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/7221e7a/README.md#prior-literature-added-2026-10-20" target="_blank" rel="noopener">section « Prior literature »</a>, 7221e7a) ; aucun fichier Lean modifié.</li>
+      <li>Les entrées ci-dessous restent telles quelles ; celle de v0.8.0 est corrigée par la première ligne ci-dessus.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Credit for L-A1</strong>: the v0.8.0 entry below presents the transport recurrence L-A1 as a "joint result" of the collaboration with B. Macindoe. It was not a new result: it is Lemma 9, eq. (13)-(15), of Halbeisen–Hungerbühler 1997 and Theorem 1 of Seifert 1988. What remains ours: the Lean check. The correction of the shared ledger is proposed to B. Macindoe (round 20, <a href="https://github.com/macindoe/one-obstruction-three-faces/pull/10" target="_blank" rel="noopener">pull request #10</a>, under review).</li>
+      <li><strong>Collaboration</strong>: pull-request count updated on the <a href="../papers/">Papers</a> page and on the home page (eight merged, the last on 19 October 2026; two under review).</li>
+      <li><strong>Lean repository</strong>: prior-literature credits added to the README (L-A1, L-A4, L-A5, L-A7, L-A8: <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/7221e7a/README.md#prior-literature-added-2026-10-20" target="_blank" rel="noopener">"Prior literature" section</a>, 7221e7a); no Lean file changed.</li>
+      <li>The entries below are kept as they were; the v0.8.0 entry is corrected by the first line above.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.10.0">
     <header>
       <h2><span class="version-tag">v0.10.0</span> <span lang="fr">Halbeisen–Hungerbühler 1997 en Lean 4</span><span lang="en">Halbeisen–Hungerbühler 1997 in Lean 4</span></h2>
@@ -422,7 +441,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.0 · 2026-10-19</div>
+  <div class="footer-meta">Cartography · v0.10.1 · 2026-10-20</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">

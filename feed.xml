@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-19T20:00:00Z</updated>
+  <updated>2026-10-20T12:00:00Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,17 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.1 — Corrections: credit for L-A1, state of the collaboration</title>
+    <link href="https://collatz-lab.org/changelog/"/>
+    <id>urn:collatz-cycles:v0.10.1-corrections</id>
+    <updated>2026-10-20T12:00:00Z</updated>
+    <published>2026-10-20T12:00:00Z</published>
+    <category term="release"/>
+    <category term="erratum"/>
+    <summary>Correction of the v0.8.0 entry: the transport recurrence L-A1, presented as a joint result of the collaboration with B. Macindoe, was not new; it is Lemma 9, eq. (13)-(15), of Halbeisen–Hungerbühler 1997 and Theorem 1 of Seifert 1988 (what remains ours: the Lean check; the shared-ledger correction is under review in round 20). Pull-request count updated (eight merged, the last on 19 October 2026; two under review). Prior-literature credits added to the Lean repository README (7221e7a); no Lean file changed.</summary>
+  </entry>
 
   <entry>
     <title>v0.10.0 — Halbeisen–Hungerbühler 1997 in Lean 4</title>
