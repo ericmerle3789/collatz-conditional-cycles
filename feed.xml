@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-20T16:00:00Z</updated>
+  <updated>2026-10-20T17:00:00Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,17 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.3 — Zenodo archive of the HH 1997 formalisation</title>
+    <link href="https://collatz-lab.org/changelog/"/>
+    <id>urn:collatz-cycles:v0.10.3-hh1997-zenodo</id>
+    <updated>2026-10-20T17:00:00Z</updated>
+    <published>2026-10-20T17:00:00Z</published>
+    <category term="release"/>
+    <category term="lean"/>
+    <summary>The Lean repository containing the formalisation of Halbeisen–Hungerbühler 1997 (folder hh1997/) is archived on Zenodo as software, release v1.0: DOI 10.5281/zenodo.23498096 (concept DOI 10.5281/zenodo.23498095). Link added on the Papers page and on the home page.</summary>
+  </entry>
 
   <entry>
     <title>v0.10.2 — Aligned with the Zenodo v4 version (erratum)</title>
