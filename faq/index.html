@@ -48,7 +48,7 @@
       "url": "https://collatz-lab.org/faq/",
       "inLanguage": ["fr", "en"],
       "datePublished": "2026-04-30",
-      "dateModified": "2026-10-02",
+      "dateModified": "2026-10-20",
       "author": {"@type": "Person", "@id": "https://orcid.org/0009-0008-7940-402X", "name": "Eric Merle"},
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -90,7 +90,7 @@
           "name": "Qu'apporte ce site (collatz-lab.org) ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Un théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0). Il ne prouve pas la conjecture de Collatz. Démontré : aucun cycle non trivial avec k ≤ 1322 (k = nombre de termes impairs), sous les hypothèses H1 BakerSeparation (hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et H2 BarinaVerification (traduction d'un résultat de calcul publié, Bařina 2025, n < 2^71). La 3e hypothèse, H3 DerivedLargeKBound (k > 1322 → n < 2^71), est supposée, non dérivée ; sous H2, elle équivaut à la conclusion pour k > 1322 (erratum du 2 octobre 2026 ; HYPOTHESES.md, section H3, la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple δ8 : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles."
+            "text": "Un théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0). Il ne prouve pas la conjecture de Collatz. Démontré : aucun cycle non trivial avec k ≤ 1322 (k = nombre de termes impairs), sous les hypothèses H1 BakerSeparation (hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et H2 BarinaVerification (traduction d'un résultat de calcul publié, Bařina 2025, n < 2^71). La 3e hypothèse, H3 DerivedLargeKBound (k > 1322 → n < 2^71), est supposée, non dérivée ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026 ; HYPOTHESES.md, section H3, la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple δ8 : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles."
           }
         },
         {
@@ -114,7 +114,7 @@
           "name": "Pourquoi parle-t-on de preuve 'conditionnelle' ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Notre théorème dépend de trois hypothèses (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound), qui sont des paramètres du théorème Lean. Ce n'est donc pas une preuve inconditionnelle de la conjecture de Collatz. De plus, H3 équivaut, sous H2, à la conclusion pour k > 1322 : seul le cas k ≤ 1322 est démontré sans circularité, sous H1 et H2 (erratum du 2 octobre 2026). Pour situer : Hercher (2023) et la vérification de Bařina impliquent déjà qu'un cycle non trivial a au moins 1,375·10¹¹ termes impairs."
+            "text": "Notre théorème dépend de trois hypothèses (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound), qui sont des paramètres du théorème Lean. Ce n'est donc pas une preuve inconditionnelle de la conjecture de Collatz. De plus, H3 équivaut, sous H2, à la conclusion elle-même (en Lean, k est un temps de retour quelconque) : seul le cas k ≤ 1322 est démontré sans circularité, sous H1 et H2 (erratum du 2 octobre 2026). Pour situer : Hercher (2023) et la vérification de Bařina impliquent déjà qu'un cycle non trivial a au moins 1,375·10¹¹ termes impairs."
           }
         },
         {
@@ -259,8 +259,8 @@
       <span lang="fr">Un <strong>théorème conditionnel formalisé</strong> en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0) — <strong>il ne prouve pas la conjecture de Collatz</strong>. Démontré : <strong>aucun cycle non trivial avec <code>k ≤ 1322</code></strong> (k = nombre de termes impairs), sous les hypothèses
       H1 <strong>BakerSeparation</strong> (<em>hypothèse de travail</em>, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et
       H2 <strong>BarinaVerification</strong> (traduction d'un résultat de calcul publié, Bařina 2025, <code>n &lt; 2<sup>71</sup></code>).
-      La 3e hypothèse, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), est <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion pour <code>k &gt; 1322</code> (erratum du 2 octobre 2026 ; voir <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, qui la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple <strong>δ8</strong> : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles.</span>
-      <span lang="en">A <strong>conditional theorem formalized</strong> in Lean 4 (checked on Lean 4.27.0, Mathlib v4.27.0) — <strong>it does not prove the Collatz conjecture</strong>. Proved: <strong>no non-trivial cycle with <code>k ≤ 1322</code></strong> (k = number of odd terms), under hypotheses H1 <strong>BakerSeparation</strong> (<em>working hypothesis</em>, stronger in this form than published effective bounds, see mea culpa #28) and H2 <strong>BarinaVerification</strong> (encoding of a published computational result, Barina 2025, <code>n &lt; 2<sup>71</sup></code>). The 3rd hypothesis, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion for <code>k &gt; 1322</code> (erratum of 2 October 2026; see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, which presents it as a derivation: corrected by this erratum). The site also documents statements about the limits of some methods, e.g. <strong>δ8</strong>: the Product-Bound chain cannot, on its own, close large cycles.</span>
+      La 3e hypothèse, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), est <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026 ; voir <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, qui la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple <strong>δ8</strong> : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles.</span>
+      <span lang="en">A <strong>conditional theorem formalized</strong> in Lean 4 (checked on Lean 4.27.0, Mathlib v4.27.0) — <strong>it does not prove the Collatz conjecture</strong>. Proved: <strong>no non-trivial cycle with <code>k ≤ 1322</code></strong> (k = number of odd terms), under hypotheses H1 <strong>BakerSeparation</strong> (<em>working hypothesis</em>, stronger in this form than published effective bounds, see mea culpa #28) and H2 <strong>BarinaVerification</strong> (encoding of a published computational result, Barina 2025, <code>n &lt; 2<sup>71</sup></code>). The 3rd hypothesis, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 October 2026; see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, which presents it as a derivation: corrected by this erratum). The site also documents statements about the limits of some methods, e.g. <strong>δ8</strong>: the Product-Bound chain cannot, on its own, close large cycles.</span>
     </p>
   </details>
 
@@ -283,8 +283,8 @@
   <details class="faq-item" id="q8">
     <summary><strong><span lang="fr">8. Pourquoi parle-t-on de preuve "conditionnelle" ?</span><span lang="en">8. Why "conditional" proof?</span></strong></summary>
     <p>
-      <span lang="fr">Le théorème dépend de <strong>trois hypothèses</strong> (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound), qui sont des paramètres du théorème Lean. Ce n'est donc <strong>pas une preuve inconditionnelle</strong> de Collatz/Syracuse. De plus, H3 équivaut, sous H2, à la conclusion pour <code>k &gt; 1322</code> : seul le cas <code>k ≤ 1322</code> est démontré sans circularité, sous H1 et H2 (erratum du 2 octobre 2026). Pour situer : Hercher (2023) et la vérification de Bařina impliquent déjà qu'un cycle non trivial a au moins 1,375·10¹¹ termes impairs.</span>
-      <span lang="en">The theorem depends on <strong>three hypotheses</strong> (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound), which are parameters of the Lean theorem. It is therefore <strong>not an unconditional proof</strong> of Collatz/Syracuse. Moreover, under H2, H3 is equivalent to the conclusion for <code>k &gt; 1322</code>: only the case <code>k ≤ 1322</code> is proved without circularity, under H1 and H2 (erratum of 2 October 2026). For context: Hercher (2023) together with Barina's verification already implies that a non-trivial cycle has at least 1.375·10¹¹ odd terms.</span>
+      <span lang="fr">Le théorème dépend de <strong>trois hypothèses</strong> (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound), qui sont des paramètres du théorème Lean. Ce n'est donc <strong>pas une preuve inconditionnelle</strong> de Collatz/Syracuse. De plus, H3 équivaut, sous H2, à la conclusion elle-même (en Lean, k est un temps de retour quelconque) : seul le cas <code>k ≤ 1322</code> est démontré sans circularité, sous H1 et H2 (erratum du 2 octobre 2026). Pour situer : Hercher (2023) et la vérification de Bařina impliquent déjà qu'un cycle non trivial a au moins 1,375·10¹¹ termes impairs.</span>
+      <span lang="en">The theorem depends on <strong>three hypotheses</strong> (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound), which are parameters of the Lean theorem. It is therefore <strong>not an unconditional proof</strong> of Collatz/Syracuse. Moreover, under H2, H3 is equivalent to the conclusion itself (in Lean, k is any return time): only the case <code>k ≤ 1322</code> is proved without circularity, under H1 and H2 (erratum of 2 October 2026). For context: Hercher (2023) together with Barina's verification already implies that a non-trivial cycle has at least 1.375·10¹¹ odd terms.</span>
     </p>
   </details>
 
@@ -357,8 +357,8 @@
     · <a href="../feed.xml">Atom feed</a>
   </p>
   <p style="margin-top: 0.5rem;">
-    <span lang="fr">FAQ mise à jour le 2026-10-02 · v0.9.0</span>
-    <span lang="en">FAQ last updated 2026-10-02 · v0.9.0</span>
+    <span lang="fr">FAQ mise à jour le 2026-10-20 · v0.10.5</span>
+    <span lang="en">FAQ last updated 2026-10-20 · v0.10.5</span>
   </p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>

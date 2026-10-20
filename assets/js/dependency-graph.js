@@ -40,7 +40,7 @@
     // Hypothèses H1-H3 (paramètres des théorèmes, pas des axiomes Lean)
     { id: 'BakerSeparation', type: NODE_TYPE.EXTERNAL, label: 'H1 BakerSeparation', sub: 'parameter: (2^s − 3^k)·k^6 ≥ 3^k — working hypothesis, stronger in this form than published effective bounds (see mea culpa #28)' },
     { id: 'BarinaVerification', type: NODE_TYPE.EXTERNAL, label: 'H2 BarinaVerification', sub: 'parameter: encoding of a published computational result (Barina 2025, n < 2⁷¹)' },
-    { id: 'DerivedLargeKBound', type: NODE_TYPE.EXTERNAL, label: 'H3 DerivedLargeKBound', sub: 'parameter: k > 1322 → n < 2⁷¹ — assumed hypothesis (not derived); under H2 equivalent to the conclusion for k > 1322 (erratum of 2 Oct 2026; HYPOTHESES.md, section H3)' },
+    { id: 'DerivedLargeKBound', type: NODE_TYPE.EXTERNAL, label: 'H3 DerivedLargeKBound', sub: 'parameter: k > 1322 → n < 2⁷¹ — assumed hypothesis (not derived); under H2 equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026; HYPOTHESES.md, section H3)' },
     // Axiomes kernel (profil du théorème principal selon expected_axioms.md, Lean 4.27.0)
     { id: 'propext', type: NODE_TYPE.KERNEL, label: 'propext', sub: 'Propositional extensionality' },
     { id: 'Classical.choice', type: NODE_TYPE.KERNEL, label: 'Classical.choice', sub: 'Axiom of choice' },

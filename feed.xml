@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-20T18:00:00Z</updated>
+  <updated>2026-10-20T19:00:00Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,17 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.5 — All pages reviewed: remaining fixes</title>
+    <link href="https://collatz-lab.org/changelog/"/>
+    <id>urn:collatz-cycles:v0.10.5-all-pages</id>
+    <updated>2026-10-20T19:00:00Z</updated>
+    <published>2026-10-20T19:00:00Z</published>
+    <category term="release"/>
+    <category term="erratum"/>
+    <summary>FAQ and dependency graph aligned with item 1 of the v4 erratum (in Lean, k is any return time, so H3 with H2 is equivalent to the conclusion itself); Papers: 4 versions on Zenodo; research ledger: links to the v4 preprint, the Lean repository and its software archive; History: μ(ln 3) &lt; 5.117 (Wu &amp; Wang 2014); home diagram: δ8 points to the remark of Halbeisen–Hungerbühler 1997 (§5).</summary>
+  </entry>
 
   <entry>
     <title>v0.10.4 — Timeline and cards up to date</title>

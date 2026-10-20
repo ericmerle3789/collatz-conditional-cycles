@@ -93,7 +93,7 @@
   <!-- FAQ — bilingual Q&A with FAQPage schema -->
   <url>
     <loc>https://collatz-lab.org/faq/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/faq/"/>

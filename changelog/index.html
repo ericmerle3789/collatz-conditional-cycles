@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.4 (2026-10-20), timeline and cards up to date.">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.5 (2026-10-20), all pages reviewed.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -133,6 +133,25 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.5">
+    <header>
+      <h2><span class="version-tag">v0.10.5</span> <span lang="fr">Relecture de toutes les pages : derniers restes</span><span lang="en">All pages reviewed: remaining fixes</span></h2>
+      <time datetime="2026-10-20">2026-10-20</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>FAQ et graphe des dépendances</strong> : l'item 1 de l'erratum v4 n'y était pas passé (« équivaut à la conclusion pour k &gt; 1322 »). Même formulation qu'ailleurs : la conclusion elle-même, car en Lean k est un temps de retour quelconque.</li>
+      <li><strong>Papers</strong> : « 3 versions » devient « 4 versions » (la v4 du 20/10/2026 conserve le PDF de 39 p. et ajoute ERRATUM.pdf, 2 p.).</li>
+      <li><strong>Registre de recherche</strong> : liens vers la v4 du preprint (<a href="https://doi.org/10.5281/zenodo.23496480" target="_blank" rel="noopener">10.5281/zenodo.23496480</a>), le dépôt Lean et son archive logicielle (<a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>) ; compteur du preprint mis à jour.</li>
+      <li><strong>Retouches</strong> : « μ(ln 3) &lt; 5,117 » (Wu &amp; Wang 2014) dans la frise Histoire ; le nœud δ8 du diagramme de l'accueil renvoie à la remarque de Halbeisen–Hungerbühler 1997 (§5).</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>FAQ and dependency graph</strong>: item 1 of the v4 erratum had not reached them ("equivalent to the conclusion for k &gt; 1322"). Same wording as elsewhere: the conclusion itself, since in Lean k is any return time.</li>
+      <li><strong>Papers</strong>: "3 versions" becomes "4 versions" (v4 of 2026-10-20 keeps the 39-page PDF and adds ERRATUM.pdf, 2 pp.).</li>
+      <li><strong>Research ledger</strong>: links to version v4 of the preprint (<a href="https://doi.org/10.5281/zenodo.23496480" target="_blank" rel="noopener">10.5281/zenodo.23496480</a>), the Lean repository and its software archive (<a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>); preprint counter updated.</li>
+      <li><strong>Small fixes</strong>: "μ(ln 3) &lt; 5.117" (Wu &amp; Wang 2014) in the History timeline; the δ8 node of the home diagram points to the remark of Halbeisen–Hungerbühler 1997 (§5).</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.10.4">
     <header>
       <h2><span class="version-tag">v0.10.4</span> <span lang="fr">Frise et cartes à jour (19-20 octobre 2026)</span><span lang="en">Timeline and cards up to date (19-20 October 2026)</span></h2>
@@ -492,7 +511,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.4 · 2026-10-20</div>
+  <div class="footer-meta">Cartography · v0.10.5 · 2026-10-20</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">
