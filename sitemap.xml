@@ -71,7 +71,7 @@
   <!-- Research Ledger — public versioned registry -->
   <url>
     <loc>https://collatz-lab.org/research-ledger/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/research-ledger/"/>

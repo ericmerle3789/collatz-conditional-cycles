@@ -1,11 +1,150 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-10-02T12:00:00Z",
-  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-02: erratum on the main statement (H3 DerivedLargeKBound is assumed, not derived).",
+  "generated": "2026-10-20T18:00:00Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own).",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "zenodo-v4-erratum-2026-10-20",
+      "type": "paper",
+      "subtype": "erratum",
+      "date": "2026-10-20",
+      "datetime": "2026-10-20T14:30:00+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-20",
+      "title": {
+        "fr": "Preprint : version v4 sur Zenodo, avec un erratum",
+        "en": "Preprint: version v4 on Zenodo, with an erratum"
+      },
+      "summary": {
+        "fr": "La version v4 (DOI 10.5281/zenodo.23496480) conserve le PDF du 27/04/2026 et ajoute un erratum de 2 pages. La troisième hypothèse exclut à elle seule tout cycle non trivial ; BakerSeparation est une hypothèse de travail ; les seuils tirés de Salikhov et de Wu–Wang sont retirés ; le Corollaire 29 de Hercher s'applique ; la vérification Lean date d'avant lean4#14576. Démontré sans circularité : aucun cycle non trivial avec k ≤ 1322, sous H1 et H2. Publiée après une relecture adverse interne assistée par IA, en plusieurs passes, conclue par deux passes sans défaut d'affilée ; ce n'est pas une évaluation par les pairs.",
+        "en": "Version v4 (DOI 10.5281/zenodo.23496480) keeps the PDF of 27 April 2026 and adds a 2-page erratum. The third hypothesis excludes every non-trivial cycle on its own; BakerSeparation is a working hypothesis; the thresholds derived from Salikhov and Wu–Wang are withdrawn; Hercher's Corollary 29 applies; the Lean check predates lean4#14576. Proved without circularity: no non-trivial cycle with k ≤ 1322, under H1 and H2. Published after an internal AI-assisted adversarial review in several passes, ending with two consecutive passes without defects; this is not peer review."
+      },
+      "artefacts": [
+        {"label": "DOI 10.5281/zenodo.23496480", "url": "https://doi.org/10.5281/zenodo.23496480", "kind": "doi"},
+        {"label": "Changelog v0.10.2", "url": "/changelog/#v0.10.2", "kind": "site-section"}
+      ],
+      "related": ["erratum-main-statement-2026-10-02"]
+    },
+
+    {
+      "id": "zenodo-software-archive-2026-10-20",
+      "type": "repository",
+      "subtype": "archive",
+      "date": "2026-10-20",
+      "datetime": "2026-10-20T13:41:00+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "documentation",
+      "verification_method": "github_tag",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-20",
+      "title": {
+        "fr": "Archive logicielle Zenodo du dépôt Lean (v1.0)",
+        "en": "Zenodo software archive of the Lean repository (v1.0)"
+      },
+      "summary": {
+        "fr": "La release v1.0 du dépôt one-obstruction-three-faces-lean (formalisation Halbeisen–Hungerbühler 1997 comprise) est archivée sur Zenodo : DOI 10.5281/zenodo.23498096 (concept 10.5281/zenodo.23498095). L'entrée ccchallenge de la formalisation pointe vers ce DOI ; la fiche bibliographique ccchallenge de l'article porte désormais son DOI, 10.4064/aa-78-3-227-239.",
+        "en": "Release v1.0 of the repository one-obstruction-three-faces-lean (including the Halbeisen–Hungerbühler 1997 formalisation) is archived on Zenodo: DOI 10.5281/zenodo.23498096 (concept 10.5281/zenodo.23498095). The ccchallenge entry of the formalisation points to this DOI; the ccchallenge bibliographic record of the paper now carries its DOI, 10.4064/aa-78-3-227-239."
+      },
+      "artefacts": [
+        {"label": "DOI 10.5281/zenodo.23498096", "url": "https://doi.org/10.5281/zenodo.23498096", "kind": "doi"},
+        {"label": "Release v1.0", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/releases/tag/v1.0", "kind": "tag"}
+      ],
+      "related": ["hh1997-lean-formalisation-2026-10-19"]
+    },
+
+    {
+      "id": "prior-literature-credits-2026-10-20",
+      "type": "mea-culpa",
+      "subtype": "prior-literature",
+      "date": "2026-10-20",
+      "datetime": "2026-10-20T10:00:00+02:00",
+      "status": "validated",
+      "milestone": false,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-20",
+      "title": {
+        "fr": "Crédits d'antériorité : L-A1, L-A4, L-A5, L-A7, L-A8",
+        "en": "Prior-literature credits: L-A1, L-A4, L-A5, L-A7, L-A8"
+      },
+      "summary": {
+        "fr": "La récurrence de transport L-A1, présentée en juillet comme résultat commun, est classique : Halbeisen–Hungerbühler 1997, Lemme 9, et Seifert 1988, Théorème 1. Crédits ajoutés aussi pour L-A4 (Halbeisen–Hungerbühler 1997, éq. (4)), L-A5 (Lagarias 1990 ; Halbeisen–Hungerbühler 1997 ; Wegner 2021), L-A7 (Tao 2011) et L-A8 (Crandall 1978 ; Eliahou 1993 ; Simons–de Weger 2005). Ce qui reste à nous : les vérifications Lean. Site v0.10.1 ; README du dépôt Lean, section « Prior literature » (7221e7a).",
+        "en": "The transport recurrence L-A1, presented in July as a joint result, is classical: Halbeisen–Hungerbühler 1997, Lemma 9, and Seifert 1988, Theorem 1. Credits also added for L-A4 (Halbeisen–Hungerbühler 1997, eq. (4)), L-A5 (Lagarias 1990; Halbeisen–Hungerbühler 1997; Wegner 2021), L-A7 (Tao 2011) and L-A8 (Crandall 1978; Eliahou 1993; Simons–de Weger 2005). What remains ours: the Lean checks. Site v0.10.1; Lean repository README, section \"Prior literature\" (7221e7a)."
+      },
+      "artefacts": [
+        {"label": "Changelog v0.10.1", "url": "/changelog/#v0.10.1", "kind": "site-section"},
+        {"label": "README (7221e7a)", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/7221e7a/README.md#prior-literature-added-2026-10-20", "kind": "commit"}
+      ],
+      "related": ["shared-repo-pr-8-merged-2026-10-19"]
+    },
+
+    {
+      "id": "hh1997-lean-formalisation-2026-10-19",
+      "type": "lean",
+      "subtype": "formalisation-classic",
+      "date": "2026-10-19",
+      "datetime": "2026-10-19T22:30:00+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-20",
+      "title": {
+        "fr": "Halbeisen–Hungerbühler 1997 formalisé sous Lean 4.34.0",
+        "en": "Halbeisen–Hungerbühler 1997 formalised on Lean 4.34.0"
+      },
+      "summary": {
+        "fr": "Formalisation d'un article classique (Acta Arith. 78 (1997), 227-239), pas un résultat nouveau : 70 énoncés figés avant leur preuve et prouvés, 0 sorry, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0), y compris la vérification finie de l'exemple du §4.4. Une remarque que l'article ne démontre pas (borne 1/2 de la Remarque 1) reste non démontrée. Recompilé à froid avant publication ; proposé sur ccchallenge (« Ready to be audited »).",
+        "en": "Formalisation of a classical paper (Acta Arith. 78 (1997), 227-239), not a new result: 70 statements frozen before their proofs and proved, 0 sorry, standard axioms only (Lean 4.34.0, Mathlib v4.34.0), including the finite verification behind the example of §4.4. One remark the paper does not prove (the 1/2 bound of Remark 1) stays unproved. Recompiled from scratch before publication; submitted to ccchallenge (\"Ready to be audited\")."
+      },
+      "artefacts": [
+        {"label": "hh1997/ (36d5136)", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997", "kind": "repository"},
+        {"label": "Changelog v0.10.0", "url": "/changelog/#v0.10.0", "kind": "site-section"}
+      ],
+      "related": ["zenodo-software-archive-2026-10-20"]
+    },
+
+    {
+      "id": "shared-repo-pr-8-merged-2026-10-19",
+      "type": "repository",
+      "subtype": "collaboration",
+      "date": "2026-10-19",
+      "datetime": "2026-10-19T09:42:00+02:00",
+      "status": "validated",
+      "milestone": false,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-20",
+      "title": {
+        "fr": "Dépôt commun avec B. Macindoe : PR #8 fusionnée (round 18)",
+        "en": "Shared repository with B. Macindoe: PR #8 merged (round 18)"
+      },
+      "summary": {
+        "fr": "Dans le dépôt public one-obstruction-three-faces, la pull request #8 (round 18) a été fusionnée le 19/10/2026. Huit pull requests fusionnées au total ; deux sont en cours de revue (rounds 19 et 20).",
+        "en": "In the public repository one-obstruction-three-faces, pull request #8 (round 18) was merged on 2026-10-19. Eight pull requests merged in total; two are under review (rounds 19 and 20)."
+      },
+      "artefacts": [
+        {"label": "PR #8", "url": "https://github.com/macindoe/one-obstruction-three-faces/pull/8", "kind": "pull-request"}
+      ],
+      "related": ["shared-repo-prs-6-7-merged"]
+    },
 
     {
       "id": "erratum-main-statement-2026-10-02",
@@ -656,13 +795,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 24,
-    "by_type": {"audit": 6, "lean": 5, "repository": 5, "study": 4, "mea-culpa": 2, "paper": 2},
-    "by_status": {"validated": 16, "in-progress": 4, "rejected": 1, "resolved": 1, "superseded": 1, "to-explore": 1},
-    "by_milestone": {"true": 13, "false": 11},
-    "by_claim_scope": {"documentation": 14, "formal_lean": 5, "external_literature": 2, "editorial_outcome": 1, "formal_lean_conditional": 1, "submitted_paper": 1},
-    "by_epistemic_status": {"verified": 13, "partial": 5, "external_unverified": 3, "hypothesis": 1, "superseded_by_rejection": 1, "under_review": 1},
-    "note_fr": "Registre partiel : 24 événements (mise à jour du 2026-10-02). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 24 events (update of 2026-10-02). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "total_events": 29,
+    "by_type": {"repository": 7, "lean": 6, "audit": 6, "study": 4, "paper": 3, "mea-culpa": 3},
+    "by_status": {"validated": 21, "in-progress": 4, "resolved": 1, "superseded": 1, "rejected": 1, "to-explore": 1},
+    "by_milestone": {"true": 16, "false": 13},
+    "by_claim_scope": {"documentation": 18, "formal_lean": 6, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
+    "by_epistemic_status": {"verified": 18, "partial": 5, "external_unverified": 3, "under_review": 1, "superseded_by_rejection": 1, "hypothesis": 1},
+    "note_fr": "Registre partiel : 29 événements (mise à jour du 2026-10-20). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 29 events (update of 2026-10-20). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }
