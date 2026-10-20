@@ -75,7 +75,8 @@
       'deferred':    { fr: 'Différé',    en: 'Deferred' },
       'hypothesis':  { fr: 'Hypothèse',  en: 'Hypothesis' },
       'archived':    { fr: 'Archivé',    en: 'Archived' },
-      'failed':      { fr: 'Rejeté',     en: 'Failed' }
+      'failed':      { fr: 'Rejeté',     en: 'Failed' },
+      'withdrawn':   { fr: 'Retiré',     en: 'Withdrawn' }
     };
     const l = labels[status] || { fr: status, en: status };
     return `<span class="event-status-badge" data-status="${status}"><span lang="fr">${l.fr}</span><span lang="en">${l.en}</span></span>`;

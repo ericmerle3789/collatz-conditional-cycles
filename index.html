@@ -385,7 +385,7 @@ graph LR
     DELTA8["δ8<br/>Product-Bound<br/>impossibility · non formalisé<br/>(remarque de HH 1997, §5)"]
     DELTA8P["δ8'<br/>Baker+CF lower<br/>not upper"]
     DELTA10["δ10 (Phase64)<br/>catalogue fini<br/>de 4 sources"]
-    DELTA11["δ11 (Phase65)<br/>conditionnel · 3 axiomes ad hoc<br/>en réexamen"]
+    DELTA11["δ11 (Phase65)<br/>conditionnel · 3 axiomes ad hoc<br/>retiré le 20/10/2026"]
 
     LAMBDA -->|"hypothèse H1"| BAKER
     BAKER --> LE
@@ -398,7 +398,7 @@ graph LR
     DELTA8 -.->|"Product-Bound ne ferme pas la fenêtre"| DERIVED
     DELTA8P -.->|"contexte"| DERIVED
     DELTA10 -.->|"contexte"| BARINA
-    DELTA11 -.->|"contexte (en réexamen)"| BAKER
+    DELTA11 -.->|"contexte (retiré)"| BAKER
 
     style LAMBDA fill:#c8a86a,color:#0e0f13,stroke:#fff,stroke-width:2px
     style BAKER fill:#6a9b7a,color:#0e0f13
@@ -432,7 +432,7 @@ graph LR
     <button class="filter-btn active" data-status="all" data-i18n="filterAll">Toutes</button>
     <button class="filter-btn" data-status="cds" data-i18n="filterCds">Culs-de-sac</button>
     <button class="filter-btn" data-status="partiel" data-i18n="filterPartiel">Partielles</button>
-    <button class="filter-btn" data-status="insuf" data-i18n="filterInsuf">Insuffisance conditionnelle</button>
+    <button class="filter-btn" data-status="insuf" data-i18n="filterInsuf">Retirée (δ11)</button>
     <button class="filter-btn" data-status="inconnu" data-i18n="filterInconnu">Inconnues</button>
     <button class="filter-btn" data-status="prometteur" data-i18n="filterPrometteur">Prometteuses</button>
     <button class="filter-btn" data-status="axiome" data-i18n="filterAxiome">Hypothèses (paramètres)</button>
@@ -580,7 +580,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 
 <!-- ========================================================================
      RESEARCH STATUS / ÉTAT DES TRAVAUX (Research Ledger preview)
-     Mis à jour le 2026-10-20 (v0.10.5)
+     Mis à jour le 2026-10-20 (v0.10.6)
      ======================================================================== -->
 <section id="research-status" class="research-status-snapshot">
   <div class="section-eyebrow">§ VI</div>
@@ -844,7 +844,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.5 · 2026-10-20
+    Cartography · v0.10.6 · 2026-10-20
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>

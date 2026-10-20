@@ -105,16 +105,16 @@
       "id": "E.1",
       "fr": {
         "name": "Salikhov 2007 (μ(ln 3) ≤ 5,125)",
-        "why": "Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125). <strong>En réexamen.</strong> L'usage de cette borne pour le problème et δ11 (Phase 65) reposent sur une transposition de Salikhov 2007 (mesure de ln 3) au problème ; cette transposition est en réexamen. δ11 est conditionnel (trois axiomes ad hoc : <code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>). Vérifié sous Lean 4.27.0, non revérifié depuis. Voir mea culpa #29 à #32."
+        "why": "Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125). <strong>δ11 retiré le 20 octobre 2026.</strong> Il reposait sur la transposition au problème, qui porte sur log₂ 3, de la mesure d'irrationalité de ln 3 de Salikhov 2007, et sur un axiome ad hoc non tiré de l'article ; la borne de Salikhov n'étant établie qu'au-delà de hauteurs non explicites, aucun seuil explicite n'en découle (erratum de la version Zenodo v4, item 3 ; <a href=\"https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/RETRAIT_DELTA11_2026-10-20.md\" target=\"_blank\" rel=\"noopener\">note de retrait</a>). Historique : l'usage de cette borne pour le problème et δ11 (Phase 65) reposent sur une transposition de Salikhov 2007 (mesure de ln 3) au problème ; cette transposition ne tient pas. δ11 est conditionnel (trois axiomes ad hoc : <code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>). Vérifié sous Lean 4.27.0, non revérifié depuis. Voir mea culpa #29 à #32."
       },
       "en": {
         "name": "Salikhov 2007 (μ(ln 3) ≤ 5.125)",
-        "why": "Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125). <strong>Under re-examination.</strong> The use of this bound for the problem and δ11 (Phase 65) rest on a transposition of Salikhov 2007 (a measure for ln 3) to the problem; that transposition is under re-examination. δ11 is conditional (three ad-hoc axioms: <code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>). Checked on Lean 4.27.0, not re-checked since. See mea culpa #29 to #32."
+        "why": "Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125). <strong>δ11 withdrawn on 20 October 2026.</strong> It rested on the transposition to the problem, which involves log₂ 3, of Salikhov's 2007 irrationality measure of ln 3, and on an ad hoc axiom not taken from the paper; since Salikhov's bound holds only beyond unspecified heights, no explicit threshold follows from it (erratum of the Zenodo v4 version, item 3; <a href=\"https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/RETRAIT_DELTA11_2026-10-20.md\" target=\"_blank\" rel=\"noopener\">withdrawal note</a>). History: the use of this bound for the problem and δ11 (Phase 65) rest on a transposition of Salikhov 2007 (a measure for ln 3) to the problem; that transposition does not hold. δ11 is conditional (three ad-hoc axioms: <code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>). Checked on Lean 4.27.0, not re-checked since. See mea culpa #29 to #32."
       },
       "region": "I",
       "status": "insuf",
       "test4": "3/4",
-      "lean": "Delta11Salikhov.lean (conditionnel : 3 axiomes ad hoc ; Lean 4.27.0 ; en réexamen)",
+      "lean": "Delta11Salikhov.lean (retiré le 20/10/2026 ; conditionnel : 3 axiomes ad hoc ; Lean 4.27.0)",
       "leanFile": "ProjetCollatz/PostJAR/Delta11Salikhov.lean",
       "ref": "Salikhov, Doklady Math. 76(3), 955-957 (2007), DOI 10.1134/S1064562407060361"
     },
@@ -122,11 +122,11 @@
       "id": "E.2",
       "fr": {
         "name": "Wu & Wang 2014 (μ(log 3) < 5,117)",
-        "why": "Mesure d'irrationalité de log 3 : μ(log 3) < 5,117 (Wu & Wang 2014). Cette valeur était attribuée à tort à « Wu 2003 » (Wu 2003 porte sur des mesures d'indépendance linéaire de 1, log 2, log 3, log 5). Son usage pour le problème repose sur la même transposition que Salikhov 2007 : en réexamen."
+        "why": "Mesure d'irrationalité de log 3 : μ(log 3) < 5,117 (Wu & Wang 2014). Cette valeur était attribuée à tort à « Wu 2003 » (Wu 2003 porte sur des mesures d'indépendance linéaire de 1, log 2, log 3, log 5). Son usage pour le problème repose sur la même transposition que Salikhov 2007, qui ne tient pas (δ11 retiré le 20/10/2026)."
       },
       "en": {
         "name": "Wu & Wang 2014 (μ(log 3) < 5.117)",
-        "why": "Irrationality measure of log 3: μ(log 3) < 5.117 (Wu & Wang 2014). This value was wrongly attributed to \"Wu 2003\" (Wu 2003 concerns linear-independence measures of 1, log 2, log 3, log 5). Its use for the problem rests on the same transposition as Salikhov 2007: under re-examination."
+        "why": "Irrationality measure of log 3: μ(log 3) < 5.117 (Wu & Wang 2014). This value was wrongly attributed to \"Wu 2003\" (Wu 2003 concerns linear-independence measures of 1, log 2, log 3, log 5). Its use for the problem rests on the same transposition as Salikhov 2007, which does not hold (δ11 withdrawn on 2026-10-20)."
       },
       "region": "I",
       "status": "partiel",

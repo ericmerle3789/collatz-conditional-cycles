@@ -1,11 +1,39 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-10-20T12:43:31Z",
-  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own).",
+  "generated": "2026-10-20T15:01:01Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "delta11-withdrawn-2026-10-20",
+      "type": "mea-culpa",
+      "subtype": "withdrawal",
+      "date": "2026-10-20",
+      "datetime": "2026-10-20T16:56:50+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-20",
+      "title": {
+        "fr": "δ11 retiré",
+        "en": "δ11 withdrawn"
+      },
+      "summary": {
+        "fr": "Le lemme delta11_salikhov_insufficient (Phase 65, k ∈ [3694, 3732]) est retiré. Il reposait sur la transposition au problème, qui porte sur log₂ 3, de la mesure d'irrationalité de ln 3 de Salikhov 2007, et sur l'axiome ad hoc c_salikhov_upper_bound (C_Salikhov < 10^-30), non tiré de l'article. La borne de Salikhov n'est établie qu'au-delà de hauteurs non explicites : aucun seuil explicite (k ≤ 3693, k ≤ 3732) n'en découle. Retiré par l'erratum de la version Zenodo v4 (item 3). Le code reste consultable pour l'historique, mais ne doit plus être cité comme un résultat.",
+        "en": "The lemma delta11_salikhov_insufficient (Phase 65, k ∈ [3694, 3732]) is withdrawn. It rested on the transposition to the problem, which involves log₂ 3, of Salikhov's 2007 irrationality measure of ln 3, and on the ad hoc axiom c_salikhov_upper_bound (C_Salikhov < 10^-30), not taken from the paper. Salikhov's bound holds only beyond unspecified heights: no explicit threshold (k ≤ 3693, k ≤ 3732) follows from it. Withdrawn by the erratum of the Zenodo v4 version (item 3). The code remains available for the record but must no longer be cited as a result."
+      },
+      "artefacts": [
+        {"label": "RETRAIT_DELTA11_2026-10-20.md (40a7918)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/RETRAIT_DELTA11_2026-10-20.md", "kind": "commit"},
+        {"label": "DOI 10.5281/zenodo.23496480 (erratum, item 3)", "url": "https://doi.org/10.5281/zenodo.23496480", "kind": "doi"}
+      ],
+      "related": ["delta11-pushed", "zenodo-v4-erratum-2026-10-20"]
+    },
 
     {
       "id": "zenodo-v4-erratum-2026-10-20",
@@ -334,22 +362,23 @@
       "subtype": "impossibility-lemma-conditional",
       "date": "2026-05-08",
       "datetime": "2026-05-08T12:42:00+02:00",
-      "status": "in-progress",
+      "status": "withdrawn",
       "milestone": true,
       "claim_scope": "formal_lean_conditional",
       "verification_method": "lean_kernel",
       "evidence_level": "lean_check_conditional",
-      "epistemic_status": "under_review",
-      "last_verified_at": "2026-05-08",
+      "epistemic_status": "withdrawn",
+      "last_verified_at": "2026-10-20",
       "title": {
-        "fr": "δ11 — lemme conditionnel delta11_salikhov_insufficient (Phase 65) — en réexamen",
-        "en": "δ11 — conditional lemma delta11_salikhov_insufficient (Phase 65) — under re-examination"
+        "fr": "δ11 — lemme conditionnel delta11_salikhov_insufficient (Phase 65) — retiré le 20/10/2026",
+        "en": "δ11 — conditional lemma delta11_salikhov_insufficient (Phase 65) — withdrawn on 2026-10-20"
       },
       "summary": {
-        "fr": "Lemme delta11_salikhov_insufficient (branche study/E1-salikhov-2007-impossibility), lié à Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125). <strong>En réexamen.</strong> δ11 est conditionnel (trois axiomes ad hoc : C_Salikhov, C_Salikhov_pos, c_salikhov_upper_bound) et repose sur une transposition de Salikhov 2007 (mesure de ln 3) au problème ; cette transposition est en réexamen. Vérifié sous Lean 4.27.0, non revérifié depuis. 0 sorry. Mea culpa publics associés : #29 à #32.",
-        "en": "Lemma delta11_salikhov_insufficient (branch study/E1-salikhov-2007-impossibility), related to Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125). <strong>Under re-examination.</strong> δ11 is conditional (three ad-hoc axioms: C_Salikhov, C_Salikhov_pos, c_salikhov_upper_bound) and rests on a transposition of Salikhov 2007 (a measure for ln 3) to the problem; that transposition is under re-examination. Checked on Lean 4.27.0, not re-checked since. 0 sorry. Related public mea culpa: #29 to #32."
+        "fr": "Lemme delta11_salikhov_insufficient (branche study/E1-salikhov-2007-impossibility), lié à Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125). <strong>δ11 retiré le 20 octobre 2026.</strong> Il reposait sur la transposition au problème, qui porte sur log₂ 3, de la mesure d'irrationalité de ln 3 de Salikhov 2007, et sur un axiome ad hoc non tiré de l'article ; la borne de Salikhov n'étant établie qu'au-delà de hauteurs non explicites, aucun seuil explicite n'en découle (erratum de la version Zenodo v4, item 3 ; <a href=\"https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/RETRAIT_DELTA11_2026-10-20.md\" target=\"_blank\" rel=\"noopener\">note de retrait</a>). Historique : δ11 est conditionnel (trois axiomes ad hoc : C_Salikhov, C_Salikhov_pos, c_salikhov_upper_bound) et repose sur une transposition de Salikhov 2007 (mesure de ln 3) au problème ; cette transposition ne tient pas. Vérifié sous Lean 4.27.0, non revérifié depuis. 0 sorry. Mea culpa publics associés : #29 à #32.",
+        "en": "Lemma delta11_salikhov_insufficient (branch study/E1-salikhov-2007-impossibility), related to Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125). <strong>δ11 withdrawn on 20 October 2026.</strong> It rested on the transposition to the problem, which involves log₂ 3, of Salikhov's 2007 irrationality measure of ln 3, and on an ad hoc axiom not taken from the paper; since Salikhov's bound holds only beyond unspecified heights, no explicit threshold follows from it (erratum of the Zenodo v4 version, item 3; <a href=\"https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/RETRAIT_DELTA11_2026-10-20.md\" target=\"_blank\" rel=\"noopener\">withdrawal note</a>). History: δ11 is conditional (three ad-hoc axioms: C_Salikhov, C_Salikhov_pos, c_salikhov_upper_bound) and rests on a transposition of Salikhov 2007 (a measure for ln 3) to the problem; that transposition does not hold. Checked on Lean 4.27.0, not re-checked since. 0 sorry. Related public mea culpa: #29 to #32."
       },
       "artefacts": [
+        {"label": "Note de retrait / withdrawal note (2026-10-20)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/RETRAIT_DELTA11_2026-10-20.md", "kind": "commit"},
         {"label": "GitHub tag v0.7.3-delta11", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v0.7.3-delta11", "kind": "tag"},
         {"label": "Branch study/E1-salikhov-2007-impossibility", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/E1-salikhov-2007-impossibility", "kind": "branch"},
         {"label": "Delta11Salikhov.lean", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/ProjetCollatz/PostJAR/Delta11Salikhov.lean", "kind": "lean-file"},
@@ -795,13 +824,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 29,
-    "by_type": {"repository": 7, "lean": 6, "audit": 6, "study": 4, "paper": 3, "mea-culpa": 3},
-    "by_status": {"validated": 21, "in-progress": 4, "resolved": 1, "superseded": 1, "rejected": 1, "to-explore": 1},
-    "by_milestone": {"true": 16, "false": 13},
-    "by_claim_scope": {"documentation": 18, "formal_lean": 6, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 18, "partial": 5, "external_unverified": 3, "under_review": 1, "superseded_by_rejection": 1, "hypothesis": 1},
-    "note_fr": "Registre partiel : 29 événements (mise à jour du 2026-10-20). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 29 events (update of 2026-10-20). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "total_events": 30,
+    "by_type": {"repository": 7, "lean": 6, "audit": 6, "mea-culpa": 4, "study": 4, "paper": 3},
+    "by_status": {"validated": 22, "in-progress": 3, "withdrawn": 1, "resolved": 1, "superseded": 1, "rejected": 1, "to-explore": 1},
+    "by_milestone": {"true": 17, "false": 13},
+    "by_claim_scope": {"documentation": 19, "formal_lean": 6, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
+    "by_epistemic_status": {"verified": 19, "partial": 5, "external_unverified": 3, "withdrawn": 1, "superseded_by_rejection": 1, "hypothesis": 1},
+    "note_fr": "Registre partiel : 30 événements (mise à jour du 2026-10-20). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 30 events (update of 2026-10-20). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }

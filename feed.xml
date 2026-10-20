@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-20T12:47:21Z</updated>
+  <updated>2026-10-20T15:01:32Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,17 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.6 — δ11 withdrawn</title>
+    <link href="https://collatz-lab.org/changelog/"/>
+    <id>urn:collatz-cycles:v0.10.6-delta11-withdrawn</id>
+    <updated>2026-10-20T15:01:32Z</updated>
+    <published>2026-10-20T15:01:32Z</published>
+    <category term="release"/>
+    <category term="erratum"/>
+    <summary>δ11 (delta11_salikhov_insufficient, Phase 65, k in [3694, 3732]) is withdrawn: it rested on transposing Salikhov's 2007 irrationality measure of ln 3 to a problem about log₂ 3, and on an ad hoc axiom not taken from the paper; Salikhov's bound holds only beyond unspecified heights, so no explicit threshold follows (erratum of the Zenodo v4 version, item 3). Marked "withdrawn" on every page, with the reason and a link to the withdrawal note (https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/RETRAIT_DELTA11_2026-10-20.md); nothing erased; δ10 not affected.</summary>
+  </entry>
 
   <entry>
     <title>v0.10.5 — All pages reviewed: remaining fixes</title>
