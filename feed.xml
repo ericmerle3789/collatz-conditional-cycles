@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-20T15:01:32Z</updated>
+  <updated>2026-10-20T21:45:02Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,17 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.7 — Lagarias 1990 in Lean 4</title>
+    <link href="https://collatz-lab.org/papers/"/>
+    <id>urn:collatz-cycles:v0.10.7-lagarias1990</id>
+    <updated>2026-10-20T21:45:02Z</updated>
+    <published>2026-10-20T21:45:02Z</published>
+    <category term="release"/>
+    <category term="lean"/>
+    <summary>Formalisation in Lean 4.34.0 (Mathlib v4.34.0) of a classical paper, not a new result: J. C. Lagarias, "The set of rational cycles for the 3x+1 problem", Acta Arithmetica 56 (1990), 33-53. 60 statements, all proved (61 theorems), 0 sorry, 0 native_decide, standard axioms only; Theorem 3.1 with the printed constant and Theorem 3.2 under named hypotheses (prime number theorem, Baker–Fel'dman), Theorem 3.1 also proved without hypothesis (constant 6/5). Folder lagarias1990/ (e39566c); release v1.1, Zenodo DOI 10.5281/zenodo.23514572; submitted to ccchallenge.</summary>
+  </entry>
 
   <entry>
     <title>v0.10.6 — δ11 withdrawn</title>

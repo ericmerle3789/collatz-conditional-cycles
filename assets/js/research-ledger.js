@@ -264,7 +264,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('../assets/data/research-ledger.json?v=20261020-V0-10-6');
+      const resp = await fetch('../assets/data/research-ledger.json?v=20261020-V0-10-7');
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       STATE.data = await resp.json();
 

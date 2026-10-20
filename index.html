@@ -580,7 +580,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 
 <!-- ========================================================================
      RESEARCH STATUS / ÉTAT DES TRAVAUX (Research Ledger preview)
-     Mis à jour le 2026-10-20 (v0.10.6)
+     Mis à jour le 2026-10-20 (v0.10.7)
      ======================================================================== -->
 <section id="research-status" class="research-status-snapshot">
   <div class="section-eyebrow">§ VI</div>
@@ -599,16 +599,15 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     <!-- Carte 1 : Dernier jalon — erratum de l'énoncé principal -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastMilestone">Dernier jalon</div>
-      <div class="status-card-title"><span lang="fr">Version v4 du preprint, avec un erratum</span><span lang="en">Version v4 of the preprint, with an erratum</span></div>
+      <div class="status-card-title"><span lang="fr">Lagarias 1990 formalisé sous Lean 4.34.0</span><span lang="en">Lagarias 1990 formalised on Lean 4.34.0</span></div>
       <div class="status-card-meta">
-        <span class="event-status-badge" data-status="erratum">ERRATUM</span>
         <span class="status-card-date">2026-10-20</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">H3 (DerivedLargeKBound) est supposée, non dérivée ; sous H2 elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque). Démontré sans circularité : aucun cycle non trivial avec k ≤ 1322, sous H1 et H2.</span>
-        <span lang="en">H3 (DerivedLargeKBound) is assumed, not derived; under H2 it is equivalent to the conclusion itself (in Lean, k is any return time). Proved without circularity: no non-trivial cycle with k ≤ 1322, under H1 and H2.</span>
+        <span lang="fr">Un article classique de 1990 (les cycles rationnels de 3x+1), pas un résultat nouveau : 60 énoncés, tous prouvés, axiomes standard ; deux théorèmes utilisent des hypothèses nommées (théorème des nombres premiers, Baker–Fel'dman). Jalon précédent, le même jour : la version v4 du preprint, avec un erratum.</span>
+        <span lang="en">A classical 1990 paper (the rational cycles of 3x+1), not a new result: 60 statements, all proved, standard axioms; two theorems use named hypotheses (prime number theorem, Baker–Fel'dman). Previous milestone, the same day: version v4 of the preprint, with an erratum.</span>
       </p>
-      <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23496480" target="_blank" rel="noopener">→ <span lang="fr">Erratum sur Zenodo (v4)</span><span lang="en">Erratum on Zenodo (v4)</span></a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/e39566c/lagarias1990" target="_blank" rel="noopener">→ <code>lagarias1990/</code> (e39566c)</a>
     </div>
 
     <!-- Carte 2 : Statut paper -->
@@ -629,13 +628,13 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     <!-- Carte 3 : Dernière vérification Lean (Halbeisen–Hungerbühler 1997, 2026-10-19) -->
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow" data-i18n="statusLastLean">Dernière vérification Lean</div>
-      <div class="status-card-title"><span lang="fr">Halbeisen–Hungerbühler 1997 formalisé sous Lean 4.34.0</span><span lang="en">Halbeisen–Hungerbühler 1997 formalised on Lean 4.34.0</span></div>
+      <div class="status-card-title"><span lang="fr">Lagarias 1990 et Halbeisen–Hungerbühler 1997 formalisés sous Lean 4.34.0</span><span lang="en">Lagarias 1990 and Halbeisen–Hungerbühler 1997 formalised on Lean 4.34.0</span></div>
       <div class="status-card-meta">
-        <span class="status-card-date">2026-10-19</span>
+        <span class="status-card-date">2026-10-20</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Un article classique de 1997 (bornes optimales des cycles rationnels), pas un résultat nouveau : 70 énoncés prouvés, 0 sorry, axiomes standard ; une remarque sans preuve dans l'article reste non démontrée. La pile commune a été revérifiée le 23/09 (9934df4) ; le théorème principal du site, lui, a été vérifié sous Lean 4.27.0 et n'a pas été revérifié. Archive Zenodo (logiciel) : DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>.</span>
-        <span lang="en">A classical 1997 paper (optimal bounds for rational cycles), not a new result: 70 proved statements, 0 sorry, standard axioms; one remark the paper does not prove stays unproved. The shared stack was re-checked on 23 Sept (9934df4); the site's main theorem itself was checked on Lean 4.27.0 and has not been re-checked. Zenodo archive (software): DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>.</span>
+        <span lang="fr">Lagarias 1990 (20/10) : 60 énoncés, tous prouvés, deux hypothèses nommées, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23514572" target="_blank" rel="noopener">10.5281/zenodo.23514572</a>. Un article classique de 1997 (bornes optimales des cycles rationnels), pas un résultat nouveau : 70 énoncés prouvés, 0 sorry, axiomes standard ; une remarque sans preuve dans l'article reste non démontrée. La pile commune a été revérifiée le 23/09 (9934df4) ; le théorème principal du site, lui, a été vérifié sous Lean 4.27.0 et n'a pas été revérifié. Archive Zenodo (logiciel) : DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>.</span>
+        <span lang="en">Lagarias 1990 (20 Oct): 60 statements, all proved, two named hypotheses, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.23514572" target="_blank" rel="noopener">10.5281/zenodo.23514572</a>. A classical 1997 paper (optimal bounds for rational cycles), not a new result: 70 proved statements, 0 sorry, standard axioms; one remark the paper does not prove stays unproved. The shared stack was re-checked on 23 Sept (9934df4); the site's main theorem itself was checked on Lean 4.27.0 and has not been re-checked. Zenodo archive (software): DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>.</span>
       </p>
       <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997" target="_blank" rel="noopener">→ hh1997 (36d5136)</a>
     </div>
@@ -844,7 +843,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.6 · 2026-10-20
+    Cartography · v0.10.7 · 2026-10-20
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>

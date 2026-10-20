@@ -1,11 +1,40 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-10-20T15:01:01Z",
+  "generated": "2026-10-20T21:45:02Z",
   "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "lagarias1990-lean-formalisation-2026-10-20",
+      "type": "lean",
+      "subtype": "formalisation-classic",
+      "date": "2026-10-20",
+      "datetime": "2026-10-20T23:34:42+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-20",
+      "title": {
+        "fr": "Lagarias 1990 formalisé sous Lean 4.34.0",
+        "en": "Lagarias 1990 formalised on Lean 4.34.0"
+      },
+      "summary": {
+        "fr": "Formalisation d'un article classique (Acta Arith. 56 (1990), 33-53), pas un résultat nouveau : 60 énoncés, tous prouvés (61 théorèmes : le Corollaire 2.1a est prouvé deux fois), 0 sorry, 0 native_decide, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0). Le Théorème 3.1 avec la constante imprimée (théorème des nombres premiers) et le Théorème 3.2 (conséquence de la borne de Baker–Fel'dman) sont prouvés sous des hypothèses nommées, jamais des axiomes ; le Théorème 3.1 est aussi prouvé sans hypothèse, avec la constante 6/5. Hors périmètre : les Théorèmes 3.3 et 4.3, et d'autres points listés dans le README. Release v1.1, archive Zenodo DOI 10.5281/zenodo.23514572 ; proposé sur ccchallenge (« Ready to be audited »).",
+        "en": "Formalisation of a classical paper (Acta Arith. 56 (1990), 33-53), not a new result: 60 statements, all proved (61 theorems: Corollary 2.1a is proved twice), 0 sorry, 0 native_decide, standard axioms only (Lean 4.34.0, Mathlib v4.34.0). Theorem 3.1 with the printed constant (prime number theorem) and Theorem 3.2 (a consequence of the Baker–Fel'dman bound) are proved under named hypotheses, never axioms; Theorem 3.1 is also proved without any hypothesis, with the constant 6/5. Out of scope: Theorems 3.3 and 4.3, and other points listed in the README. Release v1.1, Zenodo archive DOI 10.5281/zenodo.23514572; submitted to ccchallenge (\"Ready to be audited\")."
+      },
+      "artefacts": [
+        {"label": "lagarias1990/ (e39566c)", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/e39566c/lagarias1990", "kind": "repository"},
+        {"label": "DOI 10.5281/zenodo.23514572", "url": "https://doi.org/10.5281/zenodo.23514572", "kind": "doi"},
+        {"label": "Release v1.1", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/releases/tag/v1.1", "kind": "tag"}
+      ],
+      "related": ["hh1997-lean-formalisation-2026-10-19", "zenodo-software-archive-2026-10-20"]
+    },
 
     {
       "id": "delta11-withdrawn-2026-10-20",
@@ -824,13 +853,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 30,
-    "by_type": {"repository": 7, "lean": 6, "audit": 6, "mea-culpa": 4, "study": 4, "paper": 3},
-    "by_status": {"validated": 22, "in-progress": 3, "withdrawn": 1, "resolved": 1, "superseded": 1, "rejected": 1, "to-explore": 1},
-    "by_milestone": {"true": 17, "false": 13},
-    "by_claim_scope": {"documentation": 19, "formal_lean": 6, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 19, "partial": 5, "external_unverified": 3, "withdrawn": 1, "superseded_by_rejection": 1, "hypothesis": 1},
-    "note_fr": "Registre partiel : 30 événements (mise à jour du 2026-10-20). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 30 events (update of 2026-10-20). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "total_events": 31,
+    "by_type": {"lean": 7, "repository": 7, "audit": 6, "mea-culpa": 4, "study": 4, "paper": 3},
+    "by_status": {"validated": 23, "in-progress": 3, "withdrawn": 1, "resolved": 1, "superseded": 1, "rejected": 1, "to-explore": 1},
+    "by_milestone": {"true": 18, "false": 13},
+    "by_claim_scope": {"documentation": 19, "formal_lean": 7, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
+    "by_epistemic_status": {"verified": 20, "partial": 5, "external_unverified": 3, "withdrawn": 1, "superseded_by_rejection": 1, "hypothesis": 1},
+    "note_fr": "Registre partiel : 31 événements (mise à jour du 2026-10-20). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 31 events (update of 2026-10-20). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }
