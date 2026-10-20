@@ -1,3 +1,5 @@
+> **20/10/2026 — δ11 retiré / withdrawn.** Voir / see [`RETRAIT_DELTA11_2026-10-20.md`](RETRAIT_DELTA11_2026-10-20.md) (erratum Zenodo v4, item 3 : https://doi.org/10.5281/zenodo.23496480).
+
 # Branche `arsenal-postjar`
 
 Cette branche héberge l'**arsenal Lean post-JAR** (R34-R96) développé après la soumission JAR
