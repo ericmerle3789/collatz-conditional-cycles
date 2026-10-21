@@ -480,11 +480,11 @@
       "id": "P6",
       "fr": {
         "name": "Calegari-Dimitrov-Tang 2025 holonomy",
-        "why": "Cycle 3 (2026-04-29) : CUL-DE-SAC 80%. Les applications annoncées par CDT (arXiv:2510.04156) portent sur des racines de nombres algébriques, des équations diophantiennes effectives, L(2,χ₋₃) et ζ(5) 2-adique ; rien sur log_2 3. Si applicable au ratio, retomberait sur μ(log_2 3) — même famille fonctionnelle que Baker. Probabilité fermeture gap : 3-7%. Coût Lean prohibitif (5+ années Mathlib)."
+        "why": "Lecture close (21/10/2026), sur le seul résumé (arXiv:2510.04156) : cul-de-sac en l'état. Le résumé présente la méthode comme une alternative aux formes linéaires en logarithmes de Baker pour des théorèmes diophantiens effectifs classiques, mais n'annonce aucune mesure explicite pour S ln 2 − k ln 3, la seule forme linéaire qui intervient ici. À rouvrir si la méthode est appliquée à cette forme."
       },
       "en": {
         "name": "Calegari-Dimitrov-Tang 2025 holonomy",
-        "why": "Cycle 3 (2026-04-29): DEAD END 80%. The applications announced by CDT (arXiv:2510.04156) concern roots of algebraic numbers, effective Diophantine equations, L(2,χ₋₃) and the 2-adic ζ(5); nothing on log_2 3. If applicable to ratio, would fall back to μ(log_2 3) — same functional family as Baker. Gap closure probability: 3-7%. Prohibitive Lean cost (5+ Mathlib years)."
+        "why": "Reading closed (2026-10-21), on the abstract only (arXiv:2510.04156): dead end as things stand. The abstract presents the method as an alternative to Baker's linear forms in logarithms for classical effective Diophantine theorems, but announces no explicit measure for S ln 2 − k ln 3, the only linear form involved here. To be reopened if the method is applied to this form."
       },
       "region": "II",
       "status": "cds",

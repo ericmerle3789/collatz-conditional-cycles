@@ -976,7 +976,7 @@ ER  - `;
             tension: 0.3, borderWidth: 2, pointRadius: 5
           },
           {
-            label: STATE.lang === 'fr' ? "A' — Combinaison HORS-δ8 (holonomy)" : "A' — Combination OUTSIDE-δ8 (holonomy)",
+            label: STATE.lang === 'fr' ? "A' — Combinaison HORS-δ8 (holonomy) · cul-de-sac le 21/10/2026" : "A' — Combination OUTSIDE-δ8 (holonomy) · dead end on 2026-10-21",
             data: evolution.A_prime,
             borderColor: '#c8a86a',
             backgroundColor: 'rgba(200, 168, 106, 0.12)',

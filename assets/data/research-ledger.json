@@ -1,8 +1,8 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-10-21T06:40:11Z",
-  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; three of the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
+  "generated": "2026-10-21T06:44:31Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
@@ -743,19 +743,20 @@
       "type": "study",
       "subtype": "literature",
       "date": "2026-04-30",
-      "status": "in-progress",
+      "status": "archived",
+      "milestone": true,
       "claim_scope": "external_literature",
       "verification_method": "manual",
       "evidence_level": "annonce",
-      "epistemic_status": "external_unverified",
-      "last_verified_at": "2026-04-30",
+      "epistemic_status": "dead_end",
+      "last_verified_at": "2026-10-21",
       "title": {
-        "fr": "Calegari-Dimitrov-Tang 2025 — arithmetic holonomy (out-of-scope δ8)",
-        "en": "Calegari-Dimitrov-Tang 2025 — arithmetic holonomy (δ8 out-of-scope)"
+        "fr": "Calegari-Dimitrov-Tang 2025 — holonomie arithmétique — cul-de-sac",
+        "en": "Calegari-Dimitrov-Tang 2025 — arithmetic holonomy — dead end"
       },
       "summary": {
-        "fr": "Paradigme orthogonal Baker+CF. Lecture pour cartographie des paradigmes complémentaires.",
-        "en": "Orthogonal paradigm to Baker+CF. Reading for complementary paradigm cartography."
+        "fr": "Lecture close le 21/10/2026, sur le seul résumé de l'article (arXiv:2510.04156) : cul-de-sac pour ce projet, en l'état. Le résumé présente la méthode comme une alternative aux formes linéaires en logarithmes de Baker pour des théorèmes diophantiens effectifs classiques, mais n'annonce aucune mesure explicite pour S ln 2 − k ln 3, la seule forme linéaire qui intervient ici. À rouvrir si la méthode est appliquée à cette forme.",
+        "en": "Reading closed on 2026-10-21, on the paper's abstract only (arXiv:2510.04156): dead end for this project, as things stand. The abstract presents the method as an alternative to Baker's linear forms in logarithms for classical effective Diophantine theorems, but announces no explicit measure for S ln 2 − k ln 3, the only linear form involved here. To be reopened if the method is applied to this form."
       }
     },
 
@@ -859,10 +860,10 @@
   "stats_v2": {
     "total_events": 31,
     "by_type": {"lean": 7, "repository": 7, "audit": 6, "mea-culpa": 4, "study": 4, "paper": 3},
-    "by_status": {"validated": 21, "withdrawn": 3, "archived": 3, "resolved": 1, "superseded": 1, "rejected": 1, "in-progress": 1},
-    "by_milestone": {"true": 21, "false": 10},
+    "by_status": {"validated": 21, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
+    "by_milestone": {"true": 22, "false": 9},
     "by_claim_scope": {"documentation": 19, "formal_lean": 7, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 19, "withdrawn": 3, "partial": 3, "external_unverified": 3, "superseded_by_rejection": 1, "superseded": 1, "dead_end": 1},
+    "by_epistemic_status": {"verified": 19, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
     "note_fr": "Registre partiel : 31 événements (mise à jour du 2026-10-21). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
     "note_en": "Partial ledger: 31 events (update of 2026-10-21). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
