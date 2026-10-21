@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-21T14:58:33Z</updated>
+  <updated>2026-10-21T15:25:57Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -21,11 +21,11 @@
     <title>v0.10.9 — Re-check of no_cycle_k_le_1322, errata note</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.9-recheck-errata-2026-10-21</id>
-    <updated>2026-10-21T14:58:33Z</updated>
-    <published>2026-10-21T14:58:33Z</published>
+    <updated>2026-10-21T15:25:57Z</updated>
+    <published>2026-10-21T15:25:57Z</published>
     <category term="release"/>
     <category term="lean"/>
-    <summary>Errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (Zenodo, 2026-10-21, DOI 10.5281/zenodo.23535498): 9 and 21 points, each checked by a Lean theorem or by a script. None of them invalidates a theorem that we formalised. The list is not exhaustive. The two wrong rows of Lagarias's Table 3.1 (k = 35 and k = 73) were already corrected in the OEIS (A102280, A102284; G. H. Morley, 2013). Research ledger: two events dated 2026-10-21 (33 events, 24 milestones); the labels of its counters are again shown in one language only; "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version. The mentions saying that no_cycle_k_le_1322 was not re-checked are updated; no_nontrivial_cycle_phase59, no_cycle_k_gt_1322, sdw_from_cf, δ10, δ11 and CGS-7 are still not re-checked. On 20–21 October 2026, the 35 Lean files of release v1.0 that make up the import closure of Phase58PorteDeuxFinal.lean (which contains no_cycle_k_le_1322) were re-checked on Lean 4.34.0, which includes the fix of lean4#14576: they compile, and no_cycle_k_le_1322 depends only on propext, Classical.choice and Quot.sound. Phase59–63 and PhaseVIII, hence no_nontrivial_cycle_phase59, were not re-checked. Details and limits: https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20</summary>
+    <summary>Errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (Zenodo, 2026-10-21, DOI 10.5281/zenodo.23535498): 9 and 21 points, each checked by a Lean theorem or by a script. None of them invalidates a theorem that we formalised. The list is not exhaustive. The two wrong rows of Lagarias's Table 3.1 (k = 35 and k = 73) were already corrected in the OEIS (A102280, A102284; G. H. Morley, 2013). Research ledger: two events dated 2026-10-21 (33 events, 24 milestones); the labels of its counters are now shown in one language only; "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version; Papers page: the errata note is mentioned in the introduction. The mentions saying that no_cycle_k_le_1322 was not re-checked are updated; no_nontrivial_cycle_phase59, no_cycle_k_gt_1322, sdw_from_cf, δ10, δ11 and CGS-7, among others, are still not re-checked. On 20–21 October 2026, the 35 Lean files of release v1.0 that make up the import closure of Phase58PorteDeuxFinal.lean (which contains no_cycle_k_le_1322) were re-checked on Lean 4.34.0, which includes the fix of lean4#14576: they compile, and no_cycle_k_le_1322 depends only on propext, Classical.choice and Quot.sound. Phase59–63 and PhaseVIII, hence no_nontrivial_cycle_phase59, were not re-checked. Details and limits: https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20</summary>
   </entry>
 
   <entry>
