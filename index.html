@@ -31,7 +31,7 @@
 <meta property="og:description" content="Conjecture de Syracuse (a.k.a. Collatz). Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026). Zenodo preprint, concept DOI 10.5281/zenodo.19790405.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Λ_{S,k} = S log 2 - k log 3 — Collatz Conditional Cycles">
@@ -43,7 +43,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
 <meta name="twitter:description" content="Conjecture de Syracuse / Collatz. Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026). Zenodo preprint (DOI).">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
 <script type="application/ld+json">
@@ -635,22 +635,22 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
         <span class="status-card-date">2026-10-21</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Les 20 et 21 octobre 2026, les 35 fichiers Lean de la release v1.0 qui forment la clôture des imports de <code>Phase58PorteDeuxFinal.lean</code> (qui contient <code>no_cycle_k_le_1322</code>) ont été revérifiés sous Lean 4.34.0, qui contient la correction de lean4#14576 : ils compilent, et <code>no_cycle_k_le_1322</code> ne dépend que de <code>propext</code>, <code>Classical.choice</code> et <code>Quot.sound</code>. Phase59 à Phase63 et PhaseVIII, donc <code>no_nontrivial_cycle_phase59</code>, n'ont pas été revérifiés. Détails et limites : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>. Précédemment : Lagarias 1990 (20/10, DOI <a href="https://doi.org/10.5281/zenodo.23514572" target="_blank" rel="noopener">10.5281/zenodo.23514572</a>) et Halbeisen–Hungerbühler 1997 (19/10, DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>), deux articles classiques, formalisés sous Lean 4.34.0.</span>
-        <span lang="en">On 20–21 October 2026, the 35 Lean files of release v1.0 that make up the import closure of <code>Phase58PorteDeuxFinal.lean</code> (which contains <code>no_cycle_k_le_1322</code>) were re-checked on Lean 4.34.0, which includes the fix of lean4#14576: they compile, and <code>no_cycle_k_le_1322</code> depends only on <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code>. Phase59–63 and PhaseVIII, hence <code>no_nontrivial_cycle_phase59</code>, were not re-checked. Details and limits: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>. Previously: Lagarias 1990 (20 Oct, DOI <a href="https://doi.org/10.5281/zenodo.23514572" target="_blank" rel="noopener">10.5281/zenodo.23514572</a>) and Halbeisen–Hungerbühler 1997 (19 Oct, DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>), two classical papers, formalised on Lean 4.34.0.</span>
+        <span lang="fr">Les 20 et 21 octobre 2026, les 35 fichiers Lean de la release v1.0 qui forment la clôture des imports de <code>Phase58PorteDeuxFinal.lean</code> (qui contient <code>no_cycle_k_le_1322</code>) ont été revérifiés sous Lean 4.34.0, qui contient la correction de lean4#14576 : ils compilent, et <code>no_cycle_k_le_1322</code> ne dépend que de <code>propext</code>, <code>Classical.choice</code> et <code>Quot.sound</code>. Phase59 à Phase63 et PhaseVIII, donc <code>no_nontrivial_cycle_phase59</code>, n'ont pas été revérifiés. Détails et limites : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>. Précédemment : Lagarias 1990 (DOI <a href="https://doi.org/10.5281/zenodo.23514572" target="_blank" rel="noopener">10.5281/zenodo.23514572</a>) et Halbeisen–Hungerbühler 1997 (DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>), deux articles classiques, formalisés sous Lean 4.34.0.</span>
+        <span lang="en">On 20–21 October 2026, the 35 Lean files of release v1.0 that make up the import closure of <code>Phase58PorteDeuxFinal.lean</code> (which contains <code>no_cycle_k_le_1322</code>) were re-checked on Lean 4.34.0, which includes the fix of lean4#14576: they compile, and <code>no_cycle_k_le_1322</code> depends only on <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code>. Phase59–63 and PhaseVIII, hence <code>no_nontrivial_cycle_phase59</code>, were not re-checked. Details and limits: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>. Previously: Lagarias 1990 (DOI <a href="https://doi.org/10.5281/zenodo.23514572" target="_blank" rel="noopener">10.5281/zenodo.23514572</a>) and Halbeisen–Hungerbühler 1997 (DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>), two classical papers, formalised on Lean 4.34.0.</span>
       </p>
       <a class="status-card-link" href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener">→ <code>recheck-v4.34-2026-10-20</code></a>
     </div>
 
-    <!-- Carte 4 : Dernier audit (relecture adverse des fermetures, 2026-10-21) -->
+    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.9, 2026-10-21) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
-      <div class="status-card-title"><span lang="fr">Relecture adverse des fermetures</span><span lang="en">Adversarial review of the closures</span></div>
+      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.9</span><span lang="en">Adversarial review of v0.10.9</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-10-21</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des sept fermetures de la v0.10.8, contre les sources disponibles. Audit précédent : relecture adverse de l'erratum, 2026-10-20.</span>
-        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the seven closures of v0.10.8, against the available sources. Previous audit: adversarial review of the erratum, 2026-10-20.</span>
+        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.9 (revérification, note d'errata), contre les sources disponibles. Audit précédent : relecture adverse des sept fermetures de la v0.10.8, 2026-10-21.</span>
+        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.9 (re-check, errata note), against the available sources. Previous audit: adversarial review of the seven closures of v0.10.8, 2026-10-21.</span>
       </p>
       <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
