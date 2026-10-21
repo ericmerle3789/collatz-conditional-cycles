@@ -1,8 +1,8 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-10-20T21:45:02Z",
-  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
+  "generated": "2026-10-21T06:40:11Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; three of the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
@@ -434,20 +434,20 @@
       "subtype": "impossibility-lemma",
       "date": "2026-04-30",
       "datetime": "2026-04-30T15:39:34+02:00",
-      "status": "validated",
+      "status": "withdrawn",
       "milestone": true,
       "claim_scope": "formal_lean",
       "verification_method": "lean_kernel",
       "evidence_level": "lean_check",
-      "epistemic_status": "verified",
-      "last_verified_at": "2026-04-30",
+      "epistemic_status": "withdrawn",
+      "last_verified_at": "2026-10-21",
       "title": {
-        "fr": "δ10 — Barina-Replacement Impossibility Lemma (Phase 64) pushé",
-        "en": "δ10 — Barina-Replacement Impossibility Lemma (Phase 64) pushed"
+        "fr": "δ10 — Barina-Replacement Impossibility Lemma (Phase 64) — retiré (cartographie dépassée)",
+        "en": "δ10 — Barina-Replacement Impossibility Lemma (Phase 64) — withdrawn (outdated cartography)"
       },
       "summary": {
-        "fr": "Lemme cartographique fini : pour le catalogue examiné de bornes publiées (Rhin 1987, Wu 2003, Simons-de Weger 2005, Salikhov 2007 — mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125), aucune ne peut remplacer BarinaVerification (n < 2^71). Ce n'est pas une impossibilité universelle. 296 lignes Lean 4 (Lean 4.27.0, avant la correction du bug de noyau lean4#14576 ; non revérifié depuis), 0 sorry, profil d'axiomes [propext].",
-        "en": "Finite cartographic lemma: for the examined catalogue of published bounds (Rhin 1987, Wu 2003, Simons-de Weger 2005, Salikhov 2007 — irrationality measure of ln 3: μ(ln 3) ≤ 5.125), none can replace BarinaVerification (n < 2^71). This is not a universal impossibility. 296 lines of Lean 4 (Lean 4.27.0, before the fix of kernel bug lean4#14576; not re-checked since), 0 sorry, axiom profile [propext]."
+        "fr": "Lemme cartographique (Phase 64, 296 lignes Lean 4, Lean 4.27.0, non revérifié depuis) sur quatre profils de bornes publiées saisis à la main ; Lean vérifie la conclusion à partir des profils, pas les profils. Retiré le 21/10/2026 (cartographie dépassée) : revus contre les sources disponibles (notices zbMATH ; Rhin 1987 ; Simons–de Weger 2005), deux profils sont faux et un n'est pas vérifiable (détail : page Papers) ; ses conditions (1) et (3) portent sur le remplacement de BakerSeparation, pas de la vérification de Bařina, et BakerSeparation n'est pas nécessaire pour le résultat k ≤ 1322 : Hercher 2023, avec cette vérification, l'implique déjà (erratum de la version Zenodo v4, item 4). Ne plus le citer comme un résultat.",
+        "en": "Cartographic lemma (Phase 64, 296 lines of Lean 4, Lean 4.27.0, not re-checked since) on four hand-entered profiles of published bounds; Lean checks the conclusion from the profiles, not the profiles. Withdrawn on 2026-10-21 (outdated cartography): reviewed against the available sources (zbMATH reviews; Rhin 1987; Simons–de Weger 2005), two profiles are wrong and one cannot be checked (details: Papers page); its conditions (1) and (3) concern replacing BakerSeparation, not Bařina's verification, and BakerSeparation is not needed for the k ≤ 1322 result: Hercher 2023, with that verification, already implies it (erratum of the Zenodo v4 version, item 4). No longer to be cited as a result."
       },
       "artefacts": [
         {"label": "GitHub commit", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/commit/7efbf34", "kind": "commit"},
@@ -602,20 +602,20 @@
       "type": "lean",
       "subtype": "narrative-milestone",
       "date": "2026-04-30",
-      "status": "validated",
+      "status": "withdrawn",
       "milestone": true,
       "claim_scope": "documentation",
       "verification_method": "manual",
       "evidence_level": "artefact_public",
-      "epistemic_status": "partial",
-      "last_verified_at": "2026-10-02",
+      "epistemic_status": "withdrawn",
+      "last_verified_at": "2026-10-21",
       "title": {
-        "fr": "« Trilogie d'impossibilité » (δ8, δ8', δ10) — annoncée le 30/04/2026, portée corrigée",
-        "en": "\"Impossibility trilogy\" (δ8, δ8', δ10) — announced 2026-04-30, scope corrected"
+        "fr": "« Trilogie d'impossibilité » (δ8, δ8′, δ10) — annoncée le 30/04/2026, retirée",
+        "en": "\"Impossibility trilogy\" (δ8, δ8′, δ10) — announced 2026-04-30, withdrawn"
       },
       "summary": {
-        "fr": "Annoncé le 30/04/2026 : chacune des trois hypothèses du preprint serait adossée à une preuve d'impossibilité vérifiée en Lean. Correction du 02/10/2026 : δ8 (impossibilité Product-Bound) est un énoncé sur une méthode de preuve, non formalisé en Lean ; δ10 (Phase 64, Lean) porte sur un catalogue fini de bornes publiées ; et H3 (DerivedLargeKBound) n'est pas une hypothèse externe mais une hypothèse supposée, qui équivaut sous H2 à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum).",
-        "en": "Announced 2026-04-30: each of the preprint's three hypotheses would be backed by an impossibility proof checked in Lean. Correction of 2026-10-02: δ8 (Product-Bound impossibility) is a statement about a proof method, not formalized in Lean; δ10 (Phase 64, Lean) covers a finite catalogue of published bounds; and H3 (DerivedLargeKBound) is not an external hypothesis but an assumed one, equivalent under H2 to the conclusion itself (in Lean, k is any return time) (erratum)."
+        "fr": "Annoncé le 30/04/2026 : chacune des trois hypothèses du preprint serait adossée à une preuve d'impossibilité vérifiée en Lean. Correction du 02/10/2026 : δ8 (impossibilité Product-Bound) est un énoncé sur une méthode de preuve, non formalisé en Lean ; δ10 (Phase 64, Lean) porte sur un catalogue fini de bornes publiées ; et H3 (DerivedLargeKBound) n'est pas une hypothèse externe mais une hypothèse supposée, qui équivaut sous H2 à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum). Bilan (21/10/2026) : δ8 et δ8′ reformulent, pour la voie Product-Bound, une remarque déjà faite par Halbeisen et Hungerbühler (Acta Arith. 78 (1997), §5, p. 238) ; l'esquisse de preuve du Lemme 5.1 du PDF est retirée (erratum de la version Zenodo v4, item 7) ; δ10 est retiré (cartographie dépassée).",
+        "en": "Announced 2026-04-30: each of the preprint's three hypotheses would be backed by an impossibility proof checked in Lean. Correction of 2026-10-02: δ8 (Product-Bound impossibility) is a statement about a proof method, not formalized in Lean; δ10 (Phase 64, Lean) covers a finite catalogue of published bounds; and H3 (DerivedLargeKBound) is not an external hypothesis but an assumed one, equivalent under H2 to the conclusion itself (in Lean, k is any return time) (erratum). Outcome (2026-10-21): δ8 and δ8′ restate, for the Product-Bound route, a remark already made by Halbeisen and Hungerbühler (Acta Arith. 78 (1997), §5, p. 238); the proof sketch of Lemma 5.1 of the PDF is withdrawn (erratum of the Zenodo v4 version, item 7); δ10 is withdrawn (outdated cartography)."
       },
       "related": ["delta10-pushed", "find016-closed"]
     },
@@ -676,39 +676,42 @@
       "id": "study-eliahou-steiner-formalization",
       "type": "study",
       "date": "2026-04-30",
-      "status": "in-progress",
+      "status": "archived",
+      "milestone": true,
       "claim_scope": "formal_lean",
       "verification_method": "manual",
       "evidence_level": "annonce",
-      "epistemic_status": "partial",
-      "last_verified_at": "2026-04-30",
+      "epistemic_status": "superseded",
+      "last_verified_at": "2026-10-21",
       "title": {
-        "fr": "Décomposition Eliahou-Steiner Lean 4",
-        "en": "Eliahou-Steiner decomposition Lean 4"
+        "fr": "Décomposition Eliahou-Steiner Lean 4 — close",
+        "en": "Eliahou-Steiner decomposition Lean 4 — closed"
       },
       "summary": {
-        "fr": "Formalisation Lean 4 en cours de la décomposition d'Eliahou-Steiner pour cycles Collatz.",
-        "en": "Lean 4 formalization in progress of Eliahou-Steiner decomposition for Collatz cycles."
-      }
+        "fr": "Close le 21/10/2026. L'étude d'avril n'a formalisé aucun théorème d'Eliahou (1993) : son contenu est la bibliothèque prototype de la branche arsenal-postjar (minima locaux, blocs ; voir la page Papers). La borne d'Eliahou reprise par Halbeisen et Hungerbühler (1997, Théorème 2 : minoration de la longueur d'un cycle en fonction de son plus petit élément) est démontrée dans hh1997/ (théorème thm2) ; le chiffre 17 087 915 d'Eliahou n'y est pas formalisé. Une formalisation Lean 4 d'Eliahou 1993 par un tiers (tangentproofs/eliahou-collatz-bounds, inscrite sous son ancien nom tangentstorm) est inscrite sur ccchallenge, statut « Ready to be audited » (API : waiting_to_be_audited) au 20/10/2026.",
+        "en": "Closed on 2026-10-21. The April study formalised no theorem of Eliahou (1993): its content is the prototype library of the arsenal-postjar branch (local minima, blocks; see the Papers page). Eliahou's bound as restated by Halbeisen and Hungerbühler (1997, Theorem 2: a lower bound for the length of a cycle in terms of its smallest element) is proved in hh1997/ (theorem thm2); Eliahou's figure 17,087,915 is not formalised there. A third-party Lean 4 formalisation of Eliahou 1993 (tangentproofs/eliahou-collatz-bounds, listed under its former name tangentstorm) is listed on ccchallenge, status \"Ready to be audited\" (API: waiting_to_be_audited) as of 2026-10-20."
+      },
+      "related": ["hh1997-lean-formalisation-2026-10-19"]
     },
 
     {
       "id": "study-baker-desaxiomatisation",
       "type": "study",
       "date": "2026-04-30",
-      "status": "to-explore",
+      "status": "archived",
+      "milestone": true,
       "claim_scope": "formal_lean",
       "verification_method": "manual",
       "evidence_level": "annonce",
-      "epistemic_status": "hypothesis",
-      "last_verified_at": "2026-04-30",
+      "epistemic_status": "dead_end",
+      "last_verified_at": "2026-10-21",
       "title": {
-        "fr": "Remplacement partiel de l'hypothèse de Baker (Salikhov/Wu)",
-        "en": "Partial replacement of the Baker hypothesis (Salikhov/Wu)"
+        "fr": "Remplacement partiel de l'hypothèse de Baker (Salikhov/Wu) — cul-de-sac",
+        "en": "Partial replacement of the Baker hypothesis (Salikhov/Wu) — dead end"
       },
       "summary": {
-        "fr": "Étude exploratoire : remplacer l'hypothèse BakerSeparation (H1) par des résultats publiés, p. ex. Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125) ou Wu 2003. Liée à FIND-016. À explorer après δ10.",
-        "en": "Exploratory study: replacing the BakerSeparation hypothesis (H1) by published results, e.g. Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125) or Wu 2003. Linked to FIND-016. To explore after δ10."
+        "fr": "Étude exploratoire : remplacer l'hypothèse BakerSeparation (H1) par des résultats publiés, p. ex. Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125) ou Wu 2003. Liée à FIND-016. Note : la valeur 5,117 est due à Wu & Wang 2014, pas à Wu 2003 (erratum, item 3) ; nous n'avons pas lu Wu 2003. Close le 21/10/2026 : cul-de-sac. Les bornes de Salikhov 2007 et de Wu & Wang 2014 ne sont établies qu'au-delà de hauteurs non explicites (d'après leurs notices zbMATH) ; nous ne connaissons aucun seuil explicite (erratum, item 3) : en l'état, elles ne peuvent pas remplacer H1. H1 n'est de toute façon pas nécessaire pour le résultat k ≤ 1322 : Hercher 2023, avec la vérification de Bařina, l'implique déjà (erratum, item 4).",
+        "en": "Exploratory study: replacing the BakerSeparation hypothesis (H1) by published results, e.g. Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125) or Wu 2003. Linked to FIND-016. Note: the value 5.117 is due to Wu & Wang 2014, not to Wu 2003 (erratum, item 3); we have not read Wu 2003. Closed on 2026-10-21: dead end. The bounds of Salikhov 2007 and of Wu & Wang 2014 are established only beyond unspecified heights (according to their zbMATH reviews); we know of no explicit threshold (erratum, item 3): as things stand, they cannot replace H1. H1 is not needed for the k ≤ 1322 result anyway: Hercher 2023 with Bařina's verification already implies it (erratum, item 4)."
       },
       "related": ["find016-closed", "delta10-pushed"]
     },
@@ -718,19 +721,20 @@
       "type": "study",
       "subtype": "literature",
       "date": "2026-04-30",
-      "status": "in-progress",
+      "status": "archived",
+      "milestone": true,
       "claim_scope": "external_literature",
       "verification_method": "manual",
       "evidence_level": "annonce",
       "epistemic_status": "external_unverified",
-      "last_verified_at": "2026-04-30",
+      "last_verified_at": "2026-10-21",
       "title": {
-        "fr": "Knight 2026 — Collatz high cycles do not exist (Discrete Mathematics)",
-        "en": "Knight 2026 — Collatz high cycles do not exist (Discrete Mathematics)"
+        "fr": "Knight 2026 — Collatz high cycles do not exist (Discrete Mathematics) — lecture close",
+        "en": "Knight 2026 — Collatz high cycles do not exist (Discrete Mathematics) — reading closed"
       },
       "summary": {
-        "fr": "Lecture critique en cours. Si validé indépendamment, possible intégration comme hypothèse externe.",
-        "en": "Critical reading in progress. If validated independently, possible integration as external hypothesis."
+        "fr": "Lecture close le 21/10/2026. Publié : K. Knight, Discrete Mathematics 349(3), article 114812 (mars 2026), DOI 10.1016/j.disc.2025.114812 (métadonnées Crossref) ; prépublication HAL hal-04261183 (26/10/2023). Selon son résumé, l'article montre qu'aucun « high cycle » (pour une longueur et un nombre de termes impairs donnés, un cycle rationnel particulier) n'est formé d'entiers positifs (comme pour les circuits, sauf 1-2-1) ; ce résultat n'exclut pas les autres cycles, et il n'est pas intégré à nos dépôts. Une formalisation Lean 4 d'un tiers (github.com/tcosmo/Knight2026_lean) est inscrite sur ccchallenge, statut « Being formalised » (API : formalising) au 20/10/2026 ; nous ne l'avons pas auditée.",
+        "en": "Reading closed on 2026-10-21. Published: K. Knight, Discrete Mathematics 349(3), article 114812 (March 2026), DOI 10.1016/j.disc.2025.114812 (Crossref metadata); HAL preprint hal-04261183 (2023-10-26). According to its abstract, the paper shows that no \"high cycle\" (for a given length and number of odd terms, one particular rational cycle) consists of positive integers (as for circuits, except 1-2-1); this result does not exclude other cycles, and it is not integrated into our repositories. A third-party Lean 4 formalisation (github.com/tcosmo/Knight2026_lean) is listed on ccchallenge, status \"Being formalised\" (API: formalising) as of 2026-10-20; we have not audited it."
       }
     },
 
@@ -855,11 +859,11 @@
   "stats_v2": {
     "total_events": 31,
     "by_type": {"lean": 7, "repository": 7, "audit": 6, "mea-culpa": 4, "study": 4, "paper": 3},
-    "by_status": {"validated": 23, "in-progress": 3, "withdrawn": 1, "resolved": 1, "superseded": 1, "rejected": 1, "to-explore": 1},
-    "by_milestone": {"true": 18, "false": 13},
+    "by_status": {"validated": 21, "withdrawn": 3, "archived": 3, "resolved": 1, "superseded": 1, "rejected": 1, "in-progress": 1},
+    "by_milestone": {"true": 21, "false": 10},
     "by_claim_scope": {"documentation": 19, "formal_lean": 7, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 20, "partial": 5, "external_unverified": 3, "withdrawn": 1, "superseded_by_rejection": 1, "hypothesis": 1},
-    "note_fr": "Registre partiel : 31 événements (mise à jour du 2026-10-20). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 31 events (update of 2026-10-20). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "by_epistemic_status": {"verified": 19, "withdrawn": 3, "partial": 3, "external_unverified": 3, "superseded_by_rejection": 1, "superseded": 1, "dead_end": 1},
+    "note_fr": "Registre partiel : 31 événements (mise à jour du 2026-10-21). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 31 events (update of 2026-10-21). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }

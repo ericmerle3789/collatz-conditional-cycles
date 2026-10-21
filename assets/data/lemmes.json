@@ -1,6 +1,6 @@
 {
   "version": "0.9.0",
-  "lastUpdate": "2026-10-02",
+  "lastUpdate": "2026-10-21",
   "source": "expected_axioms.md (commit main)",
   "kernelAxioms": ["propext", "Classical.choice", "Quot.sound"],
   "nativeAxioms": ["Lean.ofReduceBool", "Lean.trustCompiler"],
@@ -116,7 +116,7 @@
       {"name": "BlockDecomposition.lean", "theoremCount": 11, "fr": "Décomposition en blocs minima/maxima locaux", "en": "Local minima/maxima block decomposition"},
       {"name": "BlockAmplification.lean", "theoremCount": 14, "fr": "Amplification multiplicative (R73-R76b)", "en": "Multiplicative amplification (R73-R76b)"},
       {"name": "CycleArithmetic.lean", "theoremCount": "?", "fr": "Arithmétique de base sur les cycles", "en": "Basic cycle arithmetic"},
-      {"name": "PadeBound.lean", "theoremCount": "?", "fr": "Bornes Padé (à compléter avec Salikhov/Wu)", "en": "Padé bounds (to extend with Salikhov/Wu)"}
+      {"name": "PadeBound.lean", "theoremCount": "?", "fr": "Prototype (bornes de Padé). Les bornes de Salikhov 2007 et de Wu & Wang 2014 ne sont établies qu'au-delà de hauteurs non explicites (d'après leurs notices zbMATH) ; nous ne connaissons aucun seuil explicite : étude close le 21/10/2026.", "en": "Prototype (Padé bounds). The bounds of Salikhov 2007 and of Wu & Wang 2014 are established only beyond unspecified heights (according to their zbMATH reviews); we know of no explicit threshold: study closed on 2026-10-21."}
     ]
   }
 }

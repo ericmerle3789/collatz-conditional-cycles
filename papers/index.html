@@ -49,7 +49,7 @@
   "headline": "Conditional formal proof of non-existence of non-trivial Collatz cycles in Lean 4",
   "description": "Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026). Zenodo preprint, concept DOI 10.5281/zenodo.19790405.",
   "datePublished": "2026-04-27T00:00:00+02:00",
-  "dateModified": "2026-10-20T00:00:00+02:00",
+  "dateModified": "2026-10-21T00:00:00+02:00",
   "genre": "research article",
   "image": "https://collatz-lab.org/assets/og-image.png",
   "mainEntityOfPage": {
@@ -321,10 +321,10 @@
   <h2 lang="fr">Quelques pistes d'écriture explorées</h2>
   <h2 lang="en">A few writing leads being explored</h2>
   <p lang="fr">
-    Cette section liste des <strong>travaux d'écriture en cours</strong> ou <strong>idées à explorer</strong>, <em>sans engagement de soumission ni de calendrier</em>. Aucune conférence ni revue n'est ciblée publiquement. Tant qu'un texte n'est pas soumis ou accepté, il reste à l'état de brouillon privé.
+    Cette section liste des <strong>travaux d'écriture en cours</strong> ou <strong>idées à explorer</strong>, <em>sans engagement de soumission ni de calendrier</em>. Aucune conférence ni revue n'est ciblée publiquement. Tant qu'un texte n'est pas soumis ou accepté, il reste à l'état de brouillon privé. Les cartes closes ou retirées restent affichées pour mémoire, chacune avec son statut.
   </p>
   <p lang="en">
-    This section lists <strong>writing work in progress</strong> or <strong>ideas being explored</strong>, <em>without any submission commitment or schedule</em>. No conference or journal is publicly targeted. Until a text is submitted or accepted, it remains a private draft.
+    This section lists <strong>writing work in progress</strong> or <strong>ideas being explored</strong>, <em>without any submission commitment or schedule</em>. No conference or journal is publicly targeted. Until a text is submitted or accepted, it remains a private draft. Closed or withdrawn cards are kept for the record, each with its status.
   </p>
 
   <div class="card-grid" style="margin-top: 1.5rem;">
@@ -368,28 +368,28 @@
     </div>
 
     <div class="card" style="border-left: 4px solid #6366f1;">
-      <div class="card-eyebrow" lang="fr" style="color: #6366f1;">Branche d'étude · Lean 4.27.0 · 2026-04-30</div>
-      <div class="card-eyebrow" lang="en" style="color: #6366f1;">Study branch · Lean 4.27.0 · 2026-04-30</div>
-      <h3 lang="fr">δ10 — Barina-Replacement Impossibility (Phase 64)</h3>
-      <h3 lang="en">δ10 — Barina-Replacement Impossibility (Phase 64)</h3>
+      <div class="card-eyebrow" lang="fr" style="color: #6366f1;">Branche d'étude · Lean 4.27.0 · 2026-04-30 · retiré le 21/10/2026 (cartographie dépassée)</div>
+      <div class="card-eyebrow" lang="en" style="color: #6366f1;">Study branch · Lean 4.27.0 · 2026-04-30 · withdrawn on 2026-10-21 (outdated cartography)</div>
+      <h3 lang="fr">δ10 — Barina-Replacement Impossibility (Phase 64) — retiré (cartographie dépassée)</h3>
+      <h3 lang="en">δ10 — Barina-Replacement Impossibility (Phase 64) — withdrawn (outdated cartography)</h3>
       <p style="font-size: 0.92rem;" lang="fr">
-        Lemme cartographique sur un <strong>catalogue fini</strong> de quatre sources (Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005), audité au 30/04/2026 : pour chacune, un profil saisi à la main indique qu'elle ne remplit pas l'une des trois conditions retenues pour remplacer <code>BarinaVerification</code>. Lean vérifie la conclusion à partir de ces profils, pas les profils eux-mêmes ; ce n'est pas un théorème d'impossibilité universel. Ces profils n'ont pas été revus depuis les corrections du 2 octobre 2026 (Salikhov 2007 porte sur la mesure d'irrationalité de ln 3 ; les chiffres attribués à Wu 2003 ne sont pas confirmés). Vérifié sous Lean 4.27.0, non revérifié depuis. <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/delta10-barina-replacement-impossibility" target="_blank" rel="noopener">→ Voir branche study/delta10</a>
+        Lemme cartographique sur un catalogue fini de quatre sources (Salikhov 2007, Wu 2003, Rhin 1987, Simons–de Weger 2005), audité au 30/04/2026 : Lean vérifie la conclusion à partir de profils saisis à la main, pas les profils eux-mêmes. <strong>Retiré le 21/10/2026 (cartographie dépassée) : ne plus le citer comme un résultat.</strong> Revus contre les sources disponibles (notices zbMATH ; Rhin 1987 ; Simons–de Weger 2005), deux profils sont faux et un n'est pas vérifiable : Salikhov 2007 minore bien une forme linéaire en 1, ln 2 et ln 3, mais seulement au-delà d'une hauteur non explicite (notice zbMATH Zbl 1169.11032) ; Rhin 1987 en donne une minoration effective (Proposition p. 160, appliquée par Simons et de Weger), et pas seulement une mesure d'irrationalité de log 3 ; le chiffre attribué à Wu 2003 (7,6155) n'a pas pu être vérifié (sa notice zbMATH, Zbl 1099.11037, ne donne aucun exposant, et nous n'avons pas lu l'article). Ses trois conditions pour « remplacer BarinaVerification » (prédicat CanReplaceBarina du fichier Lean) sont : (1) donner une borne sur la forme linéaire S log 2 − k log 3 ; (2) être obtenue sans borne de vérification X₀ ; (3) impliquer n &lt; 2⁷¹ pour tout cycle avec k ≤ 1322. Les conditions (1) et (3) décrivent en fait un remplacement de BakerSeparation dans la chaîne k ≤ 1322 (la (3) suppose encore la vérification de Bařina) ; or BakerSeparation n'est pas nécessaire pour ce résultat : Hercher 2023, avec la même vérification, l'implique déjà (erratum de la version Zenodo v4, item 4). Vérifié sous Lean 4.27.0, non revérifié depuis. <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/delta10-barina-replacement-impossibility" target="_blank" rel="noopener">→ Voir branche study/delta10</a>
       </p>
       <p style="font-size: 0.92rem;" lang="en">
-        Cartographic lemma on a <strong>finite catalogue</strong> of four sources (Salikhov 2007, Wu 2003, Rhin 1987, Simons-de Weger 2005), audited as of 2026-04-30: for each, a hand-entered profile states that it fails one of the three conditions retained for replacing <code>BarinaVerification</code>. Lean checks the conclusion from these profiles, not the profiles themselves; this is not a universal impossibility theorem. These profiles have not been reviewed since the corrections of 2 October 2026 (Salikhov 2007 concerns the irrationality measure of ln 3; the figures attributed to Wu 2003 are not confirmed). Checked on Lean 4.27.0, not re-checked since. <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/delta10-barina-replacement-impossibility" target="_blank" rel="noopener">→ See study/delta10 branch</a>
+        Cartographic lemma on a finite catalogue of four sources (Salikhov 2007, Wu 2003, Rhin 1987, Simons–de Weger 2005), audited as of 2026-04-30: Lean checks the conclusion from hand-entered profiles, not the profiles themselves. <strong>Withdrawn on 2026-10-21 (outdated cartography): no longer to be cited as a result.</strong> Reviewed against the available sources (zbMATH reviews; Rhin 1987; Simons–de Weger 2005), two profiles are wrong and one cannot be checked: Salikhov 2007 does bound a linear form in 1, ln 2 and ln 3, but only beyond an unspecified height (zbMATH review Zbl 1169.11032); Rhin 1987 gives an effective lower bound for such a form (Proposition p. 160, applied by Simons and de Weger), not only an irrationality measure of log 3; the figure attributed to Wu 2003 (7.6155) could not be checked (its zbMATH entry, Zbl 1099.11037, gives no exponent, and we have not read the paper). Its three conditions for "replacing BarinaVerification" (predicate CanReplaceBarina of the Lean file) are: (1) give a bound on the linear form S log 2 − k log 3; (2) be derived without a verification bound X₀; (3) imply n &lt; 2⁷¹ for every cycle with k ≤ 1322. Conditions (1) and (3) in fact describe a replacement of BakerSeparation in the k ≤ 1322 chain ((3) still requires Bařina's verification); but BakerSeparation is not needed for that result: Hercher 2023, with the same verification, already implies it (erratum of the Zenodo v4 version, item 4). Checked on Lean 4.27.0, not re-checked since. <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/study/delta10-barina-replacement-impossibility" target="_blank" rel="noopener">→ See study/delta10 branch</a>
       </p>
     </div>
 
     <div class="card">
       <div class="card-eyebrow" lang="fr">Prototype · branche arsenal-postjar (avril 2026)</div>
       <div class="card-eyebrow" lang="en">Prototype · arsenal-postjar branch (April 2026)</div>
-      <h3 lang="fr">Décomposition Eliahou-Steiner en Lean 4</h3>
-      <h3 lang="en">Eliahou-Steiner block decomposition in Lean 4</h3>
+      <h3 lang="fr">Bibliothèque prototype : minima locaux et blocs (Lean 4)</h3>
+      <h3 lang="en">Prototype library: local minima and blocks (Lean 4)</h3>
       <p style="font-size: 0.92rem;" lang="fr">
-        Library Lean 4 réutilisable pour les minima locaux, l'amplification de blocs, et le splitting par moyenne géométrique R73 / R76b. État : environ 1 300 lignes de prototypes (BlockDecomposition, BlockAmplification), à consolider.
+        Prototypes Lean 4 d'avril 2026 (environ 1 300 lignes, BlockDecomposition et BlockAmplification) sur les minima locaux d'un cycle, l'amplification de blocs et un découpage par moyenne géométrique (R73 / R76b). Malgré l'ancien titre « Décomposition Eliahou-Steiner en Lean 4 », ils ne formalisent pas Eliahou (1993) : la borne d'Eliahou reprise par Halbeisen et Hungerbühler (Théorème 2) est démontrée dans <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997" target="_blank" rel="noopener"><code>hh1997/</code></a>, et une formalisation d'Eliahou 1993 par un tiers, non auditée par nous, est inscrite sur ccchallenge. BlockDecomposition déclare un axiome, <code>hercher_m_le_91_axiom</code> (au plus 91 minima locaux), qui inverse l'énoncé de Hercher 2023 (aucun m-cycle pour m ≤ 91) ; aucun théorème ne l'utilise. État : à consolider ou à archiver.
       </p>
       <p style="font-size: 0.92rem;" lang="en">
-        Reusable Lean 4 library for local minima, block amplification, and R73 / R76b geometric-mean splitting. Status: about 1,300 prototype lines (BlockDecomposition, BlockAmplification), to consolidate.
+        April 2026 Lean 4 prototypes (about 1,300 lines, BlockDecomposition and BlockAmplification) on the local minima of a cycle, block amplification and a geometric-mean splitting (R73 / R76b). Despite the former title "Eliahou-Steiner block decomposition in Lean 4", they do not formalise Eliahou (1993): Eliahou's bound as restated by Halbeisen and Hungerbühler (Theorem 2) is proved in <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997" target="_blank" rel="noopener"><code>hh1997/</code></a>, and a third-party formalisation of Eliahou 1993, not audited by us, is listed on ccchallenge. BlockDecomposition declares an axiom, <code>hercher_m_le_91_axiom</code> (at most 91 local minima), which reverses Hercher's 2023 statement (no m-cycle with m ≤ 91); no theorem uses it. Status: to consolidate or archive.
       </p>
     </div>
 
@@ -407,24 +407,24 @@
     </div>
 
     <div class="card">
-      <div class="card-eyebrow" lang="fr">Piste de lecture</div>
-      <div class="card-eyebrow" lang="en">Reading lead</div>
+      <div class="card-eyebrow" lang="fr">Lecture close (21/10/2026)</div>
+      <div class="card-eyebrow" lang="en">Reading closed (2026-10-21)</div>
       <h3 lang="fr">Knight 2026 — high cycles</h3>
       <h3 lang="en">Knight 2026 — high cycles</h3>
       <p style="font-size: 0.92rem;" lang="fr">
-        K. Knight, « Collatz high cycles do not exist », <em>Discrete Mathematics</em> 349(3), article 114812 (2026), DOI <a href="https://doi.org/10.1016/j.disc.2025.114812" target="_blank" rel="noopener">10.1016/j.disc.2025.114812</a>. Lecture en vue d'un éventuel lemme auxiliaire en Lean 4.
+        K. Knight, « Collatz high cycles do not exist », <em>Discrete Mathematics</em> 349(3), article 114812 (2026), DOI <a href="https://doi.org/10.1016/j.disc.2025.114812" target="_blank" rel="noopener">10.1016/j.disc.2025.114812</a> ; prépublication HAL hal-04261183 (2023). Selon son résumé, l'article montre qu'aucun « high cycle » (pour une longueur et un nombre de termes impairs donnés, un cycle rationnel particulier) n'est formé d'entiers positifs (comme pour les circuits, sauf 1-2-1) ; ce résultat n'exclut pas les autres cycles. Lecture close le 21/10/2026, sans intégration à nos dépôts. Une formalisation Lean 4 d'un tiers (<a href="https://github.com/tcosmo/Knight2026_lean" target="_blank" rel="noopener">tcosmo/Knight2026_lean</a>) est inscrite sur ccchallenge, statut « Being formalised » (API : formalising) au 20/10/2026 ; nous ne l'avons pas auditée.
       </p>
       <p style="font-size: 0.92rem;" lang="en">
-        K. Knight, "Collatz high cycles do not exist", <em>Discrete Mathematics</em> 349(3), article 114812 (2026), DOI <a href="https://doi.org/10.1016/j.disc.2025.114812" target="_blank" rel="noopener">10.1016/j.disc.2025.114812</a>. Read with a view to a possible auxiliary lemma in Lean 4.
+        K. Knight, "Collatz high cycles do not exist", <em>Discrete Mathematics</em> 349(3), article 114812 (2026), DOI <a href="https://doi.org/10.1016/j.disc.2025.114812" target="_blank" rel="noopener">10.1016/j.disc.2025.114812</a>; HAL preprint hal-04261183 (2023). According to its abstract, the paper shows that no "high cycle" (for a given length and number of odd terms, one particular rational cycle) consists of positive integers (as for circuits, except 1-2-1); this result does not exclude other cycles. Reading closed on 2026-10-21, with no integration into our repositories. A third-party Lean 4 formalisation (<a href="https://github.com/tcosmo/Knight2026_lean" target="_blank" rel="noopener">tcosmo/Knight2026_lean</a>) is listed on ccchallenge, status "Being formalised" (API: formalising) as of 2026-10-20; we have not audited it.
       </p>
     </div>
   </div>
 
   <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 1.5rem; font-style: italic;" lang="fr">
-    Aucun de ces travaux n'a de date ferme ni de venue ciblée. Si vous êtes intéressé par une collaboration ou une relecture, ouvrez une <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/discussions" target="_blank" rel="noopener">discussion GitHub</a>.
+    Aucun des travaux encore ouverts n'a de date ferme ni de venue ciblée. Si vous êtes intéressé par une collaboration ou une relecture, ouvrez une <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/discussions" target="_blank" rel="noopener">discussion GitHub</a>.
   </p>
   <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 1.5rem; font-style: italic;" lang="en">
-    None of these works have a firm date or targeted venue. If you are interested in collaboration or review, open a <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/discussions" target="_blank" rel="noopener">GitHub discussion</a>.
+    None of the works still open has a firm date or targeted venue. If you are interested in collaboration or review, open a <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/discussions" target="_blank" rel="noopener">GitHub discussion</a>.
   </p>
 </section>
 
@@ -444,7 +444,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.7 · 2026-10-20</div>
+  <div class="footer-meta">Cartography · v0.10.8 · 2026-10-21</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2</p>
   <p class="footer-status">
@@ -471,7 +471,7 @@
 <!-- Hypothes.is annotations layer -->
 <script src="https://hypothes.is/embed.js" async></script>
 
-<script src="../assets/js/main.js?v=20261020-V0-10-6"></script>
+<script src="../assets/js/main.js?v=20261021-V0-10-8"></script>
 
 </body>
 </html>

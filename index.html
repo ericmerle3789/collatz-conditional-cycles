@@ -85,7 +85,7 @@
         "url": "https://github.com/ericmerle3789"
       },
       "datePublished": "2026-04-27T00:00:00+02:00",
-      "dateModified": "2026-10-20T00:00:00+02:00",
+      "dateModified": "2026-10-21T00:00:00+02:00",
       "genre": "research article",
       "image": "https://collatz-lab.org/assets/og-image.png",
       "mainEntityOfPage": {
@@ -384,7 +384,7 @@ graph LR
 
     DELTA8["δ8<br/>Product-Bound<br/>impossibility · non formalisé<br/>(remarque de HH 1997, §5)"]
     DELTA8P["δ8'<br/>Baker+CF lower<br/>not upper"]
-    DELTA10["δ10 (Phase64)<br/>catalogue fini<br/>de 4 sources"]
+    DELTA10["δ10 (Phase64)<br/>retiré le 21/10/2026<br/>(cartographie dépassée)"]
     DELTA11["δ11 (Phase65)<br/>conditionnel · 3 axiomes ad hoc<br/>retiré le 20/10/2026"]
 
     LAMBDA -->|"hypothèse H1"| BAKER
@@ -397,7 +397,7 @@ graph LR
 
     DELTA8 -.->|"Product-Bound ne ferme pas la fenêtre"| DERIVED
     DELTA8P -.->|"contexte"| DERIVED
-    DELTA10 -.->|"contexte"| BARINA
+    DELTA10 -.->|"contexte (retiré)"| BAKER
     DELTA11 -.->|"contexte (retiré)"| BAKER
 
     style LAMBDA fill:#c8a86a,color:#0e0f13,stroke:#fff,stroke-width:2px
@@ -409,7 +409,7 @@ graph LR
     style MAIN fill:#6a9b7a,color:#0e0f13
     style DELTA8 fill:#3a4a5a,color:#e0e6f0,stroke:#6366f1,stroke-width:1px
     style DELTA8P fill:#3a4a5a,color:#e0e6f0,stroke:#6366f1,stroke-width:1px
-    style DELTA10 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px
+    style DELTA10 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
     style DELTA11 fill:#3a4a5a,color:#e0e6f0,stroke:#fb923c,stroke-width:2px,stroke-dasharray:5
     </pre>
   </div>
@@ -487,8 +487,8 @@ graph LR
       <div class="card-eyebrow">B</div>
       <h3 lang="fr">Téléportation hors domaine</h3>
       <h3 lang="en">Out-of-domain teleportation</h3>
-      <p lang="fr">Probabilité finale : <strong>5-10%</strong> — 9 sur 11 culs-de-sac dans la Région II.</p>
-      <p lang="en">Final probability: <strong>5-10%</strong> — 9 of 11 dead-ends in Region II.</p>
+      <p lang="fr">Probabilité finale : <strong>5-10%</strong> — 11 sur 16 culs-de-sac dans la Région II.</p>
+      <p lang="en">Final probability: <strong>5-10%</strong> — 11 of 16 dead-ends in Region II.</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--accent);">
       <div class="card-eyebrow">C</div>
@@ -580,7 +580,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 
 <!-- ========================================================================
      RESEARCH STATUS / ÉTAT DES TRAVAUX (Research Ledger preview)
-     Mis à jour le 2026-10-20 (v0.10.7)
+     Mis à jour le 2026-10-21 (v0.10.8)
      ======================================================================== -->
 <section id="research-status" class="research-status-snapshot">
   <div class="section-eyebrow">§ VI</div>
@@ -843,7 +843,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.7 · 2026-10-20
+    Cartography · v0.10.8 · 2026-10-21
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -900,6 +900,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261020-V0-10-6"></script>
+<script src="assets/js/main.js?v=20261021-V0-10-8"></script>
 </body>
 </html>

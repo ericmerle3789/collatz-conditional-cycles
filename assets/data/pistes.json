@@ -1,6 +1,6 @@
 {
   "version": "0.9.0",
-  "lastUpdate": "2026-10-02",
+  "lastUpdate": "2026-10-21",
   "pistes": [
     {
       "id": "★ Main",
@@ -23,32 +23,32 @@
       "id": "A",
       "fr": {
         "name": "BakerSeparation (k^6) — hypothèse H1",
-        "why": "Hypothèse H1 (paramètre du théorème, pas un axiome Lean) — borne sur |S log 2 − k log 3| de la forme (2^s − 3^k)·k^6 ≥ 3^k. <strong>Hypothèse de travail</strong>, plus forte que les bornes effectives publiées sous cette forme (mea culpa #28) ; tradition : Rhin 1987, Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125), Wu & Wang 2014. Le lemme cartographique δ10 (Phase 64, [propext]) montre, pour un catalogue fini de bornes publiées, qu'aucune ne remplace la vérification de Bařina."
+        "why": "Hypothèse H1 (paramètre du théorème, pas un axiome Lean) — borne sur |S log 2 − k log 3| de la forme (2^s − 3^k)·k^6 ≥ 3^k. <strong>Hypothèse de travail</strong>, plus forte que les bornes effectives publiées sous cette forme (mea culpa #28) ; tradition : Rhin 1987, Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125), Wu & Wang 2014. Les bornes de Salikhov 2007 et de Wu & Wang 2014 ne sont établies qu'au-delà de hauteurs non explicites (d'après leurs notices zbMATH) ; nous ne connaissons aucun seuil explicite (erratum, item 3) : en l'état, elles ne peuvent pas remplacer H1. H1 n'est de toute façon pas nécessaire pour le résultat k ≤ 1322, que Hercher 2023 avec la vérification de Bařina implique déjà (erratum, item 4). δ10 est retiré (cartographie dépassée)."
       },
       "en": {
         "name": "BakerSeparation (k^6) — hypothesis H1",
-        "why": "Hypothesis H1 (a parameter of the theorem, not a Lean axiom) — bound on |S log 2 − k log 3| of the form (2^s − 3^k)·k^6 ≥ 3^k. <strong>Working hypothesis</strong>, stronger in this form than published effective bounds (mea culpa #28); tradition: Rhin 1987, Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125), Wu & Wang 2014. The δ10 cartographic lemma (Phase 64, [propext]) shows, for a finite catalogue of published bounds, that none replaces Barina's verification."
+        "why": "Hypothesis H1 (a parameter of the theorem, not a Lean axiom) — bound on |S log 2 − k log 3| of the form (2^s − 3^k)·k^6 ≥ 3^k. <strong>Working hypothesis</strong>, stronger in this form than published effective bounds (mea culpa #28); tradition: Rhin 1987, Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125), Wu & Wang 2014. The bounds of Salikhov 2007 and of Wu & Wang 2014 are established only beyond unspecified heights (according to their zbMATH reviews); we know of no explicit threshold (erratum, item 3): as things stand, they cannot replace H1. H1 is not needed for the k ≤ 1322 result anyway, which Hercher 2023 with Bařina's verification already implies (erratum, item 4). δ10 is withdrawn (outdated cartography)."
       },
       "region": "I",
       "status": "axiome",
       "test4": "—",
       "lean": "BakerSeparation",
       "leanFile": "ProjetCollatz/Phase58PorteDeuxFinal.lean",
-      "ref": "Working hypothesis H1; literature: Rhin 1987, Salikhov 2007 (ln 3), Wu & Wang 2014 — see mea culpa #28 + δ10"
+      "ref": "Working hypothesis H1; literature: Rhin 1987, Salikhov 2007 (ln 3), Wu & Wang 2014 — see mea culpa #28 + δ10 (withdrawn)"
     },
     {
       "id": "δ10",
       "fr": {
-        "name": "δ10 — Barina-Replacement Impossibility (Phase 64)",
-        "why": "Prouvé en Lean 4 (Lean 4.27.0, 2026-04-30, commit 7efbf34), avant la correction du bug de noyau lean4#14576 ; non revérifié depuis. Lemme cartographique fini : aucune borne du catalogue examiné {Salikhov 2007 (mesure d'irrationalité de ln 3 : μ(ln 3) ≤ 5,125), Wu 2003, Rhin 1987, Simons-de Weger 2005} ne peut remplacer BarinaVerification dans no_nontrivial_cycle_phase59. Ce n'est pas une impossibilité universelle. 296 lignes Lean, 0 sorry, profil d'axiomes [propext]. Relecture croisée assistée par IA (Three-Key Q12+Q13). Branche dédiée, tag annoté."
+        "name": "δ10 — Barina-Replacement Impossibility (Phase 64) — retiré (cartographie dépassée)",
+        "why": "Retiré le 21/10/2026 (cartographie dépassée) : ne plus le citer comme un résultat. Lemme Lean (Phase 64, Lean 4.27.0, commit 7efbf34, non revérifié depuis) qui vérifie une conclusion à partir de quatre profils saisis à la main (Salikhov 2007, « Wu 2003 », Rhin 1987, Simons–de Weger 2005) ; revus contre les sources disponibles (notices zbMATH ; Rhin 1987 ; Simons–de Weger 2005), deux sont faux et un n'est pas vérifiable (détail : page Papers). Ses conditions (1) et (3) (définies sur la page Papers) portent sur le remplacement de BakerSeparation dans la chaîne k ≤ 1322, pas sur celui de la vérification de Bařina ; or BakerSeparation n'est pas nécessaire pour ce résultat : Hercher 2023, avec la même vérification, l'implique déjà (erratum de la version Zenodo v4, item 4)."
       },
       "en": {
-        "name": "δ10 — Barina-Replacement Impossibility (Phase 64)",
-        "why": "Proved in Lean 4 (Lean 4.27.0, 2026-04-30, commit 7efbf34), before the fix of kernel bug lean4#14576; not re-checked since. Finite cartographic lemma: no bound from the examined catalogue {Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125), Wu 2003, Rhin 1987, Simons-de Weger 2005} can replace BarinaVerification in no_nontrivial_cycle_phase59. This is not a universal impossibility. 296 Lean lines, 0 sorry, axiom profile [propext]. AI-assisted cross-review (Three-Key Q12+Q13). Dedicated branch, annotated tag."
+        "name": "δ10 — Barina-Replacement Impossibility (Phase 64) — withdrawn (outdated cartography)",
+        "why": "Withdrawn on 2026-10-21 (outdated cartography): no longer to be cited as a result. Lean lemma (Phase 64, Lean 4.27.0, commit 7efbf34, not re-checked since) that checks a conclusion from four hand-entered profiles (Salikhov 2007, \"Wu 2003\", Rhin 1987, Simons–de Weger 2005); reviewed against the available sources (zbMATH reviews; Rhin 1987; Simons–de Weger 2005), two are wrong and one cannot be checked (details: Papers page). Its conditions (1) and (3) (defined on the Papers page) concern replacing BakerSeparation in the k ≤ 1322 chain, not replacing Bařina's verification; but BakerSeparation is not needed for that result: Hercher 2023, with the same verification, already implies it (erratum of the Zenodo v4 version, item 4)."
       },
       "region": "I",
-      "status": "prouve",
-      "test4": "4/4 ✓",
+      "status": "cds",
+      "test4": "—",
       "lean": "delta10_barina_replacement_impossibility",
       "leanFile": "ProjetCollatz/Phase64Delta10BarinaReplacement.lean",
       "ref": "Branch study/delta10-barina-replacement-impossibility, tag study-delta10-2026-04-30, commit 7efbf34"
@@ -122,17 +122,15 @@
       "id": "E.2",
       "fr": {
         "name": "Wu & Wang 2014 (μ(log 3) < 5,117)",
-        "why": "Mesure d'irrationalité de log 3 : μ(log 3) < 5,117 (Wu & Wang 2014). Cette valeur était attribuée à tort à « Wu 2003 » (Wu 2003 porte sur des mesures d'indépendance linéaire de 1, log 2, log 3, log 5). Son usage pour le problème repose sur la même transposition que Salikhov 2007, qui ne tient pas (δ11 retiré le 20/10/2026)."
+        "why": "Mesure d'irrationalité de log 3 : μ(log 3) < 5,117 (Wu & Wang 2014). Cette valeur était attribuée à tort à « Wu 2003 » (Wu 2003 porte sur des mesures d'indépendance linéaire de 1, log 2, log 3, log 5). Cul-de-sac (21/10/2026) : cette borne n'est établie qu'au-delà de hauteurs non explicites (d'après sa notice zbMATH) ; nous ne connaissons aucun seuil explicite (erratum, item 3) : en l'état, elle ne peut pas remplacer H1. H1 n'est de toute façon pas nécessaire pour le résultat k ≤ 1322, que Hercher 2023 avec la vérification de Bařina implique déjà (erratum, item 4)."
       },
       "en": {
         "name": "Wu & Wang 2014 (μ(log 3) < 5.117)",
-        "why": "Irrationality measure of log 3: μ(log 3) < 5.117 (Wu & Wang 2014). This value was wrongly attributed to \"Wu 2003\" (Wu 2003 concerns linear-independence measures of 1, log 2, log 3, log 5). Its use for the problem rests on the same transposition as Salikhov 2007, which does not hold (δ11 withdrawn on 2026-10-20)."
+        "why": "Irrationality measure of log 3: μ(log 3) < 5.117 (Wu & Wang 2014). This value was wrongly attributed to \"Wu 2003\" (Wu 2003 concerns linear-independence measures of 1, log 2, log 3, log 5). Dead end (2026-10-21): this bound is established only beyond unspecified heights (according to its zbMATH review); we know of no explicit threshold (erratum, item 3): as things stand, it cannot replace H1. H1 is not needed for the k ≤ 1322 result anyway, which Hercher 2023 with Bařina's verification already implies (erratum, item 4)."
       },
       "region": "I",
-      "status": "partiel",
-      "test4": "3/4",
-      "lean": "PadeBound (à prouver)",
-      "leanFile": "ProjetCollatz/PostJAR/PadeBound.lean",
+      "status": "cds",
+      "test4": "—",
       "ref": "Wu & Wang, J. Number Theory 142, 264-273 (2014), DOI 10.1016/j.jnt.2014.03.007 ; see also Wu, Math. Comp. 72 (2003), DOI 10.1090/S0025-5718-02-01442-4"
     },
     {
@@ -525,14 +523,14 @@
       "id": "P9",
       "fr": {
         "name": "Knight 2026 (high cycles)",
-        "why": "Cycle 5 + Red Team (2026-04-29) : Section 5 (high cycles) INCONDITIONNELLE — preuve 2-adique 5 lignes : 2^(k-1)/(2^k - 3^x) ≠ entier (num. pair, dén. impair). Élimine UN seul cycle (Christoffel supérieur) par paire (k,x). Section 3 (circuits) dépend Baker via Ellison. PDF récupéré HAL hal-04261183 (preprint 26 oct 2023, publié Discrete Math. 349(3), 114812 mars 2026). Excellent lemme auxiliaire Lean, mais ne ferme PAS le gap résiduel."
+        "why": "Lecture close (21/10/2026) : cul-de-sac pour ce projet. Publié (Discrete Math. 349(3), 114812, 2026 ; HAL hal-04261183). Selon son résumé, l'article montre qu'aucun « high cycle » n'est formé d'entiers positifs (comme pour les circuits, sauf 1-2-1) ; ce résultat n'exclut pas les autres cycles. Formalisation Lean 4 d'un tiers inscrite sur ccchallenge (statut « Being formalised » au 20/10/2026)."
       },
       "en": {
         "name": "Knight 2026 (high cycles)",
-        "why": "Cycle 5 + Red Team (2026-04-29): Section 5 (high cycles) UNCONDITIONAL — 5-line 2-adic proof: 2^(k-1)/(2^k - 3^x) ≠ integer (even num., odd denom.). Eliminates ONE cycle (upper Christoffel word) per (k,x) pair. Section 3 (circuits) depends on Baker via Ellison. PDF retrieved from HAL hal-04261183 (preprint 26 Oct 2023, published Discrete Math. 349(3), 114812 March 2026). Excellent auxiliary Lean lemma, but does NOT close the residual gap."
+        "why": "Reading closed (2026-10-21): dead end for this project. Published (Discrete Math. 349(3), 114812, 2026; HAL hal-04261183). According to its abstract, the paper shows that no \"high cycle\" consists of positive integers (as for circuits, except 1-2-1); this result does not exclude other cycles. Third-party Lean 4 formalisation listed on ccchallenge (status \"Being formalised\" as of 2026-10-20)."
       },
       "region": "II",
-      "status": "partiel",
+      "status": "cds",
       "test4": "1/4",
       "ref": "Discrete Math. 349(3), 114812 + HAL hal-04261183"
     },
@@ -560,26 +558,26 @@
       "fr": {
         "name": "BakerSeparation",
         "desc": "H1 (paramètre, pas un axiome Lean) : (2^s − 3^k)·k^6 ≥ 3^k. Hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme (voir mea culpa #28)",
-        "limit": "Non démontrée. δ10 (Phase 64) examine un catalogue fini de bornes publiées : aucune ne remplace la vérification de Bařina."
+        "limit": "Non démontrée. Les bornes de Salikhov 2007 et de Wu & Wang 2014 ne sont établies qu'au-delà de hauteurs non explicites (d'après leurs notices zbMATH) ; nous ne connaissons aucun seuil explicite (erratum, item 3) : en l'état, elles ne peuvent pas remplacer H1. H1 n'est de toute façon pas nécessaire pour le résultat k ≤ 1322, que Hercher 2023 avec la vérification de Bařina implique déjà (erratum, item 4). δ10 est retiré (cartographie dépassée)."
       },
       "en": {
         "name": "BakerSeparation",
         "desc": "H1 (a parameter, not a Lean axiom): (2^s − 3^k)·k^6 ≥ 3^k. Working hypothesis, stronger in this form than published effective bounds (see mea culpa #28)",
-        "limit": "Not proved. δ10 (Phase 64) examines a finite catalogue of published bounds: none replaces Barina's verification."
+        "limit": "Not proved. The bounds of Salikhov 2007 and of Wu & Wang 2014 are established only beyond unspecified heights (according to their zbMATH reviews); we know of no explicit threshold (erratum, item 3): as things stand, they cannot replace H1. H1 is not needed for the k ≤ 1322 result anyway, which Hercher 2023 with Bařina's verification already implies (erratum, item 4). δ10 is withdrawn (outdated cartography)."
       },
-      "ref": "Working hypothesis H1 — see mea culpa #28 + δ10 cartographic"
+      "ref": "Working hypothesis H1 — see mea culpa #28 + δ10 cartographic (withdrawn)"
     },
     {
       "id": "B",
       "fr": {
         "name": "BarinaVerification",
         "desc": "H2 (paramètre) : tous les n < 2^71 atteignent 1. Traduction d'un résultat de calcul publié (Bařina 2025, n < 2⁷¹)",
-        "limit": "δ10 (Phase 64) : aucune borne du catalogue publié examiné ne remplace cette vérification"
+        "limit": "L'ancien renvoi à δ10 est retiré : ses conditions (1) et (3) (page Papers) portaient sur le remplacement de BakerSeparation, pas de cette vérification (δ10 retiré le 21/10/2026, cartographie dépassée)."
       },
       "en": {
         "name": "BarinaVerification",
         "desc": "H2 (parameter): every n < 2^71 reaches 1. Encoding of a published computational result (Barina 2025, n < 2⁷¹)",
-        "limit": "δ10 (Phase 64): no bound from the examined published catalogue replaces this verification"
+        "limit": "The former reference to δ10 is withdrawn: its conditions (1) and (3) (Papers page) concerned replacing BakerSeparation, not this verification (δ10 withdrawn on 2026-10-21, outdated cartography)."
       },
       "ref": "Barina 2025, J. Supercomputing 81(7), art. 810, DOI 10.1007/s11227-025-07337-0"
     },
@@ -616,26 +614,26 @@
       "id": "REQ-MATH-003",
       "fr": {
         "title": "k_max selon l'exposant (5,117 / 5,125 / Baker)",
-        "result": "Un script local (non publié) calcule k_max = 3732 (c = 5,117), 3693 (c = 5,125) et 1322 (BakerSeparation). Les deux premiers reposent sur une transposition de mesures de log 3 au problème ; ils sont retirés (erratum de la version Zenodo v4, item 3) ; 5,117 est la borne de Wu & Wang 2014 (pas « Wu 2003 »)."
+        "result": "Un script local (non publié) calculait k_max = 3732 (c = 5,117), 3693 (c = 5,125) et 1322 (BakerSeparation). Les deux premiers seuils sont retirés (erratum de la version Zenodo v4, item 3) : les bornes de Salikhov (2007) et de Wu & Wang (2014) ne sont démontrées qu'au-delà de hauteurs non explicites, et 5,125 et 5,117 sont des mesures d'irrationalité de ln 3, pas des exposants de forme linéaire (ceux de leurs théorèmes valent 4,125 et 4,117) ; 5,117 est dû à Wu & Wang, pas à Wu (2003). Le troisième repose sur BakerSeparation, hypothèse de travail (item 2)."
       },
       "en": {
         "title": "k_max by exponent (5.117 / 5.125 / Baker)",
-        "result": "A local (unpublished) script computes k_max = 3732 (c = 5.117), 3693 (c = 5.125) and 1322 (BakerSeparation). The first two rest on a transposition of log 3 measures to the problem; they are withdrawn (erratum of the Zenodo v4 version, item 3); 5.117 is the Wu & Wang 2014 bound (not \"Wu 2003\")."
+        "result": "A local (unpublished) script computed k_max = 3732 (c = 5.117), 3693 (c = 5.125) and 1322 (BakerSeparation). The first two thresholds are withdrawn (erratum of the Zenodo v4 version, item 3): the bounds of Salikhov (2007) and of Wu & Wang (2014) are proved only beyond unspecified heights, and 5.125 and 5.117 are irrationality measures of ln 3, not linear-form exponents (those of their theorems are 4.125 and 4.117); 5.117 is due to Wu & Wang, not to Wu (2003). The third rests on BakerSeparation, a working hypothesis (item 2)."
       },
-      "exit": 0,
+      "exit": "warning",
       "file": "tests_math/test_REQ-MATH-003_wu_salikhov_kmax.py"
     },
     {
       "id": "REQ-MATH-004",
       "fr": {
-        "title": "Écart résiduel (indicatif)",
-        "result": "Environ 7,6 ordres de grandeur entre k_max = 3732 (valeur non confirmée, voir REQ-MATH-003) et 1,375·10¹¹ (Hercher 2023 + Bařina)."
+        "title": "Écart résiduel (retiré)",
+        "result": "Retiré (erratum de la version Zenodo v4, items 3 et 4). La valeur k_max = 3732 est retirée (item 3 ; voir REQ-MATH-003). Il n'y a pas d'écart à mesurer : avec la vérification de Bařina, le Corollaire 29 de Hercher (2023) donne plus de 1,375·10¹¹ termes impairs à tout cycle non trivial, ce qui implique déjà le résultat k ≤ 1322 du dépôt (item 4)."
       },
       "en": {
-        "title": "Residual gap (indicative)",
-        "result": "About 7.6 orders of magnitude between k_max = 3732 (unconfirmed value, see REQ-MATH-003) and 1.375·10¹¹ (Hercher 2023 + Barina)."
+        "title": "Residual gap (withdrawn)",
+        "result": "Withdrawn (erratum of the Zenodo v4 version, items 3 and 4). The value k_max = 3732 is withdrawn (item 3; see REQ-MATH-003). There is no gap to measure: with Bařina's verification, Hercher's Corollary 29 (2023) gives every non-trivial cycle more than 1.375·10¹¹ odd terms, which already implies the repository's k ≤ 1322 result (item 4)."
       },
-      "exit": 0,
+      "exit": "withdrawn",
       "file": "tests_math/test_REQ-MATH-004_gap_residuel.py"
     },
     {
@@ -680,14 +678,14 @@
     {
       "id": "REQ-MATH-012",
       "fr": {
-        "title": "Seuils numériques δ10 Barina-Replacement",
-        "result": "Aucune borne du catalogue examiné (Salikhov, Wu, Rhin, Simons-de Weger) ne donne n<2^71 uniformément sans Barina X_0 (FIND-016)"
+        "title": "Seuils numériques δ10 Barina-Replacement (retirés)",
+        "result": "Retiré avec δ10 le 21/10/2026 (cartographie dépassée) : voir la carte δ10 de la page Papers."
       },
       "en": {
-        "title": "δ10 Barina-Replacement numerical thresholds",
-        "result": "No bound from the examined catalogue (Salikhov, Wu, Rhin, Simons-de Weger) yields n<2^71 uniformly without Barina X_0 (FIND-016)"
+        "title": "δ10 Barina-Replacement numerical thresholds (withdrawn)",
+        "result": "Withdrawn with δ10 on 2026-10-21 (outdated cartography): see the δ10 card on the Papers page."
       },
-      "exit": 0,
+      "exit": "withdrawn",
       "file": "tests_math/test_REQ-MATH-012_delta10_barina_thresholds.py"
     }
   ],
