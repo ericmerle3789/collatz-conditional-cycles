@@ -49,7 +49,7 @@
       "@id": "https://collatz-lab.org/research-ledger/",
       "name": "Collatz / Syracuse Conditional Cycles — Research Ledger",
       "alternateName": "Registre de recherche Collatz / Syracuse Conditional Cycles",
-      "description": "A public, versioned research ledger documenting formal Lean developments, audit findings, corrections, literature studies, and ongoing investigations related to conditional Collatz cycles. 31 events, bilingual FR/EN, filterable, with claim_scope + verification_method + epistemic_status fields per event. Internal AI-assisted reviews, not peer review. Updated 2026-10-21 (δ10 withdrawn; the four studies opened in April 2026 closed).",
+      "description": "A public, versioned research ledger documenting formal Lean developments, audit findings, corrections, literature studies, and ongoing investigations related to conditional Collatz cycles. 33 events, bilingual FR/EN, filterable, with claim_scope + verification_method + epistemic_status fields per event. Internal AI-assisted reviews, not peer review. Updated 2026-10-21 (re-check of no_cycle_k_le_1322 on Lean 4.34.0; errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990; δ10 withdrawn; the four studies opened in April 2026 closed).",
       "url": "https://collatz-lab.org/research-ledger/",
       "sameAs": [
         "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/gh-pages/assets/data/research-ledger.json"
@@ -74,8 +74,8 @@
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "inLanguage": ["en", "fr"],
       "variableMeasured": [
-        {"@type": "PropertyValue", "name": "events", "value": 31},
-        {"@type": "PropertyValue", "name": "milestones", "value": 22},
+        {"@type": "PropertyValue", "name": "events", "value": 33},
+        {"@type": "PropertyValue", "name": "milestones", "value": 24},
         {"@type": "PropertyValue", "name": "claim_scope categories", "value": 6},
         {"@type": "PropertyValue", "name": "epistemic_status categories", "value": 7}
       ]
@@ -139,6 +139,7 @@
   .stat-card[data-family="study"]      { --family-color: #14b8a6; }
   .stat-num { display: block; font-size: 1.5rem; font-weight: 700; font-family: var(--mono); }
   .stat-label { display: block; font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.2rem; }
+  .stat-label[hidden] { display: none; }
 
   /* Visual timeline (NEW — vertical SVG-like) */
   .visual-timeline {
@@ -420,8 +421,8 @@
     </div>
     <div class="stat-card" data-family="lean">
       <span class="stat-num">14+</span>
-      <span class="stat-label" lang="fr">phases Lean (Lean 4.27.0 · non revérifié après lean4#14576)</span>
-      <span class="stat-label" lang="en">Lean phases (Lean 4.27.0 · not re-checked after lean4#14576)</span>
+      <span class="stat-label" lang="fr">phases Lean (Lean 4.27.0 ; jusqu'à Phase58, revérifiées sous Lean 4.34.0 les 20 et 21/10/2026 ; Phase59 à Phase63 et PhaseVIII, non revérifiées)</span>
+      <span class="stat-label" lang="en">Lean phases (Lean 4.27.0; up to Phase58, re-checked on Lean 4.34.0 on 20–21 Oct 2026; Phase59 to Phase63 and PhaseVIII, not re-checked)</span>
     </div>
     <div class="stat-card" data-family="audit">
       <span class="stat-num">16</span>
@@ -560,7 +561,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.8 · 2026-10-21</div>
+  <div class="footer-meta">Cartography · v0.10.9 · 2026-10-21</div>
   <p>
     <span lang="fr">Registre généré depuis <code>assets/data/research-ledger.json</code>. Relectures internes assistées par IA — <em>non peer review (cf. <a href="../faq/#q11">FAQ Q11</a>)</em>.</span>
     <span lang="en">Ledger generated from <code>assets/data/research-ledger.json</code>. Internal AI-assisted reviews — <em>not peer review (see <a href="../faq/#q11">FAQ Q11</a>)</em>.</span>
@@ -572,8 +573,8 @@
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20261021-V0-10-8"></script>
-<script src="../assets/js/research-ledger.js?v=20261021-V0-10-8" defer></script>
+<script src="../assets/js/main.js?v=20261021-V0-10-9"></script>
+<script src="../assets/js/research-ledger.js?v=20261021-V0-10-9" defer></script>
 
 </body>
 </html>

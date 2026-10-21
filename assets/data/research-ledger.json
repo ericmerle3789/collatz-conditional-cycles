@@ -1,11 +1,68 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-10-21T13:11:32Z",
+  "generated": "2026-10-21T14:37:44Z",
   "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "errata-note-hh1997-lagarias1990-2026-10-21",
+      "type": "paper",
+      "subtype": "errata-note",
+      "date": "2026-10-21",
+      "datetime": "2026-10-21T15:37:22+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-21",
+      "title": {
+        "fr": "Note d'errata sur Halbeisen–Hungerbühler 1997 et Lagarias 1990",
+        "en": "Errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990"
+      },
+      "summary": {
+        "fr": "Note technique (Zenodo, 6 pages, CC BY 4.0, DOI 10.5281/zenodo.23535498) : errata mineurs à Halbeisen–Hungerbühler (1997) et à Lagarias (1990), relevés en les formalisant en Lean 4 : 9 points pour le premier article et 21 pour le second, chacun vérifié par un théorème Lean ou par un script. Aucun n'invalide un théorème que nous avons formalisé. La liste n'est pas exhaustive. Deux de ces points, les lignes k = 35 et k = 73 du tableau 3.1 de Lagarias 1990, étaient déjà corrigés dans l'OEIS (A102280, A102284 ; G. H. Morley, 2013).",
+        "en": "Technical note (Zenodo, 6 pages, CC BY 4.0, DOI 10.5281/zenodo.23535498): minor errata to Halbeisen–Hungerbühler (1997) and Lagarias (1990), found while formalising them in Lean 4: 9 points for the first paper and 21 for the second, each checked by a Lean theorem or by a script. None of them invalidates a theorem that we formalised. The list is not exhaustive. Two of these points, rows k = 35 and k = 73 of Table 3.1 of Lagarias 1990, were already corrected in the OEIS (A102280, A102284; G. H. Morley, 2013)."
+      },
+      "artefacts": [
+        {"label": "DOI 10.5281/zenodo.23535498", "url": "https://doi.org/10.5281/zenodo.23535498", "kind": "doi"},
+        {"label": "Changelog v0.10.9", "url": "/changelog/#v0.10.9", "kind": "site-section"}
+      ],
+      "related": ["hh1997-lean-formalisation-2026-10-19", "lagarias1990-lean-formalisation-2026-10-20"]
+    },
+
+    {
+      "id": "lean-recheck-main-v4-34-2026-10-21",
+      "type": "lean",
+      "subtype": "recheck",
+      "date": "2026-10-21",
+      "datetime": "2026-10-21T14:25:08+02:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "lean_check",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-21",
+      "title": {
+        "fr": "Revérification Lean 4.34.0 de no_cycle_k_le_1322",
+        "en": "Re-check of no_cycle_k_le_1322 on Lean 4.34.0"
+      },
+      "summary": {
+        "fr": "Les 20 et 21 octobre 2026, les 35 fichiers Lean de la release v1.0 qui forment la clôture des imports de Phase58PorteDeuxFinal.lean (qui contient no_cycle_k_le_1322) ont été revérifiés sous Lean 4.34.0, qui contient la correction de lean4#14576 : ils compilent, et no_cycle_k_le_1322 ne dépend que de propext, Classical.choice et Quot.sound. Phase59 à Phase63 et PhaseVIII, donc no_nontrivial_cycle_phase59, n'ont pas été revérifiés. Détails et limites : <a href=\"https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20\" target=\"_blank\" rel=\"noopener\">recheck-v4.34-2026-10-20</a>. Cela ne change rien à ce que disent les théorèmes : les théorèmes principaux sont circulaires, et BakerSeparation est une hypothèse de travail (items 1 et 2 de l'erratum de la version Zenodo v4).",
+        "en": "On 20–21 October 2026, the 35 Lean files of release v1.0 that make up the import closure of Phase58PorteDeuxFinal.lean (which contains no_cycle_k_le_1322) were re-checked on Lean 4.34.0, which includes the fix of lean4#14576: they compile, and no_cycle_k_le_1322 depends only on propext, Classical.choice and Quot.sound. Phase59–63 and PhaseVIII, hence no_nontrivial_cycle_phase59, were not re-checked. Details and limits: <a href=\"https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20\" target=\"_blank\" rel=\"noopener\">recheck-v4.34-2026-10-20</a>. It does not change what the theorems say: the headline theorems are circular, and BakerSeparation is a working hypothesis (items 1 and 2 of the erratum of the Zenodo v4 version)."
+      },
+      "artefacts": [
+        {"label": "recheck-v4.34-2026-10-20 (52dc25d)", "url": "https://github.com/ericmerle3789/collatz-conditional-cycles/tree/52dc25d/recheck-v4.34-2026-10-20", "kind": "commit"},
+        {"label": "lean4#14576", "url": "https://github.com/leanprover/lean4/issues/14576", "kind": "issue"},
+        {"label": "Changelog v0.10.9", "url": "/changelog/#v0.10.9", "kind": "site-section"}
+      ],
+      "related": ["erratum-main-statement-2026-10-02", "lean-recheck-shared-v4-34", "zenodo-v4-erratum-2026-10-20"]
+    },
 
     {
       "id": "lagarias1990-lean-formalisation-2026-10-20",
@@ -858,13 +915,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 31,
-    "by_type": {"lean": 7, "repository": 7, "audit": 6, "mea-culpa": 4, "study": 4, "paper": 3},
-    "by_status": {"validated": 21, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
-    "by_milestone": {"true": 22, "false": 9},
-    "by_claim_scope": {"documentation": 19, "formal_lean": 7, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 19, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
-    "note_fr": "Registre partiel : 31 événements (mise à jour du 2026-10-21). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 31 events (update of 2026-10-21). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "total_events": 33,
+    "by_type": {"lean": 8, "repository": 7, "audit": 6, "mea-culpa": 4, "study": 4, "paper": 4},
+    "by_status": {"validated": 23, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
+    "by_milestone": {"true": 24, "false": 9},
+    "by_claim_scope": {"documentation": 20, "formal_lean": 8, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
+    "by_epistemic_status": {"verified": 21, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
+    "note_fr": "Registre partiel : 33 événements (mise à jour du 2026-10-21). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 33 events (update of 2026-10-21). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }

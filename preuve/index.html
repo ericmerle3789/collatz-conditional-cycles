@@ -23,7 +23,7 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="Proof chain — Collatz / Syracuse Conditional Cycles">
-<meta property="og:description" content="(Syracuse · Collatz · 3n+1) Lean 4 proof architecture of no_nontrivial_cycle_phase59. Two sub-branches: k ≤ 1322 (H1 Baker + Product-Bound + H2 Barina) and k > 1322 (assumed hypothesis H3). Lean 4.27.0 · not re-checked after lean4#14576.">
+<meta property="og:description" content="(Syracuse · Collatz · 3n+1) Lean 4 proof architecture of no_nontrivial_cycle_phase59. Two sub-branches: k ≤ 1322 (H1 Baker + Product-Bound + H2 Barina) and k > 1322 (assumed hypothesis H3). Lean 4.27.0; no_cycle_k_le_1322 re-checked on Lean 4.34.0 (20–21 Oct 2026), no_nontrivial_cycle_phase59 not re-checked.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/preuve/">
 <meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
@@ -36,7 +36,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Proof chain — Collatz / Syracuse Conditional Cycles">
-<meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Lean 4 proof architecture of no_nontrivial_cycle_phase59. Lean 4.27.0 · not re-checked after lean4#14576.">
+<meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Lean 4 proof architecture of no_nontrivial_cycle_phase59. Lean 4.27.0; no_cycle_k_le_1322 re-checked on Lean 4.34.0 (20–21 Oct 2026), no_nontrivial_cycle_phase59 not re-checked.">
 <meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261002">
 
 <!-- JSON-LD : TechArticle (proof architecture page) -->
@@ -55,7 +55,7 @@
     "name": "Eric Merle"
   },
   "datePublished": "2026-04-27",
-  "dateModified": "2026-10-20",
+  "dateModified": "2026-10-21",
   "isPartOf": {"@id": "https://collatz-lab.org/"},
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "proficiencyLevel": "Expert",
@@ -289,8 +289,8 @@ flowchart TB
   <div class="section-eyebrow" lang="en">§ V — Lean ↔ Mathematics</div>
   <h2 lang="fr">Vue côte-à-côte : code Lean et énoncé informel</h2>
   <h2 lang="en">Side-by-side view: Lean code and informal statement</h2>
-  <p lang="fr">Pour chaque théorème pivot, le code Lean (vérifié par le noyau de Lean 4.27.0, avant la correction du bug de noyau lean4#14576 ; non revérifié depuis) à gauche, l'énoncé mathématique informel (lisible) à droite.</p>
-  <p lang="en">For each pivotal theorem, the Lean code (checked by the Lean 4.27.0 kernel, before the fix of kernel bug lean4#14576; not re-checked since) on the left, the informal mathematical statement (readable) on the right.</p>
+  <p lang="fr">Pour chaque théorème pivot, le code Lean (vérifié par le noyau de Lean 4.27.0, avant la correction du bug de noyau lean4#14576 ; le fichier de <code>steiner_cycle_eq</code> fait partie des 35 fichiers revérifiés sous Lean 4.34.0 les 20 et 21 octobre 2026, celui de <code>no_nontrivial_cycle_phase59</code> non) à gauche, l'énoncé mathématique informel (lisible) à droite.</p>
+  <p lang="en">For each pivotal theorem, the Lean code (checked by the Lean 4.27.0 kernel, before the fix of kernel bug lean4#14576; the file of <code>steiner_cycle_eq</code> is one of the 35 files re-checked on Lean 4.34.0 on 20–21 October 2026, that of <code>no_nontrivial_cycle_phase59</code> is not) on the left, the informal mathematical statement (readable) on the right.</p>
 
   <h3 style="margin-top: 2rem;">steiner_cycle_eq <span class="text-muted small">— Phase52 universal identity</span></h3>
   <div class="lean-math-pair">
@@ -398,7 +398,7 @@ cd collatz-conditional-cycles
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.2 · 2026-10-20</div>
+  <div class="footer-meta">Cartography · v0.10.9 · 2026-10-21</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2</p>
   <p class="footer-status">
@@ -422,7 +422,7 @@ cd collatz-conditional-cycles
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20261021-V0-10-8"></script>
+<script src="../assets/js/main.js?v=20261021-V0-10-9"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 if (typeof mermaid === 'undefined') return;

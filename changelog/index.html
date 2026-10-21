@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.8 (2026-10-21), seven open items closed.">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.9 (2026-10-21), re-check of no_cycle_k_le_1322 on Lean 4.34.0 and errata note.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -133,6 +133,29 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.9">
+    <header>
+      <h2><span class="version-tag">v0.10.9</span> <span lang="fr">Revérification de no_cycle_k_le_1322, note d'errata</span><span lang="en">Re-check of no_cycle_k_le_1322, errata note</span></h2>
+      <time datetime="2026-10-21">2026-10-21</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Revérification sous Lean 4.34.0.</strong> Les 20 et 21 octobre 2026, les 35 fichiers Lean de la release v1.0 qui forment la clôture des imports de <code>Phase58PorteDeuxFinal.lean</code> (qui contient <code>no_cycle_k_le_1322</code>) ont été revérifiés sous Lean 4.34.0, qui contient la correction de lean4#14576 : ils compilent, et <code>no_cycle_k_le_1322</code> ne dépend que de <code>propext</code>, <code>Classical.choice</code> et <code>Quot.sound</code>. Phase59 à Phase63 et PhaseVIII, donc <code>no_nontrivial_cycle_phase59</code>, n'ont pas été revérifiés. Détails et limites : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>. Mis à jour : accueil (bandeau, encadré de l'erratum, résultat principal, carte « Dernière vérification Lean », données structurées), Papers (carte du preprint, dont l'encadré de l'erratum et la lecture du résultat ; elle dit aussi lesquels des sept théorèmes centraux sont revérifiés), Lemmes (introduction, qui le dit aussi ; descriptions de la page ; fiches de <code>no_nontrivial_cycle_phase59</code> et de <code>no_cycle_k_le_1322</code>), Preuve (descriptions de la page, texte de la vue côte à côte), Histoire, registre (compteur des phases Lean), graphe des dépendances, piste ★ Main et image de partage (régénérée depuis sa source). Restent non revérifiés : <code>no_nontrivial_cycle_phase59</code>, <code>no_cycle_k_gt_1322</code>, <code>sdw_from_cf</code>, δ10, δ11 et CGS-7.</li>
+      <li><strong>Note d'errata</strong> sur Halbeisen–Hungerbühler 1997 et Lagarias 1990 (Zenodo, 21/10/2026, DOI <a href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener">10.5281/zenodo.23535498</a>) : 9 et 21 points, chacun vérifié par un théorème Lean ou par un script. Aucun n'invalide un théorème que nous avons formalisé. La liste n'est pas exhaustive. Les deux lignes fausses du tableau 3.1 de Lagarias (k = 35 et k = 73) étaient déjà corrigées dans l'OEIS (A102280, A102284 ; G. H. Morley, 2013). Ajoutée aux cartes HH 1997 et Lagarias 1990 de la page Papers ; elle devient la carte « Dernier jalon » de l'accueil.</li>
+      <li><strong>Registre de recherche</strong> : deux événements datés du 2026-10-21 (la revérification et la note d'errata), alors qu'aucun événement ne portait cette date ; 33 événements, dont 24 jalons ; compteurs et données structurées mis à jour.</li>
+      <li><strong>Page du registre</strong> : les libellés des cinq compteurs s'affichaient en français et en anglais à la fois ; la règle <code>.stat-label[hidden]</code> n'en affiche plus qu'une langue.</li>
+      <li><strong>Cache des navigateurs</strong> : paramètre de version des scripts <code>main.js</code>, <code>research-ledger.js</code> et <code>dependency-graph.js</code> et des données mis à jour.</li>
+      <li>Les entrées ci-dessous restent telles quelles.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Re-check on Lean 4.34.0.</strong> On 20–21 October 2026, the 35 Lean files of release v1.0 that make up the import closure of <code>Phase58PorteDeuxFinal.lean</code> (which contains <code>no_cycle_k_le_1322</code>) were re-checked on Lean 4.34.0, which includes the fix of lean4#14576: they compile, and <code>no_cycle_k_le_1322</code> depends only on <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code>. Phase59–63 and PhaseVIII, hence <code>no_nontrivial_cycle_phase59</code>, were not re-checked. Details and limits: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>. Updated: home page (banner, erratum box, main result, "Latest Lean check" card, structured data), Papers (preprint card, including the erratum box and the reading of the result; it also says which of the seven central theorems are re-checked), Lemmes (introduction, which says it too; page descriptions; entries of <code>no_nontrivial_cycle_phase59</code> and <code>no_cycle_k_le_1322</code>), Proof (page descriptions, text of the side-by-side view), History, research ledger (Lean phases counter), dependency graph, lead ★ Main and sharing image (regenerated from its source). Still not re-checked: <code>no_nontrivial_cycle_phase59</code>, <code>no_cycle_k_gt_1322</code>, <code>sdw_from_cf</code>, δ10, δ11 and CGS-7.</li>
+      <li><strong>Errata note</strong> on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (Zenodo, 2026-10-21, DOI <a href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener">10.5281/zenodo.23535498</a>): 9 and 21 points, each checked by a Lean theorem or by a script. None of them invalidates a theorem that we formalised. The list is not exhaustive. The two wrong rows of Lagarias's Table 3.1 (k = 35 and k = 73) were already corrected in the OEIS (A102280, A102284; G. H. Morley, 2013). Added to the HH 1997 and Lagarias 1990 cards of the Papers page; it becomes the "Latest milestone" card of the home page.</li>
+      <li><strong>Research ledger</strong>: two events dated 2026-10-21 (the re-check and the errata note), whereas no event had that date; 33 events, of which 24 milestones; counters and structured data updated.</li>
+      <li><strong>Ledger page</strong>: the labels of the five counters were shown in French and in English at once; the rule <code>.stat-label[hidden]</code> now shows one language only.</li>
+      <li><strong>Browser cache</strong>: version parameter of the scripts <code>main.js</code>, <code>research-ledger.js</code> and <code>dependency-graph.js</code> and of the data updated.</li>
+      <li>The entries below are kept as they were.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.10.8">
     <header>
       <h2><span class="version-tag">v0.10.8</span> <span lang="fr">Fermeture de sept points ouverts</span><span lang="en">Seven open items closed</span></h2>
@@ -582,7 +605,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.8 · 2026-10-21</div>
+  <div class="footer-meta">Cartography · v0.10.9 · 2026-10-21</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">
@@ -602,7 +625,7 @@
 <!-- Hypothes.is annotations -->
 <script src="https://hypothes.is/embed.js" async></script>
 
-<script src="../assets/js/main.js?v=20261021-V0-10-8"></script>
+<script src="../assets/js/main.js?v=20261021-V0-10-9"></script>
 
 </body>
 </html>

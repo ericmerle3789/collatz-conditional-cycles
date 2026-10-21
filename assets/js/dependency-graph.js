@@ -53,7 +53,7 @@
     { id: 'cycle_corrSum_mod_p_double_periodic', type: NODE_TYPE.AUXILIARY, label: 'R89 lacunary', sub: 'PostJAR CongruenceTransport (arsenal-postjar branch)' },
     { id: 'cf_gap_8_to_13', type: NODE_TYPE.AUXILIARY, label: 'cf_gap_8 … cf_gap_13', sub: 'Phase59 native_decide (6 windows) — isolated arithmetic checks, used by no theorem of the main chain; they do not prove H3' },
     // Sous-branches centrales
-    { id: 'no_cycle_k_le_1322', type: NODE_TYPE.CENTRAL, label: 'no_cycle_k_le_1322', sub: 'k ≤ 1322 — Product Bound (H1) + Barina (H2)' },
+    { id: 'no_cycle_k_le_1322', type: NODE_TYPE.CENTRAL, label: 'no_cycle_k_le_1322', sub: 'k ≤ 1322 — Product Bound (H1) + Barina (H2); re-checked on Lean 4.34.0 (20–21 Oct 2026)' },
     { id: 'no_cycle_k_gt_1322', type: NODE_TYPE.CENTRAL, label: 'no_cycle_k_gt_1322', sub: 'k > 1322 — only H3 (assumed) + H2; circular (erratum of 2 Oct 2026)' },
     { id: 'sdw_from_cf', type: NODE_TYPE.CENTRAL, label: 'sdw_from_cf', sub: 'downstream corollary: ProductBoundThreshold (k ≤ 982), vacuous under H1–H3' },
     // Théorème principal + 3 variantes (autres hypothèses)

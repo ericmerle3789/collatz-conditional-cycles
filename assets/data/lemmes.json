@@ -7,8 +7,8 @@
   "centralTheorems": [
     {
       "name": "no_nontrivial_cycle_phase59",
-      "fr": {"role": "Théorème principal (conditionnel)", "desc": "Aucun cycle non trivial, sous trois hypothèses passées en paramètres (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound ; pas des axiomes Lean). Erratum du 02/10/2026 : H3 est supposée, non dérivée, et équivaut sous H2 à la conclusion elle-même (en Lean, k est un temps de retour quelconque) ; seul le cas k ≤ 1322 (no_cycle_k_le_1322, sous H1 et H2) est démontré sans circularité. Lean 4.27.0, non revérifié après lean4#14576."},
-      "en": {"role": "Principal theorem (conditional)", "desc": "No non-trivial cycle, under three hypotheses passed as parameters (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound; not Lean axioms). Erratum of 2026-10-02: H3 is assumed, not derived, and under H2 is equivalent to the conclusion itself (in Lean, k is any return time); only the case k ≤ 1322 (no_cycle_k_le_1322, under H1 and H2) is proved without circularity. Lean 4.27.0, not re-checked after lean4#14576."},
+      "fr": {"role": "Théorème principal (conditionnel)", "desc": "Aucun cycle non trivial, sous trois hypothèses passées en paramètres (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound ; pas des axiomes Lean). Erratum du 02/10/2026 : H3 est supposée, non dérivée, et équivaut sous H2 à la conclusion elle-même (en Lean, k est un temps de retour quelconque) ; seul le cas k ≤ 1322 (no_cycle_k_le_1322, sous H1 et H2) est démontré sans circularité. Lean 4.27.0, non revérifié après lean4#14576 ; no_cycle_k_le_1322, lui, a été revérifié sous Lean 4.34.0 les 20 et 21 octobre 2026."},
+      "en": {"role": "Principal theorem (conditional)", "desc": "No non-trivial cycle, under three hypotheses passed as parameters (H1 BakerSeparation, H2 BarinaVerification, H3 DerivedLargeKBound; not Lean axioms). Erratum of 2026-10-02: H3 is assumed, not derived, and under H2 is equivalent to the conclusion itself (in Lean, k is any return time); only the case k ≤ 1322 (no_cycle_k_le_1322, under H1 and H2) is proved without circularity. Lean 4.27.0, not re-checked after lean4#14576; no_cycle_k_le_1322 itself was re-checked on Lean 4.34.0 on 20–21 October 2026."},
       "file": "ProjetCollatz/Phase59ContinuedFractions.lean",
       "axioms": ["propext", "Classical.choice", "Quot.sound"],
       "depends": ["no_cycle_k_le_1322", "no_cycle_k_gt_1322"]
@@ -36,8 +36,8 @@
     },
     {
       "name": "no_cycle_k_le_1322",
-      "fr": {"role": "Sous-branche k ≤ 1322", "desc": "Aucun cycle non trivial avec k ≤ 1322, sous H1 (BakerSeparation, via le Product Bound n ≤ (k⁷+k)/3) et H2 (BarinaVerification, n &lt; 2^71). C'est ce qui est démontré sans circularité."},
-      "en": {"role": "Sub-branch k ≤ 1322", "desc": "No non-trivial cycle with k ≤ 1322, under H1 (BakerSeparation, via the Product Bound n ≤ (k⁷+k)/3) and H2 (BarinaVerification, n &lt; 2^71). This is what is proved without circularity."},
+      "fr": {"role": "Sous-branche k ≤ 1322", "desc": "Aucun cycle non trivial avec k ≤ 1322, sous H1 (BakerSeparation, via le Product Bound n ≤ (k⁷+k)/3) et H2 (BarinaVerification, n &lt; 2^71). C'est ce qui est démontré sans circularité. Revérifié sous Lean 4.34.0, qui contient la correction de lean4#14576, les 20 et 21 octobre 2026 : ne dépend que de propext, Classical.choice et Quot.sound."},
+      "en": {"role": "Sub-branch k ≤ 1322", "desc": "No non-trivial cycle with k ≤ 1322, under H1 (BakerSeparation, via the Product Bound n ≤ (k⁷+k)/3) and H2 (BarinaVerification, n &lt; 2^71). This is what is proved without circularity. Re-checked on Lean 4.34.0, which includes the fix of lean4#14576, on 20–21 October 2026: depends only on propext, Classical.choice and Quot.sound."},
       "file": "ProjetCollatz/Phase58PorteDeuxFinal.lean",
       "axioms": ["propext", "Classical.choice", "Quot.sound"]
     },
