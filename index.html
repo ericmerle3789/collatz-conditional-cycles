@@ -582,7 +582,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 
 <!-- ========================================================================
      RESEARCH STATUS / ÉTAT DES TRAVAUX (Research Ledger preview)
-     Mis à jour le 2026-10-21 (v0.10.9)
+     Mis à jour le 2026-10-21 (v0.10.10)
      ======================================================================== -->
 <section id="research-status" class="research-status-snapshot">
   <div class="section-eyebrow">§ VI</div>
@@ -598,18 +598,18 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   <!-- Status snapshot : 5 cartes compactes (état au 2026-10-21) -->
   <div class="status-snapshot-grid">
 
-    <!-- Carte 1 : Dernier jalon — note d'errata HH 1997 et Lagarias 1990 (2026-10-21) -->
+    <!-- Carte 1 : Dernier jalon — Steiner 1978 en Lean (2026-10-21) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastMilestone">Dernier jalon</div>
-      <div class="status-card-title"><span lang="fr">Note d'errata : Halbeisen–Hungerbühler 1997 et Lagarias 1990</span><span lang="en">Errata note: Halbeisen–Hungerbühler 1997 and Lagarias 1990</span></div>
+      <div class="status-card-title"><span lang="fr">Steiner 1978 formalisé sous Lean 4.34.0</span><span lang="en">Steiner 1978 formalised on Lean 4.34.0</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-10-21</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Note technique sur Zenodo (6 pages, CC BY 4.0) : 9 points pour HH 1997 et 21 pour Lagarias 1990, relevés en les formalisant, chacun vérifié par un théorème Lean ou par un script. Aucun n'invalide un théorème que nous avons formalisé. La liste n'est pas exhaustive. Deux lignes du tableau 3.1 de Lagarias (k = 35 et 73) étaient déjà corrigées dans l'OEIS (A102280, A102284). Jalon précédent, le même jour : la revérification de <code>no_cycle_k_le_1322</code> sous Lean 4.34.0.</span>
-        <span lang="en">Technical note on Zenodo (6 pages, CC BY 4.0): 9 points for HH 1997 and 21 for Lagarias 1990, found while formalising them, each checked by a Lean theorem or by a script. None of them invalidates a theorem that we formalised. The list is not exhaustive. Two rows of Lagarias's Table 3.1 (k = 35 and 73) were already corrected in the OEIS (A102280, A102284). Previous milestone, the same day: the re-check of <code>no_cycle_k_le_1322</code> on Lean 4.34.0.</span>
+        <span lang="fr">Un théorème classique de 1978 : le seul circuit sur les entiers positifs qui soit un cycle de 3x+1 est {1, 2}, démontré sous une hypothèse nommée (la borne de Rhin, jamais un axiome) et sans hypothèse pour au plus 20 000 termes impairs. Elle n'apporte rien de nouveau sur les cycles de Collatz. L'article original (Congr. Numer. 20, 1978) n'a pas pu être consulté et n'a pas été lu ; les énoncés et la preuve sont reconstruits à partir de Steiner 1981, de la bibliographie annotée de Lagarias et de Simons–de Weger 2005. Jalon précédent, le même jour : la note d'errata sur HH 1997 et Lagarias 1990.</span>
+        <span lang="en">A classical theorem from 1978: the only circuit on the positive integers that is a cycle of 3x+1 is {1, 2}, proved under a named hypothesis (Rhin's bound, never an axiom) and without any hypothesis for at most 20,000 odd terms. It proves nothing new about Collatz cycles. The original paper (Congr. Numer. 20, 1978) could not be accessed and was not read; the statements and the proof are reconstructed from Steiner 1981, Lagarias's annotated bibliography and Simons–de Weger 2005. Previous milestone, the same day: the errata note on HH 1997 and Lagarias 1990.</span>
       </p>
-      <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener">→ DOI 10.5281/zenodo.23535498</a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/127aa16/steiner1978" target="_blank" rel="noopener">→ <code>steiner1978/</code> (127aa16)</a>
     </div>
 
     <!-- Carte 2 : Statut paper -->
@@ -627,30 +627,30 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
       <a class="status-card-link" href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">→ DOI Zenodo</a>
     </div>
 
-    <!-- Carte 3 : Dernière vérification Lean (revérification de no_cycle_k_le_1322, 2026-10-21) -->
+    <!-- Carte 3 : Dernière vérification Lean (Steiner 1978, 2026-10-21) -->
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow" data-i18n="statusLastLean">Dernière vérification Lean</div>
-      <div class="status-card-title"><span lang="fr"><code>no_cycle_k_le_1322</code> revérifié sous Lean 4.34.0</span><span lang="en"><code>no_cycle_k_le_1322</code> re-checked on Lean 4.34.0</span></div>
+      <div class="status-card-title"><span lang="fr">Steiner 1978 : 12 énoncés vérifiés sous Lean 4.34.0</span><span lang="en">Steiner 1978: 12 statements checked on Lean 4.34.0</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-10-21</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Les 20 et 21 octobre 2026, les 35 fichiers Lean de la release v1.0 qui forment la clôture des imports de <code>Phase58PorteDeuxFinal.lean</code> (qui contient <code>no_cycle_k_le_1322</code>) ont été revérifiés sous Lean 4.34.0, qui contient la correction de lean4#14576 : ils compilent, et <code>no_cycle_k_le_1322</code> ne dépend que de <code>propext</code>, <code>Classical.choice</code> et <code>Quot.sound</code>. Phase59 à Phase63 et PhaseVIII, donc <code>no_nontrivial_cycle_phase59</code>, n'ont pas été revérifiés. Détails et limites : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>. Précédemment : Lagarias 1990 (DOI <a href="https://doi.org/10.5281/zenodo.23514572" target="_blank" rel="noopener">10.5281/zenodo.23514572</a>) et Halbeisen–Hungerbühler 1997 (DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>), deux articles classiques, formalisés sous Lean 4.34.0.</span>
-        <span lang="en">On 20–21 October 2026, the 35 Lean files of release v1.0 that make up the import closure of <code>Phase58PorteDeuxFinal.lean</code> (which contains <code>no_cycle_k_le_1322</code>) were re-checked on Lean 4.34.0, which includes the fix of lean4#14576: they compile, and <code>no_cycle_k_le_1322</code> depends only on <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code>. Phase59–63 and PhaseVIII, hence <code>no_nontrivial_cycle_phase59</code>, were not re-checked. Details and limits: <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>. Previously: Lagarias 1990 (DOI <a href="https://doi.org/10.5281/zenodo.23514572" target="_blank" rel="noopener">10.5281/zenodo.23514572</a>) and Halbeisen–Hungerbühler 1997 (DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>), two classical papers, formalised on Lean 4.34.0.</span>
+        <span lang="fr">12 énoncés figés, tous prouvés ; hypothèse nommée <code>H_Rhin</code>, jamais un axiome ; axiomes standard seuls ; 0 <code>sorry</code> dans les preuves, 0 <code>native_decide</code> ; <code>check.sh</code> relancé depuis une compilation propre le 21/10/2026. L'article original (Congr. Numer. 20, 1978) n'a pas pu être consulté et n'a pas été lu ; les énoncés et la preuve sont reconstruits à partir de Steiner 1981, de la bibliographie annotée de Lagarias et de Simons–de Weger 2005. Archive Zenodo (logiciel, v1.2) : DOI <a href="https://doi.org/10.5281/zenodo.23541611" target="_blank" rel="noopener">10.5281/zenodo.23541611</a>. Précédemment : la revérification de <code>no_cycle_k_le_1322</code> sous Lean 4.34.0 (<a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>).</span>
+        <span lang="en">12 frozen statements, all proved; named hypothesis <code>H_Rhin</code>, never an axiom; standard axioms only; 0 <code>sorry</code> in the proofs, 0 <code>native_decide</code>; <code>check.sh</code> run from a clean build on 2026-10-21. The original paper (Congr. Numer. 20, 1978) could not be accessed and was not read; the statements and the proof are reconstructed from Steiner 1981, Lagarias's annotated bibliography and Simons–de Weger 2005. Zenodo archive (software, v1.2): DOI <a href="https://doi.org/10.5281/zenodo.23541611" target="_blank" rel="noopener">10.5281/zenodo.23541611</a>. Previously: the re-check of <code>no_cycle_k_le_1322</code> on Lean 4.34.0 (<a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>).</span>
       </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener">→ <code>recheck-v4.34-2026-10-20</code></a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/127aa16/steiner1978" target="_blank" rel="noopener">→ <code>steiner1978/</code> (127aa16)</a>
     </div>
 
-    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.9, 2026-10-21) -->
+    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.10, 2026-10-21) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
-      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.9</span><span lang="en">Adversarial review of v0.10.9</span></div>
+      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.10</span><span lang="en">Adversarial review of v0.10.10</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-10-21</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.9 (revérification, note d'errata), contre les sources disponibles. Audit précédent : relecture adverse des sept fermetures de la v0.10.8, 2026-10-21.</span>
-        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.9 (re-check, errata note), against the available sources. Previous audit: adversarial review of the seven closures of v0.10.8, 2026-10-21.</span>
+        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.10 (Steiner 1978), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.9 (revérification, note d'errata), 2026-10-21.</span>
+        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.10 (Steiner 1978), against the available sources. Previous audit: adversarial review of the changes of v0.10.9 (re-check, errata note), 2026-10-21.</span>
       </p>
       <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
@@ -845,7 +845,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.9 · 2026-10-21
+    Cartography · v0.10.10 · 2026-10-21
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -902,6 +902,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261021-V0-10-9"></script>
+<script src="assets/js/main.js?v=20261021-V0-10-10"></script>
 </body>
 </html>
