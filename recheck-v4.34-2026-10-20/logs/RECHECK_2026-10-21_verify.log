@@ -1,0 +1,679 @@
+start 2026-10-21 08:13:08 +0200
+system: Darwin 25.6.0 arm64
+machine: MacBookPro18,3, Apple M1 Pro, 16 GB
+checksums: OK (43 files; SHA256SUMS itself: 78f6bc17ef76524649b6e30b9cf96479fbccde032bc77ca09455983145baa047)
+verify.sh: eac0034ba9958bd4732abd3e1c8ece38a6444d175edff43bcbd724cd700fad01
+lean-toolchain: leanprover/lean4:v4.34.0
+Lean (version 4.34.0, arm64-apple-darwin24.6.0, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)
+Lake version 5.0.0-src+293d5d0 (Lean version 4.34.0)
+info: mathlib: cloning https://github.com/leanprover-community/mathlib4
+info: mathlib: checking out revision '5ed2965256430c3649e86755f9576b54eca72435'
+info: plausible: cloning https://github.com/leanprover-community/plausible
+info: plausible: checking out revision '118aa17ee84656b8bd727fef7c458ee8c833385c'
+info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+info: LeanSearchClient: checking out revision 'ddf04cf3949fa556442341e87d47f9f6e6074707'
+info: importGraph: cloning https://github.com/leanprover-community/import-graph
+info: importGraph: checking out revision 'e928b72544873815af278d38681b31c0293588e3'
+info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+info: proofwidgets: checking out revision '106ff4fafc74ef4ac99d81dbf3ab399118f497a5'
+info: aesop: cloning https://github.com/leanprover-community/aesop
+info: aesop: checking out revision '355695d523e41d0554926416cba2a2b3544fbbc9'
+info: Qq: cloning https://github.com/leanprover-community/quote4
+info: Qq: checking out revision '6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259'
+info: batteries: cloning https://github.com/leanprover-community/batteries
+info: batteries: checking out revision 'f2effa3d803fda822b1f97b806c47cf2adfbcbc2'
+info: Cli: cloning https://github.com/leanprover/lean4-cli
+info: Cli: checking out revision 'e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204'
+✔ [1/5] Built Cache.Cli (373ms)
+✔ [2/5] Built Cache.Lean (422ms)
+✔ [7/42] Built Cache.Env (350ms)
+✔ [8/42] Built Cache.Cli:c.o (385ms)
+✔ [9/42] Built Cache.Lean:c.o (386ms)
+✔ [10/42] Built Cache.Env:c.o (131ms)
+✔ [11/42] Built Cache.Infra (399ms)
+✔ [12/42] Built Cache.Infra:c.o (152ms)
+✔ [13/42] Built Batteries.Tactic.OpenPrivate:c.o (977ms)
+✔ [14/42] Built Cache.IO (1.2s)
+✔ [15/42] Built Cache.Hashing (677ms)
+✔ [16/42] Built Cache.IO:c.o (921ms)
+✔ [17/42] Built Cache.Hashing:c.o (274ms)
+✔ [18/42] Built Cache.Requests (1.3s)
+✔ [19/42] Built Cache.Marker (515ms)
+✔ [20/42] Built Cache.Marker:c.o (95ms)
+✔ [21/42] Built Cache.Upload.Dest (643ms)
+✔ [22/42] Built Cache.Query (703ms)
+✔ [23/42] Built Cache.Upload.Dest:c.o (114ms)
+✔ [24/42] Built Cache.Query:c.o (220ms)
+✔ [25/42] Built Cache.Requests:c.o (1.6s)
+✔ [26/42] Built Cache.Upload.Curl (676ms)
+✔ [27/42] Built Cache.Upload.Rclone (688ms)
+✔ [28/42] Built Cache.Warning (707ms)
+✔ [29/42] Built Cache.Upload.Curl:c.o (153ms)
+✔ [30/42] Built Cache.Upload.Rclone:c.o (144ms)
+✔ [31/42] Built Cache.Warning:c.o (177ms)
+✔ [32/42] Built Cache.Upload.Azure (619ms)
+✔ [33/42] Built Cache.Upload.S3 (684ms)
+✔ [34/42] Built Cache.Upload.Azure:c.o (101ms)
+✔ [35/42] Built Cache.Upload.S3:c.o (201ms)
+✔ [36/42] Built Cache.Upload.Defs (540ms)
+✔ [37/42] Built Cache.Upload.Defs:c.o (104ms)
+✔ [38/42] Built Cache.Upload (509ms)
+✔ [39/42] Built Cache.Upload:c.o (87ms)
+✔ [40/42] Built Cache.Main (882ms)
+✔ [41/42] Built Cache.Main:c.o (580ms)
+✔ [42/42] Built cache:exe (1.5s)
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+Decompressing 8716 already-cached file(s) (192 already decompressed)
+No files to download
+Decompressed 8716 already-cached file(s)
+Completed successfully in 19796 ms!
+dependency mathlib: 5ed2965256430c3649e86755f9576b54eca72435
+dependency plausible: 118aa17ee84656b8bd727fef7c458ee8c833385c
+dependency LeanSearchClient: ddf04cf3949fa556442341e87d47f9f6e6074707
+dependency importGraph: e928b72544873815af278d38681b31c0293588e3
+dependency proofwidgets: 106ff4fafc74ef4ac99d81dbf3ab399118f497a5
+dependency aesop: 355695d523e41d0554926416cba2a2b3544fbbc9
+dependency Qq: 6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259
+dependency batteries: f2effa3d803fda822b1f97b806c47cf2adfbcbc2
+dependency Cli: e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204
+✔ [8924/8961] Built Labo.S1_CollatzCore (60s)
+✔ [8925/8961] Built Labo.S1_CollatzOddInst (49s)
+⚠ [8926/8961] Built Labo.S1_SyracuseDefs (47s)
+warning: Labo/S1_SyracuseDefs.lean:80:43: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Labo/S1_SyracuseDefs.lean:84:43: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Labo/S1_SyracuseDefs.lean:100:8: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Labo/S1_SyracuseDefs.lean:162:47: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Labo/S1_SyracuseDefs.lean:143:30: This simp argument is unused:
+  Nat.mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.pow_succ, Nat.mul_comm, Nat.mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Labo/S1_SyracuseDefs.lean:143:59: This simp argument is unused:
+  Nat.mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.pow_succ, Nat.mul_assoc, Nat.mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Labo/S1_SyracuseDefs.lean:159:30: This simp argument is unused:
+  Nat.mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Labo/S1_SyracuseDefs.lean:197:18: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Labo/S1_SyracuseDefs.lean:205:8: Try `simp at hle` instead of `simpa using hle`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Labo/S1_SyracuseDefs.lean:199:39: This simp argument is unused:
+  Nat.mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.mul_assoc, Nat.mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Labo/S1_SyracuseDefs.lean:201:38: This simp argument is unused:
+  Nat.succ_eq_add_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.pow_succ, Nat.mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [8927/8961] Built Labo.S1_HardLowerBoundPaper (86s)
+info: Labo/S1_HardLowerBoundPaper.lean:40:0: ProjetCollatz.v2Nat : ℕ → ℕ
+info: Labo/S1_HardLowerBoundPaper.lean:41:0: ProjetCollatz.pow2_v2Nat_dvd (n : ℕ) : 2 ^ v2Nat n ∣ n
+info: Labo/S1_HardLowerBoundPaper.lean:42:0: ProjetCollatz.pow2_dvd_le_v2Nat_pos (m k : ℕ) : m ≠ 0 → 2 ^ k ∣ m → k ≤ v2Nat m
+info: Labo/S1_HardLowerBoundPaper.lean:45:0: ProjetCollatz.syracuseNext (n : ℕ) : ℕ
+info: Labo/S1_HardLowerBoundPaper.lean:46:0: ProjetCollatz.syracuseNext_spec (n : ℕ) : syracuseNext n * 2 ^ v2_3n1 n = 3 * n + 1
+info: Labo/S1_HardLowerBoundPaper.lean:47:0: ProjetCollatz.syracuseNext_odd (n : ℕ) : syracuseNext n % 2 = 1
+info: Labo/S1_HardLowerBoundPaper.lean:50:0: ProjetCollatz.nSeq (start_n : ℕ) : ℕ → ℕ
+info: Labo/S1_HardLowerBoundPaper.lean:51:0: ProjetCollatz.aSeq (start_n : ℕ) : ℕ → ℕ
+info: Labo/S1_HardLowerBoundPaper.lean:52:0: ProjetCollatz.x0_of_start (start_n : ℕ) : ℚ
+info: Labo/S1_HardLowerBoundPaper.lean:53:0: ProjetCollatz.NrecSyr (start_n k : ℕ) : ℚ
+info: Labo/S1_HardLowerBoundPaper.lean:54:0: ProjetCollatz.steps_up_to_NrecSyr (start_n K : ℕ) :
+  CollatzCore.steps_up_to (fun k => NrecSyr start_n k) (aSeq start_n) K
+⚠ [8928/8961] Built Labo.S1_ModularHierarchy (86s)
+warning: Labo/S1_ModularHierarchy.lean:98:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Labo/S1_ModularHierarchy.lean:219:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Labo/S1_ModularHierarchy.lean:360:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Labo/S1_ModularHierarchy.lean:392:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [8929/8961] Built Labo.S1_Phase6Lemmas (86s)
+⚠ [8930/8961] Built Labo.S1_Phase12ReflectionCerts (87s)
+warning: Labo/S1_Phase12ReflectionCerts.lean:366:5: Variable name `hS` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hS
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [8931/8961] Built Labo.S1_Phase45UpperBound (90s)
+⚠ [8932/8961] Built Labo.S1_Phase13Stability (90s)
+warning: Labo/S1_Phase13Stability.lean:243:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+⚠ [8933/8961] Built Labo.S1_Phase6BLemmas (90s)
+warning: Labo/S1_Phase6BLemmas.lean:151:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+warning: Labo/S1_Phase6BLemmas.lean:199:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8934/8961] Built Labo.S1_Phase7Theorems (90s)
+warning: Labo/S1_Phase7Theorems.lean:160:5: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8935/8961] Built Labo.S1_Phase7Sprint3 (73s)
+warning: Labo/S1_Phase7Sprint3.lean:215:60: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase7Sprint3.lean:294:61: Variable name `hodd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hodd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8936/8961] Built Labo.S1_Phase7Sprint5 (88s)
+warning: Labo/S1_Phase7Sprint5.lean:168:64: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase7Sprint5.lean:195:64: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8937/8961] Built Labo.S1_Phase8Transitions (92s)
+warning: Labo/S1_Phase8Transitions.lean:57:65: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase8Transitions.lean:80:67: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase8Transitions.lean:106:65: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase8Transitions.lean:120:67: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase8Transitions.lean:148:61: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase8Transitions.lean:178:61: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase8Transitions.lean:210:67: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8938/8961] Built Labo.S1_Phase9BinaryCascade (102s)
+warning: Labo/S1_Phase9BinaryCascade.lean:70:72: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9BinaryCascade.lean:87:73: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9BinaryCascade.lean:149:73: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9BinaryCascade.lean:164:73: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9BinaryCascade.lean:211:75: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9BinaryCascade.lean:225:77: Variable name `hgt` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgt
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [8939/8961] Built Labo.S1_Phase9CascadeInduction (93s)
+⚠ [8940/8961] Built Labo.S1_Phase9DescentChain (92s)
+warning: Labo/S1_Phase9DescentChain.lean:84:54: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9DescentChain.lean:119:5: Variable name `hn2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [8941/8961] Built Labo.S1_Phase9FirstReturnMap (100s)
+✔ [8942/8961] Built Labo.S1_Phase54EmpiricalHypotheses (23s)
+⚠ [8943/8961] Built Labo.S1_Phase9ErgodicDescent (153s)
+warning: Labo/S1_Phase9ErgodicDescent.lean:34:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Labo/S1_Phase9ErgodicDescent.lean:136:64: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:189:66: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:247:68: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:309:68: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:358:66: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:391:70: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:440:70: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:501:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:560:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:619:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:678:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:736:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:794:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:852:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:910:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:968:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:1195:66: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:1292:47: Variable name `h7` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h7
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:1369:66: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:1433:70: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:1520:68: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:1611:68: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:1672:68: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:1736:70: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:1811:68: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:1872:70: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:1941:70: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:2002:70: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:2081:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:2152:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_Phase9ErgodicDescent.lean:2227:72: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [8944/8961] Built Labo.S1_Phase27DriftLemma (65s)
+✔ [8945/8961] Built Labo.S1_Phase28CoverageUnification (19s)
+✔ [8946/8961] Built Labo.S1_Phase29FullCoverage (50s)
+⚠ [8947/8961] Built Labo.S1_Phase30GlobalDescent (43s)
+warning: Labo/S1_Phase30GlobalDescent.lean:74:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [8948/8961] Built Labo.S1_Phase33ConditionalCollatz (7.5s)
+⚠ [8949/8961] Built Labo.S1_Phase32CarryChain (7.9s)
+warning: Labo/S1_Phase32CarryChain.lean:180:19: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [8950/8961] Built Labo.S1_Phase46CollatzReduction (5.3s)
+✔ [8951/8961] Built Labo.S1_Phase47NoCycle (6.2s)
+⚠ [8952/8961] Built Labo.S1_Phase50CycleEquation (7.8s)
+warning: Labo/S1_Phase50CycleEquation.lean:155:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Labo/S1_Phase50CycleEquation.lean:173:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [8953/8961] Built Labo.S1_Phase51ExternalHypotheses (9.7s)
+✔ [8954/8961] Built Labo.S1_Phase50Bridge (9.7s)
+✔ [8955/8961] Built Labo.S1_Phase52SteinerEquation (8.5s)
+✔ [8956/8961] Built Labo.S1_Phase55CycleBound (6.4s)
+⚠ [8957/8961] Built Labo.S1_Phase56Bloc18Complete (11s)
+warning: Labo/S1_Phase56Bloc18Complete.lean:242:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8958/8961] Built Labo.S1_Phase58PorteDeuxFinal (7.4s)
+warning: Labo/S1_Phase58PorteDeuxFinal.lean:101:0: Definition `mkExternalHyp` is a proposition; use `theorem` instead of `def`
+
+Note: This linter can be disabled with `set_option linter.defProp false`
+warning: Labo/S1_Phase58PorteDeuxFinal.lean:165:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Labo/S1_Phase58PorteDeuxFinal.lean:303:0: Definition `buildDerived` is a proposition; use `theorem` instead of `def`
+
+Note: This linter can be disabled with `set_option linter.defProp false`
+warning: Labo/S1_Phase58PorteDeuxFinal.lean:379:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Labo/S1_Phase58PorteDeuxFinal.lean:389:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8959/8961] Built Labo.S1_X02_H3 (11s)
+warning: Labo/S1_X02_H3.lean:126:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8960/8961] Built Labo.S1_H1_Fini (37s)
+warning: Labo/S1_H1_Fini.lean:33:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Labo/S1_H1_Fini.lean:24:32: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: Labo/S1_H1_Fini.lean:58:0: 'ProjetCollatz.S1_chk_range' depends on axioms: [propext]
+info: Labo/S1_H1_Fini.lean:59:0: 'ProjetCollatz.S1_H1_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Labo/S1_H1_Fini.lean:60:0: 'ProjetCollatz.S1_no_cycle_k_le_1322_barina_only' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Labo/S1_H1_Fini.lean:61:0: 'ProjetCollatz.S1_chk_one_false' depends on axioms: [propext]
+info: Labo/S1_H1_Fini.lean:62:0: 'ProjetCollatz.S1_chk0_range_fails' depends on axioms: [propext]
+info: Labo/S1_H1_Fini.lean:63:0: 'ProjetCollatz.S1_canari_k2' depends on axioms: [propext]
+info: Labo/S1_H1_Fini.lean:64:0: ProjetCollatz.S1_no_cycle_k_le_1322_barina_only : ProjetCollatz.BarinaVerification →
+  ∀ (n k : ℕ), ProjetCollatz.IsOddCycle n k → k ≤ 1322 → False
+⚠ [8961/8961] Built Labo.S1_X02_Barina (17s)
+warning: Labo/S1_X02_Barina.lean:30:9: Variable name `barina` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _barina
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_X02_Barina.lean:30:39: Variable name `h` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Labo/S1_X02_Barina.lean:31:15: Variable name `hcyc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hcyc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: Labo/S1_X02_Barina.lean:36:0: 'ProjetCollatz.S1_x02_barina_only_any_bound_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Labo/S1_X02_Barina.lean:37:0: 'ProjetCollatz.S1_x02_barina_only_H3_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Labo/S1_X02_Barina.lean:38:0: 'ProjetCollatz.S1_no_nontrivial_cycle_without_baker' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (8961 jobs).
+Labo modules compiled: 38
+'ProjetCollatz.no_cycle_k_le_1322' depends on axioms: [propext, Classical.choice, Quot.sound]
+ProjetCollatz.no_cycle_k_le_1322 : ProjetCollatz.BakerSeparation →
+  ProjetCollatz.BarinaVerification → ∀ (n k : ℕ), ProjetCollatz.IsOddCycle n k → k ≤ 1322 → False
+'ProjetCollatz.no_nontrivial_cycle_final' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.no_nontrivial_cycle_derived' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.no_nontrivial_cycle_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.bk_1322_derived' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.hercher_from_baker_barina' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.hercher_derived' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.S1_x02_H3_implies_no_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.S1_x02_no_cycle_implies_H3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.S1_x02_H3_iff_no_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.S1_x02_any_bound_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.S1_no_cycle_k_le_1322_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.S1_chk_range' depends on axioms: [propext]
+'ProjetCollatz.S1_H1_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.S1_no_cycle_k_le_1322_barina_only' depends on axioms: [propext, Classical.choice, Quot.sound]
+ProjetCollatz.S1_no_cycle_k_le_1322_barina_only : ProjetCollatz.BarinaVerification →
+  ∀ (n k : ℕ), ProjetCollatz.IsOddCycle n k → k ≤ 1322 → False
+'ProjetCollatz.S1_x02_barina_only_any_bound_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.S1_x02_barina_only_H3_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.S1_no_nontrivial_cycle_without_baker' depends on axioms: [propext, Classical.choice, Quot.sound]
+axiom profile: 18 of 18 theorems within [propext, Classical.choice, Quot.sound]
+'ProjetCollatz.k982_bound' depends on axioms: [propext, ProjetCollatz.k982_bound._native.native_decide.ax_1_1]
+positive control: k982_bound (native_decide) has an auxiliary native axiom, as expected
+end 2026-10-21 08:40:55 +0200
+RE-CHECK PASSED
+exit=0
