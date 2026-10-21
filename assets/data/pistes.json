@@ -49,7 +49,7 @@
       "region": "I",
       "status": "cds",
       "test4": "—",
-      "lean": "delta10_barina_replacement_impossibility",
+      "lean": "delta10_barina_replacement_impossibility (retiré)",
       "leanFile": "ProjetCollatz/Phase64Delta10BarinaReplacement.lean",
       "ref": "Branch study/delta10-barina-replacement-impossibility, tag study-delta10-2026-04-30, commit 7efbf34"
     },
@@ -480,11 +480,11 @@
       "id": "P6",
       "fr": {
         "name": "Calegari-Dimitrov-Tang 2025 holonomy",
-        "why": "Lecture close (21/10/2026), sur le seul résumé (arXiv:2510.04156) : cul-de-sac en l'état. Le résumé présente la méthode comme une alternative aux formes linéaires en logarithmes de Baker pour des théorèmes diophantiens effectifs classiques, mais n'annonce aucune mesure explicite pour S ln 2 − k ln 3, la seule forme linéaire qui intervient ici. À rouvrir si la méthode est appliquée à cette forme."
+        "why": "Lecture close (21/10/2026), sur le seul résumé (arXiv:2510.04156) : cul-de-sac en l'état (classée cul-de-sac dans le catalogue le 29/04/2026). Le résumé présente la méthode comme une alternative aux formes linéaires en logarithmes de Baker pour des théorèmes diophantiens effectifs classiques, mais n'annonce aucune mesure explicite pour S ln 2 − k ln 3, la seule forme linéaire qui intervient ici. À rouvrir si la méthode est appliquée à cette forme."
       },
       "en": {
         "name": "Calegari-Dimitrov-Tang 2025 holonomy",
-        "why": "Reading closed (2026-10-21), on the abstract only (arXiv:2510.04156): dead end as things stand. The abstract presents the method as an alternative to Baker's linear forms in logarithms for classical effective Diophantine theorems, but announces no explicit measure for S ln 2 − k ln 3, the only linear form involved here. To be reopened if the method is applied to this form."
+        "why": "Reading closed (2026-10-21), on the abstract only (arXiv:2510.04156): dead end as things stand (classed as a dead end in the catalogue on 2026-04-29). The abstract presents the method as an alternative to Baker's linear forms in logarithms for classical effective Diophantine theorems, but announces no explicit measure for S ln 2 − k ln 3, the only linear form involved here. To be reopened if the method is applied to this form."
       },
       "region": "II",
       "status": "cds",
