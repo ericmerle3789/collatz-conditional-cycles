@@ -976,7 +976,7 @@ ER  - `;
             tension: 0.3, borderWidth: 2, pointRadius: 5
           },
           {
-            label: STATE.lang === 'fr' ? "A' — Combinaison HORS-δ8 (holonomy) · piste CDT classée cul-de-sac le 21/10/2026 (résumé seul)" : "A' — Combination OUTSIDE-δ8 (holonomy) · CDT lead classed as a dead end on 2026-10-21 (abstract only)",
+            label: STATE.lang === 'fr' ? "A' — Combinaison HORS-δ8 (holonomy) · piste CDT (P6) : cul-de-sac depuis le 29/04/2026, lecture close le 21/10/2026 (résumé seul)" : "A' — Combination OUTSIDE-δ8 (holonomy) · CDT lead (P6): dead end since 2026-04-29, reading closed on 2026-10-21 (abstract only)",
             data: evolution.A_prime,
             borderColor: '#c8a86a',
             backgroundColor: 'rgba(200, 168, 106, 0.12)',

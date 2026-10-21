@@ -116,7 +116,7 @@
       {"name": "BlockDecomposition.lean", "theoremCount": 11, "fr": "Décomposition en blocs minima/maxima locaux", "en": "Local minima/maxima block decomposition"},
       {"name": "BlockAmplification.lean", "theoremCount": 14, "fr": "Amplification multiplicative (R73-R76b)", "en": "Multiplicative amplification (R73-R76b)"},
       {"name": "CycleArithmetic.lean", "theoremCount": "?", "fr": "Arithmétique de base sur les cycles", "en": "Basic cycle arithmetic"},
-      {"name": "PadeBound.lean", "theoremCount": "?", "fr": "Prototype (bornes de Padé, d'après Rhin 1987). L'extension prévue avec Salikhov 2007 / Wu & Wang 2014 est close le 21/10/2026 : leurs bornes ne valent qu'au-delà de hauteurs non explicites.", "en": "Prototype (Padé bounds, after Rhin 1987). The planned extension with Salikhov 2007 / Wu & Wang 2014 was closed on 2026-10-21: their bounds hold only beyond unspecified heights."}
+      {"name": "PadeBound.lean", "theoremCount": "?", "fr": "Prototype (bornes de Padé, d'après Rhin 1987). L'extension prévue avec Salikhov 2007 / Wu & Wang 2014 est close le 21/10/2026 : leurs bornes ne sont établies qu'au-delà de hauteurs non explicites (d'après leurs notices zbMATH) ; nous ne connaissons aucun seuil explicite.", "en": "Prototype (Padé bounds, after Rhin 1987). The planned extension with Salikhov 2007 / Wu & Wang 2014 was closed on 2026-10-21: their bounds are established only beyond unspecified heights (according to their zbMATH reviews); we know of no explicit threshold."}
     ]
   }
 }
