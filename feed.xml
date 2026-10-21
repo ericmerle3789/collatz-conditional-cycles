@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-21T18:49:47Z</updated>
+  <updated>2026-10-21T19:06:58Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -21,11 +21,11 @@
     <title>v0.10.10 — Steiner 1978 in Lean 4</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.10-steiner1978-2026-10-21</id>
-    <updated>2026-10-21T18:49:47Z</updated>
-    <published>2026-10-21T18:49:47Z</published>
+    <updated>2026-10-21T19:06:58Z</updated>
+    <published>2026-10-21T19:06:58Z</published>
     <category term="release"/>
     <category term="lean"/>
-    <summary>Steiner 1978 formalised in Lean 4 (release v1.2, Zenodo DOI 10.5281/zenodo.23541611): a classical theorem from 1978, the only circuit on the positive integers that is a cycle of the 3x+1 map is {1, 2}, proved under a named hypothesis (Rhin's bound, H_Rhin, never an axiom) and without any hypothesis for at most 20,000 odd terms. It proves nothing new about Collatz cycles. The original paper (Congr. Numer. 20, 1978) could not be accessed and was not read; the statements and the proof are reconstructed from Steiner 1981, Lagarias's annotated bibliography and Simons–de Weger 2005. 12 frozen statements, all proved; standard axioms only. The bound for 20,000 odd terms is far weaker than those that rely on a computer verification of the conjecture. Submitted to ccchallenge ("Ready to be audited"). Papers page: new Steiner 1978 card; home page: "Latest milestone" and "Last Lean verification" cards on Steiner 1978, "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version; History: the October 2026 entry cites Steiner 1978; research ledger: one event dated 2026-10-21 (34 events, 25 milestones).</summary>
+    <summary>Steiner 1978 formalised in Lean 4 (release v1.2, Zenodo DOI 10.5281/zenodo.23541611): a formalisation of a classical theorem from 1978; the only circuit on the positive integers that is a cycle of the 3x+1 map is {1, 2}, here proved under a named hypothesis (Rhin's bound, H_Rhin, never an axiom) and without any hypothesis for at most 20,000 odd terms. The formalisation proves nothing new about Collatz cycles. The original paper (Congr. Numer. 20, 1978) could not be accessed and was not read; the statements and the proof are reconstructed from Steiner 1981, Lagarias's annotated bibliography and Simons–de Weger 2005. 12 frozen statements, all proved; standard axioms only. The bound for 20,000 odd terms is far weaker than those that rely on a computer verification of the conjecture. Submitted to ccchallenge ("Ready to be audited"). Papers page: new Steiner 1978 card; home page: "Latest milestone" and "Last Lean verification" cards on Steiner 1978, "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version; History: the October 2026 entry cites Steiner 1978; research ledger: one event dated 2026-10-21 (34 events, 25 milestones).</summary>
   </entry>
 
   <entry>
