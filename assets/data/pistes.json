@@ -49,7 +49,7 @@
       "region": "I",
       "status": "cds",
       "test4": "—",
-      "lean": "delta10_barina_replacement_impossibility (retiré)",
+      "lean": "delta10_barina_replacement_impossibility",
       "leanFile": "ProjetCollatz/Phase64Delta10BarinaReplacement.lean",
       "ref": "Branch study/delta10-barina-replacement-impossibility, tag study-delta10-2026-04-30, commit 7efbf34"
     },
