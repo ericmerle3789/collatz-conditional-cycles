@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-22T06:33:05Z</updated>
+  <updated>2026-10-22T06:47:26Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -21,8 +21,8 @@
     <title>v0.10.11 — Catalogue: five "stub" leads settled</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.11-stub-leads-batch1-2026-10-22</id>
-    <updated>2026-10-22T06:33:05Z</updated>
-    <published>2026-10-22T06:33:05Z</published>
+    <updated>2026-10-22T06:47:26Z</updated>
+    <published>2026-10-22T06:47:26Z</published>
     <category term="release"/>
     <category term="audit"/>
     <summary>The first five leads of the catalogue marked "stub" (unsourced notes) are settled, each with its source or its reason. Lead C (discrete Fourier / Sturmian): dead end, now sourced: Fernández and Ibáñez (arXiv:2607.24844, 2026 preprint) link Christoffel words and cycles through size estimates, and Halbeisen and Hungerbühler (Acta Arith. 78 (1997), Lemma 2 and §5) note that such estimates, valid for rational cycles, cannot on their own exclude integer cycles; the "discrete Fourier" part is withdrawn. Lead E.4 (Zudilin 2007, J. Théor. Nombres Bordeaux 19): dead end instead of "partial": its bound concerns ‖(3/2)^k‖ and gives no more than 2^(k−1) for 2^S − 3^k this way. Lead F renamed "Marcovecchio 2014": no paper from 2025 was found; the author's only text dated 2025 is the arXiv deposit of a 2014 paper (Int. J. Number Theory 10), whose measures concern a logarithm such as log 2, not S ln 2 − k ln 3: dead end. Lead J (tropical, suggested by an AI assistant): dead end with no published source; the lab's check of the tropicalisation of the cycle equation (2026-09-26) gives back the starting congruence. Lead K (arithmetic schemes + Faltings): withdrawn, unsourced (dead end in the table; dashed node in the lock diagram). Counters: 16 stub notes out of 36 instead of 21. Home page: the count "fourteen of the fifteen paradigms" of the lock diagram is dated to April 2026 and said to be under review, and the caption no longer gives a number (node "Schemes + Faltings" dashed, node "Marcovecchio 2014"); card C of the hypotheses carries the same mention, its estimate unchanged; "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version.</summary>
