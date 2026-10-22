@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-22T08:13:13Z</updated>
+  <updated>2026-10-22T08:30:13Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -21,11 +21,11 @@
     <title>v0.10.12 — Catalogue: five more "stub" leads settled</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.12-stub-leads-batch2-2026-10-22</id>
-    <updated>2026-10-22T08:13:13Z</updated>
-    <published>2026-10-22T08:13:13Z</published>
+    <updated>2026-10-22T08:30:13Z</updated>
+    <published>2026-10-22T08:30:13Z</published>
     <category term="release"/>
     <category term="audit"/>
-    <summary>Five more leads of the catalogue marked "stub" (unsourced notes) are settled, each with its source or its reason. Lead M (BHV, Bilu–Hanrot–Voutier): withdrawn, the "specific applications" announced in April were never stated, and we found no source linking this theorem to cycles (dead end in the table, 4-test "—", reference of the paper added). Lead R (statistical invariants): dead end with no source of its own; same reason as lead C: these invariants depend only on the parity word, and every word is that of a rational cycle (Halbeisen and Hungerbühler, Acta Arith. 78 (1997), Lemma 2 and §5). Lead H (model-theoretic logic): dead end, now sourced: Cobham (1969); Villemaire (1992), the theory of ⟨ℕ, +, V₂, V₃⟩ is undecidable; two 2026 preprints (arXiv:2601.12772, arXiv:2602.06066) according to which the iteration of 3x+1 is not definable in Büchi arithmetic in base 2, nor reachability in base 3. Lead H.1 (MSO / Skolem–Bruyère): dead end instead of "Unexplored", same sources and Bruyère, Hansel, Michaux and Villemaire (1994). Lead H.2 (Skolem–Mahler–Lech / Derksen): dead end, now sourced (Lech 1953, Derksen 2007): the 3x+1 map is not linear, and the orbit of a cycle is a trivial linear recurrence. Counters: 11 stub notes out of 36 instead of 16; card B of the hypotheses: 12 of 16 dead-ends in Region II instead of 11, estimate unchanged; "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version.</summary>
+    <summary>Five more leads of the catalogue marked "stub" (unsourced notes) are settled, each with its source or its reason. Lead M (BHV, Bilu–Hanrot–Voutier): withdrawn: a first application (April 2026) had been refuted (mea culpa #11), the "specific applications" of the later reopening were never stated, and we found no source linking this theorem to cycles (dead end in the table, 4-test "—", reference of the paper added). Lead R (statistical invariants): dead end with no source of its own; same reason as lead C: these invariants depend only on the parity word, and every word is that of a rational cycle (Halbeisen and Hungerbühler, Acta Arith. 78 (1997), Lemma 2 and §5). Lead H (model-theoretic logic): dead end, now sourced: Cobham (1969); Villemaire (1992), the theory of ⟨ℕ, +, V₂, V₃⟩ is undecidable; two 2026 preprints (arXiv:2601.12772, arXiv:2602.06066) according to which the iteration of 3x+1 is not definable in Büchi arithmetic in base 2, nor reachability in base 3. Lead H.1 (MSO / Skolem–Bruyère): dead end instead of "Unexplored", same sources and Bruyère, Hansel, Michaux and Villemaire (1994). Lead H.2 (Skolem–Mahler–Lech / Derksen): dead end, now sourced (Lech 1953, Derksen 2007): the 3x+1 map is not linear, and the orbit of a cycle is a trivial linear recurrence. Corrections to v0.10.11: the entry for lead K wrongly said the lead had never been written up (an April 2026 analysis exists, without a source linking cycles to Faltings's theorem; outcome unchanged), and the entry for lead C now restricts its "discrete Fourier" remark to the April 2026 reports we re-read. Counters: 11 stub notes out of 36 instead of 16; card B of the hypotheses: 12 of 16 dead-ends in Region II instead of 11, estimate unchanged; "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version.</summary>
   </entry>
 
   <entry>
