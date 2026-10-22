@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.10 (2026-10-21), Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin).">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.11 (2026-10-22), five stub leads of the catalogue settled (sources checked, dead ends with a reason, one lead withdrawn as unsourced).">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.10 (2026-10-21) — Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.11 (2026-10-22) — five stub leads of the catalogue settled (three sourced dead ends, one dead end with no published source, one lead withdrawn as unsourced); v0.10.10 (2026-10-21) — Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -56,7 +56,7 @@
         "name": "Eric Merle"
       },
       "datePublished": "2026-04-27",
-      "dateModified": "2026-10-21",
+      "dateModified": "2026-10-22",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
@@ -133,6 +133,39 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.11">
+    <header>
+      <h2><span class="version-tag">v0.10.11</span> <span lang="fr">Catalogue : cinq pistes « stub » tranchées</span><span lang="en">Catalogue: five "stub" leads settled</span></h2>
+      <time datetime="2026-10-22">2026-10-22</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Catalogue des pistes</strong> : les cinq premières pistes marquées <code>stub</code> (notes non sourcées) sont tranchées, chacune avec sa source ou sa raison : trois culs-de-sac sourcés (C, E.4, F), un cul-de-sac sans source publiée (J), une piste retirée faute de source (K).</li>
+      <li><strong>Piste C (Fourier discret / Sturmien)</strong> : cul-de-sac, désormais sourcé. Fernández et Ibáñez (arXiv:2607.24844, prépublication de 2026) relient mots de Christoffel et cycles par des estimations de taille ; Halbeisen et Hungerbühler (Acta Arith. 78 (1997), Lemme 2 et §5) notent que de telles estimations, valables pour les cycles rationnels, ne suffisent pas, seules, à exclure les cycles entiers. Le volet « Fourier discret », jamais rédigé, est retiré.</li>
+      <li><strong>Piste E.4 (Zudilin 2007)</strong> : source ajoutée (J. Théor. Nombres Bordeaux 19 (2007), DOI 10.5802/jtnb.588) ; classée cul-de-sac au lieu de « partielle » : sa borne porte sur ‖(3/2)^k‖ et, par cette voie, ne donne pas plus que 2^(k−1) pour 2^S − 3^k, loin de ce que demande H1.</li>
+      <li><strong>Piste F</strong> : renommée « Marcovecchio 2014 (non-quadraticité de log 2) ». Nous n'avons trouvé aucun article de 2025 ; le seul texte de l'auteur daté de 2025 est le dépôt sur arXiv d'un article paru en 2014 (Int. J. Number Theory 10, DOI 10.1142/S1793042114500584), désormais cité. Cul-de-sac : ses mesures portent sur l'approximation d'un logarithme comme log 2, pas sur la forme S ln 2 − k ln 3. Dans le diagramme du verrou, le nœud devient « Marcovecchio 2014 ».</li>
+      <li><strong>Piste J (tropical, suggestion d'un assistant IA)</strong> : classée cul-de-sac au lieu de « partielle », sans source publiée (aucune trouvée) : la tropicalisation de l'équation des cycles, vérifiée par le labo le 26/09/2026, est satisfaite d'office et redonne la congruence de départ.</li>
+      <li><strong>Piste K (schémas arithmétiques + Faltings)</strong> : retirée, non sourcée : jamais formulée ni rédigée, aucune source trouvée. Dans le diagramme du verrou, son nœud passe en pointillé.</li>
+      <li><strong>Compteurs</strong> : 16 notes à sourcer sur 36 (≈44 %) au lieu de 21 (≈58 %), dans la carte « pistes cataloguées » de l'accueil et dans l'introduction du catalogue, qui cite aussi les cinq pistes tranchées.</li>
+      <li><strong>Verrou Λ</strong> : la phrase d'introduction date d'avril 2026 le décompte « quatorze des quinze paradigmes » et le dit en revue ; la légende du diagramme ne donne plus de nombre (« les paradigmes du diagramme », liste d'avril 2026, en revue) ; toutes deux signalent le retrait de « Schémas + Faltings ». La carte C des hypothèses porte la même mention ; son estimation est inchangée.</li>
+      <li><strong>Carte « Dernier audit » de l'accueil</strong> : elle porte désormais sur la relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de cette version ; l'audit précédent (relecture adverse des changements de la v0.10.10, 2026-10-21) y est rappelé.</li>
+      <li><strong>Cache des navigateurs</strong> : paramètre de version de <code>main.js</code> mis à jour (il sert aussi aux données du catalogue).</li>
+      <li>Les entrées ci-dessous restent telles quelles.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Catalogue of leads</strong>: the first five leads marked <code>stub</code> (unsourced notes) are settled, each with its source or its reason: three sourced dead ends (C, E.4, F), one dead end with no published source (J), one lead withdrawn for lack of a source (K).</li>
+      <li><strong>Lead C (discrete Fourier / Sturmian)</strong>: dead end, now sourced. Fernández and Ibáñez (arXiv:2607.24844, 2026 preprint) link Christoffel words and cycles through size estimates; Halbeisen and Hungerbühler (Acta Arith. 78 (1997), Lemma 2 and §5) note that such estimates, valid for rational cycles, cannot on their own exclude integer cycles. The "discrete Fourier" part, never written up, is withdrawn.</li>
+      <li><strong>Lead E.4 (Zudilin 2007)</strong>: source added (J. Théor. Nombres Bordeaux 19 (2007), DOI 10.5802/jtnb.588); classified as a dead end instead of "partial": its bound concerns ‖(3/2)^k‖ and, this way, gives no more than 2^(k−1) for 2^S − 3^k, far from what H1 requires.</li>
+      <li><strong>Lead F</strong>: renamed "Marcovecchio 2014 (non-quadraticity of log 2)". We found no paper from 2025; the author's only text dated 2025 is the arXiv deposit of a paper published in 2014 (Int. J. Number Theory 10, DOI 10.1142/S1793042114500584), now cited. Dead end: its measures concern the approximation of a logarithm such as log 2, not the form S ln 2 − k ln 3. In the lock diagram, the node becomes "Marcovecchio 2014".</li>
+      <li><strong>Lead J (tropical, suggested by an AI assistant)</strong>: classified as a dead end instead of "partial", with no published source (none found): the tropicalisation of the cycle equation, checked by the lab on 2026-09-26, is satisfied for free and gives back the starting congruence.</li>
+      <li><strong>Lead K (arithmetic schemes + Faltings)</strong>: withdrawn, unsourced: never formulated nor written up, no source found. In the lock diagram, its node is now dashed.</li>
+      <li><strong>Counters</strong>: 16 notes to be sourced out of 36 (≈44 %) instead of 21 (≈58 %), in the "catalogued approaches" card of the home page and in the introduction of the catalogue, which also cites the five settled leads.</li>
+      <li><strong>Λ lock</strong>: the introductory sentence dates the count "fourteen of the fifteen paradigms" to April 2026 and says that it is under review; the caption of the diagram no longer gives a number ("the paradigms of the diagram", April 2026 list, under review); both mention the withdrawal of "Schemes + Faltings". Card C of the hypotheses carries the same mention; its estimate is unchanged.</li>
+      <li><strong>"Latest audit" card of the home page</strong>: it now refers to the internal adversarial review, AI-assisted (not peer review), of the changes of this version; the previous audit (adversarial review of the changes of v0.10.10, 2026-10-21) is recalled.</li>
+      <li><strong>Browser cache</strong>: version parameter of <code>main.js</code> updated (it is also used for the catalogue data).</li>
+      <li>The entries below are kept as they were.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.10.10">
     <header>
       <h2><span class="version-tag">v0.10.10</span> <span lang="fr">Steiner 1978 en Lean 4</span><span lang="en">Steiner 1978 in Lean 4</span></h2>
@@ -638,7 +671,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.10 · 2026-10-21</div>
+  <div class="footer-meta">Cartography · v0.10.11 · 2026-10-22</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">
@@ -658,7 +691,7 @@
 <!-- Hypothes.is annotations -->
 <script src="https://hypothes.is/embed.js" async></script>
 
-<script src="../assets/js/main.js?v=20261021-V0-10-10"></script>
+<script src="../assets/js/main.js?v=20261022-V0-10-11"></script>
 
 </body>
 </html>

@@ -85,7 +85,7 @@
         "url": "https://github.com/ericmerle3789"
       },
       "datePublished": "2026-04-27T00:00:00+02:00",
-      "dateModified": "2026-10-21T00:00:00+02:00",
+      "dateModified": "2026-10-22T00:00:00+02:00",
       "genre": "research article",
       "image": "https://collatz-lab.org/assets/og-image.png",
       "mainEntityOfPage": {
@@ -324,7 +324,7 @@
     </div>
     <div class="key-stat">
       <div class="value">36</div>
-      <div class="label" data-i18n="keyStat4Label">pistes cataloguées (dont 21 notes à sourcer)</div>
+      <div class="label" data-i18n="keyStat4Label">pistes cataloguées (dont 16 notes à sourcer)</div>
       <div class="desc" data-i18n="keyStat4Desc">Région I + II + III</div>
     </div>
   </div>
@@ -346,7 +346,7 @@
 <section id="verrou">
   <div class="section-eyebrow">Λ_{S,k}</div>
   <h2 data-i18n="lockTitle">Le verrou Λ_{S,k}</h2>
-  <p data-i18n="lockText">Quatorze des quinze paradigmes mathématiques investigués retombent sur la même obstruction diophantienne :</p>
+  <p data-i18n="lockText">En avril 2026, quatorze des quinze paradigmes du diagramme ont été notés comme retombant sur la même obstruction diophantienne ; ce décompte est revu à la source dans le catalogue (« Schémas + Faltings », non sourcé, est retiré depuis le 22/10/2026) :</p>
 
   <div class="lockbox">
     <span class="formula">$$\Lambda_{S,k} = S \log 2 - k \log 3$$</span>
@@ -362,9 +362,9 @@ graph LR
     P2["Kolmogorov-Chaitin"] -->|"K=O(log k)"| LAMBDA
     P3["Fourier Sturmien"] -->|"slope log_2 3"| LAMBDA
     P4["Padé / Wu / Salikhov"] -->|"μ(ln 3) &lt; 5,117 (Wu &amp; Wang 2014)"| LAMBDA
-    P5["Marcovecchio 2025"] -->|"μ_2 algébriques"| LAMBDA
+    P5["Marcovecchio 2014"] -->|"μ_2 algébriques"| LAMBDA
     P6["Tropical (piste IA)"] -->|"décroissance fine"| LAMBDA
-    P7["Schémas + Faltings"] -->|"hauteurs ⇔ ABC"| LAMBDA
+    P7["Schémas + Faltings<br/>retiré le 22/10/2026<br/>(non sourcé)"] -.->|"retiré"| LAMBDA
     P8["Néron-Tate"] -->|"ABC effective"| LAMBDA
     P9["Tresses / Nœuds"] -->|"insensible 2/3-adique"| LAMBDA
     P10["Logique modèle"] -->|"Cobham 2 bases"| LAMBDA
@@ -410,12 +410,13 @@ graph LR
     style DELTA8 fill:#3a4a5a,color:#e0e6f0,stroke:#6366f1,stroke-width:1px
     style DELTA8P fill:#3a4a5a,color:#e0e6f0,stroke:#6366f1,stroke-width:1px
     style DELTA10 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
+    style P7 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
     style DELTA11 fill:#3a4a5a,color:#e0e6f0,stroke:#fb923c,stroke-width:2px,stroke-dasharray:5
     </pre>
   </div>
 
   <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 1rem; font-style: italic;" data-i18n="diagramCaption">
-      → Les 14 paradigmes convergent vers le verrou Λ ; ce ne sont pas eux qui alimentent le théorème, mais les hypothèses H1, H2 et H3 (paramètres). Seule la branche k ≤ 1322 (H1, H2) est démontrée sans circularité ; la branche k &gt; 1322 repose sur H3, supposée (voir l'<a href="#erratum">erratum</a>).
+      → Les paradigmes du diagramme (liste d'avril 2026, en revue ; « Schémas + Faltings », retiré, en pointillé) convergent vers le verrou Λ ; ce ne sont pas eux qui alimentent le théorème, mais les hypothèses H1, H2 et H3 (paramètres). Seule la branche k ≤ 1322 (H1, H2) est démontrée sans circularité ; la branche k &gt; 1322 repose sur H3, supposée (voir l'<a href="#erratum">erratum</a>).
   </p>
 </section>
 
@@ -425,7 +426,7 @@ graph LR
 <section id="pistes">
   <div class="section-eyebrow">§ I</div>
   <h2 data-i18n="pistesTitle">Catalogue des voies d'attaque</h2>
-  <p data-i18n="pistesIntro">Catalogue exhaustif des approches mathématiques pour la non-existence des cycles non triviaux Collatz. Cliquez sur une ligne pour voir les détails. <em>Transparence éditoriale : 21 entrées sur 36 (≈58 %) sont en statut <code>stub</code> — notes exploratoires en attente de sourçage formel ; le champ <code>status_meta</code> du JSON les marque explicitement (cf. <code>assets/data/pistes.json</code>).</em></p>
+  <p data-i18n="pistesIntro">Catalogue exhaustif des approches mathématiques pour la non-existence des cycles non triviaux Collatz. Cliquez sur une ligne pour voir les détails. <em>Transparence éditoriale : 16 entrées sur 36 (≈44 %) sont encore en statut <code>stub</code> — notes exploratoires en attente de sourçage formel ; le champ <code>status_meta</code> du JSON les marque explicitement (cf. <code>assets/data/pistes.json</code>). Cinq autres (C, E.4, F, J, K) ont été tranchées le 22/10/2026 (source vérifiée, cul-de-sac motivé ou retrait) ; la raison figure dans leur fiche.</em></p>
 
   <div class="filter-bar">
     <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Rechercher une piste, une référence, un auteur…">
@@ -498,6 +499,8 @@ graph LR
       <h3 lang="en">Riemann-class (exit unreachable in 2026)</h3>
       <p lang="fr">Probabilité finale : <strong>75-80%</strong> — dominante après convergence δ8 + Cobham + 14 paradigmes.</p>
       <p lang="en">Final probability: <strong>75-80%</strong> — dominant after δ8 + Cobham + 14 paradigms convergence.</p>
+      <p lang="fr" style="font-size: 0.85rem; color: var(--text-muted);">Estimation d'avril 2026. Le décompte de « 14 paradigmes » date aussi d'avril 2026 ; il est revu à la source dans le catalogue, et l'un des paradigmes du diagramme (« Schémas + Faltings ») est retiré depuis le 22/10/2026, faute de source.</p>
+      <p lang="en" style="font-size: 0.85rem; color: var(--text-muted);">Estimate from April 2026. The count of "14 paradigms" also dates from April 2026; it is being reviewed against the sources in the catalogue, and one of the paradigms in the diagram ("Schemes + Faltings") has been withdrawn since 2026-10-22, for lack of a source.</p>
     </div>
   </div>
 
@@ -582,7 +585,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 
 <!-- ========================================================================
      RESEARCH STATUS / ÉTAT DES TRAVAUX (Research Ledger preview)
-     Mis à jour le 2026-10-21 (v0.10.10)
+     Mis à jour le 2026-10-22 (v0.10.11)
      ======================================================================== -->
 <section id="research-status" class="research-status-snapshot">
   <div class="section-eyebrow">§ VI</div>
@@ -641,16 +644,16 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
       <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/057581a/steiner1978" target="_blank" rel="noopener">→ <code>steiner1978/</code> (057581a)</a>
     </div>
 
-    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.10, 2026-10-21) -->
+    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.11, 2026-10-22) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
-      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.10</span><span lang="en">Adversarial review of v0.10.10</span></div>
+      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.11</span><span lang="en">Adversarial review of v0.10.11</span></div>
       <div class="status-card-meta">
-        <span class="status-card-date">2026-10-21</span>
+        <span class="status-card-date">2026-10-22</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.10 (Steiner 1978), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.9 (revérification, note d'errata), 2026-10-21.</span>
-        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.10 (Steiner 1978), against the available sources. Previous audit: adversarial review of the changes of v0.10.9 (re-check, errata note), 2026-10-21.</span>
+        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.11 (cinq pistes du catalogue), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.10 (Steiner 1978), 2026-10-21.</span>
+        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.11 (five catalogue leads), against the available sources. Previous audit: adversarial review of the changes of v0.10.10 (Steiner 1978), 2026-10-21.</span>
       </p>
       <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
@@ -845,7 +848,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.10 · 2026-10-21
+    Cartography · v0.10.11 · 2026-10-22
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -902,6 +905,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261021-V0-10-10"></script>
+<script src="assets/js/main.js?v=20261022-V0-10-11"></script>
 </body>
 </html>
