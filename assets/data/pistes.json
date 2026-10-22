@@ -72,18 +72,18 @@
     {
       "id": "C",
       "fr": {
-        "name": "Fourier discret / Sturmien",
+        "name": "Fourier discret / Sturmien — volet Fourier retiré",
         "why": "Cul-de-sac, sourcé (22/10/2026). Une source relie mots sturmiens et cycles : les mots de Christoffel (une famille de mots équilibrés) sont, à rotation près, les seuls maximiseurs d'une fonctionnelle C_min sur les mots de parité de longueur et de nombre de 1 donnés, d'où des bornes explicites sur le plus petit élément d'une orbite en fonction de sa longueur et de la proportion de termes impairs (Fernández et Ibáñez, arXiv:2607.24844, prépublication de juillet 2026, lue par le labo en septembre 2026). Ce sont des estimations de taille ; elles valent aussi pour les cycles rationnels, qui réalisent tous les mots de parité (Halbeisen et Hungerbühler, Acta Arith. 78 (1997), Lemme 2, dû à Lagarias), et de telles estimations ne suffisent pas, seules, à exclure les cycles entiers (même article, §5, p. 238) : il faut en plus un argument arithmétique. Le volet « Fourier discret » de l'intitulé n'a jamais été rédigé ; il est retiré."
       },
       "en": {
-        "name": "Discrete Fourier / Sturmian",
+        "name": "Discrete Fourier / Sturmian — Fourier part withdrawn",
         "why": "Dead end, sourced (2026-10-22). One source links Sturmian words and cycles: Christoffel words (a family of balanced words) are, up to rotation, the unique maximisers of a functional C_min on the parity words of given length and number of 1s, which yields explicit bounds for the minimum element of an orbit in terms of its length and the proportion of odd terms (Fernández and Ibáñez, arXiv:2607.24844, preprint of July 2026, read by the lab in September 2026). These are size estimates; they also hold for rational cycles, which realise every parity word (Halbeisen and Hungerbühler, Acta Arith. 78 (1997), Lemma 2, due to Lagarias), and such estimates cannot on their own exclude integer cycles (same paper, §5, p. 238): an arithmetic argument is needed on top. The \"discrete Fourier\" part of the title was never written up; it is withdrawn."
       },
       "region": "I",
       "status": "cds",
       "test4": "0/4",
       "severity": "2/10",
-      "ref": "Fernández & Ibáñez, arXiv:2607.24844 (2026, preprint); Halbeisen & Hungerbühler, Acta Arith. 78 (1997), 227-239 (Lemma 2, §5)"
+      "ref": "Fernández & Ibáñez, arXiv:2607.24844 (2026); Halbeisen & Hungerbühler, Acta Arith. 78 (1997), 227-239"
     },
     {
       "id": "D",
@@ -141,7 +141,7 @@
       },
       "en": {
         "name": "Zudilin 2007",
-        "why": "Dead end, sourced (2026-10-22). W. Zudilin, \"A new lower bound for ‖(3/2)^k‖\", J. Théor. Nombres Bordeaux 19 (2007), 311-323: for every k beyond some effectively computable K, ‖(3/2)^k‖ > 0.5803^k, where ‖x‖ is the distance from x to the nearest integer (Padé approximations and hypergeometric functions, according to its zbMATH review). This is not the quantity of the cycle problem. In a cycle, S > k and 2^S − 3^k = 2^k·(2^(S−k) − (3/2)^k) with 2^(S−k) an integer: this only gives, for k > K, 2^S − 3^k > 1.16^k; and since ‖x‖ never exceeds 1/2, no lower bound for ‖(3/2)^k‖ can give more than 2^(k−1) this way, exponentially less, for large k, than the 3^k/k^6 required by H1."
+        "why": "Dead end, sourced (2026-10-22). W. Zudilin, \"A new lower bound for ‖(3/2)^k‖\", J. Théor. Nombres Bordeaux 19 (2007), 311-323: for every k beyond some effectively computable K, ‖(3/2)^k‖ > 0.5803^k, where ‖x‖ is the distance from x to the nearest integer (Padé approximations and hypergeometric functions, according to its zbMATH entry). This is not the quantity of the cycle problem. In a cycle, S > k and 2^S − 3^k = 2^k·(2^(S−k) − (3/2)^k) with 2^(S−k) an integer: this only gives, for k > K, 2^S − 3^k > 1.16^k; and since ‖x‖ never exceeds 1/2, no lower bound for ‖(3/2)^k‖ can give more than 2^(k−1) this way, exponentially less, for large k, than the 3^k/k^6 required by H1."
       },
       "region": "I",
       "status": "cds",
