@@ -242,76 +242,76 @@
     {
       "id": "M",
       "fr": {
-        "name": "BHV (Bilu-Hanrot-Voutier)",
-        "why": "Réouvert post-Red Team — applications spécifiques"
+        "name": "BHV (Bilu-Hanrot-Voutier) — retirée (jamais formulée)",
+        "why": "Retirée le 22/10/2026 : la note d'avril 2026 (« réouvert après la relecture adverse — applications spécifiques ») ne disait pas lesquelles, et le labo ne l'a jamais rédigée. Le théorème de Bilu, Hanrot et Voutier (2001) dit que, pour N > 30, le N-ième terme de toute suite de Lucas ou de Lehmer, de la forme (α^N − β^N)/(α − β), a un diviseur primitif (d'après sa notice zbMATH) ; la note ne disait pas quelle quantité du problème des cycles serait un tel terme, ni ce qu'un diviseur primitif y apporterait. Nous n'avons trouvé aucune source qui relie ce théorème aux cycles de Collatz (recherche arXiv et zbMATH du 22/10/2026). Ne plus la citer comme une voie explorée."
       },
       "en": {
-        "name": "BHV (Bilu-Hanrot-Voutier)",
-        "why": "Reopened post-Red Team — specific applications"
+        "name": "BHV (Bilu-Hanrot-Voutier) — withdrawn (never formulated)",
+        "why": "Withdrawn on 2026-10-22: the April 2026 note (\"reopened after the adversarial review — specific applications\") did not say which ones, and the lab never wrote it up. The theorem of Bilu, Hanrot and Voutier (2001) says that, for N > 30, the N-th term of every Lucas or Lehmer sequence, of the form (α^N − β^N)/(α − β), has a primitive divisor (according to its zbMATH review); the note did not say which quantity of the cycle problem would be such a term, nor what a primitive divisor would bring there. We found no source linking this theorem to Collatz cycles (arXiv and zbMATH search of 2026-10-22). No longer to be cited as an explored route."
       },
       "region": "I",
-      "status": "partiel",
-      "test4": "3/4",
-      "status_meta": "stub"
+      "status": "cds",
+      "test4": "—",
+      "ref": "Bilu, Hanrot & Voutier, J. Reine Angew. Math. 539 (2001), 75-122"
     },
     {
       "id": "R",
       "fr": {
         "name": "Invariants statistiques (autocorrélations, moments)",
-        "why": "Christoffel autocorrélations → retombe sur Λ"
+        "why": "Cul-de-sac (22/10/2026), sans source propre : nous n'avons trouvé aucune source qui étudie ces invariants pour les cycles (recherche arXiv et zbMATH du 22/10/2026). La raison est la même que pour la piste C : les autocorrélations et les moments du mot de parité, y compris pour les mots de Christoffel, ne dépendent que du mot ; or tout mot de parité est celui d'un cycle rationnel (Halbeisen et Hungerbühler, Acta Arith. 78 (1997), Lemme 2, dû à Lagarias). Un argument qui n'utilise que ces invariants ne peut donc pas distinguer un cycle entier du cycle rationnel de même mot : il faut en plus l'intégralité, c'est-à-dire que 2^S − 3^k divise corrSum (lemme R72), donc un argument arithmétique (même article, §5, p. 238)."
       },
       "en": {
         "name": "Statistical invariants (autocorrelations, moments)",
-        "why": "Christoffel autocorrelations → falls back to Λ"
+        "why": "Dead end (2026-10-22), with no source of its own: we found no source studying these invariants for cycles (arXiv and zbMATH search of 2026-10-22). The reason is the same as for lead C: the autocorrelations and moments of the parity word, Christoffel words included, depend only on the word; but every parity word is that of a rational cycle (Halbeisen and Hungerbühler, Acta Arith. 78 (1997), Lemma 2, due to Lagarias). An argument that uses only these invariants therefore cannot tell an integer cycle from the rational cycle with the same word: integrality is needed on top, that is, 2^S − 3^k must divide corrSum (lemma R72), hence an arithmetic argument (same paper, §5, p. 238)."
       },
       "region": "I",
       "status": "cds",
       "test4": "0-2/4",
-      "status_meta": "stub"
+      "ref": "Halbeisen & Hungerbühler, Acta Arith. 78 (1997), 227-239"
     },
     {
       "id": "H",
       "fr": {
         "name": "Logique modèle-théorique",
-        "why": "Cobham 1969 : 2 bases mult. indép. → indécidabilité naturelle"
+        "why": "Cul-de-sac, sourcé (22/10/2026). Cobham (1969) : un ensemble d'entiers reconnaissable par automate fini à la fois en base p et en base q, multiplicativement indépendantes, est ultimement périodique ; Villemaire (1992) : la théorie de ⟨ℕ, +, V₂, V₃⟩ est indécidable. Pour l'application 3x+1 elle-même, deux prépublications de 2026 (Dhiman et Pandey, arXiv:2601.12772 et arXiv:2602.06066 ; d'après leurs résumés, non relues par nous) montrent que sa relation d'itération n'est pas définissable au premier ordre dans l'arithmétique de Büchi en base 2, ni, pour l'accessibilité, en base 3. Ces cadres, décrits par automates, ne voient donc pas l'itération de 3x+1 en une base, et le cadre qui réunit les deux bases est indécidable : la piste « décider la question des cycles par une logique décidable » n'a pas de point d'appui connu. Cela n'exclut aucun cycle."
       },
       "en": {
         "name": "Model-theoretic logic",
-        "why": "Cobham 1969: 2 multiplicatively independent bases → natural undecidability"
+        "why": "Dead end, sourced (2026-10-22). Cobham (1969): a set of integers recognizable by a finite automaton both in base p and in base q, multiplicatively independent, is ultimately periodic; Villemaire (1992): the theory of ⟨ℕ, +, V₂, V₃⟩ is undecidable. For the 3x+1 map itself, two 2026 preprints (Dhiman and Pandey, arXiv:2601.12772 and arXiv:2602.06066; according to their abstracts, not reviewed by us) show that its iteration relation is not first-order definable in Büchi arithmetic in base 2, nor, for reachability, in base 3. These frameworks, described by automata, thus do not see the iteration of 3x+1 in one base, and the framework that joins both bases is undecidable: the route \"decide the cycle question with a decidable logic\" has no known foothold. This excludes no cycle."
       },
       "region": "II",
       "status": "cds",
       "test4": "0/4",
-      "status_meta": "stub"
+      "ref": "Cobham, Math. Syst. Theory 3 (1969), 186-192; Villemaire, C. R. Acad. Sci. Paris 314 (1992), 775-777; arXiv:2601.12772; arXiv:2602.06066"
     },
     {
       "id": "H.1",
       "fr": {
         "name": "MSO / Skolem-Bruyère",
-        "why": "Non exploré — extension décidable possible"
+        "why": "Cul-de-sac, sourcé (22/10/2026), sans avoir été explorée par le labo. La note d'avril espérait une « extension décidable » sans dire laquelle ; les volets MSO et Skolem de l'intitulé n'ont jamais été précisés. Le cadre de Büchi et Bruyère, où les ensembles reconnaissables par automate en base p (p premier) sont exactement ceux définissables au premier ordre dans ⟨ℕ, +, V_p⟩ (Bruyère, Hansel, Michaux et Villemaire, Bull. Belg. Math. Soc. 1 (1994), 191-238), ne s'y prête pas : selon deux prépublications de 2026 (voir la piste H), il ne définit pas l'itération de 3x+1 en base 2, ni l'accessibilité en base 3 ; et l'extension par les deux bases, ⟨ℕ, +, V₂, V₃⟩, est indécidable (Villemaire 1992)."
       },
       "en": {
         "name": "MSO / Skolem-Bruyère",
-        "why": "Not explored — possible decidable extension"
+        "why": "Dead end, sourced (2026-10-22), without having been explored by the lab. The April note hoped for a \"decidable extension\" without saying which one; the MSO and Skolem parts of the title were never made precise. The framework of Büchi and Bruyère, in which the sets recognizable by automata in base p (p prime) are exactly those first-order definable in ⟨ℕ, +, V_p⟩ (Bruyère, Hansel, Michaux and Villemaire, Bull. Belg. Math. Soc. 1 (1994), 191-238), does not lend itself to it: according to two 2026 preprints (see lead H), it does not define the iteration of 3x+1 in base 2, nor reachability in base 3; and the extension by both bases, ⟨ℕ, +, V₂, V₃⟩, is undecidable (Villemaire 1992)."
       },
       "region": "II",
-      "status": "inconnu",
-      "status_meta": "stub"
+      "status": "cds",
+      "ref": "Bruyère, Hansel, Michaux & Villemaire, Bull. Belg. Math. Soc. 1 (1994), 191-238; Villemaire, C. R. Acad. Sci. Paris 314 (1992), 775-777"
     },
     {
       "id": "H.2",
       "fr": {
         "name": "Skolem-Mahler-Lech / Derksen",
-        "why": "Syracuse non-LRS — coefficient 2^(-a_i) dépend de l'état"
+        "why": "Cul-de-sac, sourcé (22/10/2026). Le théorème de Skolem–Mahler–Lech porte sur les suites récurrentes linéaires : en caractéristique 0, si une telle suite s'annule une infinité de fois, ses zéros reviennent périodiquement à partir d'un certain rang (Lech 1953, qui généralise Skolem et Mahler) ; Derksen (2007) en donne l'analogue en caractéristique p, où les zéros se décrivent par automates finis. Il ne s'applique pas à l'application 3x+1, qui n'est pas linéaire : le coefficient appliqué dépend de la parité du terme courant (c'est le sens de la note d'avril, « non-LRS »). Et l'orbite d'un cycle, périodique, vérifie u(n + p) = u(n), une récurrence linéaire triviale : le théorème n'en dit rien de plus."
       },
       "en": {
         "name": "Skolem-Mahler-Lech / Derksen",
-        "why": "Syracuse non-LRS — coefficient 2^(-a_i) depends on state"
+        "why": "Dead end, sourced (2026-10-22). The Skolem–Mahler–Lech theorem is about linear recurrence sequences: in characteristic 0, if such a sequence vanishes infinitely often, its zeros recur periodically from some index on (Lech 1953, generalising Skolem and Mahler); Derksen (2007) gives the analogue in characteristic p, where the zeros are described by finite automata. It does not apply to the 3x+1 map, which is not linear: the coefficient applied depends on the parity of the current term (this is what the April note, \"non-LRS\", meant). And the orbit of a cycle, being periodic, satisfies u(n + p) = u(n), a trivial linear recurrence: the theorem says nothing more about it."
       },
       "region": "II",
       "status": "cds",
       "test4": "0/4",
-      "status_meta": "stub"
+      "ref": "Lech, Ark. Mat. 2 (1953), 417-421; Derksen, Invent. Math. 168 (2007), 175-224"
     },
     {
       "id": "I.1",
