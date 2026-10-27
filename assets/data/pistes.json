@@ -388,75 +388,75 @@
       "id": "Q.bis",
       "fr": {
         "name": "parityGraph backward (multi-prédécesseurs)",
-        "why": "Réouvert Red Team Cycle 2 — non-tautologique"
+        "why": "Cul-de-sac en l'état, sourcé (27/10/2026). L'étude « à rebours » existe : Wirsching (Discrete Math. 148 (1996), 265-286) étudie l'ensemble des prédécesseurs d'un entier, c'est-à-dire de tous les entiers dont l'orbite l'atteint, et Krasikov et Lagarias (Acta Arith. 109 (2003), 237-258) montrent que le nombre π₁(x) d'entiers inférieurs à x qui atteignent 1 dépasse x^0,84 pour x assez grand (d'après leurs notices zbMATH). Ces résultats portent sur les entiers qui atteignent 1 ; un cycle non trivial et ses prédécesseurs formeraient un ensemble disjoint de celui-là, sur lequel ils ne disent rien. En avril 2026, la piste était notée « Sous-piste Q.backward réouverte » (cartographie interne du 29/04/2026), puis rangée parmi les « Pistes potentielles non-explorées » (bilan interne du même jour)."
       },
       "en": {
         "name": "Backward parityGraph (multi-predecessors)",
-        "why": "Reopened Red Team Cycle 2 — non-tautological"
+        "why": "Dead end as things stand, sourced (2026-10-27). The backward study exists: Wirsching (Discrete Math. 148 (1996), 265-286) studies the predecessor set of an integer, that is, of all the integers whose orbit reaches it, and Krasikov and Lagarias (Acta Arith. 109 (2003), 237-258) show that the number π₁(x) of integers below x that reach 1 exceeds x^0.84 for sufficiently large x (according to their zbMATH reviews). These results concern the integers that reach 1; a non-trivial cycle and its predecessors would form a set disjoint from that one, about which they say nothing. In April 2026, the lead was marked as a reopened sub-lead (internal map of 2026-04-29), and then listed among the potential leads not yet explored (internal report of the same day)."
       },
       "region": "II",
-      "status": "inconnu",
-      "status_meta": "stub"
+      "status": "cds",
+      "ref": "Wirsching, Discrete Math. 148 (1996), 265-286; Krasikov & Lagarias, Acta Arith. 109 (2003), 237-258"
     },
     {
       "id": "V",
       "fr": {
         "name": "FRACTRAN / Conway 1972",
-        "why": "Indécidabilité ≠ borne effective sur cycles spécifiques"
+        "why": "Cul-de-sac, sourcé (27/10/2026). FRACTRAN est le langage de calcul universel que Conway (1987) a tiré de son article de 1972, « Unpredictable iterations », où il montre qu'un problème d'itération de forme semblable à celui de 3x+1 est indécidable (d'après la bibliographie annotée de Lagarias). Ces résultats portent sur des familles d'applications de type Collatz généralisées ; ils ne disent rien de l'application 3x+1 elle-même, ni de ses cycles (voir aussi la piste O). Le labo l'avait classée cul-de-sac en avril 2026, avec la raison « indécidabilité ≠ borne » (synthèse interne du 29/04/2026)."
       },
       "en": {
         "name": "FRACTRAN / Conway 1972",
-        "why": "Undecidability ≠ effective bound on specific cycles"
+        "why": "Dead end, sourced (2026-10-27). FRACTRAN is the universal computing language that Conway (1987) drew from his 1972 paper \"Unpredictable iterations\", in which he shows that an iteration problem similar in form to that of 3x+1 is undecidable (according to Lagarias's annotated bibliography). These results concern families of generalised Collatz-type maps; they say nothing about the 3x+1 map itself, nor about its cycles (see also lead O). The lab had classified it as a dead end in April 2026, on the grounds that undecidability is not a bound (internal synthesis of 2026-04-29)."
       },
       "region": "II",
       "status": "cds",
       "test4": "1/4",
-      "status_meta": "stub"
+      "ref": "Conway, Proc. 1972 Number Theory Conf. (Boulder), 49-52; Conway, Open Problems in Communication and Computation, Springer (1987), 3-27"
     },
     {
       "id": "W",
       "fr": {
         "name": "Anashin 2-adique (automates)",
-        "why": "ℤ mesure Haar nulle dans ℤ_2 — descriptif pas prescriptif"
+        "why": "Cul-de-sac (27/10/2026), sans source propre : nous n'avons trouvé aucun travail d'Anashin sur 3x+1 (zbMATH et arXiv, 27/10/2026) ; ses travaux portent sur l'ergodicité des transformations des entiers p-adiques et sur les automates (par exemple « Ergodic transformations in the space of p-adic integers », 2006), et la référence notée en avril 2026 pour cette piste (arXiv:0707.4533) est un article sans rapport. La raison est sourcée, la même que pour la piste P : un énoncé ergodique sur les entiers 2-adiques n'implique rien sur les entiers, qui forment un ensemble de mesure nulle (Lagarias, Amer. Math. Monthly 92 (1985), remarque suivant le théorème K)."
       },
       "en": {
         "name": "Anashin 2-adic (automata)",
-        "why": "ℤ has zero Haar measure in ℤ_2 — descriptive not prescriptive"
+        "why": "Dead end (2026-10-27), with no source of its own: we found no work by Anashin on 3x+1 (zbMATH and arXiv, 2026-10-27); his work concerns the ergodicity of transformations of the p-adic integers and automata (for example \"Ergodic transformations in the space of p-adic integers\", 2006), and the reference noted in April 2026 for this lead (arXiv:0707.4533) is an unrelated paper. The reason is sourced, the same as for lead P: an ergodic statement on the 2-adic integers implies nothing about the integers, which form a set of measure zero (Lagarias, Amer. Math. Monthly 92 (1985), remark following Theorem K)."
       },
       "region": "II",
       "status": "cds",
       "test4": "2/4",
-      "status_meta": "stub"
+      "ref": "Lagarias, Amer. Math. Monthly 92 (1985), 3-23"
     },
     {
       "id": "X",
       "fr": {
         "name": "Tao 2022 (= Tao 2019)",
-        "why": "Tao exclut explicitement cycles dans son paper"
+        "why": "Cul-de-sac, sourcé (27/10/2026) ; même article que la piste B. Tao, « Almost all orbits of the Collatz map attain almost bounded values », Forum Math. Pi 10 (2022), e12 (arXiv:1909.03562, 2019) : pour presque tout N, au sens de la densité logarithmique, le minimum de l'orbite de N est majoré par f(N), pour toute fonction f qui tend vers l'infini. Tao note qu'un renforcement à une constante absolue serait sans doute presque aussi difficile que la conjecture entière (remarque 1.4), et ajoute que ses arguments permettent d'en déduire que presque tout entier positif n'est pas dans une orbite périodique (§ 5). Un énoncé valable pour presque tout entier ne peut pas exclure un cycle, qui est un ensemble fini."
       },
       "en": {
         "name": "Tao 2022 (= Tao 2019)",
-        "why": "Tao explicitly excludes cycles in his paper"
+        "why": "Dead end, sourced (2026-10-27); same paper as lead B. Tao, \"Almost all orbits of the Collatz map attain almost bounded values\", Forum Math. Pi 10 (2022), e12 (arXiv:1909.03562, 2019): for almost all N, in the sense of logarithmic density, the minimum of the orbit of N is bounded by f(N), for every function f tending to infinity. Tao notes that a strengthening to an absolute constant is likely to be almost as hard as the full conjecture (Remark 1.4), and adds that his arguments allow one to deduce that almost all positive integers do not lie in a periodic orbit (§ 5). A statement valid for almost all integers cannot exclude a cycle, which is a finite set."
       },
       "region": "II",
       "status": "cds",
       "test4": "1/4",
-      "status_meta": "stub"
+      "ref": "Tao, Forum Math. Pi 10 (2022), e12; arXiv:1909.03562"
     },
     {
       "id": "Y",
       "fr": {
         "name": "Krasikov-Lagarias 2003 (densité)",
-        "why": "Densité asymptotique aveugle aux cycles isolés"
+        "why": "Cul-de-sac, sourcé (27/10/2026). Krasikov et Lagarias (Acta Arith. 109 (2003), 237-258) montrent que le nombre π₁(x) d'entiers inférieurs à x qui atteignent 1 dépasse x^0,84 pour x assez grand, améliorant l'exposant 0,81 d'Applegate et Lagarias (1995) (d'après leur notice zbMATH). C'est une minoration du nombre d'entiers qui atteignent 1 ; les éléments d'un cycle non trivial n'atteignent pas 1, et ce résultat ne dit rien d'eux."
       },
       "en": {
         "name": "Krasikov-Lagarias 2003 (density)",
-        "why": "Asymptotic density blind to isolated cycles"
+        "why": "Dead end, sourced (2026-10-27). Krasikov and Lagarias (Acta Arith. 109 (2003), 237-258) show that the number π₁(x) of integers below x that reach 1 exceeds x^0.84 for sufficiently large x, improving the exponent 0.81 of Applegate and Lagarias (1995) (according to their zbMATH review). This is a lower bound for the number of integers that reach 1; the elements of a non-trivial cycle do not reach 1, and this result says nothing about them."
       },
       "region": "II",
       "status": "cds",
       "test4": "2/4",
-      "status_meta": "stub"
+      "ref": "Krasikov & Lagarias, Acta Arith. 109 (2003), 237-258"
     },
     {
       "id": "Z",

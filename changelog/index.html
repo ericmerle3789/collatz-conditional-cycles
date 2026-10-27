@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.13 (2026-10-27), five more stub leads of the catalogue settled (I.1, N, O, P, Q: five dead ends, four of them sourced).">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.14 (2026-10-27), five more stub leads of the catalogue settled (Q.bis, V, W, X, Y: five dead ends, four of them sourced).">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.13 (2026-10-27) — five more stub leads of the catalogue settled (I.1, N, O, P, Q: five dead ends, four of them sourced); v0.10.12 (2026-10-22) — five more stub leads of the catalogue settled (three sourced dead ends, H.1 for its MSO / Büchi–Bruyère part only, one dead end with no source of its own, one lead withdrawn; corrections to leads C and K of v0.10.11); v0.10.11 (2026-10-22) — five stub leads of the catalogue settled (three sourced dead ends, one dead end with no published source, one lead withdrawn as unsourced); v0.10.10 (2026-10-21) — Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.14 (2026-10-27) — five more stub leads of the catalogue settled (Q.bis, V, W, X, Y: five dead ends, four of them sourced); v0.10.13 (2026-10-27) — five more stub leads of the catalogue settled (I.1, N, O, P, Q: five dead ends, four of them sourced); v0.10.12 (2026-10-22) — five more stub leads of the catalogue settled (three sourced dead ends, H.1 for its MSO / Büchi–Bruyère part only, one dead end with no source of its own, one lead withdrawn; corrections to leads C and K of v0.10.11); v0.10.11 (2026-10-22) — five stub leads of the catalogue settled (three sourced dead ends, one dead end with no published source, one lead withdrawn as unsourced); v0.10.10 (2026-10-21) — Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -133,6 +133,39 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.14">
+    <header>
+      <h2><span class="version-tag">v0.10.14</span> <span lang="fr">Catalogue : cinq autres pistes « stub » tranchées</span><span lang="en">Catalogue: five more "stub" leads settled</span></h2>
+      <time datetime="2026-10-27">2026-10-27</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Catalogue des pistes</strong> : cinq autres pistes marquées <code>stub</code>, toutes de la Région II, sont tranchées, chacune avec sa source ou sa raison : cinq culs-de-sac, dont quatre sourcés (Q.bis, V, X, Y) et un sans source propre, dont la raison est sourcée (W).</li>
+      <li><strong>Piste Q.bis (parityGraph à rebours)</strong> : classée cul-de-sac en l'état au lieu de « Inconnue », sourcé : l'étude à rebours existe (ensembles de prédécesseurs : Wirsching, 1996 ; nombre d'entiers qui atteignent 1 : Krasikov et Lagarias, 2003), mais ces résultats portent sur les entiers qui atteignent 1, et un cycle non trivial et ses prédécesseurs formeraient un ensemble disjoint de celui-là.</li>
+      <li><strong>Piste V (FRACTRAN / Conway 1972)</strong> : cul-de-sac, désormais sourcé : l'indécidabilité montrée par Conway (1972) et le langage FRACTRAN qu'il en a tiré (1987) portent sur des familles d'applications de type Collatz généralisées, pas sur l'application 3x+1 ni sur ses cycles.</li>
+      <li><strong>Piste W (Anashin 2-adique)</strong> : cul-de-sac, sans source propre : nous n'avons trouvé aucun travail d'Anashin sur 3x+1 (zbMATH et arXiv), et la référence notée en avril 2026 pour cette piste est un article sans rapport ; la raison est sourcée, la même que pour la piste P (Lagarias 1985, remarque suivant le théorème K : les entiers forment un ensemble de mesure nulle dans les entiers 2-adiques).</li>
+      <li><strong>Piste X (Tao 2022)</strong> : cul-de-sac, désormais sourcé ; même article que la piste B : son théorème vaut pour presque tout entier (densité logarithmique), ce qui ne peut pas exclure un cycle, ensemble fini ; l'ancien texte de la fiche (« Tao exclut explicitement cycles dans son paper ») est remplacé par ce que dit l'article (remarque 1.4 et § 5).</li>
+      <li><strong>Piste Y (Krasikov–Lagarias 2003)</strong> : cul-de-sac, désormais sourcé : le résultat minore le nombre π₁(x) d'entiers inférieurs à x qui atteignent 1 (π₁(x) &gt; x^0,84 pour x assez grand) ; les éléments d'un cycle non trivial n'atteignent pas 1.</li>
+      <li><strong>Compteurs</strong> : 1 note à sourcer sur 36 (≈3 %) au lieu de 6 (≈17 %), dans la carte « pistes cataloguées » de l'accueil et dans l'introduction du catalogue, qui cite désormais les vingt pistes tranchées.</li>
+      <li><strong>Carte B des hypothèses</strong> : « 16 sur 16 culs-de-sac dans la Région II » au lieu de 15 (la piste Q.bis) ; son estimation est inchangée.</li>
+      <li><strong>Carte « Dernier audit » de l'accueil</strong> : elle porte désormais sur la relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de cette version ; l'audit précédent (relecture adverse des changements de la v0.10.13, 2026-10-27) y est rappelé.</li>
+      <li><strong>Cache des navigateurs</strong> : paramètre de version de <code>main.js</code> mis à jour (il sert aussi aux données du catalogue).</li>
+      <li>Les entrées ci-dessous restent telles quelles.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Catalogue of leads</strong>: five more leads marked <code>stub</code>, all in Region II, are settled, each with its source or its reason: five dead ends, four of them sourced (Q.bis, V, X, Y) and one with no source of its own, whose reason is sourced (W).</li>
+      <li><strong>Lead Q.bis (backward parityGraph)</strong>: classified as a dead end as things stand instead of "Unexplored", sourced: the backward study exists (predecessor sets: Wirsching, 1996; number of integers that reach 1: Krasikov and Lagarias, 2003), but these results concern the integers that reach 1, and a non-trivial cycle and its predecessors would form a set disjoint from that one.</li>
+      <li><strong>Lead V (FRACTRAN / Conway 1972)</strong>: dead end, now sourced: the undecidability shown by Conway (1972) and the FRACTRAN language he drew from it (1987) concern families of generalised Collatz-type maps, not the 3x+1 map nor its cycles.</li>
+      <li><strong>Lead W (Anashin 2-adic)</strong>: dead end, with no source of its own: we found no work by Anashin on 3x+1 (zbMATH and arXiv), and the reference noted in April 2026 for this lead is an unrelated paper; the reason is sourced, the same as for lead P (Lagarias 1985, remark following Theorem K: the integers form a set of measure zero in the 2-adic integers).</li>
+      <li><strong>Lead X (Tao 2022)</strong>: dead end, now sourced; same paper as lead B: its theorem holds for almost all integers (logarithmic density), which cannot exclude a cycle, a finite set; the former text of the entry ("Tao explicitly excludes cycles in his paper") is replaced by what the paper says (Remark 1.4 and § 5).</li>
+      <li><strong>Lead Y (Krasikov–Lagarias 2003)</strong>: dead end, now sourced: the result bounds from below the number π₁(x) of integers below x that reach 1 (π₁(x) &gt; x^0.84 for sufficiently large x); the elements of a non-trivial cycle do not reach 1.</li>
+      <li><strong>Counters</strong>: 1 note to be sourced out of 36 (≈3 %) instead of 6 (≈17 %), in the "catalogued approaches" card of the home page and in the introduction of the catalogue, which now cites the twenty settled leads.</li>
+      <li><strong>Card B of the hypotheses</strong>: "16 of 16 dead-ends in Region II" instead of 15 (lead Q.bis); its estimate is unchanged.</li>
+      <li><strong>"Latest audit" card of the home page</strong>: it now refers to the internal adversarial review, AI-assisted (not peer review), of the changes of this version; the previous audit (adversarial review of the changes of v0.10.13, 2026-10-27) is recalled.</li>
+      <li><strong>Browser cache</strong>: version parameter of <code>main.js</code> updated (it is also used for the catalogue data).</li>
+      <li>The entries below are kept as they were.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.10.13">
     <header>
       <h2><span class="version-tag">v0.10.13</span> <span lang="fr">Catalogue : cinq autres pistes « stub » tranchées</span><span lang="en">Catalogue: five more "stub" leads settled</span></h2>
@@ -739,7 +772,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.13 · 2026-10-27</div>
+  <div class="footer-meta">Cartography · v0.10.14 · 2026-10-27</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">
@@ -759,7 +792,7 @@
 <!-- Hypothes.is annotations -->
 <script src="https://hypothes.is/embed.js" async></script>
 
-<script src="../assets/js/main.js?v=20261027-V0-10-13"></script>
+<script src="../assets/js/main.js?v=20261027-V0-10-14"></script>
 
 </body>
 </html>
