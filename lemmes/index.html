@@ -443,7 +443,7 @@ function renderLemmes(lang) {
 }
 
 // Initial load
-fetch('../assets/data/lemmes.json?v=20261021-V0-10-9').then(r => r.json()).then(data => {
+fetch('../assets/data/lemmes.json?v=20261027-V0-10-15').then(r => r.json()).then(data => {
   LEMMES_DATA = data;
   renderLemmes(getCurrentLang());
 });
