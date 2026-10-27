@@ -324,7 +324,7 @@
     </div>
     <div class="key-stat">
       <div class="value">36</div>
-      <div class="label" data-i18n="keyStat4Label">pistes cataloguées (dont 1 note à sourcer)</div>
+      <div class="label" data-i18n="keyStat4Label">pistes cataloguées (plus aucune note à sourcer)</div>
       <div class="desc" data-i18n="keyStat4Desc">Région I + II + III</div>
     </div>
   </div>
@@ -371,7 +371,7 @@ graph LR
     P11["Skolem-Mahler-Lech"] -->|"non-LRS"| LAMBDA
     P12["Anashin 2-adique"] -->|"ergodicité ℤ_2"| LAMBDA
     P13["Krasikov-Lagarias"] -->|"densité aveugle"| LAMBDA
-    P14["Holomorphic LSW"] -->|"log|ρ| = -Λ"| LAMBDA
+    P14["Holomorphic LSW"] --> LAMBDA
     P15["Inv. statistiques"] -->|"autocorr. Christoffel"| LAMBDA
 
     LAMBDA["Λ_{S,k}<br/>VERROU"]
@@ -426,7 +426,7 @@ graph LR
 <section id="pistes">
   <div class="section-eyebrow">§ I</div>
   <h2 data-i18n="pistesTitle">Catalogue des voies d'attaque</h2>
-  <p data-i18n="pistesIntro">Catalogue exhaustif des approches mathématiques pour la non-existence des cycles non triviaux Collatz. Cliquez sur une ligne pour voir les détails. <em>Transparence éditoriale : 1 entrée sur 36 (≈3 %) est encore en statut <code>stub</code> — note exploratoire en attente de sourçage formel ; le champ <code>status_meta</code> du JSON la marque explicitement (cf. <code>assets/data/pistes.json</code>). Vingt autres (C, E.4, F, J, K, M, R, H, H.1, H.2, I.1, N, O, P, Q, Q.bis, V, W, X, Y) ont été tranchées les 22 et 27/10/2026 (source vérifiée, cul-de-sac motivé ou retrait) ; la raison figure dans leur fiche.</em></p>
+  <p data-i18n="pistesIntro">Catalogue exhaustif des approches mathématiques pour la non-existence des cycles non triviaux Collatz. Cliquez sur une ligne pour voir les détails. <em>Transparence éditoriale : plus aucune entrée n'est en statut <code>stub</code> (note exploratoire en attente de sourçage formel, que le champ <code>status_meta</code> du JSON marquait explicitement, cf. <code>assets/data/pistes.json</code>). Les vingt et une qui l'étaient (C, E.4, F, J, K, M, R, H, H.1, H.2, I.1, N, O, P, Q, Q.bis, V, W, X, Y, Z) ont été tranchées les 22 et 27/10/2026 (source vérifiée, cul-de-sac motivé ou retrait) ; la raison figure dans leur fiche.</em></p>
 
   <div class="filter-bar">
     <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Rechercher une piste, une référence, un auteur…">
@@ -584,7 +584,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 
 <!-- ========================================================================
      RESEARCH STATUS / ÉTAT DES TRAVAUX (Research Ledger preview)
-     Mis à jour le 2026-10-27 (v0.10.14)
+     Mis à jour le 2026-10-27 (v0.10.15)
      ======================================================================== -->
 <section id="research-status" class="research-status-snapshot">
   <div class="section-eyebrow">§ VI</div>
@@ -643,16 +643,16 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
       <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/057581a/steiner1978" target="_blank" rel="noopener">→ <code>steiner1978/</code> (057581a)</a>
     </div>
 
-    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.14, 2026-10-27) -->
+    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.15, 2026-10-27) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
-      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.14</span><span lang="en">Adversarial review of v0.10.14</span></div>
+      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.15</span><span lang="en">Adversarial review of v0.10.15</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-10-27</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.14 (cinq autres pistes du catalogue, correction du mea culpa #23 et de la piste L), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.13 (cinq autres pistes du catalogue), 2026-10-27.</span>
-        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.14 (five more catalogue leads, correction of mea culpa #23 and of lead L), against the available sources. Previous audit: adversarial review of the changes of v0.10.13 (five more catalogue leads), 2026-10-27.</span>
+        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.15 (dernière piste du catalogue, retrait du test REQ-MATH-007, archivage de la bibliothèque prototype), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.14 (cinq autres pistes du catalogue, correction du mea culpa #23 et de la piste L), 2026-10-27.</span>
+        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.15 (last catalogue lead, withdrawal of test REQ-MATH-007, archiving of the prototype library), against the available sources. Previous audit: adversarial review of the changes of v0.10.14 (five more catalogue leads, correction of mea culpa #23 and of lead L), 2026-10-27.</span>
       </p>
       <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
@@ -847,7 +847,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.14 · 2026-10-27
+    Cartography · v0.10.15 · 2026-10-27
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -904,6 +904,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261027-V0-10-14"></script>
+<script src="assets/js/main.js?v=20261027-V0-10-15"></script>
 </body>
 </html>

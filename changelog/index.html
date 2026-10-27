@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.14 (2026-10-27), five more stub leads of the catalogue settled (Q.bis, V, W, X, Y: five dead ends, four of them sourced); mea culpa #23 corrected (two of its three references exist).">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.15 (2026-10-27), last stub lead of the catalogue settled (Z), test REQ-MATH-007 withdrawn, prototype library archived.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.14 (2026-10-27) — five more stub leads of the catalogue settled (Q.bis, V, W, X, Y: five dead ends, four of them sourced), mea culpa #23 corrected (two of its three references exist); v0.10.13 (2026-10-27) — five more stub leads of the catalogue settled (I.1, N, O, P, Q: five dead ends, four of them sourced); v0.10.12 (2026-10-22) — five more stub leads of the catalogue settled (three sourced dead ends, H.1 for its MSO / Büchi–Bruyère part only, one dead end with no source of its own, one lead withdrawn; corrections to leads C and K of v0.10.11); v0.10.11 (2026-10-22) — five stub leads of the catalogue settled (three sourced dead ends, one dead end with no published source, one lead withdrawn as unsourced); v0.10.10 (2026-10-21) — Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.15 (2026-10-27) — last stub lead of the catalogue settled (Z), test REQ-MATH-007 withdrawn, prototype library archived; v0.10.14 (2026-10-27) — five more stub leads of the catalogue settled (Q.bis, V, W, X, Y: five dead ends, four of them sourced), mea culpa #23 corrected (two of its three references exist); v0.10.13 (2026-10-27) — five more stub leads of the catalogue settled (I.1, N, O, P, Q: five dead ends, four of them sourced); v0.10.12 (2026-10-22) — five more stub leads of the catalogue settled (three sourced dead ends, H.1 for its MSO / Büchi–Bruyère part only, one dead end with no source of its own, one lead withdrawn; corrections to leads C and K of v0.10.11); v0.10.11 (2026-10-22) — five stub leads of the catalogue settled (three sourced dead ends, one dead end with no published source, one lead withdrawn as unsourced); v0.10.10 (2026-10-21) — Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -133,6 +133,37 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.15">
+    <header>
+      <h2><span class="version-tag">v0.10.15</span> <span lang="fr">Catalogue : dernière piste « stub » tranchée ; test REQ-MATH-007 retiré ; bibliothèque prototype archivée</span><span lang="en">Catalogue: last "stub" lead settled; test REQ-MATH-007 withdrawn; prototype library archived</span></h2>
+      <time datetime="2026-10-27">2026-10-27</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Piste Z (dynamique holomorphe, Letherman–Schleicher–Wood 1999)</strong> : cul-de-sac, désormais sourcé, et ancienne note corrigée : dans les fonctions entières de Letherman, Schleicher et Wood, les entiers sont des points critiques, si bien qu'un cycle d'entiers y est superattractif (multiplicateur nul) ; la formule de l'ancienne note (« log|ρ| = -Λ avec convention Lagarias — encode Baker ») vaut pour une autre fonction, l'interpolation étudiée par Chamberland (1996), où le multiplicateur redonne la forme linéaire S log 2 − k log 3 de l'approche principale.</li>
+      <li><strong>Diagramme du verrou</strong> : l'étiquette « log|ρ| = -Λ » de la flèche « Holomorphic LSW » est retirée : elle ne vaut pas pour les fonctions de Letherman, Schleicher et Wood (voir la piste Z).</li>
+      <li><strong>Catalogue des pistes</strong> : plus aucune piste n'est marquée <code>stub</code> ; les vingt et une qui l'étaient ont été tranchées les 22 et 27/10/2026 (v0.10.11 à v0.10.15).</li>
+      <li><strong>Compteurs</strong> : la carte « pistes cataloguées » de l'accueil indique « plus aucune note à sourcer » au lieu d'une, et l'introduction du catalogue cite les vingt et une pistes tranchées.</li>
+      <li><strong>Test REQ-MATH-007 (lemmes ChatGPT en Lean)</strong> : retiré au lieu de « avertissement » : son fichier (branche arsenal-postjar, Lean 4.27.0) est resté dans son état du 29/04/2026, il n'a pas été recompilé sous Lean 4.34, et aucun fichier publié ne l'importe (les deux lemmes dont se sert le théorème CGS-7 en ont été recopiés dans CGS7Dependencies.lean).</li>
+      <li><strong>Carte « Bibliothèque prototype : minima locaux et blocs » de la page Papers</strong> : archivée au lieu de « à consolider ou à archiver » : elle ne sert à aucune des formalisations prévues par le labo et n'a pas été revérifiée sous Lean 4.34 ; la mise en garde sur l'axiome <code>hercher_m_le_91_axiom</code> est conservée. Ses deux fichiers sont marqués « archivé » dans la liste de l'arsenal de la page Lemmes. Le dépôt de code n'est pas modifié.</li>
+      <li><strong>Retouches de la v0.10.14</strong> : mea culpa #23 : l'article de Rozier est daté « en ligne en 2025 », et la leçon est dite « précisée » au lieu de « élargie » (la règle d'avril prévoyait déjà la vérification via DOI, zbMATH ou MR) ; piste Y : « les bibliographies annotées de Lagarias » au lieu de « la bibliographie annotée » (les exposants 0,841 et 0,809 viennent de deux bibliographies).</li>
+      <li><strong>Carte « Dernier audit » de l'accueil</strong> : elle porte désormais sur la relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de cette version ; l'audit précédent (relecture adverse des changements de la v0.10.14, 2026-10-27) y est rappelé.</li>
+      <li><strong>Cache des navigateurs</strong> : paramètre de version de <code>main.js</code> mis à jour (il sert aussi aux données du catalogue).</li>
+      <li>Les entrées ci-dessous restent telles quelles.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Lead Z (holomorphic dynamics, Letherman–Schleicher–Wood 1999)</strong>: dead end, now sourced, and former note corrected: in the entire functions of Letherman, Schleicher and Wood, the integers are critical points, so that an integer cycle is superattracting there (multiplier zero); the formula of the former note ("log|ρ| = -Λ with Lagarias convention — encodes Baker") applies to another function, the interpolation studied by Chamberland (1996), where the multiplier gives back the linear form S log 2 − k log 3 of the main approach.</li>
+      <li><strong>Lock diagram</strong>: the label "log|ρ| = -Λ" of the "Holomorphic LSW" arrow is removed: it does not hold for the functions of Letherman, Schleicher and Wood (see lead Z).</li>
+      <li><strong>Catalogue of leads</strong>: no lead is marked <code>stub</code> any more; the twenty-one that were have been settled on 2026-10-22 and 2026-10-27 (v0.10.11 to v0.10.15).</li>
+      <li><strong>Counters</strong>: the "catalogued approaches" card of the home page reads "no stub notes left" instead of one, and the introduction of the catalogue cites the twenty-one settled leads.</li>
+      <li><strong>Test REQ-MATH-007 (ChatGPT lemmas in Lean)</strong>: withdrawn instead of "warning": its file (arsenal-postjar branch, Lean 4.27.0) has stayed as it was on 2026-04-29, it has not been recompiled under Lean 4.34, and no published file imports it (the two lemmas used by the CGS-7 theorem were copied from it into CGS7Dependencies.lean).</li>
+      <li><strong>"Prototype library: local minima and blocks" card of the Papers page</strong>: archived instead of "to consolidate or archive": it serves none of the formalisations planned by the lab and has not been re-checked under Lean 4.34; the warning about the axiom <code>hercher_m_le_91_axiom</code> is kept. Its two files are marked "archived" in the arsenal list of the Lemmas page. The code repository is not modified.</li>
+      <li><strong>Touch-ups of v0.10.14</strong>: mea culpa #23: Rozier's paper is dated "online in 2025", and the lesson is said to be "made more precise" instead of "widened" (the April rule already provided for the check via DOI, zbMATH or MR); lead Y: "Lagarias's annotated bibliographies" instead of "annotated bibliography" (the exponents 0.841 and 0.809 come from two bibliographies).</li>
+      <li><strong>"Latest audit" card of the home page</strong>: it now refers to the internal adversarial review, AI-assisted (not peer review), of the changes of this version; the previous audit (adversarial review of the changes of v0.10.14, 2026-10-27) is recalled.</li>
+      <li><strong>Browser cache</strong>: version parameter of <code>main.js</code> updated (it is also used for the catalogue data).</li>
+      <li>The entries below are kept as they were.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.10.14">
     <header>
       <h2><span class="version-tag">v0.10.14</span> <span lang="fr">Catalogue : cinq autres pistes « stub » tranchées ; mea culpa #23 corrigé</span><span lang="en">Catalogue: five more "stub" leads settled; mea culpa #23 corrected</span></h2>
@@ -778,7 +809,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.14 · 2026-10-27</div>
+  <div class="footer-meta">Cartography · v0.10.15 · 2026-10-27</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">
@@ -798,7 +829,7 @@
 <!-- Hypothes.is annotations -->
 <script src="https://hypothes.is/embed.js" async></script>
 
-<script src="../assets/js/main.js?v=20261027-V0-10-14"></script>
+<script src="../assets/js/main.js?v=20261027-V0-10-15"></script>
 
 </body>
 </html>

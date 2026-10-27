@@ -447,11 +447,11 @@
       "id": "Y",
       "fr": {
         "name": "Krasikov-Lagarias 2003 (densité)",
-        "why": "Cul-de-sac, sourcé (27/10/2026). Krasikov et Lagarias (Acta Arith. 109 (2003), 237-258) minorent le nombre π_a(x) d'entiers n ≤ x dont l'orbite atteint a : si a n'est pas multiple de 3, π_a(x) > x^0,841 pour x assez grand, améliorant l'exposant 0,809 d'Applegate et Lagarias (1995) (d'après la bibliographie annotée de Lagarias ; leur notice zbMATH l'énonce pour a = 1). Aucun élément d'un cycle non trivial n'est multiple de 3 (voir la piste Q.bis) : la minoration s'appliquerait donc à chacun de ses éléments. Elle dit que chacun aurait beaucoup de prédécesseurs, non qu'un tel cycle n'existe pas."
+        "why": "Cul-de-sac, sourcé (27/10/2026). Krasikov et Lagarias (Acta Arith. 109 (2003), 237-258) minorent le nombre π_a(x) d'entiers n ≤ x dont l'orbite atteint a : si a n'est pas multiple de 3, π_a(x) > x^0,841 pour x assez grand, améliorant l'exposant 0,809 d'Applegate et Lagarias (1995) (d'après les bibliographies annotées de Lagarias ; leur notice zbMATH l'énonce pour a = 1). Aucun élément d'un cycle non trivial n'est multiple de 3 (voir la piste Q.bis) : la minoration s'appliquerait donc à chacun de ses éléments. Elle dit que chacun aurait beaucoup de prédécesseurs, non qu'un tel cycle n'existe pas."
       },
       "en": {
         "name": "Krasikov-Lagarias 2003 (density)",
-        "why": "Dead end, sourced (2026-10-27). Krasikov and Lagarias (Acta Arith. 109 (2003), 237-258) bound from below the number π_a(x) of integers n ≤ x whose orbit reaches a: if a is not a multiple of 3, π_a(x) > x^0.841 for sufficiently large x, improving the exponent 0.809 of Applegate and Lagarias (1995) (according to Lagarias's annotated bibliography; their zbMATH review states it for a = 1). No element of a non-trivial cycle is a multiple of 3 (see lead Q.bis): the lower bound would therefore apply to each of its elements. It says that each of them would have many predecessors, not that such a cycle does not exist."
+        "why": "Dead end, sourced (2026-10-27). Krasikov and Lagarias (Acta Arith. 109 (2003), 237-258) bound from below the number π_a(x) of integers n ≤ x whose orbit reaches a: if a is not a multiple of 3, π_a(x) > x^0.841 for sufficiently large x, improving the exponent 0.809 of Applegate and Lagarias (1995) (according to Lagarias's annotated bibliographies; their zbMATH review states it for a = 1). No element of a non-trivial cycle is a multiple of 3 (see lead Q.bis): the lower bound would therefore apply to each of its elements. It says that each of them would have many predecessors, not that such a cycle does not exist."
       },
       "region": "II",
       "status": "cds",
@@ -462,16 +462,16 @@
       "id": "Z",
       "fr": {
         "name": "Holomorphic dynamics (LSW 1999)",
-        "why": "log|ρ| = -Λ avec convention Lagarias — encode Baker"
+        "why": "Cul-de-sac, sourcé (27/10/2026). Letherman, Schleicher et Wood (Experiment. Math. 8 (1999), 241-251) construisent des fonctions entières qui reproduisent la dynamique de 3n+1 sur les entiers et pour lesquelles tous les entiers sont dans l'ensemble de Fatou ; aucun entier n'est dans un domaine de Baker, et un entier dont l'orbite n'est pas ultimement périodique doit être dans un domaine errant (d'après la notice zbMATH). Les entiers sont des points critiques de ces fonctions (d'après la bibliographie annotée de Lagarias) : un cycle d'entiers y est superattractif, de multiplicateur nul quel que soit le cycle. L'ancienne note de cette fiche (« log|ρ| = -Λ avec convention Lagarias — encode Baker ») vaut pour une autre fonction, l'interpolation (z/2) cos²(πz/2) + ((3z+1)/2) sin²(πz/2), étudiée sur la droite réelle par Chamberland (1996) : sa dérivée vaut 1/2 aux entiers pairs et 3/2 aux impairs, si bien que le logarithme du multiplicateur d'un cycle de S pas à k termes impairs vaut −(S log 2 − k log 3), la forme linéaire déjà au cœur de l'approche principale. Dans les deux cas, le multiplicateur n'apporte rien de nouveau sur l'existence d'un cycle."
       },
       "en": {
         "name": "Holomorphic dynamics (LSW 1999)",
-        "why": "log|ρ| = -Λ with Lagarias convention — encodes Baker"
+        "why": "Dead end, sourced (2026-10-27). Letherman, Schleicher and Wood (Experiment. Math. 8 (1999), 241-251) construct entire functions that reproduce the 3n+1 dynamics on the integers and for which all the integers are in the Fatou set; no integer is in a Baker domain, and an integer whose orbit is not eventually periodic must be in a wandering domain (according to the zbMATH review). The integers are critical points of these functions (according to Lagarias's annotated bibliography): an integer cycle is superattracting there, with multiplier zero whatever the cycle. The former note of this entry (\"log|ρ| = -Λ with Lagarias convention — encodes Baker\") applies to another function, the interpolation (z/2) cos²(πz/2) + ((3z+1)/2) sin²(πz/2), studied on the real line by Chamberland (1996): its derivative is 1/2 at even integers and 3/2 at odd ones, so that the logarithm of the multiplier of a cycle of S steps with k odd terms is −(S log 2 − k log 3), the linear form already at the heart of the main approach. In both cases, the multiplier brings nothing new about the existence of a cycle."
       },
       "region": "II",
       "status": "cds",
       "test4": "1/4",
-      "status_meta": "stub"
+      "ref": "Letherman, Schleicher & Wood, Experiment. Math. 8 (1999), 241-251; Chamberland (1996)"
     },
     {
       "id": "P6",
@@ -662,14 +662,14 @@
     {
       "id": "REQ-MATH-007",
       "fr": {
-        "title": "Compilation Lean lemmes ChatGPT",
-        "result": "Squelettes corrects, 6 erreurs API Mathlib v4.27 à ajuster"
+        "title": "Compilation Lean lemmes ChatGPT (retiré)",
+        "result": "Retiré le 27/10/2026. Le fichier de test (branche arsenal-postjar, Lean 4.27.0) est resté dans son état du 29/04/2026, date d'un compte rendu interne qui notait « Lemmes ChatGPT compilent partiellement (2/6 OK) » et « 6 erreurs API » ; une copie a reçu deux correctifs pour Mathlib v4.27 le 01/05/2026 (branche study/cgs-7-instantiation). Les trois branches qui le contiennent sont en Lean 4.27.0 : il n'a pas été recompilé sous Lean 4.34. Aucun fichier publié ne l'importe : les deux lemmes dont se sert le théorème CGS-7 en ont été recopiés, adaptés à Mathlib v4.27, dans CGS7Dependencies.lean."
       },
       "en": {
-        "title": "ChatGPT Lean lemmas compilation",
-        "result": "Skeletons correct, 6 Mathlib v4.27 API errors to adjust"
+        "title": "ChatGPT Lean lemmas compilation (withdrawn)",
+        "result": "Withdrawn on 2026-10-27. The test file (arsenal-postjar branch, Lean 4.27.0) has stayed as it was on 2026-04-29, the date of an internal report that noted that the ChatGPT lemmas compiled only partly (2 of 6) and that there were 6 API errors; a copy received two fixes for Mathlib v4.27 on 2026-05-01 (study/cgs-7-instantiation branch). The three branches that contain it are on Lean 4.27.0: it has not been recompiled under Lean 4.34. No published file imports it: the two lemmas used by the CGS-7 theorem were copied from it, adapted to Mathlib v4.27, into CGS7Dependencies.lean."
       },
-      "exit": "warning",
+      "exit": "withdrawn",
       "file": "tests_math/lean/ChatGPTLemmas_test.lean"
     },
     {
