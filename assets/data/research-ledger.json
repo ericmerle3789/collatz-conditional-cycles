@@ -1,11 +1,94 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-10-21T21:00:54Z",
-  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
+  "generated": "2026-10-27T14:09:52Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "catalogue-stub-leads-settled-2026-10-27",
+      "type": "audit",
+      "subtype": "catalogue-review",
+      "date": "2026-10-27",
+      "datetime": "2026-10-27T13:15:27+01:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-27",
+      "title": {
+        "fr": "Catalogue : les 21 pistes « stub » tranchées",
+        "en": "Catalogue: the 21 \"stub\" leads settled"
+      },
+      "summary": {
+        "fr": "Les 21 pistes du catalogue qui n'étaient encore que des notes à sourcer (statut « stub ») ont été tranchées du 22 au 27/10/2026, par lots de cinq (v0.10.11 à v0.10.15), chacune avec sa source vérifiée ou sa raison : toutes sont classées culs-de-sac, certaines retirées. Chaque lot a été relu par une relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), jusqu'à deux passes consécutives sans défaut. Corrections publiées en chemin : la correction datée des pistes K et C de la v0.10.11 (v0.10.12) ; la correction datée du mea culpa #23, dont deux des trois références existent (v0.10.14) ; le nom et la référence de la piste L (v0.10.14) ; l'ancien texte de la piste X (v0.10.14) et l'ancienne note de la piste Z (v0.10.15). Avec la v0.10.15, le test REQ-MATH-007 est retiré et la bibliothèque prototype archivée.",
+        "en": "The 21 leads of the catalogue that were still only notes to be sourced (\"stub\" status) were settled from 22 to 27 October 2026, in batches of five (v0.10.11 to v0.10.15), each with its checked source or its reason: all are classified as dead ends, some of them withdrawn. Each batch was examined by an internal adversarial review, AI-assisted (not peer review), until two consecutive passes without defect. Corrections published along the way: the dated correction of leads K and C of v0.10.11 (v0.10.12); the dated correction of mea culpa #23, two of whose three references exist (v0.10.14); the name and reference of lead L (v0.10.14); the former text of lead X (v0.10.14) and the former note of lead Z (v0.10.15). With v0.10.15, test REQ-MATH-007 is withdrawn and the prototype library archived."
+      },
+      "artefacts": [
+        {"label": "Changelog v0.10.11 to v0.10.15", "url": "/changelog/", "kind": "site-section"},
+        {"label": "Catalogue of leads", "url": "/#pistes", "kind": "site-section"}
+      ],
+      "related": ["site-audit-2026-10-02"]
+    },
+
+    {
+      "id": "lean-repo-release-v1-3-2026-10-27",
+      "type": "repository",
+      "subtype": "release",
+      "date": "2026-10-27",
+      "datetime": "2026-10-27T09:47:39+01:00",
+      "status": "validated",
+      "milestone": false,
+      "claim_scope": "documentation",
+      "verification_method": "github_tag",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-27",
+      "title": {
+        "fr": "Release v1.3 du dépôt Lean (documentation seulement)",
+        "en": "Release v1.3 of the Lean repository (documentation only)"
+      },
+      "summary": {
+        "fr": "Release v1.3 du dépôt one-obstruction-three-faces-lean, archivée sur Zenodo (DOI 10.5281/zenodo.23686224) : documentation et métadonnées seulement, les fichiers Lean sont inchangés depuis la v1.2. Elle retire l'affirmation de la release v1.2 selon laquelle l'article original de Steiner (1978) n'avait pas pu être consulté, ainsi que celle de l'en-tête figé de Steiner_Enonces.lean (inchangé) selon laquelle il n'était pas disponible : les énoncés et la preuve ont été écrits sans l'article, lu ensuite et comparé (événement du 21/10/2026).",
+        "en": "Release v1.3 of the one-obstruction-three-faces-lean repository, archived on Zenodo (DOI 10.5281/zenodo.23686224): documentation and metadata only; the Lean files are unchanged since v1.2. It withdraws the statement of release v1.2 that Steiner's original paper (1978) \"could not be accessed\", and that of the frozen header of Steiner_Enonces.lean (unchanged) that it was not available: the statements and the proof were written without the paper, which was read afterwards and compared (event of 2026-10-21)."
+      },
+      "artefacts": [
+        {"label": "Release v1.3", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/releases/tag/v1.3", "kind": "tag"},
+        {"label": "DOI 10.5281/zenodo.23686224", "url": "https://doi.org/10.5281/zenodo.23686224", "kind": "doi"}
+      ],
+      "related": ["steiner1978-original-compared-2026-10-21", "steiner1978-lean-formalisation-2026-10-21"]
+    },
+
+    {
+      "id": "steiner1978-original-compared-2026-10-21",
+      "type": "lean",
+      "subtype": "source-comparison",
+      "date": "2026-10-21",
+      "datetime": "2026-10-21T22:38:25+02:00",
+      "status": "validated",
+      "milestone": false,
+      "claim_scope": "documentation",
+      "verification_method": "manual",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-27",
+      "title": {
+        "fr": "Steiner 1978 : formalisation comparée à l'article original",
+        "en": "Steiner 1978: formalisation compared with the original paper"
+      },
+      "summary": {
+        "fr": "Les énoncés de la formalisation de Steiner 1978 avaient été figés (commit 7fd7873) et prouvés avant la lecture de l'article original (Congr. Numer. 20 (1978), 553-559). Le 21/10/2026 au soir, après la release v1.2, l'article (7 pages) a été lu sur une copie numérisée et comparé aux énoncés, sans exhaustivité : rien ne change dans les fichiers Lean. Source : steiner1978/README.md au commit 057581a, section « Comparison with the original ».",
+        "en": "The statements of the Steiner 1978 formalisation had been frozen (commit 7fd7873) and proved before the original paper (Congr. Numer. 20 (1978), 553-559) was read. On the evening of 2026-10-21, after release v1.2, the paper (7 pages) was read in a scanned copy and compared with the statements, not exhaustively: nothing in the Lean files changes. Source: steiner1978/README.md at commit 057581a, section \"Comparison with the original\"."
+      },
+      "artefacts": [
+        {"label": "steiner1978/README.md (057581a)", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/057581a/steiner1978/README.md", "kind": "repository"}
+      ],
+      "related": ["steiner1978-lean-formalisation-2026-10-21", "lean-repo-release-v1-3-2026-10-27"]
+    },
 
     {
       "id": "steiner1978-lean-formalisation-2026-10-21",
@@ -945,13 +1028,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 34,
-    "by_type": {"lean": 9, "repository": 7, "audit": 6, "mea-culpa": 4, "study": 4, "paper": 4},
-    "by_status": {"validated": 24, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
-    "by_milestone": {"true": 25, "false": 9},
-    "by_claim_scope": {"documentation": 20, "formal_lean": 9, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 22, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
-    "note_fr": "Registre partiel : 34 événements (mise à jour du 2026-10-21). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 34 events (update of 2026-10-21). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "total_events": 37,
+    "by_type": {"lean": 10, "repository": 8, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
+    "by_status": {"validated": 27, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
+    "by_milestone": {"true": 26, "false": 11},
+    "by_claim_scope": {"documentation": 23, "formal_lean": 9, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
+    "by_epistemic_status": {"verified": 25, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
+    "note_fr": "Registre partiel : 37 événements (mise à jour du 2026-10-27). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 37 events (update of 2026-10-27). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }

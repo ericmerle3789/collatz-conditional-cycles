@@ -71,7 +71,7 @@
   <!-- Research Ledger — public versioned registry -->
   <url>
     <loc>https://collatz-lab.org/research-ledger/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/research-ledger/"/>
@@ -124,7 +124,7 @@
   <!-- Histoire / History — timeline 1937-2026 -->
   <url>
     <loc>https://collatz-lab.org/histoire/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://collatz-lab.org/histoire/"/>
