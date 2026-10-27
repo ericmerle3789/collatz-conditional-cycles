@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-27T09:14:46Z</updated>
+  <updated>2026-10-27T09:31:09Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -21,8 +21,8 @@
     <title>v0.10.13 — Catalogue: five more "stub" leads settled</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.13-stub-leads-batch3-2026-10-27</id>
-    <updated>2026-10-27T09:14:46Z</updated>
-    <published>2026-10-27T09:14:46Z</published>
+    <updated>2026-10-27T09:31:09Z</updated>
+    <published>2026-10-27T09:31:09Z</published>
     <category term="release"/>
     <category term="audit"/>
     <summary>Five more leads of the catalogue marked "stub", all in Region II, are settled as dead ends, each with its source or its reason. Lead I.1 (braids / knots): no published source found; the lab's exploration of 2026-04-29 had found no canonical encoding of a cycle as a topological object. Lead N (arithmetic topos, Mochizuki's IUT): dead end as things stand instead of "Unexplored": the IUT proof of abc is disputed (zbMATH review of its first part, signed by P. Scholze), and the only published abc–3x+1 link we found (Rozier, 2025) does not concern cycles. Lead O (complexity theory): dead end as things stand instead of "Unexplored": the undecidability results that we found (Conway 1972; Kurtz and Simon 2007) concern generalised Collatz maps, not 3x+1. Lead P (statistical mechanics, Sinai 2003): dead end instead of "Unexplored": statistical statements, and Lagarias (1985, Theorem K, after Matthews and Watts): the mixing of T on the 2-adic integers implies nothing about the integers, a set of measure zero. Lead Q (forward parityGraph): dead end, now sourced: the adjacency matrix of the 3x+1 graph has been studied (Alves et al. 2005; Cardon and Tuckfield 2011), and these formulations are equivalent to the cycle question without settling it; on any finite subset stable under the map, the spectrum only restates the cycles. Counters: 6 stub notes out of 36 instead of 11; card B of the hypotheses: 15 of 16 dead-ends in Region II instead of 12, estimate unchanged; "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version.</summary>
