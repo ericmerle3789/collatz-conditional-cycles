@@ -1,6 +1,6 @@
 {
   "version": "0.9.0",
-  "lastUpdate": "2026-10-22",
+  "lastUpdate": "2026-10-27",
   "pistes": [
     {
       "id": "★ Main",
@@ -317,73 +317,71 @@
       "id": "I.1",
       "fr": {
         "name": "Tresses / Nœuds topologiques",
-        "why": "Invariants topologiques insensibles aux valuations 2/3-adiques"
+        "why": "Cul-de-sac (27/10/2026), sans source publiée : nous n'avons trouvé aucune source qui relie les cycles de Collatz aux tresses ou aux nœuds (recherche arXiv et zbMATH du 27/10/2026). Le labo l'a explorée le 29/04/2026 (compte rendu interne) : « Pas d'encodage canonique cycle Collatz ↦ objet topologique » ; les invariants usuels (Alexander, Jones, Khovanov, Vassiliev) y sont jugés « homotopiques, pas arithmétiques », donc aveugles aux valuations 2-adiques et 3-adiques dont dépend l'existence d'un cycle."
       },
       "en": {
         "name": "Braids / Topological knots",
-        "why": "Topological invariants insensitive to 2/3-adic valuations"
+        "why": "Dead end (2026-10-27), with no published source: we found no source linking Collatz cycles to braids or knots (arXiv and zbMATH search of 2026-10-27). The lab explored it on 2026-04-29 (internal report): it found no canonical encoding of a Collatz cycle as a topological object, and judged the usual invariants (Alexander, Jones, Khovanov, Vassiliev) to be homotopical rather than arithmetic, hence blind to the 2-adic and 3-adic valuations on which the existence of a cycle depends."
       },
       "region": "II",
       "status": "cds",
-      "test4": "0/4",
-      "status_meta": "stub"
+      "test4": "0/4"
     },
     {
       "id": "N",
       "fr": {
         "name": "Topos arithmétique (Mochizuki IUT)",
-        "why": "Effort > 10 ans, controversé Scholze-Stix"
+        "why": "Cul-de-sac en l'état, sourcé (27/10/2026). La théorie inter-universelle de Teichmüller (Mochizuki, Publ. Res. Inst. Math. Sci. 57 (2021), 3-723) vise à démontrer la conjecture abc ; la notice zbMATH de sa première partie, signée par P. Scholze, renvoie au manuscrit « Why ABC is still a conjecture » (avec J. Stix) et note que les objections de ce manuscrit n'ont pas été traitées dans la version publiée. Et le seul lien publié entre abc et 3x+1 que nous ayons trouvé (Rozier, Experimental Mathematics, 2025 ; arXiv:2306.15284) porte sur un type particulier de suites finies, pas sur les cycles. Le volet « topos » de l'intitulé n'a pas de source dans ce que nous avons relu. En avril 2026, la piste figurait parmi les « Pistes potentielles non-explorées » (compte rendu interne du 29/04/2026)."
       },
       "en": {
         "name": "Arithmetic topos (Mochizuki IUT)",
-        "why": "Effort > 10 years, controversial Scholze-Stix"
+        "why": "Dead end as things stand, sourced (2026-10-27). Inter-universal Teichmüller theory (Mochizuki, Publ. Res. Inst. Math. Sci. 57 (2021), 3-723) aims to prove the abc conjecture; the zbMATH review of its first part, signed by P. Scholze, refers to the manuscript \"Why ABC is still a conjecture\" (with J. Stix) and notes that the concerns of that manuscript have not been addressed in the published version. And the only published link between abc and 3x+1 that we found (Rozier, Experimental Mathematics, 2025; arXiv:2306.15284) concerns a particular type of finite sequences, not cycles. The \"topos\" part of the title has no source in what we have re-read. In April 2026, the lead was listed among the potential leads not yet explored (internal report of 2026-04-29)."
       },
       "region": "II",
-      "status": "inconnu",
-      "status_meta": "stub"
+      "status": "cds",
+      "ref": "Mochizuki, Publ. Res. Inst. Math. Sci. 57 (2021), 3-723; zbMATH 1465.14002; Rozier, DOI 10.1080/10586458.2025.2470938"
     },
     {
       "id": "O",
       "fr": {
         "name": "Théorie de la complexité",
-        "why": "Réduction Cook-Levin non explorée"
+        "why": "Cul-de-sac en l'état, sourcé (27/10/2026). Les résultats de complexité connus portent sur des familles d'applications de type Collatz généralisées, pas sur l'application 3x+1 elle-même : Conway (1972) montre qu'un problème d'itération de même forme que celui de 3x+1 est indécidable, et Kurtz et Simon (2007) prolongent ce résultat au problème de Collatz généralisé (d'après les notes de la bibliographie annotée de Lagarias). Nous n'avons trouvé aucune source qui relie la question des cycles de 3x+1 à une réduction de type Cook–Levin (recherche arXiv et zbMATH du 27/10/2026). En avril 2026, la piste figurait parmi les « Pistes potentielles non-explorées » (compte rendu interne du 29/04/2026)."
       },
       "en": {
         "name": "Complexity theory",
-        "why": "Cook-Levin reduction not explored"
+        "why": "Dead end as things stand, sourced (2026-10-27). The known complexity results concern families of generalised Collatz-type maps, not the 3x+1 map itself: Conway (1972) shows that an iteration problem of the same form as that of 3x+1 is undecidable, and Kurtz and Simon (2007) extend this result to the generalised Collatz problem (according to the notes of Lagarias's annotated bibliography). We found no source linking the cycle question for 3x+1 to a Cook–Levin-type reduction (arXiv and zbMATH search of 2026-10-27). In April 2026, the lead was listed among the potential leads not yet explored (internal report of 2026-04-29)."
       },
       "region": "II",
-      "status": "inconnu",
-      "status_meta": "stub"
+      "status": "cds",
+      "ref": "Conway, Proc. 1972 Number Theory Conf. (Boulder), 49-52; Kurtz & Simon, LNCS 4484 (2007), 542-553"
     },
     {
       "id": "P",
       "fr": {
         "name": "Mécanique statistique (Sinai 2003)",
-        "why": "Mesures Haar p-adiques — non exploré pour cycles"
+        "why": "Cul-de-sac, sourcé (27/10/2026). Les résultats statistiques portent sur les trajectoires typiques : Sinai (Comm. Pure Appl. Math. 56 (2003), 1016-1028) en tire des énoncés statistiques qui donnent des raisons de croire la conjecture vraie (d'après sa notice zbMATH). Du côté des mesures 2-adiques, Lagarias (Amer. Math. Monthly 92 (1985), théorème K) montre que l'application T se prolonge aux entiers 2-adiques en une transformation qui préserve la mesure et est fortement mélangeante, puis note que ce résultat n'implique rien sur les entiers, qui forment un ensemble de mesure nulle. Un cycle est un ensemble fini : ces énoncés ne le voient pas (même ressort que la piste B). En avril 2026, la piste figurait parmi les « Pistes potentielles non-explorées » (compte rendu interne du 29/04/2026)."
       },
       "en": {
         "name": "Statistical mechanics (Sinai 2003)",
-        "why": "p-adic Haar measures — not explored for cycles"
+        "why": "Dead end, sourced (2026-10-27). Statistical results concern typical trajectories: Sinai (Comm. Pure Appl. Math. 56 (2003), 1016-1028) derives statistical statements from them that give some reason to expect the conjecture to be true (according to its zbMATH review). On the side of 2-adic measures, Lagarias (Amer. Math. Monthly 92 (1985), Theorem K) shows that the map T extends to the 2-adic integers as a measure-preserving, strongly mixing transformation, and then notes that this result implies nothing about the integers, which form a set of measure zero. A cycle is a finite set: these statements do not see it (same reason as lead B). In April 2026, the lead was listed among the potential leads not yet explored (internal report of 2026-04-29)."
       },
       "region": "II",
-      "status": "inconnu",
-      "status_meta": "stub"
+      "status": "cds",
+      "ref": "Sinai, Comm. Pure Appl. Math. 56 (2003), 1016-1028; Lagarias, Amer. Math. Monthly 92 (1985), 3-23"
     },
     {
       "id": "Q",
       "fr": {
         "name": "parityGraph forward",
-        "why": "Graphe fonctionnel = spectre tautologique"
+        "why": "Cul-de-sac (27/10/2026), sans source publiée : nous n'avons trouvé aucune source sur ce graphe pour les cycles (recherche arXiv et zbMATH du 27/10/2026). Le labo l'a explorée le 29/04/2026 (compte rendu interne) : « Random walk forward déterministe », et le spectre est « trivialement déterminé par les cycles (racines de l'unité) ». C'est un fait élémentaire pour un graphe fini où chaque sommet a un seul successeur : le spectre de sa matrice d'adjacence ne contient que 0 et les racines L-ièmes de l'unité, pour chaque cycle de longueur L. Il ne fait donc que redire les cycles qu'on cherche."
       },
       "en": {
         "name": "Forward parityGraph",
-        "why": "Functional graph = tautological spectrum"
+        "why": "Dead end (2026-10-27), with no published source: we found no source on this graph for cycles (arXiv and zbMATH search of 2026-10-27). The lab explored it on 2026-04-29 (internal report): the forward random walk is deterministic, and the spectrum is trivially determined by the cycles (roots of unity). This is an elementary fact for a finite graph in which each vertex has a single successor: the spectrum of its adjacency matrix contains only 0 and the L-th roots of unity, for each cycle of length L. It therefore only restates the cycles one is looking for."
       },
       "region": "II",
       "status": "cds",
-      "test4": "0/4",
-      "status_meta": "stub"
+      "test4": "0/4"
     },
     {
       "id": "Q.bis",

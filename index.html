@@ -85,7 +85,7 @@
         "url": "https://github.com/ericmerle3789"
       },
       "datePublished": "2026-04-27T00:00:00+02:00",
-      "dateModified": "2026-10-22T00:00:00+02:00",
+      "dateModified": "2026-10-27T00:00:00+02:00",
       "genre": "research article",
       "image": "https://collatz-lab.org/assets/og-image.png",
       "mainEntityOfPage": {
@@ -324,7 +324,7 @@
     </div>
     <div class="key-stat">
       <div class="value">36</div>
-      <div class="label" data-i18n="keyStat4Label">pistes cataloguées (dont 11 notes à sourcer)</div>
+      <div class="label" data-i18n="keyStat4Label">pistes cataloguées (dont 6 notes à sourcer)</div>
       <div class="desc" data-i18n="keyStat4Desc">Région I + II + III</div>
     </div>
   </div>
@@ -426,7 +426,7 @@ graph LR
 <section id="pistes">
   <div class="section-eyebrow">§ I</div>
   <h2 data-i18n="pistesTitle">Catalogue des voies d'attaque</h2>
-  <p data-i18n="pistesIntro">Catalogue exhaustif des approches mathématiques pour la non-existence des cycles non triviaux Collatz. Cliquez sur une ligne pour voir les détails. <em>Transparence éditoriale : 11 entrées sur 36 (≈31 %) sont encore en statut <code>stub</code> — notes exploratoires en attente de sourçage formel ; le champ <code>status_meta</code> du JSON les marque explicitement (cf. <code>assets/data/pistes.json</code>). Dix autres (C, E.4, F, J, K, M, R, H, H.1, H.2) ont été tranchées le 22/10/2026 (source vérifiée, cul-de-sac motivé ou retrait) ; la raison figure dans leur fiche.</em></p>
+  <p data-i18n="pistesIntro">Catalogue exhaustif des approches mathématiques pour la non-existence des cycles non triviaux Collatz. Cliquez sur une ligne pour voir les détails. <em>Transparence éditoriale : 6 entrées sur 36 (≈17 %) sont encore en statut <code>stub</code> — notes exploratoires en attente de sourçage formel ; le champ <code>status_meta</code> du JSON les marque explicitement (cf. <code>assets/data/pistes.json</code>). Quinze autres (C, E.4, F, J, K, M, R, H, H.1, H.2, I.1, N, O, P, Q) ont été tranchées les 22 et 27/10/2026 (source vérifiée, cul-de-sac motivé ou retrait) ; la raison figure dans leur fiche.</em></p>
 
   <div class="filter-bar">
     <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Rechercher une piste, une référence, un auteur…">
@@ -490,8 +490,8 @@ graph LR
       <div class="card-eyebrow">B</div>
       <h3 lang="fr">Téléportation hors domaine</h3>
       <h3 lang="en">Out-of-domain teleportation</h3>
-      <p lang="fr">Probabilité finale : <strong>5-10%</strong> — 12 sur 16 culs-de-sac dans la Région II.</p>
-      <p lang="en">Final probability: <strong>5-10%</strong> — 12 of 16 dead-ends in Region II.</p>
+      <p lang="fr">Probabilité finale : <strong>5-10%</strong> — 15 sur 16 culs-de-sac dans la Région II.</p>
+      <p lang="en">Final probability: <strong>5-10%</strong> — 15 of 16 dead-ends in Region II.</p>
     </div>
     <div class="card" style="border-left: 3px solid var(--accent);">
       <div class="card-eyebrow">C</div>
@@ -585,7 +585,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 
 <!-- ========================================================================
      RESEARCH STATUS / ÉTAT DES TRAVAUX (Research Ledger preview)
-     Mis à jour le 2026-10-22 (v0.10.12)
+     Mis à jour le 2026-10-27 (v0.10.13)
      ======================================================================== -->
 <section id="research-status" class="research-status-snapshot">
   <div class="section-eyebrow">§ VI</div>
@@ -598,7 +598,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     <em lang="en">This section documents project status and traceability; it is not a claim of acceptance or final proof.</em>
   </p>
 
-  <!-- Status snapshot : 5 cartes compactes (état au 2026-10-22) -->
+  <!-- Status snapshot : 5 cartes compactes (état au 2026-10-27) -->
   <div class="status-snapshot-grid">
 
     <!-- Carte 1 : Dernier jalon — Steiner 1978 en Lean (2026-10-21) -->
@@ -644,16 +644,16 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
       <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/057581a/steiner1978" target="_blank" rel="noopener">→ <code>steiner1978/</code> (057581a)</a>
     </div>
 
-    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.12, 2026-10-22) -->
+    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.13, 2026-10-27) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
-      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.12</span><span lang="en">Adversarial review of v0.10.12</span></div>
+      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.13</span><span lang="en">Adversarial review of v0.10.13</span></div>
       <div class="status-card-meta">
-        <span class="status-card-date">2026-10-22</span>
+        <span class="status-card-date">2026-10-27</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.12 (cinq autres pistes du catalogue, corrections de C et K), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.11 (cinq pistes du catalogue), 2026-10-22.</span>
-        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.12 (five more catalogue leads, corrections of C and K), against the available sources. Previous audit: adversarial review of the changes of v0.10.11 (five catalogue leads), 2026-10-22.</span>
+        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.13 (cinq autres pistes du catalogue), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.12 (cinq autres pistes du catalogue, corrections de C et K), 2026-10-22.</span>
+        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.13 (five more catalogue leads), against the available sources. Previous audit: adversarial review of the changes of v0.10.12 (five more catalogue leads, corrections of C and K), 2026-10-22.</span>
       </p>
       <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
@@ -848,7 +848,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.12 · 2026-10-22
+    Cartography · v0.10.13 · 2026-10-27
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -905,6 +905,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261022-V0-10-12"></script>
+<script src="assets/js/main.js?v=20261027-V0-10-13"></script>
 </body>
 </html>
