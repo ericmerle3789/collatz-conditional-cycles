@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-27T14:09:52Z</updated>
+  <updated>2026-10-27T14:23:49Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -21,11 +21,11 @@
     <title>v0.10.16 — Timeline and summary: ledger, History and home page updated</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.16-timeline-summary-2026-10-27</id>
-    <updated>2026-10-27T14:09:52Z</updated>
-    <published>2026-10-27T14:09:52Z</published>
+    <updated>2026-10-27T14:23:49Z</updated>
+    <published>2026-10-27T14:23:49Z</published>
     <category term="release"/>
     <category term="audit"/>
-    <summary>Research ledger: three events added: the Steiner 1978 formalisation compared with the original paper (evening of 2026-10-21; nothing in the Lean files changes); release v1.3 of the Lean repository (2026-10-27, DOI 10.5281/zenodo.23686224; documentation only), which withdraws the statement that the paper "could not be accessed"; and a milestone: the 21 "stub" leads of the catalogue settled (v0.10.11 to v0.10.15), with the corrections published along the way. Ledger counters: 37 events instead of 34, 26 milestones instead of 25. History page, October entry: two sentences added. Home page: "Latest milestone" card now shows the settled leads (Steiner 1978 becomes the previous milestone); "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version; "Last Lean verification" card checked and unchanged.</summary>
+    <summary>Research ledger: three events added: the Steiner 1978 formalisation compared with the original paper (evening of 2026-10-21; nothing in the Lean files changes); release v1.3 of the Lean repository (2026-10-27, DOI 10.5281/zenodo.23686224; documentation only), which records the withdrawal, dated 21 October, of the statement that the paper "could not be accessed"; and a milestone: the 21 "stub" leads of the catalogue settled (v0.10.11 to v0.10.15), with the corrections published along the way. Ledger counters: 37 events instead of 34, 26 milestones instead of 25. History page, October entry: two sentences added. Home page: "Latest milestone" card now shows the settled leads (Steiner 1978 becomes the previous milestone); "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version; "Last Lean verification" card checked and unchanged.</summary>
   </entry>
 
   <entry>
