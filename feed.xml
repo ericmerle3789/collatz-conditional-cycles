@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-27T11:55:33Z</updated>
+  <updated>2026-10-27T12:15:27Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -21,8 +21,8 @@
     <title>v0.10.15 — Catalogue: last "stub" lead settled; test REQ-MATH-007 withdrawn; prototype library archived</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.15-stub-leads-batch5-2026-10-27</id>
-    <updated>2026-10-27T11:55:33Z</updated>
-    <published>2026-10-27T11:55:33Z</published>
+    <updated>2026-10-27T12:15:27Z</updated>
+    <published>2026-10-27T12:15:27Z</published>
     <category term="release"/>
     <category term="audit"/>
     <summary>Lead Z (holomorphic dynamics, Letherman–Schleicher–Wood 1999): dead end, now sourced, former note corrected: in their entire functions the integers are critical points, so an integer cycle is superattracting (multiplier zero); the formula of the former note applies to the interpolation studied by Chamberland (1996), where the multiplier gives back the linear form S log 2 − k log 3. Lock diagram: the label "log|ρ| = -Λ" of the "Holomorphic LSW" arrow is removed. No lead of the catalogue is marked "stub" any more: the twenty-one that were have been settled (v0.10.11 to v0.10.15); home-page counter and catalogue introduction updated. Test REQ-MATH-007 (ChatGPT lemmas in Lean) withdrawn: its file has not changed since 2026-04-29, we know of no recompilation of it under Lean 4.34, and no published file imports it. "Prototype library: local minima and blocks" card of the Papers page archived (serves no planned formalisation; no re-check under Lean 4.34 known to us), its two files marked "archived" on the Lemmas page; the code repository is not modified. Touch-ups of v0.10.14: mea culpa #23 (Rozier's paper online in 2025; rule summary completed; lesson "made more precise") and lead Y (two annotated bibliographies). "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version.</summary>
