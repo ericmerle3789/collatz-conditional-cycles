@@ -227,17 +227,17 @@
     {
       "id": "L",
       "fr": {
-        "name": "Néron-Tate / Rozier-Terracol 2026",
+        "name": "Néron-Tate / Rozier 2023",
         "why": "ABC ⟹ Λ effective, mais ABC non-démontrée"
       },
       "en": {
-        "name": "Néron-Tate / Rozier-Terracol 2026",
+        "name": "Néron-Tate / Rozier 2023",
         "why": "ABC ⟹ effective Λ, but ABC not proven"
       },
       "region": "I",
       "status": "cds",
       "test4": "0/4",
-      "ref": "Rozier-Terracol, Discrete Math. 349(10), 115167"
+      "ref": "Rozier, Experimental Math. 35 (2026), 325-334; arXiv:2306.15284"
     },
     {
       "id": "M",
@@ -388,11 +388,11 @@
       "id": "Q.bis",
       "fr": {
         "name": "parityGraph backward (multi-prédécesseurs)",
-        "why": "Cul-de-sac en l'état, sourcé (27/10/2026). L'étude « à rebours » existe : Wirsching (Discrete Math. 148 (1996), 265-286) étudie l'ensemble des prédécesseurs d'un entier, c'est-à-dire de tous les entiers dont l'orbite l'atteint, et Krasikov et Lagarias (Acta Arith. 109 (2003), 237-258) montrent que le nombre π₁(x) d'entiers inférieurs à x qui atteignent 1 dépasse x^0,84 pour x assez grand (d'après leurs notices zbMATH). Ces résultats portent sur les entiers qui atteignent 1 ; un cycle non trivial et ses prédécesseurs formeraient un ensemble disjoint de celui-là, sur lequel ils ne disent rien. En avril 2026, la piste était notée « Sous-piste Q.backward réouverte » (cartographie interne du 29/04/2026), puis rangée parmi les « Pistes potentielles non-explorées » (bilan interne du même jour)."
+        "why": "Cul-de-sac en l'état, sourcé (27/10/2026). L'étude « à rebours » existe : Wirsching (Discrete Math. 148 (1996), 265-286) étudie l'ensemble des prédécesseurs d'un entier a, c'est-à-dire de tous les entiers dont l'orbite atteint a (d'après sa notice zbMATH), et Krasikov et Lagarias (Acta Arith. 109 (2003), 237-258) montrent que, si a n'est pas multiple de 3, le nombre π_a(x) d'entiers n ≤ x dont l'orbite atteint a dépasse x^0,841 pour x assez grand (d'après la bibliographie annotée de Lagarias ; leur notice zbMATH l'énonce pour a = 1). Aucun élément d'un cycle non trivial n'est multiple de 3 (un multiple de 3 n'a pour antécédent que son double, lui aussi multiple de 3, si bien qu'en remontant un cycle on obtiendrait des termes de plus en plus grands) : ces minorations s'appliqueraient donc à chacun de ses éléments. Elles disent que son ensemble de prédécesseurs serait grand, non qu'un tel cycle n'existe pas. En avril 2026, la piste était notée « Sous-piste Q.backward réouverte » (cartographie interne du 29/04/2026), puis rangée parmi les « Pistes potentielles non-explorées » (bilan interne du même jour)."
       },
       "en": {
         "name": "Backward parityGraph (multi-predecessors)",
-        "why": "Dead end as things stand, sourced (2026-10-27). The backward study exists: Wirsching (Discrete Math. 148 (1996), 265-286) studies the predecessor set of an integer, that is, of all the integers whose orbit reaches it, and Krasikov and Lagarias (Acta Arith. 109 (2003), 237-258) show that the number π₁(x) of integers below x that reach 1 exceeds x^0.84 for sufficiently large x (according to their zbMATH reviews). These results concern the integers that reach 1; a non-trivial cycle and its predecessors would form a set disjoint from that one, about which they say nothing. In April 2026, the lead was marked as a reopened sub-lead (internal map of 2026-04-29), and then listed among the potential leads not yet explored (internal report of the same day)."
+        "why": "Dead end as things stand, sourced (2026-10-27). The backward study exists: Wirsching (Discrete Math. 148 (1996), 265-286) studies the predecessor set of an integer a, that is, of all the integers whose orbit reaches a (according to its zbMATH review), and Krasikov and Lagarias (Acta Arith. 109 (2003), 237-258) show that, if a is not a multiple of 3, the number π_a(x) of integers n ≤ x whose orbit reaches a exceeds x^0.841 for sufficiently large x (according to Lagarias's annotated bibliography; their zbMATH review states it for a = 1). No element of a non-trivial cycle is a multiple of 3 (a multiple of 3 has no preimage other than its double, itself a multiple of 3, so that going back along a cycle would give larger and larger terms): these lower bounds would therefore apply to each of its elements. They say that its predecessor set would be large, not that such a cycle does not exist. In April 2026, the lead was marked as a reopened sub-lead (internal map of 2026-04-29), and then listed among the potential leads not yet explored (internal report of the same day)."
       },
       "region": "II",
       "status": "cds",
@@ -417,11 +417,11 @@
       "id": "W",
       "fr": {
         "name": "Anashin 2-adique (automates)",
-        "why": "Cul-de-sac (27/10/2026), sans source propre : nous n'avons trouvé aucun travail d'Anashin sur 3x+1 (zbMATH et arXiv, 27/10/2026) ; ses travaux portent sur l'ergodicité des transformations des entiers p-adiques et sur les automates (par exemple « Ergodic transformations in the space of p-adic integers », 2006), et la référence notée en avril 2026 pour cette piste (arXiv:0707.4533) est un article sans rapport. La raison est sourcée, la même que pour la piste P : un énoncé ergodique sur les entiers 2-adiques n'implique rien sur les entiers, qui forment un ensemble de mesure nulle (Lagarias, Amer. Math. Monthly 92 (1985), remarque suivant le théorème K)."
+        "why": "Cul-de-sac (27/10/2026), sans source propre : nous n'avons trouvé aucun travail d'Anashin sur 3x+1 (zbMATH et arXiv, 27/10/2026) ; ses travaux portent notamment sur l'ergodicité des transformations des entiers p-adiques et sur les automates (par exemple « Ergodic transformations in the space of p-adic integers », 2006), et la référence notée en avril 2026 pour cette piste (arXiv:0707.4533) est un article sans rapport. La raison est sourcée, la même que pour la piste P : d'après le théorème K de Lagarias (Amer. Math. Monthly 92 (1985)), l'extension de T aux entiers 2-adiques est mélangeante, donc ergodique, mais ce théorème n'implique rien sur les entiers, qui en forment un ensemble de mesure nulle (remarque suivant le théorème K)."
       },
       "en": {
         "name": "Anashin 2-adic (automata)",
-        "why": "Dead end (2026-10-27), with no source of its own: we found no work by Anashin on 3x+1 (zbMATH and arXiv, 2026-10-27); his work concerns the ergodicity of transformations of the p-adic integers and automata (for example \"Ergodic transformations in the space of p-adic integers\", 2006), and the reference noted in April 2026 for this lead (arXiv:0707.4533) is an unrelated paper. The reason is sourced, the same as for lead P: an ergodic statement on the 2-adic integers implies nothing about the integers, which form a set of measure zero (Lagarias, Amer. Math. Monthly 92 (1985), remark following Theorem K)."
+        "why": "Dead end (2026-10-27), with no source of its own: we found no work by Anashin on 3x+1 (zbMATH and arXiv, 2026-10-27); his work concerns in particular the ergodicity of transformations of the p-adic integers and automata (for example \"Ergodic transformations in the space of p-adic integers\", 2006), and the reference noted in April 2026 for this lead (arXiv:0707.4533) is an unrelated paper. The reason is sourced, the same as for lead P: by Lagarias's Theorem K (Amer. Math. Monthly 92 (1985)), the extension of T to the 2-adic integers is strongly mixing, hence ergodic, but this theorem implies nothing about the integers, which form a set of measure zero in it (remark following Theorem K)."
       },
       "region": "II",
       "status": "cds",
@@ -447,11 +447,11 @@
       "id": "Y",
       "fr": {
         "name": "Krasikov-Lagarias 2003 (densité)",
-        "why": "Cul-de-sac, sourcé (27/10/2026). Krasikov et Lagarias (Acta Arith. 109 (2003), 237-258) montrent que le nombre π₁(x) d'entiers inférieurs à x qui atteignent 1 dépasse x^0,84 pour x assez grand, améliorant l'exposant 0,81 d'Applegate et Lagarias (1995) (d'après leur notice zbMATH). C'est une minoration du nombre d'entiers qui atteignent 1 ; les éléments d'un cycle non trivial n'atteignent pas 1, et ce résultat ne dit rien d'eux."
+        "why": "Cul-de-sac, sourcé (27/10/2026). Krasikov et Lagarias (Acta Arith. 109 (2003), 237-258) minorent le nombre π_a(x) d'entiers n ≤ x dont l'orbite atteint a : si a n'est pas multiple de 3, π_a(x) > x^0,841 pour x assez grand, améliorant l'exposant 0,809 d'Applegate et Lagarias (1995) (d'après la bibliographie annotée de Lagarias ; leur notice zbMATH l'énonce pour a = 1). Aucun élément d'un cycle non trivial n'est multiple de 3 (voir la piste Q.bis) : la minoration s'appliquerait donc à chacun de ses éléments. Elle dit que chacun aurait beaucoup de prédécesseurs, non qu'un tel cycle n'existe pas."
       },
       "en": {
         "name": "Krasikov-Lagarias 2003 (density)",
-        "why": "Dead end, sourced (2026-10-27). Krasikov and Lagarias (Acta Arith. 109 (2003), 237-258) show that the number π₁(x) of integers below x that reach 1 exceeds x^0.84 for sufficiently large x, improving the exponent 0.81 of Applegate and Lagarias (1995) (according to their zbMATH review). This is a lower bound for the number of integers that reach 1; the elements of a non-trivial cycle do not reach 1, and this result says nothing about them."
+        "why": "Dead end, sourced (2026-10-27). Krasikov and Lagarias (Acta Arith. 109 (2003), 237-258) bound from below the number π_a(x) of integers n ≤ x whose orbit reaches a: if a is not a multiple of 3, π_a(x) > x^0.841 for sufficiently large x, improving the exponent 0.809 of Applegate and Lagarias (1995) (according to Lagarias's annotated bibliography; their zbMATH review states it for a = 1). No element of a non-trivial cycle is a multiple of 3 (see lead Q.bis): the lower bound would therefore apply to each of its elements. It says that each of them would have many predecessors, not that such a cycle does not exist."
       },
       "region": "II",
       "status": "cds",

@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-27T10:19:45Z</updated>
+  <updated>2026-10-27T10:33:11Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -18,14 +18,14 @@
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
 
   <entry>
-    <title>v0.10.14 — Catalogue: five more "stub" leads settled</title>
+    <title>v0.10.14 — Catalogue: five more "stub" leads settled; mea culpa #23 corrected</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.14-stub-leads-batch4-2026-10-27</id>
-    <updated>2026-10-27T10:19:45Z</updated>
-    <published>2026-10-27T10:19:45Z</published>
+    <updated>2026-10-27T10:33:11Z</updated>
+    <published>2026-10-27T10:33:11Z</published>
     <category term="release"/>
     <category term="audit"/>
-    <summary>Five more leads of the catalogue marked "stub", all in Region II, are settled as dead ends, each with its source or its reason. Lead Q.bis (backward parityGraph): dead end as things stand instead of "Unexplored": the backward study exists (predecessor sets: Wirsching, 1996; number of integers that reach 1: Krasikov and Lagarias, 2003), but it concerns the integers that reach 1, and a non-trivial cycle and its predecessors would be disjoint from them. Lead V (FRACTRAN / Conway 1972): the undecidability results concern generalised Collatz-type maps, not 3x+1 nor its cycles. Lead W (Anashin 2-adic): no work by Anashin on 3x+1 found (zbMATH and arXiv), the April 2026 reference is an unrelated paper; sourced reason (Lagarias 1985, remark following Theorem K: the integers have measure zero in the 2-adic integers). Lead X (Tao 2022, same paper as lead B): a statement for almost all integers cannot exclude a cycle; the former text is replaced by what the paper says. Lead Y (Krasikov–Lagarias 2003): a lower bound for the number of integers that reach 1, which says nothing about the elements of a non-trivial cycle. Counters: 1 stub note out of 36 instead of 6; card B of the hypotheses: 16 of 16 dead-ends in Region II instead of 15, estimate unchanged; "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version.</summary>
+    <summary>Five more leads of the catalogue marked "stub", all in Region II, are settled as dead ends, each with its source or its reason. Lead Q.bis (backward parityGraph): dead end as things stand instead of "Unexplored": the backward study exists (predecessor sets: Wirsching, 1996; lower bound on their size for every integer not divisible by 3: Krasikov and Lagarias, 2003); it would apply to the elements of a non-trivial cycle, none of which is a multiple of 3, but does not exclude such a cycle. Lead V (FRACTRAN / Conway 1972): the undecidability results concern generalised Collatz-type maps, not 3x+1 nor its cycles. Lead W (Anashin 2-adic): no work by Anashin on 3x+1 found (zbMATH and arXiv), the April 2026 reference is an unrelated paper; sourced reason (Lagarias 1985, remark following Theorem K: that theorem implies nothing about the integers, of measure zero in the 2-adic integers). Lead X (Tao 2022, same paper as lead B): a statement for almost all integers cannot exclude a cycle; the former text is replaced by what the paper says. Lead Y (Krasikov–Lagarias 2003): a lower bound for the number of predecessors of every integer not divisible by 3, which would apply to the elements of a non-trivial cycle without excluding it. Mea culpa #23 ("3 fabricated references"): dated correction, the mea culpa stays: two of the three references exist (O. Rozier, arXiv:2306.15284; J. Berstel and M. Mignotte, Bull. Soc. Math. France 104 (1976)); the third ("Bell-Burris-Hanrot-Sands 2013") remains untraceable. Lead L: name and reference corrected (Rozier 2023, Experimental Math. 35 (2026), 325-334, instead of Rozier–Terracol 2026, another paper). Counters: 1 stub note out of 36 instead of 6; card B of the hypotheses: 16 of 16 dead-ends in Region II instead of 15, estimate unchanged; "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version.</summary>
   </entry>
 
   <entry>
