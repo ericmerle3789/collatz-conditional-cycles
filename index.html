@@ -287,8 +287,9 @@
      ======================================================================== -->
 <section id="resultats" class="research-status-snapshot results-section">
   <div class="section-eyebrow"><span lang="fr">Résultats · octobre 2026</span><span lang="en">Results · October 2026</span></div>
-  <h2><span lang="fr">Formalisations en Lean 4 de travaux classiques</span><span lang="en">Lean 4 formalisations of classical work</span></h2>
-  <p class="research-status-intro"><span lang="fr">Chaque énoncé est écrit avant sa preuve, vérifié par le noyau de Lean 4.34.0 avec les seuls axiomes standard, et revérifiable depuis un clone neuf. Rien de nouveau n'est revendiqué sur les cycles de Collatz, et ce site ne prouve pas la conjecture.</span><span lang="en">Each statement is written before its proof, checked by the kernel of Lean 4.34.0 with the standard axioms only, and can be re-checked from a fresh clone. Nothing new is claimed about Collatz cycles, and this site does not prove the conjecture.</span></p>
+  <h2 lang="fr">Formalisations en Lean 4 de travaux classiques</h2>
+  <h2 lang="en">Lean 4 formalisations of classical work</h2>
+  <p class="research-status-intro"><span lang="fr">Les énoncés sont figés dans des fichiers à part ; chaque énoncé démontré est vérifié par le noyau de Lean 4.34.0 avec les seuls axiomes standard, et revérifiable depuis un clone neuf. Rien de nouveau n'est revendiqué sur les cycles de Collatz, et ce site ne prouve pas la conjecture.</span><span lang="en">Statements are frozen in separate files; each proved statement is checked by the kernel of Lean 4.34.0 with the standard axioms only, and can be re-checked from a fresh clone. Nothing new is claimed about Collatz cycles, and this site does not prove the conjecture.</span></p>
   <div class="status-snapshot-grid">
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow"><span lang="fr">Dernier jalon</span><span lang="en">Latest milestone</span></div>
@@ -306,8 +307,8 @@
       <div class="status-card-title"><span lang="fr">Lagarias 1990</span><span lang="en">Lagarias 1990</span></div>
       <div class="status-card-meta"><span class="status-card-date">2026-10-20</span></div>
       <p class="status-card-summary">
-        <span lang="fr">Les 60 énoncés retenus de l'article, tous démontrés en Lean 4 ; deux théorèmes sous des hypothèses nommées (théorème des nombres premiers, Baker–Fel'dman), jamais des axiomes.</span>
-        <span lang="en">The 60 statements kept from the paper, all proved in Lean 4; two theorems under named hypotheses (prime number theorem, Baker–Fel'dman), never axioms.</span>
+        <span lang="fr">60 énoncés figés, tous démontrés en Lean 4 ; deux théorèmes sous des hypothèses nommées (théorème des nombres premiers, Baker–Fel'dman), jamais des axiomes.</span>
+        <span lang="en">60 frozen statements, all proved in Lean 4; two theorems under named hypotheses (prime number theorem, Baker–Fel'dman), never axioms.</span>
       </p>
         <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.5/lagarias1990#how-to-check" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
         <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23514572" target="_blank" rel="noopener"><span lang="fr">DOI (v1.1)</span><span lang="en">DOI (v1.1)</span></a>
@@ -625,7 +626,8 @@
 
 <section id="archives">
   <div class="section-eyebrow">§ II</div>
-  <h2><span lang="fr">Archives du printemps 2026</span><span lang="en">Spring 2026 archive</span></h2>
+  <h2 lang="fr">Archives du printemps 2026</h2>
+  <h2 lang="en">Spring 2026 archive</h2>
   <p><span lang="fr">Sections d'avril et de mai 2026, conservées telles quelles pour l'historique, avec les corrections datées qu'elles portent ; elles ne décrivent pas l'état actuel du projet. Pages de la même époque : <a href="lemmes/">lemmes du preprint</a>, <a href="preuve/">architecture de la preuve</a>, <a href="lambda/">explorateur Λ</a>.</span><span lang="en">Sections from April and May 2026, kept as they were for the record, with the dated corrections they carry; they do not describe the current state of the project. Pages from the same period: <a href="lemmes/">lemmas of the preprint</a>, <a href="preuve/">architecture of the proof</a>, <a href="lambda/">Λ explorer</a>.</span></p>
 </section>
 
@@ -1044,7 +1046,9 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   function openTarget() {
     var id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
     var t = document.getElementById(id); if (!t) return;
-    var d = t.closest('details'); if (d && !d.open) { d.open = true; t.scrollIntoView(); }
+    var d = t.closest('details'); if (d && !d.open) { d.open = true;
+      if (document.readyState === 'complete') t.scrollIntoView();
+      else window.addEventListener('load', function () { setTimeout(function () { t.scrollIntoView(); }, 300); }); }
   }
   document.querySelectorAll('.archive-fold').forEach(function (d) {
     d.addEventListener('toggle', function () {

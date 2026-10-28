@@ -1094,6 +1094,7 @@ ER  - `;
       a.addEventListener('click', e => {
         e.preventDefault();
         const target = document.querySelector(a.getAttribute('href'));
+        const fold = target?.closest('details'); if (fold) fold.open = true;  // v0.10.20 : archives repliées
         target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
