@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Collatz / Syracuse Conditional Cycles — Lean 4 formalization</title>
-<meta name="description" content="Conjecture de Syracuse / Collatz : ce site ne prouve pas la conjecture. Formalisations en Lean 4 de travaux classiques sur les cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, ce dernier sans l'hypothèse H_Rhin depuis le 28/10/2026 ; aucune nouveauté revendiquée). Preprint d'avril 2026 : Théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0 ; k ≤ 1322 revérifié sous Lean 4.34.0). Ne prouve pas la conjecture. Démontré : aucun cycle non trivial avec k ≤ 1322, sous l'hypothèse de travail H1 (BakerSeparation, non publiée) et la vérification de Bařina (H2). La 3e hypothèse (H3) est supposée et équivaut, sous H2, à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 02/10/2026). — Collatz conjecture: this site does not prove the conjecture. Lean 4 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). April 2026 preprint: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0; k ≤ 1322 re-checked on Lean 4.34.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the working hypothesis H1 (BakerSeparation, not a published theorem) and Barina's verification (H2). The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026).">
+<meta name="description" content="Conjecture de Syracuse / Collatz : ce site ne prouve pas la conjecture. Formalisations en Lean 4 de travaux classiques sur les cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, ce dernier sans l'hypothèse H_Rhin depuis le 28/10/2026 ; aucune nouveauté revendiquée). Preprint d'avril 2026 : Théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0 ; k ≤ 1322 revérifié sous Lean 4.34.0). Ne prouve pas la conjecture. Démontré : aucun cycle non trivial avec k ≤ 1322, sous l'hypothèse de travail H1 (BakerSeparation, pas un théorème publié) et la vérification de Bařina (H2). La 3e hypothèse (H3) est supposée et équivaut, sous H2, à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 02/10/2026). — Collatz conjecture: this site does not prove the conjecture. Lean 4 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). April 2026 preprint: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0; k ≤ 1322 re-checked on Lean 4.34.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the working hypothesis H1 (BakerSeparation, not a published theorem) and Barina's verification (H2). The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026).">
 <meta name="keywords" content="Collatz conjecture, Syracuse conjecture, conjecture de Syracuse, suite de Syracuse, 3x+1 problem, 3n+1, Kakutani problem, Hasse problem, Lean 4, Mathlib, formal verification, Baker's theorem, continued fractions, Diophantine approximation, non-trivial cycles">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -277,7 +277,7 @@
     <span lang="en">Also known as the <strong>Syracuse problem</strong>, the <strong>3n+1 problem</strong>, the <strong>Kakutani problem</strong>, the <strong>Hasse algorithm</strong>, or the <strong>Ulam conjecture</strong>.</span>
   </p>
   <p class="hero-lede" data-i18n="heroLede">
-    Trente-six pistes mathématiques, trois hypothèses (H1, H2, H3), une famille d'hypothèses ouvertes — dont l'approche principale bute sur une obstruction diophantienne : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.
+    Trente-six pistes mathématiques, trois hypothèses (H1, H2, H3), une famille d'hypothèses ouvertes — l'approche principale bute sur une obstruction diophantienne : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.
   </p>
 </section>
 
@@ -453,7 +453,7 @@
 <section id="verrou">
   <div class="section-eyebrow">Λ_{S,k}</div>
   <h2 data-i18n="lockTitle">Le verrou Λ_{S,k}</h2>
-  <p data-i18n="lockText">En avril 2026, quatorze des quinze paradigmes du diagramme ont été notés comme retombant sur la même obstruction diophantienne ; ce décompte est revu à la source dans le catalogue (« Schémas + Faltings », non sourcé, est retiré depuis le 22/10/2026) :</p>
+  <p data-i18n="lockText">En avril 2026, quatorze des quinze paradigmes du diagramme ont été notés comme retombant sur la même obstruction diophantienne ; ce décompte a été revu à la source dans le catalogue, tranché du 22 au 27/10/2026 : il ne le confirme pas pour six des quinze (pistes C, F, I.1, W et Z, et « Schémas + Faltings », piste K, retirée le 22/10/2026, faute de source), en pointillé dans le diagramme :</p>
 
   <div class="lockbox">
     <span class="formula">$$\Lambda_{S,k} = S \log 2 - k \log 3$$</span>
@@ -518,6 +518,11 @@ graph LR
     style DELTA8P fill:#3a4a5a,color:#e0e6f0,stroke:#6366f1,stroke-width:1px
     style DELTA10 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
     style P7 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
+    style P3 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
+    style P5 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
+    style P9 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
+    style P12 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
+    style P14 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
     style DELTA11 fill:#3a4a5a,color:#e0e6f0,stroke:#fb923c,stroke-width:2px,stroke-dasharray:5
     </pre>
   </div>
@@ -605,8 +610,8 @@ graph LR
       <h3 lang="en">Riemann-class (exit unreachable in 2026)</h3>
       <p lang="fr">Probabilité finale : <strong>75-80%</strong> — dominante après convergence δ8 + Cobham + 14 paradigmes.</p>
       <p lang="en">Final probability: <strong>75-80%</strong> — dominant after δ8 + Cobham + 14 paradigms convergence.</p>
-      <p lang="fr" style="font-size: 0.85rem; color: var(--text-muted);">Estimation d'avril 2026. Le décompte de « 14 paradigmes » date aussi d'avril 2026 ; il est revu à la source dans le catalogue, et l'un des paradigmes du diagramme (« Schémas + Faltings ») est retiré depuis le 22/10/2026, faute de source.</p>
-      <p lang="en" style="font-size: 0.85rem; color: var(--text-muted);">Estimate from April 2026. The count of "14 paradigms" also dates from April 2026; it is being reviewed against the sources in the catalogue, and one of the paradigms in the diagram ("Schemes + Faltings") has been withdrawn since 2026-10-22, for lack of a source.</p>
+      <p lang="fr" style="font-size: 0.85rem; color: var(--text-muted);">Estimation d'avril 2026. Le décompte de « 14 paradigmes » date aussi d'avril 2026 ; revu à la source dans le catalogue, tranché du 22 au 27/10/2026, il n'est pas confirmé pour six des quinze paradigmes du diagramme (pistes C, F, I.1, W et Z, et « Schémas + Faltings », piste K, retirée le 22/10/2026, faute de source).</p>
+      <p lang="en" style="font-size: 0.85rem; color: var(--text-muted);">Estimate from April 2026. The count of "14 paradigms" also dates from April 2026; reviewed against the sources in the catalogue, settled from 22 to 27 October 2026, it is not confirmed for six of the fifteen paradigms in the diagram (leads C, F, I.1, W and Z, and "Schemes + Faltings", lead K, withdrawn on 2026-10-22 for lack of a source).</p>
     </div>
   </div>
 
