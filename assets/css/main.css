@@ -2019,9 +2019,11 @@ footer a:hover { border-bottom-color: var(--accent); }
 /* v0.10.19 — from 769 to 1919 px the twelve menu links do not fit beside the title and the buttons: the menu goes on a
    second row of the top bar instead of pushing the buttons off the screen. */
 @media (min-width: 769px) and (max-width: 1919px) {
-  .topbar-inner { flex-wrap: wrap; row-gap: 0.45rem; padding-top: 0.6rem; padding-bottom: 0.5rem; }
+  .topbar-inner { flex-wrap: wrap; row-gap: 0.2rem; padding-top: 0.45rem; padding-bottom: 0.35rem; }
   .toolbar-actions { margin-left: auto; }
-  .nav { order: 3; flex-basis: 100%; margin-left: 0; flex-wrap: wrap; gap: 0.3rem 1.2rem; }
+  .toolbar-actions .btn-icon { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+  .nav { order: 3; flex-basis: 100%; margin-left: 0; flex-wrap: wrap; gap: 0.2rem 1.2rem; }
+  .nav a { padding-top: 0.1rem; padding-bottom: 0.1rem; }
 }
 
 /* Mobile ≤ 768px */
