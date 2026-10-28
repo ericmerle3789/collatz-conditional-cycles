@@ -1161,8 +1161,10 @@ ER  - `;
   function injectReadingMeta() {
     const main = document.querySelector('main');
     if (!main || document.querySelector('.reading-meta')) return;
-    // texte affiché seulement (innerText ignore la langue masquée)
-    const text = main.innerText || main.textContent || '';
+    // texte de la langue affichée seulement (les éléments de l'autre langue sont masqués par l'attribut hidden) ; les blocs repliés comptent
+    const copy = main.cloneNode(true);
+    copy.querySelectorAll('[hidden], script, style').forEach(n => n.remove());
+    const text = copy.textContent || '';
     const words = text.trim().split(/\s+/).filter(Boolean).length;
 
     // v0.10.20 : dans le hero de la page (pas dans la bannière), à la fin, pour ne pas repousser l'avertissement ;
