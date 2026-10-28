@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-28T04:59:00Z</updated>
+  <updated>2026-10-28T05:18:12Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -21,11 +21,11 @@
     <title>v0.10.17 — Steiner 1978 without the hypothesis H_Rhin; Zenodo pointers; correction of lead P7</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.17-steiner-without-h-rhin-2026-10-28</id>
-    <updated>2026-10-28T04:59:00Z</updated>
-    <published>2026-10-28T04:59:00Z</published>
+    <updated>2026-10-28T05:18:12Z</updated>
+    <published>2026-10-28T05:18:12Z</published>
     <category term="release"/>
     <category term="audit"/>
-    <summary>Steiner 1978 without the hypothesis H_Rhin: the logs23/ folder of the Lean repository (release v1.4, DOI 10.5281/zenodo.23720217) proves Steiner's theorem on circuits without H_Rhin, through a much weaker lower bound that suffices, 1/(2^k − 1) ≤ |(k + l) log 2 − k log 3| for every k &gt; 20,000; H_Rhin itself is not proved, the bound is far weaker than the published ones, and no novelty is claimed. On the site: a milestone in the research ledger (38 events, 27 milestones); "Latest milestone" and "Last Lean verification" cards of the home page; October entry of the History page; Steiner card of the Papers page. Zenodo pointers: where the text designates the current archive, the v1.4 DOI or the concept DOI instead of v1.2; dated entries keep their DOI. Correction (2026-10-28) of lead P7: Bayer–David 2025 is in Isabelle/HOL, not Lean, and concerns Hilbert's tenth problem. "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version.</summary>
+    <summary>Steiner 1978 without the hypothesis H_Rhin: the logs23/ folder of the Lean repository (release v1.4, DOI 10.5281/zenodo.23720217) proves Steiner's theorem on circuits without H_Rhin, through a much weaker lower bound that suffices, 1/(2^k − 1) ≤ |(k + l) log 2 − k log 3| for every k &gt; 20,000 and every l ≥ 0; H_Rhin itself is not proved, the bound is far weaker than the published ones, and no novelty is claimed. On the site: a milestone in the research ledger (38 events, 27 milestones); "Latest milestone" and "Last Lean verification" cards of the home page; October entry of the History page; Steiner card of the Papers page. Zenodo pointers: where the text designates the current archive, the v1.4 DOI or the concept DOI instead of v1.2; dated entries keep their DOI. Correction (2026-10-28) of lead P7: Bayer–David 2025 is in Isabelle/HOL, not Lean, and concerns Hilbert's tenth problem. "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version.</summary>
   </entry>
 
   <entry>
