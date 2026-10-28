@@ -342,16 +342,16 @@
       <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9e42fa5/logs23" target="_blank" rel="noopener">→ <code>logs23/</code> (9e42fa5)</a>
     </div>
 
-    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.18, 2026-10-28) -->
+    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.19, 2026-10-28) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
-      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.18</span><span lang="en">Adversarial review of v0.10.18</span></div>
+      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.19</span><span lang="en">Adversarial review of v0.10.19</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-10-28</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.18 (tête de l'accueil : avertissement et renvoi à l'erratum sous le surtitre, bannière, « État des travaux » remonté, preprint et erratum sous un intertitre daté, méta-descriptions), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.17 (Steiner 1978 sans <code>H_Rhin</code>, pointeurs Zenodo, correction de la piste P7), 2026-10-28.</span>
-        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.18 (head of the home page: warning and pointer to the erratum under the eyebrow, banner, "Research status" moved up, preprint and erratum under a dated heading, meta descriptions), against the available sources. Previous audit: adversarial review of the changes of v0.10.17 (Steiner 1978 without <code>H_Rhin</code>, Zenodo pointers, correction of lead P7), 2026-10-28.</span>
+        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.19 (corrections de l'audit du 28/10/2026 : erratum dit en entier sur « Pour tous », page « Cycles », méta-descriptions, diagramme d'avril, FAQ, Papers, registre, barre du haut), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.18 (tête de l'accueil), 2026-10-28.</span>
+        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.19 (corrections from the audit of 2026-10-28: erratum stated in full on "For everyone", "Cycles" page, meta descriptions, April diagram, FAQ, Papers, ledger, top bar), against the available sources. Previous audit: adversarial review of the changes of v0.10.18 (head of the home page), 2026-10-28.</span>
       </p>
       <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
@@ -453,7 +453,7 @@
 <section id="verrou">
   <div class="section-eyebrow">Λ_{S,k}</div>
   <h2 data-i18n="lockTitle">Le verrou Λ_{S,k}</h2>
-  <p data-i18n="lockText">En avril 2026, quatorze des quinze paradigmes du diagramme ont été notés comme retombant sur la même obstruction diophantienne ; ce décompte a été revu à la source dans le catalogue, tranché du 22 au 27/10/2026 : il ne le confirme pas pour six des quinze (pistes C, F, I.1, W et Z, et « Schémas + Faltings », piste K, retirée le 22/10/2026, faute de source), en pointillé dans le diagramme :</p>
+  <p data-i18n="lockText">En avril 2026, quatorze des quinze paradigmes du diagramme ont été notés comme retombant sur la même obstruction diophantienne ; ce décompte date d'avril 2026 ; dans le catalogue, tranché du 22 au 27/10/2026, aucune source publiée n'a été trouvée pour cinq de ces pistes (C pour sa partie Fourier, I.1, J, R et W) et « Schémas + Faltings » (piste K) est retiré depuis le 22/10/2026, faute de source ; elles sont en pointillé dans le diagramme :</p>
 
   <div class="lockbox">
     <span class="formula">$$\Lambda_{S,k} = S \log 2 - k \log 3$$</span>
@@ -469,8 +469,8 @@ graph LR
     P2["Kolmogorov-Chaitin"] -->|"K=O(log k)"| LAMBDA
     P3["Fourier Sturmien"] -.->|"slope log_2 3"| LAMBDA
     P4["Padé / Wu / Salikhov"] -->|"μ(ln 3) &lt; 5,117 (Wu &amp; Wang 2014)"| LAMBDA
-    P5["Marcovecchio 2014"] -.->|"μ_2 algébriques"| LAMBDA
-    P6["Tropical (piste IA)"] -->|"décroissance fine"| LAMBDA
+    P5["Marcovecchio 2014"] -->|"μ_2 algébriques"| LAMBDA
+    P6["Tropical (piste IA)"] -.->|"décroissance fine"| LAMBDA
     P7["Schémas + Faltings<br/>✗ 2026-10-22"] -.-> LAMBDA
     P8["Néron-Tate"] -->|"ABC effective"| LAMBDA
     P9["Tresses / Nœuds"] -.->|"insensible 2/3-adique"| LAMBDA
@@ -478,8 +478,8 @@ graph LR
     P11["Skolem-Mahler-Lech"] -->|"non-LRS"| LAMBDA
     P12["Anashin 2-adique"] -.->|"ergodicité ℤ_2"| LAMBDA
     P13["Krasikov-Lagarias"] -->|"densité aveugle"| LAMBDA
-    P14["Holomorphic LSW"] -.-> LAMBDA
-    P15["Inv. statistiques"] -->|"autocorr. Christoffel"| LAMBDA
+    P14["Holomorphic LSW"] --> LAMBDA
+    P15["Inv. statistiques"] -.->|"autocorr. Christoffel"| LAMBDA
 
     LAMBDA["Λ_{S,k}<br/>VERROU"]
     BAKER["H1 BakerSeparation<br/>(paramètre — hypothèse de travail)"]
@@ -519,16 +519,16 @@ graph LR
     style DELTA10 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
     style P7 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
     style P3 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
-    style P5 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
+    style P6 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
     style P9 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
     style P12 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
-    style P14 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
+    style P15 fill:#3a4a5a,color:#e0e6f0,stroke:#fbbf24,stroke-width:2px,stroke-dasharray:5
     style DELTA11 fill:#3a4a5a,color:#e0e6f0,stroke:#fb923c,stroke-width:2px,stroke-dasharray:5
     </pre>
   </div>
 
   <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 1rem; font-style: italic;" data-i18n="diagramCaption">
-      → Diagramme d'avril 2026, conservé pour mémoire. Le catalogue, tranché du 22 au 27/10/2026, ne confirme pas ce retour au verrou Λ pour les nœuds en pointillé (pistes C, F, I.1, W et Z ; « Schémas + Faltings », piste K, retirée). Ce ne sont pas ces paradigmes qui alimentent le théorème, mais les hypothèses H1, H2 et H3 (paramètres). Seule la branche k ≤ 1322 (H1, H2) est démontrée sans circularité ; la branche k &gt; 1322 repose sur H3, supposée (voir l'<a href="#erratum">erratum</a>).
+      → Diagramme d'avril 2026, conservé pour mémoire. En pointillé : les pistes pour lesquelles le catalogue, tranché du 22 au 27/10/2026, n'a trouvé aucune source publiée (C pour sa partie Fourier, I.1, J, R et W) et « Schémas + Faltings » (piste K, retirée). Ce ne sont pas ces paradigmes qui alimentent le théorème, mais les hypothèses H1, H2 et H3 (paramètres). Seule la branche k ≤ 1322 (H1, H2) est démontrée sans circularité ; la branche k &gt; 1322 repose sur H3, supposée (voir l'<a href="#erratum">erratum</a>).
   </p>
 </section>
 
@@ -610,8 +610,8 @@ graph LR
       <h3 lang="en">Riemann-class (exit unreachable in 2026)</h3>
       <p lang="fr">Probabilité finale : <strong>75-80%</strong> — dominante après convergence δ8 + Cobham + 14 paradigmes.</p>
       <p lang="en">Final probability: <strong>75-80%</strong> — dominant after δ8 + Cobham + 14 paradigms convergence.</p>
-      <p lang="fr" style="font-size: 0.85rem; color: var(--text-muted);">Estimation d'avril 2026. Le décompte de « 14 paradigmes » date aussi d'avril 2026 ; revu à la source dans le catalogue, tranché du 22 au 27/10/2026, il n'est pas confirmé pour six des quinze paradigmes du diagramme (pistes C, F, I.1, W et Z, et « Schémas + Faltings », piste K, retirée le 22/10/2026, faute de source).</p>
-      <p lang="en" style="font-size: 0.85rem; color: var(--text-muted);">Estimate from April 2026. The count of "14 paradigms" also dates from April 2026; reviewed against the sources in the catalogue, settled from 22 to 27 October 2026, it is not confirmed for six of the fifteen paradigms in the diagram (leads C, F, I.1, W and Z, and "Schemes + Faltings", lead K, withdrawn on 2026-10-22 for lack of a source).</p>
+      <p lang="fr" style="font-size: 0.85rem; color: var(--text-muted);">Estimation d'avril 2026. Le décompte de « 14 paradigmes » date aussi d'avril 2026 ; dans le catalogue, tranché du 22 au 27/10/2026, aucune source publiée n'a été trouvée pour cinq de ces paradigmes (pistes C pour sa partie Fourier, I.1, J, R et W), et « Schémas + Faltings » (piste K) est retiré depuis le 22/10/2026, faute de source.</p>
+      <p lang="en" style="font-size: 0.85rem; color: var(--text-muted);">Estimate from April 2026. The count of "14 paradigms" also dates from April 2026; in the catalogue, settled from 22 to 27 October 2026, no published source was found for five of these paradigms (leads C for its Fourier part, I.1, J, R and W), and "Schemes + Faltings" (lead K) has been withdrawn since 2026-10-22 for lack of a source.</p>
     </div>
   </div>
 
