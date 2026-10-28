@@ -48,7 +48,7 @@
       "url": "https://collatz-lab.org/faq/",
       "inLanguage": ["fr", "en"],
       "datePublished": "2026-04-30",
-      "dateModified": "2026-10-20",
+      "dateModified": "2026-10-28",
       "author": {"@type": "Person", "@id": "https://orcid.org/0009-0008-7940-402X", "name": "Eric Merle"},
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -90,7 +90,7 @@
           "name": "Qu'apporte ce site (collatz-lab.org) ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Un théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0). Il ne prouve pas la conjecture de Collatz. Démontré : aucun cycle non trivial avec k ≤ 1322 (k = nombre de termes impairs), sous les hypothèses H1 BakerSeparation (hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et H2 BarinaVerification (traduction d'un résultat de calcul publié, Bařina 2025, n < 2^71). La 3e hypothèse, H3 DerivedLargeKBound (k > 1322 → n < 2^71), est supposée, non dérivée ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026 ; HYPOTHESES.md, section H3, la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple δ8 : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles."
+            "text": "Un théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0 ; no_cycle_k_le_1322 revérifié sous Lean 4.34.0 les 20 et 21/10/2026). Il ne prouve pas la conjecture de Collatz. Démontré : aucun cycle non trivial avec k ≤ 1322 (k = nombre de termes impairs), sous les hypothèses H1 BakerSeparation (hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et H2 BarinaVerification (traduction d'un résultat de calcul publié, Bařina 2025, n < 2^71). La 3e hypothèse, H3 DerivedLargeKBound (k > 1322 → n < 2^71), est supposée, non dérivée ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026 ; HYPOTHESES.md, section H3, la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple δ8 : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles."
           }
         },
         {
@@ -170,7 +170,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261028-V0-10-19">
 </head>
 <body>
 
@@ -256,19 +256,19 @@
   <details class="faq-item" id="q5">
     <summary><strong><span lang="fr">5. Qu'apporte ce site (collatz-lab.org) ?</span><span lang="en">5. What does this site (collatz-lab.org) contribute?</span></strong></summary>
     <p>
-      <span lang="fr">Un <strong>théorème conditionnel formalisé</strong> en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0) — <strong>il ne prouve pas la conjecture de Collatz</strong>. Démontré : <strong>aucun cycle non trivial avec <code>k ≤ 1322</code></strong> (k = nombre de termes impairs), sous les hypothèses
+      <span lang="fr">Un <strong>théorème conditionnel formalisé</strong> en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0 ; no_cycle_k_le_1322 revérifié sous Lean 4.34.0 les 20 et 21/10/2026) — <strong>il ne prouve pas la conjecture de Collatz</strong>. Démontré : <strong>aucun cycle non trivial avec <code>k ≤ 1322</code></strong> (k = nombre de termes impairs), sous les hypothèses
       H1 <strong>BakerSeparation</strong> (<em>hypothèse de travail</em>, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et
       H2 <strong>BarinaVerification</strong> (traduction d'un résultat de calcul publié, Bařina 2025, <code>n &lt; 2<sup>71</sup></code>).
       La 3e hypothèse, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), est <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026 ; voir <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, qui la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple <strong>δ8</strong> : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles.</span>
-      <span lang="en">A <strong>conditional theorem formalized</strong> in Lean 4 (checked on Lean 4.27.0, Mathlib v4.27.0) — <strong>it does not prove the Collatz conjecture</strong>. Proved: <strong>no non-trivial cycle with <code>k ≤ 1322</code></strong> (k = number of odd terms), under hypotheses H1 <strong>BakerSeparation</strong> (<em>working hypothesis</em>, stronger in this form than published effective bounds, see mea culpa #28) and H2 <strong>BarinaVerification</strong> (encoding of a published computational result, Barina 2025, <code>n &lt; 2<sup>71</sup></code>). The 3rd hypothesis, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 October 2026; see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, which presents it as a derivation: corrected by this erratum). The site also documents statements about the limits of some methods, e.g. <strong>δ8</strong>: the Product-Bound chain cannot, on its own, close large cycles.</span>
+      <span lang="en">A <strong>conditional theorem formalized</strong> in Lean 4 (checked on Lean 4.27.0, Mathlib v4.27.0; no_cycle_k_le_1322 re-checked on Lean 4.34.0 on 20–21 October 2026) — <strong>it does not prove the Collatz conjecture</strong>. Proved: <strong>no non-trivial cycle with <code>k ≤ 1322</code></strong> (k = number of odd terms), under hypotheses H1 <strong>BakerSeparation</strong> (<em>working hypothesis</em>, stronger in this form than published effective bounds, see mea culpa #28) and H2 <strong>BarinaVerification</strong> (encoding of a published computational result, Barina 2025, <code>n &lt; 2<sup>71</sup></code>). The 3rd hypothesis, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 October 2026; see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, which presents it as a derivation: corrected by this erratum). The site also documents statements about the limits of some methods, e.g. <strong>δ8</strong>: the Product-Bound chain cannot, on its own, close large cycles.</span>
     </p>
   </details>
 
   <details class="faq-item" id="q6">
     <summary><strong><span lang="fr">6. Qu'est-ce que Lean 4 ?</span><span lang="en">6. What is Lean 4?</span></strong></summary>
     <p>
-      <span lang="fr">Lean 4 est un <strong>assistant de preuve formelle</strong> (proof assistant) ; le projet Lean a été lancé par Leonardo de Moura à Microsoft Research. Si le noyau (kernel) accepte une preuve, le raisonnement est correct <strong>à partir des hypothèses données</strong> — à condition que le vérificateur lui-même n'ait pas de bug (c'est arrivé : bug <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, juillet 2026). Il reste aussi à vérifier que les hypothèses ne contiennent pas déjà la réponse : c'est exactement l'erreur corrigée sur ce site le 2 octobre 2026. <strong>Mathlib</strong> est sa bibliothèque mathématique standard (<code>v4.27.0</code> utilisée ici).</span>
-      <span lang="en">Lean 4 is a <strong>formal proof assistant</strong>; the Lean project was started by Leonardo de Moura at Microsoft Research. If the kernel accepts a proof, the reasoning is correct <strong>from the given hypotheses</strong> — provided the checker itself has no bug (it happened: bug <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, July 2026). One must also check that the hypotheses do not already contain the answer: that is exactly the error corrected on this site on 2 October 2026. <strong>Mathlib</strong> is its standard mathematics library (<code>v4.27.0</code> used here).</span>
+      <span lang="fr">Lean 4 est un <strong>assistant de preuve formelle</strong> (proof assistant) ; le projet Lean a été lancé par Leonardo de Moura à Microsoft Research. Si le noyau (kernel) accepte une preuve, le raisonnement est correct <strong>à partir des hypothèses données</strong> — à condition que le vérificateur lui-même n'ait pas de bug (c'est arrivé : bug <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, juillet 2026). Il reste aussi à vérifier que les hypothèses ne contiennent pas déjà la réponse : c'est exactement l'erreur corrigée sur ce site le 2 octobre 2026. <strong>Mathlib</strong> est sa bibliothèque mathématique standard (<code>v4.27.0</code> pour le preprint d'avril ; <code>v4.34.0</code> pour les formalisations d'octobre et la revérification de <code>no_cycle_k_le_1322</code>).</span>
+      <span lang="en">Lean 4 is a <strong>formal proof assistant</strong>; the Lean project was started by Leonardo de Moura at Microsoft Research. If the kernel accepts a proof, the reasoning is correct <strong>from the given hypotheses</strong> — provided the checker itself has no bug (it happened: bug <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, July 2026). One must also check that the hypotheses do not already contain the answer: that is exactly the error corrected on this site on 2 October 2026. <strong>Mathlib</strong> is its standard mathematics library (<code>v4.27.0</code> for the April preprint; <code>v4.34.0</code> for the October formalisations and the re-check of <code>no_cycle_k_le_1322</code>).</span>
     </p>
   </details>
 
@@ -389,6 +389,6 @@
   .faq-item[open] summary { color: var(--accent, #c8a86a); }
 </style>
 
-<script src="../assets/js/main.js?v=20261028-V0-10-18"></script>
+<script src="../assets/js/main.js?v=20261028-V0-10-19"></script>
 </body>
 </html>

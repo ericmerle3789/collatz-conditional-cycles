@@ -1,7 +1,7 @@
 # Maintainers — collatz-lab.org
 
 > Mainteneur du site `collatz-lab.org` et continuité.
-> **Source** : ce fichier (branche `gh-pages`). **Dernière mise à jour** : 2026-10-02.
+> **Source** : ce fichier (branche `gh-pages`). **Dernière mise à jour** : 2026-10-28.
 
 ---
 
@@ -31,7 +31,7 @@ Les erreurs trouvées sont corrigées et documentées publiquement : [changelog]
 
 ## Continuité
 
-- Le preprint et ses versions sont archivés sur Zenodo (DOI de concept 10.5281/zenodo.19790405). Le PDF déposé porte encore l'ancien énoncé : voir l'erratum du 2 octobre 2026 sur la page d'accueil.
+- Le preprint et ses versions sont archivés sur Zenodo (DOI de concept 10.5281/zenodo.19790405) ; la version v4 (20/10/2026) conserve le PDF d'origine et ajoute un erratum de 2 pages (voir aussi l'erratum du 2 octobre 2026 sur la page d'accueil). Les formalisations d'articles classiques sont dans le dépôt `one-obstruction-three-faces-lean` (Lean 4.34.0 ; Zenodo, DOI de concept 10.5281/zenodo.23498095).
 - Le code Lean est dans le dépôt public `collatz-conditional-cycles` (branche `main`), avec `reproduce.sh`, `HYPOTHESES.md`, `PROOF_CHAIN.md` et `expected_axioms.md`. Toolchain : Lean 4.27.0 (Mathlib v4.27.0).
 - Pour transférer le projet : transférer le dépôt GitHub, mettre à jour ce fichier, l'annoncer dans le changelog.
 

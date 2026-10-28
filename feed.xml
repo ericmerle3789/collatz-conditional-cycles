@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-28T08:29:33Z</updated>
+  <updated>2026-10-28T09:32:08Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,17 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.19 — Substance and erratum: corrections from the audit of 28 October 2026</title>
+    <link href="https://collatz-lab.org/changelog/"/>
+    <id>urn:collatz-cycles:v0.10.19-substance-erratum-2026-10-28</id>
+    <updated>2026-10-28T09:32:08Z</updated>
+    <published>2026-10-28T09:32:08Z</published>
+    <category term="release"/>
+    <category term="audit"/>
+    <summary>Corrections from the audit of 28 October 2026, nothing new on the substance. The "For everyone" page states the erratum in full (together with the 2nd, the 3rd hypothesis excludes every other loop, small or large). The "Cycles" page bounds its exhaustive check (at most 10 odd terms, shared ledger L-A3), says the facts were checked by Python code on both sides, and presents the April theorem with its erratum. Meta descriptions and structured data call H1 a working hypothesis, not a published theorem. Home page: title, lede, dashed nodes and dated caption of the April 2026 diagram, label of the April PDF link. FAQ (Lean versions), Papers (theorem variants, "0 sorry in the proofs", exact preprint title), lemma R92 (decide, not native_decide), a dated ledger event acknowledging undated rewrites of earlier events, MAINTAINERS.md, and a top bar that no longer pushes its buttons off the screen from 769 to 1919 px.</summary>
+  </entry>
 
   <entry>
     <title>v0.10.18 — Home page: recent work first; the preprint and its erratum just after</title>

@@ -2016,6 +2016,14 @@ footer a:hover { border-bottom-color: var(--accent); }
   .footer-badges { gap: 0.4rem; font-size: 0.7rem; }
 }
 
+/* v0.10.19 — from 769 to 1919 px the twelve menu links do not fit beside the title and the buttons: the menu goes on a
+   second row of the top bar instead of pushing the buttons off the screen. */
+@media (min-width: 769px) and (max-width: 1919px) {
+  .topbar-inner { flex-wrap: wrap; row-gap: 0.45rem; padding-top: 0.6rem; padding-bottom: 0.5rem; }
+  .toolbar-actions { margin-left: auto; }
+  .nav { order: 3; flex-basis: 100%; margin-left: 0; flex-wrap: wrap; gap: 0.3rem 1.2rem; }
+}
+
 /* Mobile ≤ 768px */
 @media (max-width: 768px) {
   .topbar-inner {

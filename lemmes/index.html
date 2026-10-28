@@ -100,7 +100,7 @@
 <!-- D3 v7 pour le dependency graph -->
 <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js" integrity="sha384-su5kReKyYlIFrI62mbQRKXHzFobMa7BHp1cK6julLPbnYcCW9NIZKJiTODjLPeDh" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261028-V0-10-19">
 </head>
 <body>
 
@@ -305,7 +305,7 @@ cd collatz-conditional-cycles
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.15 · 2026-10-27</div>
+  <div class="footer-meta">Cartography · v0.10.19 · 2026-10-28</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2 (Sandbox · Two-Key Rule · REQ-MATH hash)</p>
   <p class="footer-status">
@@ -330,7 +330,7 @@ cd collatz-conditional-cycles
 </footer>
 
 <!-- main.js : i18n, langBtn, navigator.language detection -->
-<script src="../assets/js/main.js?v=20261028-V0-10-18"></script>
+<script src="../assets/js/main.js?v=20261028-V0-10-19"></script>
 <!-- dependency-graph.js : D3 force-directed visualization -->
 <script src="../assets/js/dependency-graph.js?v=20261021-V0-10-9"></script>
 <script>
@@ -443,7 +443,7 @@ function renderLemmes(lang) {
 }
 
 // Initial load
-fetch('../assets/data/lemmes.json?v=20261027-V0-10-15').then(r => r.json()).then(data => {
+fetch('../assets/data/lemmes.json?v=20261028-V0-10-19').then(r => r.json()).then(data => {
   LEMMES_DATA = data;
   renderLemmes(getCurrentLang());
 });

@@ -52,7 +52,7 @@
       "image": "https://collatz-lab.org/assets/og-image.png",
       "inLanguage": ["fr", "en"],
       "datePublished": "2026-05-05T21:00:00+02:00",
-      "dateModified": "2026-10-20T00:00:00+02:00",
+      "dateModified": "2026-10-28T00:00:00+01:00",
       "author": {
         "@type": "Person",
         "@id": "https://orcid.org/0009-0008-7940-402X",
@@ -87,7 +87,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261028-V0-10-19">
 </head>
 <body>
 
@@ -228,8 +228,8 @@
 
 <aside style="background: rgba(217, 119, 6, 0.08); border-left: 4px solid var(--accent); padding: 1rem 1.2rem; border-radius: 4px; margin: 1.5rem 0;">
   <p style="margin: 0;">
-    <span lang="fr">⚠️ <strong>Important.</strong> Je n'ai PAS prouvé la conjecture de Collatz. Le théorème formalisé est <strong>conditionnel</strong> : « SI ces 3 hypothèses sont vraies, ALORS pas d'autre boucle que 1→4→2→1. » Mais (<a href="../#erratum">erratum du 2 octobre 2026</a>) la 3<sup>e</sup> hypothèse, avec la 2<sup>e</sup>, contient déjà la réponse pour les très grandes boucles. Ce qui est vraiment démontré est plus petit : pas d'autre boucle qui passe par au plus 1322 nombres impairs, sous les 2 premières hypothèses.</span>
-    <span lang="en">⚠️ <strong>Important.</strong> I did NOT prove the Collatz conjecture. The formalized theorem is <strong>conditional</strong>: "IF these 3 hypotheses hold, THEN no other loop than 1→4→2→1." But (<a href="../#erratum">erratum of 2 October 2026</a>) the 3rd hypothesis, together with the 2nd, already contains the answer for very large loops. What is really proved is smaller: no other loop that goes through at most 1322 odd numbers, under the first 2 hypotheses.</span>
+    <span lang="fr">⚠️ <strong>Important.</strong> Je n'ai PAS prouvé la conjecture de Collatz. Le théorème formalisé est <strong>conditionnel</strong> : « SI ces 3 hypothèses sont vraies, ALORS pas d'autre boucle que 1→4→2→1. » Mais (<a href="../#erratum">erratum du 2 octobre 2026</a>) la 3<sup>e</sup> hypothèse, avec la 2<sup>e</sup>, contient déjà toute la réponse : à elles deux, elles excluent toute autre boucle, petite ou grande (dans le fichier Lean, une boucle parcourue plusieurs fois compte comme une boucle plus longue). Ce qui est vraiment démontré est plus petit : pas d'autre boucle qui passe par au plus 1322 nombres impairs, sous les 2 premières hypothèses.</span>
+    <span lang="en">⚠️ <strong>Important.</strong> I did NOT prove the Collatz conjecture. The formalized theorem is <strong>conditional</strong>: "IF these 3 hypotheses hold, THEN no other loop than 1→4→2→1." But (<a href="../#erratum">erratum of 2 October 2026</a>) the 3rd hypothesis, together with the 2nd, already contains the whole answer: together they exclude every other loop, small or large (in the Lean file, a loop gone round several times counts as a longer loop). What is really proved is smaller: no other loop that goes through at most 1322 odd numbers, under the first 2 hypotheses.</span>
   </p>
 </aside>
 
@@ -242,8 +242,8 @@
   <span lang="en">What we did is more modest.</span>
 </p>
 <p>
-  <span lang="fr">Le théorème dit : <strong>SI</strong> on accepte 3 conditions techniques, <strong>ALORS</strong> il n'y a pas d'autre « boucle » que celle qu'on connaît déjà (1 → 4 → 2 → 1). Le problème, corrigé le 2 octobre 2026 : la 3<sup>e</sup> condition, jointe à la 2<sup>e</sup>, dit déjà qu'il n'y a pas de très grande boucle. Ce SI-là contenait donc une partie de la réponse.</span>
-  <span lang="en">The theorem says: <strong>IF</strong> we accept 3 technical conditions, <strong>THEN</strong> there's no other "loop" than the one we already know (1 → 4 → 2 → 1). The problem, corrected on 2 October 2026: the 3rd condition, together with the 2nd, already says that there is no very large loop. So that IF already contained part of the answer.</span>
+  <span lang="fr">Le théorème dit : <strong>SI</strong> on accepte 3 conditions techniques, <strong>ALORS</strong> il n'y a pas d'autre « boucle » que celle qu'on connaît déjà (1 → 4 → 2 → 1). Le problème, corrigé le 2 octobre 2026 : la 3<sup>e</sup> condition, jointe à la 2<sup>e</sup>, dit déjà qu'il n'y a aucune autre boucle, grande ou petite. Ce SI-là contenait donc déjà toute la réponse : le théorème tourne en rond.</span>
+  <span lang="en">The theorem says: <strong>IF</strong> we accept 3 technical conditions, <strong>THEN</strong> there's no other "loop" than the one we already know (1 → 4 → 2 → 1). The problem, corrected on 2 October 2026: the 3rd condition, together with the 2nd, already says that there is no other loop, large or small. So that IF already contained the whole answer: the theorem is circular.</span>
 </p>
 <p>
   <span lang="fr">C'est un théorème <strong>conditionnel</strong>. Avec un grand SI au début.</span>
@@ -256,7 +256,7 @@
 <ol>
   <li><span lang="fr">Une <strong>hypothèse de travail</strong> sur les bornes de Baker (un truc technique pas démontré, plus fort que ce qui est publié, qu'on pose comme hypothèse <em>explicitement</em>)</span><span lang="en">A <strong>working hypothesis</strong> on Baker bounds (a technical thing not proved, stronger than what is published, which we explicitly state as a hypothesis)</span></li>
   <li><span lang="fr">Une <strong>vérification ordinateur</strong> (Bařina 2025, jusqu'à 2<sup>71</sup>, déjà faite et publiée)</span><span lang="en">A <strong>computer verification</strong> (Barina 2025, up to 2<sup>71</sup>, already done and published)</span></li>
-  <li><span lang="fr">Une <strong>hypothèse supposée</strong> (qu'on appelle <em>DerivedLargeKBound</em> — pour les très grands cycles, plus de 1322 nombres impairs). On l'avait présentée comme une dérivation : c'était faux. Elle n'est démontrée nulle part, et avec la condition 2 elle dit déjà qu'il n'y a pas de très grande boucle (<a href="../#erratum">erratum du 2 octobre 2026</a>).</span><span lang="en">An <strong>assumed hypothesis</strong> (called <em>DerivedLargeKBound</em> — for very large cycles, more than 1322 odd numbers). We had presented it as a derivation: that was wrong. It is proved nowhere, and together with condition 2 it already says there is no very large loop (<a href="../#erratum">erratum of 2 October 2026</a>).</span></li>
+  <li><span lang="fr">Une <strong>hypothèse supposée</strong> (qu'on appelle <em>DerivedLargeKBound</em> — pour les très grands cycles, plus de 1322 nombres impairs). On l'avait présentée comme une dérivation : c'était faux. Elle n'est démontrée nulle part, et avec la condition 2 elle dit déjà qu'il n'y a aucune autre boucle, grande ou petite (<a href="../#erratum">erratum du 2 octobre 2026</a>).</span><span lang="en">An <strong>assumed hypothesis</strong> (called <em>DerivedLargeKBound</em> — for very large cycles, more than 1322 odd numbers). We had presented it as a derivation: that was wrong. It is proved nowhere, and together with condition 2 it already says there is no other loop, large or small (<a href="../#erratum">erratum of 2 October 2026</a>).</span></li>
 </ol>
 <p>
   <span lang="fr">Ce qui reste démontré est petit. Et c'est vérifié par une machine, avec des réserves (voir section suivante).</span>
@@ -272,8 +272,8 @@
   <span lang="en">AI assistants reviewed the proof: notably Claude (Anthropic), and occasionally other models for cross-review.</span>
 </p>
 <p>
-  <span lang="fr">Ces relectures ne suffisent pas : la 3<sup>e</sup> hypothèse contenait déjà une partie de la réponse, et ce n'est corrigé que depuis le 2 octobre 2026 (erratum public).</span>
-  <span lang="en">These reviews are not enough: the 3rd hypothesis already contained part of the answer, and this was only corrected on 2 October 2026 (public erratum).</span>
+  <span lang="fr">Ces relectures ne suffisent pas : la 3<sup>e</sup> hypothèse contenait déjà toute la réponse, et ce n'est corrigé que depuis le 2 octobre 2026 (erratum public).</span>
+  <span lang="en">These reviews are not enough: the 3rd hypothesis already contained the whole answer, and this was only corrected on 2 October 2026 (public erratum).</span>
 </p>
 <p>
   <span lang="fr">Et la machine Lean 4 a vérifié chaque étape du raisonnement, à partir des hypothèses. Mais elle ne juge pas ce que valent les hypothèses. Voir section suivante.</span>
@@ -350,7 +350,7 @@
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20261028-V0-10-18"></script>
+<script src="../assets/js/main.js?v=20261028-V0-10-19"></script>
 
 </body>
 </html>

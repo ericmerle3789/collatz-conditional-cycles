@@ -80,7 +80,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261028-V0-10-19">
 </head>
 <body>
 
@@ -133,6 +133,47 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.19">
+    <header>
+      <h2><span class="version-tag">v0.10.19</span> <span lang="fr">Fond et erratum : corrections de l'audit du 28 octobre 2026</span><span lang="en">Substance and erratum: corrections from the audit of 28 October 2026</span></h2>
+      <time datetime="2026-10-28">2026-10-28</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Page « Pour tous »</strong> : l'erratum y est dit en entier. La 3<sup>e</sup> hypothèse, avec la 2<sup>e</sup>, ne contient pas seulement la réponse « pour les très grandes boucles » : à elles deux, elles excluent toute autre boucle, petite ou grande (dans le fichier Lean, une boucle parcourue plusieurs fois compte comme une boucle plus longue) ; le théorème tourne en rond (quatre passages corrigés).</li>
+      <li><strong>Page « Cycles »</strong> : la vérification exhaustive est bornée (boucles d'au plus 10 termes impairs, registre commun, entrée L-A3) ; « quatre boucles connues » au lieu de « réellement quatre boucles » ; la « conspiration » des chiffres en base 2 et 3 est dite lecture heuristique ; les faits chiffrés ont été vérifiés des deux côtés par du code Python (et non par un noyau Lean d'un côté) ; le théorème conditionnel d'avril y est présenté avec son erratum, sans revendication d'apport ; pied de page daté.</li>
+      <li><strong>Méta-descriptions, Open Graph, Twitter et données structurées</strong> (accueil, Papers) : H1 est dite hypothèse de travail non publiée (<code>BakerSeparation</code>) et H2 la vérification de Bařina ; la revérification de <code>no_cycle_k_le_1322</code> sous Lean 4.34.0 est mentionnée.</li>
+      <li><strong>Chapeau de l'accueil</strong> : « organisées autour d'une obstruction diophantienne unique » devient « dont l'approche principale bute sur une obstruction diophantienne ».</li>
+      <li><strong>Diagramme des paradigmes</strong> : les nœuds que le catalogue, tranché du 22 au 27/10/2026, ne confirme pas (pistes C, F, I.1, W et Z) sont en pointillé, sans mot nouveau dans le diagramme ; la légende dit « diagramme d'avril 2026, conservé pour mémoire ».</li>
+      <li><strong>Titre de l'accueil</strong> : « cycles non triviaux hypothétiques » (et non « conjecturés ») et « avec des formalisations en Lean 4 ».</li>
+      <li><strong>Lien vers le PDF d'avril</strong> : son libellé dit qu'il s'agit du preprint d'avril 2026, sans l'erratum.</li>
+      <li><strong>FAQ</strong> : versions de Lean et de Mathlib (4.27.0 pour le preprint d'avril, 4.34.0 pour les formalisations d'octobre et la revérification de <code>no_cycle_k_le_1322</code>).</li>
+      <li><strong>Papers</strong> : le PDF et le README énoncent la variante <code>no_nontrivial_cycle_final</code> (3<sup>e</sup> hypothèse <code>ProductBoundThreshold</code>), le site suit <code>no_nontrivial_cycle_phase59</code> ; les deux sont circulaires ; « 0 <code>sorry</code> dans les preuves » pour Lagarias 1990 et Halbeisen–Hungerbühler 1997, comme pour Steiner 1978 ; titre exact du preprint (aussi dans les données structurées et la carte « Statut paper » de l'accueil).</li>
+      <li><strong>Lemme R92</strong> (accueil et catalogue des lemmes) : la preuve se termine par <code>decide</code>, vérifié par le noyau, et non <code>native_decide</code> ; l'extrait de l'accueil reprend la ligne <code>simp only</code> qui manquait.</li>
+      <li><strong>Registre de recherche</strong> : un événement daté reconnaît que des événements antérieurs ont été réécrits sans date le 02/10/2026 et le 20/10/2026 (textes d'origine dans l'historique git, commits fde2ffb et d94cde6) et précise l'erratum ; ces événements ne sont pas réécrits à nouveau.</li>
+      <li><strong><code>MAINTAINERS.md</code></strong> : section « Continuité » à jour (version v4 du dépôt Zenodo avec son erratum ; dépôt des formalisations d'articles classiques).</li>
+      <li><strong>Barre du haut</strong> : de 769 à 1919 px de large, le menu passe sur une deuxième ligne au lieu de pousser hors de l'écran les boutons « Citer », thème, langue et impression.</li>
+      <li><strong>Cache des navigateurs</strong> : paramètres de version de <code>main.js</code>, <code>main.css</code>, <code>research-ledger.js</code>, <code>research-ledger.json</code> et <code>lemmes.json</code> mis à jour.</li>
+      <li>Les entrées ci-dessous restent telles quelles.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>"For everyone" page</strong>: the erratum is stated in full. Together with the 2nd, the 3rd hypothesis does not only contain the answer "for very large loops": together they exclude every other loop, small or large (in the Lean file, a loop gone round several times counts as a longer loop); the theorem is circular (four passages corrected).</li>
+      <li><strong>"Cycles" page</strong>: the exhaustive check is bounded (loops with at most 10 odd terms, shared ledger, entry L-A3); "four known loops" instead of "really does have four loops"; the "conspiracy" of base-2 and base-3 digits is called a heuristic reading; the numerical facts were checked on both sides by Python code (not by a Lean kernel on one side); the April conditional theorem is presented with its erratum, with no claim of contribution; dated footer.</li>
+      <li><strong>Meta descriptions, Open Graph, Twitter and structured data</strong> (home page, Papers): H1 is called a working hypothesis, not a published theorem (<code>BakerSeparation</code>), and H2 Barina's verification; the re-check of <code>no_cycle_k_le_1322</code> on Lean 4.34.0 is mentioned.</li>
+      <li><strong>Home page lede</strong>: "organized around a single diophantine obstruction" becomes "whose main approach runs into a Diophantine obstruction".</li>
+      <li><strong>Paradigm diagram</strong>: the nodes that the catalogue, settled from 22 to 27 October 2026, does not confirm (leads C, F, I.1, W and Z) are dashed, with no new word in the diagram; the caption says "April 2026 diagram, kept for the record".</li>
+      <li><strong>Home page title</strong>: "hypothetical non-trivial cycles" (not "conjectural") and "with formalisations in Lean 4".</li>
+      <li><strong>Link to the April PDF</strong>: its label says it is the April 2026 preprint, without the erratum.</li>
+      <li><strong>FAQ</strong>: Lean and Mathlib versions (4.27.0 for the April preprint, 4.34.0 for the October formalisations and the re-check of <code>no_cycle_k_le_1322</code>).</li>
+      <li><strong>Papers</strong>: the PDF and the README state the variant <code>no_nontrivial_cycle_final</code> (3rd hypothesis <code>ProductBoundThreshold</code>), the site follows <code>no_nontrivial_cycle_phase59</code>; both are circular; "0 <code>sorry</code> in the proofs" for Lagarias 1990 and Halbeisen–Hungerbühler 1997, as for Steiner 1978; exact title of the preprint (also in the structured data and in the "Paper status" card of the home page).</li>
+      <li><strong>Lemma R92</strong> (home page and lemma catalogue): the proof ends with <code>decide</code>, checked by the kernel, not <code>native_decide</code>; the home-page excerpt restores the missing <code>simp only</code> line.</li>
+      <li><strong>Research ledger</strong>: a dated event acknowledges that earlier events were rewritten without a date on 2026-10-02 and 2026-10-20 (original texts in the git history, commits fde2ffb and d94cde6) and clarifies the erratum; those events are not rewritten again.</li>
+      <li><strong><code>MAINTAINERS.md</code></strong>: "Continuity" section updated (version v4 of the Zenodo record with its erratum; repository of the formalisations of classical papers).</li>
+      <li><strong>Top bar</strong>: from 769 to 1919 px wide, the menu moves to a second row instead of pushing the "Cite", theme, language and print buttons off the screen.</li>
+      <li><strong>Browser cache</strong>: version parameters of <code>main.js</code>, <code>main.css</code>, <code>research-ledger.js</code>, <code>research-ledger.json</code> and <code>lemmes.json</code> updated.</li>
+      <li>The entries below are kept as they were.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.10.18">
     <header>
       <h2><span class="version-tag">v0.10.18</span> <span lang="fr">Accueil : le travail récent en tête ; le preprint et son erratum juste après</span><span lang="en">Home page: recent work first; the preprint and its erratum just after</span></h2>
@@ -900,7 +941,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.18 · 2026-10-28</div>
+  <div class="footer-meta">Cartography · v0.10.19 · 2026-10-28</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">
@@ -920,7 +961,7 @@
 <!-- Hypothes.is annotations -->
 <script src="https://hypothes.is/embed.js" async></script>
 
-<script src="../assets/js/main.js?v=20261028-V0-10-18"></script>
+<script src="../assets/js/main.js?v=20261028-V0-10-19"></script>
 
 </body>
 </html>

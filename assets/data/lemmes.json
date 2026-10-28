@@ -89,8 +89,8 @@
     },
     {
       "name": "cycle_k_2_parity_1_1_p_7_no_dvd_D_s",
-      "fr": {"role": "R92 — premier certificat fini", "desc": "Pour cycle k=2 avec parityVector (1,1), p=7 ne divise pas D_s. native_decide."},
-      "en": {"role": "R92 — first finite certificate", "desc": "For cycle k=2 with parityVector (1,1), p=7 does not divide D_s. native_decide."},
+      "fr": {"role": "R92 — premier certificat fini", "desc": "Pour cycle k=2 avec parityVector (1,1), p=7 ne divise pas D_s. decide (noyau)."},
+      "en": {"role": "R92 — first finite certificate", "desc": "For cycle k=2 with parityVector (1,1), p=7 does not divide D_s. decide (kernel)."},
       "file": "ProjetCollatz/PostJAR/CongruenceTransport.lean"
     }
   ],

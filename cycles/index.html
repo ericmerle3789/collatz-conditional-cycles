@@ -52,7 +52,7 @@
       "image": "https://collatz-lab.org/assets/og-image.png",
       "inLanguage": ["en", "fr"],
       "datePublished": "2026-07-19T12:00:00+02:00",
-      "dateModified": "2026-10-02T12:00:00+02:00",
+      "dateModified": "2026-10-28T00:00:00+01:00",
       "author": {"@type": "Person", "@id": "https://orcid.org/0009-0008-7940-402X", "name": "Eric Merle"},
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -80,7 +80,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261002-V0-9-0">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261028-V0-10-19">
 
 <style>
   /* page-local: SVG figures inherit the site's theme variables */
@@ -235,8 +235,8 @@
   <span lang="en">3. Four harbours, two shores</span>
 </h2>
 <p>
-  <span lang="fr">Voici le retournement. Ce frôlement parfait <strong>a déjà eu lieu — quatre fois.</strong> Collatz possède réellement quatre boucles, et chacune est accrochée à un frôlement des deux tours. Trois vivent du côté des nombres <em>négatifs</em> (le monde miroir «&nbsp;×3−1&nbsp;»), une seule du côté positif&nbsp;: la nôtre, 1.</span>
-  <span lang="en">Here is the twist. That perfect graze <strong>has already happened — four times.</strong> Collatz really does have four loops, and each is anchored to a graze of the two towers. Three live on the <em>negative</em> side (the mirror world "×3−1"), only one on the positive side: ours, 1.</span>
+  <span lang="fr">Voici le retournement. Ce frôlement parfait <strong>a déjà eu lieu — quatre fois.</strong> Collatz a quatre boucles connues (sans compter 0 → 0), et chacune est accrochée à un frôlement des deux tours. Trois vivent du côté des nombres <em>négatifs</em> (le monde miroir «&nbsp;×3−1&nbsp;»), une seule du côté positif&nbsp;: la nôtre, 1.</span>
+  <span lang="en">Here is the twist. That perfect graze <strong>has already happened — four times.</strong> Collatz has four known loops (not counting 0 → 0), and each is anchored to a graze of the two towers. Three live on the <em>negative</em> side (the mirror world "×3−1"), only one on the positive side: ours, 1.</span>
 </p>
 
 <figure class="fig">
@@ -264,8 +264,8 @@
   <text class="s-note" x="570" y="224" text-anchor="middle">q = −139</text>
 </svg>
 <figcaption>
-  <span lang="fr">Rive positive (+)&nbsp;: un seul port, 1. Rive négative (le monde miroir ×3−1)&nbsp;: trois ports. Sous chaque port, l'écart du frôlement — exactement ±1 (serrure «&nbsp;gratuite&nbsp;», §4), sauf −17 dont l'écart q&nbsp;= −139 est une coïncidence rare. Vérifié exhaustivement.</span>
-  <span lang="en">Positive shore (+): a single harbour, 1. Negative shore (the ×3−1 mirror): three harbours. Below each, its near-miss gap — exactly ±1 (a "free" lock, §4), except −17 whose gap q&nbsp;= −139 is a rare coincidence. Verified exhaustively.</span>
+  <span lang="fr">Rive positive (+)&nbsp;: un seul port, 1. Rive négative (le monde miroir ×3−1)&nbsp;: trois ports. Sous chaque port, l'écart du frôlement — exactement ±1 (serrure «&nbsp;gratuite&nbsp;», §4), sauf −17 dont l'écart q&nbsp;= −139 est une coïncidence rare. Vérifié exhaustivement pour les boucles d'au plus 10 termes impairs, des deux côtés (registre commun, entrée L-A3) ; au-delà, c'est précisément la question ouverte.</span>
+  <span lang="en">Positive shore (+): a single harbour, 1. Negative shore (the ×3−1 mirror): three harbours. Below each, its near-miss gap — exactly ±1 (a "free" lock, §4), except −17 whose gap q&nbsp;= −139 is a rare coincidence. Verified exhaustively for loops with at most 10 odd terms, on both shores (shared ledger, entry L-A3); beyond that is precisely the open question.</span>
 </figcaption>
 </figure>
 
@@ -319,12 +319,12 @@
   <span lang="en">6. The wall</span>
 </h2>
 <p>
-  <span lang="fr">Au fond, exclure les boucles revient à savoir si les chiffres binaires (base 2) et ternaires (base 3) d'un même nombre peuvent «&nbsp;conspirer&nbsp;» parfaitement. C'est une question ouverte de toute la théorie des nombres — le <strong>fossé ×2×3</strong> de Furstenberg. Personne ne sait la franchir.</span>
-  <span lang="en">Ultimately, ruling out loops comes down to whether the binary (base 2) and ternary (base 3) digits of one number can perfectly "conspire". That is an open question across all of number theory — Furstenberg's <strong>×2×3 gap</strong>. Nobody knows how to cross it.</span>
+  <span lang="fr">On peut voir l'exclusion des boucles comme une question de «&nbsp;conspiration&nbsp;» entre les chiffres binaires (base 2) et ternaires (base 3) d'un même nombre (lecture heuristique, pas un théorème). C'est une question ouverte de toute la théorie des nombres — le <strong>fossé ×2×3</strong> de Furstenberg. Personne ne sait la franchir.</span>
+  <span lang="en">One can view ruling out loops as a question of a "conspiracy" between the binary (base 2) and ternary (base 3) digits of one number (a heuristic reading, not a theorem). That is an open question across all of number theory — Furstenberg's <strong>×2×3 gap</strong>. Nobody knows how to cross it.</span>
 </p>
 <p>
-  <span lang="fr">Ce qu'on peut faire, honnêtement, ce n'est pas franchir le mur&nbsp;: c'est en <strong>dessiner la carte exacte</strong>, nommer sa forme, et bâtir un <strong>échafaudage conditionnel</strong> vérifié par la machine (voir la <a href="../preuve/">preuve</a> et le <a href="../pour-tous/">résumé pour tous</a>). Le vrai apport n'est pas une borne&nbsp;; c'est la méthode et la forme de l'obstruction.</span>
-  <span lang="en">What one can honestly do is not to cross the wall: it is to <strong>draw its exact map</strong>, name its shape, and build a machine-checked <strong>conditional scaffold</strong> (see the <a href="../preuve/">proof</a> and the <a href="../pour-tous/">plain-language summary</a>). The real contribution isn't a bound; it's the method and the shape of the obstruction.</span>
+  <span lang="fr">Ce qu'on peut faire, honnêtement, ce n'est pas franchir le mur&nbsp;: c'est en <strong>dessiner la carte exacte</strong>, nommer sa forme, et vérifier en Lean, pas à pas, ce qu'on avance (voir la <a href="../preuve/">preuve</a> et le <a href="../pour-tous/">résumé pour tous</a>). Notre théorème conditionnel d'avril 2026 tourne en rond (<a href="../#erratum">erratum du 2 octobre 2026</a>)&nbsp;: seul le cas k&nbsp;≤&nbsp;1322 est démontré sans circularité, et il était déjà connu. Aucune nouveauté n'est revendiquée.</span>
+  <span lang="en">What one can honestly do is not to cross the wall: it is to <strong>draw its exact map</strong>, name its shape, and check in Lean, step by step, what one claims (see the <a href="../preuve/">proof</a> and the <a href="../pour-tous/">plain-language summary</a>). Our April 2026 conditional theorem is circular (<a href="../#erratum">erratum of 2 October 2026</a>): only the case k&nbsp;≤&nbsp;1322 is proved without circularity, and it was already known. No novelty is claimed.</span>
 </p>
 </section>
 
@@ -334,8 +334,8 @@
   <span lang="en">7. Two voices, one map</span>
 </h2>
 <p>
-  <span lang="fr">Tout ce que raconte cette page a été <strong>vérifié des deux côtés</strong>, indépendamment — un noyau formel Lean&nbsp;4 d'un côté, du code Python de l'autre, aucun copié sur l'autre. Pour aller plus loin&nbsp;:</span>
-  <span lang="en">Everything on this page has been <strong>verified on both sides</strong>, independently — a formal Lean&nbsp;4 kernel on one side, Python code on the other, neither derived from the other. To go further:</span>
+  <span lang="fr">Les faits chiffrés de cette page (les quatre boucles connues, leurs écarts, la proportion de 58,5&nbsp;%) ont été <strong>vérifiés des deux côtés</strong>, indépendamment, par du code Python de chaque côté (registre commun, entrée L-A3), aucun copié sur l'autre. Les rappels historiques et la remarque sur Furstenberg ne sont pas des calculs. Pour aller plus loin&nbsp;:</span>
+  <span lang="en">The numerical facts on this page (the four known loops, their gaps, the 58.5&nbsp;% proportion) were <strong>checked on both sides</strong>, independently, by Python code on each side (shared ledger, entry L-A3), neither derived from the other. The historical notes and the remark on Furstenberg are not computations. To go further:</span>
 </p>
 <ul>
   <li>
@@ -348,7 +348,7 @@
   </li>
   <li>
     <a href="../papers/"><span lang="fr">Nos papiers</span><span lang="en">Our papers</span></a>
-    — <span lang="fr">le théorème conditionnel formalisé en Lean&nbsp;4 et ses obstructions structurelles.</span><span lang="en">the conditional theorem formalized in Lean&nbsp;4 and its structural obstructions.</span>
+    — <span lang="fr">le théorème conditionnel formalisé en Lean&nbsp;4 et ses obstructions structurelles (circulaire&nbsp;: voir l'<a href="../#erratum">erratum du 2 octobre 2026</a>).</span><span lang="en">the conditional theorem formalized in Lean&nbsp;4 and its structural obstructions (circular: see the <a href="../#erratum">erratum of 2 October 2026</a>).</span>
   </li>
 </ul>
 <p style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-secondary); border-radius: 6px; font-size: 0.95rem;">
@@ -370,8 +370,8 @@
     · <a href="../feed.xml">Atom feed</a>
   </p>
   <p style="margin-top: 0.5rem;">
-    <span lang="fr">Page Cycles publiée le 2026-07-19 · v0.1 · faits vérifiés des deux côtés</span>
-    <span lang="en">Cycles page published 2026-07-19 · v0.1 · facts verified on both sides</span>
+    <span lang="fr">Page Cycles publiée le 2026-07-19 · v0.1 · faits chiffrés vérifiés des deux côtés · mise à jour le 2026-10-28 (v0.10.19)</span>
+    <span lang="en">Cycles page published 2026-07-19 · v0.1 · numerical facts checked on both sides · updated 2026-10-28 (v0.10.19)</span>
   </p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
@@ -379,7 +379,7 @@
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20261028-V0-10-18"></script>
+<script src="../assets/js/main.js?v=20261028-V0-10-19"></script>
 
 </body>
 </html>
