@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.17 (2026-10-28), Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4) on the site; Zenodo pointers updated; lead P7 corrected (Isabelle/HOL, not Lean).">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.18 (2026-10-28), home page reordered: recent work first, the April 2026 preprint and its erratum just after.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.17 (2026-10-28) — Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4) on the site; Zenodo pointers updated; lead P7 corrected (Isabelle/HOL, not Lean); v0.10.16 (2026-10-27) — timeline and summary updated (research ledger: three events, 37 in all; History; home cards); v0.10.15 (2026-10-27) — last stub lead of the catalogue settled (Z), test REQ-MATH-007 withdrawn, prototype library archived; v0.10.14 (2026-10-27) — five more stub leads of the catalogue settled (Q.bis, V, W, X, Y: five dead ends, four of them sourced), mea culpa #23 corrected (two of its three references exist); v0.10.13 (2026-10-27) — five more stub leads of the catalogue settled (I.1, N, O, P, Q: five dead ends, four of them sourced); v0.10.12 (2026-10-22) — five more stub leads of the catalogue settled (three sourced dead ends, H.1 for its MSO / Büchi–Bruyère part only, one dead end with no source of its own, one lead withdrawn; corrections to leads C and K of v0.10.11); v0.10.11 (2026-10-22) — five stub leads of the catalogue settled (three sourced dead ends, one dead end with no published source, one lead withdrawn as unsourced); v0.10.10 (2026-10-21) — Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.18 (2026-10-28) — home page reordered: recent work first, the April 2026 preprint and its erratum just after; v0.10.17 (2026-10-28) — Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4) on the site; Zenodo pointers updated; lead P7 corrected (Isabelle/HOL, not Lean); v0.10.16 (2026-10-27) — timeline and summary updated (research ledger: three events, 37 in all; History; home cards); v0.10.15 (2026-10-27) — last stub lead of the catalogue settled (Z), test REQ-MATH-007 withdrawn, prototype library archived; v0.10.14 (2026-10-27) — five more stub leads of the catalogue settled (Q.bis, V, W, X, Y: five dead ends, four of them sourced), mea culpa #23 corrected (two of its three references exist); v0.10.13 (2026-10-27) — five more stub leads of the catalogue settled (I.1, N, O, P, Q: five dead ends, four of them sourced); v0.10.12 (2026-10-22) — five more stub leads of the catalogue settled (three sourced dead ends, H.1 for its MSO / Büchi–Bruyère part only, one dead end with no source of its own, one lead withdrawn; corrections to leads C and K of v0.10.11); v0.10.11 (2026-10-22) — five stub leads of the catalogue settled (three sourced dead ends, one dead end with no published source, one lead withdrawn as unsourced); v0.10.10 (2026-10-21) — Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -133,6 +133,33 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.18">
+    <header>
+      <h2><span class="version-tag">v0.10.18</span> <span lang="fr">Accueil : le travail récent en tête ; le preprint et son erratum juste après</span><span lang="en">Home page: recent work first; the preprint and its erratum just after</span></h2>
+      <time datetime="2026-10-28">2026-10-28</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Bannière de l'accueil</strong> : le dernier jalon du registre, Steiner 1978 en Lean sans l'hypothèse <code>H_Rhin</code> (dossier <code>logs23/</code>, release v1.4, 28/10/2026), avec ses limites, au lieu du théorème conditionnel du preprint d'avril 2026 et de son erratum, qui restent sur l'accueil juste après « État des travaux ».</li>
+      <li><strong>« État des travaux »</strong> : la section est déplacée juste sous le titre de la page ; son bandeau « § VI » devient « Travail récent », puisqu'elle précède désormais le § I ; son introduction renvoie à l'erratum du preprint. Ses cinq cartes ne changent pas, sauf « Dernier audit ».</li>
+      <li><strong>Nouvelle section « Le preprint d'avril 2026 et son erratum du 2 octobre »</strong> : elle reprend, déplacés tels quels, l'encadré d'erratum (texte inchangé, ancre <code>#erratum</code> conservée), le résultat principal du preprint et les chiffres clés.</li>
+      <li><strong>Méta-descriptions</strong> (moteurs de recherche, Open Graph, Twitter) : elles commencent par l'état actuel (formalisations en Lean 4 de travaux classiques, dont Steiner 1978 sans <code>H_Rhin</code>) ; le texte sur le preprint et son erratum suit, inchangé.</li>
+      <li><strong>Données structurées (JSON-LD)</strong> : le site (nœud <code>WebSite</code>) reçoit une description qui commence par l'état actuel ; la description et le résumé du preprint ne changent pas.</li>
+      <li><strong>Carte « Dernier audit » de l'accueil</strong> : elle porte désormais sur la relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de cette version ; l'audit précédent (relecture adverse des changements de la v0.10.17, 2026-10-28) y est rappelé.</li>
+      <li><strong>Cache des navigateurs</strong> : paramètre de version de <code>main.js</code> mis à jour (il sert aussi aux données du catalogue).</li>
+      <li>Les entrées ci-dessous restent telles quelles.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Home page banner</strong>: the latest milestone of the ledger, Steiner 1978 in Lean without the hypothesis <code>H_Rhin</code> (folder <code>logs23/</code>, release v1.4, 2026-10-28), with its limits, instead of the conditional theorem of the April 2026 preprint and its erratum, which stay on the home page just after "Research status".</li>
+      <li><strong>"Research status"</strong>: the section is moved just below the page title; its "§ VI" eyebrow becomes "Recent work", since it now comes before § I; its introduction points to the erratum of the preprint. Its five cards do not change, except "Latest audit".</li>
+      <li><strong>New section "The April 2026 preprint and its erratum of 2 October"</strong>: it holds, moved as they were, the erratum box (text unchanged, anchor <code>#erratum</code> kept), the main result of the preprint and the key figures.</li>
+      <li><strong>Meta descriptions</strong> (search engines, Open Graph, Twitter): they start with the current state (Lean 4 formalisations of classical work, including Steiner 1978 without <code>H_Rhin</code>); the text on the preprint and its erratum follows, unchanged.</li>
+      <li><strong>Structured data (JSON-LD)</strong>: the site (<code>WebSite</code> node) gets a description that starts with the current state; the description and abstract of the preprint do not change.</li>
+      <li><strong>"Latest audit" card of the home page</strong>: it now refers to the internal adversarial review, AI-assisted (not peer review), of the changes of this version; the previous audit (adversarial review of the changes of v0.10.17, 2026-10-28) is recalled.</li>
+      <li><strong>Browser cache</strong>: version parameter of <code>main.js</code> updated (it is also used for the catalogue data).</li>
+      <li>The entries below are kept as they were.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.10.17">
     <header>
       <h2><span class="version-tag">v0.10.17</span> <span lang="fr">Steiner 1978 sans l'hypothèse H_Rhin ; pointeurs Zenodo ; correction de la piste P7</span><span lang="en">Steiner 1978 without the hypothesis H_Rhin; Zenodo pointers; correction of lead P7</span></h2>
@@ -867,7 +894,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.17 · 2026-10-28</div>
+  <div class="footer-meta">Cartography · v0.10.18 · 2026-10-28</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">
@@ -887,7 +914,7 @@
 <!-- Hypothes.is annotations -->
 <script src="https://hypothes.is/embed.js" async></script>
 
-<script src="../assets/js/main.js?v=20261028-V0-10-17"></script>
+<script src="../assets/js/main.js?v=20261028-V0-10-18"></script>
 
 </body>
 </html>
