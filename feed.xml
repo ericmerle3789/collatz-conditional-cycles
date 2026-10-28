@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-28T06:46:06Z</updated>
+  <updated>2026-10-28T07:02:52Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -21,11 +21,11 @@
     <title>v0.10.18 — Home page: recent work first; the preprint and its erratum just after</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.18-home-recent-first-2026-10-28</id>
-    <updated>2026-10-28T06:46:06Z</updated>
-    <published>2026-10-28T06:46:06Z</published>
+    <updated>2026-10-28T07:02:52Z</updated>
+    <published>2026-10-28T07:02:52Z</published>
     <category term="release"/>
     <category term="audit"/>
-    <summary>Home page reordered, with nothing new on the substance. The banner shows the latest milestone of the ledger (Steiner 1978 in Lean without the hypothesis H_Rhin, logs23/, release v1.4, with its limits) instead of the conditional theorem of the April 2026 preprint. "Research status" moves just below the page title (its "§ VI" eyebrow becomes "Recent work") and points to the erratum. A new section, "The April 2026 preprint and its erratum of 2 October", holds, moved as they were, the erratum box (text unchanged, anchor #erratum kept), the main result of the preprint and the key figures. Meta descriptions and the WebSite JSON-LD node start with the current state; the text on the preprint and its erratum follows, unchanged; the preprint's own description and abstract do not change. "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version.</summary>
+    <summary>Home page reordered, with nothing new on the substance. The banner shows the latest milestone of the ledger (Steiner 1978 in Lean without the hypothesis H_Rhin, logs23/, release v1.4, with its limits) instead of the conditional theorem of the April 2026 preprint. "Research status" moves just below the page title (its "§ VI" eyebrow becomes "Recent work") and points to the erratum. A new section, "The April 2026 preprint and its erratum of 2 October", holds, moved as they were, the erratum box (text unchanged, anchor #erratum kept), the main result of the preprint and the key figures. Meta descriptions start with the current state; the text on the preprint and its erratum follows, unchanged. The WebSite JSON-LD node gets a description that starts with the current state; the preprint's own description and abstract do not change. Banner: its height is no longer fixed between 769 and 1100 px wide, so that nothing in it is cut. "Latest audit" card: internal AI-assisted adversarial review (not peer review) of the changes of this version.</summary>
   </entry>
 
   <entry>

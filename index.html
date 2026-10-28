@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Collatz / Syracuse Conditional Cycles — Lean 4 formalization</title>
-<meta name="description" content="Conjecture de Syracuse / Collatz : formalisations en Lean 4 de travaux classiques sur les cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, ce dernier sans l'hypothèse H_Rhin depuis le 28/10/2026 ; aucune nouveauté revendiquée). Preprint d'avril 2026 : Théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0). Ne prouve pas la conjecture. Démontré : aucun cycle non trivial avec k ≤ 1322, sous les hypothèses de Baker (H1) et de Bařina (H2). La 3e hypothèse (H3) est supposée et équivaut, sous H2, à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 02/10/2026). — Collatz conjecture: Lean 4 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). April 2026 preprint: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026).">
+<meta name="description" content="Conjecture de Syracuse / Collatz : ne prouve pas la conjecture. Formalisations en Lean 4 de travaux classiques sur les cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, ce dernier sans l'hypothèse H_Rhin depuis le 28/10/2026 ; aucune nouveauté revendiquée). Preprint d'avril 2026 : Théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0). Ne prouve pas la conjecture. Démontré : aucun cycle non trivial avec k ≤ 1322, sous les hypothèses de Baker (H1) et de Bařina (H2). La 3e hypothèse (H3) est supposée et équivaut, sous H2, à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 02/10/2026). — Collatz conjecture: does not prove the conjecture. Lean 4 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). April 2026 preprint: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026).">
 <meta name="keywords" content="Collatz conjecture, Syracuse conjecture, conjecture de Syracuse, suite de Syracuse, 3x+1 problem, 3n+1, Kakutani problem, Hasse problem, Lean 4, Mathlib, formal verification, Baker's theorem, continued fractions, Diophantine approximation, non-trivial cycles">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -28,7 +28,7 @@
 
 <!-- Open Graph (Facebook, LinkedIn, Mastodon, Slack, Discord) -->
 <meta property="og:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
-<meta property="og:description" content="Conjecture de Syracuse (a.k.a. Collatz). Lean 4 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). April 2026 preprint: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026). Zenodo preprint, concept DOI 10.5281/zenodo.19790405.">
+<meta property="og:description" content="Conjecture de Syracuse (a.k.a. Collatz). Does not prove the conjecture. Lean 4 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). April 2026 preprint: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026). Zenodo preprint, concept DOI 10.5281/zenodo.19790405.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
 <meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
@@ -42,7 +42,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
-<meta name="twitter:description" content="Conjecture de Syracuse / Collatz. Lean 4 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). April 2026 preprint: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026). Zenodo preprint (DOI).">
+<meta name="twitter:description" content="Conjecture de Syracuse / Collatz. Does not prove the conjecture. Lean 4 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). April 2026 preprint: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the Baker (H1) and Barina (H2) hypotheses. The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026). Zenodo preprint (DOI).">
 <meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
@@ -687,6 +687,8 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 
 
 <style>
+  /* Bannière : hauteur libre entre 769 et 1100 px, pour que rien n'y soit rogné (v0.10.18) */
+  @media (min-width: 769px) and (max-width: 1100px) { .hero-banner { height: auto; min-height: clamp(360px, 48vw, 540px); padding: 2.5rem 0; } }
   /* === RESEARCH STATUS SNAPSHOT (accueil compact) === */
   /* margin: 4rem auto centers the section like other <section> tags (max-width: 1100px) */
   .research-status-snapshot { margin: 4rem auto 2rem auto; }
