@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-10-28T14:20:35Z</updated>
+  <updated>2026-10-28T14:56:40Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -21,8 +21,8 @@
     <title>v0.10.20 — Results first: home page, spring 2026 archive, menu and Papers page</title>
     <link href="https://collatz-lab.org/changelog/"/>
     <id>urn:collatz-cycles:v0.10.20-results-first-2026-10-28</id>
-    <updated>2026-10-28T14:20:35Z</updated>
-    <published>2026-10-28T14:20:35Z</published>
+    <updated>2026-10-28T14:56:40Z</updated>
+    <published>2026-10-28T14:56:40Z</published>
     <category term="release"/>
     <summary>Home page reorganised, nothing new on the substance. A compact banner: the first screen shows the latest milestone, the warning that this site does not prove the conjecture and the link to the erratum on desktop, laptop and phone. A "Results" section of four cards (Steiner 1978 without hypothesis, Lagarias 1990, Halbeisen–Hungerbühler 1997, errata note), each with a "To audit" link. The April sections (lock and diagram, hypotheses, tests, mea culpa) are moved as they were into a "Spring 2026 archive". A nine-entry menu on every page. Papers opens with the published formalisations, each card saying how to audit it. Reading time translated.</summary>
   </entry>
