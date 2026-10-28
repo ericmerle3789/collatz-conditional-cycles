@@ -1,8 +1,8 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-10-28T10:56:35Z",
-  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-28 (v0.10.19): earlier ledger events rewritten without a date are acknowledged by a dated event. Previously, 2026-10-28: Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4). Previously, 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
+  "generated": "2026-10-28T11:23:36Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-28 (v0.10.19): release v1.5 of the Lean repository (documentation and LICENSE; ccchallenge links to v1.5); earlier ledger events rewritten without a date are acknowledged by a dated event. Previously, 2026-10-28: Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4). Previously, 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
@@ -12,7 +12,7 @@
       "type": "repository",
       "subtype": "correction",
       "date": "2026-10-28",
-      "datetime": "2026-10-28T11:56:35+01:00",
+      "datetime": "2026-10-28T12:23:36+01:00",
       "status": "validated",
       "milestone": false,
       "claim_scope": "documentation",
@@ -34,6 +34,34 @@
         {"label": "Changelog v0.10.19", "url": "/changelog/#v0.10.19", "kind": "site-section"}
       ],
       "related": ["erratum-main-statement-2026-10-02", "zenodo-v4-erratum-2026-10-20"]
+    },
+
+    {
+      "id": "lean-repo-release-v1-5-2026-10-28",
+      "type": "repository",
+      "subtype": "release",
+      "date": "2026-10-28",
+      "datetime": "2026-10-28T12:14:47+01:00",
+      "status": "validated",
+      "milestone": false,
+      "claim_scope": "documentation",
+      "verification_method": "github_tag",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-28",
+      "title": {
+        "fr": "Release v1.5 du dépôt Lean (documentation et licence) ; liens ccchallenge vers la v1.5",
+        "en": "Release v1.5 of the Lean repository (documentation and license); ccchallenge links to v1.5"
+      },
+      "summary": {
+        "fr": "Release v1.5 du dépôt one-obstruction-three-faces-lean, archivée sur Zenodo (DOI 10.5281/zenodo.23728612) : documentation seulement, aucun fichier Lean, script de vérification ni rapport d'axiomes ne change depuis la v1.4. Elle ajoute le fichier LICENSE (texte officiel de CC BY 4.0 ; les releases v1.0 à v1.4 n'en contiennent pas, leur licence est celle de leur README et de leur fiche Zenodo), un fichier CITATION.cff, les instructions de revérification depuis un clone neuf pour chaque dossier, et des notes datées. Les trois formalisations inscrites sur ccchallenge (n° 14, Halbeisen–Hungerbühler 1997 ; n° 15, Lagarias 1990 ; n° 16, Steiner 1978) pointent désormais vers cette archive ; leur statut reste « Ready to be audited » (API : waiting_to_be_audited).",
+        "en": "Release v1.5 of the one-obstruction-three-faces-lean repository, archived on Zenodo (DOI 10.5281/zenodo.23728612): documentation only; no Lean file, check script or recorded axiom report changes since v1.4. It adds the LICENSE file (the official legal code of CC BY 4.0; releases v1.0 to v1.4 contain none, and their license is the one stated in their README and Zenodo record), a CITATION.cff file, instructions for re-checking each folder from a fresh clone, and dated notes. The three formalisations listed on ccchallenge (no. 14, Halbeisen–Hungerbühler 1997; no. 15, Lagarias 1990; no. 16, Steiner 1978) now point to this archive; their status remains \"Ready to be audited\" (API: waiting_to_be_audited)."
+      },
+      "artefacts": [
+        {"label": "Release v1.5", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/releases/tag/v1.5", "kind": "tag"},
+        {"label": "DOI 10.5281/zenodo.23728612", "url": "https://doi.org/10.5281/zenodo.23728612", "kind": "doi"}
+      ],
+      "related": ["lean-repo-release-v1-3-2026-10-27", "steiner1978-without-h-rhin-2026-10-28"]
     },
 
     {
@@ -1086,13 +1114,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 39,
-    "by_type": {"lean": 11, "repository": 9, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
-    "by_status": {"validated": 29, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
-    "by_milestone": {"true": 27, "false": 12},
-    "by_claim_scope": {"documentation": 24, "formal_lean": 10, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 27, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
-    "note_fr": "Registre partiel : 39 événements (mise à jour du 2026-10-28, v0.10.19). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 39 events (update of 2026-10-28, v0.10.19). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "total_events": 40,
+    "by_type": {"lean": 11, "repository": 10, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
+    "by_status": {"validated": 30, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
+    "by_milestone": {"true": 27, "false": 13},
+    "by_claim_scope": {"documentation": 25, "formal_lean": 10, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
+    "by_epistemic_status": {"verified": 28, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
+    "note_fr": "Registre partiel : 40 événements (mise à jour du 2026-10-28, v0.10.19). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 40 events (update of 2026-10-28, v0.10.19). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }
