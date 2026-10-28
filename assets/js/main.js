@@ -27,6 +27,9 @@
   const t = {
     fr: {
       navAccueil: "Accueil",
+      navResultats: "Résultats",
+      navPreprint: "Preprint",
+      navArchives: "Archives 2026",
       navPourTous: "Pour tous",
       navPistes: "Pistes",
       navLemmes: "Lemmes",
@@ -43,7 +46,7 @@
       backTop: "Haut",
       heroEyebrow: "Cartographie scientifique · Pré-publication",
       heroTitle: 'Une enquête sur les <em>cycles non triviaux</em> hypothétiques de la suite de Collatz, avec des formalisations en Lean 4.',
-      heroLede: "Trente-six pistes mathématiques, trois hypothèses (H1, H2, H3), une famille d'hypothèses ouvertes — l'approche principale bute sur une obstruction diophantienne : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.",
+      heroLede: "Formalisations en Lean 4 de trois travaux classiques sur les cycles de Collatz (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978), avec une note d'errata ; un catalogue de trente-six pistes, chacune avec sa fiche ; et le preprint d'avril 2026, avec son erratum.",
       keyStat1Label: "tout entier sous 2<sup>71</sup> atteint 1",
       keyStat1Desc: "Bařina 2025 (J. Supercomputing 81)",
       keyStat2Label: "minima locaux de tout cycle non trivial",
@@ -101,7 +104,7 @@
       mainResultEyebrow: "Résultat principal — preprint (DOI Zenodo) · erratum du 2 octobre 2026",
       mainResultTitle: "Théorème conditionnel : aucun cycle Collatz non trivial avec k ≤ 1322, sous les hypothèses H1 et H2",
       mainResultDesc: "Les théorèmes <code>no_cycle_k_le_1322</code> (sous H1, H2) et <code>no_nontrivial_cycle_phase59</code> (sous H1, H2, H3) ont été vérifiés par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant la correction du bug de noyau <a href=\"https://github.com/leanprover/lean4/issues/14576\" target=\"_blank\" rel=\"noopener\">lean4#14576</a> (Lean v4.32.2, 28/07/2026). <code>no_cycle_k_le_1322</code> a été revérifié sous Lean 4.34.0, qui contient la correction de lean4#14576, les 20 et 21 octobre 2026 : il ne dépend que de <code>propext</code>, <code>Classical.choice</code> et <code>Quot.sound</code> ; <code>no_nontrivial_cycle_phase59</code> ne l'a pas été. Profil d'axiomes du théorème principal : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>, selon la référence <code>expected_axioms.md</code> (Lean 4.27.0). Comme H3 équivaut sous H2 à la conclusion elle-même (en Lean, k est un temps de retour quelconque), seul le cas k ≤ 1322 est démontré sans circularité (voir l'<a href=\"#erratum\">erratum</a>).",
-      mainResultContrib: "<strong>Ce que le projet apporte</strong> : une formalisation Lean de l'exclusion des cycles avec k ≤ 1322 (sous H1 et H2) et un catalogue documenté de pistes et d'obstructions. Le résultat mathématique est déjà contenu dans la littérature : Hercher (2023) et la vérification de Bařina impliquent qu'un cycle non trivial a au moins 1,375·10<sup>11</sup> termes impairs. Sept théorèmes centraux, une quarantaine de fichiers Lean ; chaîne principale reproductible via <code>reproduce.sh</code> (Lean 4.27.0).",
+      mainResultContrib: "<strong>Ce que le projet apportait en avril 2026</strong> : une formalisation Lean de l'exclusion des cycles avec k ≤ 1322 (sous H1 et H2) et un catalogue documenté de pistes et d'obstructions. Le résultat mathématique est déjà contenu dans la littérature : Hercher (2023) et la vérification de Bařina impliquent qu'un cycle non trivial a au moins 1,375·10<sup>11</sup> termes impairs. Sept théorèmes centraux, une quarantaine de fichiers Lean ; chaîne principale reproductible via <code>reproduce.sh</code> (Lean 4.27.0).",
       readPaper: "Lire le preprint d'avril 2026 (PDF, sans l'erratum)",
       readProof: "Architecture de la preuve",
       diagramCaption: "→ Diagramme d'avril 2026, conservé pour mémoire. Toutes ses flèches vers le verrou Λ sont celles d'avril 2026 : des hypothèses de travail, pas des résultats. En pointillé : les pistes pour lesquelles le catalogue, tranché du 22 au 27/10/2026, n'a trouvé aucune source publiée (C pour sa partie Fourier, I.1, J, R pour ses autocorrélations, et W) et « Schémas + Faltings » (piste K, retirée). Pour chaque piste, sa fiche du catalogue dit ce qui tient ; en particulier, celles de F et de Z ne confirment pas non plus ce retour au verrou (F : les mesures de Marcovecchio portent sur un seul logarithme, pas sur la forme linéaire ; Z : pour les fonctions de Letherman, Schleicher et Wood, le multiplicateur d'un cycle est nul). Ce ne sont pas ces paradigmes qui alimentent le théorème, mais les hypothèses H1, H2 et H3 (paramètres). Seule la branche k ≤ 1322 (H1, H2) est démontrée sans circularité ; la branche k &gt; 1322 repose sur H3, supposée (voir l'<a href=\"#erratum\">erratum</a>).",
@@ -121,6 +124,9 @@
     },
     en: {
       navAccueil: "Home",
+      navResultats: "Results",
+      navPreprint: "Preprint",
+      navArchives: "2026 archive",
       navPourTous: "For everyone",
       navPistes: "Approaches",
       navLemmes: "Lemmas",
@@ -137,7 +143,7 @@
       backTop: "Top",
       heroEyebrow: "Scientific cartography · Pre-publication",
       heroTitle: 'A survey of hypothetical <em>non-trivial cycles</em> in the Collatz sequence, with formalisations in Lean 4.',
-      heroLede: "Thirty-six mathematical approaches, three hypotheses (H1, H2, H3), a family of open hypotheses — the main approach runs into a Diophantine obstruction: <em>the lock inequality</em> connecting the count of odd steps to the count of even steps in a hypothetical cycle.",
+      heroLede: "Lean 4 formalisations of three classical works on Collatz cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978), with an errata note; a catalogue of thirty-six leads, each with its entry; and the April 2026 preprint, with its erratum.",
       keyStat1Label: "every integer below 2<sup>71</sup> reaches 1",
       keyStat1Desc: "Barina 2025 (J. Supercomputing 81)",
       keyStat2Label: "local minima of any non-trivial cycle",
@@ -195,7 +201,7 @@
       mainResultEyebrow: "Main result — preprint (Zenodo DOI) · erratum of 2 October 2026",
       mainResultTitle: "Conditional theorem: no non-trivial Collatz cycle with k ≤ 1322, under hypotheses H1 and H2",
       mainResultDesc: "The theorems <code>no_cycle_k_le_1322</code> (under H1, H2) and <code>no_nontrivial_cycle_phase59</code> (under H1, H2, H3) were checked by the Lean 4.27.0 kernel (Mathlib v4.27.0), before the fix of kernel bug <a href=\"https://github.com/leanprover/lean4/issues/14576\" target=\"_blank\" rel=\"noopener\">lean4#14576</a> (Lean v4.32.2, 28 July 2026). <code>no_cycle_k_le_1322</code> was re-checked on Lean 4.34.0, which includes the fix of lean4#14576, on 20–21 October 2026: it depends only on <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code>; <code>no_nontrivial_cycle_phase59</code> was not. Axiom profile of the main theorem: <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>, according to the reference <code>expected_axioms.md</code> (Lean 4.27.0). Since H3 is equivalent under H2 to the conclusion itself (in Lean, k is any return time), only the case k ≤ 1322 is proved without circularity (see the <a href=\"#erratum\">erratum</a>).",
-      mainResultContrib: "<strong>What the project contributes</strong>: a Lean formalization of the exclusion of cycles with k ≤ 1322 (under H1 and H2) and a documented catalogue of approaches and obstructions. The mathematical result is already contained in the literature: Hercher (2023) together with Barina's verification implies that a non-trivial cycle has at least 1.375·10<sup>11</sup> odd terms. Seven central theorems, about forty Lean files; main chain reproducible via <code>reproduce.sh</code> (Lean 4.27.0).",
+      mainResultContrib: "<strong>What the project contributed in April 2026</strong>: a Lean formalization of the exclusion of cycles with k ≤ 1322 (under H1 and H2) and a documented catalogue of approaches and obstructions. The mathematical result is already contained in the literature: Hercher (2023) together with Barina's verification implies that a non-trivial cycle has at least 1.375·10<sup>11</sup> odd terms. Seven central theorems, about forty Lean files; main chain reproducible via <code>reproduce.sh</code> (Lean 4.27.0).",
       readPaper: "Read the April 2026 preprint (PDF, without the erratum)",
       readProof: "Proof architecture",
       diagramCaption: "→ April 2026 diagram, kept for the record. All its arrows to the Λ lock are those of April 2026: working hypotheses, not results. Dashed: the leads for which the catalogue, settled from 22 to 27 October 2026, found no published source (C for its Fourier part, I.1, J, R for its autocorrelations, and W) and \"Schemes + Faltings\" (lead K, withdrawn). For each lead, its entry in the catalogue says what holds; in particular, the entries for F and Z do not confirm this return to the lock either (F: Marcovecchio's measures concern a single logarithm, not the linear form; Z: for the functions of Letherman, Schleicher and Wood, the multiplier of a cycle is zero). These paradigms do not feed the theorem — hypotheses H1, H2 and H3 (parameters) do. Only the k ≤ 1322 branch (H1, H2) is proved without circularity; the k &gt; 1322 branch rests on H3, which is assumed (see the <a href=\"#erratum\">erratum</a>).",
@@ -1154,31 +1160,24 @@ ER  - `;
   function injectReadingMeta() {
     const main = document.querySelector('main');
     if (!main || document.querySelector('.reading-meta')) return;
-    const text = main.textContent || '';
+    // texte affiché seulement (innerText ignore la langue masquée)
+    const text = main.innerText || main.textContent || '';
     const words = text.trim().split(/\s+/).filter(Boolean).length;
-    const wpm = STATE.lang === 'fr' ? 200 : 220;
-    const minutes = Math.max(1, Math.round(words / wpm));
 
-    // Insère après le premier .hero-eyebrow ou en haut de main
-    const hero = main.querySelector('.hero, .hero-banner');
+    // v0.10.20 : dans le hero de la page (pas dans la bannière), à la fin, pour ne pas repousser l'avertissement ;
+    // libellés et nombres dans la langue de l'affichage (les deux langues sont écrites, la feuille de style masque l'autre)
+    const hero = main.querySelector('.hero') || main.querySelector('.hero-banner');
     if (!hero) return;
-
-    const dict = { fr: { read: 'min de lecture', words: 'mots' },
-                   en: { read: 'min read', words: 'words' } };
-    const d = dict[STATE.lang] || dict.en;
+    const fmt = (n, loc) => n.toLocaleString(loc);
     const meta = document.createElement('div');
     meta.className = 'reading-meta';
     meta.innerHTML = `
-      <span class="reading-meta-item">⏱ ${minutes} ${d.read}</span>
-      <span class="reading-meta-item">${words.toLocaleString()} ${d.words}</span>
+      <span class="reading-meta-item">⏱ <span lang="fr">${Math.max(1, Math.round(words / 200))} min de lecture</span><span lang="en">${Math.max(1, Math.round(words / 220))} min read</span></span>
+      <span class="reading-meta-item"><span lang="fr">${fmt(words, 'fr-FR')} mots</span><span lang="en">${fmt(words, 'en-US')} words</span></span>
     `;
-    // Insère dans le hero
-    const heroContent = hero.querySelector('.hero-eyebrow, .hero-banner-eyebrow');
-    if (heroContent && heroContent.parentNode) {
-      heroContent.parentNode.insertBefore(meta, heroContent.nextSibling);
-    } else {
-      hero.insertAdjacentElement('afterend', meta);
-    }
+    // la feuille de style ne masque l'autre langue qu'au chargement : on le fait ici pour cet élément ajouté ensuite
+    meta.querySelectorAll('[lang]').forEach(el => { el.hidden = (el.getAttribute('lang') !== STATE.lang); });
+    hero.appendChild(meta);
   }
 
   // ========== THEOREM PERMALINKS (hover ¶, click to copy) ==========

@@ -207,17 +207,14 @@
     </a>
     <nav class="nav">
       <a href="#hero" data-i18n="navAccueil">Home</a>
+      <a href="#resultats" data-i18n="navResultats">Results</a>
+      <a href="papers/" data-i18n="navPapers">Papers</a>
+      <a href="#preprint" data-i18n="navPreprint">Preprint</a>
+      <a href="#pistes" data-i18n="navPistes">Approaches</a>
+      <a href="research-ledger/" data-i18n="navLedger">Ledger</a>
       <a href="pour-tous/" data-i18n="navPourTous">For everyone</a>
       <a href="cycles/">Cycles</a>
-      <a href="#pistes" data-i18n="navPistes">Approaches</a>
-      <a href="lemmes/" data-i18n="navLemmes">Lemmas</a>
-      <a href="preuve/" data-i18n="navPreuve">Proof</a>
-      <a href="papers/" data-i18n="navPapers">Papers</a>
-      <a href="lambda/" data-i18n="navLambda">Λ</a>
-      <a href="#hypotheses" data-i18n="navHypotheses">Hypotheses</a>
-      <a href="#meaculpa" data-i18n="navMeaCulpa">Mea culpa</a>
-      <a href="research-ledger/" data-i18n="navLedger">Ledger</a>
-      <a href="#team" data-i18n="navEquipe">Team</a>
+      <a href="#archives" data-i18n="navArchives">2026 archive</a>
     </nav>
     <div class="toolbar-actions">
       <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
@@ -277,7 +274,7 @@
     <span lang="en">Also known as the <strong>Syracuse problem</strong>, the <strong>3n+1 problem</strong>, the <strong>Kakutani problem</strong>, the <strong>Hasse algorithm</strong>, or the <strong>Ulam conjecture</strong>.</span>
   </p>
   <p class="hero-lede" data-i18n="heroLede">
-    Trente-six pistes mathématiques, trois hypothèses (H1, H2, H3), une famille d'hypothèses ouvertes — l'approche principale bute sur une obstruction diophantienne : <em>l'inégalité de verrou</em> reliant le nombre d'étapes impaires au nombre d'étapes paires d'un cycle hypothétique.
+    Formalisations en Lean 4 de trois travaux classiques sur les cycles de Collatz (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978), avec une note d'errata ; un catalogue de trente-six pistes, chacune avec sa fiche ; et le preprint d'avril 2026, avec son erratum.
   </p>
 </section>
 
@@ -285,6 +282,61 @@
      RESEARCH STATUS / ÉTAT DES TRAVAUX (Research Ledger preview)
      Mis à jour le 2026-10-28 (v0.10.18)
      ======================================================================== -->
+<!-- ========================================================================
+     RÉSULTATS (v0.10.20) : ce qui est vérifiable, en tête
+     ======================================================================== -->
+<section id="resultats" class="research-status-snapshot results-section">
+  <div class="section-eyebrow"><span lang="fr">Résultats · octobre 2026</span><span lang="en">Results · October 2026</span></div>
+  <h2><span lang="fr">Formalisations en Lean 4 de travaux classiques</span><span lang="en">Lean 4 formalisations of classical work</span></h2>
+  <p class="research-status-intro"><span lang="fr">Chaque énoncé est écrit avant sa preuve, vérifié par le noyau de Lean 4.34.0 avec les seuls axiomes standard, et revérifiable depuis un clone neuf. Rien de nouveau n'est revendiqué sur les cycles de Collatz, et ce site ne prouve pas la conjecture.</span><span lang="en">Each statement is written before its proof, checked by the kernel of Lean 4.34.0 with the standard axioms only, and can be re-checked from a fresh clone. Nothing new is claimed about Collatz cycles, and this site does not prove the conjecture.</span></p>
+  <div class="status-snapshot-grid">
+    <div class="status-card" data-family="lean">
+      <div class="status-card-eyebrow"><span lang="fr">Dernier jalon</span><span lang="en">Latest milestone</span></div>
+      <div class="status-card-title"><span lang="fr">Steiner 1978, sans hypothèse</span><span lang="en">Steiner 1978, without hypothesis</span></div>
+      <div class="status-card-meta"><span class="status-card-date">2026-10-28</span></div>
+      <p class="status-card-summary">
+        <span lang="fr">Le seul circuit des entiers positifs qui soit un cycle est {1, 2} : démontré en Lean 4 sans l'hypothèse <code>H_Rhin</code> (dossier <code>logs23/</code>). <code>H_Rhin</code> lui-même n'est pas démontré ; aucune nouveauté n'est revendiquée.</span>
+        <span lang="en">The only circuit on the positive integers that is a cycle is {1, 2}: proved in Lean 4 without the hypothesis <code>H_Rhin</code> (folder <code>logs23/</code>). <code>H_Rhin</code> itself is not proved; no novelty is claimed.</span>
+      </p>
+        <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.5/logs23#re-checking" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
+        <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener"><span lang="fr">DOI (v1.4)</span><span lang="en">DOI (v1.4)</span></a>
+    </div>
+    <div class="status-card" data-family="lean">
+      <div class="status-card-eyebrow"><span lang="fr">Article de 1990</span><span lang="en">Paper of 1990</span></div>
+      <div class="status-card-title"><span lang="fr">Lagarias 1990</span><span lang="en">Lagarias 1990</span></div>
+      <div class="status-card-meta"><span class="status-card-date">2026-10-20</span></div>
+      <p class="status-card-summary">
+        <span lang="fr">Les 60 énoncés retenus de l'article, tous démontrés en Lean 4 ; deux théorèmes sous des hypothèses nommées (théorème des nombres premiers, Baker–Fel'dman), jamais des axiomes.</span>
+        <span lang="en">The 60 statements kept from the paper, all proved in Lean 4; two theorems under named hypotheses (prime number theorem, Baker–Fel'dman), never axioms.</span>
+      </p>
+        <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.5/lagarias1990#how-to-check" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
+        <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23514572" target="_blank" rel="noopener"><span lang="fr">DOI (v1.1)</span><span lang="en">DOI (v1.1)</span></a>
+    </div>
+    <div class="status-card" data-family="lean">
+      <div class="status-card-eyebrow"><span lang="fr">Article de 1997</span><span lang="en">Paper of 1997</span></div>
+      <div class="status-card-title"><span lang="fr">Halbeisen–Hungerbühler 1997</span><span lang="en">Halbeisen–Hungerbühler 1997</span></div>
+      <div class="status-card-meta"><span class="status-card-date">2026-10-19</span></div>
+      <p class="status-card-summary">
+        <span lang="fr">Tout ce que l'article démontre est vérifié par le noyau de Lean (70 énoncés) ; la borne de la Remarque 1, que l'article ne démontre pas, ne l'est pas non plus.</span>
+        <span lang="en">Everything the paper proves is checked by the Lean kernel (70 statements); the bound of Remark 1, which the paper does not prove, is not proved here either.</span>
+      </p>
+        <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.5/hh1997#how-to-check" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
+        <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener"><span lang="fr">DOI (v1.0)</span><span lang="en">DOI (v1.0)</span></a>
+    </div>
+    <div class="status-card" data-family="audit">
+      <div class="status-card-eyebrow"><span lang="fr">Note technique</span><span lang="en">Technical note</span></div>
+      <div class="status-card-title"><span lang="fr">Note d'errata</span><span lang="en">Errata note</span></div>
+      <div class="status-card-meta"><span class="status-card-date">2026-10-21</span></div>
+      <p class="status-card-summary">
+        <span lang="fr">9 points relevés sur Halbeisen–Hungerbühler 1997 et 21 sur Lagarias 1990 en les formalisant, chacun vérifié par un théorème Lean ou un script ; aucun n'invalide un théorème formalisé.</span>
+        <span lang="en">9 points found in Halbeisen–Hungerbühler 1997 and 21 in Lagarias 1990 while formalising them, each checked by a Lean theorem or a script; none invalidates a formalised theorem.</span>
+      </p>
+        <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener"><span lang="fr">DOI de la note →</span><span lang="en">DOI of the note →</span></a>
+    </div>
+  </div>
+  <p class="research-status-positioning"><em lang="fr">Toutes les versions des releases Lean : DOI de concept <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (dernière : v1.5, 28/10/2026). Cartes complètes : <a href="papers/">Papers</a>.</em><em lang="en">All versions of the Lean releases: concept DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (latest: v1.5, 2026-10-28). Full cards: <a href="papers/">Papers</a>.</em></p>
+</section>
+
 <section id="research-status" class="research-status-snapshot">
   <div class="section-eyebrow"><span lang="fr">Travail récent</span><span lang="en">Recent work</span></div>
   <h2 data-i18n="researchStatusTitle">État des travaux</h2>
@@ -342,16 +394,16 @@
       <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9e42fa5/logs23" target="_blank" rel="noopener">→ <code>logs23/</code> (9e42fa5)</a>
     </div>
 
-    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.19, 2026-10-28) -->
+    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.20, 2026-10-28) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
-      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.19</span><span lang="en">Adversarial review of v0.10.19</span></div>
+      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.20</span><span lang="en">Adversarial review of v0.10.20</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-10-28</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.19 (corrections de l'audit du 28/10/2026 : erratum dit en entier sur « Pour tous », page « Cycles », méta-descriptions, diagramme d'avril, FAQ, Papers, registre, barre du haut), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.18 (tête de l'accueil), 2026-10-28.</span>
-        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.19 (corrections from the audit of 2026-10-28: erratum stated in full on "For everyone", "Cycles" page, meta descriptions, April diagram, FAQ, Papers, ledger, top bar), against the available sources. Previous audit: adversarial review of the changes of v0.10.18 (head of the home page), 2026-10-28.</span>
+        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.20 (résultats en tête de l'accueil, bannière compacte, archives du printemps 2026, menu, page Papers), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.19 (corrections de l'audit du 28/10/2026), 2026-10-28.</span>
+        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.20 (results first on the home page, compact banner, spring 2026 archive, menu, Papers page), against the available sources. Previous audit: adversarial review of the changes of v0.10.19 (corrections from the audit of 2026-10-28), 2026-10-28.</span>
       </p>
       <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
@@ -404,7 +456,7 @@
       Les théorèmes <code>no_cycle_k_le_1322</code> (sous H1, H2) et <code>no_nontrivial_cycle_phase59</code> (sous H1, H2, H3) ont été vérifiés par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant la correction du bug de noyau <a href="https://github.com/leanprover/lean4/issues/14576" target="_blank" rel="noopener">lean4#14576</a> (Lean v4.32.2, 28/07/2026). <code>no_cycle_k_le_1322</code> a été revérifié sous Lean 4.34.0, qui contient la correction de lean4#14576, les 20 et 21 octobre 2026 : il ne dépend que de <code>propext</code>, <code>Classical.choice</code> et <code>Quot.sound</code> ; <code>no_nontrivial_cycle_phase59</code> ne l'a pas été. Profil d'axiomes du théorème principal : <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>, selon la référence <code>expected_axioms.md</code> (Lean 4.27.0). Comme H3 équivaut sous H2 à la conclusion elle-même (en Lean, k est un temps de retour quelconque), seul le cas k ≤ 1322 est démontré sans circularité (voir l'<a href="#erratum">erratum</a>).
     </p>
     <p style="font-size: 0.92rem; line-height: 1.6; color: var(--text-secondary); margin: 0 0 1rem 0;" data-i18n="mainResultContrib">
-      <strong>Ce que le projet apporte</strong> : une formalisation Lean de l'exclusion des cycles avec k ≤ 1322 (sous H1 et H2) et un catalogue documenté de pistes et d'obstructions. Le résultat mathématique est déjà contenu dans la littérature : Hercher (2023) et la vérification de Bařina impliquent qu'un cycle non trivial a au moins 1,375·10<sup>11</sup> termes impairs. Sept théorèmes centraux, une quarantaine de fichiers Lean ; chaîne principale reproductible via <code>reproduce.sh</code> (Lean 4.27.0).
+      <strong>Ce que le projet apportait en avril 2026</strong> : une formalisation Lean de l'exclusion des cycles avec k ≤ 1322 (sous H1 et H2) et un catalogue documenté de pistes et d'obstructions. Le résultat mathématique est déjà contenu dans la littérature : Hercher (2023) et la vérification de Bařina impliquent qu'un cycle non trivial a au moins 1,375·10<sup>11</sup> termes impairs. Sept théorèmes centraux, une quarantaine de fichiers Lean ; chaîne principale reproductible via <code>reproduce.sh</code> (Lean 4.27.0).
     </p>
     <p style="font-size: 0.9rem; margin-top: 1.2rem;">
       <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/paper/v2/collatz-conditional-proof.pdf" target="_blank" rel="noopener" style="color: var(--accent); margin-right: 1.5rem;">→ <span data-i18n="readPaper">Lire le preprint d'avril 2026 (PDF, sans l'erratum)</span></a>
@@ -450,6 +502,135 @@
 <!-- ========================================================================
      LE VERROU Λ
      ======================================================================== -->
+
+
+<!-- ========================================================================
+     LES VOIES D'ATTAQUE
+     ======================================================================== -->
+<section id="pistes">
+  <div class="section-eyebrow">§ I</div>
+  <h2 data-i18n="pistesTitle">Catalogue des voies d'attaque</h2>
+  <p data-i18n="pistesIntro">Catalogue exhaustif des approches mathématiques pour la non-existence des cycles non triviaux Collatz. Cliquez sur une ligne pour voir les détails. <em>Transparence éditoriale : plus aucune entrée n'est en statut <code>stub</code> (note exploratoire en attente de sourçage formel, que le champ <code>status_meta</code> du JSON marquait explicitement, cf. <code>assets/data/pistes.json</code>). Les vingt et une qui l'étaient (C, E.4, F, J, K, M, R, H, H.1, H.2, I.1, N, O, P, Q, Q.bis, V, W, X, Y, Z) ont été tranchées les 22 et 27/10/2026 (source vérifiée, cul-de-sac motivé ou retrait) ; la raison figure dans leur fiche.</em></p>
+
+  <div class="filter-bar">
+    <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Rechercher une piste, une référence, un auteur…">
+    <button class="filter-btn active" data-status="all" data-i18n="filterAll">Toutes</button>
+    <button class="filter-btn" data-status="cds" data-i18n="filterCds">Culs-de-sac</button>
+    <button class="filter-btn" data-status="partiel" data-i18n="filterPartiel">Partielles</button>
+    <button class="filter-btn" data-status="insuf" data-i18n="filterInsuf">Retirée (δ11)</button>
+    <button class="filter-btn" data-status="prometteur" data-i18n="filterPrometteur">Prometteuses</button>
+    <button class="filter-btn" data-status="axiome" data-i18n="filterAxiome">Hypothèses (paramètres)</button>
+  </div>
+
+  <div class="table-wrap">
+    <table id="pistesTable">
+      <thead>
+        <tr>
+          <th data-i18n="colId">ID</th>
+          <th data-i18n="colName">Nom</th>
+          <th data-i18n="colRegion">Région</th>
+          <th data-i18n="colStatus">Statut</th>
+          <th data-i18n="colTest4">4-test</th>
+          <th data-i18n="colLean">Lean</th>
+          <th data-i18n="colSource">Source</th>
+        </tr>
+      </thead>
+      <tbody><!-- généré par main.js --></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========================================================================
+     HYPOTHÈSES
+     ======================================================================== -->
+
+
+<!-- ========================================================================
+     TESTS REQ-MATH
+     ======================================================================== -->
+
+
+<!-- ========================================================================
+     MEA CULPA
+     ======================================================================== -->
+
+
+
+<style>
+  /* Bannière compacte (v0.10.20) : le premier écran montre le dernier jalon, l'avertissement et le lien vers l'erratum,
+     au bureau, sur un portable et sur un téléphone ; la bannière occupe toute la largeur (elle s'arrêtait à 1100 px). */
+  @media screen and (min-width: 769px) {
+    .hero-banner { height: auto; min-height: 0; max-width: none; padding: 1.3rem 0; }
+    .hero-banner-content { max-width: min(96ch, 1100px); }
+    .hero-banner-eyebrow { margin-bottom: 0.7rem; }
+    .hero-banner-title { font-size: clamp(1.3rem, 1.8vw, 1.65rem); }
+    .hero-banner-subtitle { margin-top: 0.5rem; font-size: 1rem; }
+    .hero-banner-pills { margin-top: 0.7rem; }
+    .hero-banner-lambda { font-size: clamp(150px, 16vw, 240px); }
+    #hero { padding-top: 1.8rem; }
+    #hero .hero-eyebrow { margin-bottom: 0.9rem; }
+  }
+  @media screen and (max-width: 768px) {
+    .hero-banner { min-height: 0; padding: 1rem 0; }
+    .hero-banner-eyebrow { margin-bottom: 0.5rem; }
+    .hero-banner-subtitle { margin-top: 0.4rem; }
+    .hero-banner-pills { margin-top: 0.5rem; }
+    #hero { padding-top: 1.2rem; }
+    #hero .hero-eyebrow { margin-bottom: 0.7rem; }
+  }
+  /* Résultats (v0.10.20) et archives repliables du printemps 2026 */
+  .results-section { margin: 0 auto; }
+  @media screen and (min-width: 769px) { .results-section .status-snapshot-grid { grid-template-columns: repeat(2, 1fr); } }
+  .results-section .status-card-link + .status-card-link { margin-left: 1rem; }
+  .results-section .research-status-positioning { margin-top: 1rem; }
+  .results-section .research-status-positioning a, #archives a { color: var(--accent); }
+  .archive-fold > summary { max-width: 1100px; margin: 0 auto; padding: 1.2rem 2rem; cursor: pointer; font-family: var(--serif);
+    font-size: 1.15rem; color: var(--text-primary); border-bottom: 1px solid var(--border); }
+  .archive-fold > summary .archive-date { font-family: var(--sans); font-size: 0.85rem; color: var(--text-muted); }
+  .archive-fold[open] > summary { color: var(--accent); }
+  /* Ancre de l'erratum : la barre du haut collante (66 à 158 px selon la largeur) ne cache plus sa première ligne (v0.10.18) */
+  #erratum { scroll-margin-top: 11rem; }
+  /* === RESEARCH STATUS SNAPSHOT (accueil compact) === */
+  /* margin: 4rem auto centers the section like other <section> tags (max-width: 1100px) */
+  .research-status-snapshot { margin: 4rem auto 2rem auto; }
+  .research-status-intro { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+  .research-status-intro a { color: var(--accent); font-weight: 500; text-decoration: none; border-bottom: 1px dashed var(--accent); }
+  .research-status-intro a:hover { border-bottom-style: solid; }
+  .research-status-positioning { margin-bottom: 1.5rem; padding: 0.6rem 1rem; background: var(--bg-elevated); border-left: 3px solid var(--text-secondary); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
+  .status-snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .status-card { padding: 1rem; background: var(--bg-elevated); border-radius: 8px; border-left: 4px solid var(--family-color); transition: transform 0.15s ease; position: relative; }
+  .status-card:hover { transform: translateY(-2px); }
+  .status-card[data-family="lean"]       { --family-color: #6366f1; }
+  .status-card[data-family="audit"]      { --family-color: #f97316; }
+  .status-card[data-family="mea-culpa"]  { --family-color: #be185d; }
+  .status-card[data-family="paper"]      { --family-color: #3b82f6; }
+  .status-card[data-family="repository"] { --family-color: #64748b; }
+  .status-card[data-family="study"]      { --family-color: #14b8a6; }
+  .status-card[data-milestone="true"] { border-top: 2px solid #fbbf24; }
+  .status-card[data-milestone="true"]::before { content: "★"; position: absolute; top: 0.5rem; right: 0.6rem; color: #fbbf24; font-size: 0.9rem; font-weight: 700; }
+  .status-card-eyebrow { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 0.4rem; }
+  .status-card-title { font-weight: 600; font-size: 0.98rem; margin-bottom: 0.5rem; line-height: 1.3; }
+  .status-card-meta { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .status-card-date { font-family: var(--mono); font-size: 0.78rem; color: var(--text-secondary); }
+  .event-status-badge { display: inline-block; padding: 0.1rem 0.5rem; font-size: 0.68rem; font-weight: 600; border-radius: 999px; letter-spacing: 0.03em; }
+  .event-status-badge[data-status="validated"]   { background: #064e3b; color: #6ee7b7; }
+  .event-status-badge[data-status="resolved"]    { background: #2e1065; color: #c4b5fd; }
+  .event-status-badge[data-status="in-progress"] { background: #1e3a8a; color: #93c5fd; }
+  .event-status-badge[data-status="submitted"]   { background: #7c2d12; color: #fdba74; }
+  .event-status-badge[data-status="erratum"]     { background: #7c2d12; color: #fdba74; }
+  .status-card-summary { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.5rem; }
+  .status-card-link { display: inline-block; font-size: 0.8rem; color: var(--family-color); text-decoration: none; font-weight: 500; }
+  .status-card-link:hover { text-decoration: underline; }
+</style>
+
+<section id="archives">
+  <div class="section-eyebrow">§ II</div>
+  <h2><span lang="fr">Archives du printemps 2026</span><span lang="en">Spring 2026 archive</span></h2>
+  <p><span lang="fr">Sections d'avril et de mai 2026, conservées telles quelles pour l'historique, avec les corrections datées qu'elles portent ; elles ne décrivent pas l'état actuel du projet. Pages de la même époque : <a href="lemmes/">lemmes du preprint</a>, <a href="preuve/">architecture de la preuve</a>, <a href="lambda/">explorateur Λ</a>.</span><span lang="en">Sections from April and May 2026, kept as they were for the record, with the dated corrections they carry; they do not describe the current state of the project. Pages from the same period: <a href="lemmes/">lemmas of the preprint</a>, <a href="preuve/">architecture of the proof</a>, <a href="lambda/">Λ explorer</a>.</span></p>
+</section>
+
+<details class="archive-fold" id="archive-verrou">
+<summary><span lang="fr">Le verrou Λ_{S,k} et le diagramme des paradigmes <span class="archive-date">· avril 2026</span></span><span lang="en">The Λ_{S,k} lock and the paradigm diagram <span class="archive-date">· April 2026</span></span></summary>
 <section id="verrou">
   <div class="section-eyebrow">Λ_{S,k}</div>
   <h2 data-i18n="lockTitle">Le verrou Λ_{S,k}</h2>
@@ -531,46 +712,10 @@ graph LR
       → Diagramme d'avril 2026, conservé pour mémoire. Toutes ses flèches vers le verrou Λ sont celles d'avril 2026 : des hypothèses de travail, pas des résultats. En pointillé : les pistes pour lesquelles le catalogue, tranché du 22 au 27/10/2026, n'a trouvé aucune source publiée (C pour sa partie Fourier, I.1, J, R pour ses autocorrélations, et W) et « Schémas + Faltings » (piste K, retirée). Pour chaque piste, sa fiche du catalogue dit ce qui tient ; en particulier, celles de F et de Z ne confirment pas non plus ce retour au verrou (F : les mesures de Marcovecchio portent sur un seul logarithme, pas sur la forme linéaire ; Z : pour les fonctions de Letherman, Schleicher et Wood, le multiplicateur d'un cycle est nul). Ce ne sont pas ces paradigmes qui alimentent le théorème, mais les hypothèses H1, H2 et H3 (paramètres). Seule la branche k ≤ 1322 (H1, H2) est démontrée sans circularité ; la branche k &gt; 1322 repose sur H3, supposée (voir l'<a href="#erratum">erratum</a>).
   </p>
 </section>
+</details>
 
-<!-- ========================================================================
-     LES VOIES D'ATTAQUE
-     ======================================================================== -->
-<section id="pistes">
-  <div class="section-eyebrow">§ I</div>
-  <h2 data-i18n="pistesTitle">Catalogue des voies d'attaque</h2>
-  <p data-i18n="pistesIntro">Catalogue exhaustif des approches mathématiques pour la non-existence des cycles non triviaux Collatz. Cliquez sur une ligne pour voir les détails. <em>Transparence éditoriale : plus aucune entrée n'est en statut <code>stub</code> (note exploratoire en attente de sourçage formel, que le champ <code>status_meta</code> du JSON marquait explicitement, cf. <code>assets/data/pistes.json</code>). Les vingt et une qui l'étaient (C, E.4, F, J, K, M, R, H, H.1, H.2, I.1, N, O, P, Q, Q.bis, V, W, X, Y, Z) ont été tranchées les 22 et 27/10/2026 (source vérifiée, cul-de-sac motivé ou retrait) ; la raison figure dans leur fiche.</em></p>
-
-  <div class="filter-bar">
-    <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Rechercher une piste, une référence, un auteur…">
-    <button class="filter-btn active" data-status="all" data-i18n="filterAll">Toutes</button>
-    <button class="filter-btn" data-status="cds" data-i18n="filterCds">Culs-de-sac</button>
-    <button class="filter-btn" data-status="partiel" data-i18n="filterPartiel">Partielles</button>
-    <button class="filter-btn" data-status="insuf" data-i18n="filterInsuf">Retirée (δ11)</button>
-    <button class="filter-btn" data-status="prometteur" data-i18n="filterPrometteur">Prometteuses</button>
-    <button class="filter-btn" data-status="axiome" data-i18n="filterAxiome">Hypothèses (paramètres)</button>
-  </div>
-
-  <div class="table-wrap">
-    <table id="pistesTable">
-      <thead>
-        <tr>
-          <th data-i18n="colId">ID</th>
-          <th data-i18n="colName">Nom</th>
-          <th data-i18n="colRegion">Région</th>
-          <th data-i18n="colStatus">Statut</th>
-          <th data-i18n="colTest4">4-test</th>
-          <th data-i18n="colLean">Lean</th>
-          <th data-i18n="colSource">Source</th>
-        </tr>
-      </thead>
-      <tbody><!-- généré par main.js --></tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ========================================================================
-     HYPOTHÈSES
-     ======================================================================== -->
+<details class="archive-fold" id="archive-hypotheses">
+<summary><span lang="fr">Hypothèses A, A′, B et C sur la sortie, estimations subjectives <span class="archive-date">· avril 2026</span></span><span lang="en">Hypotheses A, A′, B and C on the exit, subjective estimates <span class="archive-date">· April 2026</span></span></summary>
 <section id="hypotheses">
   <div class="section-eyebrow">§ III</div>
   <h2 data-i18n="hypothesesTitle">Trois hypothèses sur la sortie</h2>
@@ -670,10 +815,10 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
              show (0 % 3 : ℕ) = 0 from rfl, h_s_0]
   decide</code></pre>
 </section>
+</details>
 
-<!-- ========================================================================
-     TESTS REQ-MATH
-     ======================================================================== -->
+<details class="archive-fold" id="archive-tests">
+<summary><span lang="fr">Tests REQ-MATH <span class="archive-date">· avril 2026</span></span><span lang="en">REQ-MATH tests <span class="archive-date">· April 2026</span></span></summary>
 <section id="tests">
   <div class="section-eyebrow">§ IV</div>
   <h2 data-i18n="testsTitle">Tests REQ-MATH-NNN exécutés</h2>
@@ -683,10 +828,8 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     <!-- généré par main.js -->
   </div>
 </section>
+</details>
 
-<!-- ========================================================================
-     MEA CULPA
-     ======================================================================== -->
 <section id="meaculpa">
   <div class="section-eyebrow">§ V</div>
   <h2 data-i18n="meaCulpaTitle">Mea culpa publics</h2>
@@ -697,50 +840,11 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   </div>
 </section>
 
-
-<style>
-  /* Bannière : hauteur libre à partir de 769 px (même hauteur minimale qu'avant), pour que rien n'y soit rogné (v0.10.18) */
-  @media screen and (min-width: 769px) { .hero-banner { height: auto; min-height: clamp(360px, 48vw, 540px); padding: 2.5rem 0; } }
-  /* Ancre de l'erratum : la barre du haut collante (66 à 158 px selon la largeur) ne cache plus sa première ligne (v0.10.18) */
-  #erratum { scroll-margin-top: 11rem; }
-  /* === RESEARCH STATUS SNAPSHOT (accueil compact) === */
-  /* margin: 4rem auto centers the section like other <section> tags (max-width: 1100px) */
-  .research-status-snapshot { margin: 4rem auto 2rem auto; }
-  .research-status-intro { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
-  .research-status-intro a { color: var(--accent); font-weight: 500; text-decoration: none; border-bottom: 1px dashed var(--accent); }
-  .research-status-intro a:hover { border-bottom-style: solid; }
-  .research-status-positioning { margin-bottom: 1.5rem; padding: 0.6rem 1rem; background: var(--bg-elevated); border-left: 3px solid var(--text-secondary); border-radius: 4px; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
-  .status-snapshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
-  .status-card { padding: 1rem; background: var(--bg-elevated); border-radius: 8px; border-left: 4px solid var(--family-color); transition: transform 0.15s ease; position: relative; }
-  .status-card:hover { transform: translateY(-2px); }
-  .status-card[data-family="lean"]       { --family-color: #6366f1; }
-  .status-card[data-family="audit"]      { --family-color: #f97316; }
-  .status-card[data-family="mea-culpa"]  { --family-color: #be185d; }
-  .status-card[data-family="paper"]      { --family-color: #3b82f6; }
-  .status-card[data-family="repository"] { --family-color: #64748b; }
-  .status-card[data-family="study"]      { --family-color: #14b8a6; }
-  .status-card[data-milestone="true"] { border-top: 2px solid #fbbf24; }
-  .status-card[data-milestone="true"]::before { content: "★"; position: absolute; top: 0.5rem; right: 0.6rem; color: #fbbf24; font-size: 0.9rem; font-weight: 700; }
-  .status-card-eyebrow { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 0.4rem; }
-  .status-card-title { font-weight: 600; font-size: 0.98rem; margin-bottom: 0.5rem; line-height: 1.3; }
-  .status-card-meta { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
-  .status-card-date { font-family: var(--mono); font-size: 0.78rem; color: var(--text-secondary); }
-  .event-status-badge { display: inline-block; padding: 0.1rem 0.5rem; font-size: 0.68rem; font-weight: 600; border-radius: 999px; letter-spacing: 0.03em; }
-  .event-status-badge[data-status="validated"]   { background: #064e3b; color: #6ee7b7; }
-  .event-status-badge[data-status="resolved"]    { background: #2e1065; color: #c4b5fd; }
-  .event-status-badge[data-status="in-progress"] { background: #1e3a8a; color: #93c5fd; }
-  .event-status-badge[data-status="submitted"]   { background: #7c2d12; color: #fdba74; }
-  .event-status-badge[data-status="erratum"]     { background: #7c2d12; color: #fdba74; }
-  .status-card-summary { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.5rem; }
-  .status-card-link { display: inline-block; font-size: 0.8rem; color: var(--family-color); text-decoration: none; font-weight: 500; }
-  .status-card-link:hover { text-decoration: underline; }
-</style>
-
 <!-- ========================================================================
      COMMUNAUTÉ
      ======================================================================== -->
 <section id="community">
-  <div class="section-eyebrow">§ VII</div>
+  <div class="section-eyebrow">§ VI</div>
   <h2 data-i18n="communityTitle">Communauté Collatz</h2>
   <p data-i18n="communityIntro">Ressources et collaborations existantes autour de la conjecture de Collatz (vérifiées 2026-04-29).</p>
 
@@ -794,7 +898,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ÉQUIPE
      ======================================================================== -->
 <section id="team">
-  <div class="section-eyebrow">§ VIII</div>
+  <div class="section-eyebrow">§ VII</div>
   <h2 data-i18n="teamTitle">Équipe</h2>
   <p data-i18n="teamIntro">Ce projet est conduit par un chercheur indépendant, avec l'aide d'assistants IA, et en collaboration ouverte avec Benjamin Macindoe.</p>
 
@@ -875,7 +979,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.19 · 2026-10-28
+    Cartography · v0.10.20 · 2026-10-28
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -932,6 +1036,31 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261028-V0-10-19"></script>
+<script>
+/* v0.10.20 : archives repliables. Un lien vers une ancre repliée ouvre son bloc ; à l'ouverture, le diagramme et le graphique
+   sont redessinés (dessinés repliés, ils auraient une taille nulle). */
+(function () {
+  document.querySelectorAll('.archive-fold .mermaid').forEach(function (el) { if (!el.dataset.original) el.dataset.original = el.innerHTML; });
+  function openTarget() {
+    var id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
+    var t = document.getElementById(id); if (!t) return;
+    var d = t.closest('details'); if (d && !d.open) { d.open = true; t.scrollIntoView(); }
+  }
+  document.querySelectorAll('.archive-fold').forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (!d.open) return;
+      var ms = d.querySelectorAll('.mermaid');
+      if (ms.length && window.mermaid) {
+        ms.forEach(function (el) { if (el.dataset.original) { el.innerHTML = el.dataset.original; el.removeAttribute('data-processed'); } });
+        window.mermaid.run({ nodes: ms });
+      }
+      if (d.querySelector('#hypothesesChart')) window.dispatchEvent(new Event('resize'));
+    });
+  });
+  window.addEventListener('hashchange', openTarget);
+  openTarget();
+})();
+</script>
+<script src="assets/js/main.js?v=20261028-V0-10-20"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.19 (2026-10-28), corrections from the audit of 28 October 2026 (substance and erratum).">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.20 (2026-10-28), results first on the home page, spring 2026 archive, Papers reorganised.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.19 (2026-10-28) — corrections from the audit of 28 October 2026 (substance and erratum); v0.10.18 (2026-10-28) — home page reordered: recent work first, the April 2026 preprint and its erratum just after; v0.10.17 (2026-10-28) — Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4) on the site; Zenodo pointers updated; lead P7 corrected (Isabelle/HOL, not Lean); v0.10.16 (2026-10-27) — timeline and summary updated (research ledger: three events, 37 in all; History; home cards); v0.10.15 (2026-10-27) — last stub lead of the catalogue settled (Z), test REQ-MATH-007 withdrawn, prototype library archived; v0.10.14 (2026-10-27) — five more stub leads of the catalogue settled (Q.bis, V, W, X, Y: five dead ends, four of them sourced), mea culpa #23 corrected (two of its three references exist); v0.10.13 (2026-10-27) — five more stub leads of the catalogue settled (I.1, N, O, P, Q: five dead ends, four of them sourced); v0.10.12 (2026-10-22) — five more stub leads of the catalogue settled (three sourced dead ends, H.1 for its MSO / Büchi–Bruyère part only, one dead end with no source of its own, one lead withdrawn; corrections to leads C and K of v0.10.11); v0.10.11 (2026-10-22) — five stub leads of the catalogue settled (three sourced dead ends, one dead end with no published source, one lead withdrawn as unsourced); v0.10.10 (2026-10-21) — Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.20 (2026-10-28) — results first on the home page, spring 2026 archive, Papers reorganised; v0.10.19 (2026-10-28) — corrections from the audit of 28 October 2026 (substance and erratum); v0.10.18 (2026-10-28) — home page reordered: recent work first, the April 2026 preprint and its erratum just after; v0.10.17 (2026-10-28) — Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4) on the site; Zenodo pointers updated; lead P7 corrected (Isabelle/HOL, not Lean); v0.10.16 (2026-10-27) — timeline and summary updated (research ledger: three events, 37 in all; History; home cards); v0.10.15 (2026-10-27) — last stub lead of the catalogue settled (Z), test REQ-MATH-007 withdrawn, prototype library archived; v0.10.14 (2026-10-27) — five more stub leads of the catalogue settled (Q.bis, V, W, X, Y: five dead ends, four of them sourced), mea culpa #23 corrected (two of its three references exist); v0.10.13 (2026-10-27) — five more stub leads of the catalogue settled (I.1, N, O, P, Q: five dead ends, four of them sourced); v0.10.12 (2026-10-22) — five more stub leads of the catalogue settled (three sourced dead ends, H.1 for its MSO / Büchi–Bruyère part only, one dead end with no source of its own, one lead withdrawn; corrections to leads C and K of v0.10.11); v0.10.11 (2026-10-22) — five stub leads of the catalogue settled (three sourced dead ends, one dead end with no published source, one lead withdrawn as unsourced); v0.10.10 (2026-10-21) — Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -93,15 +93,14 @@
     </a>
     <nav class="nav">
       <a href="../" data-i18n="navAccueil">Home</a>
+      <a href="../#resultats" data-i18n="navResultats">Results</a>
+      <a href="../papers/" data-i18n="navPapers">Papers</a>
+      <a href="../#preprint" data-i18n="navPreprint">Preprint</a>
+      <a href="../#pistes" data-i18n="navPistes">Approaches</a>
+      <a href="../research-ledger/" data-i18n="navLedger">Ledger</a>
       <a href="../pour-tous/" data-i18n="navPourTous">For everyone</a>
       <a href="../cycles/">Cycles</a>
-      <a href="../#pistes" data-i18n="navPistes">Approaches</a>
-      <a href="../lemmes/" data-i18n="navLemmes">Lemmas</a>
-      <a href="../preuve/" data-i18n="navPreuve">Proof</a>
-      <a href="../papers/" data-i18n="navPapers">Papers</a>
-      <a href="../#hypotheses" data-i18n="navHypotheses">Hypotheses</a>
-      <a href="../research-ledger/" data-i18n="navLedger">Ledger</a>
-      <a href="../#team" data-i18n="navEquipe">Team</a>
+      <a href="../#archives" data-i18n="navArchives">2026 archive</a>
     </nav>
     <div class="toolbar-actions">
       <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
@@ -133,6 +132,41 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.20">
+    <header>
+      <h2><span class="version-tag">v0.10.20</span> <span lang="fr">Les résultats en tête : accueil, archives du printemps 2026, menu et page Papers</span><span lang="en">Results first: home page, spring 2026 archive, menu and Papers page</span></h2>
+      <time datetime="2026-10-28">2026-10-28</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Bannière de l'accueil</strong> : plus compacte (titre plus petit, moins de vide) et sur toute la largeur de l'écran (elle s'arrêtait à 1100 px) ; son texte ne change pas. Le premier écran montre le dernier jalon, l'avertissement « ce site ne prouve pas la conjecture » et le lien vers l'erratum, au bureau (1440×900), sur un portable (1366×657) et sur un téléphone (390×664).</li>
+      <li><strong>Temps de lecture</strong> : il n'est plus dans la bannière mais à la fin de l'en-tête de la page ; ses libellés et ses nombres suivent la langue affichée (« 4 930 mots », « 4,930 words »), et il compte le texte affiché au chargement de la page (les blocs repliés n'en font pas partie).</li>
+      <li><strong>Chapeau de l'accueil</strong> : il décrit l'état actuel (formalisations en Lean 4 de trois travaux classiques, note d'errata, catalogue de trente-six pistes, preprint d'avril 2026 avec son erratum).</li>
+      <li><strong>Nouvelle section « Résultats »</strong>, juste sous l'en-tête : quatre cartes (Steiner 1978 sans hypothèse, Lagarias 1990, Halbeisen–Hungerbühler 1997, note d'errata), chacune avec une phrase reprise des pages du site et un lien « Pour auditer » vers le README du dossier (release v1.5) ou vers le DOI ; rappel que rien de nouveau n'est revendiqué sur les cycles et que ce site ne prouve pas la conjecture.</li>
+      <li><strong>Nouvelle section « Archives du printemps 2026 »</strong> (§ II) : le verrou Λ et son diagramme, les hypothèses A, A′, B et C et les tests REQ-MATH y sont déplacés tels quels, chacun dans un bloc repliable daté d'avril 2026 ; les mea culpa y sont déplacés tels quels, non repliés. Un lien vers une ancre de ces blocs les ouvre ; le diagramme et le graphique sont redessinés à l'ouverture. Liens vers les pages de la même époque (lemmes, preuve, explorateur Λ).</li>
+      <li><strong>Numérotation de l'accueil</strong> : § I catalogue, § II archives (§ III à § V à l'intérieur, inchangés), § VI communauté, § VII équipe (le § II manquait).</li>
+      <li><strong>Menu</strong> (toutes les pages) : neuf entrées, Accueil, Résultats, Papers, Preprint, Pistes, Registre, Pour tous, Cycles, Archives 2026 ; les pages Lemmes, Preuve et Λ restent en ligne, liées depuis les archives.</li>
+      <li><strong>Accueil, encadré du preprint</strong> : « Ce que le projet apporte » devient « Ce que le projet apportait en avril 2026 ».</li>
+      <li><strong>Page Papers</strong> : titre « Formalisations publiées, preprint d'avril 2026 et travaux en cours » ; nouveau § I « Formalisations publiées », où les cartes Steiner 1978, Lagarias 1990 et Halbeisen–Hungerbühler 1997 sont déplacées telles quelles, chacune avec une ligne « Pour auditer » ; la carte Lagarias 1990 cite, en anglais, la liste de ce que vérifie le noyau selon le README du dossier ; le preprint devient le § II, les travaux en cours le § III ; chapeau complété.</li>
+      <li><strong>Carte « Dernier audit » de l'accueil</strong> : relecture adverse des changements de cette version ; l'audit précédent (v0.10.19) est rappelé.</li>
+      <li><strong>Cache des navigateurs</strong> : paramètre de version de <code>main.js</code> mis à jour sur toutes les pages.</li>
+      <li>Les entrées ci-dessous restent telles quelles.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Home page banner</strong>: more compact (smaller title, less empty space) and across the full width of the screen (it stopped at 1100 px); its text does not change. The first screen shows the latest milestone, the warning "this site does not prove the conjecture" and the link to the erratum, on a desktop (1440×900), a laptop (1366×657) and a phone (390×664).</li>
+      <li><strong>Reading time</strong>: no longer in the banner but at the end of the page header; its labels and numbers follow the displayed language ("4 930 mots", "4,930 words"), and it counts the text displayed when the page loads (collapsed blocks are not part of it).</li>
+      <li><strong>Home page lede</strong>: it describes the current state (Lean 4 formalisations of three classical works, errata note, catalogue of thirty-six leads, April 2026 preprint with its erratum).</li>
+      <li><strong>New "Results" section</strong>, just below the header: four cards (Steiner 1978 without hypothesis, Lagarias 1990, Halbeisen–Hungerbühler 1997, errata note), each with one sentence taken from the site's pages and a "To audit" link to the folder's README (release v1.5) or to the DOI; a reminder that nothing new is claimed about cycles and that this site does not prove the conjecture.</li>
+      <li><strong>New "Spring 2026 archive" section</strong> (§ II): the Λ lock and its diagram, hypotheses A, A′, B and C and the REQ-MATH tests are moved there as they were, each in a collapsible block dated April 2026; the mea culpa are moved there as they were, not collapsed. A link to an anchor in these blocks opens them; the diagram and the chart are redrawn when opened. Links to the pages of the same period (lemmas, proof, Λ explorer).</li>
+      <li><strong>Home page numbering</strong>: § I catalogue, § II archive (§ III to § V inside, unchanged), § VI community, § VII team (§ II was missing).</li>
+      <li><strong>Menu</strong> (all pages): nine entries, Home, Results, Papers, Preprint, Approaches, Ledger, For everyone, Cycles, 2026 archive; the Lemmas, Proof and Λ pages stay online, linked from the archive.</li>
+      <li><strong>Home page, preprint box</strong>: "What the project contributes" becomes "What the project contributed in April 2026".</li>
+      <li><strong>Papers page</strong>: title "Published formalisations, the April 2026 preprint and work in progress"; new § I "Published formalisations", where the Steiner 1978, Lagarias 1990 and Halbeisen–Hungerbühler 1997 cards are moved as they were, each with a "To audit" line; the Lagarias 1990 card quotes the list of what the kernel checks according to the folder's README; the preprint becomes § II, work in progress § III; lede completed.</li>
+      <li><strong>"Latest audit" card of the home page</strong>: adversarial review of the changes of this version; the previous audit (v0.10.19) is recalled.</li>
+      <li><strong>Browser cache</strong>: version parameter of <code>main.js</code> updated on every page.</li>
+      <li>The entries below are kept as they were.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.10.19">
     <header>
       <h2><span class="version-tag">v0.10.19</span> <span lang="fr">Fond et erratum : corrections de l'audit du 28 octobre 2026</span><span lang="en">Substance and erratum: corrections from the audit of 28 October 2026</span></h2>
@@ -945,7 +979,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.19 · 2026-10-28</div>
+  <div class="footer-meta">Cartography · v0.10.20 · 2026-10-28</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">
@@ -965,7 +999,7 @@
 <!-- Hypothes.is annotations -->
 <script src="https://hypothes.is/embed.js" async></script>
 
-<script src="../assets/js/main.js?v=20261028-V0-10-19"></script>
+<script src="../assets/js/main.js?v=20261028-V0-10-20"></script>
 
 </body>
 </html>
