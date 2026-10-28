@@ -624,9 +624,9 @@ ER  - `;
     }
     // Pages
     SEARCH_INDEX.push(
-      { type: 'page', id: '/', title: 'Home — Cartography', subtitle: 'Page · Main entry', desc: '36 approaches, 3 hypotheses (H1–H3), the lock Λ_{S,k}', url: 'index.html', keywords: 'home cartography main lambda lock baker barina hercher' },
+      { type: 'page', id: '/', title: 'Home — Cartography', subtitle: 'Page · Main entry', desc: 'Lean 4 formalisations of classical work (Steiner 1978, Lagarias 1990, Halbeisen–Hungerbühler 1997), errata note, catalogue of 36 leads, April 2026 preprint with its erratum', url: 'index.html', keywords: 'home cartography main lambda lock baker barina hercher' },
       { type: 'page', id: '/preuve/', title: 'Proof chain', subtitle: 'Page · Lean 4 architecture', desc: 'Phase52 → Phase56 → Phase58 → Phase59 (erratum: H3 assumed)', url: 'preuve/', keywords: 'proof chain phase52 phase56 phase58 phase59 steiner barina continued fractions erratum' },
-      { type: 'page', id: '/papers/', title: 'Papers pipeline', subtitle: 'Page · 1 preprint + drafts', desc: 'Preprint (Zenodo DOI) + drafts in progress', url: 'papers/', keywords: 'papers pipeline preprint zenodo drafts' },
+      { type: 'page', id: '/papers/', title: 'Papers', subtitle: 'Page · formalisations, preprint, work in progress', desc: 'Published Lean 4 formalisations, the April 2026 preprint (Zenodo DOI) with its erratum, work in progress', url: 'papers/', keywords: 'papers pipeline preprint zenodo drafts' },
       { type: 'page', id: '/lemmes/', title: 'Lean catalog', subtitle: 'Page · 7 central + auxiliaries + cf_gaps + PostJAR', desc: 'Catalog of all Lean 4 theorems', url: 'lemmes/', keywords: 'lean catalog theorems central auxiliary cf_gap postjar arsenal' }
     );
     return SEARCH_INDEX;
