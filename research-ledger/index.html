@@ -49,7 +49,7 @@
       "@id": "https://collatz-lab.org/research-ledger/",
       "name": "Collatz / Syracuse Conditional Cycles — Research Ledger",
       "alternateName": "Registre de recherche Collatz / Syracuse Conditional Cycles",
-      "description": "A public, versioned research ledger documenting formal Lean developments, audit findings, corrections, literature studies, and ongoing investigations related to conditional Collatz cycles. 37 events, bilingual FR/EN, filterable, with claim_scope + verification_method + epistemic_status fields per event. Internal AI-assisted reviews, not peer review. Updated 2026-10-27 (the 21 stub leads of the catalogue settled, v0.10.11 to v0.10.15; release v1.3 of the Lean repository, documentation only). Previously, 2026-10-21 (Steiner 1978 formalised on Lean 4.34.0 (original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); re-check of no_cycle_k_le_1322 on Lean 4.34.0; errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990; δ10 withdrawn; the four studies opened in April 2026 closed).",
+      "description": "A public, versioned research ledger documenting formal Lean developments, audit findings, corrections, literature studies, and ongoing investigations related to conditional Collatz cycles. 38 events, bilingual FR/EN, filterable, with claim_scope + verification_method + epistemic_status fields per event. Internal AI-assisted reviews, not peer review. Updated 2026-10-28 (Steiner 1978 without the hypothesis H_Rhin, logs23/, release v1.4). Previously, 2026-10-27 (the 21 stub leads of the catalogue settled, v0.10.11 to v0.10.15; release v1.3 of the Lean repository, documentation only). Previously, 2026-10-21 (Steiner 1978 formalised on Lean 4.34.0 (original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); re-check of no_cycle_k_le_1322 on Lean 4.34.0; errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990; δ10 withdrawn; the four studies opened in April 2026 closed).",
       "url": "https://collatz-lab.org/research-ledger/",
       "sameAs": [
         "https://github.com/ericmerle3789/collatz-conditional-cycles/blob/gh-pages/assets/data/research-ledger.json"
@@ -69,13 +69,13 @@
         "contentUrl": "https://collatz-lab.org/assets/data/research-ledger.json"
       },
       "datePublished": "2026-04-30",
-      "dateModified": "2026-10-27",
+      "dateModified": "2026-10-28",
       "version": "1.0.0",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "inLanguage": ["en", "fr"],
       "variableMeasured": [
-        {"@type": "PropertyValue", "name": "events", "value": 37},
-        {"@type": "PropertyValue", "name": "milestones", "value": 26},
+        {"@type": "PropertyValue", "name": "events", "value": 38},
+        {"@type": "PropertyValue", "name": "milestones", "value": 27},
         {"@type": "PropertyValue", "name": "claim_scope categories", "value": 6},
         {"@type": "PropertyValue", "name": "epistemic_status categories", "value": 7}
       ]
@@ -542,7 +542,7 @@
     <li><strong>GitHub repo</strong> : <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">github.com/ericmerle3789/collatz-conditional-cycles</a></li>
     <li><strong>DOI Zenodo</strong> : <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">10.5281/zenodo.19790405</a></li>
     <li><strong lang="fr">Preprint, version v4 avec erratum</strong><strong lang="en">Preprint, version v4 with erratum</strong> : <a href="https://doi.org/10.5281/zenodo.23496480" target="_blank" rel="noopener">10.5281/zenodo.23496480</a></li>
-    <li><strong lang="fr">Dépôt Lean (dont les formalisations de Halbeisen–Hungerbühler 1997 et de Lagarias 1990, et celle d'un théorème de Steiner 1978, démontré sous l'hypothèse nommée <code>H_Rhin</code>, jamais un axiome, et reconstruit à partir de comptes rendus publiés, sans l'article original, lu ensuite et comparé aux énoncés)</strong><strong lang="en">Lean repository (including the formalisations of Halbeisen–Hungerbühler 1997 and Lagarias 1990, and that of a theorem of Steiner 1978, proved under the named hypothesis <code>H_Rhin</code>, never an axiom, and reconstructed from published accounts without the original paper, which was read afterwards and compared with the statements)</strong> : <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean" target="_blank" rel="noopener">github.com/ericmerle3789/one-obstruction-three-faces-lean</a> ; <span lang="fr">archive logicielle Zenodo (v1.2 ; toutes versions : 10.5281/zenodo.23498095)</span><span lang="en">Zenodo software archive (v1.2; all versions: 10.5281/zenodo.23498095)</span> : <a href="https://doi.org/10.5281/zenodo.23541611" target="_blank" rel="noopener">10.5281/zenodo.23541611</a></li>
+    <li><strong lang="fr">Dépôt Lean (dont les formalisations de Halbeisen–Hungerbühler 1997 et de Lagarias 1990, et celle d'un théorème de Steiner 1978, démontré sous l'hypothèse nommée <code>H_Rhin</code>, jamais un axiome, puis sans cette hypothèse dans <code>logs23/</code> (v1.4), et reconstruit à partir de comptes rendus publiés, sans l'article original, lu ensuite et comparé aux énoncés)</strong><strong lang="en">Lean repository (including the formalisations of Halbeisen–Hungerbühler 1997 and Lagarias 1990, and that of a theorem of Steiner 1978, proved under the named hypothesis <code>H_Rhin</code>, never an axiom, and then without that hypothesis in <code>logs23/</code> (v1.4), and reconstructed from published accounts without the original paper, which was read afterwards and compared with the statements)</strong> : <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean" target="_blank" rel="noopener">github.com/ericmerle3789/one-obstruction-three-faces-lean</a> ; <span lang="fr">archive logicielle Zenodo (toutes versions, DOI de concept, qui pointe vers la dernière ; v1.4 : 10.5281/zenodo.23720217)</span><span lang="en">Zenodo software archive (all versions, concept DOI, which points to the latest; v1.4: 10.5281/zenodo.23720217)</span> : <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a></li>
     <li><strong lang="fr">Dépôt commun avec B. Macindoe</strong><strong lang="en">Shared repository with B. Macindoe</strong> : <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener">github.com/macindoe/one-obstruction-three-faces</a></li>
     <li>
       <strong lang="fr">Branches</strong>
@@ -561,7 +561,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.16 · 2026-10-27</div>
+  <div class="footer-meta">Cartography · v0.10.17 · 2026-10-28</div>
   <p>
     <span lang="fr">Registre généré depuis <code>assets/data/research-ledger.json</code>. Relectures internes assistées par IA — <em>non peer review (cf. <a href="../faq/#q11">FAQ Q11</a>)</em>.</span>
     <span lang="en">Ledger generated from <code>assets/data/research-ledger.json</code>. Internal AI-assisted reviews — <em>not peer review (see <a href="../faq/#q11">FAQ Q11</a>)</em>.</span>
@@ -573,8 +573,8 @@
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20261027-V0-10-16"></script>
-<script src="../assets/js/research-ledger.js?v=20261027-V0-10-16" defer></script>
+<script src="../assets/js/main.js?v=20261028-V0-10-17"></script>
+<script src="../assets/js/research-ledger.js?v=20261028-V0-10-17" defer></script>
 
 </body>
 </html>

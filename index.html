@@ -85,7 +85,7 @@
         "url": "https://github.com/ericmerle3789"
       },
       "datePublished": "2026-04-27T00:00:00+02:00",
-      "dateModified": "2026-10-27T00:00:00+01:00",
+      "dateModified": "2026-10-28T00:00:00+01:00",
       "genre": "research article",
       "image": "https://collatz-lab.org/assets/og-image.png",
       "mainEntityOfPage": {
@@ -584,7 +584,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 
 <!-- ========================================================================
      RESEARCH STATUS / ÉTAT DES TRAVAUX (Research Ledger preview)
-     Mis à jour le 2026-10-27 (v0.10.16)
+     Mis à jour le 2026-10-28 (v0.10.17)
      ======================================================================== -->
 <section id="research-status" class="research-status-snapshot">
   <div class="section-eyebrow">§ VI</div>
@@ -597,21 +597,21 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     <em lang="en">This section documents project status and traceability; it is not a claim of acceptance or final proof.</em>
   </p>
 
-  <!-- Status snapshot : 5 cartes compactes (état au 2026-10-27) -->
+  <!-- Status snapshot : 5 cartes compactes (état au 2026-10-28) -->
   <div class="status-snapshot-grid">
 
-    <!-- Carte 1 : Dernier jalon — les 21 pistes « stub » tranchées (2026-10-27) -->
+    <!-- Carte 1 : Dernier jalon — Steiner 1978 sans H_Rhin (2026-10-28) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastMilestone">Dernier jalon</div>
-      <div class="status-card-title"><span lang="fr">Les 21 pistes « stub » du catalogue tranchées</span><span lang="en">The 21 "stub" leads of the catalogue settled</span></div>
+      <div class="status-card-title"><span lang="fr">Steiner 1978 sans l'hypothèse H_Rhin (logs23/, v1.4)</span><span lang="en">Steiner 1978 without the hypothesis H_Rhin (logs23/, v1.4)</span></div>
       <div class="status-card-meta">
-        <span class="status-card-date">2026-10-27</span>
+        <span class="status-card-date">2026-10-28</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Du 22 au 27/10/2026 (v0.10.11 à v0.10.15), les 21 pistes du catalogue encore marquées « stub » (notes exploratoires en attente de sourçage formel) ont été tranchées, chacune avec sa source vérifiée ou sa raison : toutes sont des culs-de-sac, certaines retirées. En chemin, le nom de la piste F, les fiches K et C, le mea culpa #23, la piste L, l'ancien texte de X et l'ancienne note de Z ont été corrigés (changelog v0.10.11, v0.10.12, v0.10.14 et v0.10.15). Jalon précédent : Steiner 1978 formalisé sous Lean 4.34.0 (21/10/2026) ; l'article original, lu ensuite, a été comparé aux énoncés : rien ne change dans les fichiers Lean.</span>
-        <span lang="en">From 22 to 27 October 2026 (v0.10.11 to v0.10.15), the 21 leads of the catalogue still marked "stub" (exploratory notes pending formal sourcing) were settled, each with its checked source or its reason: all are dead ends, some of them withdrawn. Along the way, the name of lead F, entries K and C, mea culpa #23, lead L, the former text of X and the former note of Z were corrected (changelog v0.10.11, v0.10.12, v0.10.14 and v0.10.15). Previous milestone: Steiner 1978 formalised on Lean 4.34.0 (2026-10-21); the original paper, read afterwards, was compared with the statements: nothing in the Lean files changes.</span>
+        <span lang="fr">Le dossier logs23/ du dépôt Lean (release v1.4, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>) démontre, sans l'hypothèse <code>H_Rhin</code>, le théorème de Steiner 1978 sur les circuits : le seul circuit des entiers positifs qui soit un cycle est {1, 2}. Il prouve pour cela une minoration bien plus faible que <code>H_Rhin</code>, qui suffit ; <code>H_Rhin</code> lui-même n'est pas démontré, la borne est bien plus faible que les bornes publiées, aucune nouveauté n'est revendiquée, et la formalisation n'apprend rien de nouveau sur les cycles de Collatz. Jalon précédent : les 21 pistes « stub » du catalogue tranchées (27/10/2026).</span>
+        <span lang="en">The logs23/ folder of the Lean repository (release v1.4, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>) proves, without the hypothesis <code>H_Rhin</code>, Steiner's 1978 theorem on circuits: the only circuit on the positive integers that is a cycle is {1, 2}. To do so it proves a lower bound much weaker than <code>H_Rhin</code>, which suffices; <code>H_Rhin</code> itself is not proved, the bound is far weaker than the published ones, no novelty is claimed, and the formalisation proves nothing new about Collatz cycles. Previous milestone: the 21 "stub" leads of the catalogue settled (2026-10-27).</span>
       </p>
-      <a class="status-card-link" href="changelog/">→ changelog</a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9e42fa5/logs23" target="_blank" rel="noopener">→ <code>logs23/</code> (9e42fa5)</a>
     </div>
 
     <!-- Carte 2 : Statut paper -->
@@ -629,30 +629,30 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
       <a class="status-card-link" href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">→ DOI Zenodo</a>
     </div>
 
-    <!-- Carte 3 : Dernière vérification Lean (Steiner 1978, 2026-10-21) -->
+    <!-- Carte 3 : Dernière vérification Lean (logs23/, Steiner 1978 sans H_Rhin, 2026-10-28) -->
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow" data-i18n="statusLastLean">Dernière vérification Lean</div>
-      <div class="status-card-title"><span lang="fr">Steiner 1978 : 12 énoncés vérifiés sous Lean 4.34.0</span><span lang="en">Steiner 1978: 12 statements checked on Lean 4.34.0</span></div>
+      <div class="status-card-title"><span lang="fr">Steiner 1978 sans H_Rhin : 14 énoncés vérifiés sous Lean 4.34.0</span><span lang="en">Steiner 1978 without H_Rhin: 14 statements checked on Lean 4.34.0</span></div>
       <div class="status-card-meta">
-        <span class="status-card-date">2026-10-21</span>
+        <span class="status-card-date">2026-10-28</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">12 énoncés figés, tous prouvés, dont 6, parmi lesquels l'énoncé principal, sous l'hypothèse nommée <code>H_Rhin</code>, jamais un axiome ; axiomes standard seuls ; 0 <code>sorry</code> dans les preuves, 0 <code>native_decide</code> ; <code>check.sh</code> relancé depuis une compilation propre le 21/10/2026. Les énoncés et la preuve ont été écrits sans l'article original (Congr. Numer. 20, 1978) : ils sont reconstruits à partir de Steiner 1981, de la bibliographie annotée de Lagarias et de Simons–de Weger 2005 (lu dans sa version 1.44 de 2010). Après la release v1.2, le 21/10/2026, l'article a été lu sur une copie numérisée et comparé aux énoncés : rien ne change dans les fichiers Lean. Archive Zenodo (logiciel, v1.2) : DOI <a href="https://doi.org/10.5281/zenodo.23541611" target="_blank" rel="noopener">10.5281/zenodo.23541611</a>. Précédemment : la revérification de <code>no_cycle_k_le_1322</code> sous Lean 4.34.0 (<a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>).</span>
-        <span lang="en">12 frozen statements, all proved, 6 of them, including the main statement, under the named hypothesis <code>H_Rhin</code>, never an axiom; standard axioms only; 0 <code>sorry</code> in the proofs, 0 <code>native_decide</code>; <code>check.sh</code> run from a clean build on 2026-10-21. The statements and the proof were written without the original paper (Congr. Numer. 20, 1978): they are reconstructed from Steiner 1981, Lagarias's annotated bibliography and Simons–de Weger 2005 (read in their version 1.44 of 2010). After release v1.2, on 2026-10-21, the paper was read in a scanned copy and compared with the statements: nothing in the Lean files changes. Zenodo archive (software, v1.2): DOI <a href="https://doi.org/10.5281/zenodo.23541611" target="_blank" rel="noopener">10.5281/zenodo.23541611</a>. Previously: the re-check of <code>no_cycle_k_le_1322</code> on Lean 4.34.0 (<a href="https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20" target="_blank" rel="noopener"><code>recheck-v4.34-2026-10-20</code></a>).</span>
+        <span lang="fr">Dossier logs23/ (release v1.4) : 14 énoncés figés avant leurs preuves, tous prouvés ; 0 <code>sorry</code> dans les preuves, 0 <code>native_decide</code>, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; <code>check.sh</code> relancé le 28/10/2026 depuis un clone neuf du commit f9c33aa. Il prouve, sans <code>H_Rhin</code>, la minoration 1/(2^k − 1) ≤ |(k + l) log 2 − k log 3| pour tout k > 20 000 et tout l ≥ 0, et en déduit cinq des six énoncés de steiner1978/ qui supposaient <code>H_Rhin</code>. <code>H_Rhin</code> lui-même n'est pas démontré. Archive Zenodo (logiciel, v1.4) : DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>. Précédemment : steiner1978/, 12 énoncés, dont 6 sous l'hypothèse nommée <code>H_Rhin</code>, jamais un axiome (<code>check.sh</code> relancé depuis une compilation propre le 21/10/2026).</span>
+        <span lang="en">Folder logs23/ (release v1.4): 14 statements frozen before their proofs, all proved; 0 <code>sorry</code> in the proofs, 0 <code>native_decide</code>, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); <code>check.sh</code> run on 2026-10-28 from a fresh clone of commit f9c33aa. It proves, without <code>H_Rhin</code>, the lower bound 1/(2^k − 1) ≤ |(k + l) log 2 − k log 3| for every k > 20,000 and every l ≥ 0, and derives from it five of the six statements of steiner1978/ that assumed <code>H_Rhin</code>. <code>H_Rhin</code> itself is not proved. Zenodo archive (software, v1.4): DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>. Previously: steiner1978/, 12 statements, 6 of them under the named hypothesis <code>H_Rhin</code>, never an axiom (<code>check.sh</code> run from a clean build on 2026-10-21).</span>
       </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/057581a/steiner1978" target="_blank" rel="noopener">→ <code>steiner1978/</code> (057581a)</a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9e42fa5/logs23" target="_blank" rel="noopener">→ <code>logs23/</code> (9e42fa5)</a>
     </div>
 
-    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.16, 2026-10-27) -->
+    <!-- Carte 4 : Dernier audit (relecture adverse de la v0.10.17, 2026-10-28) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
-      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.16</span><span lang="en">Adversarial review of v0.10.16</span></div>
+      <div class="status-card-title"><span lang="fr">Relecture adverse de la v0.10.17</span><span lang="en">Adversarial review of v0.10.17</span></div>
       <div class="status-card-meta">
-        <span class="status-card-date">2026-10-27</span>
+        <span class="status-card-date">2026-10-28</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.16 (frise du registre, entrée d'octobre de la page Histoire, carte « Dernier jalon »), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.15 (dernière piste « stub » du catalogue, retrait du test REQ-MATH-007, archivage de la bibliothèque prototype), 2026-10-27.</span>
-        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.16 (ledger timeline, October entry of the History page, "Latest milestone" card), against the available sources. Previous audit: adversarial review of the changes of v0.10.15 (last "stub" lead of the catalogue, withdrawal of test REQ-MATH-007, archiving of the prototype library), 2026-10-27.</span>
+        <span lang="fr">Relecture adverse interne, assistée par IA (ce n'est pas une évaluation par les pairs), des changements de la v0.10.17 (Steiner 1978 sans <code>H_Rhin</code>, pointeurs Zenodo, correction de la piste P7), contre les sources disponibles. Audit précédent : relecture adverse des changements de la v0.10.16 (frise du registre, entrée d'octobre de la page Histoire, carte « Dernier jalon »), 2026-10-27.</span>
+        <span lang="en">Internal adversarial review, AI-assisted (not peer review), of the changes of v0.10.17 (Steiner 1978 without <code>H_Rhin</code>, Zenodo pointers, correction of lead P7), against the available sources. Previous audit: adversarial review of the changes of v0.10.16 (ledger timeline, October entry of the History page, "Latest milestone" card), 2026-10-27.</span>
       </p>
       <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
@@ -847,7 +847,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.16 · 2026-10-27
+    Cartography · v0.10.17 · 2026-10-28
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -904,6 +904,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261027-V0-10-16"></script>
+<script src="assets/js/main.js?v=20261028-V0-10-17"></script>
 </body>
 </html>

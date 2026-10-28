@@ -1,11 +1,40 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-10-27T14:38:57Z",
-  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
+  "generated": "2026-10-28T04:59:00Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-28: Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4). Previously, 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "steiner1978-without-h-rhin-2026-10-28",
+      "type": "lean",
+      "subtype": "formalisation-classic",
+      "date": "2026-10-28",
+      "datetime": "2026-10-28T05:48:10+01:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-10-28",
+      "title": {
+        "fr": "Steiner 1978 sans l'hypothèse H_Rhin (logs23/, release v1.4)",
+        "en": "Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4)"
+      },
+      "summary": {
+        "fr": "Le dossier logs23/ du dépôt one-obstruction-three-faces-lean prouve, sans l'hypothèse H_Rhin, la minoration lam_lower : 1/(2^k − 1) ≤ |(k + l) log 2 − k log 3| pour tout k > 20 000 et tout l ≥ 0, et en déduit, sans leur prémisse, cinq des six énoncés de steiner1978/ qui supposaient H_Rhin (steiner, steiner_int, steiner_cycle, steiner_cycle_int, tstar_circuit ; rhin_k_le n'est pas reformulé). Sans hypothèse, le seul circuit des entiers positifs qui soit un cycle est {1, 2}. Étape 2a, le 27/10/2026 (commit 137c9be) : un « pont » par deux réduites consécutives de log₂ 3, pour k < qBr' ≈ 6,34·10^100 ; étape 2b, le 28/10/2026 (commit efa132b) : une minoration explicite, volontairement grossière, pour k ≥ 2^334, par un déterminant d'interpolation dans l'esprit de M. Laurent (1994). 14 énoncés figés avant leurs preuves, tous prouvés, 0 sorry dans les preuves, 0 native_decide, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0). Non démontré : H_Rhin lui-même (l'article de Rhin n'est pas formalisé). La borne est bien plus faible que les bornes publiées (Laurent 1994 ; Laurent, Mignotte et Nesterenko 1995 ; Gouillon 2006) ; aucune nouveauté n'est revendiquée, et la formalisation n'apprend rien de nouveau sur les cycles de Collatz. Release v1.4 (28/10/2026), archive Zenodo DOI 10.5281/zenodo.23720217.",
+        "en": "The logs23/ folder of the one-obstruction-three-faces-lean repository proves, without the hypothesis H_Rhin, the lower bound lam_lower: 1/(2^k − 1) ≤ |(k + l) log 2 − k log 3| for every k > 20,000 and every l ≥ 0, and derives from it, without their premise, five of the six statements of steiner1978/ that assumed H_Rhin (steiner, steiner_int, steiner_cycle, steiner_cycle_int, tstar_circuit; rhin_k_le is not restated). With no hypothesis, the only circuit on the positive integers that is a cycle is {1, 2}. Step 2a, on 2026-10-27 (commit 137c9be): a \"bridge\" through two consecutive convergents of log₂ 3, for k < qBr' ≈ 6.34·10^100; step 2b, on 2026-10-28 (commit efa132b): an explicit, deliberately crude lower bound for k ≥ 2^334, by an interpolation determinant in the spirit of M. Laurent (1994). 14 statements frozen before their proofs, all proved, 0 sorry in the proofs, 0 native_decide, standard axioms only (Lean 4.34.0, Mathlib v4.34.0). Not proved: H_Rhin itself (Rhin's paper is not formalised). The bound is far weaker than the published ones (Laurent 1994; Laurent, Mignotte and Nesterenko 1995; Gouillon 2006); no novelty is claimed, and the formalisation proves nothing new about Collatz cycles. Release v1.4 (2026-10-28), Zenodo archive DOI 10.5281/zenodo.23720217."
+      },
+      "artefacts": [
+        {"label": "logs23/ (9e42fa5)", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9e42fa5/logs23", "kind": "repository"},
+        {"label": "DOI 10.5281/zenodo.23720217", "url": "https://doi.org/10.5281/zenodo.23720217", "kind": "doi"},
+        {"label": "Release v1.4", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/releases/tag/v1.4", "kind": "tag"}
+      ],
+      "related": ["steiner1978-lean-formalisation-2026-10-21", "lean-repo-release-v1-3-2026-10-27"]
+    },
 
     {
       "id": "catalogue-stub-leads-settled-2026-10-27",
@@ -1028,13 +1057,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 37,
-    "by_type": {"lean": 10, "repository": 8, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
-    "by_status": {"validated": 27, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
-    "by_milestone": {"true": 26, "false": 11},
-    "by_claim_scope": {"documentation": 23, "formal_lean": 9, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 25, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
-    "note_fr": "Registre partiel : 37 événements (mise à jour du 2026-10-27). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 37 events (update of 2026-10-27). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "total_events": 38,
+    "by_type": {"lean": 11, "repository": 8, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
+    "by_status": {"validated": 28, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
+    "by_milestone": {"true": 27, "false": 11},
+    "by_claim_scope": {"documentation": 23, "formal_lean": 10, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
+    "by_epistemic_status": {"verified": 26, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
+    "note_fr": "Registre partiel : 38 événements (mise à jour du 2026-10-28). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 38 events (update of 2026-10-28). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }

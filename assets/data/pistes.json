@@ -1,6 +1,6 @@
 {
   "version": "0.9.0",
-  "lastUpdate": "2026-10-27",
+  "lastUpdate": "2026-10-28",
   "pistes": [
     {
       "id": "★ Main",
@@ -492,15 +492,15 @@
       "id": "P7",
       "fr": {
         "name": "Bayer-David 2025 (ITP)",
-        "why": "Précédent méthodologique Lean Diophantine"
+        "why": "Précédent de méthode en Isabelle/HOL, pas en Lean : J. Bayer et M. David, « A Formal Proof of Complexity Bounds on Diophantine Equations », ITP 2025 (LIPIcs 352, article 3), entrée « Universal Pairs for Diophantine Equations » de l'Archive of Formal Proofs. Le sujet est le dixième problème de Hilbert (paires universelles), sans approximation diophantienne ni logarithmes : seule la méthode, formaliser pendant la recherche, nous concerne. Correction (28/10/2026) : la fiche disait « Précédent méthodologique Lean Diophantine »."
       },
       "en": {
         "name": "Bayer-David 2025 (ITP)",
-        "why": "Lean Diophantine methodological precedent"
+        "why": "Methodological precedent in Isabelle/HOL, not in Lean: J. Bayer and M. David, \"A Formal Proof of Complexity Bounds on Diophantine Equations\", ITP 2025 (LIPIcs 352, article 3), entry \"Universal Pairs for Diophantine Equations\" of the Archive of Formal Proofs. The subject is Hilbert's tenth problem (universal pairs), with no Diophantine approximation and no logarithms: only the method, formalising during the research, concerns us. Correction (2026-10-28): the entry said \"Lean Diophantine methodological precedent\"."
       },
       "region": "III",
       "status": "prometteur",
-      "ref": "ITP 2025"
+      "ref": "Bayer & David, ITP 2025, LIPIcs 352, 3; DOI 10.4230/LIPIcs.ITP.2025.3"
     },
     {
       "id": "P8",
