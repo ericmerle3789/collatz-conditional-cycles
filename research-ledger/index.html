@@ -23,7 +23,7 @@
 <meta property="og:description" content="(Syracuse · Collatz · 3n+1) Public versioned research ledger: formal Lean developments, audit findings, corrections, literature studies, ongoing investigations.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/research-ledger/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
@@ -34,7 +34,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Research Ledger — Collatz / Syracuse Conditional Cycles">
 <meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Public versioned research ledger: Lean developments, audits, corrections, literature studies, ongoing investigations.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 
 <!-- Atom feed -->
 <link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
@@ -69,7 +69,7 @@
         "contentUrl": "https://collatz-lab.org/assets/data/research-ledger.json"
       },
       "datePublished": "2026-04-30",
-      "dateModified": "2026-10-28",
+      "dateModified": "2026-11-06",
       "version": "1.0.0",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "inLanguage": ["en", "fr"],
@@ -100,7 +100,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261028-V0-10-19">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261106-V0-10-21">
 
 <style>
   /* === RESEARCH LEDGER PAGE — uses standard <section> centering (max-width 1100px) === */
@@ -316,7 +316,7 @@
   .event-family-badge {
     padding: 0.1rem 0.5rem; font-size: 0.7rem; border-radius: 999px;
     font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
-    background: var(--family-color); color: white;
+    background: var(--family-color); background: color-mix(in srgb, var(--family-color) 72%, black); color: white;
   }
   .event-status-badge {
     padding: 0.1rem 0.5rem; font-size: 0.7rem; border-radius: 999px;
@@ -330,6 +330,9 @@
   .event-status-badge[data-status="deferred"]    { background: #1f2937; color: #9ca3af; }
   .event-status-badge[data-status="hypothesis"]  { background: #422006; color: #fcd34d; }
   .event-status-badge[data-status="archived"]    { background: #1e293b; color: #cbd5e1; }
+  .event-status-badge[data-status="withdrawn"]   { background: #1f2937; color: #d1d5db; }
+  .event-status-badge[data-status="superseded"]  { background: #1e293b; color: #cbd5e1; }
+  .event-status-badge[data-status="rejected"]    { background: #450a0a; color: #fca5a5; }
   .event-claim-scope {
     padding: 0.1rem 0.5rem; font-size: 0.7rem; border-radius: 999px;
     background: var(--bg); color: var(--text-secondary);
@@ -340,11 +343,11 @@
   .event-artefacts { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
   .event-artefact-link {
     font-size: 0.78rem; padding: 0.15rem 0.5rem;
-    background: var(--bg); color: var(--family-color);
+    background: var(--bg); color: var(--family-color); color: color-mix(in srgb, var(--family-color) 50%, var(--text-primary));
     border-radius: 4px; text-decoration: none;
     border: 1px solid var(--family-color);
   }
-  .event-artefact-link:hover { background: var(--family-color); color: white; }
+  .event-artefact-link:hover { background: var(--family-color); background: color-mix(in srgb, var(--family-color) 72%, black); color: white; }
   .event-meta-secondary {
     margin-top: 0.5rem; font-size: 0.75rem;
     color: var(--text-secondary); font-family: var(--mono);
@@ -373,7 +376,7 @@
       <a href="../#archives" data-i18n="navArchives">2026 archive</a>
     </nav>
     <div class="toolbar-actions">
-      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="citeBtn" title="Cite" data-i18n="citeBtn">Cite</button>
       <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
         <span class="moon-icon" aria-hidden="true">☾</span>
         <span class="sun-icon" aria-hidden="true">☀</span>
@@ -422,6 +425,11 @@
       <span class="stat-num">14+</span>
       <span class="stat-label" lang="fr">phases Lean (Lean 4.27.0 ; jusqu'à Phase58, revérifiées sous Lean 4.34.0 les 20 et 21/10/2026 ; Phase59 à Phase63 et PhaseVIII, non revérifiées)</span>
       <span class="stat-label" lang="en">Lean phases (Lean 4.27.0; up to Phase58, re-checked on Lean 4.34.0 on 20–21 Oct 2026; Phase59 to Phase63 and PhaseVIII, not re-checked)</span>
+    </div>
+    <div class="stat-card" data-family="lean">
+      <span class="stat-num">3</span>
+      <span class="stat-label" lang="fr">articles classiques formalisés (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978) ; 6 releases Lean (v1.0 à v1.5) ; 1 note d'errata</span>
+      <span class="stat-label" lang="en">classical papers formalised (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978); 6 Lean releases (v1.0 to v1.5); 1 errata note</span>
     </div>
     <div class="stat-card" data-family="audit">
       <span class="stat-num">16</span>
@@ -485,33 +493,30 @@
 
   <div class="ledger-filters">
     <div class="filter-group">
-      <label lang="fr">Famille</label>
-      <label lang="en">Family</label>
+      <label lang="fr" for="filterFamily">Famille</label>
+      <label lang="en" for="filterFamily">Family</label>
       <select id="filterFamily">
-        <option value="all">— all —</option>
-        <option value="lean">Formal proof / Lean</option>
-        <option value="audit">Audit / Validation</option>
-        <option value="mea-culpa">Correction / mea culpa</option>
-        <option value="paper">Publication / DOI</option>
-        <option value="repository">Repository / tooling</option>
-        <option value="study">Studies / literature</option>
+        <option value="all" data-fr="— toutes —" data-en="— all —">— all —</option>
+        <option value="lean" data-fr="Preuve formelle / Lean" data-en="Formal proof / Lean">Formal proof / Lean</option>
+        <option value="audit" data-fr="Audit / validation" data-en="Audit / Validation">Audit / Validation</option>
+        <option value="mea-culpa" data-fr="Correction / mea culpa" data-en="Correction / mea culpa">Correction / mea culpa</option>
+        <option value="paper" data-fr="Publication / DOI" data-en="Publication / DOI">Publication / DOI</option>
+        <option value="repository" data-fr="Dépôt / outils" data-en="Repository / tooling">Repository / tooling</option>
+        <option value="study" data-fr="Études / littérature" data-en="Studies / literature">Studies / literature</option>
       </select>
     </div>
 
     <div class="filter-group">
-      <label lang="fr">Statut</label>
-      <label lang="en">Status</label>
+      <label lang="fr" for="filterStatus">Statut</label>
+      <label lang="en" for="filterStatus">Status</label>
       <select id="filterStatus">
-        <option value="all">— all —</option>
-        <option value="validated">Validated</option>
-        <option value="resolved">Resolved</option>
-        <option value="in-progress">In progress</option>
-        <option value="submitted">Submitted</option>
-        <option value="to-explore">To explore</option>
-        <option value="deferred">Deferred</option>
-        <option value="hypothesis">Hypothesis</option>
-        <option value="archived">Archived</option>
-        <option value="withdrawn">Withdrawn</option>
+        <option value="all" data-fr="— tous —" data-en="— all —">— all —</option>
+        <option value="validated" data-fr="Validé" data-en="Validated">Validated</option>
+        <option value="resolved" data-fr="Résolu" data-en="Resolved">Resolved</option>
+        <option value="archived" data-fr="Archivé" data-en="Archived">Archived</option>
+        <option value="withdrawn" data-fr="Retiré" data-en="Withdrawn">Withdrawn</option>
+        <option value="superseded" data-fr="Remplacé" data-en="Superseded">Superseded</option>
+        <option value="rejected" data-fr="Rejeté" data-en="Rejected">Rejected</option>
       </select>
     </div>
 
@@ -560,20 +565,20 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.19 · 2026-10-28</div>
+  <div class="footer-meta">Cartography · v0.10.21 · 2026-11-06</div>
   <p>
     <span lang="fr">Registre généré depuis <code>assets/data/research-ledger.json</code>. Relectures internes assistées par IA — <em>non peer review (cf. <a href="../faq/#q11">FAQ Q11</a>)</em>.</span>
     <span lang="en">Ledger generated from <code>assets/data/research-ledger.json</code>. Internal AI-assisted reviews — <em>not peer review (see <a href="../faq/#q11">FAQ Q11</a>)</em>.</span>
   </p>
-  <p>Eric Merle · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a> · <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener">ORCID</a></p>
+  <p>Eric Merle · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean" target="_blank" rel="noopener">Lean</a> · <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener">ORCID</a></p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
     · <a href="../feed.xml" rel="alternate" type="application/atom+xml" title="Fil RSS">📡 RSS</a>
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20261028-V0-10-20"></script>
-<script src="../assets/js/research-ledger.js?v=20261028-V0-10-19" defer></script>
+<script src="../assets/js/main.js?v=20261106-V0-10-21"></script>
+<script src="../assets/js/research-ledger.js?v=20261106-V0-10-21" defer></script>
 
 </body>
 </html>

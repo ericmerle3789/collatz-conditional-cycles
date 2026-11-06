@@ -76,7 +76,9 @@
       'hypothesis':  { fr: 'Hypothèse',  en: 'Hypothesis' },
       'archived':    { fr: 'Archivé',    en: 'Archived' },
       'failed':      { fr: 'Rejeté',     en: 'Failed' },
-      'withdrawn':   { fr: 'Retiré',     en: 'Withdrawn' }
+      'withdrawn':   { fr: 'Retiré',     en: 'Withdrawn' },
+      'rejected':    { fr: 'Rejeté',     en: 'Rejected' },
+      'superseded':  { fr: 'Remplacé',   en: 'Superseded' }
     };
     const l = labels[status] || { fr: status, en: status };
     return `<span class="event-status-badge" data-status="${status}"><span lang="fr">${l.fr}</span><span lang="en">${l.en}</span></span>`;
@@ -138,11 +140,11 @@
     }
 
     let metaSecondary = [];
-    if (event.verification_method) metaSecondary.push(`verif: ${event.verification_method}`);
-    if (event.evidence_level) metaSecondary.push(`evidence: ${event.evidence_level}`);
-    if (event.epistemic_status) metaSecondary.push(`epistemic: ${event.epistemic_status}`);
-    if (event.last_verified_at) metaSecondary.push(`last_verified: ${event.last_verified_at}`);
-    if (event.severity !== undefined) metaSecondary.push(`severity: ${event.severity}`);
+    if (event.verification_method) metaSecondary.push(`<span lang="fr">vérif.</span><span lang="en">verif</span>: ${event.verification_method}`);
+    if (event.evidence_level) metaSecondary.push(`<span lang="fr">preuve</span><span lang="en">evidence</span>: ${event.evidence_level}`);
+    if (event.epistemic_status) metaSecondary.push(`<span lang="fr">statut épistémique</span><span lang="en">epistemic</span>: ${event.epistemic_status}`);
+    if (event.last_verified_at) metaSecondary.push(`<span lang="fr">vérifié le</span><span lang="en">last verified</span>: ${event.last_verified_at}`);
+    if (event.severity !== undefined) metaSecondary.push(`<span lang="fr">gravité</span><span lang="en">severity</span>: ${event.severity}`);
     const metaSecondaryHTML = metaSecondary.length > 0
       ? `<div class="event-meta-secondary">${metaSecondary.join(' · ')}</div>`
       : '';
@@ -264,7 +266,7 @@
 
   async function init() {
     try {
-      const resp = await fetch('../assets/data/research-ledger.json?v=20261028-V0-10-19');
+      const resp = await fetch('../assets/data/research-ledger.json?v=20261106-V0-10-21');
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       STATE.data = await resp.json();
 

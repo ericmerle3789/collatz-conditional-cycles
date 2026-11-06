@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Changelog — Collatz / Syracuse Conditional Cycles</title>
-<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.20 (2026-10-28), results first on the home page, spring 2026 archive, Papers reorganised.">
+<meta name="description" content="Versioned changelog of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.21 (2026-11-06), accessibility, phones, pages brought up to date.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, changelog, version history, mea culpa, erratum">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow">
@@ -22,7 +22,7 @@
 
 <meta property="og:title" content="Changelog — Collatz / Syracuse Conditional Cycles">
 <meta property="og:description" content="(Syracuse · Collatz · 3n+1) Versioned history of paper, Lean arsenal, and website updates.">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="article">
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Changelog — Collatz / Syracuse Conditional Cycles">
 <meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Versioned changelog: paper revisions, Lean arsenal, site improvements, mea culpa.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 
 <!-- JSON-LD : Article changelog + BreadcrumbList -->
 <script type="application/ld+json">
@@ -47,7 +47,7 @@
       "@id": "https://collatz-lab.org/changelog/",
       "headline": "Versioned changelog — Collatz / Syracuse Conditional Cycles",
       "name": "Project changelog",
-      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.20 (2026-10-28) — results first on the home page, spring 2026 archive, Papers reorganised; v0.10.19 (2026-10-28) — corrections from the audit of 28 October 2026 (substance and erratum); v0.10.18 (2026-10-28) — home page reordered: recent work first, the April 2026 preprint and its erratum just after; v0.10.17 (2026-10-28) — Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4) on the site; Zenodo pointers updated; lead P7 corrected (Isabelle/HOL, not Lean); v0.10.16 (2026-10-27) — timeline and summary updated (research ledger: three events, 37 in all; History; home cards); v0.10.15 (2026-10-27) — last stub lead of the catalogue settled (Z), test REQ-MATH-007 withdrawn, prototype library archived; v0.10.14 (2026-10-27) — five more stub leads of the catalogue settled (Q.bis, V, W, X, Y: five dead ends, four of them sourced), mea culpa #23 corrected (two of its three references exist); v0.10.13 (2026-10-27) — five more stub leads of the catalogue settled (I.1, N, O, P, Q: five dead ends, four of them sourced); v0.10.12 (2026-10-22) — five more stub leads of the catalogue settled (three sourced dead ends, H.1 for its MSO / Büchi–Bruyère part only, one dead end with no source of its own, one lead withdrawn; corrections to leads C and K of v0.10.11); v0.10.11 (2026-10-22) — five stub leads of the catalogue settled (three sourced dead ends, one dead end with no published source, one lead withdrawn as unsourced); v0.10.10 (2026-10-21) — Steiner 1978 formalised in Lean 4 (a classical theorem, not a new result; original paper read after the formalisation, then compared; under the named hypothesis H_Rhin); v0.10.9 (2026-10-21) — re-check of no_cycle_k_le_1322 on Lean 4.34.0, errata note on Halbeisen–Hungerbühler 1997 and Lagarias 1990 (DOI 10.5281/zenodo.23535498); v0.10.8 (2026-10-21) — seven open items closed (test REQ-MATH-004 withdrawn, δ10 withdrawn, impossibility trilogy withdrawn, four studies closed); v0.10.7 (2026-10-20) — Lagarias 1990 formalised in Lean 4 (a classical result, not a new one); v0.10.6 (2026-10-20) — δ11 withdrawn (erratum v4, item 3); v0.10.5 (2026-10-20) — all pages reviewed (FAQ, Papers, research ledger links); v0.10.4 (2026-10-20) — timeline, research ledger and home cards up to date; v0.10.3 (2026-10-20) — Zenodo archive (software) of the HH 1997 formalisation, DOI 10.5281/zenodo.23498096; v0.10.2 (2026-10-20) — aligned with the Zenodo v4 version of the preprint (erratum, DOI 10.5281/zenodo.23496480); v0.10.1 (2026-10-20) — corrections (credit for L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988; state of the collaboration); v0.10.0 (2026-10-19) — Halbeisen–Hungerbühler 1997 formalised in Lean 4 (a classical result, not a new one); v0.9.0 (2026-10-02) — erratum on the main statement (H3 assumed, not derived), Lean kernel bug lean4#14576 noted, factual corrections (Hercher, Salikhov, unsourced figures), concept DOIs, open collaboration with B. Macindoe.",
+      "description": "Semantic versioning history of the Collatz / Syracuse Conditional Cycles project: paper revisions, Lean arsenal updates, website improvements, mea culpa. Latest: v0.10.21 (2026-11-06), accessibility, phones, pages brought up to date.",
       "url": "https://collatz-lab.org/changelog/",
       "inLanguage": ["en", "fr"],
       "author": {
@@ -56,7 +56,7 @@
         "name": "Eric Merle"
       },
       "datePublished": "2026-04-27",
-      "dateModified": "2026-10-28",
+      "dateModified": "2026-11-06",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
@@ -80,7 +80,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261028-V0-10-19">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261106-V0-10-21">
 </head>
 <body>
 
@@ -103,7 +103,7 @@
       <a href="../#archives" data-i18n="navArchives">2026 archive</a>
     </nav>
     <div class="toolbar-actions">
-      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="citeBtn" title="Cite" data-i18n="citeBtn">Cite</button>
       <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
         <span class="moon-icon" aria-hidden="true">☾</span>
         <span class="sun-icon" aria-hidden="true">☀</span>
@@ -132,6 +132,41 @@
 </section>
 
 <section>
+  <article class="changelog-entry" id="v0.10.21">
+    <header>
+      <h2><span class="version-tag">v0.10.21</span> <span lang="fr">Accessibilité, téléphone, et pages remises à jour</span><span lang="en">Accessibility, phones, and pages brought up to date</span></h2>
+      <time datetime="2026-11-06">2026-11-06</time>
+    </header>
+    <ul lang="fr">
+      <li><strong>Liens</strong> : tous les liens sont lisibles dans les deux thèmes (beaucoup restaient en bleu navigateur sur fond sombre). Contrastes relevés : thèmes clair et sépia, pastilles du registre, statut de la page Λ. Liens du pied de page soulignés.</li>
+      <li><strong>Téléphone</strong> : plus de débordement horizontal ; le menu s'estompe sur le bord droit pour signaler la suite. Les ancres ne passent plus sous la barre du haut et retombent sur leur cible après le chargement des tableaux.</li>
+      <li><strong>Clavier et lecteurs d'écran</strong> : lignes du catalogue et fenêtres utilisables au clavier (focus, Échap), lien d'évitement, filtres du registre étiquetés, noms accessibles traduits. Raccourcis d'une seule touche remplacés : Alt+C (citer), Alt+F (mode focus) ; « / » retiré, Cmd/Ctrl+K reste.</li>
+      <li><strong>Langues</strong> : les adresses <code>?lang=fr</code> sont respectées. Textes d'une langue visibles dans l'autre corrigés : étiquettes de la page Preuve, mois de l'Histoire, notes de sources (FAQ, Histoire, Syracuse), registre (libellés, filtres), palette de recherche, sommaire, exemple de Pour tous, noms de quatre pistes, titre français du mea culpa #28.</li>
+      <li><strong>Moins de chargements</strong> : Hypothes.is (service tiers) seulement après un clic sur « Annoter » ; Mermaid seulement quand le diagramme approche de l'écran ; d3 différé ; plus de requête en échec pour la coloration du code Lean ; requête plus légère pour le dernier commit du pied de page. Mouvement réduit respecté. <code>robots.txt</code> n'interdit plus les fichiers de données. Page 404 bilingue.</li>
+      <li><strong>Pages décrites par le seul preprint</strong> : FAQ (question 5), Pour tous (§ 3, et les deux « fantômes » en § 1), Syracuse, Lemmes, Preuve et Λ parlent maintenant des formalisations ou portent la date du preprint d'avril 2026 dans leur titre. Sur Pour tous, le lien « La preuve étape par étape » devient « L'architecture du preprint d'avril 2026 ».</li>
+      <li><strong>Catalogue des 36 pistes</strong> : statut « Retirée » commun à E.1, δ10, K et M, avec son filtre (δ10, K et M étaient comptées en culs-de-sac). P7 et P8 passent de « Prometteuse » à « Précédent de méthode » : elles n'annoncent aucune avancée. G.1 (cas par cas pour k ≤ 20) devient cul-de-sac : dépassée par Hercher 2023 avec la vérification de Bařina. G.1bis reste prouvée, mais la fiche dit maintenant que le cas k = 2 était déjà exclu. Filtre « Partielles » retiré, faute de piste. L'Histoire le signale pour K et M. Résultats de tests issus d'un script local signalés comme tels. Bilan : 26 culs-de-sac, 4 retirées, 2 précédents, 2 prouvées, le résultat principal et H1.</li>
+      <li><strong>Citer et pied de page</strong> : la fenêtre « Citer » donne aussi les DOI de la version v4 avec erratum, des formalisations et de la note d'errata. Pied de page : lien vers le dépôt Lean et badge du DOI des formalisations ; ★ mène au dépôt. Image de partage refaite : elle montre les formalisations, plus le seul preprint. Fichier LICENSE ajouté à la branche du site (CC BY-SA 4.0).</li>
+      <li><strong>Précisions d'exactitude</strong> : k ≤ 1322 est déjà impliqué par Hercher 2023 avec la vérification de Bařina (carte de l'accueil) ; Lemmes : le « ? » des deux fichiers sans décompte est retiré ; le {1, 2} de Steiner s'entend pour l'application raccourcie : x/2 si x est pair, (3x+1)/2 si x est impair ; preprint de B. Macindoe : la v3 reste citée pour ses énoncés numérotés, la v4 du 20/10/2026 est mentionnée ; « clone neuf » de <code>logs23/</code> : Lean et le cache de Mathlib étaient déjà présents ; réserve Lean 4.34.1 (FAQ, question 7) ; numéros REQ-MATH propres à chaque dépôt ; REQ-MATH-005 vaut pour l'interpolation de Chamberland ; corrigendum de Hercher du 14/06/2026 (Histoire) ; note d'errata ajoutée à l'Histoire ; légende sur « NEW » dans le code affiché ; somme des estimations d'avril : valeurs arrondies.</li>
+      <li><strong>Registre</strong> : pastilles colorées pour chaque statut ; compteur des articles formalisés, releases Lean et note d'errata ajouté ; dix liens internes <code>related</code> sans cible retirés ou remplacés (ils n'étaient pas affichés). Métadonnées : preprint décrit de la même façon sur l'accueil et sur Papers (publié le 26/04/2026, dernière version le 20/10/2026) ; méta-description courte.</li>
+      <li><strong>Versions sans entrée</strong> : v0.7.1 (05/05/2026) et v0.7.2 (06/05/2026), ajustements de présentation et de documentation ; le flux n'a pas d'entrée pour v0.2.0 ni v0.7.0. Les heures des entrées v0.8.0 (mise en ligne le 18/07/2026 vers 23 h 38, heure de Paris) et v0.9.0 sont approchées.</li>
+      <li>Rien de nouveau sur le fond : ce site ne prouve pas la conjecture.</li>
+    </ul>
+    <ul lang="en">
+      <li><strong>Links</strong>: every link is readable in both themes (many stayed browser blue on a dark background). Better contrast: light and sepia themes, ledger badges, status on the Λ page. Footer links underlined.</li>
+      <li><strong>Phones</strong>: no more horizontal overflow; the menu fades on its right edge to show there is more. Anchors no longer land under the top bar, and settle on their target once the tables have loaded.</li>
+      <li><strong>Keyboard and screen readers</strong>: catalogue rows and dialogs work with the keyboard (focus, Escape), skip link, labelled ledger filters, translated accessible names. Single-key shortcuts replaced: Alt+C (cite), Alt+F (focus mode); "/" removed, Cmd/Ctrl+K stays.</li>
+      <li><strong>Languages</strong>: <code>?lang=fr</code> addresses are honoured. Text of one language shown in the other fixed: labels of the Proof page, months of the History page, source notes (FAQ, History, Syracuse), ledger (labels, filters), search palette, table of contents, example of the For everyone page, names of four leads, French title of mea culpa #28.</li>
+      <li><strong>Fewer downloads</strong>: Hypothes.is (third party) only after a click on "Annotate"; Mermaid only when the diagram comes near the screen; d3 deferred; no more failed request for Lean code highlighting; a lighter request for the last commit in the footer. Reduced motion honoured. <code>robots.txt</code> no longer blocks the data files. Bilingual 404 page.</li>
+      <li><strong>Pages described by the preprint alone</strong>: FAQ (question 5), For everyone (§ 3, and the two "ghosts" in § 1), Syracuse, Lemmas, Proof and Λ now mention the formalisations or carry the date of the April 2026 preprint in their title. On the For everyone page, the link "The step-by-step proof" becomes "The architecture of the April 2026 preprint".</li>
+      <li><strong>Catalogue of the 36 leads</strong>: a common status "Withdrawn" for E.1, δ10, K and M, with its filter (δ10, K and M were counted as dead ends). P7 and P8 go from "Promising" to "Method precedent": they announce no progress. G.1 (case by case for k ≤ 20) becomes a dead end: superseded by Hercher 2023 with Barina's verification. G.1bis stays proven, but the entry now says that the case k = 2 was already excluded. Filter "Partial" removed, as no lead has that status. Histoire notes it for K and M. Test results from a local script are marked as such. Tally: 26 dead ends, 4 withdrawn, 2 precedents, 2 proven, the main result and H1.</li>
+      <li><strong>Citing and footer</strong>: the "Cite" window also gives the DOIs of version v4 with erratum, of the formalisations and of the errata note. Footer: link to the Lean repository and badge of the formalisations DOI; ★ leads to the repository. Sharing image redone: it shows the formalisations, no longer the preprint alone. LICENSE file added to the site branch (CC BY-SA 4.0).</li>
+      <li><strong>Points of accuracy</strong>: k ≤ 1322 is already implied by Hercher 2023 with Barina's verification (home page card); Lemmas: the "?" of the two files without a count is removed; Steiner's {1, 2} is for the shortcut map: x/2 for even x, (3x+1)/2 for odd x; B. Macindoe's preprint: v3 stays cited for its numbered statements, v4 of 2026-10-20 is mentioned; "fresh clone" of <code>logs23/</code>: Lean and Mathlib's cache were already present; Lean 4.34.1 caveat (FAQ, question 7); REQ-MATH numbers are specific to each repository; REQ-MATH-005 holds for the Chamberland interpolation; Hercher's corrigendum of 2026-06-14 (History); errata note added to the History page; caption on "NEW" in the displayed code; sum of the April estimates: rounded values.</li>
+      <li><strong>Ledger</strong>: coloured badges for every status; counter of formalised papers, Lean releases and errata note added; ten internal <code>related</code> links without a target removed or replaced (they were not displayed). Metadata: the preprint is described the same way on the home page and on Papers (published 2026-04-26, latest version 2026-10-20); short meta description.</li>
+      <li><strong>Versions with no entry</strong>: v0.7.1 (2026-05-05) and v0.7.2 (2026-05-06), presentation and documentation adjustments; the feed has no entry for v0.2.0 or v0.7.0. The times of the v0.8.0 entry (put online on 2026-07-18 around 23:38 Paris time) and of v0.9.0 are approximate.</li>
+      <li>Nothing new on the substance: this site does not prove the conjecture.</li>
+    </ul>
+  </article>
+
   <article class="changelog-entry" id="v0.10.20">
     <header>
       <h2><span class="version-tag">v0.10.20</span> <span lang="fr">Les résultats en tête : accueil, archives du printemps 2026, menu et page Papers</span><span lang="en">Results first: home page, spring 2026 archive, menu and Papers page</span></h2>
@@ -981,7 +1016,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.20 · 2026-10-28</div>
+  <div class="footer-meta">Cartography · v0.10.21 · 2026-11-06</div>
   <p lang="fr">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p lang="en">Errors found are corrected and documented publicly (mea culpa, erratum).</p>
   <p class="footer-status">
@@ -991,17 +1026,17 @@
     <span class="status-sep">·</span>
     <a href="../feed.xml" rel="alternate" type="application/atom+xml" class="text-muted small">Atom feed</a>
   </p>
-  <p>Eric Merle · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a> · <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener">ORCID</a></p>
+  <p>Eric Merle · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean" target="_blank" rel="noopener">Lean</a> · <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener">ORCID</a></p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
     · <a href="../feed.xml" rel="alternate" type="application/atom+xml" title="Fil RSS">📡 RSS</a>
   </p>
 </footer>
 
-<!-- Hypothes.is annotations -->
-<script src="https://hypothes.is/embed.js" async></script>
+<!-- Hypothes.is annotations: loaded on click by main.js -->
+<meta name="collatz-annotate" content="on-click">
 
-<script src="../assets/js/main.js?v=20261028-V0-10-20"></script>
+<script src="../assets/js/main.js?v=20261106-V0-10-21"></script>
 
 </body>
 </html>

@@ -12,8 +12,15 @@
   // Stratégie EN-canonique : anglais par défaut pour tout navigateur
   // sauf détection explicite d'une locale francophone (fr, fr-FR, fr-CA…).
   // localStorage écrase toujours la détection (persistance du choix utilisateur).
+  // v0.10.21 : ?lang=fr|en (the hreflang URLs) wins over the stored choice and the browser language.
+  const URL_LANG = (() => {
+    const v = new URLSearchParams(location.search).get('lang');
+    return (v === 'fr' || v === 'en') ? v : null;
+  })();
+  if (URL_LANG) localStorage.setItem('collatz-lang', URL_LANG);
+  const scrollBehavior = () => (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ? 'auto' : 'smooth';
   const STATE = {
-    lang: localStorage.getItem('collatz-lang') ||
+    lang: URL_LANG || localStorage.getItem('collatz-lang') ||
           (navigator.language && navigator.language.toLowerCase().startsWith('fr') ? 'fr' : 'en'),
     theme: localStorage.getItem('collatz-theme') ||
            (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'),
@@ -52,7 +59,7 @@
       keyStat2Label: "minima locaux de tout cycle non trivial",
       keyStat2Desc: "Hercher 2023 (JIS 26, 23.3.5)",
       keyStat3Label: "cycles exclus par notre théorème Lean (sous H1, H2)",
-      keyStat3Desc: "no_cycle_k_le_1322 · Lean 4.27.0",
+      keyStat3Desc: "no_cycle_k_le_1322 · Lean 4.27.0, revérifié sous Lean 4.34.0. Déjà impliqué par Hercher 2023 avec la vérification de Bařina.",
       keyStat4Label: "pistes cataloguées (plus aucune note à sourcer)",
       keyStat4Desc: "Région I + II + III",
       lockTitle: "Le verrou Λ_{S,k}",
@@ -63,10 +70,9 @@
       searchPlaceholder: "Rechercher une piste, une référence, un auteur…",
       filterAll: "Toutes",
       filterCds: "Culs-de-sac",
-      filterInsuf: "Retirée (δ11)",
-      filterPartiel: "Partielles",
+      filterRetire: "Retirées",
       filterInconnu: "Inconnues",
-      filterPrometteur: "Prometteuses",
+      filterPrecedent: "Précédents de méthode",
       filterAxiome: "Hypothèses (paramètres)",
       colId: "ID",
       colName: "Nom",
@@ -76,9 +82,9 @@
       colLean: "Lean",
       colSource: "Source",
       hypothesesTitle: "Trois hypothèses sur la sortie",
-      hypothesesIntro: "Évolution des probabilités estimées (estimations subjectives de l'auteur, non calculées) au fil des cycles d'investigation (Cycle 0 → Cycle 2). La hausse de C reflète la convergence cumulative des paradigmes vers Λ_{S,k}.",
+      hypothesesIntro: "Évolution des probabilités estimées (estimations subjectives de l'auteur, non calculées) au fil des cycles d'investigation (Cycle 0 → Cycle 2). La hausse de C reflète la convergence cumulative des paradigmes vers Λ_{S,k}. Valeurs arrondies : la somme peut dépasser 100 %.",
       testsTitle: "Tests REQ-MATH-NNN exécutés",
-      testsIntro: "Scripts de contrôle numérique ponctuels. Seuls REQ-MATH-007 et REQ-MATH-012 sont publiés (branches d'étude du dépôt) ; les autres sont restés locaux. Ils vérifient des calculs précis ; ils ne valident pas toutes les affirmations du site.",
+      testsIntro: "Scripts de contrôle numérique ponctuels. Seuls REQ-MATH-007 et REQ-MATH-012 sont publiés (branches d'étude du dépôt) ; les autres sont restés locaux. Cette série est celle du dépôt collatz-conditional-cycles, sans rapport avec les tests REQ-MATH du dépôt Lean. Ils vérifient des calculs précis ; ils ne valident pas toutes les affirmations du site.",
       meaCulpaTitle: "Mea culpa publics",
       meaCulpaIntro: "Chaque erreur détectée est documentée publiquement, avec une sévérité de 0 à 10 et la règle qui en est tirée. <em>Aperçu de 16 mea culpa (numérotés jusqu'au #32).</em>",
       researchStatusTitle: "État des travaux",
@@ -149,7 +155,7 @@
       keyStat2Label: "local minima of any non-trivial cycle",
       keyStat2Desc: "Hercher 2023 (JIS 26, 23.3.5)",
       keyStat3Label: "cycles excluded by our Lean theorem (under H1, H2)",
-      keyStat3Desc: "no_cycle_k_le_1322 · Lean 4.27.0",
+      keyStat3Desc: "no_cycle_k_le_1322 · Lean 4.27.0, re-checked on Lean 4.34.0. Already implied by Hercher 2023 with Barina's verification.",
       keyStat4Label: "catalogued approaches (no stub notes left)",
       keyStat4Desc: "Region I + II + III",
       lockTitle: "The Λ_{S,k} lock",
@@ -160,10 +166,9 @@
       searchPlaceholder: "Search by name, reference, or author…",
       filterAll: "All",
       filterCds: "Dead ends",
-      filterInsuf: "Withdrawn (δ11)",
-      filterPartiel: "Partial",
+      filterRetire: "Withdrawn",
       filterInconnu: "Unexplored",
-      filterPrometteur: "Promising",
+      filterPrecedent: "Method precedents",
       filterAxiome: "Hypotheses (parameters)",
       colId: "ID",
       colName: "Name",
@@ -173,9 +178,9 @@
       colLean: "Lean",
       colSource: "Source",
       hypothesesTitle: "Three hypotheses on the exit",
-      hypothesesIntro: "Evolution of estimated probabilities (the author's subjective estimates, not computed) across investigation cycles (Cycle 0 → Cycle 2). The rise of C reflects cumulative convergence of paradigms onto Λ_{S,k}.",
+      hypothesesIntro: "Evolution of estimated probabilities (the author's subjective estimates, not computed) across investigation cycles (Cycle 0 → Cycle 2). The rise of C reflects cumulative convergence of paradigms onto Λ_{S,k}. Rounded values: the sum may exceed 100%.",
       testsTitle: "Executed REQ-MATH-NNN tests",
-      testsIntro: "Targeted numerical check scripts. Only REQ-MATH-007 and REQ-MATH-012 are published (study branches of the repository); the others remained local. They check specific computations; they do not validate every claim on this site.",
+      testsIntro: "Targeted numerical check scripts. Only REQ-MATH-007 and REQ-MATH-012 are published (study branches of the repository); the others remained local. This series is that of the collatz-conditional-cycles repository, unrelated to the REQ-MATH tests of the Lean repository. They check specific computations; they do not validate every claim on this site.",
       researchStatusTitle: "Research status",
       researchStatusIntro: "Project activity snapshot, traceable on GitHub. <a href=\"/research-ledger/\">Full registry (Research Ledger) →</a> The April 2026 preprint and its <a href=\"#erratum\">erratum of 2 October 2026</a> follow just below.",
       statusLastMilestone: "Latest milestone",
@@ -226,20 +231,20 @@
       main: "★ Résultat principal",
       cds: "Cul-de-sac",
       partiel: "Partielle",
-      insuf: "Retirée le 20/10/2026 (ancienne insuffisance conditionnelle δ11)",
+      retire: "Retirée",
       inconnu: "Inconnue",
       prouve: "Prouvée",
-      prometteur: "Prometteuse",
+      precedent: "Précédent de méthode",
       axiome: "Hypothèse (paramètre)"
     },
     en: {
       main: "★ Main result",
       cds: "Dead end",
       partiel: "Partial",
-      insuf: "Withdrawn on 2026-10-20 (former conditional insufficiency δ11)",
+      retire: "Withdrawn",
       inconnu: "Unexplored",
       prouve: "Proven",
-      prometteur: "Promising",
+      precedent: "Method precedent",
       axiome: "Hypothesis (parameter)"
     }
   };
@@ -307,7 +312,20 @@
 
     // Bouton lang : affiche la langue ALTERNATIVE (cliquer pour basculer)
     const langBtn = document.getElementById('langBtn');
-    if (langBtn) langBtn.textContent = dict.langBtn;
+    if (langBtn) {
+      langBtn.textContent = dict.langBtn;
+      langBtn.setAttribute('aria-label', STATE.lang === 'fr' ? 'EN — English version' : 'FR — version française');
+    }
+    const themeBtn = document.getElementById('themeBtn');
+    if (themeBtn) {
+      const label = STATE.lang === 'fr' ? 'Changer de thème (sombre, clair ou sépia)' : 'Change theme (dark, light or sepia)';
+      themeBtn.setAttribute('aria-label', label);
+      themeBtn.setAttribute('title', label);
+    }
+    document.querySelectorAll('.modal-close').forEach(el => el.setAttribute('aria-label', STATE.lang === 'fr' ? 'Fermer' : 'Close'));
+    document.querySelectorAll('.permalink-icon').forEach(el => { el.title = STATE.lang === 'fr' ? 'Copier le lien' : 'Copy permalink'; });
+    document.querySelectorAll('[data-aria-fr]').forEach(el => el.setAttribute('aria-label', STATE.lang === 'fr' ? el.dataset.ariaFr : el.dataset.ariaEn));
+    document.querySelectorAll('option[data-fr]').forEach(el => { el.textContent = STATE.lang === 'fr' ? el.dataset.fr : el.dataset.en; });
 
     // Re-render dynamique (tableau, tests, mea culpa) — gracieux si pas sur index.html
     // Each render is independently caught so a single failure can't interrupt
@@ -341,9 +359,26 @@
     }
   }
 
+  // ?lang=fr is its own language version: it must not declare the default URL as canonical.
+  function syncCanonical() {
+    const link = document.querySelector('link[rel="canonical"]');
+    if (!link) return;
+    if (!link.dataset.base) link.dataset.base = link.getAttribute('href');
+    const v = new URLSearchParams(location.search).get('lang');
+    link.setAttribute('href', v === 'fr' ? link.dataset.base + '?lang=fr' : link.dataset.base);
+  }
+
   function toggleLang() {
     STATE.lang = STATE.lang === 'fr' ? 'en' : 'fr';
     localStorage.setItem('collatz-lang', STATE.lang);
+    // Keep an explicit ?lang= in step, otherwise a reload would undo the choice.
+    if (new URLSearchParams(location.search).has('lang')) {
+      const u = new URL(location.href);
+      u.searchParams.set('lang', STATE.lang);
+      history.replaceState(null, '', u);
+      syncCanonical();
+    }
+    SEARCH_INDEX = null;  // labels of the palette depend on the language
     applyLang();
   }
 
@@ -354,9 +389,21 @@
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme) metaTheme.content = (STATE.theme === 'light') ? '#fbfaf6' : '#0e0f13';
     // Re-render Mermaid avec le bon thème (sombre / par défaut)
+    renderMermaid();
+    // Re-render Chart.js avec couleurs adaptées
+    if (typeof renderHypothesesChart === 'function' && document.querySelector('#hypothesesChart')) {
+      renderHypothesesChart();
+    }
+  }
+
+  // Mermaid (933 kB) is fetched only when a diagram comes near the screen, or before printing.
+  const MERMAID_SRC = 'https://cdn.jsdelivr.net/npm/mermaid@10.9.5/dist/mermaid.min.js';
+  let mermaidLoading = null;
+  function renderMermaid() {
     if (window.mermaid && document.querySelector('.mermaid')) {
       mermaid.initialize({
         startOnLoad: false,
+
         theme: (STATE.theme === 'light') ? 'default' : 'dark',
         themeVariables: STATE.theme === 'light'
           ? { primaryColor: '#ffffff', primaryTextColor: '#1a1a1a', primaryBorderColor: '#8b6f30', lineColor: '#6b6760', secondaryColor: '#f5f2ea', tertiaryColor: '#ece8dc', fontFamily: "'Inter', sans-serif" }
@@ -367,12 +414,32 @@
         if (el.dataset.original) { el.innerHTML = el.dataset.original; el.removeAttribute('data-processed'); }
         else { el.dataset.original = el.innerHTML; }
       });
-      mermaid.run();
+      return mermaid.run();
     }
-    // Re-render Chart.js avec couleurs adaptées
-    if (typeof renderHypothesesChart === 'function' && document.querySelector('#hypothesesChart')) {
-      renderHypothesesChart();
-    }
+  }
+  function ensureMermaid() {
+    if (!document.querySelector('.mermaid')) return Promise.resolve();
+    if (mermaidLoading) return mermaidLoading;
+    const tag = document.querySelector('meta[name="collatz-mermaid-sri"]');
+    mermaidLoading = new Promise(resolve => {
+      const s = document.createElement('script');
+      s.src = MERMAID_SRC;
+      s.crossOrigin = 'anonymous';
+      if (tag) s.integrity = tag.content;
+      s.onload = () => { Promise.resolve().then(renderMermaid).catch(e => console.warn('mermaid failed:', e)).then(resolve); };
+      s.onerror = () => resolve();
+      document.head.appendChild(s);
+    });
+    return mermaidLoading;
+  }
+  function watchMermaid() {
+    const nodes = document.querySelectorAll('.mermaid');
+    if (!nodes.length) return;
+    if (!('IntersectionObserver' in window)) { ensureMermaid(); return; }
+    const io = new IntersectionObserver(entries => {
+      if (entries.some(en => en.isIntersecting)) { io.disconnect(); ensureMermaid(); }
+    }, { rootMargin: '800px 0px' });
+    nodes.forEach(n => io.observe(n));
   }
 
   function toggleTheme() {
@@ -456,7 +523,7 @@ ER  - `;
     const html = `
       <div class="modal-overlay" id="citeModal" role="dialog" aria-modal="true" aria-labelledby="citeModalTitle">
         <div class="modal" style="max-width: 820px;">
-          <button class="modal-close" id="citeModalClose" aria-label="Close">×</button>
+          <button type="button" class="modal-close" id="citeModalClose" aria-label="${STATE.lang === 'fr' ? 'Fermer' : 'Close'}">×</button>
           <h3 id="citeModalTitle"><span data-i18n="citeTitle">${dict.citeTitle || 'How to cite this work'}</span></h3>
           <div class="cite-tabs" role="tablist">
             <button class="cite-tab active" data-fmt="bibtex" role="tab" aria-selected="true">BibTeX</button>
@@ -477,6 +544,10 @@ ER  - `;
                 <span data-i18n="citeCopy">${dict.citeCopy || 'Copy to clipboard'}</span>
               </button>
             </div>
+            <div class="cite-others text-muted small">
+              <p lang="fr">Ces formats citent le preprint d'avril 2026. Version v4 avec erratum (20/10/2026) : DOI <a href="https://doi.org/10.5281/zenodo.23496480" target="_blank" rel="noopener">10.5281/zenodo.23496480</a>. Formalisations en Lean 4 (toutes versions) : DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a>. Note d'errata : DOI <a href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener">10.5281/zenodo.23535498</a>.</p>
+              <p lang="en">These formats cite the April 2026 preprint. Version v4 with erratum (2026-10-20): DOI <a href="https://doi.org/10.5281/zenodo.23496480" target="_blank" rel="noopener">10.5281/zenodo.23496480</a>. Lean 4 formalisations (all versions): DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a>. Errata note: DOI <a href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener">10.5281/zenodo.23535498</a>.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -484,13 +555,10 @@ ER  - `;
     document.body.insertAdjacentHTML('beforeend', html);
 
     // Wire les events
-    document.getElementById('citeModalClose')?.addEventListener('click', () => {
-      document.getElementById('citeModal').classList.remove('active');
-    });
+    document.querySelectorAll('#citeModal [lang]').forEach(el => { el.hidden = el.getAttribute('lang') !== STATE.lang; });
+    document.getElementById('citeModalClose')?.addEventListener('click', () => closeDialog(document.getElementById('citeModal')));
     document.getElementById('citeModal')?.addEventListener('click', e => {
-      if (e.target.id === 'citeModal') {
-        document.getElementById('citeModal').classList.remove('active');
-      }
+      if (e.target.id === 'citeModal') closeDialog(document.getElementById('citeModal'));
     });
     document.querySelectorAll('.cite-tab').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -525,7 +593,73 @@ ER  - `;
 
   function openCiteModal() {
     injectCitationModal();
-    document.getElementById('citeModal').classList.add('active');
+    openDialog(document.getElementById('citeModal'));
+  }
+
+  // Dialogs: focus goes in on open, comes back on close, Tab stays inside, Escape closes.
+  let dialogReturnFocus = null;
+  function openDialog(el) {
+    if (!el) return;
+    dialogReturnFocus = document.activeElement;
+    el.classList.add('active');
+    el.querySelector('.modal-close, button, [href], input, select, textarea')?.focus();
+  }
+  function closeDialog(el) {
+    if (!el || !el.classList.contains('active')) return;
+    el.classList.remove('active');
+    if (dialogReturnFocus && document.contains(dialogReturnFocus)) dialogReturnFocus.focus();
+    dialogReturnFocus = null;
+  }
+  function activeDialog() {
+    return document.querySelector('#pisteModal.active, #citeModal.active');
+  }
+  document.addEventListener('keydown', e => {
+    const d = activeDialog();
+    if (!d) return;
+    if (e.key === 'Escape') { closeDialog(d); return; }
+    if (e.key !== 'Tab') return;
+    const items = Array.from(d.querySelectorAll('a[href], button, input, select, textarea')).filter(x => x.offsetParent !== null);
+    if (!items.length) return;
+    const first = items[0], last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  // Skip link, injected here so that the 12 pages stay untouched.
+  function injectSkipLink() {
+    const main = document.querySelector('main');
+    if (!main || document.querySelector('.skip-link')) return;
+    if (!main.id) main.id = 'main-content';
+    main.setAttribute('tabindex', '-1');
+    const a = document.createElement('a');
+    a.className = 'skip-link';
+    a.href = '#' + main.id;
+    a.innerHTML = '<span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span>';
+    document.body.prepend(a);
+  }
+
+  // Hypothes.is (third-party, 245 kB): loaded only after an explicit click.
+  function initAnnotate() {
+    if (!document.querySelector('meta[name="collatz-annotate"]')) return;
+    const foot = document.querySelector('footer');
+    if (!foot || document.getElementById('annotateBtn')) return;
+    const p = document.createElement('p');
+    p.style.marginTop = '0.8rem';
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.id = 'annotateBtn';
+    b.className = 'annotate-btn';
+    b.innerHTML = '<span lang="fr">Annoter cette page (charge Hypothes.is, service tiers)</span><span lang="en">Annotate this page (loads Hypothes.is, a third-party service)</span>';
+    b.addEventListener('click', () => {
+      b.disabled = true;
+      const s = document.createElement('script');
+      s.src = 'https://hypothes.is/embed.js';
+      s.async = true;
+      document.body.appendChild(s);
+    });
+    p.appendChild(b);
+    foot.appendChild(p);
+    b.querySelectorAll('[lang]').forEach(el => { el.hidden = el.getAttribute('lang') !== STATE.lang; });
   }
 
   // ========== COMMAND PALETTE / THEOREM SEARCH (Cmd+K / Ctrl+K) ==========
@@ -552,16 +686,18 @@ ER  - `;
       } catch (e) { /* sous-page sans accès */ }
     }
     SEARCH_INDEX = [];
+    const isFr = STATE.lang === 'fr';
+    const pickLang = (o, k) => (isFr ? (o.fr?.[k] || o.en?.[k]) : (o.en?.[k] || o.fr?.[k])) || '';
     // Pistes
     if (STATE.data && STATE.data.pistes) {
       STATE.data.pistes.forEach(p => {
         SEARCH_INDEX.push({
           type: 'piste',
           id: p.id,
-          title: p.en?.name || p.fr?.name || p.id,
+          title: pickLang(p, 'name') || p.id,
           titleFr: p.fr?.name || '',
-          subtitle: 'Approach · Region ' + p.region + ' · ' + p.status,
-          desc: (p.en?.why || p.fr?.why || '').substring(0, 140),
+          subtitle: (isFr ? 'Piste · Région ' : 'Approach · Region ') + p.region + ' · ' + ((STATUS_LABELS[STATE.lang] || {})[p.status] || p.status),
+          desc: pickLang(p, 'why').substring(0, 140),
           url: 'index.html#pistes',
           keywords: [p.id, p.lean, p.ref, p.fr?.name, p.en?.name, p.fr?.why, p.en?.why, p.region, p.status].filter(Boolean).join(' ').toLowerCase()
         });
@@ -574,8 +710,8 @@ ER  - `;
           type: 'theorem',
           id: t.name,
           title: t.name,
-          subtitle: 'Central theorem · ' + (t.en?.role || t.fr?.role || ''),
-          desc: (t.en?.desc || t.fr?.desc || '').substring(0, 140),
+          subtitle: (isFr ? 'Théorème central · ' : 'Central theorem · ') + pickLang(t, 'role'),
+          desc: pickLang(t, 'desc').substring(0, 140),
           url: 'lemmes/',
           file: t.file,
           keywords: [t.name, t.file, t.en?.desc, t.fr?.desc, ...(t.depends || []), ...(t.axioms || [])].filter(Boolean).join(' ').toLowerCase()
@@ -588,8 +724,8 @@ ER  - `;
           type: 'lemma',
           id: t.name,
           title: t.name,
-          subtitle: 'Auxiliary lemma · ' + (t.en?.role || t.fr?.role || ''),
-          desc: (t.en?.desc || t.fr?.desc || '').substring(0, 140),
+          subtitle: (isFr ? 'Lemme auxiliaire · ' : 'Auxiliary lemma · ') + pickLang(t, 'role'),
+          desc: pickLang(t, 'desc').substring(0, 140),
           url: 'lemmes/',
           file: t.file,
           keywords: [t.name, t.file, t.en?.desc, t.fr?.desc].filter(Boolean).join(' ').toLowerCase()
@@ -602,8 +738,8 @@ ER  - `;
           type: 'cfgap',
           id: g.name,
           title: g.name,
-          subtitle: 'CF gap · Window W' + g.window + ' · convergent ' + g.convergent,
-          desc: 'Arithmetic inequality at convergent (' + g.convergent + ') of log_2 3, validated by native_decide.',
+          subtitle: (isFr ? 'Écart de fraction continue · Fenêtre W' : 'CF gap · Window W') + g.window + (isFr ? ' · réduite ' : ' · convergent ') + g.convergent,
+          desc: isFr ? 'Inégalité arithmétique à la réduite ' + g.convergent + ' de log_2 3, validée par native_decide.' : 'Arithmetic inequality at convergent ' + g.convergent + ' of log_2 3, validated by native_decide.',
           url: 'lemmes/',
           keywords: ['cf_gap', 'cf gap', g.name, 'W' + g.window, g.convergent, 'native_decide', 'continued fraction'].join(' ').toLowerCase()
         });
@@ -615,19 +751,20 @@ ER  - `;
           type: 'postjar',
           id: f.name,
           title: f.name,
-          subtitle: 'PostJAR file · ' + f.theoremCount + ' theorems',
-          desc: (f.en || f.fr || '').substring(0, 140),
+          subtitle: (isFr ? 'Fichier PostJAR' : 'PostJAR file') + (Number.isFinite(f.theoremCount) ? ' · ' + f.theoremCount + (isFr ? ' théorèmes' : ' theorems') : ''),
+          desc: ((isFr ? (f.fr || f.en) : (f.en || f.fr)) || '').substring(0, 140),
           url: 'lemmes/',
           keywords: [f.name, f.en, f.fr, 'PostJAR', 'R34-R96', 'arsenal'].filter(Boolean).join(' ').toLowerCase()
         });
       });
     }
     // Pages
+    const fr = STATE.lang === 'fr';
     SEARCH_INDEX.push(
-      { type: 'page', id: '/', title: 'Home — Cartography', subtitle: 'Page · Main entry', desc: 'Lean 4 formalisations of classical work (Steiner 1978, Lagarias 1990, Halbeisen–Hungerbühler 1997), errata note, catalogue of 36 leads, April 2026 preprint with its erratum', url: 'index.html', keywords: 'home cartography main lambda lock baker barina hercher' },
-      { type: 'page', id: '/preuve/', title: 'Proof chain', subtitle: 'Page · Lean 4 architecture', desc: 'Phase52 → Phase56 → Phase58 → Phase59 (erratum: H3 assumed)', url: 'preuve/', keywords: 'proof chain phase52 phase56 phase58 phase59 steiner barina continued fractions erratum' },
-      { type: 'page', id: '/papers/', title: 'Papers', subtitle: 'Page · formalisations, preprint, work in progress', desc: 'Published Lean 4 formalisations, the April 2026 preprint (Zenodo DOI) with its erratum, work in progress', url: 'papers/', keywords: 'papers pipeline preprint zenodo drafts' },
-      { type: 'page', id: '/lemmes/', title: 'Lean catalog', subtitle: 'Page · 7 central + auxiliaries + cf_gaps + PostJAR', desc: 'Catalog of all Lean 4 theorems', url: 'lemmes/', keywords: 'lean catalog theorems central auxiliary cf_gap postjar arsenal' }
+      { type: 'page', id: '/', title: fr ? 'Accueil — Cartographie' : 'Home — Cartography', subtitle: fr ? 'Page · entrée principale' : 'Page · Main entry', desc: fr ? "Formalisations en Lean 4 de travaux classiques (Steiner 1978, Lagarias 1990, Halbeisen–Hungerbühler 1997), note d'errata, catalogue de 36 pistes, preprint d'avril 2026 et son erratum" : 'Lean 4 formalisations of classical work (Steiner 1978, Lagarias 1990, Halbeisen–Hungerbühler 1997), errata note, catalogue of 36 leads, April 2026 preprint with its erratum', url: 'index.html', keywords: 'home accueil cartography cartographie main lambda lock baker barina hercher' },
+      { type: 'page', id: '/preuve/', title: fr ? 'Chaîne de preuve' : 'Proof chain', subtitle: fr ? "Page · architecture Lean 4 du preprint d'avril 2026" : 'Page · Lean 4 architecture of the April 2026 preprint', desc: fr ? 'Phase52 → Phase56 → Phase58 → Phase59 (erratum : H3 supposée)' : 'Phase52 → Phase56 → Phase58 → Phase59 (erratum: H3 assumed)', url: 'preuve/', keywords: 'proof chain preuve phase52 phase56 phase58 phase59 steiner barina continued fractions erratum' },
+      { type: 'page', id: '/papers/', title: 'Papers', subtitle: fr ? 'Page · formalisations, preprint, travaux en cours' : 'Page · formalisations, preprint, work in progress', desc: fr ? "Formalisations publiées en Lean 4, preprint d'avril 2026 (DOI Zenodo) et son erratum, travaux en cours" : 'Published Lean 4 formalisations, the April 2026 preprint (Zenodo DOI) with its erratum, work in progress', url: 'papers/', keywords: 'papers pipeline preprint zenodo drafts' },
+      { type: 'page', id: '/lemmes/', title: fr ? "Catalogue Lean du preprint d'avril 2026" : 'Lean catalog of the April 2026 preprint', subtitle: fr ? 'Page · 7 centraux + auxiliaires + cf_gaps + PostJAR' : 'Page · 7 central + auxiliaries + cf_gaps + PostJAR', desc: fr ? "Catalogue des théorèmes Lean 4 du preprint d'avril 2026" : 'Catalog of the Lean 4 theorems of the April 2026 preprint', url: 'lemmes/', keywords: 'lean catalog catalogue theorems central auxiliary cf_gap postjar arsenal' }
     );
     return SEARCH_INDEX;
   }
@@ -828,7 +965,7 @@ ER  - `;
       const tr = document.createElement('tr');
       tr.dataset.pisteId = p.id;
       tr.innerHTML = `
-        <td><strong>${p.id}</strong></td>
+        <td><button type="button" class="piste-open" aria-haspopup="dialog"><strong>${p.id}</strong></button></td>
         <td>${localized?.name || ''}</td>
         <td class="text-muted small">${regionDict[p.region] || p.region}</td>
         <td><span class="badge ${p.status}">${statusDict[p.status] || p.status}</span></td>
@@ -878,11 +1015,11 @@ ER  - `;
     }
 
     document.getElementById('modalContent').innerHTML = content;
-    document.getElementById('pisteModal').classList.add('active');
+    openDialog(document.getElementById('pisteModal'));
   }
 
   function closeModal() {
-    document.getElementById('pisteModal').classList.remove('active');
+    closeDialog(document.getElementById('pisteModal'));
   }
 
   // ========== TESTS REQ-MATH ==========
@@ -1082,7 +1219,7 @@ ER  - `;
       <ul class="toc-list">
         ${headings.map(h => `
           <li class="toc-item">
-            <a href="#${h.id}" class="toc-link toc-${h.tagName.toLowerCase()}">${h.textContent.replace(/^§\s*[IVX]+(\.\w+)?\s*[—-]\s*/, '')}</a>
+            <a href="#${h.id}" class="toc-link toc-${h.tagName.toLowerCase()}">${(h.querySelector('[lang="' + STATE.lang + '"]') || h).textContent.replace(/^§\s*[IVX]+(\.\w+)?\s*[—-]\s*/, '')}</a>
           </li>
         `).join('')}
       </ul>
@@ -1095,7 +1232,7 @@ ER  - `;
         e.preventDefault();
         const target = document.querySelector(a.getAttribute('href'));
         const fold = target?.closest('details'); if (fold) fold.open = true;  // v0.10.20 : archives repliées
-        target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target?.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
       });
     });
 
@@ -1140,11 +1277,12 @@ ER  - `;
           return;
         }
       }
-      const r = await fetch('https://api.github.com/repos/ericmerle3789/collatz-conditional-cycles/commits/gh-pages', {
+      const r = await fetch('https://api.github.com/repos/ericmerle3789/collatz-conditional-cycles/commits?sha=gh-pages&per_page=1', {
         headers: { 'Accept': 'application/vnd.github.v3+json' }
       });
       if (r.ok) {
-        const j = await r.json();
+        const list = await r.json();
+        const j = Array.isArray(list) ? (list[0] || {}) : list;
         const date = new Date(j.commit?.author?.date || j.commit?.committer?.date);
         const sha7 = (j.sha || '').substring(0, 7);
         const text = `${date.toISOString().substring(0, 10)} · ${sha7}`;
@@ -1190,7 +1328,8 @@ ER  - `;
     const codes = document.querySelectorAll('main code');
     codes.forEach(code => {
       const txt = code.textContent.trim();
-      if (txt.length < 8 || code.classList.contains('language-bash') || code.classList.contains('language-lean')) return;
+      if (txt.length < 8 || code.classList.contains('language-bash') || code.classList.contains('language-none')) return;
+      if (code.closest('[aria-hidden="true"]')) return;  // no focusable link inside the ticker
       if (!/^[a-z][a-z0-9_]*[a-z0-9]$/.test(txt)) return; // snake_case identifier
       if (code.parentElement?.classList.contains('has-permalink')) return; // déjà fait
 
@@ -1200,8 +1339,10 @@ ER  - `;
       link.href = '#' + txt;
       link.className = 'permalink-icon';
       link.textContent = '¶';
-      link.title = 'Copy permalink';
-      link.setAttribute('aria-label', 'Copy permalink to ' + txt);
+      link.title = STATE.lang === 'fr' ? 'Copier le lien' : 'Copy permalink';
+      link.dataset.ariaFr = 'Copier le lien vers ' + txt;
+      link.dataset.ariaEn = 'Copy permalink to ' + txt;
+      link.setAttribute('aria-label', STATE.lang === 'fr' ? link.dataset.ariaFr : link.dataset.ariaEn);
       link.addEventListener('click', async (e) => {
         e.preventDefault();
         const url = location.origin + location.pathname + '#' + txt;
@@ -1256,7 +1397,7 @@ ER  - `;
         html.dataset.focusMode = 'on';
         const active = findActiveSection();
         if (active) active.classList.add('focus-active');
-        showPermalinkToast(STATE.lang === 'fr' ? 'Mode focus activé · F pour quitter' : 'Focus mode on · F to exit');
+        showPermalinkToast(STATE.lang === 'fr' ? 'Mode focus activé · Alt+F pour quitter' : 'Focus mode on · Alt+F to exit');
       }
     }
     function updateActive() {
@@ -1268,8 +1409,8 @@ ER  - `;
     document.addEventListener('keydown', e => {
       const tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
-      if (e.key === 'f' || e.key === 'F') {
-        if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.code === 'KeyF' && e.altKey) {
+        if (e.metaKey || e.ctrlKey) return;
         e.preventDefault();
         toggleFocus();
       }
@@ -1346,25 +1487,14 @@ ER  - `;
       console.warn('Données pistes.json non chargées (page secondaire ?) :', e.message);
     }
 
-    // Mermaid
-    if (window.mermaid) {
-      mermaid.initialize({
-        startOnLoad: true,
-        theme: 'dark',
-        themeVariables: {
-          primaryColor: '#16181f',
-          primaryTextColor: '#e8e6e0',
-          primaryBorderColor: '#c8a86a',
-          lineColor: '#8b887f',
-          secondaryColor: '#0e0f13',
-          tertiaryColor: '#1f2229',
-          fontFamily: "'Inter', sans-serif"
-        }
-      });
-    }
+    // Mermaid : on demand
+    watchMermaid();
 
     // Apply lang
+    syncCanonical();
+    injectSkipLink();
     applyLang();
+    initAnnotate();
 
     // Filter handlers
     const searchInput = document.getElementById('searchInput');
@@ -1378,15 +1508,13 @@ ER  - `;
     document.getElementById('pisteModal')?.addEventListener('click', e => {
       if (e.target.id === 'pisteModal') closeModal();
     });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
 
     // Toolbar
     document.getElementById('langBtn')?.addEventListener('click', toggleLang);
     document.getElementById('themeBtn')?.addEventListener('click', toggleThemeCycle);
     document.getElementById('citeBtn')?.addEventListener('click', openCiteModal);
-    document.getElementById('printBtn')?.addEventListener('click', () => window.print());
+    document.getElementById('printBtn')?.addEventListener('click', () => { ensureMermaid().then(() => window.print()); });
+    window.addEventListener('beforeprint', ensureMermaid);
 
     // Raccourci clavier : 'C' ouvre la modale citation (sauf en input)
     document.addEventListener('keydown', e => {
@@ -1398,21 +1526,15 @@ ER  - `;
         openSearchPalette();
         return;
       }
-      // '/' (slash) → palette de recherche (style GitHub)
-      if (e.key === '/' && !inInput && !e.metaKey && !e.ctrlKey && !e.altKey) {
-        e.preventDefault();
-        openSearchPalette();
-        return;
-      }
-      // 'C' → citation
-      if ((e.key === 'c' || e.key === 'C') && !e.metaKey && !e.ctrlKey && !e.altKey) {
+      // Alt+C → citation (no single-key shortcut: WCAG 2.1.4)
+      if (e.code === 'KeyC' && e.altKey && !e.metaKey && !e.ctrlKey) {
         if (inInput) return;
         e.preventDefault();
         openCiteModal();
       }
     });
     document.getElementById('topBtn')?.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: scrollBehavior() });
     });
 
     // Theme + Scroll progress
@@ -1438,7 +1560,7 @@ ER  - `;
         if (href.startsWith('#')) {
           e.preventDefault();
           const target = document.querySelector(href);
-          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (target) target.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
         }
       });
     });
@@ -1458,14 +1580,28 @@ ER  - `;
 // Scroll auto + ouverture des <details> après navigation par ancre
 // (ex. ../faq/#qN : le navigateur ne déroulait pas la question ciblée)
 (function() {
+  let userMoved = false;
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(ev => window.addEventListener(ev, () => { userMoved = true; }, { passive: true, once: true }));
+  function hashTarget() {
+    if (!window.location.hash) return null;
+    try { return document.getElementById(decodeURIComponent(window.location.hash.slice(1))); } catch (e) { return null; }
+  }
   function scrollToHashTarget() {
-    if (!window.location.hash) return;
-    const target = document.querySelector(window.location.hash);
+    const target = hashTarget();
     if (target?.tagName === 'DETAILS') {
       target.setAttribute('open', '');
       target.scrollIntoView({behavior: 'instant', block: 'start'});
     }
   }
+  // The tables and charts drawn after load push the target down: go back to it, unless the visitor moved.
+  function settleOnHashTarget() {
+    if (userMoved) return;
+    hashTarget()?.scrollIntoView({behavior: 'instant', block: 'start'});
+  }
   window.addEventListener('hashchange', scrollToHashTarget);
-  window.addEventListener('load', () => setTimeout(scrollToHashTarget, 100));
+  window.addEventListener('load', () => {
+    setTimeout(scrollToHashTarget, 100);
+    setTimeout(settleOnHashTarget, 200);
+    setTimeout(settleOnHashTarget, 1000);
+  });
 })();

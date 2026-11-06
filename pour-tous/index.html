@@ -23,7 +23,7 @@
 <meta property="og:description" content="Sans jargon. Avec des images. Méthode 'on a un enfant en face de nous'. Comprendre Collatz et ce que collatz-lab.org apporte.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/pour-tous/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="fr_FR">
@@ -33,7 +33,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pour les non-mathématiciens — Comprendre Collatz en 5 minutes">
 <meta name="twitter:description" content="Sans jargon. Avec des images. Comprendre Collatz et notre théorème conditionnel formalisé en Lean 4.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 
 <link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
 
@@ -52,7 +52,7 @@
       "image": "https://collatz-lab.org/assets/og-image.png",
       "inLanguage": ["fr", "en"],
       "datePublished": "2026-05-05T21:00:00+02:00",
-      "dateModified": "2026-10-28T00:00:00+01:00",
+      "dateModified": "2026-11-06T00:00:00+01:00",
       "author": {
         "@type": "Person",
         "@id": "https://orcid.org/0009-0008-7940-402X",
@@ -87,7 +87,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261028-V0-10-19">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261106-V0-10-21">
 </head>
 <body>
 
@@ -110,7 +110,7 @@
       <a href="../#archives" data-i18n="navArchives">2026 archive</a>
     </nav>
     <div class="toolbar-actions">
-      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="citeBtn" title="Cite" data-i18n="citeBtn">Cite</button>
       <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
         <span class="moon-icon" aria-hidden="true">☾</span>
         <span class="sun-icon" aria-hidden="true">☀</span>
@@ -176,7 +176,7 @@
   <span lang="en">Example with <strong>6</strong>:</span>
 </p>
 <p style="font-family: var(--mono); font-size: 1.05rem; padding: 1rem; background: var(--bg-secondary); border-left: 3px solid var(--accent); border-radius: 4px;">
-  6 (pair) → 3 (impair) → 10 (pair) → 5 (impair) → 16 → 8 → 4 → 2 → <strong>1</strong>
+  <span lang="fr">6 (pair) → 3 (impair) → 10 (pair) → 5 (impair) → 16 → 8 → 4 → 2 → <strong>1</strong></span><span lang="en">6 (even) → 3 (odd) → 10 (even) → 5 (odd) → 16 → 8 → 4 → 2 → <strong>1</strong></span>
 </p>
 <p>
   <span lang="fr">On finit sur 1. Et avec tous les nombres qu'on a essayés jusqu'ici, <strong>aussi</strong>.</span>
@@ -189,6 +189,10 @@
 <p>
   <span lang="fr">Personne ne sait.</span>
   <span lang="en">Nobody knows.</span>
+</p>
+<p>
+  <span lang="fr">Pour le prouver, il faut écarter deux fantômes : qu'un nombre parte à l'infini, et qu'un nombre tourne en rond dans une boucle qui ne contient pas 1. Ce site parle du second : les boucles.</span>
+  <span lang="en">To prove it, you must banish two ghosts: a number running off to infinity, and a number going round forever in a loop that never contains 1. This site is about the second: the loops.</span>
 </p>
 </section>
 
@@ -247,6 +251,10 @@
 <p>
   <span lang="fr">C'est un théorème <strong>conditionnel</strong>. Avec un grand SI au début.</span>
   <span lang="en">It's a <strong>conditional</strong> theorem. With a big IF at the start.</span>
+</p>
+<p>
+  <span lang="fr">Depuis octobre 2026, le travail principal est ailleurs : faire vérifier par la machine Lean des articles classiques sur les boucles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978). Ce ne sont pas des résultats nouveaux, et cela ne prouve pas la conjecture.</span>
+  <span lang="en">Since October 2026 the main work is elsewhere: having the Lean machine check classical papers on loops (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978). These are not new results, and they do not prove the conjecture.</span>
 </p>
 <p>
   <span lang="fr">Les 3 conditions, en très très simplifié :</span>
@@ -317,7 +325,7 @@
   <li><a href="../faq/"><span lang="fr">La FAQ détaillée</span><span lang="en">The detailed FAQ</span></a> — <span lang="fr">12 questions sur Collatz et notre travail</span><span lang="en">12 questions about Collatz and our work</span></li>
   <li><a href="../histoire/"><span lang="fr">L'histoire</span><span lang="en">The story</span></a> — <span lang="fr">la chronologie de la conjecture, de 1937 à aujourd'hui</span><span lang="en">the timeline of the conjecture, from 1937 to today</span></li>
   <li><a href="../syracuse/"><span lang="fr">La page Syracuse</span><span lang="en">The Syracuse page</span></a> — <span lang="fr">définition complète et alias internationaux du problème</span><span lang="en">full definition and international aliases of the problem</span></li>
-  <li><a href="../preuve/"><span lang="fr">La preuve étape par étape</span><span lang="en">The step-by-step proof</span></a> — <span lang="fr">l'architecture détaillée</span><span lang="en">the detailed architecture</span></li>
+  <li><a href="../preuve/"><span lang="fr">L'architecture du preprint d'avril 2026</span><span lang="en">The architecture of the April 2026 preprint</span></a></li>
   <li><a href="../papers/"><span lang="fr">Le paper formel</span><span lang="en">The formal paper</span></a> — <span lang="fr">preprint, DOI Zenodo 10.5281/zenodo.19790405 (la version v4 du dépôt Zenodo (20/10/2026, DOI <a href="https://doi.org/10.5281/zenodo.23496480" target="_blank" rel="noopener">10.5281/zenodo.23496480</a>) conserve le PDF d'origine et ajoute un erratum de 2 pages : voir l'erratum)</span><span lang="en">preprint, Zenodo DOI 10.5281/zenodo.19790405 (version v4 of the Zenodo record (20 October 2026, DOI <a href="https://doi.org/10.5281/zenodo.23496480" target="_blank" rel="noopener">10.5281/zenodo.23496480</a>) keeps the original PDF and adds a 2-page erratum: see the erratum)</span></li>
 </ul>
 <p style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-secondary); border-radius: 6px;">
@@ -335,13 +343,13 @@
     <span lang="fr">© Eric Merle 2026 · </span><span lang="en">© Eric Merle 2026 · </span>
     <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
     · <a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>
-    · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a>
+    · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a> · <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean" target="_blank" rel="noopener">Lean</a>
     · <a href="../changelog/">Changelog</a>
     · <a href="../feed.xml">Atom feed</a>
   </p>
   <p style="margin-top: 0.5rem;">
-    <span lang="fr">Page Pour les non-mathématiciens mise à jour le 2026-10-28 · v0.10.19</span>
-    <span lang="en">For everyone page last updated 2026-10-28 · v0.10.19</span>
+    <span lang="fr">Page Pour les non-mathématiciens mise à jour le 2026-11-06 · v0.10.21</span>
+    <span lang="en">For everyone page last updated 2026-11-06 · v0.10.21</span>
   </p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
@@ -349,7 +357,7 @@
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20261028-V0-10-20"></script>
+<script src="../assets/js/main.js?v=20261106-V0-10-21"></script>
 
 </body>
 </html>

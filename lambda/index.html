@@ -21,7 +21,7 @@
 
 <meta property="og:title" content="Λ_{S,k} interactive — Collatz / Syracuse Conditional Cycles">
 <meta property="og:description" content="(Syracuse · Collatz · 3n+1) Interactive visualization of the Λ lock and of the regions associated with the three hypotheses (BakerSeparation, BarinaVerification, DerivedLargeKBound — the last one assumed, not derived).">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="article">
@@ -34,7 +34,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Λ_{S,k} interactive — Collatz / Syracuse Conditional Cycles">
 <meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Interactive visualization of the Λ_{S,k} = S log 2 - k log 3 Diophantine lock.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 
 <!-- JSON-LD : TechArticle (interactive viz) + BreadcrumbList -->
 <script type="application/ld+json">
@@ -55,7 +55,7 @@
         "name": "Eric Merle"
       },
       "datePublished": "2026-04-29",
-      "dateModified": "2026-10-20",
+      "dateModified": "2026-11-06",
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "proficiencyLevel": "Expert",
@@ -88,7 +88,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
         onload="setTimeout(() => renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]}), 200);"></script>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261028-V0-10-19">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261106-V0-10-21">
 </head>
 <body>
 
@@ -111,7 +111,7 @@
       <a href="../#archives" data-i18n="navArchives">2026 archive</a>
     </nav>
     <div class="toolbar-actions">
-      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="citeBtn" title="Cite" data-i18n="citeBtn">Cite</button>
       <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
         <span class="moon-icon" aria-hidden="true">☾</span>
         <span class="sun-icon" aria-hidden="true">☀</span>
@@ -127,8 +127,8 @@
 <main>
 
 <section class="hero" style="padding: 4rem 2rem 3rem;">
-  <div class="hero-eyebrow" lang="fr">Visualisation interactive</div>
-  <div class="hero-eyebrow" lang="en">Interactive visualization</div>
+  <div class="hero-eyebrow" lang="fr">Visualisation interactive · preprint d'avril 2026</div>
+  <div class="hero-eyebrow" lang="en">Interactive visualisation · April 2026 preprint</div>
   <h1 style="font-size: clamp(1.6rem, 4vw, 2.8rem);" lang="fr">Le verrou Λ<sub>S,k</sub> en action</h1>
   <h1 style="font-size: clamp(1.6rem, 4vw, 2.8rem);" lang="en">The Λ<sub>S,k</sub> lock in action</h1>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">
@@ -137,6 +137,8 @@
   <p class="hero-lede" style="font-size: 1.05rem;" lang="en">
     Vary $S$ and $k$ and observe in real time the value of the Diophantine lock $\Lambda_{S,k} = S \log 2 - k \log 3$, along with the regions associated with each of the three hypotheses H1-H3 (BakerSeparation, BarinaVerification, DerivedLargeKBound; H3 is assumed, see the erratum).
   </p>
+  <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">Formalisations actuelles (Lean 4.34.0) : voir <a href="../papers/">Papers</a>.</p>
+  <p class="hero-lede" style="font-size: 1.05rem;" lang="en">Current formalisations (Lean 4.34.0): see <a href="../papers/">Papers</a>.</p>
 </section>
 
 <section>
@@ -208,7 +210,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.2 · 2026-10-20</div>
+  <div class="footer-meta">Cartography · v0.10.21 · 2026-11-06</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2</p>
   <p class="footer-status">
@@ -223,15 +225,15 @@
     <span class="status-sep">·</span>
     <a href="../feed.xml" rel="alternate" type="application/atom+xml" class="text-muted small">Atom feed</a>
   </p>
-  <p>Eric Merle · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a> · <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener">ORCID</a></p>
+  <p>Eric Merle · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean" target="_blank" rel="noopener">Lean</a> · <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener">ORCID</a></p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
     · <a href="../feed.xml" rel="alternate" type="application/atom+xml" title="Fil RSS">📡 RSS</a>
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20261028-V0-10-20"></script>
-<script src="../assets/js/lambda-explorer.js?v=20261002-V0-9-0"></script>
+<script src="../assets/js/main.js?v=20261106-V0-10-21"></script>
+<script src="../assets/js/lambda-explorer.js?v=20261106-V0-10-21"></script>
 
 </body>
 </html>

@@ -6,6 +6,7 @@
 
 /* --- Variables : thème sombre (canonique) --- */
 :root, html[data-theme="dark"] {
+  --ink-mix: 100%;
   --bg-primary: #0e0f13;
   --bg-secondary: #16181f;
   --bg-tertiary: #1f2229;
@@ -29,6 +30,7 @@
 
 /* --- Thème clair (mode lecture académique, inspiration AMS Notices) --- */
 html[data-theme="light"] {
+  --ink-mix: 45%;
   --bg-primary: #fbfaf6;          /* parchemin légèrement crème */
   --bg-secondary: #f5f2ea;
   --bg-tertiary: #ece8dc;
@@ -36,12 +38,12 @@ html[data-theme="light"] {
   --text-primary: #1a1a1a;
   --text-secondary: #3d3a35;
   --text-muted: #6b6760;
-  --accent: #8b6f30;              /* doré plus profond, lisible sur clair */
+  --accent: #664f1d;              /* doré plus profond, lisible sur clair */
   --accent-soft: #a08850;
   --accent-red: #a83d3a;
-  --accent-amber: #b07e22;
+  --accent-amber: #8a5f10;
   --accent-blue: #3d6890;
-  --accent-green: #4d7958;
+  --accent-green: #3f6549;
   --accent-violet: #6b5683;
   --border: #d8d3c4;
   --shadow-elevated: 0 6px 24px rgba(60, 50, 30, 0.12);
@@ -50,6 +52,7 @@ html[data-theme="light"] {
 /* Auto-detect prefers-color-scheme: light si l'utilisateur n'a rien choisi */
 @media (prefers-color-scheme: light) {
   html:not([data-theme]) {
+    --ink-mix: 45%;
     --bg-primary: #fbfaf6;
     --bg-secondary: #f5f2ea;
     --bg-tertiary: #ece8dc;
@@ -57,12 +60,12 @@ html[data-theme="light"] {
     --text-primary: #1a1a1a;
     --text-secondary: #3d3a35;
     --text-muted: #6b6760;
-    --accent: #8b6f30;
+    --accent: #664f1d;
     --accent-soft: #a08850;
     --accent-red: #a83d3a;
-    --accent-amber: #b07e22;
+    --accent-amber: #8a5f10;
     --accent-blue: #3d6890;
-    --accent-green: #4d7958;
+    --accent-green: #3f6549;
     --accent-violet: #6b5683;
     --border: #d8d3c4;
     --shadow-elevated: 0 6px 24px rgba(60, 50, 30, 0.12);
@@ -86,6 +89,32 @@ html:not([data-lang]):not([lang="fr"]) [lang="fr"]:not(html) { display: none; }
 html:not([data-lang])[lang="fr"] [lang="en"]:not(html) { display: none; }
 
 html { scroll-behavior: smooth; }
+
+/* v0.10.21 : base rules. [hidden] always wins (language spans); default links readable in both themes. */
+[hidden] { display: none !important; }
+a { color: var(--accent); text-underline-offset: 2px; }
+.skip-link { position: absolute; left: -9999px; top: 0; z-index: 10000; background: var(--bg-elevated); color: var(--accent); padding: 0.6rem 1rem; border: 1px solid var(--accent); border-radius: 3px; }
+.skip-link:focus { left: 1rem; top: 0.6rem; }
+main:focus { outline: none; }
+pre { max-width: 100%; overflow-x: auto; }
+.katex-display { overflow-x: auto; overflow-y: hidden; }
+section[id], h2[id], h3[id], details[id], article[id] { scroll-margin-top: 5.5rem; }
+@media (min-width: 769px) and (max-width: 1100px) {
+  section[id], h2[id], h3[id], details[id], article[id] { scroll-margin-top: 8rem; }
+}
+@media (max-width: 768px) {
+  section[id], h2[id], h3[id], details[id], article[id] { scroll-margin-top: 7.5rem; }
+  main p, main li, main h1, main h2, main h3, main h4, main dd, main summary, footer p { overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+button.piste-open { background: none; border: 0; padding: 0; margin: 0; font: inherit; color: inherit; cursor: pointer; }
+button.piste-open:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.annotate-btn { background: none; border: 1px solid var(--border); color: var(--text-secondary); border-radius: 3px; padding: 0.3rem 0.7rem; font: inherit; font-size: 0.8rem; cursor: pointer; }
+.annotate-btn:disabled { opacity: 0.7; cursor: default; }
+.cite-others { margin-top: 0.8rem; }
 
 /* ==========================================================================
    SCROLL PROGRESS BAR — fine ligne dorée en haut de page
@@ -785,7 +814,7 @@ html[data-theme="light"] .hero-banner-title {
   text-align: center;
 }
 .lambda-status.status-far { border-left-color: var(--text-muted); color: var(--text-muted); }
-.lambda-status.status-barina { border-left-color: var(--accent-red); color: var(--accent-red); }
+.lambda-status.status-barina { border-left-color: var(--accent-red); color: var(--accent-red); color: color-mix(in srgb, var(--accent-red) 70%, var(--text-primary)); }
 .lambda-status.status-hercher-baker { border-left-color: var(--accent-amber); color: var(--accent-amber); }
 #lambdaCanvas {
   width: 100%;
@@ -1038,19 +1067,20 @@ html[data-focus-mode="on"] .focus-active {
    THEME SEPIA (3e theme — papier ancien académique)
    ========================================================================== */
 html[data-theme="sepia"] {
+  --ink-mix: 25%;
   --bg-primary: #f4ecd8;
   --bg-secondary: #ede4ce;
   --bg-tertiary: #e3d9c0;
   --bg-elevated: #fbf6e9;
   --text-primary: #2d2418;
   --text-secondary: #4a3f2c;
-  --text-muted: #6e6147;
-  --accent: #8b5a1f;
-  --accent-soft: #a87740;
+  --text-muted: #5c5038;
+  --accent: #5f3c10;
+  --accent-soft: #6f4c1a;
   --accent-red: #9c3d3a;
-  --accent-amber: #b07e22;
-  --accent-blue: #3d6890;
-  --accent-green: #4d6e3a;
+  --accent-amber: #604209;
+  --accent-blue: #2a4c6b;
+  --accent-green: #355027;
   --accent-violet: #6e5683;
   --border: #c8bfa3;
   --shadow-elevated: 0 6px 24px rgba(80, 60, 30, 0.18);
@@ -1088,7 +1118,7 @@ html[data-theme="sepia"] {
 .footer-badge.badge-orcid {
   background: rgba(166, 206, 57, 0.08);
   border-color: rgba(166, 206, 57, 0.4);
-  color: #a6ce39;
+  color: color-mix(in srgb, #a6ce39 var(--ink-mix), var(--text-primary));
 }
 .footer-badge.badge-orcid::before {
   content: '◯';
@@ -1153,7 +1183,7 @@ html[data-theme="sepia"] {
    ========================================================================== */
 .lean-math-pair {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 1.2rem;
   margin: 2rem 0;
   align-items: stretch;
@@ -1184,7 +1214,7 @@ html[data-theme="sepia"] {
   color: var(--text-primary);
 }
 @media (max-width: 800px) {
-  .lean-math-pair { grid-template-columns: 1fr; }
+  .lean-math-pair { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ==========================================================================
@@ -1504,6 +1534,7 @@ section p strong { color: var(--text-primary); font-weight: 600; }
   color: var(--text-muted);
 }
 
+.card li a, .card p a { text-decoration: underline; }
 .card a {
   color: var(--accent);
   text-decoration: none;
@@ -1673,15 +1704,15 @@ td code {
   font-family: var(--sans);
 }
 
-.badge.main { background: linear-gradient(135deg, rgba(200, 168, 106, 0.35), rgba(200, 168, 106, 0.15)); color: #f3d99c; border: 1px solid rgba(200, 168, 106, 0.7); font-weight: 700; box-shadow: 0 0 0.4rem rgba(200, 168, 106, 0.3); }
-.badge.cds { background: rgba(194, 84, 80, 0.15); color: #d57975; border: 1px solid rgba(194, 84, 80, 0.4); }
-.badge.partiel { background: rgba(212, 160, 69, 0.15); color: #e0b87c; border: 1px solid rgba(212, 160, 69, 0.4); }
-.badge.insuf { background: rgba(82, 152, 161, 0.15); color: #86b8be; border: 1px solid rgba(82, 152, 161, 0.45); }
-.badge.inconnu { background: rgba(106, 147, 184, 0.15); color: #9bb6cf; border: 1px solid rgba(106, 147, 184, 0.4); }
-.badge.prouve { background: rgba(106, 155, 122, 0.15); color: #94c3a4; border: 1px solid rgba(106, 155, 122, 0.4); }
-.badge.prometteur { background: rgba(200, 168, 106, 0.15); color: var(--accent); border: 1px solid rgba(200, 168, 106, 0.4); }
-.badge.axiome { background: rgba(144, 128, 168, 0.15); color: #b3a4cc; border: 1px solid rgba(144, 128, 168, 0.4); }
-.badge.invente { background: rgba(94, 30, 30, 0.4); color: #c89895; border: 1px solid rgba(127, 29, 29, 0.5); text-decoration: line-through; }
+.badge.main { background: linear-gradient(135deg, rgba(200, 168, 106, 0.35), rgba(200, 168, 106, 0.15)); color: color-mix(in srgb, #f3d99c var(--ink-mix), var(--text-primary)); border: 1px solid rgba(200, 168, 106, 0.7); font-weight: 700; box-shadow: 0 0 0.4rem rgba(200, 168, 106, 0.3); }
+.badge.cds { background: rgba(194, 84, 80, 0.15); color: color-mix(in srgb, #d57975 var(--ink-mix), var(--text-primary)); border: 1px solid rgba(194, 84, 80, 0.4); }
+.badge.partiel { background: rgba(212, 160, 69, 0.15); color: color-mix(in srgb, #e0b87c var(--ink-mix), var(--text-primary)); border: 1px solid rgba(212, 160, 69, 0.4); }
+.badge.retire { background: rgba(82, 152, 161, 0.15); color: color-mix(in srgb, #86b8be var(--ink-mix), var(--text-primary)); border: 1px solid rgba(82, 152, 161, 0.45); }
+.badge.inconnu { background: rgba(106, 147, 184, 0.15); color: color-mix(in srgb, #9bb6cf var(--ink-mix), var(--text-primary)); border: 1px solid rgba(106, 147, 184, 0.4); }
+.badge.prouve { background: rgba(106, 155, 122, 0.15); color: color-mix(in srgb, #94c3a4 var(--ink-mix), var(--text-primary)); border: 1px solid rgba(106, 155, 122, 0.4); }
+.badge.precedent { background: rgba(200, 168, 106, 0.15); color: var(--accent); border: 1px solid rgba(200, 168, 106, 0.4); }
+.badge.axiome { background: rgba(144, 128, 168, 0.15); color: color-mix(in srgb, #b3a4cc var(--ink-mix), var(--text-primary)); border: 1px solid rgba(144, 128, 168, 0.4); }
+.badge.invente { background: rgba(94, 30, 30, 0.4); color: color-mix(in srgb, #c89895 var(--ink-mix), var(--text-primary)); border: 1px solid rgba(127, 29, 29, 0.5); text-decoration: line-through; }
 
 /* Mise en valeur ligne résultat principal dans le tableau */
 #pistesTable tbody tr[data-piste-id="★ Main"] {
@@ -1978,11 +2009,10 @@ footer p { margin-bottom: 0.5rem; max-width: 800px; margin-left: auto; margin-ri
 
 footer a {
   color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
+  text-decoration: underline;
 }
 
-footer a:hover { border-bottom-color: var(--accent); }
+footer a:hover { text-decoration-thickness: 2px; }
 
 /* --- Highlight box --- */
 .highlight {
@@ -2044,6 +2074,9 @@ footer a:hover { border-bottom-color: var(--accent); }
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     padding-bottom: 0.3rem;
+    padding-right: 2rem;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent);
   }
   .nav::-webkit-scrollbar { display: none; }
   .nav a { white-space: nowrap; padding: 0.3rem 0.4rem; }
@@ -2096,7 +2129,7 @@ footer a:hover { border-bottom-color: var(--accent); }
   .footer-badges { gap: 0.3rem; }
   .footer-badge { padding: 0.25rem 0.5rem; font-size: 0.7rem; }
   /* Lean ↔ Math : 1 col en mobile */
-  .lean-math-pair { grid-template-columns: 1fr; }
+  .lean-math-pair { grid-template-columns: minmax(0, 1fr); }
   /* TOC : déjà cachée < 1280px */
 }
 
@@ -2178,3 +2211,6 @@ footer a:hover { border-bottom-color: var(--accent); }
   border-radius: 2px;
   font-size: 0.9em;
 }
+
+/* Native print: no raw source for a diagram that is not rendered yet. */
+@media print { .mermaid:not([data-processed="true"]) { display: none; } }

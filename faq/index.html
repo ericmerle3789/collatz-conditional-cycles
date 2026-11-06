@@ -23,7 +23,7 @@
 <meta property="og:description" content="Réponses sourcées aux questions fréquentes sur Collatz/Syracuse/3n+1. Statut, récompense, difficulté, Lean 4, apports du projet.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/faq/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="fr_FR">
@@ -33,7 +33,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FAQ — Conjecture de Collatz / Syracuse">
 <meta name="twitter:description" content="Réponses sourcées aux questions fréquentes Collatz/Syracuse/3n+1.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 
 <link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
 
@@ -48,7 +48,7 @@
       "url": "https://collatz-lab.org/faq/",
       "inLanguage": ["fr", "en"],
       "datePublished": "2026-04-30",
-      "dateModified": "2026-10-28",
+      "dateModified": "2026-11-06",
       "author": {"@type": "Person", "@id": "https://orcid.org/0009-0008-7940-402X", "name": "Eric Merle"},
       "isPartOf": {"@id": "https://collatz-lab.org/"},
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
@@ -90,7 +90,7 @@
           "name": "Qu'apporte ce site (collatz-lab.org) ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Un théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0 ; no_cycle_k_le_1322 revérifié sous Lean 4.34.0 les 20 et 21/10/2026). Il ne prouve pas la conjecture de Collatz. Démontré : aucun cycle non trivial avec k ≤ 1322 (k = nombre de termes impairs), sous les hypothèses H1 BakerSeparation (hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et H2 BarinaVerification (traduction d'un résultat de calcul publié, Bařina 2025, n < 2^71). La 3e hypothèse, H3 DerivedLargeKBound (k > 1322 → n < 2^71), est supposée, non dérivée ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026 ; HYPOTHESES.md, section H3, la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple δ8 : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles."
+            "text": "Depuis octobre 2026 : des formalisations en Lean 4.34.0 de travaux classiques sur les cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, ce dernier sans l'hypothèse H_Rhin depuis le 28/10/2026), sans nouveauté revendiquée, et une note d'errata sur les deux premiers (DOI 10.5281/zenodo.23535498) ; voir la page Papers. Et, d'avril 2026 : un théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0 ; no_cycle_k_le_1322 revérifié sous Lean 4.34.0 les 20 et 21/10/2026). Il ne prouve pas la conjecture de Collatz. Démontré : aucun cycle non trivial avec k ≤ 1322 (k = nombre de termes impairs), sous les hypothèses H1 BakerSeparation (hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et H2 BarinaVerification (traduction d'un résultat de calcul publié, Bařina 2025, n < 2^71). La 3e hypothèse, H3 DerivedLargeKBound (k > 1322 → n < 2^71), est supposée, non dérivée ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026 ; HYPOTHESES.md, section H3, la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple δ8 : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles."
           }
         },
         {
@@ -98,7 +98,7 @@
           "name": "Qu'est-ce que Lean 4 ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Lean 4 est un assistant de preuve formelle (proof assistant) ; le projet Lean a été lancé par Leonardo de Moura à Microsoft Research. Si le noyau (kernel) accepte une preuve, le raisonnement est correct à partir des hypothèses données — à condition que le vérificateur lui-même n'ait pas de bug (c'est arrivé : bug lean4#14576, juillet 2026). Il reste aussi à vérifier que les hypothèses ne contiennent pas déjà la réponse : c'est exactement l'erreur corrigée sur ce site le 2 octobre 2026. Mathlib est sa bibliothèque mathématique standard."
+            "text": "Lean 4 est un assistant de preuve formelle (proof assistant) ; le projet Lean a été lancé par Leonardo de Moura à Microsoft Research. Si le noyau (kernel) accepte une preuve, le raisonnement est correct à partir des hypothèses données — à condition que le vérificateur lui-même n'ait pas de bug (c'est arrivé : bug lean4#14576, juillet 2026). Il reste aussi à vérifier que les hypothèses ne contiennent pas déjà la réponse : c'est exactement l'erreur corrigée sur ce site le 2 octobre 2026. Mathlib est sa bibliothèque mathématique standard (v4.27.0 pour le théorème conditionnel d'avril 2026 ; v4.34.0 pour les formalisations d'octobre 2026)."
           }
         },
         {
@@ -106,7 +106,7 @@
           "name": "Que veut dire 'kernel-checked' ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Le noyau (kernel) Lean 4 est un petit programme qui vérifie chaque pas de preuve. Si le noyau accepte la preuve, elle est correcte modulo la confiance qu'on accorde à ce noyau (il a déjà eu un bug : lean4#14576, corrigé dans Lean v4.32.2 le 28/07/2026) et aux axiomes utilisés. Notre théorème principal no_nontrivial_cycle_phase59 a été vérifié par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant cette correction, et n'a pas été revérifié depuis ; selon la référence expected_axioms.md, ses axiomes Lean sont propext, Classical.choice et Quot.sound. Ses trois hypothèses H1-H3 ne sont pas des axiomes Lean : ce sont des paramètres du théorème."
+            "text": "Le noyau (kernel) Lean 4 est un petit programme qui vérifie chaque pas de preuve. Si le noyau accepte la preuve, elle est correcte modulo la confiance qu'on accorde à ce noyau (il a déjà eu un bug : lean4#14576, corrigé dans Lean v4.32.2 le 28/07/2026) et aux axiomes utilisés. Notre théorème principal no_nontrivial_cycle_phase59 a été vérifié par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant cette correction, et n'a pas été revérifié depuis ; selon la référence expected_axioms.md, ses axiomes Lean sont propext, Classical.choice et Quot.sound. Ses trois hypothèses H1-H3 ne sont pas des axiomes Lean : ce sont des paramètres du théorème. Réserve : Lean 4.34.0 ne contient pas trois correctifs d'exécution publiés ensuite en v4.34.1 (lean4#15241, #15289, #15288) ; d'après leurs pull requests, les défauts corrigés par les deux premiers pourraient en principe mener à une preuve de False dans le noyau officiel. Ces défauts exigent au moins 18 Go de mémoire libre ou des entrées de plus de 100 Go ; nos vérifications ont tourné sur une machine de 16 Go."
           }
         },
         {
@@ -170,7 +170,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261028-V0-10-19">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261106-V0-10-21">
 </head>
 <body>
 
@@ -193,7 +193,7 @@
       <a href="../#archives" data-i18n="navArchives">2026 archive</a>
     </nav>
     <div class="toolbar-actions">
-      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="citeBtn" title="Cite" data-i18n="citeBtn">Cite</button>
       <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
         <span class="moon-icon" aria-hidden="true">☾</span>
         <span class="sun-icon" aria-hidden="true">☀</span>
@@ -255,11 +255,11 @@
   <details class="faq-item" id="q5">
     <summary><strong><span lang="fr">5. Qu'apporte ce site (collatz-lab.org) ?</span><span lang="en">5. What does this site (collatz-lab.org) contribute?</span></strong></summary>
     <p>
-      <span lang="fr">Un <strong>théorème conditionnel formalisé</strong> en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0 ; no_cycle_k_le_1322 revérifié sous Lean 4.34.0 les 20 et 21/10/2026) — <strong>il ne prouve pas la conjecture de Collatz</strong>. Démontré : <strong>aucun cycle non trivial avec <code>k ≤ 1322</code></strong> (k = nombre de termes impairs), sous les hypothèses
+      <span lang="fr">Depuis octobre 2026 : des formalisations en Lean 4.34.0 de travaux classiques sur les cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, ce dernier sans l'hypothèse H_Rhin depuis le 28/10/2026), sans nouveauté revendiquée, et une note d'errata sur les deux premiers (DOI 10.5281/zenodo.23535498) ; voir la page Papers. Et, d'avril 2026 : un <strong>théorème conditionnel formalisé</strong> en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0 ; no_cycle_k_le_1322 revérifié sous Lean 4.34.0 les 20 et 21/10/2026) — <strong>il ne prouve pas la conjecture de Collatz</strong>. Démontré : <strong>aucun cycle non trivial avec <code>k ≤ 1322</code></strong> (k = nombre de termes impairs), sous les hypothèses
       H1 <strong>BakerSeparation</strong> (<em>hypothèse de travail</em>, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et
       H2 <strong>BarinaVerification</strong> (traduction d'un résultat de calcul publié, Bařina 2025, <code>n &lt; 2<sup>71</sup></code>).
       La 3e hypothèse, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), est <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026 ; voir <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, qui la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple <strong>δ8</strong> : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles.</span>
-      <span lang="en">A <strong>conditional theorem formalized</strong> in Lean 4 (checked on Lean 4.27.0, Mathlib v4.27.0; no_cycle_k_le_1322 re-checked on Lean 4.34.0 on 20–21 October 2026) — <strong>it does not prove the Collatz conjecture</strong>. Proved: <strong>no non-trivial cycle with <code>k ≤ 1322</code></strong> (k = number of odd terms), under hypotheses H1 <strong>BakerSeparation</strong> (<em>working hypothesis</em>, stronger in this form than published effective bounds, see mea culpa #28) and H2 <strong>BarinaVerification</strong> (encoding of a published computational result, Barina 2025, <code>n &lt; 2<sup>71</sup></code>). The 3rd hypothesis, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 October 2026; see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, which presents it as a derivation: corrected by this erratum). The site also documents statements about the limits of some methods, e.g. <strong>δ8</strong>: the Product-Bound chain cannot, on its own, close large cycles.</span>
+      <span lang="en">Since October 2026: Lean 4.34.0 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28), with no novelty claimed, and an errata note on the first two (DOI 10.5281/zenodo.23535498); see the Papers page. And, from April 2026: a <strong>conditional theorem formalized</strong> in Lean 4 (checked on Lean 4.27.0, Mathlib v4.27.0; no_cycle_k_le_1322 re-checked on Lean 4.34.0 on 20–21 October 2026) — <strong>it does not prove the Collatz conjecture</strong>. Proved: <strong>no non-trivial cycle with <code>k ≤ 1322</code></strong> (k = number of odd terms), under hypotheses H1 <strong>BakerSeparation</strong> (<em>working hypothesis</em>, stronger in this form than published effective bounds, see mea culpa #28) and H2 <strong>BarinaVerification</strong> (encoding of a published computational result, Barina 2025, <code>n &lt; 2<sup>71</sup></code>). The 3rd hypothesis, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 October 2026; see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, which presents it as a derivation: corrected by this erratum). The site also documents statements about the limits of some methods, e.g. <strong>δ8</strong>: the Product-Bound chain cannot, on its own, close large cycles.</span>
     </p>
   </details>
 
@@ -274,8 +274,8 @@
   <details class="faq-item" id="q7">
     <summary><strong><span lang="fr">7. Que veut dire "kernel-checked" ?</span><span lang="en">7. What does "kernel-checked" mean?</span></strong></summary>
     <p>
-      <span lang="fr">Le <strong>noyau (kernel) Lean 4</strong> est un petit programme qui vérifie chaque pas de preuve. Si le noyau accepte, la preuve est correcte modulo la confiance qu'on accorde à ce noyau (il a déjà eu un bug : <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, corrigé dans Lean v4.32.2 le 28/07/2026) et aux axiomes utilisés. Notre théorème principal <code>no_nontrivial_cycle_phase59</code> a été vérifié par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant cette correction, et <strong>n'a pas été revérifié depuis</strong> ; selon la référence <code>expected_axioms.md</code>, ses axiomes Lean sont <code>propext</code>, <code>Classical.choice</code> et <code>Quot.sound</code>. Ses trois hypothèses H1-H3 ne sont pas des axiomes Lean : ce sont des paramètres du théorème.</span>
-      <span lang="en">The <strong>Lean 4 kernel</strong> is a small program that checks every proof step. If the kernel accepts, the proof is correct modulo trust in this kernel (it has had a bug: <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, fixed in Lean v4.32.2 on 28 July 2026) and in the axioms used. Our main theorem <code>no_nontrivial_cycle_phase59</code> was checked by the Lean 4.27.0 kernel (Mathlib v4.27.0), before that fix, and <strong>has not been re-checked since</strong>; according to the reference <code>expected_axioms.md</code>, its Lean axioms are <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code>. Its three hypotheses H1-H3 are not Lean axioms: they are parameters of the theorem.</span>
+      <span lang="fr">Le <strong>noyau (kernel) Lean 4</strong> est un petit programme qui vérifie chaque pas de preuve. Si le noyau accepte, la preuve est correcte modulo la confiance qu'on accorde à ce noyau (il a déjà eu un bug : <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, corrigé dans Lean v4.32.2 le 28/07/2026) et aux axiomes utilisés. Notre théorème principal <code>no_nontrivial_cycle_phase59</code> a été vérifié par le noyau de Lean 4.27.0 (Mathlib v4.27.0), avant cette correction, et <strong>n'a pas été revérifié depuis</strong> ; selon la référence <code>expected_axioms.md</code>, ses axiomes Lean sont <code>propext</code>, <code>Classical.choice</code> et <code>Quot.sound</code>. Ses trois hypothèses H1-H3 ne sont pas des axiomes Lean : ce sont des paramètres du théorème. Réserve : Lean 4.34.0 ne contient pas trois correctifs d'exécution publiés ensuite en v4.34.1 (lean4#15241, #15289, #15288) ; d'après leurs pull requests, les défauts corrigés par les deux premiers pourraient en principe mener à une preuve de False dans le noyau officiel. Ces défauts exigent au moins 18 Go de mémoire libre ou des entrées de plus de 100 Go ; nos vérifications ont tourné sur une machine de 16 Go.</span>
+      <span lang="en">The <strong>Lean 4 kernel</strong> is a small program that checks every proof step. If the kernel accepts, the proof is correct modulo trust in this kernel (it has had a bug: <a href="https://github.com/leanprover/lean4/issues/14576">lean4#14576</a>, fixed in Lean v4.32.2 on 28 July 2026) and in the axioms used. Our main theorem <code>no_nontrivial_cycle_phase59</code> was checked by the Lean 4.27.0 kernel (Mathlib v4.27.0), before that fix, and <strong>has not been re-checked since</strong>; according to the reference <code>expected_axioms.md</code>, its Lean axioms are <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code>. Its three hypotheses H1-H3 are not Lean axioms: they are parameters of the theorem. Caveat: Lean 4.34.0 does not contain three runtime fixes released later in v4.34.1 (lean4#15241, #15289, #15288); according to their pull requests, the bugs fixed by the first two could in principle be extended into a proof of False in the official kernel. These bugs require at least 18 GB of free memory or inputs above 100 GB; our checks ran on a machine with 16 GB.</span>
     </p>
   </details>
 
@@ -337,8 +337,8 @@
     <li>Wikipedia — <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture (EN)</a> · <a href="https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse">Conjecture de Syracuse (FR)</a></li>
     <li>Tao, T. (2019). <em>Almost all orbits of the Collatz map attain almost bounded values</em>. <a href="https://arxiv.org/abs/1909.03562">arXiv:1909.03562</a></li>
     <li>Lagarias, J. C. (1985). <em>The 3x+1 Problem and its Generalizations</em>. American Mathematical Monthly, 92(1), 3-23. <a href="https://www.jstor.org/stable/2322189">JSTOR 2322189</a></li>
-    <li>Conway, J. H. (1972). <em>Unpredictable iterations</em>. Proceedings of the Number Theory Conference, 49-52. (Undecidability of generalizations.)</li>
-    <li>Barina, D. (2025). <em>Improved verification limit for the convergence of the Collatz conjecture</em>. J. Supercomputing 81(7), article 810. <a href="https://doi.org/10.1007/s11227-025-07337-0">DOI 10.1007/s11227-025-07337-0</a> — verification up to <code>2<sup>71</sup></code>. (Encoded as the hypothesis <code>BarinaVerification</code>, a parameter of the Lean theorems, not a Lean axiom.)</li>
+    <li>Conway, J. H. (1972). <em>Unpredictable iterations</em>. Proceedings of the Number Theory Conference, 49-52. <span lang="fr">(Indécidabilité de généralisations.)</span><span lang="en">(Undecidability of generalizations.)</span></li>
+    <li>Barina, D. (2025). <em>Improved verification limit for the convergence of the Collatz conjecture</em>. J. Supercomputing 81(7), article 810. <a href="https://doi.org/10.1007/s11227-025-07337-0">DOI 10.1007/s11227-025-07337-0</a> — verification up to <code>2<sup>71</sup></code>. <span lang="fr">(Traduit par l'hypothèse <code>BarinaVerification</code>, paramètre des théorèmes Lean, pas un axiome Lean.)</span><span lang="en">(Encoded as the hypothesis <code>BarinaVerification</code>, a parameter of the Lean theorems, not a Lean axiom.)</span></li>
     <li>Hercher, C. (2023). <em>There are no Collatz m-Cycles with m ≤ 91</em>. Journal of Integer Sequences 26, Article 23.3.5. <a href="https://arxiv.org/abs/2201.00406">arXiv:2201.00406</a></li>
     <li>Knight, K. (2026). <em>Collatz high cycles do not exist</em>. Discrete Mathematics 349(3), article 114812. <a href="https://doi.org/10.1016/j.disc.2025.114812">DOI 10.1016/j.disc.2025.114812</a></li>
   </ol>
@@ -351,13 +351,13 @@
     <span lang="fr">© Eric Merle 2026 · </span><span lang="en">© Eric Merle 2026 · </span>
     <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
     · <a href="https://orcid.org/0009-0008-7940-402X">ORCID 0009-0008-7940-402X</a>
-    · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a>
+    · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles">GitHub</a> · <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean" target="_blank" rel="noopener">Lean</a>
     · <a href="../changelog/">Changelog</a>
     · <a href="../feed.xml">Atom feed</a>
   </p>
   <p style="margin-top: 0.5rem;">
-    <span lang="fr">FAQ mise à jour le 2026-10-28 · v0.10.19</span>
-    <span lang="en">FAQ last updated 2026-10-28 · v0.10.19</span>
+    <span lang="fr">FAQ mise à jour le 2026-11-06 · v0.10.21</span>
+    <span lang="en">FAQ last updated 2026-11-06 · v0.10.21</span>
   </p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
@@ -388,6 +388,6 @@
   .faq-item[open] summary { color: var(--accent, #c8a86a); }
 </style>
 
-<script src="../assets/js/main.js?v=20261028-V0-10-20"></script>
+<script src="../assets/js/main.js?v=20261106-V0-10-21"></script>
 </body>
 </html>

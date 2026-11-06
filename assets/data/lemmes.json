@@ -1,6 +1,6 @@
 {
-  "version": "0.9.0",
-  "lastUpdate": "2026-10-28",
+  "version": "0.10.21",
+  "lastUpdate": "2026-11-06",
   "source": "expected_axioms.md (commit main)",
   "kernelAxioms": ["propext", "Classical.choice", "Quot.sound"],
   "nativeAxioms": ["Lean.ofReduceBool", "Lean.trustCompiler"],

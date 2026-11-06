@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Collatz / Syracuse Conditional Cycles — Lean 4 formalization</title>
-<meta name="description" content="Conjecture de Syracuse / Collatz : ce site ne prouve pas la conjecture. Formalisations en Lean 4 de travaux classiques sur les cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, ce dernier sans l'hypothèse H_Rhin depuis le 28/10/2026 ; aucune nouveauté revendiquée). Preprint d'avril 2026 : Théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0 ; k ≤ 1322 revérifié sous Lean 4.34.0). Ne prouve pas la conjecture. Démontré : aucun cycle non trivial avec k ≤ 1322, sous l'hypothèse de travail H1 (BakerSeparation, pas un théorème publié) et la vérification de Bařina (H2). La 3e hypothèse (H3) est supposée et équivaut, sous H2, à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 02/10/2026). — Collatz conjecture: this site does not prove the conjecture. Lean 4 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). April 2026 preprint: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0; k ≤ 1322 re-checked on Lean 4.34.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the working hypothesis H1 (BakerSeparation, not a published theorem) and Barina's verification (H2). The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026).">
+<meta name="description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
 <meta name="keywords" content="Collatz conjecture, Syracuse conjecture, conjecture de Syracuse, suite de Syracuse, 3x+1 problem, 3n+1, Kakutani problem, Hasse problem, Lean 4, Mathlib, formal verification, Baker's theorem, continued fractions, Diophantine approximation, non-trivial cycles">
 <meta name="author" content="Eric Merle">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -28,10 +28,10 @@
 
 <!-- Open Graph (Facebook, LinkedIn, Mastodon, Slack, Discord) -->
 <meta property="og:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
-<meta property="og:description" content="Conjecture de Syracuse (a.k.a. Collatz). This site does not prove the conjecture. Lean 4 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). April 2026 preprint: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0; k ≤ 1322 re-checked on Lean 4.34.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the working hypothesis H1 (BakerSeparation, not a published theorem) and Barina's verification (H2). The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026). Zenodo preprint, concept DOI 10.5281/zenodo.19790405.">
+<meta property="og:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Λ_{S,k} = S log 2 - k log 3 — Collatz Conditional Cycles">
@@ -42,8 +42,8 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
-<meta name="twitter:description" content="Conjecture de Syracuse / Collatz. This site does not prove the conjecture. Lean 4 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). April 2026 preprint: Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0; k ≤ 1322 re-checked on Lean 4.34.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the working hypothesis H1 (BakerSeparation, not a published theorem) and Barina's verification (H2). The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026). Zenodo preprint (DOI).">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta name="twitter:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
 <script type="application/ld+json">
@@ -63,7 +63,7 @@
       ],
       "abstract": "We present a Lean 4 formalization of a conditional result on non-trivial Collatz cycles. Erratum (2 October 2026): what is proved, as published, is that there is no non-trivial cycle with k ≤ 1322 (k = number of odd terms of the cycle), under hypotheses H1 (BakerSeparation, a working hypothesis, stronger in this form than published effective bounds — see mea culpa #28) and H2 (BarinaVerification, an encoding of a published computational result: Barina 2025, n < 2^71) — theorem no_cycle_k_le_1322. The third hypothesis, H3 (DerivedLargeKBound: for every cycle with k > 1322, n < 2^71), is assumed, not derived; under H2 it excludes every non-trivial cycle on its own (in Lean, k is any return time), so it is equivalent to the conclusion, as is ProductBoundThreshold, the hypothesis used in the PDF. The theorem no_nontrivial_cycle_phase59 therefore adds nothing beyond k ≤ 1322. H1–H3 are parameters of the theorems, not Lean axioms. Machine checking: the main theorem was checked on Lean 4.27.0 (Mathlib v4.27.0), before the fix of kernel bug lean4#14576 (Lean v4.32.2, 28 July 2026); axiom profile [propext, Classical.choice, Quot.sound] according to the reference expected_axioms.md (Lean 4.27.0). Version v4 of the Zenodo record (20 October 2026, DOI 10.5281/zenodo.23496480) keeps the original PDF and adds a 2-page erratum. For context: Hercher (2023) together with Barina's verification already implies that a non-trivial cycle has at least 1.375·10^11 odd terms. On 20–21 October 2026, the 35 Lean files of release v1.0 that make up the import closure of Phase58PorteDeuxFinal.lean (which contains no_cycle_k_le_1322) were re-checked on Lean 4.34.0, which includes the fix of lean4#14576: they compile, and no_cycle_k_le_1322 depends only on propext, Classical.choice and Quot.sound. Phase59–63 and PhaseVIII, hence no_nontrivial_cycle_phase59, were not re-checked. Details and limits: https://github.com/ericmerle3789/collatz-conditional-cycles/tree/main/recheck-v4.34-2026-10-20",
       "description": "Conditional theorem formalized in Lean 4 (checked on Lean 4.27.0; k ≤ 1322 re-checked on Lean 4.34.0). Does not prove the conjecture. Proved: no non-trivial cycle with k ≤ 1322, under the working hypothesis H1 (BakerSeparation, not a published theorem) and Barina's verification (H2). The 3rd hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 Oct 2026).",
-      "url": "https://collatz-lab.org/",
+      "url": "https://doi.org/10.5281/zenodo.19790405",
       "sameAs": [
         "https://doi.org/10.5281/zenodo.19790405",
         "https://github.com/ericmerle3789/collatz-conditional-cycles"
@@ -84,13 +84,14 @@
         "identifier": "https://orcid.org/0009-0008-7940-402X",
         "url": "https://github.com/ericmerle3789"
       },
-      "datePublished": "2026-04-27T00:00:00+02:00",
-      "dateModified": "2026-10-28T00:00:00+01:00",
+      "datePublished": "2026-04-26",
+      "dateModified": "2026-10-20",
       "genre": "research article",
       "image": "https://collatz-lab.org/assets/og-image.png",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://collatz-lab.org/"
+        "@id": "https://collatz-lab.org/",
+        "dateModified": "2026-11-06"
       },
       "inLanguage": ["en", "fr"],
       "keywords": "Collatz conjecture, Syracuse conjecture, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, Lean 4, formal verification, Baker theorem, continued fractions, Diophantine approximation",
@@ -173,7 +174,7 @@
         onload="setTimeout(() => renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]}), 200);"></script>
 
 <!-- Mermaid pour diagrammes (defer: non-render-blocking, gain ~700ms FCP mobile) -->
-<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10.9.5/dist/mermaid.min.js" integrity="sha384-enVdc7lTHDGtpROV85t9+VqPC2EyyB0hsRD0MrvQnHUsHmTHIz2D8SPP4EnBkstH" crossorigin="anonymous"></script>
+<meta name="collatz-mermaid-sri" content="sha384-enVdc7lTHDGtpROV85t9+VqPC2EyyB0hsRD0MrvQnHUsHmTHIz2D8SPP4EnBkstH"><!-- Mermaid loaded on demand by main.js -->
 
 <!-- Chart.js (defer: non-render-blocking, gain ~200ms FCP mobile) -->
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" integrity="sha384-e6nUZLBkQ86NJ6TVVKAeSaK8jWa3NhkYWZFomE39AvDbQWeie9PlQqM3pmYW5d1g" crossorigin="anonymous"></script>
@@ -186,7 +187,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
 <!-- CSS principal -->
-<link rel="stylesheet" href="assets/css/main.css?v=20261028-V0-10-19">
+<link rel="stylesheet" href="assets/css/main.css?v=20261106-V0-10-21">
 
 <!-- Analytics : Cloudflare Web Analytics activé côté Cloudflare dashboard
      (privacy-first, no cookies, GDPR-compliant, no consent banner needed).
@@ -217,7 +218,7 @@
       <a href="#archives" data-i18n="navArchives">2026 archive</a>
     </nav>
     <div class="toolbar-actions">
-      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="citeBtn" title="Cite" data-i18n="citeBtn">Cite</button>
       <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
         <span class="moon-icon" aria-hidden="true">☾</span>
         <span class="sun-icon" aria-hidden="true">☀</span>
@@ -296,8 +297,8 @@
       <div class="status-card-title"><span lang="fr">Steiner 1978, sans hypothèse</span><span lang="en">Steiner 1978, without hypothesis</span></div>
       <div class="status-card-meta"><span class="status-card-date">2026-10-28</span></div>
       <p class="status-card-summary">
-        <span lang="fr">Le seul circuit des entiers positifs qui soit un cycle est {1, 2} : démontré en Lean 4 sans l'hypothèse <code>H_Rhin</code> (dossier <code>logs23/</code>). <code>H_Rhin</code> lui-même n'est pas démontré ; aucune nouveauté n'est revendiquée.</span>
-        <span lang="en">The only circuit on the positive integers that is a cycle is {1, 2}: proved in Lean 4 without the hypothesis <code>H_Rhin</code> (folder <code>logs23/</code>). <code>H_Rhin</code> itself is not proved; no novelty is claimed.</span>
+        <span lang="fr">Le seul circuit des entiers positifs qui soit un cycle est {1, 2} (application raccourcie : x/2 si x est pair, (3x+1)/2 si x est impair ; c'est la boucle 1 → 2 → 1, soit 1 → 4 → 2 → 1 avec l'application usuelle) : démontré en Lean 4 sans l'hypothèse <code>H_Rhin</code> (dossier <code>logs23/</code>). <code>H_Rhin</code> lui-même n'est pas démontré ; aucune nouveauté n'est revendiquée.</span>
+        <span lang="en">The only circuit on the positive integers that is a cycle is {1, 2} (shortcut map: x/2 for even x, (3x+1)/2 for odd x; this is the loop 1 → 2 → 1, that is 1 → 4 → 2 → 1 with the usual map): proved in Lean 4 without the hypothesis <code>H_Rhin</code> (folder <code>logs23/</code>). <code>H_Rhin</code> itself is not proved; no novelty is claimed.</span>
       </p>
         <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.5/logs23#re-checking" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
         <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener"><span lang="fr">DOI (v1.4)</span><span lang="en">DOI (v1.4)</span></a>
@@ -360,8 +361,8 @@
         <span class="status-card-date">2026-10-28</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Le dossier logs23/ du dépôt Lean (release v1.4, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>) démontre, sans l'hypothèse <code>H_Rhin</code>, le théorème de Steiner 1978 sur les circuits : le seul circuit des entiers positifs qui soit un cycle est {1, 2}. Il prouve pour cela une minoration bien plus faible que <code>H_Rhin</code>, qui suffit ; <code>H_Rhin</code> lui-même n'est pas démontré, la borne est bien plus faible que les bornes publiées, aucune nouveauté n'est revendiquée, et la formalisation n'apprend rien de nouveau sur les cycles de Collatz. Jalon précédent : les 21 pistes « stub » du catalogue tranchées (27/10/2026).</span>
-        <span lang="en">The logs23/ folder of the Lean repository (release v1.4, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>) proves, without the hypothesis <code>H_Rhin</code>, Steiner's 1978 theorem on circuits: the only circuit on the positive integers that is a cycle is {1, 2}. To do so it proves a lower bound much weaker than <code>H_Rhin</code>, which suffices; <code>H_Rhin</code> itself is not proved, the bound is far weaker than the published ones, no novelty is claimed, and the formalisation proves nothing new about Collatz cycles. Previous milestone: the 21 "stub" leads of the catalogue settled (2026-10-27).</span>
+        <span lang="fr">Le dossier logs23/ du dépôt Lean (release v1.4, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>) démontre, sans l'hypothèse <code>H_Rhin</code>, le théorème de Steiner 1978 sur les circuits : le seul circuit des entiers positifs qui soit un cycle est {1, 2} (application raccourcie : x/2 si x est pair, (3x+1)/2 si x est impair ; c'est la boucle 1 → 2 → 1, soit 1 → 4 → 2 → 1 avec l'application usuelle). Il prouve pour cela une minoration bien plus faible que <code>H_Rhin</code>, qui suffit ; <code>H_Rhin</code> lui-même n'est pas démontré, la borne est bien plus faible que les bornes publiées, aucune nouveauté n'est revendiquée, et la formalisation n'apprend rien de nouveau sur les cycles de Collatz. Jalon précédent : les 21 pistes « stub » du catalogue tranchées (27/10/2026).</span>
+        <span lang="en">The logs23/ folder of the Lean repository (release v1.4, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>) proves, without the hypothesis <code>H_Rhin</code>, Steiner's 1978 theorem on circuits: the only circuit on the positive integers that is a cycle is {1, 2} (shortcut map: x/2 for even x, (3x+1)/2 for odd x; this is the loop 1 → 2 → 1, that is 1 → 4 → 2 → 1 with the usual map). To do so it proves a lower bound much weaker than <code>H_Rhin</code>, which suffices; <code>H_Rhin</code> itself is not proved, the bound is far weaker than the published ones, no novelty is claimed, and the formalisation proves nothing new about Collatz cycles. Previous milestone: the 21 "stub" leads of the catalogue settled (2026-10-27).</span>
       </p>
       <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9e42fa5/logs23" target="_blank" rel="noopener">→ <code>logs23/</code> (9e42fa5)</a>
     </div>
@@ -389,8 +390,8 @@
         <span class="status-card-date">2026-10-28</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Dossier logs23/ (release v1.4) : 14 énoncés figés avant leurs preuves, tous prouvés ; 0 <code>sorry</code> dans les preuves, 0 <code>native_decide</code>, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; <code>check.sh</code> relancé le 28/10/2026 depuis un clone neuf du commit f9c33aa. Il prouve, sans <code>H_Rhin</code>, la minoration 1/(2^k − 1) ≤ |(k + l) log 2 − k log 3| pour tout k > 20 000 et tout l ≥ 0, et en déduit cinq des six énoncés de steiner1978/ qui supposaient <code>H_Rhin</code>. <code>H_Rhin</code> lui-même n'est pas démontré. Archive Zenodo (logiciel, v1.4) : DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>. Précédemment : steiner1978/, 12 énoncés, dont 6 sous l'hypothèse nommée <code>H_Rhin</code>, jamais un axiome (<code>check.sh</code> relancé depuis une compilation propre le 21/10/2026).</span>
-        <span lang="en">Folder logs23/ (release v1.4): 14 statements frozen before their proofs, all proved; 0 <code>sorry</code> in the proofs, 0 <code>native_decide</code>, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); <code>check.sh</code> run on 2026-10-28 from a fresh clone of commit f9c33aa. It proves, without <code>H_Rhin</code>, the lower bound 1/(2^k − 1) ≤ |(k + l) log 2 − k log 3| for every k > 20,000 and every l ≥ 0, and derives from it five of the six statements of steiner1978/ that assumed <code>H_Rhin</code>. <code>H_Rhin</code> itself is not proved. Zenodo archive (software, v1.4): DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>. Previously: steiner1978/, 12 statements, 6 of them under the named hypothesis <code>H_Rhin</code>, never an axiom (<code>check.sh</code> run from a clean build on 2026-10-21).</span>
+        <span lang="fr">Dossier logs23/ (release v1.4) : 14 énoncés figés avant leurs preuves, tous prouvés ; 0 <code>sorry</code> dans les preuves, 0 <code>native_decide</code>, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; <code>check.sh</code> relancé le 28/10/2026 depuis un clone neuf du commit f9c33aa (Lean 4.34.0 et le cache de Mathlib déjà présents). Il prouve, sans <code>H_Rhin</code>, la minoration 1/(2^k − 1) ≤ |(k + l) log 2 − k log 3| pour tout k > 20 000 et tout l ≥ 0, et en déduit cinq des six énoncés de steiner1978/ qui supposaient <code>H_Rhin</code>. <code>H_Rhin</code> lui-même n'est pas démontré. Archive Zenodo (logiciel, v1.4) : DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>. Précédemment : steiner1978/, 12 énoncés, dont 6 sous l'hypothèse nommée <code>H_Rhin</code>, jamais un axiome (<code>check.sh</code> relancé depuis une compilation propre le 21/10/2026).</span>
+        <span lang="en">Folder logs23/ (release v1.4): 14 statements frozen before their proofs, all proved; 0 <code>sorry</code> in the proofs, 0 <code>native_decide</code>, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); <code>check.sh</code> run on 2026-10-28 from a fresh clone of commit f9c33aa (Lean 4.34.0 and Mathlib's cache already present). It proves, without <code>H_Rhin</code>, the lower bound 1/(2^k − 1) ≤ |(k + l) log 2 − k log 3| for every k > 20,000 and every l ≥ 0, and derives from it five of the six statements of steiner1978/ that assumed <code>H_Rhin</code>. <code>H_Rhin</code> itself is not proved. Zenodo archive (software, v1.4): DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>. Previously: steiner1978/, 12 statements, 6 of them under the named hypothesis <code>H_Rhin</code>, never an axiom (<code>check.sh</code> run from a clean build on 2026-10-21).</span>
       </p>
       <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9e42fa5/logs23" target="_blank" rel="noopener">→ <code>logs23/</code> (9e42fa5)</a>
     </div>
@@ -480,7 +481,7 @@
     <div class="key-stat">
       <div class="value">k ≤ 1322</div>
       <div class="label" data-i18n="keyStat3Label">cycles exclus par notre théorème Lean (sous H1, H2)</div>
-      <div class="desc" data-i18n="keyStat3Desc">no_cycle_k_le_1322 · Lean 4.27.0</div>
+      <div class="desc" data-i18n="keyStat3Desc">no_cycle_k_le_1322 · Lean 4.27.0, revérifié sous Lean 4.34.0. Déjà impliqué par Hercher 2023 avec la vérification de Bařina.</div>
     </div>
     <div class="key-stat">
       <div class="value">36</div>
@@ -517,9 +518,8 @@
     <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Rechercher une piste, une référence, un auteur…">
     <button class="filter-btn active" data-status="all" data-i18n="filterAll">Toutes</button>
     <button class="filter-btn" data-status="cds" data-i18n="filterCds">Culs-de-sac</button>
-    <button class="filter-btn" data-status="partiel" data-i18n="filterPartiel">Partielles</button>
-    <button class="filter-btn" data-status="insuf" data-i18n="filterInsuf">Retirée (δ11)</button>
-    <button class="filter-btn" data-status="prometteur" data-i18n="filterPrometteur">Prometteuses</button>
+    <button class="filter-btn" data-status="retire" data-i18n="filterRetire">Retirées</button>
+    <button class="filter-btn" data-status="precedent" data-i18n="filterPrecedent">Précédents de méthode</button>
     <button class="filter-btn" data-status="axiome" data-i18n="filterAxiome">Hypothèses (paramètres)</button>
   </div>
 
@@ -619,8 +619,11 @@
   .event-status-badge[data-status="in-progress"] { background: #1e3a8a; color: #93c5fd; }
   .event-status-badge[data-status="submitted"]   { background: #7c2d12; color: #fdba74; }
   .event-status-badge[data-status="erratum"]     { background: #7c2d12; color: #fdba74; }
+  .event-status-badge[data-status="withdrawn"]   { background: #1f2937; color: #d1d5db; }
+  .event-status-badge[data-status="superseded"]  { background: #1e293b; color: #cbd5e1; }
+  .event-status-badge[data-status="rejected"]    { background: #450a0a; color: #fca5a5; }
   .status-card-summary { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.5rem; }
-  .status-card-link { display: inline-block; font-size: 0.8rem; color: var(--family-color); text-decoration: none; font-weight: 500; }
+  .status-card-link { display: inline-block; font-size: 0.8rem; color: var(--family-color); color: color-mix(in srgb, var(--family-color) 50%, var(--text-primary)); text-decoration: none; font-weight: 500; }
   .status-card-link:hover { text-decoration: underline; }
 </style>
 
@@ -721,7 +724,7 @@ graph LR
 <section id="hypotheses">
   <div class="section-eyebrow">§ III</div>
   <h2 data-i18n="hypothesesTitle">Trois hypothèses sur la sortie</h2>
-  <p data-i18n="hypothesesIntro">Évolution des probabilités estimées (estimations subjectives de l'auteur, non calculées) au fil des cycles d'investigation (Cycle 0 → Cycle 2). La hausse de C reflète la convergence cumulative des paradigmes vers Λ_{S,k}.</p>
+  <p data-i18n="hypothesesIntro">Évolution des probabilités estimées (estimations subjectives de l'auteur, non calculées) au fil des cycles d'investigation (Cycle 0 → Cycle 2). La hausse de C reflète la convergence cumulative des paradigmes vers Λ_{S,k}. Valeurs arrondies : la somme peut dépasser 100 %.</p>
 
   <div class="chart-container">
     <canvas id="hypothesesChart"></canvas>
@@ -777,7 +780,7 @@ graph LR
   <h3 lang="en">Lemma R72 (Lean 4)</h3>
   <p lang="fr">Identité Steiner factorisée — pierre angulaire de l'arsenal.</p>
   <p lang="en">Factored Steiner identity — cornerstone of the arsenal.</p>
-<pre><span class="lean-badge">Lean 4.27.0 · arsenal-postjar</span><code class="language-lean">/-- R72 NEW — identité Steiner factorisée :
+<pre><span class="lean-badge">Lean 4.27.0 · arsenal-postjar</span><code class="language-none">/-- R72 NEW — identité Steiner factorisée :
     n · (2^S - 3^k) = corrSum n k.
     Universel : pour tout cycle `IsOddCycle n k`. -/
 theorem cycle_n_mul_D_s_eq_corrSum
@@ -798,7 +801,7 @@ theorem cycle_n_mul_D_s_eq_corrSum
   <h3 lang="en">Lemma R92 (Lean 4)</h3>
   <p lang="fr">Premier certificat fini case-by-case dérivé de l'arsenal lacunaire.</p>
   <p lang="en">First finite case-by-case certificate derived from the lacunary arsenal.</p>
-<pre><span class="lean-badge">Lean 4.27.0 · arsenal-postjar</span><code class="language-lean">/-- R92 NEW — Showcase : pour cycle k=2 avec aSeq[0] ≡ 1 mod 3
+<pre><span class="lean-badge">Lean 4.27.0 · arsenal-postjar</span><code class="language-none">/-- R92 NEW — Showcase : pour cycle k=2 avec aSeq[0] ≡ 1 mod 3
     et aSeq[1] ≡ 1 mod 3, on a 7 ∤ D_s. -/
 theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     (n : ℕ) (hcyc : IsOddCycle n 2)
@@ -816,6 +819,8 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
              show (1 % 6 : ℕ) = 1 from rfl, show (0 % 6 : ℕ) = 0 from rfl,
              show (0 % 3 : ℕ) = 0 from rfl, h_s_0]
   decide</code></pre>
+  <p class="text-muted small" lang="fr">« NEW » dans le commentaire : nouveau dans la bibliothèque du projet en avril 2026, pas un résultat nouveau.</p>
+  <p class="text-muted small" lang="en">"NEW" in the comment: new in the project's library in April 2026, not a new result.</p>
 </section>
 </details>
 
@@ -824,7 +829,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 <section id="tests">
   <div class="section-eyebrow">§ IV</div>
   <h2 data-i18n="testsTitle">Tests REQ-MATH-NNN exécutés</h2>
-  <p data-i18n="testsIntro">Scripts de contrôle numérique ponctuels. Seuls REQ-MATH-007 et REQ-MATH-012 sont publiés (branches d'étude du dépôt) ; les autres sont restés locaux. Ils vérifient des calculs précis ; ils ne valident pas toutes les affirmations du site.</p>
+  <p data-i18n="testsIntro">Scripts de contrôle numérique ponctuels. Seuls REQ-MATH-007 et REQ-MATH-012 sont publiés (branches d'étude du dépôt) ; les autres sont restés locaux. Cette série est celle du dépôt collatz-conditional-cycles, sans rapport avec les tests REQ-MATH du dépôt Lean. Ils vérifient des calculs précis ; ils ne valident pas toutes les affirmations du site.</p>
 
   <div class="card-grid" id="testsGrid">
     <!-- généré par main.js -->
@@ -933,8 +938,8 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
       <div class="card-eyebrow" lang="fr">Collaborateur · chercheur indépendant</div>
       <div class="card-eyebrow" lang="en">Collaborator · independent researcher</div>
       <h3>Benjamin Macindoe</h3>
-      <p lang="fr">Collaboration ouverte depuis juillet 2026 : dépôt public commun et registre des résultats vérifiés des deux côtés. Auteur du preprint « Reduced coordinates for the Collatz map » (DOI <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">10.5281/zenodo.21730505</a>) et du gateway interactif des cycles.</p>
-      <p lang="en">Open collaboration since July 2026: shared public repository and a ledger of results checked on both sides. Author of the preprint "Reduced coordinates for the Collatz map" (DOI <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">10.5281/zenodo.21730505</a>) and of the interactive cycle gateway.</p>
+      <p lang="fr">Collaboration ouverte depuis juillet 2026 : dépôt public commun et registre des résultats vérifiés des deux côtés. Auteur du preprint « Reduced coordinates for the Collatz map » (v3, citée pour ses énoncés numérotés, DOI <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">10.5281/zenodo.21730505</a> ; v4 du 20/10/2026 : DOI <a href="https://doi.org/10.5281/zenodo.23501162" target="_blank" rel="noopener">10.5281/zenodo.23501162</a>) et du gateway interactif des cycles.</p>
+      <p lang="en">Open collaboration since July 2026: shared public repository and a ledger of results checked on both sides. Author of the preprint "Reduced coordinates for the Collatz map" (v3, cited for its numbered statements, DOI <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">10.5281/zenodo.21730505</a>; v4 of 2026-10-20: DOI <a href="https://doi.org/10.5281/zenodo.23501162" target="_blank" rel="noopener">10.5281/zenodo.23501162</a>) and of the interactive cycle gateway.</p>
       <p class="team-links">
         <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener" class="team-link">one-obstruction-three-faces</a>
         <a href="https://macindoe.github.io/collatz/viz/cycle_anchor_gateway.html" target="_blank" rel="noopener" class="team-link">Gateway</a>
@@ -966,7 +971,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
 <!-- ========================================================================
      MODAL DÉTAILS PISTE
      ======================================================================== -->
-<div class="modal-overlay" id="pisteModal">
+<div class="modal-overlay" id="pisteModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
     <h3 id="modalTitle"></h3>
@@ -981,7 +986,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.20 · 2026-10-28
+    Cartography · v0.10.21 · 2026-11-06
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -1011,28 +1016,31 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
     <span class="text-muted">·</span>
     <a href="mailto:ericmerle3789@gmail.com">contact</a>
     <span class="text-muted">·</span>
-    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean" target="_blank" rel="noopener">Lean</a>
     <span class="text-muted">·</span>
-    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/stargazers" target="_blank" rel="noopener">★ <span id="githubStars">…</span></a>
+    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">★ <span id="githubStars">…</span></a>
     <span class="text-muted">·</span>
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
   </p>
 
   <!-- Open Science badges -->
-  <div class="footer-badges" aria-label="Open Science badges">
-    <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener" class="footer-badge badge-doi" title="DOI Zenodo permanent identifier (concept DOI, all versions)">
+  <div class="footer-badges" aria-label="Open Science badges" data-aria-fr="Badges de science ouverte" data-aria-en="Open Science badges">
+    <a href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener" class="footer-badge badge-doi" title="Identifiant permanent Zenodo (DOI de concept, toutes versions) · Zenodo permanent identifier (concept DOI, all versions)">
       DOI 10.5281/zenodo.19790405
     </a>
-    <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener" class="footer-badge badge-orcid" title="ORCID iD permanent author identifier">
+    <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener" class="footer-badge badge-doi" title="Formalisations en Lean 4 de travaux classiques (DOI de concept, toutes versions) · Lean 4 formalisations of classical work (concept DOI, all versions)">
+      DOI 10.5281/zenodo.23498095 (formalisations)
+    </a>
+    <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener" class="footer-badge badge-orcid" title="Identifiant ORCID permanent de l'auteur · ORCID iD permanent author identifier">
       ORCID 0009-0008-7940-402X
     </a>
-    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener" class="footer-badge badge-license" title="CC-BY-SA 4.0 license (site content)">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener" class="footer-badge badge-license" title="Licence CC BY-SA 4.0 (contenu du site) · CC BY-SA 4.0 license (site content)">
       CC-BY-SA 4.0 (site)
     </a>
-    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/LICENSE" target="_blank" rel="noopener" class="footer-badge badge-license" title="CC BY 4.0 license for the paper sources and the Lean code">
+    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/LICENSE" target="_blank" rel="noopener" class="footer-badge badge-license" title="Licence CC BY 4.0 (sources de l'article et code Lean) · CC BY 4.0 license for the paper sources and the Lean code">
       CC BY 4.0 (paper + Lean)
     </a>
-    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/reproduce.sh" target="_blank" rel="noopener" class="footer-badge badge-verify" title="reproduce.sh (Lean 4.27.0 toolchain)">
+    <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/reproduce.sh" target="_blank" rel="noopener" class="footer-badge badge-verify" title="reproduce.sh (chaîne Lean 4.27.0) · reproduce.sh (Lean 4.27.0 toolchain)">
       reproduce.sh
     </a>
   </div>
@@ -1065,6 +1073,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   openTarget();
 })();
 </script>
-<script src="assets/js/main.js?v=20261028-V0-10-20"></script>
+<script src="assets/js/main.js?v=20261106-V0-10-21"></script>
 </body>
 </html>

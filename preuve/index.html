@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proof chain — Collatz / Syracuse Conditional Cycles</title>
+<title>Proof chain of the April 2026 preprint — Collatz / Syracuse Conditional Cycles</title>
 <meta name="description" content="Conjecture de Syracuse / Collatz : architecture de la preuve Lean 4 de no_nontrivial_cycle_phase59. Phase56 Product Bound → Phase58 small cycles (k ≤ 1322, under H1 and H2) → Phase59 large cycles (k > 1322, closed only by the assumed hypothesis H3 DerivedLargeKBound; erratum of 2 Oct 2026). δ8 documented.">
 <meta name="keywords" content="Collatz, Syracuse, conjecture de Syracuse, suite de Syracuse, 3n+1 problem, Kakutani problem, Hasse problem, Lean 4, formal proof, Steiner identity, continued fractions, Phase59, kernel-checked">
 <meta name="author" content="Eric Merle">
@@ -22,11 +22,11 @@
 <meta name="theme-color" content="#0e0f13">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Proof chain — Collatz / Syracuse Conditional Cycles">
+<meta property="og:title" content="Proof chain of the April 2026 preprint — Collatz / Syracuse Conditional Cycles">
 <meta property="og:description" content="(Syracuse · Collatz · 3n+1) Lean 4 proof architecture of no_nontrivial_cycle_phase59. Two sub-branches: k ≤ 1322 (H1 Baker + Product-Bound + H2 Barina) and k > 1322 (assumed hypothesis H3). Lean 4.27.0; no_cycle_k_le_1322 re-checked on Lean 4.34.0 (20–21 Oct 2026), no_nontrivial_cycle_phase59 not re-checked.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/preuve/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
@@ -35,17 +35,17 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Proof chain — Collatz / Syracuse Conditional Cycles">
+<meta name="twitter:title" content="Proof chain of the April 2026 preprint — Collatz / Syracuse Conditional Cycles">
 <meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Lean 4 proof architecture of no_nontrivial_cycle_phase59. Lean 4.27.0; no_cycle_k_le_1322 re-checked on Lean 4.34.0 (20–21 Oct 2026), no_nontrivial_cycle_phase59 not re-checked.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261021">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
 
 <!-- JSON-LD : TechArticle (proof architecture page) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Formal proof chain — Collatz / Syracuse Conditional Cycles",
-  "name": "Proof chain architecture",
+  "headline": "Proof chain of the April 2026 preprint — Collatz / Syracuse Conditional Cycles",
+  "name": "Proof chain architecture of the April 2026 preprint",
   "description": "Lean 4 architecture of the no_nontrivial_cycle_phase59 theorem, decomposed in two sub-branches with detailed lemma dependencies.",
   "url": "https://collatz-lab.org/preuve/",
   "inLanguage": ["en", "fr"],
@@ -55,7 +55,7 @@
     "name": "Eric Merle"
   },
   "datePublished": "2026-04-27",
-  "dateModified": "2026-10-21",
+  "dateModified": "2026-11-06",
   "isPartOf": {"@id": "https://collatz-lab.org/"},
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "proficiencyLevel": "Expert",
@@ -70,7 +70,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://collatz-lab.org/"},
-    {"@type": "ListItem", "position": 2, "name": "Proof chain", "item": "https://collatz-lab.org/preuve/"}
+    {"@type": "ListItem", "position": 2, "name": "Proof chain of the April 2026 preprint", "item": "https://collatz-lab.org/preuve/"}
   ]
 }
 </script>
@@ -91,15 +91,15 @@
         onload="setTimeout(() => renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]}), 200);"></script>
 
 <!-- Mermaid pour diagrammes (defer: non-render-blocking) -->
-<script defer src="https://cdn.jsdelivr.net/npm/mermaid@10.9.5/dist/mermaid.min.js" integrity="sha384-enVdc7lTHDGtpROV85t9+VqPC2EyyB0hsRD0MrvQnHUsHmTHIz2D8SPP4EnBkstH" crossorigin="anonymous"></script>
+<meta name="collatz-mermaid-sri" content="sha384-enVdc7lTHDGtpROV85t9+VqPC2EyyB0hsRD0MrvQnHUsHmTHIz2D8SPP4EnBkstH"><!-- Mermaid loaded on demand by main.js -->
 
-<!-- Prism.js pour syntaxe Lean (la page utilise <pre><code class="language-lean"> et bash, manquait avant) -->
+<!-- Prism.js pour syntaxe Lean (la page utilise <pre><code class="language-none"> et bash, manquait avant) -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" integrity="sha384-wFjoQjtV1y5jVHbt0p35Ui8aV8GVpEZkyF99OXWqP/eNJDU93D3Ugxkoyh6Y2I4A" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" integrity="sha384-wFjoQjtV1y5jVHbt0p35Ui8aV8GVpEZkyF99OXWqP/eNJDU93D3Ugxkoyh6Y2I4A" crossorigin="anonymous"></noscript>
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261028-V0-10-19">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261106-V0-10-21">
 </head>
 <body>
 
@@ -121,7 +121,7 @@
       <a href="../#archives" data-i18n="navArchives">2026 archive</a>
     </nav>
     <div class="toolbar-actions">
-      <button class="btn-icon" id="citeBtn" aria-label="Cite this work" title="Cite" data-i18n="citeBtn">Cite</button>
+      <button class="btn-icon" id="citeBtn" title="Cite" data-i18n="citeBtn">Cite</button>
       <button class="btn-icon" id="themeBtn" aria-label="Toggle theme" title="Toggle light/dark theme">
         <span class="moon-icon" aria-hidden="true">☾</span>
         <span class="sun-icon" aria-hidden="true">☀</span>
@@ -137,16 +137,18 @@
 <main>
 
 <section class="hero" style="padding: 4rem 2rem 3rem;">
-  <div class="hero-eyebrow" lang="fr">Architecture · Phase 12 → Phase 63</div>
-  <div class="hero-eyebrow" lang="en">Architecture · Phase 12 → Phase 63</div>
-  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="fr">Chaîne de preuve formelle</h1>
-  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="en">Formal proof chain</h1>
+  <div class="hero-eyebrow" lang="fr">Architecture du preprint d'avril 2026 · Phase 12 → Phase 63</div>
+  <div class="hero-eyebrow" lang="en">Architecture of the April 2026 preprint · Phase 12 → Phase 63</div>
+  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="fr">Chaîne de preuve du preprint d'avril 2026</h1>
+  <h1 style="font-size: clamp(1.8rem, 4vw, 2.8rem);" lang="en">Proof chain of the April 2026 preprint</h1>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">
     Le théorème principal <code>no_nontrivial_cycle_phase59</code> se décompose en deux sous-branches : <strong>k ≤ 1322</strong> (H1 Baker + Product-Bound + H2 Bařina) et <strong>k &gt; 1322</strong> (fermé uniquement par l'hypothèse supposée H3, avec H2). Sous H2, H3 équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) : seul le cas k ≤ 1322 est démontré sans circularité (erratum du 2 octobre 2026, voir le <a href="../changelog/">changelog</a> et la page <a href="../papers/">Papers</a>). <code>sdw_from_cf</code> est un corollaire en aval, pas une étape de la preuve.
   </p>
   <p class="hero-lede" style="font-size: 1.05rem;" lang="en">
     The main theorem <code>no_nontrivial_cycle_phase59</code> splits into two sub-branches: <strong>k ≤ 1322</strong> (H1 Baker + Product-Bound + H2 Barina) and <strong>k &gt; 1322</strong> (closed only by the assumed hypothesis H3, with H2). Under H2, H3 is equivalent to the conclusion itself (in Lean, k is any return time): only the case k ≤ 1322 is proved without circularity (erratum of 2 October 2026, see the <a href="../changelog/">changelog</a> and the <a href="../papers/">Papers</a> page). <code>sdw_from_cf</code> is a downstream corollary, not a step of the proof.
   </p>
+  <p class="hero-lede" style="font-size: 1.05rem;" lang="fr">Formalisations actuelles (Lean 4.34.0) : voir <a href="../papers/">Papers</a>.</p>
+  <p class="hero-lede" style="font-size: 1.05rem;" lang="en">Current formalisations (Lean 4.34.0): see <a href="../papers/">Papers</a>.</p>
 </section>
 
 <section>
@@ -294,7 +296,7 @@ flowchart TB
   <div class="lean-math-pair">
     <div>
       <span class="lmp-label">Lean 4</span>
-<pre><code class="language-lean">theorem steiner_cycle_eq (n k : ℕ) (hcyc : IsOddCycle n k) :
+<pre><code class="language-none">theorem steiner_cycle_eq (n k : ℕ) (hcyc : IsOddCycle n k) :
     n * 2 ^ aSumSeq n k = 3 ^ k * n + corrSum n k := by
   have h := steiner_eq n k
   rwa [hcyc.2.2.2] at h</code></pre>
@@ -314,7 +316,7 @@ flowchart TB
   <div class="lean-math-pair">
     <div>
       <span class="lmp-label">Lean 4</span>
-<pre><code class="language-lean">theorem no_nontrivial_cycle_phase59
+<pre><code class="language-none">theorem no_nontrivial_cycle_phase59
     (baker : BakerSeparation) (barina : BarinaVerification)
     (cf : DerivedLargeKBound)
     (n k : ℕ) (hcyc : IsOddCycle n k) : False := by
@@ -396,7 +398,7 @@ cd collatz-conditional-cycles
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.9 · 2026-10-21</div>
+  <div class="footer-meta">Cartography · v0.10.21 · 2026-11-06</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2</p>
   <p class="footer-status">
@@ -413,14 +415,14 @@ cd collatz-conditional-cycles
     <span class="status-sep">·</span>
     <a href="../changelog/" class="text-muted small" data-i18n="changelogLink">changelog</a>
   </p>
-  <p>Eric Merle · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a> · <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener">ORCID</a></p>
+  <p>Eric Merle · <a href="https://github.com/ericmerle3789/collatz-conditional-cycles" target="_blank" rel="noopener">GitHub</a> · <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean" target="_blank" rel="noopener">Lean</a> · <a href="https://orcid.org/0009-0008-7940-402X" target="_blank" rel="noopener">ORCID</a></p>
   <p style="margin-top: 0.6rem;">
     <a href="https://www.linkedin.com/in/eric-merle/" target="_blank" rel="me noopener" title="Profil LinkedIn Eric Merle">LinkedIn</a>
     · <a href="../feed.xml" rel="alternate" type="application/atom+xml" title="Fil RSS">📡 RSS</a>
   </p>
 </footer>
 
-<script src="../assets/js/main.js?v=20261028-V0-10-20"></script>
+<script src="../assets/js/main.js?v=20261106-V0-10-21"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 if (typeof mermaid === 'undefined') return;
@@ -442,7 +444,7 @@ mermaid.run();
 </script>
 
 <!-- Hypothes.is annotations layer (sélectionnez du texte pour annoter) -->
-<script src="https://hypothes.is/embed.js" async></script>
+<meta name="collatz-annotate" content="on-click">
 
 </body>
 </html>

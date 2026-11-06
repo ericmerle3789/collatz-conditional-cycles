@@ -254,7 +254,7 @@
       const lambdaEl = document.getElementById('lambdaValue');
       const sign = lambda >= 0 ? '+' : '';
       lambdaEl.textContent = `${sign}${lambda.toFixed(4)}`;
-      lambdaEl.style.color = Math.abs(lambda) < 1.5 ? '#c8a86a' : '#8b887f';
+      lambdaEl.style.color = Math.abs(lambda) < 1.5 ? 'var(--accent)' : 'var(--text-muted)';
 
       // Classification
       const cls = classifyPoint(S, k);

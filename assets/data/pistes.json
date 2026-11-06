@@ -1,6 +1,6 @@
 {
-  "version": "0.9.0",
-  "lastUpdate": "2026-10-28",
+  "version": "0.10.21",
+  "lastUpdate": "2026-11-06",
   "pistes": [
     {
       "id": "★ Main",
@@ -47,7 +47,7 @@
         "why": "Withdrawn on 2026-10-21 (outdated cartography): no longer to be cited as a result. Lean lemma (Phase 64, Lean 4.27.0, commit 7efbf34, not re-checked since) that checks a conclusion from four hand-entered profiles (Salikhov 2007, \"Wu 2003\", Rhin 1987, Simons–de Weger 2005); reviewed against the available sources (zbMATH reviews; Rhin 1987; Simons–de Weger 2005), two are wrong and one cannot be checked (details: Papers page). Its conditions (1) and (3) (defined on the Papers page) concern replacing BakerSeparation in the k ≤ 1322 chain, not replacing Bařina's verification; but BakerSeparation is not needed for that result: Hercher 2023, with the same verification, already implies it (erratum of the Zenodo v4 version, item 4)."
       },
       "region": "I",
-      "status": "cds",
+      "status": "retire",
       "test4": "—",
       "lean": "delta10_barina_replacement_impossibility",
       "leanFile": "ProjetCollatz/Phase64Delta10BarinaReplacement.lean",
@@ -112,9 +112,9 @@
         "why": "Salikhov 2007 (irrationality measure of ln 3: μ(ln 3) ≤ 5.125). <strong>δ11 withdrawn on 20 October 2026.</strong> It rested on the transposition to the problem, which involves log₂ 3, of Salikhov's 2007 irrationality measure of ln 3, and on an ad hoc axiom not taken from the paper; since Salikhov's bound holds only beyond unspecified heights, no explicit threshold follows from it (erratum of the Zenodo v4 version, item 3; <a href=\"https://github.com/ericmerle3789/collatz-conditional-cycles/blob/study/E1-salikhov-2007-impossibility/RETRAIT_DELTA11_2026-10-20.md\" target=\"_blank\" rel=\"noopener\">withdrawal note</a>). History: the use of this bound for the problem and δ11 (Phase 65) rest on a transposition of Salikhov 2007 (a measure for ln 3) to the problem; that transposition does not hold. δ11 is conditional (three ad-hoc axioms: <code>C_Salikhov : ℝ</code>, <code>0 &lt; C_Salikhov</code>, <code>C_Salikhov &lt; 10⁻³⁰</code>). Checked on Lean 4.27.0, not re-checked since. See mea culpa #29 to #32."
       },
       "region": "I",
-      "status": "insuf",
+      "status": "retire",
       "test4": "3/4",
-      "lean": "Delta11Salikhov.lean (retiré le 20/10/2026 ; conditionnel : 3 axiomes ad hoc ; Lean 4.27.0)",
+      "lean": "Delta11Salikhov.lean",
       "leanFile": "ProjetCollatz/PostJAR/Delta11Salikhov.lean",
       "ref": "Salikhov, Doklady Math. 76(3), 955-957 (2007), DOI 10.1134/S1064562407060361"
     },
@@ -167,15 +167,15 @@
     {
       "id": "G.1",
       "fr": {
-        "name": "R88-R92 lacunary periodization",
-        "why": "Case-by-case viable pour k ≤ 20 ; arsenal projet"
+        "name": "Périodisation lacunaire R88-R92",
+        "why": "Dépassée : l'étude cas par cas visait k ≤ 20, alors que l'absence de cycle non trivial avec k ≤ 1322 découle déjà de Hercher 2023 et de la vérification de Bařina (voir l'erratum). Le lemme Lean reste dans l'arsenal du projet. Reclassée le 06/11/2026 ; la fiche disait « Case-by-case viable pour k ≤ 20 ; arsenal projet »."
       },
       "en": {
         "name": "R88-R92 lacunary periodization",
-        "why": "Case-by-case viable for k ≤ 20 ; project arsenal"
+        "why": "Superseded: the case-by-case study aimed at k ≤ 20, whereas the absence of a non-trivial cycle with k ≤ 1322 already follows from Hercher 2023 and Barina's verification (see the erratum). The Lean lemma stays in the project's arsenal. Reclassified on 2026-11-06; the entry said \"Case-by-case viable for k ≤ 20; project arsenal\"."
       },
       "region": "I",
-      "status": "partiel",
+      "status": "cds",
       "test4": "4/4",
       "lean": "cycle_corrSum_mod_p_double_periodic",
       "leanFile": "ProjetCollatz/PostJAR/CongruenceTransport.lean"
@@ -184,11 +184,11 @@
       "id": "G.1bis",
       "fr": {
         "name": "R92 showcase k=2 p=7",
-        "why": "Premier certificat fini case-by-case prouvé Lean"
+        "why": "Certificat fini prouvé en Lean, à k = 2 seulement : ce cas est déjà exclu par no_collatz_cycle_k2 (même branche). C'est une démonstration de la méthode, sans contenu mathématique nouveau. Précision du 06/11/2026 ; la fiche disait « Premier certificat fini case-by-case prouvé Lean »."
       },
       "en": {
         "name": "R92 showcase k=2 p=7",
-        "why": "First Lean-proven finite case-by-case certificate"
+        "why": "Finite certificate proved in Lean, at k = 2 only: this case is already excluded by no_collatz_cycle_k2 (same branch). It demonstrates the method, with no new mathematical content. Made precise on 2026-11-06; the entry said \"First Lean-proven finite case-by-case certificate\"."
       },
       "region": "I",
       "status": "prouve",
@@ -221,7 +221,7 @@
         "why": "Withdrawn on 2026-10-22 (unsourced). The lead was in fact developed, in an unpublished internal report of 2026-04-28 (2026-04-28-2105-from-NEW3-to-NEW-Q6-schema-arithmetique.md, in French): it studies the idea, put by question Q6, of viewing the Collatz cycle as an arithmetic scheme over Spec(ℤ); it notes that Faltings's 1983 theorem would give finitely many rational points if the generic fibre were a smooth curve of genus ≥ 2, but that computing the genus is non-trivial and left to be studied; it states that, to its author's knowledge, no major published paper formalised the Collatz cycle as an arithmetic scheme in 1985-2026; and it concludes that the approach almost certainly falls back on Baker. The withdrawal is kept: the report does not compute the genus, proves nothing and cites no source linking cycles to this framework, and we found none (arXiv and zbMATH search of 2026-10-22)."
       },
       "region": "I",
-      "status": "cds",
+      "status": "retire",
       "test4": "—"
     },
     {
@@ -250,7 +250,7 @@
         "why": "Withdrawn on 2026-10-22. An application, in April 2026 (cyclotomic polynomials and BHV, \"BHV+lacunary conjecture\"), was formulated and then found to be tautological: by the identity R72, every prime dividing 2^S − 3^k divides corrSum, so that it amounted to assuming that no non-trivial cycle exists; this is mea culpa #11 (rule: test the Steiner identity R72 before any commit). The lead was then marked \"Reopened post-Red Team — specific applications\", without saying which ones. The theorem of Bilu, Hanrot and Voutier (2001) says that, for N > 30, the N-th term of every Lucas or Lehmer sequence has a primitive divisor (according to its zbMATH review); we found no source linking it to Collatz cycles (arXiv and zbMATH search of 2026-10-22)."
       },
       "region": "I",
-      "status": "cds",
+      "status": "retire",
       "test4": "—",
       "ref": "Bilu, Hanrot & Voutier, J. Reine Angew. Math. 539 (2001), 75-122"
     },
@@ -461,7 +461,7 @@
     {
       "id": "Z",
       "fr": {
-        "name": "Holomorphic dynamics (LSW 1999)",
+        "name": "Dynamique holomorphe (LSW 1999)",
         "why": "Cul-de-sac, sourcé (27/10/2026). Letherman, Schleicher et Wood (Experiment. Math. 8 (1999), 241-251) construisent des fonctions entières qui reproduisent la dynamique de 3n+1 sur les entiers et pour lesquelles tous les entiers sont dans l'ensemble de Fatou ; aucun entier n'est dans un domaine de Baker, et un entier dont l'orbite n'est pas ultimement périodique doit être dans un domaine errant (d'après la notice zbMATH). Les entiers sont des points critiques de ces fonctions (d'après la bibliographie annotée de Lagarias) : un cycle d'entiers y est superattractif, de multiplicateur nul quel que soit le cycle. L'ancienne note de cette fiche (« log|ρ| = -Λ avec convention Lagarias — encode Baker ») vaut pour une autre fonction, l'interpolation (z/2) cos²(πz/2) + ((3z+1)/2) sin²(πz/2), étudiée sur la droite réelle par Chamberland (Dyn. Contin. Discrete Impulsive Syst. 2 (1996), 495-509, d'après la bibliographie annotée de Lagarias et la notice zbMATH de cet article) : sa dérivée vaut 1/2 aux entiers pairs et 3/2 aux impairs, si bien que le logarithme du multiplicateur d'un cycle de S pas à k termes impairs vaut −(S log 2 − k log 3), la forme linéaire déjà au cœur de l'approche principale. Dans les deux cas, le multiplicateur n'apporte rien de nouveau sur l'existence d'un cycle."
       },
       "en": {
@@ -476,7 +476,7 @@
     {
       "id": "P6",
       "fr": {
-        "name": "Calegari-Dimitrov-Tang 2025 holonomy",
+        "name": "Holonomie de Calegari-Dimitrov-Tang 2025",
         "why": "Lecture close (21/10/2026), sur le seul résumé (arXiv:2510.04156) : cul-de-sac en l'état (classée cul-de-sac dans le catalogue le 29/04/2026). Le résumé présente la méthode comme une alternative aux formes linéaires en logarithmes de Baker pour des théorèmes diophantiens effectifs classiques, mais n'annonce aucune mesure explicite pour S ln 2 − k ln 3, la seule forme linéaire qui intervient ici. À rouvrir si la méthode est appliquée à cette forme."
       },
       "en": {
@@ -499,7 +499,7 @@
         "why": "Methodological precedent in Isabelle/HOL, not in Lean: J. Bayer and M. David, \"A Formal Proof of Complexity Bounds on Diophantine Equations\", ITP 2025 (LIPIcs 352, article 3), entry \"Universal Pairs for Diophantine Equations\" of the Archive of Formal Proofs. The subject is Hilbert's tenth problem (universal pairs), with no Diophantine approximation and no logarithms: only the method, formalising during the research, concerns us. Correction (2026-10-28): the entry said \"Lean Diophantine methodological precedent\"."
       },
       "region": "III",
-      "status": "prometteur",
+      "status": "precedent",
       "ref": "Bayer & David, ITP 2025, LIPIcs 352, 3; DOI 10.4230/LIPIcs.ITP.2025.3"
     },
     {
@@ -513,13 +513,13 @@
         "why": "Lean 4 Diophantine methodological precedent"
       },
       "region": "III",
-      "status": "prometteur",
+      "status": "precedent",
       "ref": "arXiv:2604.09808"
     },
     {
       "id": "P9",
       "fr": {
-        "name": "Knight 2026 (high cycles)",
+        "name": "Knight 2026 (cycles hauts)",
         "why": "Lecture close (21/10/2026) : cul-de-sac pour ce projet. Publié (Discrete Math. 349(3), 114812, 2026 ; HAL hal-04261183). Selon son résumé, l'article montre qu'aucun « high cycle » n'est formé d'entiers positifs (comme pour les circuits, sauf 1-2-1) ; ce résultat n'exclut pas les autres cycles. Formalisation Lean 4 d'un tiers inscrite sur ccchallenge (statut « Being formalised » au 20/10/2026)."
       },
       "en": {
@@ -598,11 +598,11 @@
       "id": "REQ-MATH-001",
       "fr": {
         "title": "Convention cycle trivial (S, k)",
-        "result": "Cycle trivial 1→4→2→1 a (S=2, k=1) = (p_1, q_1)"
+        "result": "Cycle trivial 1→4→2→1 a (S=2, k=1) = (p_1, q_1) (Script local, non publié.)"
       },
       "en": {
         "title": "Trivial cycle convention (S, k)",
-        "result": "Trivial cycle 1→4→2→1 has (S=2, k=1) = (p_1, q_1)"
+        "result": "Trivial cycle 1→4→2→1 has (S=2, k=1) = (p_1, q_1) (Local script, not published.)"
       },
       "exit": 0,
       "file": "tests_math/test_REQ-MATH-001_cycle_trivial_convention.py"
@@ -624,11 +624,11 @@
       "id": "REQ-MATH-004",
       "fr": {
         "title": "Écart résiduel (retiré)",
-        "result": "Retiré (erratum de la version Zenodo v4, items 3 et 4). La valeur k_max = 3732 est retirée (item 3 ; voir REQ-MATH-003). Il n'y a pas d'écart à mesurer : avec la vérification de Bařina, le Corollaire 29 de Hercher (2023) donne plus de 1,375·10¹¹ termes impairs à tout cycle non trivial, ce qui implique déjà le résultat k ≤ 1322 du dépôt (item 4)."
+        "result": "Retiré (erratum de la version Zenodo v4, items 3 et 4). La valeur k_max = 3732 est retirée (item 3 ; voir REQ-MATH-003). Il n'y a pas d'écart à mesurer : avec la vérification de Bařina, le Corollaire 29 de Hercher (2023) donne plus de 1,375·10¹¹ termes impairs à tout cycle non trivial, ce qui implique déjà le résultat k ≤ 1322 du dépôt (item 4). (Script local, non publié.)"
       },
       "en": {
         "title": "Residual gap (withdrawn)",
-        "result": "Withdrawn (erratum of the Zenodo v4 version, items 3 and 4). The value k_max = 3732 is withdrawn (item 3; see REQ-MATH-003). There is no gap to measure: with Bařina's verification, Hercher's Corollary 29 (2023) gives every non-trivial cycle more than 1.375·10¹¹ odd terms, which already implies the repository's k ≤ 1322 result (item 4)."
+        "result": "Withdrawn (erratum of the Zenodo v4 version, items 3 and 4). The value k_max = 3732 is withdrawn (item 3; see REQ-MATH-003). There is no gap to measure: with Bařina's verification, Hercher's Corollary 29 (2023) gives every non-trivial cycle more than 1.375·10¹¹ odd terms, which already implies the repository's k ≤ 1322 result (item 4). (Local script, not published.)"
       },
       "exit": "withdrawn",
       "file": "tests_math/test_REQ-MATH-004_gap_residuel.py"
@@ -637,11 +637,11 @@
       "id": "REQ-MATH-005",
       "fr": {
         "title": "Formule log|ρ| holomorphe",
-        "result": "log|ρ| = -Λ avec convention Lagarias VRAI — mea culpa #20 nuancé"
+        "result": "log|ρ| = -Λ avec convention Lagarias VRAI — mea culpa #20 nuancé (Pour l'interpolation de Chamberland 1996 ; voir la piste Z.) (Script local, non publié.)"
       },
       "en": {
         "title": "log|ρ| holomorphic formula",
-        "result": "log|ρ| = -Λ with Lagarias convention TRUE — mea culpa #20 nuanced"
+        "result": "log|ρ| = -Λ with Lagarias convention TRUE — mea culpa #20 nuanced (For the Chamberland 1996 interpolation; see lead Z.) (Local script, not published.)"
       },
       "exit": 0,
       "file": "tests_math/test_REQ-MATH-005_formule_multiplicateur_holomorphe.py"
