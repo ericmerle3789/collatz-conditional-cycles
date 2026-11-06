@@ -23,6 +23,7 @@ Companion repository for the paper *On the non-existence of non-trivial Collatz 
 **Repository**: <https://github.com/ericmerle3789/collatz-conditional-cycles> (branch `main`).
 **Paper PDF (29 pages; the v1.0 release PDF has 28)**: [`paper/v2/collatz-conditional-proof.pdf`](paper/v2/collatz-conditional-proof.pdf), also available as a [GitHub Release v1.0 download](https://github.com/ericmerle3789/collatz-conditional-cycles/releases/tag/v1.0).
 **Zenodo DOI**: [10.5281/zenodo.19790406](https://doi.org/10.5281/zenodo.19790406)
+**All versions (concept DOI)**: [10.5281/zenodo.19790405](https://doi.org/10.5281/zenodo.19790405), which resolves to version v4 ([10.5281/zenodo.23496480](https://doi.org/10.5281/zenodo.23496480), 20 October 2026, with `ERRATUM.pdf`). *(Line added on 2026-11-06; the DOI above is that of version v1.0, April 2026, which has no erratum.)*
 **Author ORCID**: [0009-0008-7940-402X](https://orcid.org/0009-0008-7940-402X)
 
 ## Status
@@ -40,7 +41,7 @@ Contact: `eric.merle@ac-versailles.fr`.
 | Path | Description |
 |---|---|
 | `paper/v2/` | Paper sources (Markdown), bibliography (`references.bib`), build configuration (`Makefile`), and the compiled `collatz-conditional-proof.pdf` (29 pages) plus its Pandoc-generated `.tex` source. |
-| `ProjetCollatz/` | Lean 4 formalization (40 files, Mathlib v4.27.0). |
+| `ProjetCollatz/` | Lean 4 formalization (42 files: 40 at top level, 2 in `PhaseVIII/`; Mathlib v4.27.0). |
 | `probes/` | Axiom-profile probes used by the verification script. |
 | `expected_axioms.md` | Reference axiom profile for the central theorem chain. |
 | `reproduce.sh` | End-to-end verification script (axioms + sorry detection). |
@@ -60,7 +61,7 @@ theorem ProjetCollatz.no_nontrivial_cycle_final
     (n k : ℕ) (hcyc : IsOddCycle n k) : False
 ```
 
-Defined in `ProjetCollatz/Phase58PorteDeuxFinal.lean` (line 339). The full axiom dependency can be inspected with `#print axioms ProjetCollatz.no_nontrivial_cycle_final`. The three structure parameters represent:
+Defined in `ProjetCollatz/Phase58PorteDeuxFinal.lean` (line 339). The full axiom dependency can be inspected with `#print axioms ProjetCollatz.no_nontrivial_cycle_final`. (`expected_axioms.md` and the website name `no_nontrivial_cycle_phase59` (`Phase59ContinuedFractions.lean`, line 236), whose third hypothesis is `DerivedLargeKBound`, as the principal theorem; `no_nontrivial_cycle_final` is its variant with `ProductBoundThreshold`. Both are circular: see the erratum.) The three structure parameters represent:
 
 - **`BakerSeparation`** — a working hypothesis of Baker type, (2^s − 3^k)·k⁶ ≥ 3^k for k ≥ 2, motivated by A. Baker, *Mathematika* 13 (1966), 204–216; it is not a published theorem (see erratum, point 3).
 - **`BarinaVerification`** — the computational verification of D. Barina, *Improved verification limit for the convergence of the Collatz conjecture*, *J. Supercomputing* 81 (2025), 810 (extending the verified bound to `2⁷¹`).
@@ -105,11 +106,15 @@ The script's exit codes are:
 
 The script runs the toolchain check, fetches the Mathlib cache, builds the project, runs the axiom-profile probes (`probes/check_central_axioms.lean` and per-section probes), and runs the `sorry`-detection probe.
 
+*Notes added on 2026-11-06.* A pass of `reproduce.sh` shows that these theorems compile with these axioms; it does not remove the circularity explained in the erratum. To re-check the non-circular part on Lean 4.34.0 (after the fix of lean4#14576): `bash recheck-v4.34-2026-10-20/verify.sh` (see its README). There is no continuous-integration workflow in this repository: the comments of `reproduce.sh` that mention one (lines 16 and 115) are obsolete, and the repository's Actions page only shows the deployment of the website.
+
 ## License
 
 Creative Commons Attribution 4.0 International (CC-BY 4.0), for both the paper sources and the Lean formalization. See `LICENSE`.
 
 ## Citation
+
+> **Note (2026-11-06).** The entry below cites version v1.0 (April 2026), which has no erratum. Please cite the concept DOI [10.5281/zenodo.19790405](https://doi.org/10.5281/zenodo.19790405) and read the erratum of version v4 first.
 
 ```bibtex
 @misc{merle2026collatzcycles,
@@ -130,4 +135,4 @@ The Lean formalization builds on Mathlib (Mathematics in Lean 4); the author tha
 
 ---
 
-*Version 1.0, April 2026.*
+*Version 1.0, April 2026; dated notes of 2 and 21 October and 6 November 2026.*
