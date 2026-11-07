@@ -136,7 +136,7 @@
       "@type": "WebSite",
       "@id": "https://collatz-lab.org/",
       "name": "Collatz Conditional Cycles",
-      "description": "Lean 4 formalisations of classical work on Collatz cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, the last without the hypothesis H_Rhin since 2026-10-28; no novelty claimed). Does not prove the conjecture. April 2026 preprint: conditional theorem, no non-trivial cycle with k ≤ 1322 under the working hypothesis H1 (BakerSeparation, not a published theorem) and Barina's verification (H2); erratum of 2 Oct 2026: the third hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself.",
+      "description": "Lean 4 formalisations of classical work on Collatz cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978 (without the hypothesis H_Rhin since 2026-10-28) and Seifert 1988 (since 2026-11-07); no novelty claimed). Does not prove the conjecture. April 2026 preprint: conditional theorem, no non-trivial cycle with k ≤ 1322 under the working hypothesis H1 (BakerSeparation, not a published theorem) and Barina's verification (H2); erratum of 2 Oct 2026: the third hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself.",
       "alternateName": [
         "Cycles Conditionnels de Collatz/Syracuse",
         "Collatz Lab — Conjecture de Syracuse formalisée",
@@ -275,7 +275,7 @@
     <span lang="en">Also known as the <strong>Syracuse problem</strong>, the <strong>3n+1 problem</strong>, the <strong>Kakutani problem</strong>, the <strong>Hasse algorithm</strong>, or the <strong>Ulam conjecture</strong>.</span>
   </p>
   <p class="hero-lede" data-i18n="heroLede">
-    Formalisations en Lean 4 de trois travaux classiques sur les cycles de Collatz (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978), avec une note d'errata ; un catalogue de trente-six pistes, chacune avec sa fiche ; et le preprint d'avril 2026, avec son erratum.
+    Formalisations en Lean 4 de quatre travaux classiques sur les cycles de Collatz (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, Seifert 1988), avec une note d'errata ; un catalogue de trente-six pistes, chacune avec sa fiche ; et le preprint d'avril 2026, avec son erratum.
   </p>
 </section>
 
@@ -361,21 +361,21 @@
     <em lang="en">This section documents project status and traceability; it is not a claim of acceptance or final proof.</em>
   </p>
 
-  <!-- Status snapshot : 5 cartes compactes (état au 2026-10-28) -->
+  <!-- Status snapshot : 5 cartes compactes (état au 2026-11-07) -->
   <div class="status-snapshot-grid">
 
-    <!-- Carte 1 : Dernier jalon — Steiner 1978 sans H_Rhin (2026-10-28) -->
+    <!-- Carte 1 : Dernier jalon — Seifert 1988 (2026-11-07) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastMilestone">Dernier jalon</div>
-      <div class="status-card-title"><span lang="fr">Steiner 1978 sans l'hypothèse H_Rhin (logs23/, v1.4)</span><span lang="en">Steiner 1978 without the hypothesis H_Rhin (logs23/, v1.4)</span></div>
+      <div class="status-card-title"><span lang="fr">Seifert 1988 en Lean 4 (seifert1988/, v1.6)</span><span lang="en">Seifert 1988 in Lean 4 (seifert1988/, v1.6)</span></div>
       <div class="status-card-meta">
-        <span class="status-card-date">2026-10-28</span>
+        <span class="status-card-date">2026-11-07</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Le dossier logs23/ du dépôt Lean (release v1.4, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>) démontre, sans l'hypothèse <code>H_Rhin</code>, le théorème de Steiner 1978 sur les circuits : le seul circuit des entiers positifs qui soit un cycle est {1, 2} (application raccourcie : x/2 si x est pair, (3x+1)/2 si x est impair ; c'est la boucle 1 → 2 → 1, soit 1 → 4 → 2 → 1 avec l'application usuelle). Il prouve pour cela une minoration bien plus faible que <code>H_Rhin</code>, qui suffit ; <code>H_Rhin</code> lui-même n'est pas démontré, la borne est bien plus faible que les bornes publiées, aucune nouveauté n'est revendiquée, et la formalisation n'apprend rien de nouveau sur les cycles de Collatz. Jalon précédent : les 21 pistes « stub » du catalogue tranchées (27/10/2026).</span>
-        <span lang="en">The logs23/ folder of the Lean repository (release v1.4, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.23720217" target="_blank" rel="noopener">10.5281/zenodo.23720217</a>) proves, without the hypothesis <code>H_Rhin</code>, Steiner's 1978 theorem on circuits: the only circuit on the positive integers that is a cycle is {1, 2} (shortcut map: x/2 for even x, (3x+1)/2 for odd x; this is the loop 1 → 2 → 1, that is 1 → 4 → 2 → 1 with the usual map). To do so it proves a lower bound much weaker than <code>H_Rhin</code>, which suffices; <code>H_Rhin</code> itself is not proved, the bound is far weaker than the published ones, no novelty is claimed, and the formalisation proves nothing new about Collatz cycles. Previous milestone: the 21 "stub" leads of the catalogue settled (2026-10-27).</span>
+        <span lang="fr">Le dossier seifert1988/ du dépôt Lean (release v1.6, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.24033614" target="_blank" rel="noopener">10.5281/zenodo.24033614</a>) formalise l'article de B. G. Seifert (<em>Discrete Mathematics</em> 68, 1988) sur l'arithmétique des cycles : 33 énoncés, tous démontrés sans hypothèse, axiomes standard seuls. Les écarts relevés avec l'article sont listés dans le README du dossier et sur la page Papers. Rien de nouveau sur les cycles de Collatz.</span>
+        <span lang="en">The seifert1988/ folder of the Lean repository (release v1.6, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.24033614" target="_blank" rel="noopener">10.5281/zenodo.24033614</a>) formalises B. G. Seifert's paper (<em>Discrete Mathematics</em> 68, 1988) on the arithmetic of cycles: 33 statements, all proved with no hypothesis, standard axioms only. The slips found in the paper are listed in the folder's README and on the Papers page. Nothing new about Collatz cycles.</span>
       </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9e42fa5/logs23" target="_blank" rel="noopener">→ <code>logs23/</code> (9e42fa5)</a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/610ed6b/seifert1988" target="_blank" rel="noopener">→ <code>seifert1988/</code> (610ed6b)</a>
     </div>
 
     <!-- Carte 2 : Statut paper -->
