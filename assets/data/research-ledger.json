@@ -1,11 +1,40 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-11-06T21:25:54Z",
-  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-10-28 (v0.10.19): release v1.5 of the Lean repository (documentation and LICENSE; ccchallenge links to v1.5); earlier ledger events rewritten without a date are acknowledged by a dated event. Previously, 2026-10-28: Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4). Previously, 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
+  "generated": "2026-11-07T10:59:26Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-11-07 (v0.10.22): Seifert 1988 formalised in Lean (seifert1988/, release v1.6); a dated note on the credit of ledger entry L-A1. Previously, 2026-10-28 (v0.10.19): release v1.5 of the Lean repository (documentation and LICENSE; ccchallenge links to v1.5); earlier ledger events rewritten without a date are acknowledged by a dated event. Previously, 2026-10-28: Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4). Previously, 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "seifert1988-lean-formalisation-v1-6-2026-11-07",
+      "type": "lean",
+      "subtype": "formalisation-classic",
+      "date": "2026-11-07",
+      "datetime": "2026-11-07T11:45:14+01:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-11-07",
+      "title": {
+        "fr": "Seifert 1988 en Lean 4 (seifert1988/, release v1.6)",
+        "en": "Seifert 1988 in Lean 4 (seifert1988/, release v1.6)"
+      },
+      "summary": {
+        "fr": "Le dossier seifert1988/ du dépôt one-obstruction-three-faces-lean formalise B. G. Seifert, « On the arithmetic of cycles for the Collatz–Hasse (‘Syracuse’) conjectures », Discrete Mathematics 68 (1988), 293-298 (DOI 10.1016/0012-365X(88)90121-5) : des critères arithmétiques pour qu'un vecteur d'exposants soit celui d'un cycle de f_ε(n) = (3n + ε)/2^k sur les entiers impairs positifs (ε = ±1). 33 énoncés figés avant leurs preuves (commit 233b2c4), tous prouvés, sans hypothèse, 0 sorry dans les preuves, 0 native_decide, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; revérifiés le 07/11/2026 depuis un clone neuf du tag v1.6. Énoncés comparés le 07/11/2026 aux pages du PDF de l'éditeur. Relevé, avec la définition 1.1 de l'article : la formule imprimée (e) est celle du vecteur lu à rebours ; les théorèmes 1 et 2 sont prouvés une fois (e) et l'exposant du théorème 2 lus ainsi ; tels qu'imprimés, le théorème 1(b) et le théorème 2 (lu avec le numérateur de (1.3)) sont faux pour ε = −1, et ni prouvés ni réfutés pour ε = +1 ; le corollaire 1 est faux, et seulement pour le cycle (5 7) de f_−1 ; la conclusion du corollaire 2 est la solution classique de 2^l − 3^r = ±1 (Levi ben Gerson), prouvée sans son hypothèse. Ces écarts sont peut-être déjà connus ; aucune nouveauté n'est revendiquée, et la formalisation n'apprend rien de nouveau sur les cycles de Collatz. Huit relectures adverses internes assistées par IA ; ce n'est pas une évaluation par les pairs. Release v1.6 (07/11/2026), archive Zenodo DOI 10.5281/zenodo.24033614 ; proposé sur ccchallenge (n° 17), IA déclarée : Claude Opus 5.5 (Anthropic). Le même jour, une note datée sur le crédit de l'entrée L-A1 est ajoutée à l'événement du 20/10/2026.",
+        "en": "The seifert1988/ folder of the one-obstruction-three-faces-lean repository formalises B. G. Seifert, \"On the arithmetic of cycles for the Collatz–Hasse ('Syracuse') conjectures\", Discrete Mathematics 68 (1988), 293-298 (DOI 10.1016/0012-365X(88)90121-5): arithmetic criteria for a vector of exponents to be that of a cycle of f_ε(n) = (3n + ε)/2^k on the positive odd integers (ε = ±1). 33 statements frozen before their proofs (commit 233b2c4), all proved, with no hypothesis, 0 sorry in the proofs, 0 native_decide, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); re-checked on 2026-11-07 from a fresh clone of the tag v1.6. Statements compared on 2026-11-07 with the pages of the publisher's PDF. Found, with Definition 1.1 of the paper: the printed formula (e) is that of the vector read backwards; Theorems 1 and 2 are proved once (e) and the exponent of Theorem 2 are read that way; as printed, Theorem 1(b) and Theorem 2 (read with the numerator of (1.3)) fail for ε = −1, and are neither proved nor refuted for ε = +1; Corollary 1 fails, and only for the cycle (5 7) of f_−1; the conclusion of Corollary 2 is the classical solution of 2^l − 3^r = ±1 (Levi ben Gerson), proved without its hypothesis. These slips may well be known; no novelty is claimed, and the formalisation proves nothing new about Collatz cycles. Eight internal AI-assisted adversarial reviews; this is not peer review. Release v1.6 (2026-11-07), Zenodo archive DOI 10.5281/zenodo.24033614; submitted to ccchallenge (no. 17), AI declared: Claude Opus 5.5 (Anthropic). On the same day, a dated note on the credit of ledger entry L-A1 is appended to the event of 2026-10-20."
+      },
+      "artefacts": [
+        {"label": "seifert1988/ (610ed6b)", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/610ed6b/seifert1988", "kind": "repository"},
+        {"label": "DOI 10.5281/zenodo.24033614", "url": "https://doi.org/10.5281/zenodo.24033614", "kind": "doi"},
+        {"label": "Release v1.6", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/releases/tag/v1.6", "kind": "tag"}
+      ],
+      "related": ["lean-repo-release-v1-5-2026-10-28", "steiner1978-without-h-rhin-2026-10-28", "prior-literature-credits-2026-10-20"]
+    },
 
     {
       "id": "ledger-undated-rewrites-acknowledged-2026-10-28",
@@ -1114,13 +1143,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 40,
-    "by_type": {"lean": 11, "repository": 10, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
-    "by_status": {"validated": 30, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
-    "by_milestone": {"true": 27, "false": 13},
-    "by_claim_scope": {"documentation": 25, "formal_lean": 10, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 28, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
-    "note_fr": "Registre partiel : 40 événements (mise à jour du 2026-11-06, v0.10.21). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 40 events (update of 2026-11-06, v0.10.21). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "total_events": 41,
+    "by_type": {"lean": 12, "repository": 10, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
+    "by_status": {"validated": 31, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
+    "by_milestone": {"true": 28, "false": 13},
+    "by_claim_scope": {"documentation": 25, "formal_lean": 11, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
+    "by_epistemic_status": {"verified": 29, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
+    "note_fr": "Registre partiel : 41 événements (mise à jour du 2026-11-07, v0.10.22). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 41 events (update of 2026-11-07, v0.10.22). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }
