@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-11-07T10:47:59Z</updated>
+  <updated>2026-11-07T17:26:09Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,16 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.23 — Halbeisen–Hungerbühler 1997: Remark 1 proved in Lean 4</title>
+    <link href="https://collatz-lab.org/papers/#formalisations"/>
+    <id>urn:collatz-cycles:v0.10.23-hh1997-remark1-2026-11-07</id>
+    <updated>2026-11-07T17:26:09Z</updated>
+    <published>2026-11-07T17:26:09Z</published>
+    <category term="release"/>
+    <summary>The bound 1/2 of Remark 1 of L. Halbeisen and N. Hungerbühler, Acta Arithmetica 78 (1997), for l &gt; 1000, which the paper states without proof, is proved in Lean 4 (release v1.7 of the Lean repository: 71 statements, standard axioms only). K. Knight's HAL preprint (2023) already states, without proof and only for l = ⌈n log₂ 3⌉, the constants 1/6 and 1/2. Nothing new about Collatz cycles; this site does not prove the conjecture.</summary>
+  </entry>
 
   <entry>
     <title>v0.10.22 — Seifert 1988 in Lean 4</title>

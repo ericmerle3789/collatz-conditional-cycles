@@ -31,7 +31,7 @@
 <meta property="og:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-22">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-23">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Λ_{S,k} = S log 2 - k log 3 — Collatz Conditional Cycles">
@@ -43,7 +43,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
 <meta name="twitter:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-22">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-23">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
 <script type="application/ld+json">
@@ -187,7 +187,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
 <!-- CSS principal -->
-<link rel="stylesheet" href="assets/css/main.css?v=20261107-V0-10-22">
+<link rel="stylesheet" href="assets/css/main.css?v=20261107-V0-10-23">
 
 <!-- Analytics : Cloudflare Web Analytics activé côté Cloudflare dashboard
      (privacy-first, no cookies, GDPR-compliant, no consent banner needed).
@@ -294,6 +294,17 @@
   <div class="status-snapshot-grid">
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow"><span lang="fr">Dernier jalon</span><span lang="en">Latest milestone</span></div>
+      <div class="status-card-title"><span lang="fr">Halbeisen–Hungerbühler 1997</span><span lang="en">Halbeisen–Hungerbühler 1997</span></div>
+      <div class="status-card-meta"><span class="status-card-date">2026-11-07</span></div>
+      <p class="status-card-summary">
+        <span lang="fr">Tout ce que l'article démontre est vérifié par le noyau de Lean ; depuis le 07/11/2026, la borne 1/2 de la Remarque 1 (pour l &gt; 1000), que l'article énonce sans la démontrer, l'est aussi (71 énoncés en tout). Cette borne est aussi énoncée, sans preuve et seulement pour une partie des cas (l = ⌈n log<sub>2</sub> 3⌉), par K. Knight (prépublication HAL, 2023). Aucune nouveauté n'est revendiquée.</span>
+        <span lang="en">Everything the paper proves is checked by the Lean kernel; since 2026-11-07, so is the bound 1/2 of Remark 1 (for l &gt; 1000), which the paper states without proof (71 statements in all). This bound is also stated, without proof and only for some of the cases (l = ⌈n log<sub>2</sub> 3⌉), by K. Knight (HAL preprint, 2023). No novelty is claimed.</span>
+      </p>
+        <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.7/hh1997#remark-1-for-l--10-added-2026-11-07" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
+        <a class="status-card-link" href="https://doi.org/10.5281/zenodo.24041065" target="_blank" rel="noopener"><span lang="fr">DOI (v1.7)</span><span lang="en">DOI (v1.7)</span></a>
+    </div>
+    <div class="status-card" data-family="lean">
+      <div class="status-card-eyebrow"><span lang="fr">Article de 1988</span><span lang="en">Paper of 1988</span></div>
       <div class="status-card-title"><span lang="fr">Seifert 1988</span><span lang="en">Seifert 1988</span></div>
       <div class="status-card-meta"><span class="status-card-date">2026-11-07</span></div>
       <p class="status-card-summary">
@@ -325,17 +336,6 @@
         <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.5/lagarias1990#how-to-check" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
         <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23514572" target="_blank" rel="noopener"><span lang="fr">DOI (v1.1)</span><span lang="en">DOI (v1.1)</span></a>
     </div>
-    <div class="status-card" data-family="lean">
-      <div class="status-card-eyebrow"><span lang="fr">Article de 1997</span><span lang="en">Paper of 1997</span></div>
-      <div class="status-card-title"><span lang="fr">Halbeisen–Hungerbühler 1997</span><span lang="en">Halbeisen–Hungerbühler 1997</span></div>
-      <div class="status-card-meta"><span class="status-card-date">2026-10-19</span></div>
-      <p class="status-card-summary">
-        <span lang="fr">Tout ce que l'article démontre est vérifié par le noyau de Lean (70 énoncés) ; la borne 1/2 de la Remarque 1 (pour l &gt; 1000), que l'article ne démontre pas, ne l'est pas non plus.</span>
-        <span lang="en">Everything the paper proves is checked by the Lean kernel (70 statements); the bound 1/2 of Remark 1 (for l &gt; 1000), which the paper does not prove, is not proved here either.</span>
-      </p>
-        <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.5/hh1997#how-to-check" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
-        <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener"><span lang="fr">DOI (v1.0)</span><span lang="en">DOI (v1.0)</span></a>
-    </div>
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow"><span lang="fr">Note technique</span><span lang="en">Technical note</span></div>
       <div class="status-card-title"><span lang="fr">Note d'errata</span><span lang="en">Errata note</span></div>
@@ -347,7 +347,7 @@
         <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
     </div>
   </div>
-  <p class="research-status-positioning"><em lang="fr">Toutes les versions des releases Lean : DOI de concept <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (dernière : v1.6, 07/11/2026). Cartes complètes : <a href="papers/">Papers</a>.</em><em lang="en">All versions of the Lean releases: concept DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (latest: v1.6, 2026-11-07). Full cards: <a href="papers/">Papers</a>.</em></p>
+  <p class="research-status-positioning"><em lang="fr">Toutes les versions des releases Lean : DOI de concept <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (dernière : v1.7, 07/11/2026). Cartes complètes : <a href="papers/">Papers</a>.</em><em lang="en">All versions of the Lean releases: concept DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (latest: v1.7, 2026-11-07). Full cards: <a href="papers/">Papers</a>.</em></p>
 </section>
 
 <section id="research-status" class="research-status-snapshot">
@@ -393,30 +393,30 @@
       <a class="status-card-link" href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">→ DOI Zenodo</a>
     </div>
 
-    <!-- Carte 3 : Dernière vérification Lean (seifert1988/, Seifert 1988, 2026-11-07) -->
+    <!-- Carte 3 : Dernière vérification Lean (hh1997/, Remarque 1 de Halbeisen–Hungerbühler 1997, 2026-11-07) -->
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow" data-i18n="statusLastLean">Dernière vérification Lean</div>
-      <div class="status-card-title"><span lang="fr">Seifert 1988 : 33 énoncés vérifiés sous Lean 4.34.0</span><span lang="en">Seifert 1988: 33 statements checked on Lean 4.34.0</span></div>
+      <div class="status-card-title"><span lang="fr">Halbeisen–Hungerbühler 1997 : 71 énoncés vérifiés sous Lean 4.34.0</span><span lang="en">Halbeisen–Hungerbühler 1997: 71 statements checked on Lean 4.34.0</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-11-07</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Dossier seifert1988/ (release v1.6) : 33 énoncés figés avant leurs preuves, tous prouvés, sans hypothèse ; 0 <code>sorry</code> dans les preuves, 0 <code>native_decide</code>, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; <code>check.sh</code> relancé le 07/11/2026 depuis un clone neuf du commit 6404e33 (les commits suivants ne changent aucune source Lean, ni <code>check.sh</code>, <code>env.sh</code> ou <code>SHA256SUMS</code> ; Lean 4.34.0 et le cache de Mathlib déjà présents). Il relance aussi les vérifications de logs23/ (15 rapports d'axiomes) et de steiner1978/ (12) ; tous les rapports n'ont que les axiomes standard. Archive Zenodo (logiciel, v1.6) : DOI <a href="https://doi.org/10.5281/zenodo.24033614" target="_blank" rel="noopener">10.5281/zenodo.24033614</a>. Précédemment : logs23/, Steiner 1978 sans <code>H_Rhin</code>, 14 énoncés (<code>check.sh</code> relancé le 28/10/2026 depuis un clone neuf du commit f9c33aa).</span>
-        <span lang="en">Folder seifert1988/ (release v1.6): 33 statements frozen before their proofs, all proved, with no hypothesis; 0 <code>sorry</code> in the proofs, 0 <code>native_decide</code>, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); <code>check.sh</code> run on 2026-11-07 from a fresh clone of commit 6404e33 (the later commits change no Lean source, <code>check.sh</code>, <code>env.sh</code> or <code>SHA256SUMS</code>; Lean 4.34.0 and Mathlib's cache already present). It also re-runs the checks of logs23/ (15 axiom reports) and steiner1978/ (12); every report has standard axioms only. Zenodo archive (software, v1.6): DOI <a href="https://doi.org/10.5281/zenodo.24033614" target="_blank" rel="noopener">10.5281/zenodo.24033614</a>. Previously: logs23/, Steiner 1978 without <code>H_Rhin</code>, 14 statements (<code>check.sh</code> run on 2026-10-28 from a fresh clone of commit f9c33aa).</span>
+        <span lang="fr">Dossier hh1997/ (release v1.7) : preuve de <code>remark1_large</code> (Remarque 1, borne 1/2 pour l &gt; 1000), écrite contre son énoncé figé le 19/10/2026, inchangé ; 0 <code>sorry</code> dans les preuves, 0 <code>native_decide</code>, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; <code>check.sh</code> relancé le 07/11/2026 depuis un clone neuf du commit 31e63a4 (35 fichiers, 85 rapports d'axiomes, identiques aux rapports enregistrés ; Lean 4.34.0 et le cache de Mathlib déjà présents ; les commits suivants ne changent aucun fichier Lean). Archive Zenodo (logiciel, v1.7) : DOI <a href="https://doi.org/10.5281/zenodo.24041065" target="_blank" rel="noopener">10.5281/zenodo.24041065</a>. Précédemment : seifert1988/, Seifert 1988, 33 énoncés (<code>check.sh</code> relancé le 07/11/2026 depuis un clone neuf du commit 6404e33).</span>
+        <span lang="en">Folder hh1997/ (release v1.7): proof of <code>remark1_large</code> (Remark 1, the bound 1/2 for l &gt; 1000), written against its statement frozen on 2026-10-19, which is unchanged; 0 <code>sorry</code> in the proofs, 0 <code>native_decide</code>, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); <code>check.sh</code> run on 2026-11-07 from a fresh clone of commit 31e63a4 (35 files, 85 axiom reports, identical to the recorded ones; Lean 4.34.0 and Mathlib's cache already present; the later commits change no Lean file). Zenodo archive (software, v1.7): DOI <a href="https://doi.org/10.5281/zenodo.24041065" target="_blank" rel="noopener">10.5281/zenodo.24041065</a>. Previously: seifert1988/, Seifert 1988, 33 statements (<code>check.sh</code> run on 2026-11-07 from a fresh clone of commit 6404e33).</span>
       </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/610ed6b/seifert1988" target="_blank" rel="noopener">→ <code>seifert1988/</code> (610ed6b)</a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/20788ee/hh1997" target="_blank" rel="noopener">→ <code>hh1997/</code> (20788ee)</a>
     </div>
 
-    <!-- Carte 4 : Dernier audit (relectures adverses de la v1.6 et de la v0.10.22, 2026-11-07) -->
+    <!-- Carte 4 : Dernier audit (relectures adverses de la v1.7 et de la v0.10.23, 2026-11-07) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
-      <div class="status-card-title"><span lang="fr">Relectures adverses de la v1.6 et de la v0.10.22</span><span lang="en">Adversarial reviews of v1.6 and v0.10.22</span></div>
+      <div class="status-card-title"><span lang="fr">Relectures adverses de la v1.7 et de la v0.10.23</span><span lang="en">Adversarial reviews of v1.7 and v0.10.23</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-11-07</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Relectures adverses internes, assistées par IA (ce n'est pas une évaluation par les pairs), un relecteur neuf par passe. Release v1.6 du dépôt Lean (Seifert 1988) : huit passes ; les 33 énoncés et la notice du dossier seifert1988/ ont passé deux relectures d'affilée sans remarque (passes 4 et 5) ; les textes écrits pour la release ont reçu des remarques à chacune des passes 5 à 8 : la notice racine (passe 5), la fiche Zenodo et les notes de version (passes 6 et 7), un paragraphe ajouté pour la release à la notice du dossier, relu sans remarque à la passe 5 (passe 8) ; toutes corrigées avant publication. Changements de la v0.10.22 du site (cartes Seifert 1988, registre, compteurs), relus contre la release publiée ; remarques corrigées. Audit précédent : relectures adverses des changements de la v0.10.21 (accessibilité, téléphones, pages mises à jour), 2026-11-06.</span>
-        <span lang="en">Internal adversarial reviews, AI-assisted (not peer review), with a fresh reviewer for each pass. Release v1.6 of the Lean repository (Seifert 1988): eight passes; the 33 statements and the README of the folder seifert1988/ passed two reviews in a row with no remark (passes 4 and 5); the texts written for the release received remarks at each of passes 5 to 8: the root README (pass 5), the Zenodo record and the release notes (passes 6 and 7), a paragraph added for the release to the folder's README, read with no remark at pass 5 (pass 8); all corrected before publication. Changes of v0.10.22 of the site (Seifert 1988 cards, ledger, counters), reviewed against the published release; remarks corrected. Previous audit: adversarial reviews of the changes of v0.10.21 (accessibility, phones, pages brought up to date), 2026-11-06.</span>
+        <span lang="fr">Relectures adverses internes, assistées par IA (ce n'est pas une évaluation par les pairs), un relecteur neuf par passe. Preuve de la Remarque 1 de Halbeisen–Hungerbühler 1997 et ses notices (release v1.7 du dépôt Lean) : six passes ; les passes 5 et 6 sans remarque bloquante ni mineure (des détails de forme, appliqués ensuite, documentation seule). Les remarques des passes 1 à 4 portaient sur l'attribution ou la chronologie, aucune sur la preuve : la prépublication de K. Knight (2023) n'était pas créditée ; une phrase disait à tort qu'elle avait été lue après la preuve (elle l'avait été en septembre 2026, sans que ce passage soit relevé) ; la fiche Zenodo attribuait à Knight la borne 1/2, qui est celle de l'article. Toutes corrigées avant publication. Textes ajoutés pour la publication de la v1.7 (notes de version, notices, fiche Zenodo) et changements de la v0.10.23 du site (cartes Halbeisen–Hungerbühler, registre, compteurs) : relus contre la release publiée par un relecteur neuf. Audit précédent : relectures adverses de la v1.6 et de la v0.10.22, 2026-11-07.</span>
+        <span lang="en">Internal adversarial reviews, AI-assisted (not peer review), with a fresh reviewer for each pass. Proof of Remark 1 of Halbeisen–Hungerbühler 1997 and its READMEs (release v1.7 of the Lean repository): six passes; passes 5 and 6 with no blocking or minor remark (details of form, applied afterwards, documentation only). The remarks of passes 1 to 4 concerned attribution or chronology, none the proof: K. Knight's preprint (2023) was not credited; a sentence wrongly said that it had been read after the proof (it had been read in September 2026, without that passage being noticed); the Zenodo record attributed to Knight the bound 1/2, which is the paper's. All corrected before publication. Texts added for the publication of v1.7 (release notes, READMEs, Zenodo record) and changes of v0.10.23 of the site (Halbeisen–Hungerbühler cards, ledger, counters): reviewed against the published release by a fresh reviewer. Previous audit: adversarial reviews of v1.6 and v0.10.22, 2026-11-07.</span>
       </p>
       <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
@@ -997,7 +997,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.22 · 2026-11-07
+    Cartography · v0.10.23 · 2026-11-07
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -1084,6 +1084,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   openTarget();
 })();
 </script>
-<script src="assets/js/main.js?v=20261107-V0-10-22"></script>
+<script src="assets/js/main.js?v=20261107-V0-10-23"></script>
 </body>
 </html>

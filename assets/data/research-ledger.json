@@ -1,11 +1,40 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-11-07T10:59:26Z",
-  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-11-07 (v0.10.22): Seifert 1988 formalised in Lean (seifert1988/, release v1.6); a dated note on the credit of ledger entry L-A1. Previously, 2026-10-28 (v0.10.19): release v1.5 of the Lean repository (documentation and LICENSE; ccchallenge links to v1.5); earlier ledger events rewritten without a date are acknowledged by a dated event. Previously, 2026-10-28: Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4). Previously, 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
+  "generated": "2026-11-07T17:26:09Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-11-07 (v0.10.23): Remark 1 of Halbeisen–Hungerbühler 1997 (the bound 1/2 for l > 1000) proved in Lean (hh1997/, release v1.7); K. Knight's preprint (2023) credited. Previously, 2026-11-07 (v0.10.22): Seifert 1988 formalised in Lean (seifert1988/, release v1.6); a dated note on the credit of ledger entry L-A1. Previously, 2026-10-28 (v0.10.19): release v1.5 of the Lean repository (documentation and LICENSE; ccchallenge links to v1.5); earlier ledger events rewritten without a date are acknowledged by a dated event. Previously, 2026-10-28: Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4). Previously, 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "hh1997-remark1-large-v1-7-2026-11-07",
+      "type": "lean",
+      "subtype": "formalisation-classic",
+      "date": "2026-11-07",
+      "datetime": "2026-11-07T18:23:39+01:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-11-07",
+      "title": {
+        "fr": "Halbeisen–Hungerbühler 1997 : la borne 1/2 de la Remarque 1 démontrée en Lean (hh1997/, release v1.7)",
+        "en": "Halbeisen–Hungerbühler 1997: the bound 1/2 of Remark 1 proved in Lean (hh1997/, release v1.7)"
+      },
+      "summary": {
+        "fr": "Le dossier hh1997/ du dépôt one-obstruction-three-faces-lean démontre remark1_large : la borne 1/2 de la Remarque 1 de L. Halbeisen et N. Hungerbühler, « Optimal bounds for the length of rational Collatz cycles », Acta Arithmetica 78 (1997), 227-239, pour l > 1000. L'article l'énonce sans la démontrer ; jusqu'à la release v1.6, elle était énoncée dans le dossier et non démontrée. La preuve est écrite contre l'énoncé figé le 19/10/2026 (commit 36d5136), inchangé : 71 énoncés démontrés, 0 sorry dans les preuves, 0 native_decide, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; check.sh relancé depuis un clone neuf du commit 31e63a4 (35 fichiers, 85 rapports d'axiomes, identiques aux rapports enregistrés). Crédit : la borne 1/2 pour l > 1000 est celle de l'article ; la prépublication de K. Knight (HAL hal-04261183v1, 2023) énonce, sans preuve et seulement pour l = ⌈n log₂ 3⌉, les constantes 1/6 et 1/2 ; ici 1/6 est démontré pour tout l ≥ 2 et 1/2 pour l > 1000. Sa version publiée (2026) n'a pas été lue. Aucune nouveauté n'est revendiquée ; la formalisation n'apporte rien de nouveau sur les cycles de Collatz.",
+        "en": "The hh1997/ folder of the one-obstruction-three-faces-lean repository proves remark1_large: the bound 1/2 of Remark 1 of L. Halbeisen and N. Hungerbühler, \"Optimal bounds for the length of rational Collatz cycles\", Acta Arithmetica 78 (1997), 227-239, for l > 1000. The paper states it without proof; up to release v1.6, it was stated in the folder and not proved. The proof is written against the statement frozen on 2026-10-19 (commit 36d5136), which is unchanged: 71 proved statements, 0 sorry in the proofs, 0 native_decide, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); check.sh run from a fresh clone of commit 31e63a4 (35 files, 85 axiom reports, identical to the recorded ones). Credit: the bound 1/2 for l > 1000 is the paper's; K. Knight's preprint (HAL hal-04261183v1, 2023) states, without proof and only for l = ⌈n log₂ 3⌉, the constants 1/6 and 1/2; here 1/6 is proved for every l ≥ 2 and 1/2 for l > 1000. Its published version (2026) was not read. No novelty is claimed; the formalisation proves nothing new about Collatz cycles."
+      },
+      "artefacts": [
+        {"label": "hh1997/ (20788ee)", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/20788ee/hh1997", "kind": "repository"},
+        {"label": "DOI 10.5281/zenodo.24041065", "url": "https://doi.org/10.5281/zenodo.24041065", "kind": "doi"},
+        {"label": "Release v1.7", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/releases/tag/v1.7", "kind": "tag"}
+      ],
+      "related": ["hh1997-lean-formalisation-2026-10-19", "errata-note-hh1997-lagarias1990-2026-10-21", "seifert1988-lean-formalisation-v1-6-2026-11-07"]
+    },
 
     {
       "id": "seifert1988-lean-formalisation-v1-6-2026-11-07",
@@ -1143,13 +1172,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 41,
-    "by_type": {"lean": 12, "repository": 10, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
-    "by_status": {"validated": 31, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
-    "by_milestone": {"true": 28, "false": 13},
-    "by_claim_scope": {"documentation": 25, "formal_lean": 11, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 29, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
-    "note_fr": "Registre partiel : 41 événements (mise à jour du 2026-11-07, v0.10.22). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 41 events (update of 2026-11-07, v0.10.22). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "total_events": 42,
+    "by_type": {"lean": 13, "repository": 10, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
+    "by_status": {"validated": 32, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
+    "by_milestone": {"true": 29, "false": 13},
+    "by_claim_scope": {"documentation": 25, "formal_lean": 12, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
+    "by_epistemic_status": {"verified": 30, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
+    "note_fr": "Registre partiel : 42 événements (mise à jour du 2026-11-07, v0.10.23). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 42 events (update of 2026-11-07, v0.10.23). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }

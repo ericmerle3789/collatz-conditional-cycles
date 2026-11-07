@@ -26,7 +26,7 @@
 <meta property="og:description" content="On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions. Zenodo preprint, April 2026 (erratum of 2 Oct 2026). DOI 10.5281/zenodo.19790405.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/papers/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-22">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-23">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
@@ -37,7 +37,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Papers — Collatz / Syracuse Conditional Cycles">
 <meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Zenodo preprint, April 2026 (erratum of 2 Oct 2026). DOI 10.5281/zenodo.19790405.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-22">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-23">
 
 <!-- JSON-LD : single ScholarlyArticle (preprint) (no future-publication claims) -->
 <script type="application/ld+json">
@@ -102,7 +102,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261107-V0-10-22">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261107-V0-10-23">
 </head>
 <body>
 
@@ -208,18 +208,18 @@
     </div>
 
     <div class="card" style="border-left: 4px solid #2f855a;">
-      <div class="card-eyebrow" lang="fr" style="color: color-mix(in srgb, #2f855a 50%, var(--text-primary));">Formalisation d'un classique · Lean 4.34.0 · 2026-10-19</div>
-      <div class="card-eyebrow" lang="en" style="color: color-mix(in srgb, #2f855a 50%, var(--text-primary));">Formalisation of a classic · Lean 4.34.0 · 2026-10-19</div>
+      <div class="card-eyebrow" lang="fr" style="color: color-mix(in srgb, #2f855a 50%, var(--text-primary));">Formalisation d'un classique · Lean 4.34.0 · 2026-10-19 ; Remarque 1 le 2026-11-07</div>
+      <div class="card-eyebrow" lang="en" style="color: color-mix(in srgb, #2f855a 50%, var(--text-primary));">Formalisation of a classic · Lean 4.34.0 · 2026-10-19; Remark 1 on 2026-11-07</div>
       <h3 lang="fr">Halbeisen–Hungerbühler 1997 en Lean 4</h3>
       <h3 lang="en">Halbeisen–Hungerbühler 1997 in Lean 4</h3>
       <p style="font-size: 0.92rem;" lang="fr">
-        L. Halbeisen et N. Hungerbühler, « Optimal bounds for the length of rational Collatz cycles », <em>Acta Arithmetica</em> 78 (1997), 227-239. <strong>C'est la formalisation d'un résultat classique de 1997, pas un résultat nouveau.</strong> Tout ce que l'article démontre est vérifié par le noyau de Lean, ainsi que la vérification finie de l'exemple du §4.4, que l'article faisait en partie par un calcul approché : si la conjecture est vérifiée jusqu'à 212 366 032 807 211, tout cycle d'entiers qui ne contient pas 1 a au moins 102 225 496 éléments. 70 énoncés figés avant leur preuve, 0 <code>sorry</code> dans les preuves, 0 <code>native_decide</code>, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0). Non démontrée : la borne 1/2 de la Remarque 1 (pour l &gt; 1000), que l'article ne démontre pas non plus. Écrit par Claude Opus 5.5 (Anthropic), recompilé à froid avant publication. Code, commande de vérification et correspondance ligne à ligne avec l'article : <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997" target="_blank" rel="noopener"><code>hh1997/</code> (36d5136)</a>. Archive Zenodo (logiciel) : DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>. Note d'errata commune aux deux articles (Zenodo, 21/10/2026, DOI <a href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener">10.5281/zenodo.23535498</a>) : 9 points pour cet article, chacun vérifié par un théorème Lean ou par un script. Aucun n'invalide un théorème que nous avons formalisé. La liste n'est pas exhaustive.
+        L. Halbeisen et N. Hungerbühler, « Optimal bounds for the length of rational Collatz cycles », <em>Acta Arithmetica</em> 78 (1997), 227-239. <strong>C'est la formalisation d'un résultat classique de 1997, pas un résultat nouveau.</strong> Tout ce que l'article démontre est vérifié par le noyau de Lean, ainsi que la vérification finie de l'exemple du §4.4, que l'article faisait en partie par un calcul approché : si la conjecture est vérifiée jusqu'à 212 366 032 807 211, tout cycle d'entiers qui ne contient pas 1 a au moins 102 225 496 éléments. 71 énoncés figés avant leur preuve, 0 <code>sorry</code> dans les preuves, 0 <code>native_decide</code>, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0). La borne 1/2 de la Remarque 1 (pour l &gt; 1000), que l'article énonce sans la démontrer, est démontrée depuis le 07/11/2026 (release v1.7), contre son énoncé figé le 19/10/2026 ; elle était jusque-là signalée ici comme non démontrée. La minoration 1/6 (l'article imprime 1/20), démontrée ici pour tout l ≥ 2, et la borne 1/2 sont aussi énoncées, sans preuve et seulement pour l = ⌈n log<sub>2</sub> 3⌉, par K. Knight (prépublication HAL <a href="https://hal.science/hal-04261183v1" target="_blank" rel="noopener">hal-04261183v1</a>, 2023, p. 7, de l'article « Collatz high cycles do not exist » cité plus bas) ; sa version publiée (2026) n'a pas été lue. Écrit par Claude Opus 5.5 (Anthropic), recompilé à froid avant publication. Code, commande de vérification et correspondance ligne à ligne avec l'article : <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997" target="_blank" rel="noopener"><code>hh1997/</code> (36d5136)</a> ; preuve de la Remarque 1 : <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/20788ee/hh1997" target="_blank" rel="noopener"><code>hh1997/</code> (20788ee)</a>. Archive Zenodo (logiciel) : DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a> (v1.0) ; avec la preuve de la Remarque 1 : DOI <a href="https://doi.org/10.5281/zenodo.24041065" target="_blank" rel="noopener">10.5281/zenodo.24041065</a> (v1.7). Note d'errata commune aux deux articles (Zenodo, 21/10/2026, DOI <a href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener">10.5281/zenodo.23535498</a>) : 9 points pour cet article, chacun vérifié par un théorème Lean ou par un script. Aucun n'invalide un théorème que nous avons formalisé. La liste n'est pas exhaustive. Cette note est antérieure à la preuve de la Remarque 1 et ne crédite pas Knight (note datée dans le README du dossier).
       </p>
       <p style="font-size: 0.92rem;" lang="en">
-        L. Halbeisen and N. Hungerbühler, "Optimal bounds for the length of rational Collatz cycles", <em>Acta Arithmetica</em> 78 (1997), 227-239. <strong>This is the formalisation of a classical 1997 result, not a new result.</strong> Everything the paper proves is checked by the Lean kernel, together with the finite verification behind the example of §4.4, which the paper did partly numerically: if the conjecture is verified up to 212,366,032,807,211, every cycle of integers not containing 1 has at least 102,225,496 elements. 70 statements frozen before their proofs, 0 <code>sorry</code> in the proofs, 0 <code>native_decide</code>, standard axioms only (Lean 4.34.0, Mathlib v4.34.0). Not proved: the 1/2 bound of Remark 1 (for l &gt; 1000), which the paper does not prove either. Written by Claude Opus 5.5 (Anthropic), recompiled from scratch before publication. Code, verification command and line-by-line comparison with the paper: <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997" target="_blank" rel="noopener"><code>hh1997/</code> (36d5136)</a>. Zenodo archive (software): DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a>. Errata note common to both papers (Zenodo, 2026-10-21, DOI <a href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener">10.5281/zenodo.23535498</a>): 9 points for this paper, each checked by a Lean theorem or by a script. None of them invalidates a theorem that we formalised. The list is not exhaustive.
+        L. Halbeisen and N. Hungerbühler, "Optimal bounds for the length of rational Collatz cycles", <em>Acta Arithmetica</em> 78 (1997), 227-239. <strong>This is the formalisation of a classical 1997 result, not a new result.</strong> Everything the paper proves is checked by the Lean kernel, together with the finite verification behind the example of §4.4, which the paper did partly numerically: if the conjecture is verified up to 212,366,032,807,211, every cycle of integers not containing 1 has at least 102,225,496 elements. 71 statements frozen before their proofs, 0 <code>sorry</code> in the proofs, 0 <code>native_decide</code>, standard axioms only (Lean 4.34.0, Mathlib v4.34.0). The 1/2 bound of Remark 1 (for l &gt; 1000), which the paper states without proof, is proved since 2026-11-07 (release v1.7), against its statement frozen on 2026-10-19; until then it was listed here as not proved. The lower bound 1/6 (the paper prints 1/20), proved here for every l ≥ 2, and the bound 1/2 are also stated, without proof and only for l = ⌈n log<sub>2</sub> 3⌉, by K. Knight (HAL preprint <a href="https://hal.science/hal-04261183v1" target="_blank" rel="noopener">hal-04261183v1</a>, 2023, p. 7, of the paper "Collatz high cycles do not exist" cited below); its published version (2026) was not read. Written by Claude Opus 5.5 (Anthropic), recompiled from scratch before publication. Code, verification command and line-by-line comparison with the paper: <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/36d5136/hh1997" target="_blank" rel="noopener"><code>hh1997/</code> (36d5136)</a>; proof of Remark 1: <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/20788ee/hh1997" target="_blank" rel="noopener"><code>hh1997/</code> (20788ee)</a>. Zenodo archive (software): DOI <a href="https://doi.org/10.5281/zenodo.23498096" target="_blank" rel="noopener">10.5281/zenodo.23498096</a> (v1.0); with the proof of Remark 1: DOI <a href="https://doi.org/10.5281/zenodo.24041065" target="_blank" rel="noopener">10.5281/zenodo.24041065</a> (v1.7). Errata note common to both papers (Zenodo, 2026-10-21, DOI <a href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener">10.5281/zenodo.23535498</a>): 9 points for this paper, each checked by a Lean theorem or by a script. None of them invalidates a theorem that we formalised. The list is not exhaustive. This note predates the proof of Remark 1 and does not credit Knight (dated note in the folder's README).
       </p>
-      <p style="font-size: 0.88rem;" lang="fr"><strong>Pour auditer</strong> : le README du dossier, section « How to check » (release v1.5) : énoncés figés, commande de revérification depuis un clone neuf, rapports d'axiomes enregistrés et écarts avec l'article. <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.5/hh1997#how-to-check" target="_blank" rel="noopener" style="color: var(--accent);">hh1997/README.md</a></p>
-      <p style="font-size: 0.88rem;" lang="en"><strong>To audit</strong>: the folder's README, section "How to check" (release v1.5): frozen statements, re-check command from a fresh clone, recorded axiom reports and differences from the paper. <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.5/hh1997#how-to-check" target="_blank" rel="noopener" style="color: var(--accent);">hh1997/README.md</a></p>
+      <p style="font-size: 0.88rem;" lang="fr"><strong>Pour auditer</strong> : le README du dossier, section « How to check » (release v1.7) : énoncés figés, commande de revérification depuis un clone neuf, rapports d'axiomes enregistrés et écarts avec l'article. <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.7/hh1997#how-to-check" target="_blank" rel="noopener" style="color: var(--accent);">hh1997/README.md</a></p>
+      <p style="font-size: 0.88rem;" lang="en"><strong>To audit</strong>: the folder's README, section "How to check" (release v1.7): frozen statements, re-check command from a fresh clone, recorded axiom reports and differences from the paper. <a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.7/hh1997#how-to-check" target="_blank" rel="noopener" style="color: var(--accent);">hh1997/README.md</a></p>
     </div>
   </div>
 </section>
@@ -490,7 +490,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.22 · 2026-11-07</div>
+  <div class="footer-meta">Cartography · v0.10.23 · 2026-11-07</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2</p>
   <p class="footer-status">
@@ -517,7 +517,7 @@
 <!-- Hypothes.is annotations layer -->
 <meta name="collatz-annotate" content="on-click">
 
-<script src="../assets/js/main.js?v=20261107-V0-10-22"></script>
+<script src="../assets/js/main.js?v=20261107-V0-10-23"></script>
 
 </body>
 </html>
