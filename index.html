@@ -31,7 +31,7 @@
 <meta property="og:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-22">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Λ_{S,k} = S log 2 - k log 3 — Collatz Conditional Cycles">
@@ -43,7 +43,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
 <meta name="twitter:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261106-V0-10-21">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-22">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
 <script type="application/ld+json">
@@ -187,7 +187,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
 <!-- CSS principal -->
-<link rel="stylesheet" href="assets/css/main.css?v=20261106-V0-10-21">
+<link rel="stylesheet" href="assets/css/main.css?v=20261107-V0-10-22">
 
 <!-- Analytics : Cloudflare Web Analytics activé côté Cloudflare dashboard
      (privacy-first, no cookies, GDPR-compliant, no consent banner needed).
@@ -287,13 +287,24 @@
      RÉSULTATS (v0.10.20) : ce qui est vérifiable, en tête
      ======================================================================== -->
 <section id="resultats" class="research-status-snapshot results-section">
-  <div class="section-eyebrow"><span lang="fr">Résultats · octobre 2026</span><span lang="en">Results · October 2026</span></div>
+  <div class="section-eyebrow"><span lang="fr">Résultats · octobre-novembre 2026</span><span lang="en">Results · October–November 2026</span></div>
   <h2 lang="fr">Formalisations en Lean 4 de travaux classiques</h2>
   <h2 lang="en">Lean 4 formalisations of classical work</h2>
   <p class="research-status-intro"><span lang="fr">Les énoncés sont figés dans des fichiers à part ; chaque énoncé démontré est vérifié par le noyau de Lean 4.34.0 avec les seuls axiomes standard, et revérifiable depuis un clone neuf. Rien de nouveau n'est revendiqué sur les cycles de Collatz, et ce site ne prouve pas la conjecture.</span><span lang="en">Statements are frozen in separate files; each proved statement is checked by the kernel of Lean 4.34.0 with the standard axioms only, and can be re-checked from a fresh clone. Nothing new is claimed about Collatz cycles, and this site does not prove the conjecture.</span></p>
   <div class="status-snapshot-grid">
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow"><span lang="fr">Dernier jalon</span><span lang="en">Latest milestone</span></div>
+      <div class="status-card-title"><span lang="fr">Seifert 1988</span><span lang="en">Seifert 1988</span></div>
+      <div class="status-card-meta"><span class="status-card-date">2026-11-07</span></div>
+      <p class="status-card-summary">
+        <span lang="fr">Des critères arithmétiques pour qu'un vecteur d'exposants soit celui d'un cycle : 33 énoncés, tous démontrés en Lean 4 sans hypothèse. Relevé, avec la définition 1.1 de l'article : la formule imprimée (e) est celle du vecteur lu à rebours ; le corollaire 1 est faux, et seulement pour le cycle (5 7) de (3n − 1)/2<sup>k</sup>. Aucune nouveauté n'est revendiquée.</span>
+        <span lang="en">Arithmetic criteria for a vector of exponents to be that of a cycle: 33 statements, all proved in Lean 4 with no hypothesis. Found, with Definition 1.1 of the paper: the printed formula (e) is that of the vector read backwards; Corollary 1 fails, and only for the cycle (5 7) of (3n − 1)/2<sup>k</sup>. No novelty is claimed.</span>
+      </p>
+        <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.6/seifert1988#re-checking" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
+        <a class="status-card-link" href="https://doi.org/10.5281/zenodo.24033614" target="_blank" rel="noopener"><span lang="fr">DOI (v1.6)</span><span lang="en">DOI (v1.6)</span></a>
+    </div>
+    <div class="status-card" data-family="lean">
+      <div class="status-card-eyebrow"><span lang="fr">Théorème de 1978</span><span lang="en">Theorem of 1978</span></div>
       <div class="status-card-title"><span lang="fr">Steiner 1978, sans hypothèse</span><span lang="en">Steiner 1978, without hypothesis</span></div>
       <div class="status-card-meta"><span class="status-card-date">2026-10-28</span></div>
       <p class="status-card-summary">
@@ -336,7 +347,7 @@
         <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
     </div>
   </div>
-  <p class="research-status-positioning"><em lang="fr">Toutes les versions des releases Lean : DOI de concept <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (dernière : v1.5, 28/10/2026). Cartes complètes : <a href="papers/">Papers</a>.</em><em lang="en">All versions of the Lean releases: concept DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (latest: v1.5, 2026-10-28). Full cards: <a href="papers/">Papers</a>.</em></p>
+  <p class="research-status-positioning"><em lang="fr">Toutes les versions des releases Lean : DOI de concept <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (dernière : v1.6, 07/11/2026). Cartes complètes : <a href="papers/">Papers</a>.</em><em lang="en">All versions of the Lean releases: concept DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (latest: v1.6, 2026-11-07). Full cards: <a href="papers/">Papers</a>.</em></p>
 </section>
 
 <section id="research-status" class="research-status-snapshot">
@@ -986,7 +997,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.21 · 2026-11-06
+    Cartography · v0.10.22 · 2026-11-07
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -1073,6 +1084,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   openTarget();
 })();
 </script>
-<script src="assets/js/main.js?v=20261106-V0-10-21"></script>
+<script src="assets/js/main.js?v=20261107-V0-10-22"></script>
 </body>
 </html>

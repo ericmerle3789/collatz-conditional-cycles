@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-11-06T21:25:54Z</updated>
+  <updated>2026-11-07T10:47:59Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,16 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.22 — Seifert 1988 in Lean 4</title>
+    <link href="https://collatz-lab.org/papers/#formalisations"/>
+    <id>urn:collatz-cycles:v0.10.22-seifert1988-2026-11-07</id>
+    <updated>2026-11-07T10:47:59Z</updated>
+    <published>2026-11-07T10:47:59Z</published>
+    <category term="release"/>
+    <summary>Lean 4 formalisation of B. G. Seifert, Discrete Mathematics 68 (1988): 33 frozen statements, all proved with no hypothesis and standard axioms only (release v1.6 of the Lean repository). With Definition 1.1 of the paper, the printed formula (e) is that of the vector read backwards, and Corollary 1 fails, only for the cycle (5 7) of (3n − 1)/2^k. Nothing new about Collatz cycles; this site does not prove the conjecture.</summary>
+  </entry>
 
   <entry>
     <title>v0.10.21 — Accessibility, phones, and pages brought up to date</title>
