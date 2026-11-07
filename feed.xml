@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-11-07T17:26:09Z</updated>
+  <updated>2026-11-07T19:13:49Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,16 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.24 — Home page: banner and latest milestone brought up to date</title>
+    <link href="https://collatz-lab.org/"/>
+    <id>urn:collatz-cycles:v0.10.24-home-banner-2026-11-07</id>
+    <updated>2026-11-07T19:13:49Z</updated>
+    <published>2026-11-07T19:13:49Z</published>
+    <category term="release"/>
+    <summary>The home banner and the "Latest milestone" card of the status section now show Remark 1 of Halbeisen–Hungerbühler 1997, proved in Lean 4 in release v1.7 (they still showed Steiner 1978, release v1.4, and Seifert 1988, release v1.6). Nothing new about Collatz cycles; this site does not prove the conjecture.</summary>
+  </entry>
 
   <entry>
     <title>v0.10.23 — Halbeisen–Hungerbühler 1997: Remark 1 proved in Lean 4</title>

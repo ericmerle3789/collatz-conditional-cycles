@@ -31,7 +31,7 @@
 <meta property="og:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-23">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-24">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Λ_{S,k} = S log 2 - k log 3 — Collatz Conditional Cycles">
@@ -43,7 +43,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
 <meta name="twitter:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-23">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-24">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
 <script type="application/ld+json">
@@ -187,7 +187,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
 <!-- CSS principal -->
-<link rel="stylesheet" href="assets/css/main.css?v=20261107-V0-10-23">
+<link rel="stylesheet" href="assets/css/main.css?v=20261107-V0-10-24">
 
 <!-- Analytics : Cloudflare Web Analytics activé côté Cloudflare dashboard
      (privacy-first, no cookies, GDPR-compliant, no consent banner needed).
@@ -242,19 +242,19 @@
   <div class="hero-banner-overlay"></div>
   <div class="hero-banner-lambda">Λ</div>
   <div class="hero-banner-content">
-    <div class="hero-banner-eyebrow">logs23/ · Release v1.4 · 2026-10-28</div>
+    <div class="hero-banner-eyebrow">hh1997/ · Release v1.7 · 2026-11-07</div>
     <h2 class="hero-banner-title">
-      <span lang="en">Steiner 1978 in Lean, without the hypothesis H_Rhin</span>
-      <span lang="fr">Steiner 1978 en Lean, sans l'hypothèse H_Rhin</span>
-      <em><span lang="en"> — formalisation of a classical theorem</span><span lang="fr"> — formalisation d'un théorème classique</span></em>
+      <span lang="en">Halbeisen–Hungerbühler 1997 in Lean: Remark 1 proved</span>
+      <span lang="fr">Halbeisen–Hungerbühler 1997 en Lean : la Remarque 1 démontrée</span>
+      <em><span lang="en"> — the bound 1/2 for l &gt; 1000, stated in the paper without proof</span><span lang="fr"> — la borne 1/2 pour l &gt; 1000, énoncée dans l'article sans preuve</span></em>
     </h2>
     <div class="hero-banner-subtitle">
-      <span lang="en">H_Rhin itself is not proved, no novelty is claimed, and the formalisation proves nothing new about Collatz cycles.</span><span lang="fr">H_Rhin lui-même n'est pas démontré, aucune nouveauté n'est revendiquée, et la formalisation n'apprend rien de nouveau sur les cycles de Collatz.</span><br>
-      <code>steiner_cycle_nh</code> · DOI 10.5281/zenodo.23720217 · Lean 4.34.0
+      <span lang="en">The constant 1/2 is the paper's; K. Knight's preprint (2023) also states it, without proof, for some of the cases. No novelty is claimed, and the formalisation proves nothing new about Collatz cycles.</span><span lang="fr">La constante 1/2 est celle de l'article ; la prépublication de K. Knight (2023) l'énonce aussi, sans preuve, pour une partie des cas. Aucune nouveauté n'est revendiquée, et la formalisation n'apprend rien de nouveau sur les cycles de Collatz.</span><br>
+      <code>remark1_large</code> · DOI 10.5281/zenodo.24041065 · Lean 4.34.0
     </div>
     <div class="hero-banner-pills">
-      <span class="banner-pill"><span lang="en">14 statements</span><span lang="fr">14 énoncés</span></span>
-      <span class="banner-pill">0 sorry</span>
+      <span class="banner-pill"><span lang="en">71 statements</span><span lang="fr">71 énoncés</span></span>
+      <span class="banner-pill"><span lang="en">0 sorry in the proofs</span><span lang="fr">0 sorry dans les preuves</span></span>
       <span class="banner-pill"><span lang="en">standard axioms</span><span lang="fr">axiomes standard</span></span>
     </div>
   </div>
@@ -364,18 +364,18 @@
   <!-- Status snapshot : 5 cartes compactes (état au 2026-11-07) -->
   <div class="status-snapshot-grid">
 
-    <!-- Carte 1 : Dernier jalon — Seifert 1988 (2026-11-07) -->
+    <!-- Carte 1 : Dernier jalon — Halbeisen–Hungerbühler 1997, Remarque 1 (2026-11-07) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastMilestone">Dernier jalon</div>
-      <div class="status-card-title"><span lang="fr">Seifert 1988 en Lean 4 (seifert1988/, v1.6)</span><span lang="en">Seifert 1988 in Lean 4 (seifert1988/, v1.6)</span></div>
+      <div class="status-card-title"><span lang="fr">Remarque 1 de Halbeisen–Hungerbühler 1997 en Lean 4 (hh1997/, v1.7)</span><span lang="en">Remark 1 of Halbeisen–Hungerbühler 1997 in Lean 4 (hh1997/, v1.7)</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-11-07</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Le dossier seifert1988/ du dépôt Lean (release v1.6, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.24033614" target="_blank" rel="noopener">10.5281/zenodo.24033614</a>) formalise l'article de B. G. Seifert (<em>Discrete Mathematics</em> 68, 1988) sur l'arithmétique des cycles : 33 énoncés, tous démontrés sans hypothèse, axiomes standard seuls. Les écarts relevés avec l'article sont listés dans le README du dossier et sur la page Papers. Rien de nouveau sur les cycles de Collatz.</span>
-        <span lang="en">The seifert1988/ folder of the Lean repository (release v1.6, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.24033614" target="_blank" rel="noopener">10.5281/zenodo.24033614</a>) formalises B. G. Seifert's paper (<em>Discrete Mathematics</em> 68, 1988) on the arithmetic of cycles: 33 statements, all proved with no hypothesis, standard axioms only. The slips found in the paper are listed in the folder's README and on the Papers page. Nothing new about Collatz cycles.</span>
+        <span lang="fr">Le dossier hh1997/ du dépôt Lean (release v1.7, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.24041065" target="_blank" rel="noopener">10.5281/zenodo.24041065</a>) démontre la borne 1/2 de la Remarque 1 de L. Halbeisen et N. Hungerbühler (<em>Acta Arithmetica</em> 78, 1997) pour l &gt; 1000, que l'article énonce sans la démontrer ; ses 71 énoncés figés sont maintenant tous démontrés, axiomes standard seuls. La constante 1/2 est celle de l'article ; la prépublication de K. Knight (HAL, 2023) l'énonce aussi, sans preuve et seulement pour l = ⌈n log<sub>2</sub> 3⌉. Rien de nouveau sur les cycles de Collatz. Jalon précédent, le même jour : Seifert 1988 (seifert1988/, release v1.6, 33 énoncés).</span>
+        <span lang="en">The hh1997/ folder of the Lean repository (release v1.7, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.24041065" target="_blank" rel="noopener">10.5281/zenodo.24041065</a>) proves the bound 1/2 of Remark 1 of L. Halbeisen and N. Hungerbühler (<em>Acta Arithmetica</em> 78, 1997) for l &gt; 1000, which the paper states without proof; its 71 frozen statements are now all proved, standard axioms only. The constant 1/2 is the paper's; K. Knight's preprint (HAL, 2023) also states it, without proof and only for l = ⌈n log<sub>2</sub> 3⌉. Nothing new about Collatz cycles. Previous milestone, the same day: Seifert 1988 (seifert1988/, release v1.6, 33 statements).</span>
       </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/610ed6b/seifert1988" target="_blank" rel="noopener">→ <code>seifert1988/</code> (610ed6b)</a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/20788ee/hh1997" target="_blank" rel="noopener">→ <code>hh1997/</code> (20788ee)</a>
     </div>
 
     <!-- Carte 2 : Statut paper -->
@@ -997,7 +997,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.23 · 2026-11-07
+    Cartography · v0.10.24 · 2026-11-07
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -1084,6 +1084,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   openTarget();
 })();
 </script>
-<script src="assets/js/main.js?v=20261107-V0-10-23"></script>
+<script src="assets/js/main.js?v=20261107-V0-10-24"></script>
 </body>
 </html>
