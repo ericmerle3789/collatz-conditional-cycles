@@ -23,7 +23,7 @@
 <meta property="og:description" content="Réponses sourcées aux questions fréquentes sur Collatz/Syracuse/3n+1. Statut, récompense, difficulté, Lean 4, apports du projet.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/faq/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-26">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-27">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="fr_FR">
@@ -33,7 +33,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FAQ — Conjecture de Collatz / Syracuse">
 <meta name="twitter:description" content="Réponses sourcées aux questions fréquentes Collatz/Syracuse/3n+1.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-26">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-27">
 
 <link rel="alternate" type="application/atom+xml" title="Collatz / Syracuse Conditional Cycles updates" href="../feed.xml">
 
@@ -90,7 +90,7 @@
           "name": "Qu'apporte ce site (collatz-lab.org) ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Depuis octobre 2026 : des formalisations en Lean 4.34.0 de travaux classiques sur les cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978 (sans l'hypothèse H_Rhin depuis le 28/10/2026) et Seifert 1988 (depuis le 07/11/2026)), sans nouveauté revendiquée, et une note d'errata sur les deux premiers (DOI 10.5281/zenodo.23535498) ; voir la page Papers. Et, d'avril 2026 : un théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0 ; no_cycle_k_le_1322 revérifié sous Lean 4.34.0 les 20 et 21/10/2026). Il ne prouve pas la conjecture de Collatz. Démontré : aucun cycle non trivial avec k ≤ 1322 (k = nombre de termes impairs), sous les hypothèses H1 BakerSeparation (hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et H2 BarinaVerification (traduction d'un résultat de calcul publié, Bařina 2025, n < 2^71). La 3e hypothèse, H3 DerivedLargeKBound (k > 1322 → n < 2^71), est supposée, non dérivée ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026 ; HYPOTHESES.md, section H3, la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple δ8 : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles."
+            "text": "Depuis octobre 2026 : des formalisations en Lean 4.34.0 de travaux classiques sur les cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978 (sans l'hypothèse H_Rhin depuis le 28/10/2026), Seifert 1988 (depuis le 07/11/2026) et Brox 2000 (depuis le 08/11/2026)), sans nouveauté revendiquée, et une note d'errata sur les deux premiers (DOI 10.5281/zenodo.23535498) ; voir la page Papers. Et, d'avril 2026 : un théorème conditionnel formalisé en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0 ; no_cycle_k_le_1322 revérifié sous Lean 4.34.0 les 20 et 21/10/2026). Il ne prouve pas la conjecture de Collatz. Démontré : aucun cycle non trivial avec k ≤ 1322 (k = nombre de termes impairs), sous les hypothèses H1 BakerSeparation (hypothèse de travail, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et H2 BarinaVerification (traduction d'un résultat de calcul publié, Bařina 2025, n < 2^71). La 3e hypothèse, H3 DerivedLargeKBound (k > 1322 → n < 2^71), est supposée, non dérivée ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026 ; HYPOTHESES.md, section H3, la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple δ8 : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles."
           }
         },
         {
@@ -170,7 +170,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261108-V0-10-26">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261108-V0-10-27">
 </head>
 <body>
 
@@ -255,11 +255,11 @@
   <details class="faq-item" id="q5">
     <summary><strong><span lang="fr">5. Qu'apporte ce site (collatz-lab.org) ?</span><span lang="en">5. What does this site (collatz-lab.org) contribute?</span></strong></summary>
     <p>
-      <span lang="fr">Depuis octobre 2026 : des formalisations en Lean 4.34.0 de travaux classiques sur les cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978 (sans l'hypothèse H_Rhin depuis le 28/10/2026) et Seifert 1988 (depuis le 07/11/2026)), sans nouveauté revendiquée, et une note d'errata sur les deux premiers (DOI 10.5281/zenodo.23535498) ; voir la page Papers. Et, d'avril 2026 : un <strong>théorème conditionnel formalisé</strong> en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0 ; no_cycle_k_le_1322 revérifié sous Lean 4.34.0 les 20 et 21/10/2026) — <strong>il ne prouve pas la conjecture de Collatz</strong>. Démontré : <strong>aucun cycle non trivial avec <code>k ≤ 1322</code></strong> (k = nombre de termes impairs), sous les hypothèses
+      <span lang="fr">Depuis octobre 2026 : des formalisations en Lean 4.34.0 de travaux classiques sur les cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978 (sans l'hypothèse H_Rhin depuis le 28/10/2026), Seifert 1988 (depuis le 07/11/2026) et Brox 2000 (depuis le 08/11/2026)), sans nouveauté revendiquée, et une note d'errata sur les deux premiers (DOI 10.5281/zenodo.23535498) ; voir la page Papers. Et, d'avril 2026 : un <strong>théorème conditionnel formalisé</strong> en Lean 4 (vérifié sous Lean 4.27.0, Mathlib v4.27.0 ; no_cycle_k_le_1322 revérifié sous Lean 4.34.0 les 20 et 21/10/2026) — <strong>il ne prouve pas la conjecture de Collatz</strong>. Démontré : <strong>aucun cycle non trivial avec <code>k ≤ 1322</code></strong> (k = nombre de termes impairs), sous les hypothèses
       H1 <strong>BakerSeparation</strong> (<em>hypothèse de travail</em>, plus forte que les bornes effectives publiées sous cette forme, voir mea culpa #28) et
       H2 <strong>BarinaVerification</strong> (traduction d'un résultat de calcul publié, Bařina 2025, <code>n &lt; 2<sup>71</sup></code>).
       La 3e hypothèse, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), est <strong>supposée, non dérivée</strong> ; sous H2, elle équivaut à la conclusion elle-même (en Lean, k est un temps de retour quelconque) (erratum du 2 octobre 2026 ; voir <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, qui la présente comme une dérivation : c'est corrigé par cet erratum). Le site documente aussi des énoncés sur les limites de certaines méthodes, par exemple <strong>δ8</strong> : la chaîne Product-Bound ne peut pas, à elle seule, fermer les grands cycles.</span>
-      <span lang="en">Since October 2026: Lean 4.34.0 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978 (without the hypothesis H_Rhin since 2026-10-28) and Seifert 1988 (since 2026-11-07)), with no novelty claimed, and an errata note on the first two (DOI 10.5281/zenodo.23535498); see the Papers page. And, from April 2026: a <strong>conditional theorem formalized</strong> in Lean 4 (checked on Lean 4.27.0, Mathlib v4.27.0; no_cycle_k_le_1322 re-checked on Lean 4.34.0 on 20–21 October 2026) — <strong>it does not prove the Collatz conjecture</strong>. Proved: <strong>no non-trivial cycle with <code>k ≤ 1322</code></strong> (k = number of odd terms), under hypotheses H1 <strong>BakerSeparation</strong> (<em>working hypothesis</em>, stronger in this form than published effective bounds, see mea culpa #28) and H2 <strong>BarinaVerification</strong> (encoding of a published computational result, Barina 2025, <code>n &lt; 2<sup>71</sup></code>). The 3rd hypothesis, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 October 2026; see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, which presents it as a derivation: corrected by this erratum). The site also documents statements about the limits of some methods, e.g. <strong>δ8</strong>: the Product-Bound chain cannot, on its own, close large cycles.</span>
+      <span lang="en">Since October 2026: Lean 4.34.0 formalisations of classical work on cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978 (without the hypothesis H_Rhin since 2026-10-28), Seifert 1988 (since 2026-11-07) and Brox 2000 (since 2026-11-08)), with no novelty claimed, and an errata note on the first two (DOI 10.5281/zenodo.23535498); see the Papers page. And, from April 2026: a <strong>conditional theorem formalized</strong> in Lean 4 (checked on Lean 4.27.0, Mathlib v4.27.0; no_cycle_k_le_1322 re-checked on Lean 4.34.0 on 20–21 October 2026) — <strong>it does not prove the Collatz conjecture</strong>. Proved: <strong>no non-trivial cycle with <code>k ≤ 1322</code></strong> (k = number of odd terms), under hypotheses H1 <strong>BakerSeparation</strong> (<em>working hypothesis</em>, stronger in this form than published effective bounds, see mea culpa #28) and H2 <strong>BarinaVerification</strong> (encoding of a published computational result, Barina 2025, <code>n &lt; 2<sup>71</sup></code>). The 3rd hypothesis, H3 <strong>DerivedLargeKBound</strong> (<code>k &gt; 1322 ⇒ n &lt; 2<sup>71</sup></code>), is <strong>assumed, not derived</strong>; under H2 it is equivalent to the conclusion itself (in Lean, k is any return time) (erratum of 2 October 2026; see <a href="https://github.com/ericmerle3789/collatz-conditional-cycles/blob/main/HYPOTHESES.md#h3-derivedlargekbound" target="_blank" rel="noopener">HYPOTHESES.md, section H3</a>, which presents it as a derivation: corrected by this erratum). The site also documents statements about the limits of some methods, e.g. <strong>δ8</strong>: the Product-Bound chain cannot, on its own, close large cycles.</span>
     </p>
   </details>
 
@@ -388,6 +388,6 @@
   .faq-item[open] summary { color: var(--accent, #c8a86a); }
 </style>
 
-<script src="../assets/js/main.js?v=20261108-V0-10-26"></script>
+<script src="../assets/js/main.js?v=20261108-V0-10-27"></script>
 </body>
 </html>

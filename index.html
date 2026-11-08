@@ -31,7 +31,7 @@
 <meta property="og:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-26">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-27">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Λ_{S,k} = S log 2 - k log 3 — Collatz Conditional Cycles">
@@ -43,7 +43,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
 <meta name="twitter:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-26">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-27">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
 <script type="application/ld+json">
@@ -136,7 +136,7 @@
       "@type": "WebSite",
       "@id": "https://collatz-lab.org/",
       "name": "Collatz Conditional Cycles",
-      "description": "Lean 4 formalisations of classical work on Collatz cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978 (without the hypothesis H_Rhin since 2026-10-28) and Seifert 1988 (since 2026-11-07); no novelty claimed). Does not prove the conjecture. April 2026 preprint: conditional theorem, no non-trivial cycle with k ≤ 1322 under the working hypothesis H1 (BakerSeparation, not a published theorem) and Barina's verification (H2); erratum of 2 Oct 2026: the third hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself.",
+      "description": "Lean 4 formalisations of classical work on Collatz cycles (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978 (without the hypothesis H_Rhin since 2026-10-28), Seifert 1988 (since 2026-11-07) and Brox 2000 (since 2026-11-08); no novelty claimed). Does not prove the conjecture. April 2026 preprint: conditional theorem, no non-trivial cycle with k ≤ 1322 under the working hypothesis H1 (BakerSeparation, not a published theorem) and Barina's verification (H2); erratum of 2 Oct 2026: the third hypothesis (H3) is assumed and, under H2, equivalent to the conclusion itself.",
       "alternateName": [
         "Cycles Conditionnels de Collatz/Syracuse",
         "Collatz Lab — Conjecture de Syracuse formalisée",
@@ -187,7 +187,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
 <!-- CSS principal -->
-<link rel="stylesheet" href="assets/css/main.css?v=20261108-V0-10-26">
+<link rel="stylesheet" href="assets/css/main.css?v=20261108-V0-10-27">
 
 <!-- Analytics : Cloudflare Web Analytics activé côté Cloudflare dashboard
      (privacy-first, no cookies, GDPR-compliant, no consent banner needed).
@@ -242,18 +242,18 @@
   <div class="hero-banner-overlay"></div>
   <div class="hero-banner-lambda">Λ</div>
   <div class="hero-banner-content">
-    <div class="hero-banner-eyebrow">sdw2005/ · Release v1.8 · 2026-11-08</div>
+    <div class="hero-banner-eyebrow">brox2000/ · Release v1.9 · 2026-11-08</div>
     <h2 class="hero-banner-title">
-      <span lang="en">An upper bound in the way of Simons–de Weger, without Rhin's lower bound</span>
-      <span lang="fr">Une borne à la manière de Simons–de Weger, sans la minoration de Rhin</span>
-      <em><span lang="en"> — a cycle with at most 91 local minima has fewer than 2·10<sup>21</sup> odd terms</span><span lang="fr"> — un cycle d'au plus 91 minima locaux a moins de 2·10<sup>21</sup> termes impairs</span></em>
+      <span lang="en">Brox 2000 in Lean: Collatz cycles with few descents</span>
+      <span lang="fr">Brox 2000 en Lean : les cycles de Collatz à peu de descentes</span>
+      <em><span lang="en"> — only finitely many cycles have fewer than 2 log |Γ| descents</span><span lang="fr"> — seul un nombre fini de cycles ont moins de 2 log |Γ| descentes</span></em>
     </h2>
     <div class="hero-banner-subtitle">
-      <span lang="en">Weaker than the final bounds of Simons–de Weger (2005), which also use Rhin's lower bound and computations; it excludes no cycle. No novelty is claimed.</span><span lang="fr">Plus faible que les bornes finales de Simons–de Weger (2005), qui utilisent aussi la minoration de Rhin et des calculs ; elle n'exclut aucun cycle. Aucune nouveauté n'est revendiquée.</span>
-      <code>cycle_K_lt_91</code> · DOI 10.5281/zenodo.24049927 · Lean 4.34.0
+      <span lang="en">Brox's three results, for all cycles on the integers, positive and negative; a classical paper, it excludes no cycle. No novelty is claimed.</span><span lang="fr">Les trois résultats de Brox, pour tous les cycles des entiers, positifs et négatifs ; un article classique, il n'exclut aucun cycle. Aucune nouveauté n'est revendiquée.</span>
+      <code>thm11_Z</code> · DOI 10.5281/zenodo.24052983 · Lean 4.34.0
     </div>
     <div class="hero-banner-pills">
-      <span class="banner-pill"><span lang="en">9 statements</span><span lang="fr">9 énoncés</span></span>
+      <span class="banner-pill"><span lang="en">10 statements</span><span lang="fr">10 énoncés</span></span>
       <span class="banner-pill"><span lang="en">0 sorry</span><span lang="fr">0 sorry</span></span>
       <span class="banner-pill"><span lang="en">standard axioms</span><span lang="fr">axiomes standard</span></span>
     </div>
@@ -275,7 +275,7 @@
     <span lang="en">Also known as the <strong>Syracuse problem</strong>, the <strong>3n+1 problem</strong>, the <strong>Kakutani problem</strong>, the <strong>Hasse algorithm</strong>, or the <strong>Ulam conjecture</strong>.</span>
   </p>
   <p class="hero-lede" data-i18n="heroLede">
-    Formalisations en Lean 4 de quatre travaux classiques sur les cycles de Collatz (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, Seifert 1988), avec une note d'errata, et une borne à la manière de Simons–de Weger 2005, démontrée sans la minoration de Rhin ; un catalogue de trente-six pistes, chacune avec sa fiche ; et le preprint d'avril 2026, avec son erratum.
+    Formalisations en Lean 4 de cinq travaux classiques sur les cycles de Collatz (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, Seifert 1988, Brox 2000), avec une note d'errata, et une borne à la manière de Simons–de Weger 2005, démontrée sans la minoration de Rhin ; un catalogue de trente-six pistes, chacune avec sa fiche ; et le preprint d'avril 2026, avec son erratum.
   </p>
 </section>
 
@@ -294,6 +294,17 @@
   <div class="status-snapshot-grid">
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow"><span lang="fr">Dernier jalon</span><span lang="en">Latest milestone</span></div>
+      <div class="status-card-title"><span lang="fr">Brox 2000</span><span lang="en">Brox 2000</span></div>
+      <div class="status-card-meta"><span class="status-card-date">2026-11-08</span></div>
+      <p class="status-card-summary">
+        <span lang="fr">Les trois résultats de T. Brox (<em>Acta Arithmetica</em> 92, 2000) sur les cycles à peu de descentes, démontrés en Lean 4 pour tous les cycles des entiers, positifs et négatifs : seul un nombre fini de cycles ont moins de 2 log |Γ| éléments descendants (Γ : les éléments impairs du cycle). 10 énoncés, tous démontrés sans hypothèse. Article classique ; aucun cycle exclu. Aucune nouveauté n'est revendiquée.</span>
+        <span lang="en">The three results of T. Brox (<em>Acta Arithmetica</em> 92, 2000) on cycles with few descents, proved in Lean 4 for all cycles on the integers, positive and negative: only finitely many cycles have fewer than 2 log |Γ| descending elements (Γ: the odd elements of the cycle). 10 statements, all proved with no hypothesis. A classical paper; no cycle is excluded. No novelty is claimed.</span>
+      </p>
+        <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.9/brox2000#re-check" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
+        <a class="status-card-link" href="https://doi.org/10.5281/zenodo.24052983" target="_blank" rel="noopener"><span lang="fr">DOI (v1.9)</span><span lang="en">DOI (v1.9)</span></a>
+    </div>
+    <div class="status-card" data-family="lean">
+      <div class="status-card-eyebrow"><span lang="fr">Release v1.8</span><span lang="en">Release v1.8</span></div>
       <div class="status-card-title"><span lang="fr">Simons–de Weger 2005, sans Rhin</span><span lang="en">Simons–de Weger 2005, without Rhin</span></div>
       <div class="status-card-meta"><span class="status-card-date">2026-11-08</span></div>
       <p class="status-card-summary">
@@ -359,7 +370,7 @@
         <a class="status-card-link" href="https://doi.org/10.5281/zenodo.24043129" target="_blank" rel="noopener"><span lang="fr">DOI (version 2)</span><span lang="en">DOI (version 2)</span></a>
     </div>
   </div>
-  <p class="research-status-positioning"><em lang="fr">Toutes les versions des releases Lean : DOI de concept <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (dernière : v1.8, 08/11/2026). Cartes complètes : <a href="papers/">Papers</a>.</em><em lang="en">All versions of the Lean releases: concept DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (latest: v1.8, 2026-11-08). Full cards: <a href="papers/">Papers</a>.</em></p>
+  <p class="research-status-positioning"><em lang="fr">Toutes les versions des releases Lean : DOI de concept <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (dernière : v1.9, 08/11/2026). Cartes complètes : <a href="papers/">Papers</a>.</em><em lang="en">All versions of the Lean releases: concept DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (latest: v1.9, 2026-11-08). Full cards: <a href="papers/">Papers</a>.</em></p>
 </section>
 
 <section id="research-status" class="research-status-snapshot">
@@ -376,18 +387,18 @@
   <!-- Status snapshot : 5 cartes compactes (état au 2026-11-08) -->
   <div class="status-snapshot-grid">
 
-    <!-- Carte 1 : Dernier jalon — sdw2005/, borne à la manière de Simons–de Weger sans Rhin (2026-11-08) -->
+    <!-- Carte 1 : Dernier jalon — brox2000/, Brox 2000 en Lean (2026-11-08) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastMilestone">Dernier jalon</div>
-      <div class="status-card-title"><span lang="fr">Borne à la manière de Simons–de Weger, sans Rhin (sdw2005/, v1.8)</span><span lang="en">Upper bound in the way of Simons–de Weger, without Rhin (sdw2005/, v1.8)</span></div>
+      <div class="status-card-title"><span lang="fr">Brox 2000 en Lean, tous les cycles (brox2000/, v1.9)</span><span lang="en">Brox 2000 in Lean, all cycles (brox2000/, v1.9)</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-11-08</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Le dossier sdw2005/ du dépôt Lean (release v1.8, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.24049927" target="_blank" rel="noopener">10.5281/zenodo.24049927</a>) suit la méthode de la borne a priori de J. Simons et B. de Weger (<em>Acta Arithmetica</em> 117, 2005), mais sans la minoration de G. Rhin et sans minoration X<sub>0</sub> des éléments d'un cycle : un cycle d'au plus 82 minima locaux a moins de 4·10<sup>18</sup> termes impairs, et un cycle d'au plus 91 minima locaux moins de 2·10<sup>21</sup> ; 9 énoncés figés, tous démontrés, axiomes standard seuls. Ces bornes sont plus faibles que les bornes finales de Simons–de Weger et n'excluent aucun cycle ; le dossier ne donne pas de preuve du théorème de C. Hercher (2023) sur les m-cycles pour m ≤ 91. Rien de nouveau sur les cycles de Collatz.</span>
-        <span lang="en">The sdw2005/ folder of the Lean repository (release v1.8, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.24049927" target="_blank" rel="noopener">10.5281/zenodo.24049927</a>) follows the method of the a priori bound of J. Simons and B. de Weger (<em>Acta Arithmetica</em> 117, 2005), but without G. Rhin's lower bound and without a lower bound X<sub>0</sub> for the elements of a cycle: a cycle with at most 82 local minima has fewer than 4·10<sup>18</sup> odd terms, and a cycle with at most 91 local minima fewer than 2·10<sup>21</sup>; 9 frozen statements, all proved, standard axioms only. These bounds are weaker than the final bounds of Simons–de Weger and exclude no cycle; the folder does not give a proof of C. Hercher's theorem (2023) on m-cycles for m ≤ 91. Nothing new about Collatz cycles.</span>
+        <span lang="fr">Le dossier brox2000/ du dépôt Lean (release v1.9, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.24052983" target="_blank" rel="noopener">10.5281/zenodo.24052983</a>) formalise T. Brox, « Collatz cycles with few descents » (<em>Acta Arithmetica</em> 92, 2000) : pour l'application T(x) = x/2 (x pair), (3x + 1)/2 (x impair) sur tous les entiers, avec Γ l'ensemble des éléments impairs d'un cycle et δ(Γ) le nombre de ses éléments « descendants » (x tel que 4 divise 3x + 1) : la période d'un cycle autre que {0} est au plus 2|Γ|, et, pour chaque n, seul un nombre fini de cycles ont |Γ| ≤ n (lemme 2.2) ; seul un nombre fini de cycles ont δ(Γ) &lt; 2 log |Γ| (théorème 1.1) ; pour chaque ν, seul un nombre fini de cycles ont δ(Γ) ≤ ν (corollaire 1.2). Le théorème 1.1 est aussi démontré sous une forme explicite, |Γ| &lt; 2<sup>1500</sup>, qui n'est pas revendiquée comme nouvelle : l'argument de Brox est effectif (l'article ne donne pas de nombre), et la taille du nôtre vient de la minoration grossière du dossier logs23/. 10 énoncés figés, tous démontrés, axiomes standard seuls. Rien de nouveau sur les cycles de Collatz ; aucun cycle exclu. La release ajoute aussi, dans sdw2005/, les bornes de la v1.8 comptées en valeurs impaires distinctes.</span>
+        <span lang="en">The brox2000/ folder of the Lean repository (release v1.9, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.24052983" target="_blank" rel="noopener">10.5281/zenodo.24052983</a>) formalises T. Brox, "Collatz cycles with few descents" (<em>Acta Arithmetica</em> 92, 2000): for the map T(x) = x/2 (x even), (3x + 1)/2 (x odd) on all the integers, with Γ the set of odd elements of a cycle and δ(Γ) the number of its "descending" elements (x with 4 dividing 3x + 1): the period of a cycle other than {0} is at most 2|Γ|, and for each n only finitely many cycles have |Γ| ≤ n (Lemma 2.2); only finitely many cycles have δ(Γ) &lt; 2 log |Γ| (Theorem 1.1); for each ν, only finitely many cycles have δ(Γ) ≤ ν (Corollary 1.2). Theorem 1.1 is also proved in an explicit form, |Γ| &lt; 2<sup>1500</sup>, which is not claimed as new: Brox's argument is effective (the paper gives no number), and the size of ours comes from the crude lower bound of the logs23/ folder. 10 frozen statements, all proved, standard axioms only. Nothing new about Collatz cycles; no cycle is excluded. The release also adds, in sdw2005/, the bounds of v1.8 counted on distinct odd values.</span>
       </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/03b58a5/sdw2005" target="_blank" rel="noopener">→ <code>sdw2005/</code> (03b58a5)</a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/5bfc1fd/brox2000" target="_blank" rel="noopener">→ <code>brox2000/</code> (5bfc1fd)</a>
     </div>
 
     <!-- Carte 2 : Statut paper -->
@@ -405,30 +416,30 @@
       <a class="status-card-link" href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">→ DOI Zenodo</a>
     </div>
 
-    <!-- Carte 3 : Dernière vérification Lean (sdw2005/, 2026-11-07) -->
+    <!-- Carte 3 : Dernière vérification Lean (brox2000/, 2026-11-08) -->
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow" data-i18n="statusLastLean">Dernière vérification Lean</div>
-      <div class="status-card-title"><span lang="fr">Simons–de Weger sans Rhin : 9 énoncés vérifiés sous Lean 4.34.0</span><span lang="en">Simons–de Weger without Rhin: 9 statements checked on Lean 4.34.0</span></div>
-      <div class="status-card-meta">
-        <span class="status-card-date">2026-11-07</span>
-      </div>
-      <p class="status-card-summary">
-        <span lang="fr">Dossier sdw2005/ (release v1.8) : 9 énoncés figés avant leur preuve (commits 750c7f2 et 21b4ae5), tous démontrés, sans hypothèse ; 0 <code>sorry</code>, 0 <code>native_decide</code>, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; <code>check.sh</code> relancé le 07/11/2026 depuis un clone neuf du commit e2fdb2e (il relance aussi les vérifications de steiner1978/ et logs23/ ; 9 rapports d'axiomes, identiques au rapport enregistré ; Lean 4.34.0 et le cache de Mathlib déjà présents ; les commits suivants ne changent aucun fichier Lean). Archive Zenodo (logiciel, v1.8) : DOI <a href="https://doi.org/10.5281/zenodo.24049927" target="_blank" rel="noopener">10.5281/zenodo.24049927</a>.</span>
-        <span lang="en">Folder sdw2005/ (release v1.8): 9 statements frozen before their proofs (commits 750c7f2 and 21b4ae5), all proved, with no hypothesis; 0 <code>sorry</code>, 0 <code>native_decide</code>, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); <code>check.sh</code> run on 2026-11-07 from a fresh clone of commit e2fdb2e (it also re-runs the checks of steiner1978/ and logs23/; 9 axiom reports, identical to the recorded report; Lean 4.34.0 and Mathlib's cache already present; the later commits change no Lean file). Zenodo archive (software, v1.8): DOI <a href="https://doi.org/10.5281/zenodo.24049927" target="_blank" rel="noopener">10.5281/zenodo.24049927</a>.</span>
-      </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/03b58a5/sdw2005" target="_blank" rel="noopener">→ <code>sdw2005/</code> (03b58a5)</a>
-    </div>
-
-    <!-- Carte 4 : Dernier audit (relectures adverses de la v1.8, 2026-11-07/08) -->
-    <div class="status-card" data-family="audit">
-      <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
-      <div class="status-card-title"><span lang="fr">Relectures adverses de la v1.8</span><span lang="en">Adversarial reviews of v1.8</span></div>
+      <div class="status-card-title"><span lang="fr">Brox 2000 : 10 énoncés vérifiés sous Lean 4.34.0</span><span lang="en">Brox 2000: 10 statements checked on Lean 4.34.0</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-11-08</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Relectures adverses internes, assistées par IA (ce n'est pas une évaluation par les pairs), un relecteur neuf par passe. Notices de sdw2005/ et textes de la release v1.8 du dépôt Lean : huit passes. Elles ont corrigé une référence déjà poussée sur GitHub (théorème 3(d) de Simons–de Weger, et non 3(c)) et la comparaison avec leurs bornes (sous la valeur en m = 82 et en m = 91 de leur borne initiale fondée sur Rhin, au-dessus de leurs bornes finales) ; la septième a relevé que P. Norfleet signale une erreur dans la preuve du théorème 21 de C. Hercher (numérotation de l'arXiv v3 ; non vérifiée ici), ce que les notices disent désormais ; la huitième, sur les textes finaux, n'a fait que trois remarques mineures, appliquées. La règle du laboratoire (deux passes de suite sans remarque) n'a pas été atteinte : la publication a été décidée par l'auteur. Aucun énoncé ni aucune preuve n'a été changé par ces relectures (un commentaire d'un fichier Lean l'a été, avant la vérification finale).</span>
-        <span lang="en">Internal adversarial reviews, AI-assisted (not peer review), with a fresh reviewer for each pass. READMEs of sdw2005/ and texts of release v1.8 of the Lean repository: eight passes. They corrected a reference already pushed to GitHub (Theorem 3(d) of Simons–de Weger, not 3(c)) and the comparison with their bounds (below the value at m = 82 and at m = 91 of their initial bound based on Rhin, above their final bounds); the seventh found that P. Norfleet reports an error in the proof of Theorem 21 of C. Hercher (numbered as in arXiv v3; not checked here), which the READMEs now say; the eighth, on the final texts, made only three minor remarks, applied. The lab's rule (two consecutive passes without remarks) was not met: publication was decided by the author. No statement or proof was changed by these reviews (a comment in a Lean file was, before the final check).</span>
+        <span lang="fr">Dossier brox2000/ (release v1.9) : 10 énoncés figés avant leur preuve (commits f8f331b et 4ce3d44), tous démontrés, sans hypothèse ; 0 <code>sorry</code>, 0 <code>native_decide</code>, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; <code>check.sh</code> relancé le 08/11/2026 depuis un clone neuf du commit 9077bda (il relance aussi les vérifications de steiner1978/, logs23/ et sdw2005/ ; 30 minutes ; 12 + 15 + 13 + 10 rapports d'axiomes ; ceux de sdw2005/ et de brox2000/ identiques aux rapports enregistrés, ligne à ligne ; Lean 4.34.0 et le cache de Mathlib déjà présents ; le commit suivant ne change aucun fichier Lean). Archive Zenodo (logiciel, v1.9) : DOI <a href="https://doi.org/10.5281/zenodo.24052983" target="_blank" rel="noopener">10.5281/zenodo.24052983</a>.</span>
+        <span lang="en">Folder brox2000/ (release v1.9): 10 statements frozen before their proofs (commits f8f331b and 4ce3d44), all proved, with no hypothesis; 0 <code>sorry</code>, 0 <code>native_decide</code>, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); <code>check.sh</code> run on 2026-11-08 from a fresh clone of commit 9077bda (it also re-runs the checks of steiner1978/, logs23/ and sdw2005/; 30 minutes; 12 + 15 + 13 + 10 axiom reports; those of sdw2005/ and brox2000/ identical, line by line, to the recorded reports; Lean 4.34.0 and Mathlib's cache already present; the later commit changes no Lean file). Zenodo archive (software, v1.9): DOI <a href="https://doi.org/10.5281/zenodo.24052983" target="_blank" rel="noopener">10.5281/zenodo.24052983</a>.</span>
+      </p>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/5bfc1fd/brox2000" target="_blank" rel="noopener">→ <code>brox2000/</code> (5bfc1fd)</a>
+    </div>
+
+    <!-- Carte 4 : Dernier audit (relectures de la v1.9, 2026-11-08) -->
+    <div class="status-card" data-family="audit">
+      <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
+      <div class="status-card-title"><span lang="fr">Relectures de la v1.9</span><span lang="en">Reviews of v1.9</span></div>
+      <div class="status-card-meta">
+        <span class="status-card-date">2026-11-08</span>
+      </div>
+      <p class="status-card-summary">
+        <span lang="fr">Relectures internes, assistées par IA (ce n'est pas une évaluation par les pairs). Textes de la release v1.9 du dépôt Lean (notices de brox2000/ et de sdw2005/, README racine, fiche Zenodo, notes de version) : une relecture par l'auteur des preuves, puis une passe d'un relecteur neuf, qui a vérifié les énoncés décrits contre les fichiers figés, les comptes et les commits contre l'historique git, et ce qui est dit de l'article de Brox contre son texte. Aucune erreur de fait ; une remarque moyenne (n'écrire le résultat de la revérification depuis un clone neuf qu'une fois celle-ci terminée, ce qui a été fait) et quatre mineures, appliquées. Une seule passe, par économie : la règle du laboratoire (deux passes de suite sans remarque) n'a pas été appliquée ; la publication a été décidée par l'auteur. Aucun énoncé ni aucune preuve n'a été changé par ces relectures.</span>
+        <span lang="en">Internal reviews, AI-assisted (not peer review). Texts of release v1.9 of the Lean repository (READMEs of brox2000/ and sdw2005/, root README, Zenodo record, release notes): one review by the author of the proofs, then one pass by a fresh reviewer, who checked the statements described against the frozen files, the counts and commits against the git history, and what is said of Brox's paper against its text. No factual error; one medium remark (state the result of the re-check from a fresh clone only once it has finished, which was done) and four minor ones, applied. A single pass, to save resources: the lab's rule (two consecutive passes without remarks) was not applied; publication was decided by the author. No statement or proof was changed by these reviews.</span>
       </p>
       <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
@@ -1009,7 +1020,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.26 · 2026-11-08
+    Cartography · v0.10.27 · 2026-11-08
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -1096,6 +1107,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   openTarget();
 })();
 </script>
-<script src="assets/js/main.js?v=20261108-V0-10-26"></script>
+<script src="assets/js/main.js?v=20261108-V0-10-27"></script>
 </body>
 </html>

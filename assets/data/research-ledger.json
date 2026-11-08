@@ -1,11 +1,40 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-11-08T07:32:03Z",
-  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-11-08 (v0.10.26): an upper bound in the way of Simons–de Weger without Rhin's lower bound (sdw2005/, release v1.8); weaker than their final bounds, it excludes no cycle. Previously, 2026-11-07 (v0.10.23): Remark 1 of Halbeisen–Hungerbühler 1997 (the bound 1/2 for l > 1000) proved in Lean (hh1997/, release v1.7); K. Knight's preprint (2023) credited. Previously, 2026-11-07 (v0.10.22): Seifert 1988 formalised in Lean (seifert1988/, release v1.6); a dated note on the credit of ledger entry L-A1. Previously, 2026-10-28 (v0.10.19): release v1.5 of the Lean repository (documentation and LICENSE; ccchallenge links to v1.5); earlier ledger events rewritten without a date are acknowledged by a dated event. Previously, 2026-10-28: Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4). Previously, 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
+  "generated": "2026-11-08T12:11:41Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-11-08 (v0.10.27): Brox 2000 formalised in Lean for all cycles on the integers (brox2000/, release v1.9); a classical paper, it excludes no cycle. Previously, 2026-11-08 (v0.10.26): an upper bound in the way of Simons–de Weger without Rhin's lower bound (sdw2005/, release v1.8); weaker than their final bounds, it excludes no cycle. Previously, 2026-11-07 (v0.10.23): Remark 1 of Halbeisen–Hungerbühler 1997 (the bound 1/2 for l > 1000) proved in Lean (hh1997/, release v1.7); K. Knight's preprint (2023) credited. Previously, 2026-11-07 (v0.10.22): Seifert 1988 formalised in Lean (seifert1988/, release v1.6); a dated note on the credit of ledger entry L-A1. Previously, 2026-10-28 (v0.10.19): release v1.5 of the Lean repository (documentation and LICENSE; ccchallenge links to v1.5); earlier ledger events rewritten without a date are acknowledged by a dated event. Previously, 2026-10-28: Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4). Previously, 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "brox2000-v1-9-2026-11-08",
+      "type": "lean",
+      "subtype": "formalisation",
+      "date": "2026-11-08",
+      "datetime": "2026-11-08T13:11:41+01:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-11-08",
+      "title": {
+        "fr": "Brox 2000 en Lean, pour tous les cycles des entiers (brox2000/, release v1.9)",
+        "en": "Brox 2000 in Lean, for all cycles on the integers (brox2000/, release v1.9)"
+      },
+      "summary": {
+        "fr": "Le dossier brox2000/ du dépôt one-obstruction-three-faces-lean (release v1.9, DOI 10.5281/zenodo.24052983) formalise T. Brox, « Collatz cycles with few descents », Acta Arithmetica 92 (2000), 181-188 : pour l'application T(x) = x/2 (x pair), (3x + 1)/2 (x impair) sur tous les entiers, avec Γ l'ensemble des éléments impairs d'un cycle et δ(Γ) le nombre de ses éléments « descendants » (x tel que 4 divise 3x + 1) : la période d'un cycle autre que {0} est au plus 2|Γ|, et, pour chaque n, seul un nombre fini de cycles ont |Γ| ≤ n (lemme 2.2) ; seul un nombre fini de cycles ont δ(Γ) < 2 log |Γ| (théorème 1.1) ; pour chaque ν, seul un nombre fini de cycles ont δ(Γ) ≤ ν (corollaire 1.2). Le théorème 1.1 est aussi démontré sous une forme explicite, |Γ| < 2^1500, qui n'est pas revendiquée comme nouvelle : l'argument de Brox est effectif (l'article ne donne pas de nombre), et la taille du nôtre vient de la minoration grossière du dossier logs23/. La preuve n'est pas celle de Brox en son cœur : elle reprend la chaîne des minima locaux et les lemmes du dossier sdw2005/ avec la minoration de logs23/ ; pour les cycles négatifs, x ↦ −x les ramène à ceux de y/2 (y pair), (3y − 1)/2 (y impair), pour lesquels cette chaîne et ces lemmes sont réécrits. 10 énoncés figés (5 pour les cycles des entiers positifs, puis 5 pour tous les cycles), tous démontrés, sans hypothèse, 0 sorry, 0 native_decide, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0). Les 5 énoncés pour tous les cycles ont été écrits avant leur preuve et jamais modifiés, mais enregistrés dans git après le brouillon des preuves ; le README du dossier le dit. Revérifié depuis un clone neuf du commit 9077bda (30 minutes). Rien de nouveau sur les cycles de Collatz ; aucun cycle exclu. La release ajoute aussi, dans sdw2005/, les bornes de la v1.8 comptées en valeurs impaires distinctes.",
+        "en": "The brox2000/ folder of the one-obstruction-three-faces-lean repository (release v1.9, DOI 10.5281/zenodo.24052983) formalises T. Brox, \"Collatz cycles with few descents\", Acta Arithmetica 92 (2000), 181-188: for the map T(x) = x/2 (x even), (3x + 1)/2 (x odd) on all the integers, with Γ the set of odd elements of a cycle and δ(Γ) the number of its \"descending\" elements (x with 4 dividing 3x + 1): the period of a cycle other than {0} is at most 2|Γ|, and for each n only finitely many cycles have |Γ| ≤ n (Lemma 2.2); only finitely many cycles have δ(Γ) < 2 log |Γ| (Theorem 1.1); for each ν, only finitely many cycles have δ(Γ) ≤ ν (Corollary 1.2). Theorem 1.1 is also proved in an explicit form, |Γ| < 2^1500, which is not claimed as new: Brox's argument is effective (the paper gives no number), and the size of ours comes from the crude lower bound of the logs23/ folder. The proof differs from Brox's at its core: it uses the chain of local minima and the lemmas of the sdw2005/ folder with the lower bound of logs23/; for the negative cycles, x ↦ −x turns them into those of y/2 (y even), (3y − 1)/2 (y odd), for which that chain and those lemmas are written again. 10 frozen statements (5 for the cycles on the positive integers, then 5 for all cycles), all proved, with no hypothesis, 0 sorry, 0 native_decide, standard axioms only (Lean 4.34.0, Mathlib v4.34.0). The 5 statements for all cycles were written before their proofs and never changed, but committed to git after the proofs had been drafted; the folder's README says so. Re-checked from a fresh clone of commit 9077bda (30 minutes). Nothing new about Collatz cycles; no cycle is excluded. The release also adds, in sdw2005/, the bounds of v1.8 counted on distinct odd values."
+      },
+      "artefacts": [
+        {"label": "brox2000/ (5bfc1fd)", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/5bfc1fd/brox2000", "kind": "repository"},
+        {"label": "DOI 10.5281/zenodo.24052983", "url": "https://doi.org/10.5281/zenodo.24052983", "kind": "doi"},
+        {"label": "Release v1.9", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/releases/tag/v1.9", "kind": "tag"}
+      ],
+      "related": ["sdw2005-upper-bound-v1-8-2026-11-08", "steiner1978-without-h-rhin-2026-10-28"]
+    },
 
     {
       "id": "sdw2005-upper-bound-v1-8-2026-11-08",
@@ -1201,13 +1230,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 43,
-    "by_type": {"lean": 14, "repository": 10, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
-    "by_status": {"validated": 33, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
-    "by_milestone": {"true": 30, "false": 13},
-    "by_claim_scope": {"documentation": 25, "formal_lean": 13, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 31, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
-    "note_fr": "Registre partiel : 43 événements (mise à jour du 2026-11-08, v0.10.26). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 43 events (update of 2026-11-08, v0.10.26). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "total_events": 44,
+    "by_type": {"lean": 15, "repository": 10, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
+    "by_status": {"validated": 34, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
+    "by_milestone": {"true": 31, "false": 13},
+    "by_claim_scope": {"documentation": 25, "formal_lean": 14, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
+    "by_epistemic_status": {"verified": 32, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
+    "note_fr": "Registre partiel : 44 événements (mise à jour du 2026-11-08, v0.10.27). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 44 events (update of 2026-11-08, v0.10.27). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }

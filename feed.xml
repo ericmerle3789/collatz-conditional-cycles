@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-11-08T07:32:03Z</updated>
+  <updated>2026-11-08T12:11:41Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,16 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.27 — Brox 2000 in Lean, for all cycles (release v1.9)</title>
+    <link href="https://doi.org/10.5281/zenodo.24052983"/>
+    <id>urn:collatz-cycles:v0.10.27-brox2000-v1-9-2026-11-08</id>
+    <updated>2026-11-08T12:11:41Z</updated>
+    <published>2026-11-08T12:11:41Z</published>
+    <category term="lean"/>
+    <summary>Release v1.9 of the Lean repository (DOI 10.5281/zenodo.24052983): the new folder brox2000/ formalises T. Brox, "Collatz cycles with few descents" (Acta Arithmetica 92, 2000), for all cycles on the integers: only finitely many cycles have fewer than 2 log |Γ| descending elements (Theorem 1.1), with Lemma 2.2 and Corollary 1.2; 10 statements, all proved with no hypothesis, standard axioms only. A classical paper: nothing new about Collatz cycles, no cycle excluded.</summary>
+  </entry>
 
   <entry>
     <title>v0.10.26 — An upper bound in the way of Simons–de Weger, without Rhin's lower bound (release v1.8)</title>
