@@ -31,7 +31,7 @@
 <meta property="og:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-30">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-31">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Λ_{S,k} = S log 2 - k log 3 — Collatz Conditional Cycles">
@@ -43,7 +43,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
 <meta name="twitter:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-30">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-31">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
 <script type="application/ld+json">
@@ -187,7 +187,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
 <!-- CSS principal -->
-<link rel="stylesheet" href="assets/css/main.css?v=20261108-V0-10-30">
+<link rel="stylesheet" href="assets/css/main.css?v=20261108-V0-10-31">
 
 <!-- Analytics : Cloudflare Web Analytics activé côté Cloudflare dashboard
      (privacy-first, no cookies, GDPR-compliant, no consent banner needed).
@@ -368,6 +368,17 @@
       </p>
         <a class="status-card-link" href="https://doi.org/10.5281/zenodo.23535498" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
         <a class="status-card-link" href="https://doi.org/10.5281/zenodo.24043129" target="_blank" rel="noopener"><span lang="fr">DOI (version 2)</span><span lang="en">DOI (version 2)</span></a>
+    </div>
+    <div class="status-card" data-family="paper">
+      <div class="status-card-eyebrow"><span lang="fr">Note technique</span><span lang="en">Technical note</span></div>
+      <div class="status-card-title"><span lang="fr">Barrière du miroir</span><span lang="en">A mirror barrier</span></div>
+      <div class="status-card-meta"><span class="status-card-date">2026-11-08</span></div>
+      <p class="status-card-summary">
+        <span lang="fr">Note de 8 pages, preuve sur papier (pas en Lean). Les certificats de terminaison de H. Nashida (des fonctions α ln x + Σ β v<sub>q</sub>(x − c) + g(x) par étages) n'existent pas pour T ; sa définition demande une minoration, inutile pour exclure seulement les cycles. La note montre que, sans minoration, ils n'existent toujours pas : l'ombre d'un cycle rationnel positif de T, comme 1/5 → 4/5 → 2/5, en tient lieu. Résultat négatif sur une classe de fonctions de rang ; rien sur la conjecture. Cadre et outils surtout de Nashida. Relue par des sessions d'IA séparées, aucun expert humain.</span>
+        <span lang="en">An 8-page note, a paper proof (not Lean). H. Nashida's termination certificates (staged functions α ln x + Σ β v<sub>q</sub>(x − c) + g(x)) do not exist for T; his definition asks for a lower bound, which is not needed to exclude cycles only. The note shows that without the lower bound they still do not exist: the shadow of a positive rational cycle of T, such as 1/5 → 4/5 → 2/5, takes its place. A negative result on one class of ranking functions; nothing about the conjecture. Framework and tools mostly Nashida's. Reviewed by separate AI sessions, no human expert.</span>
+      </p>
+        <a class="status-card-link" href="papers/#mirror-barrier"><span lang="fr">Carte complète →</span><span lang="en">Full card →</span></a>
+        <a class="status-card-link" href="https://doi.org/10.5281/zenodo.24059253" target="_blank" rel="noopener"><span lang="fr">DOI</span><span lang="en">DOI</span></a>
     </div>
   </div>
   <p class="research-status-positioning"><em lang="fr">Toutes les versions des releases Lean : DOI de concept <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (dernière : v1.9, 08/11/2026). Cartes complètes : <a href="papers/">Papers</a>.</em><em lang="en">All versions of the Lean releases: concept DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (latest: v1.9, 2026-11-08). Full cards: <a href="papers/">Papers</a>.</em></p>
@@ -1020,7 +1031,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.30 · 2026-11-08
+    Cartography · v0.10.31 · 2026-11-08
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -1107,6 +1118,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   openTarget();
 })();
 </script>
-<script src="assets/js/main.js?v=20261108-V0-10-30"></script>
+<script src="assets/js/main.js?v=20261108-V0-10-31"></script>
 </body>
 </html>
