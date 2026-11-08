@@ -68,6 +68,7 @@
   function statusBadgeHTML(status) {
     const labels = {
       'validated':   { fr: 'Validé',     en: 'Validated' },
+      'published':   { fr: 'Publié',     en: 'Published' },
       'resolved':    { fr: 'Résolu',     en: 'Resolved' },
       'in-progress': { fr: 'En cours',   en: 'In progress' },
       'submitted':   { fr: 'Soumis',     en: 'Submitted' },
