@@ -26,7 +26,7 @@
 <meta property="og:description" content="On the non-existence of non-trivial Collatz cycles: a conditional formal proof in Lean 4 with documented structural obstructions. Zenodo preprint, April 2026 (erratum of 2 Oct 2026). DOI 10.5281/zenodo.19790405.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://collatz-lab.org/papers/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-29">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-30">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
@@ -37,7 +37,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Papers — Collatz / Syracuse Conditional Cycles">
 <meta name="twitter:description" content="(Syracuse · Collatz · 3n+1) Zenodo preprint, April 2026 (erratum of 2 Oct 2026). DOI 10.5281/zenodo.19790405.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-29">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-30">
 
 <!-- JSON-LD : single ScholarlyArticle (preprint) (no future-publication claims) -->
 <script type="application/ld+json">
@@ -102,7 +102,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="../assets/css/main.css?v=20261108-V0-10-29">
+<link rel="stylesheet" href="../assets/css/main.css?v=20261108-V0-10-30">
 </head>
 <body>
 
@@ -436,11 +436,65 @@
       <h3 lang="fr">Collaboration ouverte avec Benjamin Macindoe — « One obstruction, three faces »</h3>
       <h3 lang="en">Open collaboration with Benjamin Macindoe — "One obstruction, three faces"</h3>
       <p style="font-size: 0.92rem;" lang="fr">
-        <strong>Collaboration ouverte avec Benjamin Macindoe</strong> (chercheur indépendant), depuis juillet 2026. Le travail commun se fait dans un dépôt public, <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener">one-obstruction-three-faces</a> : un registre des résultats (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener">LEDGER.md</a>), où chaque énoncé est vérifié indépendamment des deux côtés, et une note de travail commune (NOTE-v1, non publiée). Les échanges passent par des pull requests : huit ont été fusionnées, la dernière le 19 octobre 2026, et deux sont en cours de revue (rounds 19 et 20). Preprint de B. Macindoe : « Reduced coordinates for the Collatz map » (v3, citée pour ses énoncés numérotés : <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">DOI 10.5281/zenodo.21730505</a> ; v4 du 20/10/2026 : <a href="https://doi.org/10.5281/zenodo.23501162" target="_blank" rel="noopener">DOI 10.5281/zenodo.23501162</a>) ; voir aussi son <a href="https://doi.org/10.5281/zenodo.21303918" target="_blank" rel="noopener">papier miroir 3-adique</a>. Entrée L-A1 du registre (récurrence de transport) : le résultat est classique (Halbeisen–Hungerbühler 1997, Lemme 9 ; Seifert 1988, Théorème 1 ; voir le <a href="../changelog/#v0.10.1">changelog v0.10.1</a> ; note du 07/11/2026 : chez Seifert, la récurrence n'est qu'implicite dans la preuve du théorème 1, et qu'une seule divisibilité suffise est affirmé ailleurs dans l'article (p. 294 et 297), sans la condition de liberté et sans preuve) ; la vérification Lean est côté Eric Merle, revérifiée sous Lean 4.34.0 (<a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9934df4/recheck-v4.34" target="_blank" rel="noopener"><code>9934df4</code></a>). Le détail des résultats communs sera publié ici avec son accord. Voir la page <a href="../cycles/">Cycles</a> et le <a href="https://macindoe.github.io/collatz/viz/cycle_anchor_gateway.html" target="_blank" rel="noopener">gateway interactif</a> de B. Macindoe.
+        <strong>Collaboration ouverte avec Benjamin Macindoe</strong> (chercheur indépendant), depuis juillet 2026. Le travail commun se fait dans un dépôt public, <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener">one-obstruction-three-faces</a> : un registre des résultats (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener">LEDGER.md</a>), où chaque énoncé est vérifié indépendamment des deux côtés, et une note de travail commune (NOTE-v1, non publiée). Les échanges passent par des pull requests : neuf ont été fusionnées, la dernière (round 20) le 8 novembre 2026, et une est en cours de revue (round 19). Preprint de B. Macindoe : « Reduced coordinates for the Collatz map » (v3, citée pour ses énoncés numérotés : <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">DOI 10.5281/zenodo.21730505</a> ; v4 du 20/10/2026 : <a href="https://doi.org/10.5281/zenodo.23501162" target="_blank" rel="noopener">DOI 10.5281/zenodo.23501162</a>) ; voir aussi son <a href="https://doi.org/10.5281/zenodo.21303918" target="_blank" rel="noopener">papier miroir 3-adique</a>. Entrée L-A1 du registre (récurrence de transport) : le résultat est classique (Halbeisen–Hungerbühler 1997, Lemme 9 ; Seifert 1988, Théorème 1 ; voir le <a href="../changelog/#v0.10.1">changelog v0.10.1</a> ; note du 07/11/2026 : chez Seifert, la récurrence n'est qu'implicite dans la preuve du théorème 1, et qu'une seule divisibilité suffise est affirmé ailleurs dans l'article (p. 294 et 297), sans la condition de liberté et sans preuve) ; la vérification Lean est côté Eric Merle, revérifiée sous Lean 4.34.0 (<a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9934df4/recheck-v4.34" target="_blank" rel="noopener"><code>9934df4</code></a>). Le détail des résultats communs, dans le texte qu'il a approuvé, figure ci-dessous. Voir la page <a href="../cycles/">Cycles</a> et le <a href="https://macindoe.github.io/collatz/viz/cycle_anchor_gateway.html" target="_blank" rel="noopener">gateway interactif</a> de B. Macindoe.
       </p>
       <p style="font-size: 0.92rem;" lang="en">
-        <strong>Open collaboration with Benjamin Macindoe</strong> (independent researcher), since July 2026. The joint work lives in a public repository, <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener">one-obstruction-three-faces</a>: a ledger of results (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener">LEDGER.md</a>), where each statement is checked independently on both sides, and a joint working note (NOTE-v1, unpublished). Exchanges go through pull requests: eight have been merged, the last on 19 October 2026, and two are under review (rounds 19 and 20). B. Macindoe's preprint: "Reduced coordinates for the Collatz map" (v3, cited for its numbered statements: <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">DOI 10.5281/zenodo.21730505</a>; v4 of 2026-10-20: <a href="https://doi.org/10.5281/zenodo.23501162" target="_blank" rel="noopener">DOI 10.5281/zenodo.23501162</a>); see also the <a href="https://doi.org/10.5281/zenodo.21303918" target="_blank" rel="noopener">3-adic mirror paper</a>. Ledger entry L-A1 (transport recurrence): the result is classical (Halbeisen–Hungerbühler 1997, Lemma 9; Seifert 1988, Theorem 1; see the <a href="../changelog/#v0.10.1">changelog v0.10.1</a>; note of 2026-11-07: in Seifert, the recurrence is only implicit in the proof of Theorem 1, and that a single divisibility suffices is asserted elsewhere in the paper (pp. 294 and 297), without the freeness condition and without proof); the Lean check is on Eric Merle's side, re-checked on Lean 4.34.0 (<a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9934df4/recheck-v4.34" target="_blank" rel="noopener"><code>9934df4</code></a>). The detail of the joint results will be published here with his agreement. See the <a href="../cycles/">Cycles</a> page and B. Macindoe's <a href="https://macindoe.github.io/collatz/viz/cycle_anchor_gateway.html" target="_blank" rel="noopener">interactive gateway</a>.
+        <strong>Open collaboration with Benjamin Macindoe</strong> (independent researcher), since July 2026. The joint work lives in a public repository, <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener">one-obstruction-three-faces</a>: a ledger of results (<a href="https://github.com/macindoe/one-obstruction-three-faces/blob/main/LEDGER.md" target="_blank" rel="noopener">LEDGER.md</a>), where each statement is checked independently on both sides, and a joint working note (NOTE-v1, unpublished). Exchanges go through pull requests: nine have been merged, the last (round 20) on 8 November 2026, and one is under review (round 19). B. Macindoe's preprint: "Reduced coordinates for the Collatz map" (v3, cited for its numbered statements: <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">DOI 10.5281/zenodo.21730505</a>; v4 of 2026-10-20: <a href="https://doi.org/10.5281/zenodo.23501162" target="_blank" rel="noopener">DOI 10.5281/zenodo.23501162</a>); see also the <a href="https://doi.org/10.5281/zenodo.21303918" target="_blank" rel="noopener">3-adic mirror paper</a>. Ledger entry L-A1 (transport recurrence): the result is classical (Halbeisen–Hungerbühler 1997, Lemma 9; Seifert 1988, Theorem 1; see the <a href="../changelog/#v0.10.1">changelog v0.10.1</a>; note of 2026-11-07: in Seifert, the recurrence is only implicit in the proof of Theorem 1, and that a single divisibility suffices is asserted elsewhere in the paper (pp. 294 and 297), without the freeness condition and without proof); the Lean check is on Eric Merle's side, re-checked on Lean 4.34.0 (<a href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/9934df4/recheck-v4.34" target="_blank" rel="noopener"><code>9934df4</code></a>). The detail of the joint results, in the text he approved, follows below. See the <a href="../cycles/">Cycles</a> page and B. Macindoe's <a href="https://macindoe.github.io/collatz/viz/cycle_anchor_gateway.html" target="_blank" rel="noopener">interactive gateway</a>.
       </p>
+      <details lang="fr" id="collaboration-resultats" style="margin-top: 0.9rem; font-size: 0.92rem;">
+        <summary style="cursor: pointer; font-weight: 600;">Résultats communs : texte anglais approuvé par B. Macindoe (revues du 17/10/2026 et du 08/11/2026), traduit ici par nous</summary>
+        <h4>Collaboration Macindoe–Merle (état au 02/10/2026)</h4>
+        <p>Depuis juillet 2026, Benjamin Macindoe (chercheur indépendant ; <em>Reduced coordinates for the Collatz map</em>, v3, DOI <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">10.5281/zenodo.21730505</a>) et Eric Merle tiennent un registre public des résultats <strong>à deux clés</strong> : chaque énoncé est vérifié indépendamment des deux côtés, dans du code neuf qui n'emprunte rien à l'autre côté, au niveau que précise son entrée (certaines entrées sont mesurées, non démontrées). Pour les entrées formalisées, les preuves Lean sont celles de Merle ; du côté de Macindoe, leurs énoncés et les journaux d'axiomes déposés sont lus et confrontés aux mathématiques, sans être recompilés. Les erreurs ne sont pas effacées : chaque correction nomme qui s'est trompé et qui a corrigé. Dépôt : <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener">macindoe/one-obstruction-three-faces</a> (<code>LEDGER.md</code>, note de travail commune <code>NOTE-v1.md</code> — une note de travail, pas une publication).</p>
+        <p><strong>Établi (deux clés)</strong></p>
+        <ul>
+          <li><strong>La pince diophantienne p = 22</strong> (L1 ; proposition de Merle ; chaque côté a réfuté une affirmation de l'autre ; statut <em>corrigé</em>).</li>
+          <li><strong>Le cas p = 7</strong> (L2 ; l'escalier de Macindoe ; clé de Merle dans du code neuf) et <strong>le spectre de la chaîne de classes</strong> (L4 ; Merle ; recoupé des deux côtés ; niveau mesuré).</li>
+          <li><strong>Échec local en un premier de q, sans défaut de Hasse</strong> (L3 ; proposition de Merle, refaite et affinée par Macindoe ; corrigée par Merle le 24/07/2026, clé de Macindoe sur la correction).</li>
+          <li><strong>Récurrence de transport</strong> (L-A1 ; trouvée indépendamment des deux côtés en juillet 2026, sous forme de blocs ; déjà chez Seifert 1988 (repère des positions impaires) et chez Halbeisen–Hungerbühler 1997, Lemme 9 (repère des lettres) ; Lean : Merle) : les p conditions de divisibilité d'un cycle se ramènent à une seule.</li>
+          <li><strong>Loi des mots répétés</strong> (L-A2 ; proposition de Merle, sa cause élémentaire réglée par Macindoe) et <strong>descente</strong> (L-A4 ; énoncé de Merle, identité multiplicative de Macindoe ; Lean : Merle) : un nouveau cycle, s'il existe, est primitif. Les deux découlent immédiatement de Halbeisen–Hungerbühler 1997, éq. (4).</li>
+          <li><strong>Boucles ancrées et asymétrie de Benford entre les deux côtés</strong> (L-A3 ; candidat de Macindoe ; marge quantifiée par Merle, ses constantes asymptotiques par Macindoe).</li>
+          <li><strong>Lemme de séparation</strong> (L-A5 ; Merle, Lean ; cadre et glose finale : Macindoe). Il ne prouve pas « le mur » : le cycle −17 réalise un pic <code>C = 1</code> isolé, sur la rive négative.</li>
+          <li><strong>Recensement exact pour n ≤ 14</strong> (L-A6 ; Merle ; complété par Macindoe, qui a démontré l'identité fantôme).</li>
+          <li><strong>Inégalité de marge, démontrée deux fois</strong> (L-A7) : dans le noyau Lean avec la constante 1/13 (Merle), sur papier avec la constante exacte (Macindoe).</li>
+          <li><strong>T1</strong> (L-A8 ; Lean : Merle ; la moitié inférieure manquante du plafond trouvée par l'audit de Macindoe, démontrée par Merle) : aucun cycle positif de plus petit élément ≥ 2⁷¹ et d'au plus 4,95·10¹⁰ termes impairs (route directe, round 16). <strong>C'est plus faible que ce que donne Hercher 2023 avec la vérification de Bařina</strong> (au moins 1,375·10¹¹ termes impairs) ; sa valeur est d'être vérifié par machine, pas sa portée. Énoncés du noyau lus, non compilés, du côté de Macindoe ; deux faits de fractions continues et une simplification restent en prose, et <code>LegendreApprox.lean</code> ne porte pas de sonde d'axiomes.</li>
+          <li><strong>δ8, moitié Dirichlet</strong> (L-A9 ; Merle ; convention corrigée par Macindoe) : la route Product-Bound est fermée par l'inégalité stricte de Dirichlet, avec une marge d'environ 0,04 dans l'exposant. L'autre moitié est seulement mesurée.</li>
+          <li><strong>Aucune altitude calculée sur un quotient fini ne décroît</strong> (L-A10 ; Merle ; non formalisé).</li>
+          <li><strong>Le mot sturmien</strong> (L-A11 ; Merle ; reformulation de Macindoe) : le cycle équilibré est exclu par le théorème de Knight (<em>Discrete Math.</em> 349(3) (2026), 114812) combiné à L-A2.</li>
+        </ul>
+        <p><strong>Pour mémoire</strong></p>
+        <ul>
+          <li>Chaque clé Lean du registre a été revérifiée sur un noyau corrigé (Lean 4.34.0, après <a href="https://github.com/leanprover/lean4/issues/14576" target="_blank" rel="noopener">lean4#14576</a>) : 40 déclarations, axiomes standard uniquement (round 16).</li>
+          <li>Le round 17 a corrigé notre propre rétractation du round 14 : le recensement fantôme à p = 7, k = 8 tient, exhaustif pour L ≤ 11.</li>
+        </ul>
+        <p><strong>Ce que rien de tout ceci ne fait :</strong> exclure un cycle au-delà des bornes publiées (vérification de Bařina jusqu'à 2⁷¹ ; Hercher 2023). Le registre localise l'obstruction ; il ne la franchit pas.</p>
+      </details>
+      <details lang="en" id="collaboration-results" style="margin-top: 0.9rem; font-size: 0.92rem;">
+        <summary style="cursor: pointer; font-weight: 600;">Joint results: text approved by B. Macindoe (reviews of 2026-10-17 and 2026-11-08)</summary>
+        <h4>Collaboration Macindoe–Merle (state at 2026-10-02)</h4>
+        <p>Since July 2026, Benjamin Macindoe (independent researcher; <em>Reduced coordinates for the Collatz map</em>, v3, DOI <a href="https://doi.org/10.5281/zenodo.21730505" target="_blank" rel="noopener">10.5281/zenodo.21730505</a>) and Eric Merle keep a public <strong>two-key</strong> claims ledger: each statement is checked independently on both sides, in fresh code that borrows nothing from the other side, at the grade its entry states (some entries are measured, not proved). For the formalised entries the Lean proofs are Merle's; on Macindoe's side their statements and committed axiom logs are read and matched against the mathematics, not rebuilt. Errors are not deleted: each correction names who erred and who corrected. Repository: <a href="https://github.com/macindoe/one-obstruction-three-faces" target="_blank" rel="noopener">macindoe/one-obstruction-three-faces</a> (<code>LEDGER.md</code>, joint working note <code>NOTE-v1.md</code> — a working note, not a publication).</p>
+        <p><strong>Established (two keys)</strong></p>
+        <ul>
+          <li><strong>The p = 22 Diophantine pincer</strong> (L1; Merle's proposal; each side refuted one claim of the other; status <em>corrected</em>).</li>
+          <li><strong>The p = 7 instance</strong> (L2; Macindoe's staircase; Merle's key in fresh code) and <strong>the spectrum of the class chain</strong> (L4; Merle; cross-checked on both sides; measured grade).</li>
+          <li><strong>Local failure at a prime of q, no Hasse gap</strong> (L3; Merle's proposal, re-run and refined by Macindoe; corrected by Merle on 2026-07-24, Macindoe's key on the correction).</li>
+          <li><strong>Transport recurrence</strong> (L-A1; found independently on both sides in July 2026, in block form; already in Seifert 1988 (odd-position frame) and Halbeisen–Hungerbühler 1997, Lemma 9 (letter frame); Lean: Merle): the p divisibility conditions of a cycle reduce to one.</li>
+          <li><strong>Repeated-words law</strong> (L-A2; Merle's proposal, its elementary cause closed by Macindoe) and <strong>descent</strong> (L-A4; Merle's statement, Macindoe's multiplicative identity; Lean: Merle): a new cycle, if any, is primitive. Both are immediate from Halbeisen–Hungerbühler 1997, eq. (4).</li>
+          <li><strong>Anchored loops and the Benford side-asymmetry</strong> (L-A3; Macindoe's candidate; margin quantified by Merle, its asymptotic constants by Macindoe).</li>
+          <li><strong>Separation lemma</strong> (L-A5; Merle, Lean; framework and final gloss: Macindoe). It does not prove "the wall": the cycle −17 realises an isolated <code>C = 1</code> peak, on the negative shore.</li>
+          <li><strong>Exact census for n ≤ 14</strong> (L-A6; Merle; completed by Macindoe, who proved the ghost identity).</li>
+          <li><strong>Margin inequality, proved twice</strong> (L-A7): in the Lean kernel with constant 1/13 (Merle), on paper with the exact constant (Macindoe).</li>
+          <li><strong>T1</strong> (L-A8; Lean: Merle; the ceiling's missing lower half found by Macindoe's audit, proved by Merle): no positive cycle with least element ≥ 2⁷¹ and at most 4.95·10¹⁰ odd terms (direct route, round 16). <strong>This is weaker than what Hercher 2023 gives together with Bařina's verification</strong> (at least 1.375·10¹¹ odd terms); its value is that it is machine-checked, not its reach. Kernel statements read, not built, on Macindoe's side; two continued-fraction facts and one cancellation remain in prose, and <code>LegendreApprox.lean</code> carries no axiom probe.</li>
+          <li><strong>δ8, Dirichlet half</strong> (L-A9; Merle; convention corrected by Macindoe): the Product-Bound route is closed by Dirichlet's strict inequality, with a margin of about 0.04 in the exponent. The other half is measured only.</li>
+          <li><strong>No altitude computed on a finite quotient decreases</strong> (L-A10; Merle; not formalised).</li>
+          <li><strong>The Sturmian word</strong> (L-A11; Merle; reformulation by Macindoe): the balanced cycle is excluded by Knight's theorem (<em>Discrete Math.</em> 349(3) (2026), 114812) combined with L-A2.</li>
+        </ul>
+        <p><strong>Records</strong></p>
+        <ul>
+          <li>Every Lean key of the ledger was re-checked on a patched kernel (Lean 4.34.0, after <a href="https://github.com/leanprover/lean4/issues/14576" target="_blank" rel="noopener">lean4#14576</a>): 40 declarations, standard axioms only (round 16).</li>
+          <li>Round 17 corrected our own round-14 retraction: the phantom census at p = 7, k = 8 stands, exhaustive for L ≤ 11.</li>
+        </ul>
+        <p><strong>What none of this does:</strong> exclude a cycle beyond the published bounds (Bařina's verification to 2⁷¹; Hercher 2023). The ledger locates the obstruction; it does not cross it.</p>
+      </details>
     </div>
 
     <div class="card" style="border-left: 4px solid #6366f1;">
@@ -520,7 +574,7 @@
 </main>
 
 <footer>
-  <div class="footer-meta">Cartography · v0.10.29 · 2026-11-08</div>
+  <div class="footer-meta">Cartography · v0.10.30 · 2026-11-08</div>
   <p lang="fr">Site produit avec PROTOCOLE ARES v2</p>
   <p lang="en">Site produced with PROTOCOLE ARES v2</p>
   <p class="footer-status">
@@ -547,7 +601,7 @@
 <!-- Hypothes.is annotations layer -->
 <meta name="collatz-annotate" content="on-click">
 
-<script src="../assets/js/main.js?v=20261108-V0-10-29"></script>
+<script src="../assets/js/main.js?v=20261108-V0-10-30"></script>
 
 </body>
 </html>
