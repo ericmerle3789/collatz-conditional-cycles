@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-11-08T12:11:41Z</updated>
+  <updated>2026-11-08T13:38:43Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,16 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.28 — Brox 2000 submitted to ccchallenge</title>
+    <link href="https://collatz-lab.org/papers/"/>
+    <id>urn:collatz-cycles:v0.10.28-brox2000-ccchallenge-2026-11-08</id>
+    <updated>2026-11-08T13:38:43Z</updated>
+    <published>2026-11-08T13:38:43Z</published>
+    <category term="lean"/>
+    <summary>The Lean formalisation of T. Brox, "Collatz cycles with few descents" (Acta Arithmetica 92, 2000; folder brox2000/, release v1.9) is listed on ccchallenge.org, entry Brox2000, status "Ready to be audited", AI declared: Claude Opus 5.5 (Anthropic). Nothing new about Collatz cycles.</summary>
+  </entry>
 
   <entry>
     <title>v0.10.27 — Brox 2000 in Lean, for all cycles (release v1.9)</title>
