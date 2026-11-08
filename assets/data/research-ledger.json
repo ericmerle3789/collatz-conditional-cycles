@@ -1,11 +1,40 @@
 {
   "$schema": "https://collatz-lab.org/schema/research-ledger-v1.json",
   "version": "1.0.0",
-  "generated": "2026-11-07T17:26:09Z",
-  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-11-07 (v0.10.23): Remark 1 of Halbeisen–Hungerbühler 1997 (the bound 1/2 for l > 1000) proved in Lean (hh1997/, release v1.7); K. Knight's preprint (2023) credited. Previously, 2026-11-07 (v0.10.22): Seifert 1988 formalised in Lean (seifert1988/, release v1.6); a dated note on the credit of ledger entry L-A1. Previously, 2026-10-28 (v0.10.19): release v1.5 of the Lean repository (documentation and LICENSE; ccchallenge links to v1.5); earlier ledger events rewritten without a date are acknowledged by a dated event. Previously, 2026-10-28: Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4). Previously, 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
+  "generated": "2026-11-08T07:32:03Z",
+  "audit_status": "Internal AI-assisted reviews, not peer review. Updated 2026-11-08 (v0.10.26): an upper bound in the way of Simons–de Weger without Rhin's lower bound (sdw2005/, release v1.8); weaker than their final bounds, it excludes no cycle. Previously, 2026-11-07 (v0.10.23): Remark 1 of Halbeisen–Hungerbühler 1997 (the bound 1/2 for l > 1000) proved in Lean (hh1997/, release v1.7); K. Knight's preprint (2023) credited. Previously, 2026-11-07 (v0.10.22): Seifert 1988 formalised in Lean (seifert1988/, release v1.6); a dated note on the credit of ledger entry L-A1. Previously, 2026-10-28 (v0.10.19): release v1.5 of the Lean repository (documentation and LICENSE; ccchallenge links to v1.5); earlier ledger events rewritten without a date are acknowledged by a dated event. Previously, 2026-10-28: Steiner 1978 without the hypothesis H_Rhin (logs23/, release v1.4). Previously, 2026-10-27: the 21 \"stub\" leads of the catalogue settled (v0.10.11 to v0.10.15); release v1.3 of the Lean repository (documentation only). Previously, 2026-10-21: δ10 withdrawn (outdated cartography); the \"impossibility trilogy\" announcement withdrawn; the four studies opened in April 2026 closed. Previously, 2026-10-20: Zenodo v4 erratum (the third hypothesis excludes every non-trivial cycle on its own); δ11 withdrawn.",
   "positioning_fr": "Cette section documente l'état du projet et sa traçabilité ; elle ne constitue pas une revendication d'acceptation ou de preuve finale.",
   "positioning_en": "The ledger is provided for traceability and reproducibility; scientific claims remain limited to the paper and formal Lean artefacts.",
   "events": [
+
+    {
+      "id": "sdw2005-upper-bound-v1-8-2026-11-08",
+      "type": "lean",
+      "subtype": "upper-bound",
+      "date": "2026-11-08",
+      "datetime": "2026-11-08T08:32:03+01:00",
+      "status": "validated",
+      "milestone": true,
+      "claim_scope": "formal_lean",
+      "verification_method": "lean_kernel",
+      "evidence_level": "artefact_public",
+      "epistemic_status": "verified",
+      "last_verified_at": "2026-11-07",
+      "title": {
+        "fr": "Une borne à la manière de Simons–de Weger, sans la minoration de Rhin (sdw2005/, release v1.8)",
+        "en": "An upper bound in the way of Simons–de Weger, without Rhin's lower bound (sdw2005/, release v1.8)"
+      },
+      "summary": {
+        "fr": "Le dossier sdw2005/ du dépôt one-obstruction-three-faces-lean suit la méthode de la borne a priori de J. Simons et B. de Weger, « Theoretical and computational bounds for m-cycles of the 3n + 1 problem », Acta Arithmetica 117 (2005), 51-70 (version 1.44 de 2010 lue), avec les minorations de |x log 2 + y log 3| du dossier logs23/ au lieu de celle de G. Rhin, et sans minoration X0 des éléments d'un cycle. Pour C(n) = n/2 (n pair), (3n + 1)/2 (n impair) sur les entiers positifs : un cycle d'au plus 82 minima locaux a moins de 4·10^18 termes impairs (cycle_K_lt), un cycle d'au plus 91 minima locaux moins de 2·10^21 (cycle_K_lt_91). 9 énoncés figés avant leur preuve (commits 750c7f2 et 21b4ae5), tous démontrés, sans hypothèse, 0 sorry, 0 native_decide, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; check.sh relancé depuis un clone neuf du commit e2fdb2e (9 rapports d'axiomes, identiques au rapport enregistré). Ces bornes sont plus faibles que les bornes finales de Simons–de Weger (théorème 3(d)) et n'excluent aucun cycle ; le dossier ne donne pas de preuve du théorème de C. Hercher (2023) sans la minoration de Rhin, et son README signale une erreur que P. Norfleet rapporte dans la preuve du théorème 21 de Hercher (non vérifiée ici). Aucune nouveauté n'est revendiquée.",
+        "en": "The sdw2005/ folder of the one-obstruction-three-faces-lean repository follows the method of the a priori bound of J. Simons and B. de Weger, \"Theoretical and computational bounds for m-cycles of the 3n + 1 problem\", Acta Arithmetica 117 (2005), 51-70 (version 1.44 of 2010 read), with the lower bounds for |x log 2 + y log 3| of the logs23/ folder instead of G. Rhin's, and without a lower bound X0 for the elements of a cycle. For C(n) = n/2 (n even), (3n + 1)/2 (n odd) on the positive integers: a cycle with at most 82 local minima has fewer than 4·10^18 odd terms (cycle_K_lt), a cycle with at most 91 local minima fewer than 2·10^21 (cycle_K_lt_91). 9 statements frozen before their proofs (commits 750c7f2 and 21b4ae5), all proved, with no hypothesis, 0 sorry, 0 native_decide, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); check.sh run from a fresh clone of commit e2fdb2e (9 axiom reports, identical to the recorded report). These bounds are weaker than the final bounds of Simons–de Weger (Theorem 3(d)) and exclude no cycle; the folder does not give a proof of C. Hercher's theorem (2023) without Rhin's lower bound, and its README mentions an error that P. Norfleet reports in the proof of Hercher's Theorem 21 (not checked here). No novelty is claimed."
+      },
+      "artefacts": [
+        {"label": "sdw2005/ (03b58a5)", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/03b58a5/sdw2005", "kind": "repository"},
+        {"label": "DOI 10.5281/zenodo.24049927", "url": "https://doi.org/10.5281/zenodo.24049927", "kind": "doi"},
+        {"label": "Release v1.8", "url": "https://github.com/ericmerle3789/one-obstruction-three-faces-lean/releases/tag/v1.8", "kind": "tag"}
+      ],
+      "related": ["steiner1978-without-h-rhin-2026-10-28", "hh1997-remark1-large-v1-7-2026-11-07"]
+    },
 
     {
       "id": "hh1997-remark1-large-v1-7-2026-11-07",
@@ -1172,13 +1201,13 @@
 
   ],
   "stats_v2": {
-    "total_events": 42,
-    "by_type": {"lean": 13, "repository": 10, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
-    "by_status": {"validated": 32, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
-    "by_milestone": {"true": 29, "false": 13},
-    "by_claim_scope": {"documentation": 25, "formal_lean": 12, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
-    "by_epistemic_status": {"verified": 30, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
-    "note_fr": "Registre partiel : 42 événements (mise à jour du 2026-11-07, v0.10.23). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
-    "note_en": "Partial ledger: 42 events (update of 2026-11-07, v0.10.23). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
+    "total_events": 43,
+    "by_type": {"lean": 14, "repository": 10, "audit": 7, "mea-culpa": 4, "study": 4, "paper": 4},
+    "by_status": {"validated": 33, "archived": 4, "withdrawn": 3, "resolved": 1, "superseded": 1, "rejected": 1},
+    "by_milestone": {"true": 30, "false": 13},
+    "by_claim_scope": {"documentation": 25, "formal_lean": 13, "external_literature": 2, "formal_lean_conditional": 1, "submitted_paper": 1, "editorial_outcome": 1},
+    "by_epistemic_status": {"verified": 31, "withdrawn": 3, "partial": 3, "external_unverified": 2, "dead_end": 2, "superseded_by_rejection": 1, "superseded": 1},
+    "note_fr": "Registre partiel : 43 événements (mise à jour du 2026-11-08, v0.10.26). Non détaillés ici : les autres mea culpa (numérotés jusqu'au #32), les phases Lean, les 36 pistes du catalogue (assets/data/pistes.json), les findings FIND-001..015.",
+    "note_en": "Partial ledger: 43 events (update of 2026-11-08, v0.10.26). Not detailed here: the other mea culpa (numbered up to #32), the Lean phases, the 36 catalogued approaches (assets/data/pistes.json), findings FIND-001..015."
   }
 }

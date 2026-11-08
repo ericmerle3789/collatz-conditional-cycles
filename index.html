@@ -31,7 +31,7 @@
 <meta property="og:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://collatz-lab.org/">
-<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-25">
+<meta property="og:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-26">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Λ_{S,k} = S log 2 - k log 3 — Collatz Conditional Cycles">
@@ -43,7 +43,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Collatz / Syracuse Conditional Cycles — Lean 4 formalization">
 <meta name="twitter:description" content="Collatz : formalisations en Lean 4 de travaux classiques sur les cycles, sans nouveauté revendiquée. Ne prouve pas la conjecture. Lean 4 formalisations of classical work on Collatz cycles; no novelty claimed. Does not prove the conjecture.">
-<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261107-V0-10-25">
+<meta name="twitter:image" content="https://collatz-lab.org/assets/og-image.png?v=20261108-V0-10-26">
 
 <!-- JSON-LD structured data : ScholarlyArticle + Person + SoftwareSourceCode -->
 <script type="application/ld+json">
@@ -187,7 +187,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha384-Uq05+JLko69eOiPr39ta9bh7kld5PKZoU+fF7g0EXTAriEollhZ+DrN8Q/Oi8J2Q" crossorigin="anonymous"></script>
 
 <!-- CSS principal -->
-<link rel="stylesheet" href="assets/css/main.css?v=20261107-V0-10-25">
+<link rel="stylesheet" href="assets/css/main.css?v=20261108-V0-10-26">
 
 <!-- Analytics : Cloudflare Web Analytics activé côté Cloudflare dashboard
      (privacy-first, no cookies, GDPR-compliant, no consent banner needed).
@@ -242,19 +242,19 @@
   <div class="hero-banner-overlay"></div>
   <div class="hero-banner-lambda">Λ</div>
   <div class="hero-banner-content">
-    <div class="hero-banner-eyebrow">hh1997/ · Release v1.7 · 2026-11-07</div>
+    <div class="hero-banner-eyebrow">sdw2005/ · Release v1.8 · 2026-11-08</div>
     <h2 class="hero-banner-title">
-      <span lang="en">Halbeisen–Hungerbühler 1997 in Lean: Remark 1 proved</span>
-      <span lang="fr">Halbeisen–Hungerbühler 1997 en Lean : la Remarque 1 démontrée</span>
-      <em><span lang="en"> — the bound 1/2 for l &gt; 1000, stated in the paper without proof</span><span lang="fr"> — la borne 1/2 pour l &gt; 1000, énoncée dans l'article sans preuve</span></em>
+      <span lang="en">An upper bound in the way of Simons–de Weger, without Rhin's lower bound</span>
+      <span lang="fr">Une borne à la manière de Simons–de Weger, sans la minoration de Rhin</span>
+      <em><span lang="en"> — a cycle with at most 91 local minima has fewer than 2·10<sup>21</sup> odd terms</span><span lang="fr"> — un cycle d'au plus 91 minima locaux a moins de 2·10<sup>21</sup> termes impairs</span></em>
     </h2>
     <div class="hero-banner-subtitle">
-      <span lang="en">The constant 1/2 is the paper's; K. Knight's preprint (2023) also states it, without proof, for some of the cases. No novelty is claimed, and the formalisation proves nothing new about Collatz cycles.</span><span lang="fr">La constante 1/2 est celle de l'article ; la prépublication de K. Knight (2023) l'énonce aussi, sans preuve, pour une partie des cas. Aucune nouveauté n'est revendiquée, et la formalisation n'apprend rien de nouveau sur les cycles de Collatz.</span><br>
-      <code>remark1_large</code> · DOI 10.5281/zenodo.24041065 · Lean 4.34.0
+      <span lang="en">Weaker than the final bounds of Simons–de Weger (2005), which use a lower bound from computations; it excludes no cycle. No novelty is claimed.</span><span lang="fr">Plus faible que les bornes finales de Simons–de Weger (2005), qui utilisent une minoration issue de calculs ; elle n'exclut aucun cycle. Aucune nouveauté n'est revendiquée.</span>
+      <code>cycle_K_lt_91</code> · DOI 10.5281/zenodo.24049927 · Lean 4.34.0
     </div>
     <div class="hero-banner-pills">
-      <span class="banner-pill"><span lang="en">71 statements</span><span lang="fr">71 énoncés</span></span>
-      <span class="banner-pill"><span lang="en">0 sorry in the proofs</span><span lang="fr">0 sorry dans les preuves</span></span>
+      <span class="banner-pill"><span lang="en">9 statements</span><span lang="fr">9 énoncés</span></span>
+      <span class="banner-pill"><span lang="en">0 sorry</span><span lang="fr">0 sorry</span></span>
       <span class="banner-pill"><span lang="en">standard axioms</span><span lang="fr">axiomes standard</span></span>
     </div>
   </div>
@@ -275,7 +275,7 @@
     <span lang="en">Also known as the <strong>Syracuse problem</strong>, the <strong>3n+1 problem</strong>, the <strong>Kakutani problem</strong>, the <strong>Hasse algorithm</strong>, or the <strong>Ulam conjecture</strong>.</span>
   </p>
   <p class="hero-lede" data-i18n="heroLede">
-    Formalisations en Lean 4 de quatre travaux classiques sur les cycles de Collatz (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, Seifert 1988), avec une note d'errata ; un catalogue de trente-six pistes, chacune avec sa fiche ; et le preprint d'avril 2026, avec son erratum.
+    Formalisations en Lean 4 de quatre travaux classiques sur les cycles de Collatz (Halbeisen–Hungerbühler 1997, Lagarias 1990, Steiner 1978, Seifert 1988), avec une note d'errata, et une borne à la manière de Simons–de Weger 2005, démontrée sans la minoration de Rhin ; un catalogue de trente-six pistes, chacune avec sa fiche ; et le preprint d'avril 2026, avec son erratum.
   </p>
 </section>
 
@@ -294,6 +294,17 @@
   <div class="status-snapshot-grid">
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow"><span lang="fr">Dernier jalon</span><span lang="en">Latest milestone</span></div>
+      <div class="status-card-title"><span lang="fr">Simons–de Weger 2005, sans Rhin</span><span lang="en">Simons–de Weger 2005, without Rhin</span></div>
+      <div class="status-card-meta"><span class="status-card-date">2026-11-08</span></div>
+      <p class="status-card-summary">
+        <span lang="fr">Une borne supérieure du nombre K de termes impairs d'un cycle, à la manière de J. Simons et B. de Weger (2005), démontrée en Lean 4 sans la minoration de G. Rhin : K &lt; 4·10<sup>18</sup> pour au plus 82 minima locaux, K &lt; 2·10<sup>21</sup> pour au plus 91 ; 9 énoncés, tous démontrés sans hypothèse. Plus faible que leurs bornes finales ; elle n'exclut aucun cycle. Aucune nouveauté n'est revendiquée.</span>
+        <span lang="en">An upper bound for the number K of odd terms of a cycle, in the way of J. Simons and B. de Weger (2005), proved in Lean 4 without G. Rhin's lower bound: K &lt; 4·10<sup>18</sup> with at most 82 local minima, K &lt; 2·10<sup>21</sup> with at most 91; 9 statements, all proved with no hypothesis. Weaker than their final bounds; it excludes no cycle. No novelty is claimed.</span>
+      </p>
+        <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/v1.8/sdw2005#re-check" target="_blank" rel="noopener"><span lang="fr">Pour auditer →</span><span lang="en">To audit →</span></a>
+        <a class="status-card-link" href="https://doi.org/10.5281/zenodo.24049927" target="_blank" rel="noopener"><span lang="fr">DOI (v1.8)</span><span lang="en">DOI (v1.8)</span></a>
+    </div>
+    <div class="status-card" data-family="lean">
+      <div class="status-card-eyebrow"><span lang="fr">Article de 1997</span><span lang="en">Paper of 1997</span></div>
       <div class="status-card-title"><span lang="fr">Halbeisen–Hungerbühler 1997</span><span lang="en">Halbeisen–Hungerbühler 1997</span></div>
       <div class="status-card-meta"><span class="status-card-date">2026-11-07</span></div>
       <p class="status-card-summary">
@@ -348,7 +359,7 @@
         <a class="status-card-link" href="https://doi.org/10.5281/zenodo.24043129" target="_blank" rel="noopener"><span lang="fr">DOI (version 2)</span><span lang="en">DOI (version 2)</span></a>
     </div>
   </div>
-  <p class="research-status-positioning"><em lang="fr">Toutes les versions des releases Lean : DOI de concept <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (dernière : v1.7, 07/11/2026). Cartes complètes : <a href="papers/">Papers</a>.</em><em lang="en">All versions of the Lean releases: concept DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (latest: v1.7, 2026-11-07). Full cards: <a href="papers/">Papers</a>.</em></p>
+  <p class="research-status-positioning"><em lang="fr">Toutes les versions des releases Lean : DOI de concept <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (dernière : v1.8, 08/11/2026). Cartes complètes : <a href="papers/">Papers</a>.</em><em lang="en">All versions of the Lean releases: concept DOI <a href="https://doi.org/10.5281/zenodo.23498095" target="_blank" rel="noopener">10.5281/zenodo.23498095</a> (latest: v1.8, 2026-11-08). Full cards: <a href="papers/">Papers</a>.</em></p>
 </section>
 
 <section id="research-status" class="research-status-snapshot">
@@ -362,21 +373,21 @@
     <em lang="en">This section documents project status and traceability; it is not a claim of acceptance or final proof.</em>
   </p>
 
-  <!-- Status snapshot : 5 cartes compactes (état au 2026-11-07) -->
+  <!-- Status snapshot : 5 cartes compactes (état au 2026-11-08) -->
   <div class="status-snapshot-grid">
 
-    <!-- Carte 1 : Dernier jalon — Halbeisen–Hungerbühler 1997, Remarque 1 (2026-11-07) -->
+    <!-- Carte 1 : Dernier jalon — sdw2005/, borne à la manière de Simons–de Weger sans Rhin (2026-11-08) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastMilestone">Dernier jalon</div>
-      <div class="status-card-title"><span lang="fr">Remarque 1 de Halbeisen–Hungerbühler 1997 en Lean 4 (hh1997/, v1.7)</span><span lang="en">Remark 1 of Halbeisen–Hungerbühler 1997 in Lean 4 (hh1997/, v1.7)</span></div>
+      <div class="status-card-title"><span lang="fr">Borne à la manière de Simons–de Weger, sans Rhin (sdw2005/, v1.8)</span><span lang="en">Upper bound in the way of Simons–de Weger, without Rhin (sdw2005/, v1.8)</span></div>
       <div class="status-card-meta">
-        <span class="status-card-date">2026-11-07</span>
+        <span class="status-card-date">2026-11-08</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Le dossier hh1997/ du dépôt Lean (release v1.7, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.24041065" target="_blank" rel="noopener">10.5281/zenodo.24041065</a>) démontre la borne 1/2 de la Remarque 1 de L. Halbeisen et N. Hungerbühler (<em>Acta Arithmetica</em> 78, 1997) pour l &gt; 1000, que l'article énonce sans la démontrer ; ses 71 énoncés figés sont maintenant tous démontrés, axiomes standard seuls. La constante 1/2 est celle de l'article ; la prépublication de K. Knight (HAL, 2023) l'énonce aussi, sans preuve et seulement pour l = ⌈n log<sub>2</sub> 3⌉. Rien de nouveau sur les cycles de Collatz. Jalon précédent, le même jour : Seifert 1988 (seifert1988/, release v1.6, 33 énoncés).</span>
-        <span lang="en">The hh1997/ folder of the Lean repository (release v1.7, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.24041065" target="_blank" rel="noopener">10.5281/zenodo.24041065</a>) proves the bound 1/2 of Remark 1 of L. Halbeisen and N. Hungerbühler (<em>Acta Arithmetica</em> 78, 1997) for l &gt; 1000, which the paper states without proof; its 71 frozen statements are now all proved, standard axioms only. The constant 1/2 is the paper's; K. Knight's preprint (HAL, 2023) also states it, without proof and only for l = ⌈n log<sub>2</sub> 3⌉. Nothing new about Collatz cycles. Previous milestone, the same day: Seifert 1988 (seifert1988/, release v1.6, 33 statements).</span>
+        <span lang="fr">Le dossier sdw2005/ du dépôt Lean (release v1.8, archive Zenodo DOI <a href="https://doi.org/10.5281/zenodo.24049927" target="_blank" rel="noopener">10.5281/zenodo.24049927</a>) suit la méthode de la borne a priori de J. Simons et B. de Weger (<em>Acta Arithmetica</em> 117, 2005), mais sans la minoration de G. Rhin et sans minoration X<sub>0</sub> des éléments d'un cycle : un cycle d'au plus 82 minima locaux a moins de 4·10<sup>18</sup> termes impairs, et un cycle d'au plus 91 minima locaux moins de 2·10<sup>21</sup> ; 9 énoncés figés, tous démontrés, axiomes standard seuls. Ces bornes sont plus faibles que les bornes finales de Simons–de Weger et n'excluent aucun cycle ; le dossier ne donne pas de preuve du théorème de C. Hercher (2023) sur les m-cycles pour m ≤ 91. Rien de nouveau sur les cycles de Collatz.</span>
+        <span lang="en">The sdw2005/ folder of the Lean repository (release v1.8, Zenodo archive DOI <a href="https://doi.org/10.5281/zenodo.24049927" target="_blank" rel="noopener">10.5281/zenodo.24049927</a>) follows the method of the a priori bound of J. Simons and B. de Weger (<em>Acta Arithmetica</em> 117, 2005), but without G. Rhin's lower bound and without a lower bound X<sub>0</sub> for the elements of a cycle: a cycle with at most 82 local minima has fewer than 4·10<sup>18</sup> odd terms, and a cycle with at most 91 local minima fewer than 2·10<sup>21</sup>; 9 frozen statements, all proved, standard axioms only. These bounds are weaker than the final bounds of Simons–de Weger and exclude no cycle; the folder does not give a proof of C. Hercher's theorem (2023) on m-cycles for m ≤ 91. Nothing new about Collatz cycles.</span>
       </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/20788ee/hh1997" target="_blank" rel="noopener">→ <code>hh1997/</code> (20788ee)</a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/03b58a5/sdw2005" target="_blank" rel="noopener">→ <code>sdw2005/</code> (03b58a5)</a>
     </div>
 
     <!-- Carte 2 : Statut paper -->
@@ -394,30 +405,30 @@
       <a class="status-card-link" href="https://doi.org/10.5281/zenodo.19790405" target="_blank" rel="noopener">→ DOI Zenodo</a>
     </div>
 
-    <!-- Carte 3 : Dernière vérification Lean (hh1997/, Remarque 1 de Halbeisen–Hungerbühler 1997, 2026-11-07) -->
+    <!-- Carte 3 : Dernière vérification Lean (sdw2005/, 2026-11-07) -->
     <div class="status-card" data-family="lean">
       <div class="status-card-eyebrow" data-i18n="statusLastLean">Dernière vérification Lean</div>
-      <div class="status-card-title"><span lang="fr">Halbeisen–Hungerbühler 1997 : 71 énoncés vérifiés sous Lean 4.34.0</span><span lang="en">Halbeisen–Hungerbühler 1997: 71 statements checked on Lean 4.34.0</span></div>
+      <div class="status-card-title"><span lang="fr">Simons–de Weger sans Rhin : 9 énoncés vérifiés sous Lean 4.34.0</span><span lang="en">Simons–de Weger without Rhin: 9 statements checked on Lean 4.34.0</span></div>
       <div class="status-card-meta">
         <span class="status-card-date">2026-11-07</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Dossier hh1997/ (release v1.7) : preuve de <code>remark1_large</code> (Remarque 1, borne 1/2 pour l &gt; 1000), écrite contre son énoncé figé le 19/10/2026, inchangé ; 0 <code>sorry</code> dans les preuves, 0 <code>native_decide</code>, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; <code>check.sh</code> relancé le 07/11/2026 depuis un clone neuf du commit 31e63a4 (35 fichiers, 85 rapports d'axiomes, identiques aux rapports enregistrés ; Lean 4.34.0 et le cache de Mathlib déjà présents ; les commits suivants ne changent aucun fichier Lean). Archive Zenodo (logiciel, v1.7) : DOI <a href="https://doi.org/10.5281/zenodo.24041065" target="_blank" rel="noopener">10.5281/zenodo.24041065</a>. Précédemment : seifert1988/, Seifert 1988, 33 énoncés (<code>check.sh</code> relancé le 07/11/2026 depuis un clone neuf du commit 6404e33).</span>
-        <span lang="en">Folder hh1997/ (release v1.7): proof of <code>remark1_large</code> (Remark 1, the bound 1/2 for l &gt; 1000), written against its statement frozen on 2026-10-19, which is unchanged; 0 <code>sorry</code> in the proofs, 0 <code>native_decide</code>, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); <code>check.sh</code> run on 2026-11-07 from a fresh clone of commit 31e63a4 (35 files, 85 axiom reports, identical to the recorded ones; Lean 4.34.0 and Mathlib's cache already present; the later commits change no Lean file). Zenodo archive (software, v1.7): DOI <a href="https://doi.org/10.5281/zenodo.24041065" target="_blank" rel="noopener">10.5281/zenodo.24041065</a>. Previously: seifert1988/, Seifert 1988, 33 statements (<code>check.sh</code> run on 2026-11-07 from a fresh clone of commit 6404e33).</span>
+        <span lang="fr">Dossier sdw2005/ (release v1.8) : 9 énoncés figés avant leur preuve (commits 750c7f2 et 21b4ae5), tous démontrés, sans hypothèse ; 0 <code>sorry</code>, 0 <code>native_decide</code>, axiomes standard seuls (Lean 4.34.0, Mathlib v4.34.0) ; <code>check.sh</code> relancé le 07/11/2026 depuis un clone neuf du commit e2fdb2e (il relance aussi les vérifications de steiner1978/ et logs23/ ; 9 rapports d'axiomes, identiques au rapport enregistré ; Lean 4.34.0 et le cache de Mathlib déjà présents ; les commits suivants ne changent aucun fichier Lean). Archive Zenodo (logiciel, v1.8) : DOI <a href="https://doi.org/10.5281/zenodo.24049927" target="_blank" rel="noopener">10.5281/zenodo.24049927</a>.</span>
+        <span lang="en">Folder sdw2005/ (release v1.8): 9 statements frozen before their proofs (commits 750c7f2 and 21b4ae5), all proved, with no hypothesis; 0 <code>sorry</code>, 0 <code>native_decide</code>, standard axioms only (Lean 4.34.0, Mathlib v4.34.0); <code>check.sh</code> run on 2026-11-07 from a fresh clone of commit e2fdb2e (it also re-runs the checks of steiner1978/ and logs23/; 9 axiom reports, identical to the recorded report; Lean 4.34.0 and Mathlib's cache already present; the later commits change no Lean file). Zenodo archive (software, v1.8): DOI <a href="https://doi.org/10.5281/zenodo.24049927" target="_blank" rel="noopener">10.5281/zenodo.24049927</a>.</span>
       </p>
-      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/20788ee/hh1997" target="_blank" rel="noopener">→ <code>hh1997/</code> (20788ee)</a>
+      <a class="status-card-link" href="https://github.com/ericmerle3789/one-obstruction-three-faces-lean/tree/03b58a5/sdw2005" target="_blank" rel="noopener">→ <code>sdw2005/</code> (03b58a5)</a>
     </div>
 
-    <!-- Carte 4 : Dernier audit (relectures adverses de la v1.7 et de la v0.10.23, 2026-11-07) -->
+    <!-- Carte 4 : Dernier audit (relectures adverses de la v1.8, 2026-11-07/08) -->
     <div class="status-card" data-family="audit">
       <div class="status-card-eyebrow" data-i18n="statusLastAudit">Dernier audit</div>
-      <div class="status-card-title"><span lang="fr">Relectures adverses de la v1.7 et de la v0.10.23</span><span lang="en">Adversarial reviews of v1.7 and v0.10.23</span></div>
+      <div class="status-card-title"><span lang="fr">Relectures adverses de la v1.8</span><span lang="en">Adversarial reviews of v1.8</span></div>
       <div class="status-card-meta">
-        <span class="status-card-date">2026-11-07</span>
+        <span class="status-card-date">2026-11-08</span>
       </div>
       <p class="status-card-summary">
-        <span lang="fr">Relectures adverses internes, assistées par IA (ce n'est pas une évaluation par les pairs), un relecteur neuf par passe. Preuve de la Remarque 1 de Halbeisen–Hungerbühler 1997 et ses notices (release v1.7 du dépôt Lean) : six passes ; les passes 5 et 6 sans remarque bloquante ni mineure (des détails de forme, appliqués ensuite : notices, et commentaires de deux fichiers Lean et de <code>check.sh</code> ; aucun énoncé ni aucune preuve changés, le tout recompilé ensuite). Les passes 1 à 4 ont relevé des comptes et des notes à mettre à jour, et trois erreurs de fond, toutes d'attribution ou de chronologie, aucune dans la preuve : la prépublication de K. Knight (2023) n'était pas créditée ; une phrase disait à tort qu'elle avait été lue après la preuve (elle l'avait été en septembre 2026, sans que ce passage soit relevé) ; la fiche Zenodo attribuait à Knight la borne 1/2, qui est celle de l'article. Toutes corrigées avant publication. Textes ajoutés pour la publication de la v1.7 (notes de version, notices, fiche Zenodo) et changements de la v0.10.23 du site (cartes Halbeisen–Hungerbühler, registre, compteurs) : relus contre la release publiée par un relecteur neuf : aucune remarque sur les textes de la release ; trois sur le site (portée d'une phrase sur les passes 1 à 4, nature des détails de la passe 5, date des données structurées du registre), corrigées avant la mise en ligne. Audit précédent : relectures adverses de la v1.6 et de la v0.10.22, 2026-11-07.</span>
-        <span lang="en">Internal adversarial reviews, AI-assisted (not peer review), with a fresh reviewer for each pass. Proof of Remark 1 of Halbeisen–Hungerbühler 1997 and its READMEs (release v1.7 of the Lean repository): six passes; passes 5 and 6 with no blocking or minor remark (details of form, applied afterwards: READMEs, and comments in two Lean files and in <code>check.sh</code>; no statement or proof changed, everything recompiled afterwards). Passes 1 to 4 found counts and notes to update, and three errors of substance, all of attribution or chronology, none in the proof: K. Knight's preprint (2023) was not credited; a sentence wrongly said that it had been read after the proof (it had been read in September 2026, without that passage being noticed); the Zenodo record attributed to Knight the bound 1/2, which is the paper's. All corrected before publication. Texts added for the publication of v1.7 (release notes, READMEs, Zenodo record) and changes of v0.10.23 of the site (Halbeisen–Hungerbühler cards, ledger, counters): reviewed against the published release by a fresh reviewer: no remark on the texts of the release; three on the site (scope of a sentence on passes 1 to 4, nature of the details of pass 5, date of the structured data of the ledger), corrected before going online. Previous audit: adversarial reviews of v1.6 and v0.10.22, 2026-11-07.</span>
+        <span lang="fr">Relectures adverses internes, assistées par IA (ce n'est pas une évaluation par les pairs), un relecteur neuf par passe. Notices de sdw2005/ et textes de la release v1.8 du dépôt Lean : huit passes. Elles ont corrigé une référence déjà poussée sur GitHub (théorème 3(d) de Simons–de Weger, et non 3(c)) et la comparaison avec leurs bornes (sous la valeur de leur borne initiale fondée sur Rhin, au-dessus de leurs bornes finales) ; la septième a relevé que P. Norfleet signale une erreur dans la preuve du théorème 21 de C. Hercher (non vérifiée ici), ce que les notices disent désormais ; la huitième, sur les textes finaux, n'a fait que trois remarques mineures, appliquées. La règle du laboratoire (deux passes de suite sans remarque) n'a pas été atteinte : la publication a été décidée par l'auteur. Aucun énoncé ni aucune preuve n'a été changé par ces relectures (un commentaire d'un fichier Lean l'a été, avant la vérification finale).</span>
+        <span lang="en">Internal adversarial reviews, AI-assisted (not peer review), with a fresh reviewer for each pass. READMEs of sdw2005/ and texts of release v1.8 of the Lean repository: eight passes. They corrected a reference already pushed to GitHub (Theorem 3(d) of Simons–de Weger, not 3(c)) and the comparison with their bounds (below the value of their initial bound based on Rhin, above their final bounds); the seventh found that P. Norfleet reports an error in the proof of Theorem 21 of C. Hercher (not checked here), which the READMEs now say; the eighth, on the final texts, made only three minor remarks, applied. The lab's rule (two consecutive passes without remarks) was not met: publication was decided by the author. No statement or proof was changed by these reviews (a comment in a Lean file was, before the final check).</span>
       </p>
       <a class="status-card-link" href="changelog/">→ changelog</a>
     </div>
@@ -998,7 +1009,7 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
      ======================================================================== -->
 <footer>
   <div class="footer-meta">
-    Cartography · v0.10.25 · 2026-11-07
+    Cartography · v0.10.26 · 2026-11-08
   </div>
   <p data-i18n="footerText">Les erreurs trouvées sont corrigées et documentées publiquement (mea culpa, erratum).</p>
   <p data-i18n="footerLicense">Contenu du site CC-BY-SA 4.0 · Paper et code Lean CC BY 4.0 · Document vivant</p>
@@ -1085,6 +1096,6 @@ theorem cycle_k_2_parity_1_1_p_7_no_dvd_D_s
   openTarget();
 })();
 </script>
-<script src="assets/js/main.js?v=20261107-V0-10-25"></script>
+<script src="assets/js/main.js?v=20261108-V0-10-26"></script>
 </body>
 </html>

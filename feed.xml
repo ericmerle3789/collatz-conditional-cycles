@@ -6,7 +6,7 @@
   <link href="https://collatz-lab.org/" rel="alternate" type="text/html"/>
   <link href="https://collatz-lab.org/feed.xml" rel="self" type="application/atom+xml"/>
   <id>urn:doi:10.5281/zenodo.19790406</id>
-  <updated>2026-11-07T19:38:52Z</updated>
+  <updated>2026-11-08T07:32:03Z</updated>
 
   <author>
     <name>Eric Merle</name>
@@ -16,6 +16,16 @@
   <rights>CC-BY-SA 4.0</rights>
   <icon>https://collatz-lab.org/assets/favicon-32.png</icon>
   <logo>https://collatz-lab.org/assets/og-image.png</logo>
+
+  <entry>
+    <title>v0.10.26 — An upper bound in the way of Simons–de Weger, without Rhin's lower bound (release v1.8)</title>
+    <link href="https://doi.org/10.5281/zenodo.24049927"/>
+    <id>urn:collatz-cycles:v0.10.26-sdw2005-v1-8-2026-11-08</id>
+    <updated>2026-11-08T07:32:03Z</updated>
+    <published>2026-11-08T07:32:03Z</published>
+    <category term="lean"/>
+    <summary>Release v1.8 of the Lean repository (DOI 10.5281/zenodo.24049927): the new folder sdw2005/ proves, in the way of the a priori bound of Simons–de Weger (2005) but without G. Rhin's lower bound and without a lower bound X0, that a cycle with at most 82 local minima has fewer than 4·10^18 odd terms, and one with at most 91 fewer than 2·10^21; 9 frozen statements, all proved, standard axioms only. Weaker than their final bounds; it excludes no cycle. Nothing new about Collatz cycles; this site does not prove the conjecture.</summary>
+  </entry>
 
   <entry>
     <title>v0.10.25 — Errata note: version 2</title>
